@@ -1,13 +1,13 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// shami.c Ğ¡É³ÃÖº
+// shami.c å°æ²™å¼¥
 // By Dream Dec. 20, 1996
 
 inherit NPC;
 
 void create()
 {
-	set_name("Ğ¡É³ÃÖ", ({ "shami", "bonze" }));
-	set("gender", "ÄĞĞÔ");
+	set_name("å°æ²™å¼¥", ({ "shami", "bonze" }));
+	set("gender", "ç”·æ€§");
 	set("age", 10);
 	set("attitude", "peaceful");
 	set("class", "bonze");

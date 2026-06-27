@@ -3,8 +3,8 @@ inherit NPC;
 
 void create()
 {
-       	set_name("¼áÀÎµØÉñ", ({"jianlaodi shen", "shen"}));
-       	set("gender", "ÄĞĞÔ");
+       	set_name("åšç‰¢åœ°ç¥", ({"jianlaodi shen", "shen"}));
+       	set("gender", "ç”·æ€§");
        	set("age", 20);
         set("class", "xian");
        	set("attitude", "friendly");
@@ -38,4 +38,5 @@ void create()
         map_skill("unarmed", "cuixin-zhang");
 
 	setup();
-	carry_object("/d/qujing/tianzhu/obj/piyi@‚Xt;Ã>¾Øt
+	carry_object("/d/qujing/tianzhu/obj/piyi")->wear();
+}
