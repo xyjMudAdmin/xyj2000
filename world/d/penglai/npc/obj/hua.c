@@ -5,7 +5,7 @@
 #include <armor.h>
 
 inherit NECK;
-#include <flowers.h>
+#include "flowers.h"
 
 string chinese_daoxing(int);
 void create() {

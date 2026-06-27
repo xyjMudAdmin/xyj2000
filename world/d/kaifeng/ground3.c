@@ -3,7 +3,7 @@
 
 inherit __DIR__"ground2";
 
-#include <ground.h>
+#include "ground.h"
 
 int do_report3()
 {

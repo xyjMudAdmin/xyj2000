@@ -3,7 +3,7 @@
 
 inherit __DIR__"ground1";
 
-#include <ground.h>
+#include "ground.h"
 
 void randomize_schedule (mapping events, int total, int sessions)
 {

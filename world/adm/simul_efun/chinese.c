@@ -12,6 +12,8 @@ string chinese_number(int i)
 
 int is_chinese(string str)
 {
-	if( strlen(str)>=2 && str[0] > 160 && str[0] < 255 ) return 1;
-	return 0;
+	if (!str)
+		return 0;
+
+	return pcre_match(str, "^\\p{Han}+$");
 }

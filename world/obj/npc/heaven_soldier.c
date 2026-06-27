@@ -5,7 +5,7 @@
 
 inherit NPC;
 
-#include <soldier_skill.h>
+#include "soldier_skill.h"
 void create()
 {
     	object ob1, ob2;

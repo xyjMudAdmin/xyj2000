@@ -5,7 +5,7 @@
 //inherit ROOM;
 inherit "/d/city/misc/scoresheet.c";
 
-#include <banned.h>
+#include "banned.h"
 void finish(int);
 void fullup(object);
 void pre_status(object);

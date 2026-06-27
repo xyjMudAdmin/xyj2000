@@ -1,8 +1,8 @@
 // cracked by vikee 2/09/2002   vikee@263.net
 inherit NPC;
 
-#include <quest_fd.c>
-#include <reporting.c>
+#include "quest_fd.c"
+#include "reporting.c"
 
 int test_player();
 

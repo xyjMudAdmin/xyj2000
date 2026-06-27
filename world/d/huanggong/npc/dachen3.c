@@ -3,7 +3,7 @@
 
 inherit NPC;
 
-#include <reporting.h>
+#include "reporting.h"
 
 void do_improve(object who, string name, int points, int level);
 

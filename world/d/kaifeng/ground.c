@@ -4,7 +4,7 @@
 inherit ROOM;
 inherit __DIR__"ground3";
 
-#include <ground.h>
+#include "ground.h"
 
 void create ()
 {
