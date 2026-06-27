@@ -1,5 +1,5 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-#pragma save_binary
+// #pragma save_binary
 
 // This file is part of the TMI mudlib distribution.
 // Please include this header if you use this code.

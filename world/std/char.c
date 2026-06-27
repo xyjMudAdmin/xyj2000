@@ -1,7 +1,7 @@
 // cracked by vikee 2/09/2002   vikee@263.net
 // char.c
 
-#pragma save_binary
+// #pragma save_binary
 
 #include <action.h>
 #include <ansi.h>

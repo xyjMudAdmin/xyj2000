@@ -12,3 +12,4 @@ world/log/*
 *.gbbak
 *.utf8tmp
 xyj2000-pre-*.tar.gz
+*.pragmabak
