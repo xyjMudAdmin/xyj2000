@@ -3,8 +3,8 @@
 #include <ansi.h>
 
 inherit SSERVER;
-static string old_long, old_short;
-static object env;
+nosave string old_long, old_short;
+nosave object env;
 
 
 int do_quit();

@@ -11,7 +11,7 @@ inherit F_SAVE;
 inherit F_BACKUP;
 inherit F_ENCODING;
 
-static int last_age_set;
+nosave int last_age_set;
 
 void create()
 {

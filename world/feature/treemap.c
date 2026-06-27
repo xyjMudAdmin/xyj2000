@@ -12,7 +12,7 @@
 // them in the same circumstances that shadowing query is not allowed.
 
 //static nomask private mixed _query( mapping map, string *parts )
-static nomask mixed _query( mapping map, string *parts )
+nomask mixed _query( mapping map, string *parts )
 {
 	mixed value;
 	int i, s;
@@ -29,7 +29,7 @@ static nomask mixed _query( mapping map, string *parts )
 }
 
 //static nomask private int _delete( mapping map, string *parts )
-static nomask int _delete( mapping map, string *parts )
+nomask int _delete( mapping map, string *parts )
 {
 	if( sizeof( parts ) == 1 ) {
 		map_delete( map, parts[0] );
@@ -41,7 +41,7 @@ static nomask int _delete( mapping map, string *parts )
 }
 
 //static nomask private mixed _set( mapping map, string *parts, mixed value )
-static nomask  mixed _set( mapping map, string *parts, mixed value )
+nomask  mixed _set( mapping map, string *parts, mixed value )
 {
 	if( sizeof( parts ) == 1 )
 		return map[parts[0]] = value;

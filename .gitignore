@@ -3,3 +3,8 @@
 *.swp
 world/log/*
 *.tar.gz
+
+# local scratch from migration fixes
+*.bak
+*.static.bak
+*.gbk.bak

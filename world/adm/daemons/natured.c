@@ -3,7 +3,7 @@
 
 #define TIME_TICK (time()*60)
 
-static int current_day_phase;
+nosave int current_day_phase;
 mapping *day_phase;
 
 void auto_save(object *user, int size, int i);

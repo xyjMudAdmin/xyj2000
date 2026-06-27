@@ -7,7 +7,7 @@
 
 // Let command path be static, thus we can make sure no one can get command
 // path directly from restore_object().
-static string *path;
+nosave string *path;
 
 // Leave this to allow other objects can search your commands such as
 // help, which...

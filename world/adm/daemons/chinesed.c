@@ -11,17 +11,17 @@
 
 inherit F_SAVE;
 
-static string *c_digit = ({ "零","十","百","千","万","亿","兆" });
-static string *c_num = ({"零","一","二","三","四","五","六","七","八","九","十"});
-static string *sym_tien = ({ "甲","乙","丙","丁","戊","己","庚","辛","壬","癸" });
-static string *sym_dee = ({ "子","丑","寅","卯","辰","巳","午","未","申","酉","戌","亥" });
+nosave string *c_digit = ({ "零","十","百","千","万","亿","兆" });
+nosave string *c_num = ({"零","一","二","三","四","五","六","七","八","九","十"});
+nosave string *sym_tien = ({ "甲","乙","丙","丁","戊","己","庚","辛","壬","癸" });
+nosave string *sym_dee = ({ "子","丑","寅","卯","辰","巳","午","未","申","酉","戌","亥" });
 
 // mon 99/07/22
-static int pseudo_day, last_day=-1;
+nosave int pseudo_day, last_day=-1;
 // this is the time of 1996/12/12 GMT, the creation date of xyj world.
 // becareful if change this number, as it may break the syncronization
 // between the "time" command output and the room day phase description.
-static int time_0=850348800; 
+nosave int time_0=850348800; 
 
 mapping dict = ([]);
 

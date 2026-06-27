@@ -146,7 +146,7 @@ int check_password(string name, string plaintext)
  * dotted quad) with an ip number pattern (ie containing wildcard(s))
  * - returns 1 if a match, 0 otherwise
  */
-static int dot_match(string *site, string *pattern, int flag) {
+nomask int dot_match(string *site, string *pattern, int flag) {
     int i, j;
 
     j = sizeof(pattern);

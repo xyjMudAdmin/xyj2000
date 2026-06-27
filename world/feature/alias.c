@@ -7,9 +7,9 @@
 
 mapping alias;
 
-static string *history, last_input;
-static int last_cmd, repeat_cnt = 0;
-static int last_time=time(), cmd_cnt=0, cmd_cnt1=0, cmd_cnt2=0;
+nosave string *history, last_input;
+nosave int last_cmd, repeat_cnt = 0;
+nomask int last_time=time(), cmd_cnt=0, cmd_cnt1=0, cmd_cnt2=0;
 
 // speed of player input commands.
 int query_cmd_count() {return cmd_cnt2;}

@@ -1,7 +1,7 @@
 // cracked by vikee 2/09/2002   vikee@263.net
 // action.c
 
-static mixed busy=0, interrupt;
+nosave mixed busy=0, interrupt;
 
 varargs void start_busy(mixed new_busy, mixed new_interrupt)
 {
