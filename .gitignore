@@ -2,3 +2,4 @@
 *.o
 *.swp
 world/log/*
+*.tar.gz
