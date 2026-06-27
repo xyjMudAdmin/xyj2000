@@ -1,0 +1,24 @@
+// cracked by vikee 2/09/2002   vikee@263.net
+// dart.c
+
+#include <weapon.h>
+
+inherit THROWING;
+
+void create()
+{
+        set_name("Í­¿Û", ({"kouzi"}));
+        if( clonep() )
+                set_default_object(__FILE__);
+        else {
+                set("long", "Ò»Ã¶Ð¡Í­¿Û");
+                set("unit", "Ð©");
+                set("base_unit", "Ã¶");
+                set("base_weight", 40);
+		set("base_value", 1);
+        }
+	set_amount(1);
+        init_throwing(20);
+        setup();
+}
+
