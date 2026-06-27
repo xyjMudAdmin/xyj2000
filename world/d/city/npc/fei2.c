@@ -3,11 +3,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("´òÊÖ", ({"da shou", "shou"}));
+        set_name("æ‰“æ‰‹", ({"da shou", "shou"}));
         set("age", 22);
-        set("gender", "ÄÐÐÔ");
+        set("gender", "ç”·æ€§");
         set("long",
-"ËäÈ»Îä¹¦²»ÔõÃ´Ñù£¬µ«ÐÄºÚÊÖÀ±£¬Ò²²»ºÃÈÇ¡£\n");
+"è™½ç„¶æ­¦åŠŸä¸æ€Žä¹ˆæ ·ï¼Œä½†å¿ƒé»‘æ‰‹è¾£ï¼Œä¹Ÿä¸å¥½æƒ¹ã€‚\n");
         set("attitude", "heroism");
 
         set("combat_exp", 10000+random(2000));
@@ -19,7 +19,7 @@ void create()
 
         set("chat_chance_combat", 10);
         set("chat_msg_combat", ({
-                "´òÊÖ´óº°£¬¸Ò¸úÀÏ×Ó¹ý²»È¥£¬È¥ËÀ°É£¡\n"
+                "æ‰“æ‰‹å¤§å–Šï¼Œæ•¢è·Ÿè€å­è¿‡ä¸åŽ»ï¼ŒåŽ»æ­»å§ï¼\n"
         }));
         setup();
         carry_object("/d/obj/weapon/dagger/dagger")->wield();

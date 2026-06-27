@@ -4,14 +4,14 @@ string teach_me(object me);
 void create()
 {
 
-        set_name("¶«·½²©Óñ", ({ "dongfang boyu", "dongfang", "boyu"}) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("ä¸œæ–¹åšç‰", ({ "dongfang boyu", "dongfang", "boyu"}) );
+        set("gender", "ç”·æ€§" );
 	set("per", 23);
         set("age", 42);
-        set("long", "¶«·½²©ÓñÊÇ¶«·½Îä¹İµÄ¹İÖ÷£¬ÊÖÉÏºÜÓĞÁ½ÏÂ¹¦·ò¡£
-³ÇÀïµÄÉÙÄêÄª²»ÒÔ×öËûµÄÍ½µÜÎªÈÙ¡£\n");
+        set("long", "ä¸œæ–¹åšç‰æ˜¯ä¸œæ–¹æ­¦é¦†çš„é¦†ä¸»ï¼Œæ‰‹ä¸Šå¾ˆæœ‰ä¸¤ä¸‹åŠŸå¤«ã€‚
+åŸé‡Œçš„å°‘å¹´è«ä¸ä»¥åšä»–çš„å¾’å¼Ÿä¸ºè£ã€‚\n");
         set("combat_exp", 80000);
-	set("title", "Îä¹İ¹İÖ÷");
+	set("title", "æ­¦é¦†é¦†ä¸»");
 	set("max_kee", 500);
 	set("max_force", 200);
 	set("force", 200);
@@ -21,9 +21,9 @@ void create()
         set_skill("unarmed", 70);
 	set_skill("force", 70);
 set("inquiry", ([
-"name": "ÀÏ·ò¶«·½²©Óñ£¬ÊÇÕâÀïµÄµ±¼Ò¡£\n",
-"here": "Õâ±ãÊÇ°ÁÀ´¹ú×îÓĞÃûµÄÎä¹İÁË£¬À´Ñ§ÒÕµÄÈËºÜ¶àÄØ¡£\n",
-"Ñ§ÒÕ": (: teach_me :),
+"name": "è€å¤«ä¸œæ–¹åšç‰ï¼Œæ˜¯è¿™é‡Œçš„å½“å®¶ã€‚\n",
+"here": "è¿™ä¾¿æ˜¯å‚²æ¥å›½æœ€æœ‰åçš„æ­¦é¦†äº†ï¼Œæ¥å­¦è‰ºçš„äººå¾ˆå¤šå‘¢ã€‚\n",
+"å­¦è‰º": (: teach_me :),
 ]) );
 
         setup();
@@ -34,10 +34,10 @@ set("inquiry", ([
 string teach_me(object me)
 {
 	if((int)this_player()->query("combat_exp") < 10000 ) {
-	message_vision("¶«·½²©Óñ¶Ô$N¹ş¹şÒ»Ğ¦£¬ËµµÀ£º´òÄãÒ»½øÀ´£¬ÎÒ¾ÍÖªµÀÄãÒªÑ§ÒÕ¡£\n", this_player());
+	message_vision("ä¸œæ–¹åšç‰å¯¹$Nå“ˆå“ˆä¸€ç¬‘ï¼Œè¯´é“ï¼šæ‰“ä½ ä¸€è¿›æ¥ï¼Œæˆ‘å°±çŸ¥é“ä½ è¦å­¦è‰ºã€‚\n", this_player());
 	this_player()->set("newbie/learn", 1);
-	return "ÒÔºó¾Í¸úÎÒ¶ù×ÓÅ®¶ùÑ§°É¡£\n";
+	return "ä»¥åå°±è·Ÿæˆ‘å„¿å­å¥³å„¿å­¦å§ã€‚\n";
 	}
 	command("look " + this_player()->query("id"));
-	return "ÄãÌ«´óÁË£¬»¹ÊÇÁí°İÃ÷Ê¦È¥°É£¡\n";
+	return "ä½ å¤ªå¤§äº†ï¼Œè¿˜æ˜¯å¦æ‹œæ˜å¸ˆå»å§ï¼\n";
 }

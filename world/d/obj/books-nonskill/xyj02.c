@@ -10,13 +10,13 @@ void init();
 int do_read();
 void create()
 {
-  set_name("¡¶Î÷ÓÎ¼Ç¡·µÚ¶þ»Ø", ({"xyj", "book"}));
+  set_name("ã€Šè¥¿æ¸¸è®°ã€‹ç¬¬äºŒå›ž", ({"xyj", "book"}));
   set_weight(200);
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("unit", "±¾");
-    set("long", " ¡¶Î÷ÓÎ¼Ç¡·µÚ¶þ»Ø  ÇëÓÃ read ÔÄ¶Á¡£");
+    set("unit", "æœ¬");
+    set("long", " ã€Šè¥¿æ¸¸è®°ã€‹ç¬¬äºŒå›ž  è¯·ç”¨ read é˜…è¯»ã€‚");
     set("material", "paper");
   }
 }
@@ -32,7 +32,7 @@ int read_book(string arg)
   object ob = this_object();
     
   if (!ob->id(arg))
-      return notify_fail("ÄãÒª¶ÁÊ²Ã´£¿\n");
+      return notify_fail("ä½ è¦è¯»ä»€ä¹ˆï¼Ÿ\n");
   write("\n");
   me->start_more(read_file("/d/obj/books-nonskill/text/xyj02"));
   write("\n");

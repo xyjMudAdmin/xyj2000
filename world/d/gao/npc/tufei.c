@@ -5,10 +5,10 @@ inherit NPC;
 
 void create()
 {
-       set_name("ÍÁ·Ë", ({"bandit"}));
+       set_name("åœŸåŒª", ({"bandit"}));
 
-set("long","Ò»¸öÌåĞÍ¿ıÎò£¬¿´ÆğÀ´¿×ÎäÓĞÁ¦µÄ´ó¸ö×Ó£®\nÕıºİ°Í°ÍµÄµÉ×ÅÄã£®\n");
-       set("gender", "ÄĞĞÔ");
+set("long","ä¸€ä¸ªä½“å‹é­æ‚Ÿï¼Œçœ‹èµ·æ¥å­”æ­¦æœ‰åŠ›çš„å¤§ä¸ªå­ï¼\næ­£ç‹ å·´å·´çš„çªç€ä½ ï¼\n");
+       set("gender", "ç”·æ€§");
        set("age", 25+random(15));
        set("attitude", "aggressive");
        set("shen_type", 1);

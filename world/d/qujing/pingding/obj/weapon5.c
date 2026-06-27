@@ -5,9 +5,9 @@ inherit HAMMER;
 
 void create()
 {
-  set_name("ÇàÊ¯´¸", ({ "qingsho chui", "chui", "hammer" }) );
+  set_name("é’çŸ³é”¤", ({ "qingsho chui", "chui", "hammer" }) );
   init_hammer(30);
-  set("unit", "°Ñ");
+  set("unit", "æŠŠ");
   set_weight(1500);
   if( clonep() )
      set_default_object(__FILE__);

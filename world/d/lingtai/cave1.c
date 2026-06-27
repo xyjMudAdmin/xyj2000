@@ -1,17 +1,17 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// Room: some place in Î÷Å£ºØÖŞ
+// Room: some place in è¥¿ç‰›è´ºæ´²
 // cave1.c
 
 inherit ROOM;
 
 void create()
 {
-  set ("short", "¶´¿Ú");
+  set ("short", "æ´å£");
   set ("long", @LONG
 
-ºÃ²»ÈİÒ×´ÓÃÜÁÖÖĞ×ßÁË³öÀ´£¬ÑÛÇ°Ò»ÏÂÁÁÁËÆğÀ´£®Ç°·½Ò»¸öĞ¡
-É½¶´£¬¶´¿Ú»¹ÓĞ²»ÉÙÑª¼££®Ò»ÕóÉ½·ç´µ¹ı£¬´øÀ´¹ÉÁîÈËÓûÅ»µÄ
-ĞÈÆø£®£®£®°¡£¡£¡£¿ÄÑµÀÓĞÒ°ÊŞ£¿
+å¥½ä¸å®¹æ˜“ä»å¯†æ—ä¸­èµ°äº†å‡ºæ¥ï¼Œçœ¼å‰ä¸€ä¸‹äº®äº†èµ·æ¥ï¼å‰æ–¹ä¸€ä¸ªå°
+å±±æ´ï¼Œæ´å£è¿˜æœ‰ä¸å°‘è¡€è¿¹ï¼ä¸€é˜µå±±é£å¹è¿‡ï¼Œå¸¦æ¥è‚¡ä»¤äººæ¬²å‘•çš„
+è…¥æ°”ï¼ï¼ï¼å•Šï¼ï¼ï¼Ÿéš¾é“æœ‰é‡å…½ï¼Ÿ
 LONG);
 set("exits", ([ /* sizeof() == 4 */
 "east" : __DIR__"forrest",
@@ -29,7 +29,7 @@ set("objects", ([
 int valid_leave(object me, string dir)
 {
         if ( dir == "west" && objectp(present("wolf", environment(me)))) 
-        return notify_fail("ÀÏÀÇÃÍµÄÌøµ½ÄãÇ°ÃæÀ¹×¡Äã£¡\n");
+        return notify_fail("è€ç‹¼çŒ›çš„è·³åˆ°ä½ å‰é¢æ‹¦ä½ä½ ï¼\n");
 
         return ::valid_leave(me, dir);
 }

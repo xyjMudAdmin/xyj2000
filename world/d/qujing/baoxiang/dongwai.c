@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "½ðËþ");
+  set ("short", "é‡‘å¡”");
   set ("long", @LONG
 
-É½ÑÂ±ßÓÐÒ»×ù±¦Ëþ£¬½ð¶¥·Å¹â£¬²ÊÆøÌÚÌÚ¡£ÇàÇàÏã²ÝÐã£¬ÑÞÑÞÒ°
-»¨¿ª¡£Ô¶¹ÛÈçÈýµºÌìÌÃ£¬½ü¿´ËÆÅîÀ³ÏÉ¾³£¬¹ûÕæÊÇ¾øºÃÈ¥´¦¡£Ëþ
-Ç°ÓÐÒ»°×ÓñÊ¯°å(shi ban)¡£
+å±±å´–è¾¹æœ‰ä¸€åº§å®å¡”ï¼Œé‡‘é¡¶æ”¾å…‰ï¼Œå½©æ°”è…¾è…¾ã€‚é’é’é¦™è‰ç§€ï¼Œè‰³è‰³é‡Ž
+èŠ±å¼€ã€‚è¿œè§‚å¦‚ä¸‰å²›å¤©å ‚ï¼Œè¿‘çœ‹ä¼¼è“¬èŽ±ä»™å¢ƒï¼ŒæžœçœŸæ˜¯ç»å¥½åŽ»å¤„ã€‚å¡”
+å‰æœ‰ä¸€ç™½çŽ‰çŸ³æ¿(shi ban)ã€‚
 
 LONG);
 
@@ -21,7 +21,7 @@ LONG);
   set("outdoors","/d/qujing/baoxiang");
 
   set("item_desc",([
-      "shi ban" : "\nÍë×ÓÉ½²¨ÔÂ¶´\n\n"
+      "shi ban" : "\nç¢—å­å±±æ³¢æœˆæ´ž\n\n"
      ]));
 
   setup();
@@ -39,7 +39,7 @@ int do_break (string arg)
   if (arg != "shi ban")
     return 0;
 
-  message_vision ("$N´óºÈÒ»Éù£¬Ê¹¾¡ÖÜÉíÉñÁ¦×²Ïò°×ÓñÊ¯°å£¡\n\n",me);
+  message_vision ("$Nå¤§å–ä¸€å£°ï¼Œä½¿å°½å‘¨èº«ç¥žåŠ›æ’žå‘ç™½çŽ‰çŸ³æ¿ï¼\n\n",me);
   if (me->query("force")<300 ||
       me->query("mana")<300)
   {
@@ -51,9 +51,9 @@ int do_break (string arg)
   {
     me->add("force",-300);
     me->add("mana",-300);
-    message_vision ("É²ÄÇ¼äÌì±ÀµØÁÑ£¬½ðËþÍ»È»ÏûÊ§µÃÎÞÓ°ÎÞ×Ù£¡\n",me);
+    message_vision ("åˆ¹é‚£é—´å¤©å´©åœ°è£‚ï¼Œé‡‘å¡”çªç„¶æ¶ˆå¤±å¾—æ— å½±æ— è¸ªï¼\n",me);
     this_object()->recreate();
-    message_vision ("\nµ«¼û£º\n",me);
+    message_vision ("\nä½†è§ï¼š\n",me);
     message_vision (this_object()->query("long"),me);
     remove_call_out ("precreate");
     call_out ("precreate",10,this_object());
@@ -63,18 +63,18 @@ int do_break (string arg)
 
 void precreate (object me)
 {
-  tell_room (me,"ºäÂ¡Ò»Éù¾ÞÏì£¬Ò»ÇÐ¶¼»¹Ô­ÁË£¡\n\n");
+  tell_room (me,"è½°éš†ä¸€å£°å·¨å“ï¼Œä¸€åˆ‡éƒ½è¿˜åŽŸäº†ï¼\n\n");
   me->create();
 }
 
 void recreate ()
 {
-  set ("short", "²¨ÔÂ¶´Íâ");
+  set ("short", "æ³¢æœˆæ´žå¤–");
   set ("long", @LONG
 
-Ê¯ÑÄ¸ßÍòÕÉ£¬É½´ó½ÓÇàÏü¡£¸ùÁ¬µØºñ£¬·å²åÌì¸ß¡£Á½±ßÔÓÊ÷ÊýÇ§
-¿Ã£¬Ç°ºóÌÙ²ø°ÙÓàÀï¡£ÑÂ±Ú´¦ÓÐÒ»´ó¶´Ñ¨£¬ÒõÆøçÔÈÆ£¬Ê¯ÑÀ½»´í£¬
-ÏÕÏóÍòÉú¡£
+çŸ³æ¶¯é«˜ä¸‡ä¸ˆï¼Œå±±å¤§æŽ¥é’å®µã€‚æ ¹è¿žåœ°åŽšï¼Œå³°æ’å¤©é«˜ã€‚ä¸¤è¾¹æ‚æ ‘æ•°åƒ
+æ£µï¼Œå‰åŽè—¤ç¼ ç™¾ä½™é‡Œã€‚å´–å£å¤„æœ‰ä¸€å¤§æ´žç©´ï¼Œé˜´æ°”ç¼­ç»•ï¼ŒçŸ³ç‰™äº¤é”™ï¼Œ
+é™©è±¡ä¸‡ç”Ÿã€‚
 
 LONG);
 

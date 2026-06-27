@@ -5,13 +5,13 @@ int xianguan_block();
 
 void create ()
 {
-  set ("short", "Ñş³Ø¶«ÀÈ");
+  set ("short", "ç‘¶æ± ä¸œå»Š");
   set ("long", @LONG
 
-Ñş³Ø¶«ÀÈÒ»ÁĞÓñ×ÀÕûÆëÅÅ¿ª£¬°ÚÂú¸÷ÀàÏÉ¾Æ¡£ÀÈÀï¾ÆÏãÆË±Ç£»
-ÓĞ¼¸¸öÔì¾ÆµÄÏÉ¹Ù£¬ÅÌÔãµÄÁ¦Ê¿£¬Áì¼¸¸öÔËË®µÄµÀÈË£¬ÉÕ»ğµÄ
-Í¯×Ó£¬ÔÚ´ËÄğÔìÓñÒºÇí½¬£¬Ïãõ²¼ÑÄğ¡£½ÇÂäÀïÓĞÉÈÌúÃÅ(door)
-Í¨ÏòÖü¾ÆµÄµØ½Ñ¡£
+ç‘¶æ± ä¸œå»Šä¸€åˆ—ç‰æ¡Œæ•´é½æ’å¼€ï¼Œæ‘†æ»¡å„ç±»ä»™é…’ã€‚å»Šé‡Œé…’é¦™æ‰‘é¼»ï¼›
+æœ‰å‡ ä¸ªé€ é…’çš„ä»™å®˜ï¼Œç›˜ç³Ÿçš„åŠ›å£«ï¼Œé¢†å‡ ä¸ªè¿æ°´çš„é“äººï¼Œçƒ§ç«çš„
+ç«¥å­ï¼Œåœ¨æ­¤é…¿é€ ç‰æ¶²ç¼æµ†ï¼Œé¦™é†ªä½³é…¿ã€‚è§’è½é‡Œæœ‰æ‰‡é“é—¨(door)
+é€šå‘è´®é…’çš„åœ°çª–ã€‚
 
 LONG);
 
@@ -37,17 +37,17 @@ void init() {
 int to_open(string arg) {
   object me=this_player();
 
-  if (!arg || arg!="door") return notify_fail("´ò¿ªÊ²Ã´£¿\n");
-  if(query("exits/down")) return notify_fail("ÃÅÒÑ¾­ÊÇ¿ª×ÅµÄÁË¡£\n");
+  if (!arg || arg!="door") return notify_fail("æ‰“å¼€ä»€ä¹ˆï¼Ÿ\n");
+  if(query("exits/down")) return notify_fail("é—¨å·²ç»æ˜¯å¼€ç€çš„äº†ã€‚\n");
 
   if (xianguan_block()) 
-    return notify_fail("Ôì¾ÆÏÉ¹Ù¿´ÁËÄãÒ»ÑÛ£¬ÄãÏÅµÃÂíÉÏ°ÑÉì³öÈ¥ÍÆÃÅµÄÊÖËõÁË»ØÀ´¡£\n");
+    return notify_fail("é€ é…’ä»™å®˜çœ‹äº†ä½ ä¸€çœ¼ï¼Œä½ å“å¾—é©¬ä¸ŠæŠŠä¼¸å‡ºå»æ¨é—¨çš„æ‰‹ç¼©äº†å›æ¥ã€‚\n");
 
   if (me->query("force")<200) {
-    message_vision("$NÊ¹³öÈ«ÉíÆøÁ¦ÍÆÃÅ£¬¿ÉÊÇÓÌÈçò·òİº³Ê÷£¬ÌúÃÅË¿ºÁÎ´¶¯¡£\n",me);
-    return notify_fail("ÄãµÄÆøÁ¦²»¹»¡£\n");
+    message_vision("$Nä½¿å‡ºå…¨èº«æ°”åŠ›æ¨é—¨ï¼Œå¯æ˜¯çŠ¹å¦‚èšèœ‰æ’¼æ ‘ï¼Œé“é—¨ä¸æ¯«æœªåŠ¨ã€‚\n",me);
+    return notify_fail("ä½ çš„æ°”åŠ›ä¸å¤Ÿã€‚\n");
   }
-  message_vision("$NÉÔÒ»ÌáÆø£¬ÇáÇáÒ»ÍÆ£¬ÌúÃÅÎŞÉùÎŞÏ¢µÄ´ò¿ªÁË¡£\n",me);
+  message_vision("$Nç¨ä¸€ææ°”ï¼Œè½»è½»ä¸€æ¨ï¼Œé“é—¨æ— å£°æ— æ¯çš„æ‰“å¼€äº†ã€‚\n",me);
   add("exits",(["down":__DIR__"jiujiao",]));
   me->start_busy(2);
   me->set_temp("yaochi_open",1);
@@ -57,7 +57,7 @@ int to_open(string arg) {
 void door_close() {
 
   remove_call_out("door_close");
-  tell_room(this_object(),"ÌúÃÅÎŞÉùÎŞÏ¢µÄ¹ØÉÏÁË¡£\n");
+  tell_room(this_object(),"é“é—¨æ— å£°æ— æ¯çš„å…³ä¸Šäº†ã€‚\n");
   set("exits", ([
         "west"  : "/d/pantao/yaob",
         "south"  : __DIR__"gate",
@@ -67,7 +67,7 @@ void door_close() {
 int valid_leave(object me, string dir)
 {
     if ( dir == "down" && xianguan_block()) 
-      return notify_fail("Ôì¾ÆÏÉ¹ÙÀ¹ÔÚÄãµÄÃæÇ°£º¡°Çë×ÔÖØ£¡¡±\n");
+      return notify_fail("é€ é…’ä»™å®˜æ‹¦åœ¨ä½ çš„é¢å‰ï¼šâ€œè¯·è‡ªé‡ï¼â€\n");
     return ::valid_leave(me, dir);
 }
 
@@ -78,4 +78,4 @@ int xianguan_block() {
   return 0;
 }
 
-int do_ji() {write("ÕâÀï²»ÄÜ¼À·¨±¦£¡\n");return 1;}
+int do_ji() {write("è¿™é‡Œä¸èƒ½ç¥­æ³•å®ï¼\n");return 1;}

@@ -7,10 +7,10 @@ inherit ROOM;
 void create()
 {
 
-	set("short", "Ë®Á±¶´ÄÚ");
+	set("short", "æ°´å¸˜æ´å†…");
 	set("long", @LONG
-ÕâÀï±ãÊÇ»¨¹ûÉ½Ë®Á±¶´µÄÄÚÌÃ£¬ËÄÖÜ¹øÍëÆ°ÅèÑùÑù
-¾ãÈ«¡£ÕıÖĞÒ»ÕÅ»¢Æ¤ÒÎ×Ó£¬ÕıÊÇ¹©Ë®Á±¶´Ö÷ĞİÏ¢µÄ¡£
+è¿™é‡Œä¾¿æ˜¯èŠ±æœå±±æ°´å¸˜æ´çš„å†…å ‚ï¼Œå››å‘¨é”…ç¢—ç“¢ç›†æ ·æ ·
+ä¿±å…¨ã€‚æ­£ä¸­ä¸€å¼ è™çš®æ¤…å­ï¼Œæ­£æ˜¯ä¾›æ°´å¸˜æ´ä¸»ä¼‘æ¯çš„ã€‚
 LONG );
 
 
@@ -39,9 +39,9 @@ void init()
 int do_bed()
 {       object me;
         me=this_player();
-        message_vision("$NÍùÊ¯´²ÉÏÒ»ÌÉ£¬×¼±¸Ë¯¾õÁË¡£\n\n", me);
+        message_vision("$Nå¾€çŸ³åºŠä¸Šä¸€èººï¼Œå‡†å¤‡ç¡è§‰äº†ã€‚\n\n", me);
         me->move(__DIR__"shichuang");
-            message_vision("\n$N´ÓÊ¯´²ÉÏÕ¾ÁËÆğÀ´¡£\n", me);
+            message_vision("\n$Nä»çŸ³åºŠä¸Šç«™äº†èµ·æ¥ã€‚\n", me);
                 return 1;
 }
 
@@ -53,7 +53,7 @@ int valid_leave(object me, string dir)
         {
                 {
                         if(present("hunshi mowang", environment(me) ))
-                                return notify_fail("»ìÊÀÄ§Íõ³å×ÅÄãÀäĞ¦µ½£º¡°Ïë×ß£¿Ã»ÄÇÃ´ÈİÒ×°É£¡¡±\n");
+                                return notify_fail("æ··ä¸–é­”ç‹å†²ç€ä½ å†·ç¬‘åˆ°ï¼šâ€œæƒ³èµ°ï¼Ÿæ²¡é‚£ä¹ˆå®¹æ˜“å§ï¼â€\n");
                 }
 
 

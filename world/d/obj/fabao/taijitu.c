@@ -6,19 +6,19 @@ inherit ITEM;
 
 void create()
 {
-  set_name("Ì«¼«Í¼", ({"taiji tu", "tu", "fabao"}));
+  set_name("å¤ªæå›¾", ({"taiji tu", "tu", "fabao"}));
   set_weight(1000);
   if(clonep())
      set_default_object(__FILE__);
   else {
     set("long", @LONG
-ÔªÊ¼Ìì×ğËùÁ¶ÖÆÖ®Ì«¼«Í¼¡£
-ÓÃ·¨£ºji <name> on <direction>
+å…ƒå§‹å¤©å°Šæ‰€ç‚¼åˆ¶ä¹‹å¤ªæå›¾ã€‚
+ç”¨æ³•ï¼šji <name> on <direction>
       qi <name>
 
 LONG );
  
-  set("unit", "ÕÅ");
+  set("unit", "å¼ ");
   set("value", 0);
   set("no_put",1);
   set("no_sell",1);
@@ -46,34 +46,34 @@ int do_ji (string arg)
 //  mapping exits=env->query("exits");
 
   if(  environment(me)->query("no_magic") )
-        return notify_fail("ÕâÀï½ûÖ¹¼À·¨±¦¡£\n");
-  if( !arg ) return notify_fail("ÄãÒª¼ÀÄÄÑù·¨±¦£¿\n");
+        return notify_fail("è¿™é‡Œç¦æ­¢ç¥­æ³•å®ã€‚\n");
+  if( !arg ) return notify_fail("ä½ è¦ç¥­å“ªæ ·æ³•å®ï¼Ÿ\n");
 
   // Check if correct format is followed
   if( sscanf(arg, "%s on %s", fabaoname, dir)!=2 )
-        return notify_fail("Ö¸Áî¸ñÊ½ : ji <·¨±¦Ãû³Æ> on <·½Ïò>\n");
+        return notify_fail("æŒ‡ä»¤æ ¼å¼ : ji <æ³•å®åç§°> on <æ–¹å‘>\n");
 
   fabao=present(fabaoname, me);
   if(fabao!=this_object()) {write("strange...\n");return 0;}
   dest = environment(me)->query("exits/"+dir);
   if (fabao->query("being_used")) {
-    write("ÄãÒÑ¾­¼ÀÆğÌ«¼«Í¼ÁË¡£\n");
+    write("ä½ å·²ç»ç¥­èµ·å¤ªæå›¾äº†ã€‚\n");
     return 1;
   }
 
   if (me->is_busy())
-    return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É£¬ÎŞÏ¾·ÖÉí¼À·¨±¦¡£\n");
-  if(!dest) return notify_fail("Õâ¸ö·½ÏòÃ»ÓĞÂ·¾¶¡£\n");
+    return notify_fail("ä½ ä¸Šä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆï¼Œæ— æš‡åˆ†èº«ç¥­æ³•å®ã€‚\n");
+  if(!dest) return notify_fail("è¿™ä¸ªæ–¹å‘æ²¡æœ‰è·¯å¾„ã€‚\n");
         
   if(me->is_fighting())
-    return notify_fail("ÄãÕıÃ¦×Å´ò¼Ü£¬Ã»¿Õ¼ÀÌ«¼«Í¼¡£\n");
+    return notify_fail("ä½ æ­£å¿™ç€æ‰“æ¶ï¼Œæ²¡ç©ºç¥­å¤ªæå›¾ã€‚\n");
   if( (int)me->query("mana") < 500 )
-     return notify_fail("ÄãµÄ·¨Á¦²»ÄÜ¿ØÖÆÌ«¼«Í¼¡£\n");
+     return notify_fail("ä½ çš„æ³•åŠ›ä¸èƒ½æ§åˆ¶å¤ªæå›¾ã€‚\n");
   if( (int)me->query("sen") < 200 )
-     return notify_fail("ÄãµÄ¾«Éñ²»×ã£¬ºÜÄÑ¼İÔ¦Ì«¼«Í¼¡£\n");
+     return notify_fail("ä½ çš„ç²¾ç¥ä¸è¶³ï¼Œå¾ˆéš¾é©¾é©­å¤ªæå›¾ã€‚\n");
 
-  message_vision(HIC"\n$NÎ¢Î¢Ò»Ğ¦£¬ÊÖÇáÇáÒ»¶¶£¬Õ¹¿ªÁËÌ«¼«Í¼¡£\n"+
-      "Äã¾õµÃÑÛÇ°Ò»»¨£¬·Â·ğ½øÈëÁËÊÀÍâÌÒÔ´¡£\n\n"NOR,me);
+  message_vision(HIC"\n$Nå¾®å¾®ä¸€ç¬‘ï¼Œæ‰‹è½»è½»ä¸€æŠ–ï¼Œå±•å¼€äº†å¤ªæå›¾ã€‚\n"+
+      "ä½ è§‰å¾—çœ¼å‰ä¸€èŠ±ï¼Œä»¿ä½›è¿›å…¥äº†ä¸–å¤–æ¡ƒæºã€‚\n\n"NOR,me);
 
   me->add("mana",-100);
   me->receive_damage("sen", 100);
@@ -110,13 +110,13 @@ int do_shou(string arg) {
   }
 
   if (!fabao->query("being_used")) {
-    write("Ì«¼«Í¼ºÃºÃµÄÊÕ×ÅÄØ¡£\n"); 
+    write("å¤ªæå›¾å¥½å¥½çš„æ”¶ç€å‘¢ã€‚\n"); 
     return 1;
   }
   
   
   if (!bridge=find_object(__DIR__"taijituroom")) {
-     write("ÄãÊÕÆğÌ«¼«Í¼¡£\n");
+     write("ä½ æ”¶èµ·å¤ªæå›¾ã€‚\n");
      fabao->delete("being_used");
      return 1;
   }
@@ -125,19 +125,19 @@ int do_shou(string arg) {
     if (env1=fabao->query("start"))
        env1->set("exits/"+env1->query("altered_dir"),env1->query("old_room"));
     bridge->explode();
-    write("ÄãÊÕÆğÌ«¼«Í¼¡£\n");
+    write("ä½ æ”¶èµ·å¤ªæå›¾ã€‚\n");
     fabao->delete("being_used");
     return 1;
   }
   if (bridge->is_clear()) {
     if (env1=fabao->query("start"))
        env1->set("exits/"+env1->query("altered_dir"),env1->query("old_room"));
-    write("ÄãÊÕÆğÌ«¼«Í¼¡£\n");
+    write("ä½ æ”¶èµ·å¤ªæå›¾ã€‚\n");
     fabao->delete("being_used");
     destruct(bridge);
     return 1;
   }
 
-  return notify_fail("Í¼ÖĞÓĞÈË£¬ÊÕ²»µÃ£¡\n");
+  return notify_fail("å›¾ä¸­æœ‰äººï¼Œæ”¶ä¸å¾—ï¼\n");
 }
   

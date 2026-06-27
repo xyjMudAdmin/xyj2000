@@ -7,9 +7,9 @@ inherit F_VENDOR_SALE;
 void create()
 {
   reload("zhuzi_hefa_laotong");
-  set_name("º×·¢ÀÏÍ¯", ({"hefa laotong", "laotong"}));
+  set_name("é¹¤å‘è€ç«¥", ({"hefa laotong", "laotong"}));
   set("shop_id", ({"laotong"}));
-  set("gender", "ÄĞĞÔ");
+  set("gender", "ç”·æ€§");
   set("combat_exp", 5000);
   set("age", 60);
   set("per", 34);

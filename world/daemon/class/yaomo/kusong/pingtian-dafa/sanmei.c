@@ -18,25 +18,25 @@ int cast(object me, object target)
         ||   !target->is_character()
         ||   target->is_corpse()
         ||   target==me)
-                return notify_fail("ÄãÒª¶ÔË­ÅçÈýÎ¶Õæ»ð£¿\n");
+                return notify_fail("ä½ è¦å¯¹è°å–·ä¸‰å‘³çœŸç«ï¼Ÿ\n");
 
         if((int)me->query_skill("pingtian-dafa", 1) < 30 )
-                return notify_fail("ÄãµÄÆ½Ìì´ó·¨»ðºò²»¹»£¬ÄÄÀïÅçµÃ³öÕæ»ð£¡\n");
+                return notify_fail("ä½ çš„å¹³å¤©å¤§æ³•ç«å€™ä¸å¤Ÿï¼Œå“ªé‡Œå–·å¾—å‡ºçœŸç«ï¼\n");
 
         if((int)me->query("mana") < 25+(int)me->query("mana_factor") )
-                return notify_fail("ÄãµÄ·¨Á¦²»¹»£¬Åç³öµÄÕæ»ð¿ÖÅÂÃ»ÓÐÊ²Ã´ÓÃ£¡\n");
+                return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿï¼Œå–·å‡ºçš„çœŸç«ææ€•æ²¡æœ‰ä»€ä¹ˆç”¨ï¼\n");
 
         if((int)me->query("force") < 100 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬ÎÞ·¨½«Õæ»ðÅç³ö¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼Œæ— æ³•å°†çœŸç«å–·å‡ºã€‚\n");
 
         if((int)me->query("sen") < 10 )
-                return notify_fail("ÄãÏÖÔÚÉñÖÇ²»Çå£¬±ð°Ñ×Ô¼ºÉÕÉËÁË£¡\n");
+                return notify_fail("ä½ çŽ°åœ¨ç¥žæ™ºä¸æ¸…ï¼Œåˆ«æŠŠè‡ªå·±çƒ§ä¼¤äº†ï¼\n");
 
 	me->add("mana", -25-2*(int)me->query("mana_factor"));
 	me->receive_damage("sen", 50);
 
 	if( random(me->query("max_mana")) < 50 ) {
-		message_vision(HIM"$N¿ÚÖÐÄîÄîÓÐ´Ê¡£¡£¡£µ«Ê²Ã´Ò²Ã»ÓÐ·¢Éú£¡\n"NOR,me);
+		message_vision(HIM"$Nå£ä¸­å¿µå¿µæœ‰è¯ã€‚ã€‚ã€‚ä½†ä»€ä¹ˆä¹Ÿæ²¡æœ‰å‘ç”Ÿï¼\n"NOR,me);
 		return 1;
 	}
 	
@@ -53,15 +53,15 @@ int cast(object me, object target)
 			//damage adjustment
 		"qi", 		
 			//damage type: could be "qi"/"kee", "shen"/"sen", ...default "both"
-HIC "$NÉìÊÖÔÚ±Ç×ÓÉÏÔÒÁËÁ½£¬¶ÙÊ±ÏÊÑªÖ±Ã°£¬Í»È»ºì³È»ÆÈýµÀ»ðÑæºô£¡µØÒ»ÉùÏò$n¾íÈ¥£¡\n" NOR,
+HIC "$Nä¼¸æ‰‹åœ¨é¼»å­ä¸Šç ¸äº†ä¸¤ï¼Œé¡¿æ—¶é²œè¡€ç›´å†’ï¼Œçªç„¶çº¢æ©™é»„ä¸‰é“ç«ç„°å‘¼ï¼åœ°ä¸€å£°å‘$nå·åŽ»ï¼\n" NOR,
 			//initial message
-HIC "½á¹û$n±»ÉÕµÃ½¹Í·ÀÃ¶î£¡\n" NOR,
+HIC "ç»“æžœ$nè¢«çƒ§å¾—ç„¦å¤´çƒ‚é¢ï¼\n" NOR,
 			//success message
-HIC"\n½á¹û±»$n¶ã¿ªÁË¡£\n"NOR,
+HIC"\nç»“æžœè¢«$nèº²å¼€äº†ã€‚\n"NOR,
 			//fail message
-HIC "½á¹û»ðÑæ±»$nÒÔ·¨Á¦Ò»±Æ£¬·´Ïò$N»Ø¾í¶øÈ¥£¡\n" NOR,
+HIC "ç»“æžœç«ç„°è¢«$nä»¥æ³•åŠ›ä¸€é€¼ï¼Œåå‘$Nå›žå·è€ŒåŽ»ï¼\n" NOR,
 			//backfire initial message
-HIR"\n½á¹û$n¶ã±Ü²»¼°£¬±»ÉÕµÃ½¹Í·ÀÃ¶î£¡\n" NOR,
+HIR"\nç»“æžœ$nèº²é¿ä¸åŠï¼Œè¢«çƒ§å¾—ç„¦å¤´çƒ‚é¢ï¼\n" NOR,
 			//backfire hit message. note here $N and $n!!!
 	);
 

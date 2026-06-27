@@ -5,13 +5,13 @@ inherit SURCOAT;
 
 void create()
 {
-  set_name("ÅûÌº", ({ "pi tan", "pitan", "tan" }) );
+  set_name("æŠ«æ¯¯", ({ "pi tan", "pitan", "tan" }) );
   set_weight(800);
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("unit", "¿é");
-    set("long", "Ò»¿é²¼ÅûÌº£¬¿ÉÒÔÅûÔÚÉíÉÏ¡£\n");
+    set("unit", "å—");
+    set("long", "ä¸€å—å¸ƒæŠ«æ¯¯ï¼Œå¯ä»¥æŠ«åœ¨èº«ä¸Šã€‚\n");
     set("value", 130);
     set("material", "cloth");
     set("armor_prop/armor", 1);

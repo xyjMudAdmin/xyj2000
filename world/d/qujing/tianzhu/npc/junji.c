@@ -5,8 +5,8 @@ inherit NPC;
 
 void create()
 {
-  set_name("¾ü»ú´ó³¼", ({"jun ji", "ji"}));
-  set("gender", "ÄÐÐÔ");
+  set_name("å†›æœºå¤§è‡£", ({"jun ji", "ji"}));
+  set("gender", "ç”·æ€§");
   set("age", 40);
   set("combat_exp", 20000);
   set_skill("parry", 60);

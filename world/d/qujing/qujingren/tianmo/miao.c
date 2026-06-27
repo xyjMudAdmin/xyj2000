@@ -7,15 +7,15 @@ void dis_laoren();
 
 void create ()
 {
-  set ("short", "ÌìÄ§Ãí");
+  set ("short", "å¤©é­”åº™");
   set ("long", @LONG
-Ğ¡Ğ¡µÄµØ·½È´¹©·î×ÅÒ»×ğºÜ´óµÄÉñÏñ,×îÉÏ·½µÄÌõ·ùÉÏĞ´×Å¡°ÌìÄ§Ãí¡±.
-ÕâÌìÄ§²»ÖªµÀÊÇºÎ·½ÉñÊ¥£¬Ğ¡ÃíÀïÏã»ğ²»¶Ï£¬¹ÒÂúÁË¡°ÓĞÇó±ØÓ¦¡±£¬
-¡±³¤Ãü°ÙËê¡°.¿´À´»¹ÊÇºÜÁéÑéµÄ£¬ÈÃÄãÈÌ²»×¡Ò²Ïëßµ°İ¡£
+å°å°çš„åœ°æ–¹å´ä¾›å¥‰ç€ä¸€å°Šå¾ˆå¤§çš„ç¥åƒ,æœ€ä¸Šæ–¹çš„æ¡å¹…ä¸Šå†™ç€â€œå¤©é­”åº™â€.
+è¿™å¤©é­”ä¸çŸ¥é“æ˜¯ä½•æ–¹ç¥åœ£ï¼Œå°åº™é‡Œé¦™ç«ä¸æ–­ï¼ŒæŒ‚æ»¡äº†â€œæœ‰æ±‚å¿…åº”â€ï¼Œ
+â€é•¿å‘½ç™¾å²â€œ.çœ‹æ¥è¿˜æ˜¯å¾ˆçµéªŒçš„ï¼Œè®©ä½ å¿ä¸ä½ä¹Ÿæƒ³å©æ‹œã€‚
 LONG);
 
   set("exits", ([ /* sizeof() == 4 */
-  "south" : __DIR__"out",	//ÏÖÔÚÃ»ÓĞÉè¶¨³ö¿Ú£¬²»ÖªµÀÒª·ÅÔÚÄÄÀïºÃ
+  "south" : __DIR__"out",	//ç°åœ¨æ²¡æœ‰è®¾å®šå‡ºå£ï¼Œä¸çŸ¥é“è¦æ”¾åœ¨å“ªé‡Œå¥½
   "north" : __DIR__"zoulang1",
 ]));
 
@@ -35,7 +35,7 @@ int do_bai()
     me=this_object();
     who=this_player();
    
-    message_vision("$N¸©Éíò¯³ÏµÄßµ°İÆğÀ´£¬¿ÚÖĞÄîÄîÓĞ´Ê£¬³¤..Ãü..°Ù..Ëê\n",who);
+    message_vision("$Nä¿¯èº«è™”è¯šçš„å©æ‹œèµ·æ¥ï¼Œå£ä¸­å¿µå¿µæœ‰è¯ï¼Œé•¿..å‘½..ç™¾..å²\n",who);
   
     if (OBSTACLE_D->query("cated_qjr"))
 	{
@@ -58,7 +58,7 @@ void append_laoren()
 
 	laoren=new("/d/qujing/qujingren/tianmo/npc/laoren");
 	laoren->move(me);
-     	message_vision("$NÏÆ¿ªÄ»²¼×ßÁË³öÀ´\n",laoren);
+     	message_vision("$Næ€å¼€å¹•å¸ƒèµ°äº†å‡ºæ¥\n",laoren);
 	
 	remove_call_out("dis_laoren");
 	call_out("dis_laoren",60);
@@ -71,7 +71,7 @@ void dis_laoren()
 
 	if (laoren=present("zhenglong laoren",me))
 	   {
-     		message_vision("$N×ªÉí×ßÏòºóÌÃ\n",laoren);
+     		message_vision("$Nè½¬èº«èµ°å‘åå ‚\n",laoren);
 		destruct(laoren);
 	   }	
 }
@@ -80,11 +80,11 @@ int valid_leave (object who, string dir)
 {
   if (dir=="south")return ::valid_leave(who,dir); 
   if (!OBSTACLE_D->query("cated_id"))
-	return notify_fail("Ëæ±ã´³Èë¿ÖÅÂ²»Ì«ºÃ°É\n");
+	return notify_fail("éšä¾¿é—¯å…¥ææ€•ä¸å¤ªå¥½å§\n");
   if (who->query("obstacle/qujing")=="ren")
-    {	//»¤ËÍÈËĞèÒª¹ıÒ»¶¨µÄÊ±¼ä²Å¿ÉÒÔ½øÈ¥ÈÃ×¥µÄÈËÓĞÊ±¼ä²¼ÖÃ
+    {	//æŠ¤é€äººéœ€è¦è¿‡ä¸€å®šçš„æ—¶é—´æ‰å¯ä»¥è¿›å»è®©æŠ“çš„äººæœ‰æ—¶é—´å¸ƒç½®
 	if (!OBSTACLE_D->query("open_door"))
-	  return notify_fail("ÏÖÔÚ»¹²»ÊÇ´³½øÈ¥µÄÊ±ºò\n");
+	  return notify_fail("ç°åœ¨è¿˜ä¸æ˜¯é—¯è¿›å»çš„æ—¶å€™\n");
     } 
 
   return ::valid_leave(who,dir);

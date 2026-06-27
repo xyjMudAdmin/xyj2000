@@ -5,10 +5,10 @@ inherit ITEM;
 
 void create()
 {
-  set_name("ÕôËÖ", ({"zheng su", "su"}));
+  set_name("è’¸é…¥", ({"zheng su", "su"}));
   set_weight(1500);
-  set("long", "Ò»¿é¹©¸øÈýÇåµÄÐÂÏÊÕôËÖ¡£\n");
-  set("unit", "¿é");
+  set("long", "ä¸€å—ä¾›ç»™ä¸‰æ¸…çš„æ–°é²œè’¸é…¥ã€‚\n");
+  set("unit", "å—");
   set("value", 140);
 }
 
@@ -44,9 +44,9 @@ int do_eat (string arg)
 
   who->set("food",who->max_food_capacity());
 
-  if (! where || where->query("short")!="ÈýÇåµî")
+  if (! where || where->query("short")!="ä¸‰æ¸…æ®¿")
   {
-    message_vision ("$N½«$n³ÔÁËÏÂÈ¥¡£\n",who,me);
+    message_vision ("$Nå°†$nåƒäº†ä¸‹åŽ»ã€‚\n",who,me);
     destruct(me);
     return 1;     
   }
@@ -54,7 +54,7 @@ int do_eat (string arg)
   if (! yuanshi1 || ! lingbao1 || ! taishang1)
   {
     where->daoshi_appear(who);
-    message_vision ("$N¼¢²»ÔñÊ³µØ½«$n³ÔÁËÏÂÈ¥¡£\n",who,me);
+    message_vision ("$Né¥¥ä¸æ‹©é£Ÿåœ°å°†$nåƒäº†ä¸‹åŽ»ã€‚\n",who,me);
     destruct(me);
     return 1;     
   }   
@@ -62,7 +62,7 @@ int do_eat (string arg)
   if (yuanshi2 || lingbao2 || taishang2)
   {
     where->daoshi_appear(who);
-    message_vision ("$NÀÇÍÌ»¢ÑÊµØ½«$n³ÔÁËÏÂÈ¥¡£\n",who,me);
+    message_vision ("$Nç‹¼åžè™Žå’½åœ°å°†$nåƒäº†ä¸‹åŽ»ã€‚\n",who,me);
     destruct(me);
     return 1;     
   }   
@@ -70,7 +70,7 @@ int do_eat (string arg)
   if (yuanshi3 || lingbao3 || taishang3)
   {
     where->daoshi_appear(who);
-    message_vision ("$N·ç¾í²ÐÔÆÒ»°ã½«$n³ÔÁËÏÂÈ¥¡£\n",who,me);
+    message_vision ("$Né£Žå·æ®‹äº‘ä¸€èˆ¬å°†$nåƒäº†ä¸‹åŽ»ã€‚\n",who,me);
     destruct(me);
     return 1;     
   }   
@@ -78,7 +78,7 @@ int do_eat (string arg)
   if (who!=yuanshi1 && who!=lingbao1 && who!=taishang1)
   {
     where->daoshi_appear(who);
-    message_vision ("$NàñàðÍÌÔæÒ»°ã½«$n³ÔÁËÏÂÈ¥¡£\n",who,me);
+    message_vision ("$Nå›«å›µåžæž£ä¸€èˆ¬å°†$nåƒäº†ä¸‹åŽ»ã€‚\n",who,me);
     destruct(me);
     return 1;     
   }   
@@ -86,14 +86,14 @@ int do_eat (string arg)
   if (who->query("combat_exp")<50000)
   {
     where->daoshi_appear(who);
-    message_vision ("$N¼±¼±Ã¦Ã¦µØ½«$n³ÔÁËÏÂÈ¥¡£\n",who,me);
+    message_vision ("$Næ€¥æ€¥å¿™å¿™åœ°å°†$nåƒäº†ä¸‹åŽ»ã€‚\n",who,me);
     destruct(me);
     return 1;     
   }   
   if (! who->query("obstacle/chechi"))
     who->set("obstacle/chechi","eaten");
   who->set_temp("obstacle/chechi","eaten");
-  message_vision ("$NÒ»±¾Õý¾­µØ½«$n³ÔÁËÏÂÈ¥¡£\n",who,me);
+  message_vision ("$Nä¸€æœ¬æ­£ç»åœ°å°†$nåƒäº†ä¸‹åŽ»ã€‚\n",who,me);
   where->daotong_appear(who);
   destruct(me);
   return 1;     

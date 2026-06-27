@@ -5,14 +5,14 @@ inherit HEAD;
 
 void create()
 {
-        set_name("¸Ö¿ø", ({"gang kui", "gangkui", "kui", "helmet", "head" }) );
+        set_name("é’¢ç›”", ({"gang kui", "gangkui", "kui", "helmet", "head" }) );
         set_weight(1500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¶¥");
+                set("unit", "é¡¶");
                 set("material", "steel");
-		set("long", "Ò»¶¥½áÊµµÄ¸Ö¿ø¡£\n");
+		set("long", "ä¸€é¡¶ç»“å®žçš„é’¢ç›”ã€‚\n");
 		set("value", 1000);
                 set("armor_prop/armor", 5);
         }

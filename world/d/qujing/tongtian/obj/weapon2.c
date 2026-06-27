@@ -5,9 +5,9 @@ inherit WHIP;
 
 void create()
 {
-  set_name("÷©Î²±Þ", ({ "manwei bian", "bian", "whip" }) );
+  set_name("é³—å°¾éž­", ({ "manwei bian", "bian", "whip" }) );
   init_whip(25);
-  set("unit", "¸ù");
+  set("unit", "æ ¹");
   set_weight(600);
   if( clonep() )
      set_default_object(__FILE__);

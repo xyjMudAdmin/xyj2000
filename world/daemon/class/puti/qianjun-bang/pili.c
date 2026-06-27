@@ -13,29 +13,29 @@ int perform(object me, object target)
         ||      !target->is_character()
         ||      target->is_corpse()
         ||      target==me)
-                return notify_fail("��Ҫ��˭ʩչ��һ�С��������򡹣�\n");
+                return notify_fail("你要对谁施展这一招「霹雳三打」？\n");
 
         if(!me->is_fighting())
-                return notify_fail("����������ֻ����ս����ʹ�ã�\n");
+                return notify_fail("「霹雳三打」只能在战斗中使用！\n");
 
         if((int)me->query("max_force") < 500 )
-                return notify_fail("�������������\n");
+                return notify_fail("你的内力不够！\n");
 
 	if((int)me->query("force") < 500 )
-		return notify_fail("����������㣡\n");
+		return notify_fail("你的内力不足！\n");
 
         if((int)me->query("sen") < 500 )
-                return notify_fail("��ľ����㣬û����ʩ���⹦��\n");
+                return notify_fail("你的精神不足，没法子施用外功！\n");
 
         if((int)me->query_skill("qianjun-bang", 1) < 100)
-                return notify_fail("���ǧ�������𻹲�����ʹ����һ�л������ѣ�\n");
+                return notify_fail("你的千钧棒级别还不够，使用这一招会有困难！\n");
 
-  if (me->query_temp("fc_pfm_busy")) return notify_fail("�����õ�̫��̫�ľͲ����ˡ�\n");
+  if (me->query_temp("fc_pfm_busy")) return notify_fail("绝招用的太多太滥就不灵了。\n");
 
         me->delete("env/brief_message");
 	target->delete("env/brief_message");
 
-message_vision(HIC"\n$N���㾫������һת��������������$n���������У�\n"NOR,me,target);
+message_vision(HIC"\n$N运足精神，身形一转，霹雳间连续向$n攻出了三招！\n"NOR,me,target);
 
         me->set_temp("QJB_perform", 4);
         COMBAT_D->do_attack(me, target, me->query_temp("weapon"));

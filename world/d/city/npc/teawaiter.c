@@ -7,9 +7,9 @@ inherit F_VENDOR_SALE;
 void create()
 {
 	reload("teawaiter");
-       set_name("²è²©Ê¿", ({"cha boshi","waiter"}));
+       set_name("èŒ¶åšå£«", ({"cha boshi","waiter"}));
     set("shop_id", ({"cha boshi", "waiter"}));
-       set("gender", "ÄĞĞÔ");
+       set("gender", "ç”·æ€§");
        set("class", "scholar");
         set("combat_exp", 1000);
        set("age", 26);

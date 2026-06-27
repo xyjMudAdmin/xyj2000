@@ -1,5 +1,5 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// wujiang.c Îä½«
+// wujiang.c æ­¦å°†
 
 inherit NPC;
 
@@ -7,11 +7,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÊØ³ÇÎä½«", ({ "wu jiang", "wu", "jiang" }));
-        set("gender", "ÄĞĞÔ");
+        set_name("å®ˆåŸæ­¦å°†", ({ "wu jiang", "wu", "jiang" }));
+        set("gender", "ç”·æ€§");
         set("age", random(10) + 30);
         set("str", 25);
-        set("long", "ËûÍş·çÁİÁİ£¬É±ÆøÌÚÌÚ£¬ËäÈ»Ö»ÊÇ¸öÊØ³ÇÃÅµÄĞ¡¹Ù£¬µ±ÄêÒ²ÊÇ´ò¹ı´óÕÌµÄ¡£\n");
+        set("long", "ä»–å¨é£å‡›å‡›ï¼Œæ€æ°”è…¾è…¾ï¼Œè™½ç„¶åªæ˜¯ä¸ªå®ˆåŸé—¨çš„å°å®˜ï¼Œå½“å¹´ä¹Ÿæ˜¯æ‰“è¿‡å¤§ä»—çš„ã€‚\n");
         set("combat_exp", 80000);
         set("attitude", "peaceful");
 
@@ -46,7 +46,7 @@ void init()
 }
 int accept_fight(object me)
 {
-        message_vision("ÊØ³ÇÎä½«¶Ô$N°ÑÑÛÒ»µÉ£¬ºÈµÀ£ºß¾£¬´óµ¨£¬»¹²»ÍËÏÂ£¡\n\n", me);
+        message_vision("å®ˆåŸæ­¦å°†å¯¹$NæŠŠçœ¼ä¸€çªï¼Œå–é“ï¼šå‘”ï¼Œå¤§èƒ†ï¼Œè¿˜ä¸é€€ä¸‹ï¼\n\n", me);
         return 0;
 }
 

@@ -5,16 +5,16 @@ inherit ITEM;
 
 void create()
 {
-  set_name("ÎÚ¼¦¾«", ({"wuji jing", "jing"}));
+  set_name("ä¹Œé¸¡ç²¾", ({"wuji jing", "jing"}));
   set_weight(100);
   if( clonep() )
     set_default_object(__FILE__);
   else {
     set("no_sell", 1);
     set("no_drop", 1);
-    set("unit", "Ð¡Æ¿");
-    set("long", "Ò»Ð¡Æ¿ÎÚ¼¦¾«£¬¾ÝËµ·þÓÃ(drink)¿ÉÒÔÌáÉñ£¬"+
-                "Ê©ÓÃËûÈË(apply)¿ÉÒÔ»¹»ê¡£\n");
+    set("unit", "å°ç“¶");
+    set("long", "ä¸€å°ç“¶ä¹Œé¸¡ç²¾ï¼Œæ®è¯´æœç”¨(drink)å¯ä»¥æç¥žï¼Œ"+
+                "æ–½ç”¨ä»–äºº(apply)å¯ä»¥è¿˜é­‚ã€‚\n");
   }
   set("is_monitored",1);
   setup();
@@ -22,7 +22,7 @@ void create()
 
 void destruct_me(object where, object me)
 {
-  message_vision("$nµôÔÚµØÉÏ£¬ËéÁË¡£\n",where,me);
+  message_vision("$næŽ‰åœ¨åœ°ä¸Šï¼Œç¢Žäº†ã€‚\n",where,me);
   destruct (me);
 }
 
@@ -61,8 +61,8 @@ int do_drink (string arg)
   if (ob != me)
     return 0;
 
-  message_vision ("$NÄÃÆðÎÚ¼¦¾«ºÀÒû¶øÏÂ£¬Ë³ÊÖ½«¿ÕÆ¿Ò»ÈÓ¡£\n",who);
-  message_vision ("¶ÙÊ±$NÖ»¾õµÃÒ»¹É¾«ÆøÈëËèÆßÇÏÉúÑÌ£¬Ç¬À¤µ¹ÖÃ£¡\n",who);
+  message_vision ("$Næ‹¿èµ·ä¹Œé¸¡ç²¾è±ªé¥®è€Œä¸‹ï¼Œé¡ºæ‰‹å°†ç©ºç“¶ä¸€æ‰”ã€‚\n",who);
+  message_vision ("é¡¿æ—¶$Nåªè§‰å¾—ä¸€è‚¡ç²¾æ°”å…¥é«“ä¸ƒçªç”ŸçƒŸï¼Œä¹¾å¤å€’ç½®ï¼\n",who);
 
   who->unconcious();
   destruct (me);
@@ -79,29 +79,29 @@ int do_apply (string arg)
   if (! arg ||
      ! (ob = present(arg, where)))
   {
-    return notify_fail("ÄãÒª½«ÎÚ¼¦¾«È÷ÔÚÊ²Ã´ÉÏÃæ£¿\n");
+    return notify_fail("ä½ è¦å°†ä¹Œé¸¡ç²¾æ´’åœ¨ä»€ä¹ˆä¸Šé¢ï¼Ÿ\n");
   }
   if (ob == who)
   {
-    message_vision ("$NÄÃÆðÎÚ¼¦¾«Íù×Ô¼ºÉíÉÏÒ»È÷£¬Ë³ÊÖ½«¿ÕÆ¿Ò»ÈÓ¡£\n",who);
-    message_vision ("¶ÙÊ±$NÖ»¾õµÃÒ»¹É¾«ÆøÈëËèÆßÇÏÉúÑÌ£¬Ç¬À¤µ¹ÖÃ£¡\n",who);
+    message_vision ("$Næ‹¿èµ·ä¹Œé¸¡ç²¾å¾€è‡ªå·±èº«ä¸Šä¸€æ´’ï¼Œé¡ºæ‰‹å°†ç©ºç“¶ä¸€æ‰”ã€‚\n",who);
+    message_vision ("é¡¿æ—¶$Nåªè§‰å¾—ä¸€è‚¡ç²¾æ°”å…¥é«“ä¸ƒçªç”ŸçƒŸï¼Œä¹¾å¤å€’ç½®ï¼\n",who);
 
     destruct (me);
     who->unconcious();
   }
-  else if (ob->query("name") != "¹úÍõÒÅÌå" ||
+  else if (ob->query("name") != "å›½çŽ‹é—ä½“" ||
            who->query("obstacle/wuji") == "done")
   {
-    message_vision ("$NÄÃÆðÎÚ¼¦¾«Íù$nÉÏÒ»È÷£¬Ë³ÊÖ½«¿ÕÆ¿Ò»ÈÓ¡£\n",who,ob);
-    message_vision ("¶ÙÊ±"+ob->name()+"»Î¶¯ÁËÒ»ÏÂ¡£\n",who);
+    message_vision ("$Næ‹¿èµ·ä¹Œé¸¡ç²¾å¾€$nä¸Šä¸€æ´’ï¼Œé¡ºæ‰‹å°†ç©ºç“¶ä¸€æ‰”ã€‚\n",who,ob);
+    message_vision ("é¡¿æ—¶"+ob->name()+"æ™ƒåŠ¨äº†ä¸€ä¸‹ã€‚\n",who);
     destruct (me);
   }
   else
   {
     object king = new ("/d/qujing/wuji/npc/kingreal");
-    message_vision ("$Nêþ¿ª$nµÄ¿Ú´½£¬ÄÃÆðÎÚ¼¦¾«Ö»ÊÇ¹àÏÂ£¬"+
-                    "Ò»¿ÚÆø´µÈëÑÊºí¡£\n",who,ob);
-    message_vision ("ÎÚ¼¦¾«¶ÈÏÂÖØÂ¥£¬×ªÃ÷ÌÃ£¬¾¶ÖÁµ¤Ìï£¬¶ÙÊ±¹úÍõ¶¯ÁËÒ»ÏÂ¡£\n",
+    message_vision ("$NæŽ°å¼€$nçš„å£å”‡ï¼Œæ‹¿èµ·ä¹Œé¸¡ç²¾åªæ˜¯çŒä¸‹ï¼Œ"+
+                    "ä¸€å£æ°”å¹å…¥å’½å–‰ã€‚\n",who,ob);
+    message_vision ("ä¹Œé¸¡ç²¾åº¦ä¸‹é‡æ¥¼ï¼Œè½¬æ˜Žå ‚ï¼Œå¾„è‡³ä¸¹ç”°ï¼Œé¡¿æ—¶å›½çŽ‹åŠ¨äº†ä¸€ä¸‹ã€‚\n",
                     who);
 
     king->move(where);
@@ -115,7 +115,7 @@ int do_apply (string arg)
 
 void king_wake (object king, object who)
 {
-  message_vision ("\nºôµÄÒ»ÉùÏìÁÁ£¬¹úÍõÆø¾ÛÉñ¹é£¬·­Éí×øÆð¡£\n",who);  
+  message_vision ("\nå‘¼çš„ä¸€å£°å“äº®ï¼Œå›½çŽ‹æ°”èšç¥žå½’ï¼Œç¿»èº«åèµ·ã€‚\n",who);  
 }
 
 void follow_player (object king, object who, object me)
@@ -124,8 +124,8 @@ void follow_player (object king, object who, object me)
     return;
   if (environment(who) != environment(king))
     return;
-  message_vision ("\n¹úÍõ¶Ô$N°ÝµÀ£º¡°×òÒ¹¹í»ê°ÝÚË£¬½ñ³¯Ïþ·µÑôÉñ£¡¡±\n",who);  
-  message_vision ("Ëµ°Õ¹úÍõÓÖÊÇÒ»°Ý¡£\n",who);  
+  message_vision ("\nå›½çŽ‹å¯¹$Næ‹œé“ï¼šâ€œæ˜¨å¤œé¬¼é­‚æ‹œè°’ï¼Œä»Šæœæ™“è¿”é˜³ç¥žï¼â€\n",who);  
+  message_vision ("è¯´ç½¢å›½çŽ‹åˆæ˜¯ä¸€æ‹œã€‚\n",who);  
 
   if (who->query("obstacle/wuji") == "done")
     return;

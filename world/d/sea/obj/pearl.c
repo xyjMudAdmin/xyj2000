@@ -5,18 +5,18 @@ inherit THROWING;
 
 void create()
 {
-        set_name("ÕäÖé", ({"pearl"}));
+        set_name("çç ", ({"pearl"}));
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long",    "Ò»¿Å»ëÔ²µÄÕäÖé¡£\n");
-                set("unit", "¿Å");
-                set("base_unit", "¿Å");
+                set("long",    "ä¸€é¢—æµ‘åœ†çš„çç ã€‚\n");
+                set("unit", "é¢—");
+                set("base_unit", "é¢—");
                 set("base_weight", 1);
                 set("base_value", 1000);
                 set("value", 1000);
 		set("weapon_prop/personality",1);
-		set("wield_msg","$NÇáÇá½«ÕäÖéÄóÔÚÖ¸·ìÖĞ¡£\n");
+		set("wield_msg","$Nè½»è½»å°†çç æåœ¨æŒ‡ç¼ä¸­ã€‚\n");
         }
         set_amount(1);
         init_throwing(20);

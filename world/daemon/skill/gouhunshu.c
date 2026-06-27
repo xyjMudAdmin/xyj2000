@@ -1,5 +1,5 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// ¹´»êÊõ
+// å‹¾é­‚æœ¯
 
 inherit SKILL;
 
@@ -11,7 +11,7 @@ int valid_learn(object me)
         ||      (int)me->query_skill("spells", 1) <=
 (int)me->query_skill("gouhunshu", 1) )
                 return
-notify_fail("ÄãµÄ·¨ÊõĞŞÎª»¹²»¹»¸ßÉî£¬ÎŞ·¨Ñ§Ï°¹´»êÊõ£®\n");
+notify_fail("ä½ çš„æ³•æœ¯ä¿®ä¸ºè¿˜ä¸å¤Ÿé«˜æ·±ï¼Œæ— æ³•å­¦ä¹ å‹¾é­‚æœ¯ï¼\n");
         return 1;
 }
 

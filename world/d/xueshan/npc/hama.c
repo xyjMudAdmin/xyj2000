@@ -3,19 +3,19 @@ inherit NPC;
 
 void create()
 {
-set_name("Öì¾¦±ùó¸", ({"bing chan", "hama"}));
-set("race", "Ò°ÊŞ");
+set_name("æœ±ç›å†°èŸ¾", ({"bing chan", "hama"}));
+set("race", "é‡å…½");
 set("age", 33);
 
 set("long", @LONG
-Ò»Ö»´óó¸òÜ£¬Í¨ÌåÑ©°×£¬ÑÛÖéÈ´ÑªÒ²°ãºì£¬Ä£ÑùÉõÊÇ¿É°®£¬È´Ò²²»¼ûÓĞºÎÕäÒìÖ®´¦¡£
+ä¸€åªå¤§èŸ¾èœï¼Œé€šä½“é›ªç™½ï¼Œçœ¼ç å´è¡€ä¹Ÿèˆ¬çº¢ï¼Œæ¨¡æ ·ç”šæ˜¯å¯çˆ±ï¼Œå´ä¹Ÿä¸è§æœ‰ä½•çå¼‚ä¹‹å¤„ã€‚
 LONG);
 
 set("attitude", "aggressive");
 set("class", "yaomo");
 set("combat_exp", (random(5)*100000+50000));
 set("daoxing", (random(5)*100000+50000));
-set("limbs", ({ "Í·²¿", "ÉíÌå", "Ç°½Å", "áá½Å", "Î²°Í" }) );
+set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å‰è„š", "å¾Œè„š", "å°¾å·´" }) );
 set("verbs", ({ "bite"}));
 
 set("kee", 800);
@@ -66,7 +66,7 @@ void unconcious ()
   ob->set("cook/type","hama");
   ob->set("cook/value",5);
   ob->move(where);
-  message_vision ("\n$NËõ³ÉÒ»ÍÅ£¬²»ÔÙ¶¯ÁË¡£\n",me);
+  message_vision ("\n$Nç¼©æˆä¸€å›¢ï¼Œä¸å†åŠ¨äº†ã€‚\n",me);
   destruct (me);
 }
 

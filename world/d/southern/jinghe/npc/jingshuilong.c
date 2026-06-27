@@ -5,14 +5,14 @@ inherit NPC;
 void create()
 {
 
-        set_name("ãşË®ÁúÍõ", ({ "jingshui longwang", "long wang", "long", "dragon" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("æ³¾æ°´é¾™ç‹", ({ "jingshui longwang", "long wang", "long", "dragon" }) );
+        set("gender", "ç”·æ€§" );
 	set("long",
-		"ãşË®ºÓÖ®ÁúÍõ£¬½ñÎ¥ÁËÓñµÛÖ¼Òâ£¬ĞĞÓê²îÁËÊ±³½£¬ÎªÌÆÍõ×ùÏÂ\n"
-		"Ø©ÏàÎºÕ÷ËùÕ¶£¬Èç½ñÒÑÊÇ¹Â»êÒ°¹í¡£\n"
+		"æ³¾æ°´æ²³ä¹‹é¾™ç‹ï¼Œä»Šè¿äº†ç‰å¸æ—¨æ„ï¼Œè¡Œé›¨å·®äº†æ—¶è¾°ï¼Œä¸ºå”ç‹åº§ä¸‹\n"
+		"ä¸ç›¸é­å¾æ‰€æ–©ï¼Œå¦‚ä»Šå·²æ˜¯å­¤é­‚é‡é¬¼ã€‚\n"
          	);
 	set("age",55);
-	set("title", "¹í»ê");
+	set("title", "é¬¼é­‚");
 	set("class", "dragon");
 	set("attitude", "heroism");
 	set("max_kee",2100);

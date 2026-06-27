@@ -3,10 +3,10 @@ inherit NPC;
 
 void create()
 {
-       	set_name("½ð¸Õ", ({"jin gang", "gang"}));
-       	set("gender", "ÄÐÐÔ");
+       	set_name("é‡‘åˆš", ({"jin gang", "gang"}));
+       	set("gender", "ç”·æ€§");
        	set("age", 40);
-	set("title", "ÃØ¼£Ö÷");
+	set("title", "ç§˜è¿¹ä¸»");
         set("class", "fighter");
        	set("attitude", "friendly");
         set("per", 30);

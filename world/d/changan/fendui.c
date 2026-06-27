@@ -4,12 +4,12 @@ inherit ROOM;
 
 void create()
 {
-  set ("short", "�ķض�");
+  set ("short", "荒坟堆");
   set ("long", @LONG
 
-�����ǳ������ϵ�һƬ�ĵأ���Χ��������ض��˺ü�ʮ����ͷ��
-��Щ��ǰ����Щ���룬��ֽ�ĺۼ����Ĵ����������������߶���ż
-���м�ֻѰʳ��Ұ���ܹ���
+这里是长安城南的一片荒地，周围密密麻麻地堆了好几十个坟头。
+有些坟前还有些祭祀，烧纸的痕迹。四处荒凉，很少有人走动，偶
+而有几只寻食的野狗跑过。
 LONG);
   set("mai_corpse_able", 1);
   set("outdoors", __DIR__"");

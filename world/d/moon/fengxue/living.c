@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "·ãÑ©´óµî");
+  set ("short", "æ«é›ªå¤§æ®¿");
   set ("long", @LONG
 
-·ãÑ©¹¬µÄ´óµî¡£(rules)(schedules)
+æ«é›ªå®«çš„å¤§æ®¿ã€‚(rules)(schedules)
 LONG);
 
   set("item_desc", ([ /* sizeof() == 2 */
@@ -20,12 +20,12 @@ the table of contents the 1st                the acting chief
 the contents          the 3rd                the acting chief 
 proofreading          the 5th                proof readers 
 publishing            the 7th                techniqcal supports 
-Ïê¼û£ºhttp://www.qucis.queensu.ca/home/guo/fxtd/schedule.html
+è¯¦è§ï¼šhttp://www.qucis.queensu.ca/home/guo/fxtd/schedule.html
 
 LONG,
   "rules" : @LONG
 
-Ïê¼û£ºhttp://www.qucis.queensu.ca/home/guo/fxtd/ruleC.html
+è¯¦è§ï¼šhttp://www.qucis.queensu.ca/home/guo/fxtd/ruleC.html
 
 LONG,
 ]));

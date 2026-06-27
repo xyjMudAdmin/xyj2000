@@ -3,10 +3,10 @@ inherit NPC;
 
 void create()
 {
-       set_name("СϺ��", ({"kid"}));
+       set_name("小虾米", ({"kid"}));
 
-set("long","һ��СϺ�ף��ں�С�з�森\n");
-       set("gender", "����");
+set("long","一个小虾米，在和小螃蟹玩．\n");
+       set("gender", "男性");
        set("age", 6);
 	set("per", 10);
        set("attitude", "peaceful");

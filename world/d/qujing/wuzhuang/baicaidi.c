@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create ()
 {
-	set ("short", "°×²ËµØ");
+	set ("short", "ç™½èœåœ°");
 	set ("long", @LONG
 
-Îå×¯¹Û×öÊÂµÄ¶à£¬³Ô·¹µÄÒ²²»ÉÙ£¬ËùÒÔ¹ÛÄÚ¹ÍÁË¸½½üµÄÒ»Ğ©Å©¼Ò
-À´ÖÖÊß²Ë¹Ï¹û¡£ÕâÀïÊÇ°×²ËµØ¡£
+äº”åº„è§‚åšäº‹çš„å¤šï¼Œåƒé¥­çš„ä¹Ÿä¸å°‘ï¼Œæ‰€ä»¥è§‚å†…é›‡äº†é™„è¿‘çš„ä¸€äº›å†œå®¶
+æ¥ç§è”¬èœç“œæœã€‚è¿™é‡Œæ˜¯ç™½èœåœ°ã€‚
 LONG);
 
 	set("exits", 
@@ -24,7 +24,7 @@ LONG);
 		"/d/obj/food/xbc" : 2,
 	]));
 
-	//create_door("south", "Àæ»¨ÃÅ", "north", DOOR_CLOSED);
+	//create_door("south", "æ¢¨èŠ±é—¨", "north", DOOR_CLOSED);
 	set("outdoors", "wuzhuang");
 
 	setup();

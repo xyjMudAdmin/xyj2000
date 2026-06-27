@@ -10,10 +10,10 @@ void create()
 {
     	object ob1, ob2;
 	
-	string *order = ({"¼×", "ÒÒ", "±û", "¶¡", "Îì", "¼º", "¸ý", "ÐÁ", "ÈÉ", "¹ï"});
+	string *order = ({"ç”²", "ä¹™", "ä¸™", "ä¸", "æˆŠ", "å·±", "åºš", "è¾›", "å£¬", "ç™¸"});
 
-	set_name("Ìì" + (order[random(10)]) + "Éñ±ø", ({ "heaven soldier", "soldier" }) );
-	set("long", "ÕâÊÇÒ»Î»À´×ÔÌì½çµÄÊØ»¤Éñ£¬×¨ÃÅµ£ÈÎ»¤·¨Ö®Ôð¡£\n");
+	set_name("å¤©" + (order[random(10)]) + "ç¥žå…µ", ({ "heaven soldier", "soldier" }) );
+	set("long", "è¿™æ˜¯ä¸€ä½æ¥è‡ªå¤©ç•Œçš„å®ˆæŠ¤ç¥žï¼Œä¸“é—¨æ‹…ä»»æŠ¤æ³•ä¹‹è´£ã€‚\n");
 	set("attitude", "friendly");
 
 	set("max_gin", 1000);
@@ -34,7 +34,7 @@ void create()
 /*
 	set("chat_chance", 15);
 	set("chat_msg_combat", ({
-		name() + "ºÈµÀ£ºÄõÕÏ£¡¾¹¸Ò¶Ô£¿\n"
+		name() + "å–é“ï¼šå­½éšœï¼ç«Ÿæ•¢å¯¹ï¼Ÿ\n"
 	}) );
 */
 	set_skill("sword", 100);
@@ -45,10 +45,10 @@ void create()
 
 	ob1=carry_object("/d/obj/armor/tianjia");
 	ob1->wear();
-	ob1->set("no_sell", "ÕÆ¹ñµÄî©ÁËÒ»ÑÛµÀ£ºÕâ¶«Î÷Ò»¿´¾ÍÊÇÁÓµÈÆ·£¬²»Òª£¡²»Òª£¡\n");
+	ob1->set("no_sell", "æŽŒæŸœçš„çžŸäº†ä¸€çœ¼é“ï¼šè¿™ä¸œè¥¿ä¸€çœ‹å°±æ˜¯åŠ£ç­‰å“ï¼Œä¸è¦ï¼ä¸è¦ï¼\n");
 	ob2=carry_object(__DIR__"obj/golden_sword");
 	ob2->wield();
-	ob2->set("no_sell", "ÕÆ¹ñµÄî©ÁËÒ»ÑÛµÀ£ºÕâ¶«Î÷Ò»¿´¾ÍÊÇÁÓµÈÆ·£¬²»Òª£¡²»Òª£¡\n");
+	ob2->set("no_sell", "æŽŒæŸœçš„çžŸäº†ä¸€çœ¼é“ï¼šè¿™ä¸œè¥¿ä¸€çœ‹å°±æ˜¯åŠ£ç­‰å“ï¼Œä¸è¦ï¼ä¸è¦ï¼\n");
 }
 
 int heal_up()
@@ -63,8 +63,8 @@ int heal_up()
 void leave()
 {
 	message("vision",
-		HIY + name() + "ËµµÀ£ºÄ©½«·î·¨Ö÷ÕÙ»½£¬ÏÖÔÚÒÑ¾­Íê³É»¤·¨ÈÎÎñ£¬¾Í´Ë¸æ´Ç£¡\n\n"
-		+ name() + "»¯³ÉÒ»µÀ½ð¹â£¬³åÉÏÌì¼ÊÏûÊ§²»¼ûÁË¡£\n" NOR, environment(),
+		HIY + name() + "è¯´é“ï¼šæœ«å°†å¥‰æ³•ä¸»å¬å”¤ï¼ŒçŽ°åœ¨å·²ç»å®ŒæˆæŠ¤æ³•ä»»åŠ¡ï¼Œå°±æ­¤å‘Šè¾žï¼\n\n"
+		+ name() + "åŒ–æˆä¸€é“é‡‘å…‰ï¼Œå†²ä¸Šå¤©é™…æ¶ˆå¤±ä¸è§äº†ã€‚\n" NOR, environment(),
 		this_object() );
 	destruct(this_object());
 }
@@ -75,8 +75,8 @@ void invocation(object who)
 	object *enemy;
 
 	message("vision",
-		HIY "Ò»µÀ½ð¹âÓÉÌì¶ø½µ£¬½ð¹âÖÐ×ß³öÒ»¸öÉí´©½ðÉ«Õ½ÅÛµÄ½«¹Ù¡£\n\n"
-		+ name() + "ËµµÀ£ºÄ©½«·î·¨Ö÷ÕÙ»½£¬ÌØÀ´»¤·¨£¡\n" NOR,
+		HIY "ä¸€é“é‡‘å…‰ç”±å¤©è€Œé™ï¼Œé‡‘å…‰ä¸­èµ°å‡ºä¸€ä¸ªèº«ç©¿é‡‘è‰²æˆ˜è¢çš„å°†å®˜ã€‚\n\n"
+		+ name() + "è¯´é“ï¼šæœ«å°†å¥‰æ³•ä¸»å¬å”¤ï¼Œç‰¹æ¥æŠ¤æ³•ï¼\n" NOR,
 		environment(), this_object() );
 	enemy = who->query_enemy();
 	i = sizeof(enemy);

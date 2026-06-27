@@ -97,7 +97,7 @@ void setup()
 // create() is actually no use since all NPC has their own create().
 void create()
 {
-     set_name("·ÇÊ¹ÓÃÕßÎï¼ş", ({ "npc object", "npc", "object" }) );
+     set_name("éä½¿ç”¨è€…ç‰©ä»¶", ({ "npc object", "npc", "object" }) );
 }
 
 void self_destroy()

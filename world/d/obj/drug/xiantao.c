@@ -1,6 +1,6 @@
 // cracked by vikee 2/09/2002   vikee@263.net
 // by snowcat 6/1/1997
-// xiantao.c œ…Ã“
+// xiantao.c ‰ªôÊ°É
 
 #include <ansi.h>
 
@@ -8,15 +8,15 @@ inherit ITEM;
 
 void create()
 {
-  set_name(YEL "œ…Ã“" NOR, ({"xian tao", "tao"}));
+  set_name(YEL "‰ªôÊ°É" NOR, ({"xian tao", "tao"}));
   set_weight(20);
   if (clonep())
     set_default_object(__FILE__);
   else {
-    set("unit", "ø≈");
-    set("long", "“ªø≈ÃÏ…œ≤≈”–◊œŒ∆ÁΩ∫Àµƒœ…Ã“°£\n");
+    set("unit", "È¢ó");
+    set("long", "‰∏ÄÈ¢óÂ§©‰∏äÊâçÊúâÁ¥´Á∫πÁºÉÊ†∏ÁöÑ‰ªôÊ°É„ÄÇ\n");
     set("value",0);
-    set("drug_type", "≤π∆∑");
+    set("drug_type", "Ë°•ÂìÅ");
   }
 
   setup();
@@ -25,10 +25,10 @@ void create()
 void init()
 {
   if (!wizardp(this_player())) {
-    set("no_get","ƒ„ ÷¿Ô“ªÀ…"+this_object()->query("name")+"µ§¥”÷∏º‰ª¨¬‰£°\n");
-    set("no_give","’‚√¥’‰πÛµƒ“©£¨ƒƒƒ‹ÀÊ±„∏¯»À£ø\n");
-    set("no_drop","’‚√¥±¶πÛµƒµ§“©£¨»”¡À∂‡ø…œß—Ω£°\n");
-    set("no_sell","∑≤»Àƒƒ¿Ô÷™µ¿"+this_object()->query("name")+"µƒº€÷µ£øªπ «◊‘º∫¡Ù◊≈∞…°£\n");
+    set("no_get","‰Ω†ÊâãÈáå‰∏ÄÊùæ"+this_object()->query("name")+"‰∏π‰ªéÊåáÈó¥ÊªëËêΩÔºÅ\n");
+    set("no_give","Ëøô‰πàÁèçË¥µÁöÑËçØÔºåÂì™ËÉΩÈöè‰æøÁªô‰∫∫Ôºü\n");
+    set("no_drop","Ëøô‰πàÂÆùË¥µÁöÑ‰∏πËçØÔºåÊâî‰∫ÜÂ§öÂèØÊÉúÂëÄÔºÅ\n");
+    set("no_sell","Âá°‰∫∫Âì™ÈáåÁü•ÈÅì"+this_object()->query("name")+"ÁöÑ‰ª∑ÂÄºÔºüËøòÊòØËá™Â∑±ÁïôÁùÄÂêß„ÄÇ\n");
   }            
   add_action("do_eat", "eat");
 }
@@ -39,14 +39,14 @@ int do_eat(string arg)
   object me = this_player();
 
   if (!id(arg))
-    return notify_fail("ƒ„“™≥‘ ≤√¥£ø\n");
+    return notify_fail("‰Ω†Ë¶ÅÂêÉ‰ªÄ‰πàÔºü\n");
 
   me->set("food", (int)me->max_food_capacity());
   switch (random(3))
   {
     case 0:
     {
-      message_vision(HIG "$N≥‘œ¬“ªø≈œ…Ã“£¨π˚»ªæ´…Ò¥Û’Ò£°\n" NOR, me);
+      message_vision(HIG "$NÂêÉ‰∏ã‰∏ÄÈ¢ó‰ªôÊ°ÉÔºåÊûúÁÑ∂Á≤æÁ•ûÂ§ßÊåØÔºÅ\n" NOR, me);
       me->set("eff_gin", me->query("max_gin"));
       me->set("gin",     me->query("max_gin"));
       me->set("force",   me->query("max_force"));
@@ -55,7 +55,7 @@ int do_eat(string arg)
     }
     case 1:
     {
-      message_vision(HIG "$N≥‘œ¬“ªø≈œ…Ã“£¨π˚»ª∆¯…´∑«∑≤£°\n" NOR, me);
+      message_vision(HIG "$NÂêÉ‰∏ã‰∏ÄÈ¢ó‰ªôÊ°ÉÔºåÊûúÁÑ∂Ê∞îËâ≤ÈùûÂá°ÔºÅ\n" NOR, me);
       me->set("eff_kee", me->query("max_kee"));
       me->set("kee",     me->query("max_kee"));
       me->set("force",   me->query("max_force"));
@@ -64,7 +64,7 @@ int do_eat(string arg)
     }
     case 2:
     {
-      message_vision(HIG "$N≥‘œ¬“ªø≈œ…Ã“£¨π˚»ª…Ò≤…ﬁ»ﬁ»£°\n" NOR, me);
+      message_vision(HIG "$NÂêÉ‰∏ã‰∏ÄÈ¢ó‰ªôÊ°ÉÔºåÊûúÁÑ∂Á•ûÈááÂ•ïÂ•ïÔºÅ\n" NOR, me);
       me->set("eff_sen", me->query("max_sen"));
       me->set("sen",     me->query("max_sen"));
       me->set("force",   me->query("max_force"));

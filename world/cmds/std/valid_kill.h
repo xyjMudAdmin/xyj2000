@@ -7,11 +7,11 @@ int valid_kill(object killer, object victim, int no_list)
      if(userp(victim) && userp(killer)) {
 	 if ((int)killer->query_condition("no_pk_time")>480) 
             return notify_fail(
-		    "你最近杀人太多，此时忽然觉得罪孽深重，下不去手。\n");
+		    "浣犳渶杩戞潃浜哄お澶氾紝姝ゆ椂蹇界劧瑙夊緱缃娣遍噸锛屼笅涓嶅幓鎵嬨�俓n");
 	 if ((killer->query("combat_exp")+killer->query("daoxing"))
 		 <5000) 
 	     return notify_fail(
-		     "你自己功夫还没练好，就想要杀人？\n");
+		     "浣犺嚜宸卞姛澶繕娌＄粌濂斤紝灏辨兂瑕佹潃浜猴紵\n");
 	 if(!no_list) 
 	     set_my_killer_list(killer, victim);
      }

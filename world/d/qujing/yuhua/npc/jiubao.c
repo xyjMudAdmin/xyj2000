@@ -7,9 +7,9 @@ inherit F_VENDOR_SALE;
 void create()
 {
   reload("yuhua_jiu_bao");
-  set_name("¾Æ±£", ({"jiu bao", "jiubao", "bao"}));
+  set_name("é…’ä¿", ({"jiu bao", "jiubao", "bao"}));
   set("shop_id", ({"jiubao", "bao"}));
-  set("gender", "ÄĞĞÔ");
+  set("gender", "ç”·æ€§");
   set("combat_exp", 5000);
   set("age", 30);
   set("per", 21);

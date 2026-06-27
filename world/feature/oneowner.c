@@ -52,13 +52,13 @@ void self_destroy()
 
   if(env) {
     if(env->is_character()) { // npc or player
-      tell_object(env,"���Ϻ�Ȼ����һ���Ϻȣ�����"+
-        this_object()->query("name")+"����\n");
-      tell_object(env,"ֻ��"+this_object()->query("name")
-        +"��ն�ȥ����ʱ�䲻������Ӱ��\n");  
+      tell_object(env,"天上忽然传来一声断喝：还我"+
+        this_object()->query("name")+"来！\n");
+      tell_object(env,"只见"+this_object()->query("name")
+        +"凌空而去，霎时间不见了踪影。\n");  
     } else {
       tell_object(env,this_object()->query("name")+
-        "��������ʱ�䲻������Ӱ��\n");
+        "钻进地里，霎时间不见了踪影。\n");
     }
   }
   

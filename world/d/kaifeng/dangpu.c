@@ -5,12 +5,12 @@ inherit HOCKSHOP;
 
 void create ()
 {
-  set ("short", "µ±ÆÌ");
+  set ("short", "å½“é“º");
   set ("long", @LONG
 
-¿ª·â³ÇÀïÓÐÃûµÄÒ»¼Òµ±ÆÌ¡£ÆÌ×ÓµÄÃÅ¿ÚÉÏ·½¹ÒÁËÒ»¸ö´ó´óµÄ¡°µ±¡±×Ö
-ÕÐÅÆ£¬ÀïÃæÓÐÒ»¸ß¸ßµÄ³¤¹ñÌ¨£¬ÐìÀÏ°åÔÚÀïÃæ¶Ë×ø¡£µ±ÆÌµÄÇ½ÉÏÓÐÒ»
-ØÒ(bian)£¬Î÷±ßÊÇÒ¢Íõ´ó½Ö¡£
+å¼€å°åŸŽé‡Œæœ‰åçš„ä¸€å®¶å½“é“ºã€‚é“ºå­çš„é—¨å£ä¸Šæ–¹æŒ‚äº†ä¸€ä¸ªå¤§å¤§çš„â€œå½“â€å­—
+æ‹›ç‰Œï¼Œé‡Œé¢æœ‰ä¸€é«˜é«˜çš„é•¿æŸœå°ï¼Œå¾è€æ¿åœ¨é‡Œé¢ç«¯åã€‚å½“é“ºçš„å¢™ä¸Šæœ‰ä¸€
+åŒ¾(bian)ï¼Œè¥¿è¾¹æ˜¯å°§çŽ‹å¤§è¡—ã€‚
 
 LONG);
 
@@ -19,12 +19,12 @@ LONG);
   ]));
   set("item_desc", ([ /* sizeof() == 1 */
     "bian" : "
-¿Í¹Ù¿ÉÒÔÔÚ±¾µ±ÆÌ£º
-  µäµ±(pawn)         
-  Âô¶Ï(sell)       
-  ¹À¼Û(value)         
-  Êê»Ø(retrieve stamp) 
-  ¹ºÂò(buy) ÓÃlist²é¿´¡£
+å®¢å®˜å¯ä»¥åœ¨æœ¬å½“é“ºï¼š
+  å…¸å½“(pawn)         
+  å–æ–­(sell)       
+  ä¼°ä»·(value)         
+  èµŽå›ž(retrieve stamp) 
+  è´­ä¹°(buy) ç”¨listæŸ¥çœ‹ã€‚
 
   "]));
   set("objects", ([

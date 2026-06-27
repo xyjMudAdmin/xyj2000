@@ -3,9 +3,9 @@ inherit NPC;
 
 void create()
 {
-        set_name("ïÚÍ·", ({ "biao tou", "biao", "tou" }));
-        set("gender", "ÄĞĞÔ");
-	set("long", "ïÚ¾ÖÖĞµÄïÚÍ·£¬³¤µÄ°ò´óÑüÔ²£¬¿´ÆğÀ´ºÜÓĞÁ¦ÆøµÄÑù×Ó¡£\n");
+        set_name("é•–å¤´", ({ "biao tou", "biao", "tou" }));
+        set("gender", "ç”·æ€§");
+	set("long", "é•–å±€ä¸­çš„é•–å¤´ï¼Œé•¿çš„è†€å¤§è…°åœ†ï¼Œçœ‹èµ·æ¥å¾ˆæœ‰åŠ›æ°”çš„æ ·å­ã€‚\n");
         set("age", 29);
 	set("str", 30);
 	set("con", 30);

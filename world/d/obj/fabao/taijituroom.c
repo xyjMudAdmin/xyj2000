@@ -5,13 +5,13 @@ inherit ROOM;
 
 void create() {
 
-  set("short","С����ˮ");
+  set("short","小桥流水");
   set("long", @LONG
 
-һ����ɫ�����Сʯ�ţ��Ŷ��Ͽ��š�̫��������׭���֡�
-����С����ˮ���ˣ���ˮ��Ө͸������������λ�������̣�
-�ɷ���ǣ�����ʫ���衣һƬ������������գ��㼸������
-������ķ��ա�
+一座古色古香的小石桥，桥墩上刻着“太极”两个篆体字。
+桥下小河流水叮咚，河水晶莹透澈，桥上坐着位蓑衣渔翁，
+仙风道骨，正吟诗作歌。一片宁静安详的气氛，你几乎忘了
+尘世间的烦恼。
 
 LONG);
 
@@ -45,17 +45,17 @@ int is_clear() {
 void explode() {
   object *inv=all_inventory();
   object me=query("host");
-  string msg=HIW"��ʱ��";
+  string msg=HIW"顿时将";
   int flag=0;
 
-  message_vision(HIW"$N��һ�̫��ͼӦ�ֶ��𣬾�£������\n"NOR,me);
+  message_vision(HIW"$N手一扬，太极图应手而起，卷拢起来。\n"NOR,me);
   for (int i=0;i<sizeof(inv);i++)
      if (inv[i]!=me) {
         flag=1;
-        msg=msg+inv[i]->name()+"��";
+        msg=msg+inv[i]->name()+"，";
         inv[i]->receive_wound("kee",inv[i]->query("max_kee")*2,me);
      }
-  msg+="����촷ۣ�\n"NOR;
+  msg+="化做齑粉！\n"NOR;
   if (flag) message_vision(msg,me);
 
   me->move(query("old_room"));

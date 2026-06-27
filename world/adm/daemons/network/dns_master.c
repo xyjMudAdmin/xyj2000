@@ -300,7 +300,7 @@ void send_shutdown()
 		SHUTDOWN->send_shutdown(muds[mud_names[i]]["HOSTADDRESS"],
 			muds[mud_names[i]]["PORTUDP"]);
 	socket_close(socket_id);
-	CHANNEL_D->do_channel(this_object(), "sys", "ËÍ³öÍøÂ·¹Ø±ÕÑ¶Ï¢¡£\n");
+	CHANNEL_D->do_channel(this_object(), "sys", "é€å‡ºç½‘è·¯å…³é—­è®¯æ¯ã€‚\n");
 }
 
 string start_message()
@@ -478,7 +478,7 @@ void set_mud_info(string name, mapping junk)
             (undefinedp(junk["MUDNAME"])?
 	     junk["NAME"]:junk["MUDNAME"]+"("+junk["NAME"]+")")+
 	    "("+junk["MUDLIB"]+") "+
-            junk["HOSTADDRESS"]+" "+junk["PORT"]+" ¼ÓÈëÁ¬Í¨");
+            junk["HOSTADDRESS"]+" "+junk["PORT"]+" åŠ å…¥è¿é€š");
 
 	// default encoding set to big5 for ES2 muds.
 	// mon 6/1/98
@@ -923,7 +923,7 @@ void resolve_callback(string address, string my_ip, int key)
 	
 	// mon 8/5/99 check proper INTERMUD name setup.
 	if(my_ip && my_ip!="209.83.132.67") { // not main site, check name.
-	    if(sscanf(INTERMUD_NAME, "Î÷ÓÎ¼Ç%sÕ¾", site)!=1
+	    if(sscanf(INTERMUD_NAME, "è¥¿æ¸¸è®°%sç«™", site)!=1
 		    || sizeof(site)<2) {
 		log_file("shutdown", "["+ctime(time())+
 			"] shutdown due to improper INTERMUD_NAME: "+
@@ -954,7 +954,7 @@ void create()
 
 	restore_euid();
 
-	set("channel_id", "ÍøÂ·¾«Áé");
+	set("channel_id", "ç½‘è·¯ç²¾çµ");
 
 	LIST_IP=BAN_D->query_intermud();
 

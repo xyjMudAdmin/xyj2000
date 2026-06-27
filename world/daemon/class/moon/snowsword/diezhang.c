@@ -14,34 +14,34 @@ int perform(object me, object target)
 	object victim = offensive_target(me);
 
 	if( !target )
-		return notify_fail("ÄãÏëÓëË­½øĞĞµşÕÆ£¿\n");
+		return notify_fail("ä½ æƒ³ä¸è°è¿›è¡Œå æŒï¼Ÿ\n");
 	if( target->query("id") == me->query("id") )
-		return notify_fail("ÄãÏëÓë×Ô¼º½øĞĞµşÕÆ£¿\n");
+		return notify_fail("ä½ æƒ³ä¸è‡ªå·±è¿›è¡Œå æŒï¼Ÿ\n");
 	if( !victim || victim->query("id") == target->query("id") )
-		return notify_fail("²»ÄÜÓëÄãµÄ¶ÔÊÖ½øĞĞµşÕÆ¡£\n");
+		return notify_fail("ä¸èƒ½ä¸ä½ çš„å¯¹æ‰‹è¿›è¡Œå æŒã€‚\n");
 
 	if( !victim->is_character() || !me->is_fighting(victim) )
-		return notify_fail("Ö»ÄÜ¶ÔÄãÕıÔÚÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃµşÕÆ¡£\n");
+		return notify_fail("åªèƒ½å¯¹ä½ æ­£åœ¨æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨å æŒã€‚\n");
 	if( !target->is_fighting(victim) )
-		return notify_fail("ÄãµÄÍ¬°é²»ÔÚÓë¶ÔÊÖÕ½¶·ÖĞ¡£\n");
+		return notify_fail("ä½ çš„åŒä¼´ä¸åœ¨ä¸å¯¹æ‰‹æˆ˜æ–—ä¸­ã€‚\n");
 	if( target->query_skill_mapped("unarmed") != "baihua-zhang" )
-		return notify_fail("ÄãµÄÍ¬°éÃ»ÓĞÔÚÊ¹ÓÃ°Ù»¨ÕÆ¡£\n");
+		return notify_fail("ä½ çš„åŒä¼´æ²¡æœ‰åœ¨ä½¿ç”¨ç™¾èŠ±æŒã€‚\n");
 	if( (int)target->query_temp("diezhang") )
-		return notify_fail("ÄãµÄÍ¬°éÒÑ¾­ÔÚÊ¹ÓÃµşÕÆÁË¡£\n");
+		return notify_fail("ä½ çš„åŒä¼´å·²ç»åœ¨ä½¿ç”¨å æŒäº†ã€‚\n");
 	if( (int)me->query_temp("diezhang") )
-		return notify_fail("ÄãÒÑ¾­ÔÚÊ¹ÓÃµşÕÆÁË¡£\n");
+		return notify_fail("ä½ å·²ç»åœ¨ä½¿ç”¨å æŒäº†ã€‚\n");
 	if((int)me->query("force") < 25+(int)me->query("force_factor") )
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¡\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼\n");
 	if((int)me->query("kee") < 100 )
-		return notify_fail("ÄãµÄÆøÑª²»×ã£¬Ã»·¨×ÓÊ©ÓÃÍâ¹¦£¡\n");
+		return notify_fail("ä½ çš„æ°”è¡€ä¸è¶³ï¼Œæ²¡æ³•å­æ–½ç”¨å¤–åŠŸï¼\n");
 	if((int)target->query("force") < 25+(int)me->query("force_factor") )
-		return notify_fail("ÄãµÄÍ¬°éÄÚÁ¦²»¹»£¡\n");
+		return notify_fail("ä½ çš„åŒä¼´å†…åŠ›ä¸å¤Ÿï¼\n");
 	if((int)target->query("kee") < 100 )
-		return notify_fail("ÄãµÄÍ¬°éÆøÑª²»×ã£¬Ã»·¨×ÓÊ©ÓÃÍâ¹¦£¡\n");
+		return notify_fail("ä½ çš„åŒä¼´æ°”è¡€ä¸è¶³ï¼Œæ²¡æ³•å­æ–½ç”¨å¤–åŠŸï¼\n");
 
 	if( !(int)target->query_temp("diezhang_request") ) {
 		me->set_temp("diezhang_request", 1);
-		tell_object(target, me->query("name")+"ÏòÄã·¢³öµşÕÆÇëÇó¡£\n");
+		tell_object(target, me->query("name")+"å‘ä½ å‘å‡ºå æŒè¯·æ±‚ã€‚\n");
 		return 1;
 	}
 	target->delete_temp("diezhang_request");
@@ -55,7 +55,7 @@ int perform(object me, object target)
 	skill2 = target->query_skill("baihua-zhang");
 	skill = (skill1 + skill2)/8;
 	message_vision(HIY
-		"$NÓë$nË«ÕÆÒ»ÅÄ£¬¹¥»÷¶ÙÊ±±äµÃÊ®·ÖÏ¬Àû£¬·ÀÊØÒ²ÀÏµ½ÁËĞí¶à¡£\n"
+		"$Nä¸$nåŒæŒä¸€æ‹ï¼Œæ”»å‡»é¡¿æ—¶å˜å¾—ååˆ†çŠ€åˆ©ï¼Œé˜²å®ˆä¹Ÿè€åˆ°äº†è®¸å¤šã€‚\n"
 		NOR, me, target);
 	me->add_temp("apply/attack", skill);
 	me->add_temp("apply/dodge",  skill);
@@ -103,7 +103,7 @@ int remove_effect(object me, object target, int amount)
 	target->add_temp("apply/dodge", -amount);
 	me->delete_temp("diezhang");
 	target->delete_temp("diezhang");
-	message_vision(GRN"$NºÍ$nµÄµşÕÆ²»ÔÙ·¢»Ó¹¦Ğ§£¬ÖÜÎ§µÄÈËÒ²¶¼ËÉÁËÒ»¿ÚÆø¡£\n"NOR, me, target);
+	message_vision(GRN"$Nå’Œ$nçš„å æŒä¸å†å‘æŒ¥åŠŸæ•ˆï¼Œå‘¨å›´çš„äººä¹Ÿéƒ½æ¾äº†ä¸€å£æ°”ã€‚\n"NOR, me, target);
 	return 0;
 }
 

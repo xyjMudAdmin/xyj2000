@@ -1,17 +1,17 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// jianpu.c	ÇàÁ«½£Æ×
+// jianpu.c	é’è²å‰‘è°±
 
 inherit ITEM;
 
 void create()
 {
-  set_name("¡¼ÇàÁ«½£Æ×¡½", ({ "jian pu", "shu", "book" }));
+  set_name("ã€–é’è²å‰‘è°±ã€—", ({ "jian pu", "shu", "book" }));
   set_weight(600);
   if( clonep() )
 	set_default_object(__FILE__);
   else {
-	set("unit", "±¾");
-	set("long", "ÕâÊÇÒ»±¾»ù±¾½£·¨µÄÍ¼½â£¬Êé½ÇÒÑ¾­ÓĞĞ©²ĞÆÆÁË¡£\n");
+	set("unit", "æœ¬");
+	set("long", "è¿™æ˜¯ä¸€æœ¬åŸºæœ¬å‰‘æ³•çš„å›¾è§£ï¼Œä¹¦è§’å·²ç»æœ‰äº›æ®‹ç ´äº†ã€‚\n");
 	set("value", 100);
 	set("material", "paper");
 	set("skill", ([

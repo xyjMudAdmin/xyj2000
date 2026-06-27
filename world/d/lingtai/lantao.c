@@ -1,17 +1,17 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// Room: some place in Î÷Å£ºØÖÞ
+// Room: some place in è¥¿ç‰›è´ºæ´²
 // forrest.c
 
 inherit ROOM;
 
 void create()
 {
-  set ("short", "ËÉÊ÷ÁÖ");
+  set ("short", "æ¾æ ‘æž—");
   set ("long", @LONG
 
-ËÉÁÖÖ®ÖÐ·Ç³£µÄ°µ£¬¹âÏßÈ«±»ÈçÉ¡Èç¸ÇµÄÊ÷Ö¦µ²×¡¡£µØÏÂ²¼
-Âú¿ÝÖ¦£¬Ã¿×ßÒ»²½¶¼»á·¢³öºÜ´äµÄÏìÉù£¬²»Ê±¿É¿´µ½¼¸¸ö¿³
-²ñµÄµÀÊ¿¡£
+æ¾æž—ä¹‹ä¸­éžå¸¸çš„æš—ï¼Œå…‰çº¿å…¨è¢«å¦‚ä¼žå¦‚ç›–çš„æ ‘æžæŒ¡ä½ã€‚åœ°ä¸‹å¸ƒ
+æ»¡æž¯æžï¼Œæ¯èµ°ä¸€æ­¥éƒ½ä¼šå‘å‡ºå¾ˆç¿ çš„å“å£°ï¼Œä¸æ—¶å¯çœ‹åˆ°å‡ ä¸ªç 
+æŸ´çš„é“å£«ã€‚
 LONG);
 set("exits", ([ /* sizeof() == 4 */
 "northdown" : __DIR__"baixi2",

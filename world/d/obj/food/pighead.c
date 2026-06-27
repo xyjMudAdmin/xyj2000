@@ -6,17 +6,17 @@ inherit F_FOOD;
 
 void create()
 {
-        set_name("ÖíÍ·Èâ", ({"pig head", "pighead", "head"}));
+        set_name("çŒªå¤´è‚‰", ({"pig head", "pighead", "head"}));
         set_weight(1000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»ÅÌ·ÊÊİÏà¼äµÄÖíÍ·Èâ£¬ÏÔÈ»¸Õ¹°³öÂ¯¡£\n");
-                set("unit", "ÅÌ");
+                set("long", "ä¸€ç›˜è‚¥ç˜¦ç›¸é—´çš„çŒªå¤´è‚‰ï¼Œæ˜¾ç„¶åˆšæ‹±å‡ºç‚‰ã€‚\n");
+                set("unit", "ç›˜");
                 set("value", 50);
                 set("food_remaining", 5);
                 set("food_supply", 40);
-		set("eat_msg","$N×¥ÆğÒ»´ó¿é$nËÍ½ø×ìÀï¡£\n");
+		set("eat_msg","$NæŠ“èµ·ä¸€å¤§å—$né€è¿›å˜´é‡Œã€‚\n");
         }
 }
 

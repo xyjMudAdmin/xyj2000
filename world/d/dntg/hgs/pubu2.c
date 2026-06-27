@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ÆÙ²¼ÖÐ");
+  set ("short", "ç€‘å¸ƒä¸­");
   set ("long", @LONG
 
-¡­¡­ÄãËÆºõÊ²Ã´Ò²¿´²»Çå³þ£¬Ö»¾õµÃËÄÖÜ½§Ë®±¼Á÷£¬ÄÑÒÔ
-Ì½µ½Ç°·½µÄ³öÂ·¡­¡­
+â€¦â€¦ä½ ä¼¼ä¹Žä»€ä¹ˆä¹Ÿçœ‹ä¸æ¸…æ¥šï¼Œåªè§‰å¾—å››å‘¨æ¶§æ°´å¥”æµï¼Œéš¾ä»¥
+æŽ¢åˆ°å‰æ–¹çš„å‡ºè·¯â€¦â€¦
 
 LONG);
 
@@ -52,19 +52,19 @@ int do_go (string dir)
 
     if (random(5))
       {
-      message_vision ("$NÃÔÃÔºýºýÌ¤³öÒ»²½£¬Ò»²»Ð¡ÐÄË¤µ¹ÔÚµØ¡£\n",who);
+      message_vision ("$Nè¿·è¿·ç³Šç³Šè¸å‡ºä¸€æ­¥ï¼Œä¸€ä¸å°å¿ƒæ‘”å€’åœ¨åœ°ã€‚\n",who);
       }
     else
     {
       if (dir != names[random(sizeof(names))])
         {
-        message_vision ("$NÔÚÆÙ²¼ÖÐÕÒµ½Ò»Ë¿Ï¸·ì£¬¼·ÁË³öÈ¥¡£\n",who);
+        message_vision ("$Nåœ¨ç€‘å¸ƒä¸­æ‰¾åˆ°ä¸€ä¸ç»†ç¼ï¼ŒæŒ¤äº†å‡ºåŽ»ã€‚\n",who);
         who->move(__DIR__"pubu3");
         return 1;
         }
       else
         {
-        message_vision ("$NÔÚÆÙ²¼ÖÐÕÒµ½Ò»Ë¿Ï¸·ì£¬¼·ÁË³öÈ¥¡£\n",who);
+        message_vision ("$Nåœ¨ç€‘å¸ƒä¸­æ‰¾åˆ°ä¸€ä¸ç»†ç¼ï¼ŒæŒ¤äº†å‡ºåŽ»ã€‚\n",who);
         who->move(__DIR__"pubu1");
         return 1;
         }

@@ -6,13 +6,13 @@ inherit F_FOOD;
 
 void create()
 {
-  set_name("Ã×·¹", ({"mi fan", "fan", "rice"}));
+  set_name("ç±³é¥­", ({"mi fan", "fan", "rice"}));
   set_weight(100);
   if (clonep())
     set_default_object(__FILE__);
   else {
-    set("long", "Ò»ÇàÉ°¹ŞÏãÃ×·¹¡£\n");
-    set("unit", "ÇàÉ°¹Ş");
+    set("long", "ä¸€é’ç ‚ç½é¦™ç±³é¥­ã€‚\n");
+    set("unit", "é’ç ‚ç½");
     set("value", 90);
     set("food_remaining", 5);
     set("food_supply", 35);

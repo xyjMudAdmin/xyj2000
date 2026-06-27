@@ -15,7 +15,7 @@ int main(object me, string arg)
 
 	seteuid(geteuid(me));
 
-        if (!arg) return notify_fail("����Ҫ��˭������Σ�\n");
+        if (!arg) return notify_fail("你想要将谁送入监牢？\n");
 	arg=replace_string(arg,"#"," ");
 	arg=replace_string(arg,"."," ");
 
@@ -23,14 +23,14 @@ int main(object me, string arg)
 	if(who) { //player online now.
 	    online=1;
 	    if(env=environment(who))
-		message_vision("�����̽��һֻ���ֽ�$Nץ���������ˡ�\n",
+		message_vision("天空中探出一只大手将$N抓起来不见了。\n",
 			who);
 	    who->move(JAIL);
 	} else {
 	    who=new(USER_OB);
 	    who->set("id",arg);
 	    if(!who->restore()) {
-		write("û��"+arg+"�����һ��ļ�������\n");
+		write("没有"+arg+"这个玩家或文件出错。\n");
 		if(who) destruct(who);
 		return 1;
 	    }
@@ -42,7 +42,7 @@ int main(object me, string arg)
 	log_file("to_jail","["+ctime(time())+"]"+
 		this_player()->query("id")+" send "+who->query("id")+
 		" to jail.\n");
-	write("�㽫"+who->query("name")+"("+arg+")�ͽ��˼��Ρ�\n");
+	write("你将"+who->query("name")+"("+arg+")送进了监牢。\n");
 
 	if(!online) {
 	    destruct(who);
@@ -54,7 +54,7 @@ int main(object me, string arg)
 int help(object me)
 {
 write(@HELP
-ָ���ʽ��tojail id 
+指令格式：tojail id 
 
 Send <id> to xyj jail.
 HELP

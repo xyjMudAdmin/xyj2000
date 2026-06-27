@@ -29,8 +29,8 @@ void do_steal(object me, object user);
 
 void create()
 {
-	set_name("Ç§Ãæ¹Ö", ({ "qianmian guai", "guai", "qianmian", "qm" }) );
-	set("gender", "ÄĞĞÔ" );
+	set_name("åƒé¢æ€ª", ({ "qianmian guai", "guai", "qianmian", "qm" }) );
+	set("gender", "ç”·æ€§" );
 	set("age", 30);
 	set("long", "\n");
 	set("attitude", "heroism");
@@ -100,8 +100,8 @@ void init()
 void to_say()
 {
     if(random(20)==0) {
-	message_vision("$N¿ª¿ÚËµµÀ£ºÖîÎ»Èç¼ûÉ±ÈËÔ½»õ£¬¿É¸æÖªÔÚÏÂ(report name)£¬"+
-		"\n¶¨µ±´ò±¨²»Æ½£¡\n",this_object());
+	message_vision("$Nå¼€å£è¯´é“ï¼šè¯¸ä½å¦‚è§æ€äººè¶Šè´§ï¼Œå¯å‘ŠçŸ¥åœ¨ä¸‹(report name)ï¼Œ"+
+		"\nå®šå½“æ‰“æŠ¥ä¸å¹³ï¼\n",this_object());
     }
 }
 
@@ -115,21 +115,21 @@ int do_accuse(string tar)
     target=find_player(tar);
     
     if((int)this_player()->query_condition("no_pk_time")>0)
-	return notify_fail("ºß£¡ÄãÒ²Åä£¿£¡\n");
+	return notify_fail("å“¼ï¼ä½ ä¹Ÿé…ï¼Ÿï¼\n");
     if(!target || !interactive(target))
-	return notify_fail("ÕÒ²»µ½Õâ¸öÈË¡£\n");
+	return notify_fail("æ‰¾ä¸åˆ°è¿™ä¸ªäººã€‚\n");
     if(wizardp(target)) return 0;
     if((int)target->query_condition("no_pk_time")<400)
-	return notify_fail("´ËÎïÉĞÎ´¶ñ¹áÂúÓ¯£¬ÇÒ·ÅËüÈ¥°É£¡\n");
+	return notify_fail("æ­¤ç‰©å°šæœªæ¶è´¯æ»¡ç›ˆï¼Œä¸”æ”¾å®ƒå»å§ï¼\n");
     env=environment(target);
     if(!env || env->query("no_fight"))
-	return notify_fail("ÏÖÔÚÎÒÒ²ÉË²»ÁËËü:(\n");
+	return notify_fail("ç°åœ¨æˆ‘ä¹Ÿä¼¤ä¸äº†å®ƒ:(\n");
     command("get all");
     command("wield all");
     command("wear all");
-    message_vision("$NÍùµØÀïÒ»×ê£¬²»¼ûÁË¡£\n", me);
+    message_vision("$Nå¾€åœ°é‡Œä¸€é’»ï¼Œä¸è§äº†ã€‚\n", me);
     me->move(env);
-    message_vision("$N×ßÁË¹ıÀ´¡£\n",me);
+    message_vision("$Nèµ°äº†è¿‡æ¥ã€‚\n",me);
     to_kill(target);
     return 1;
 }
@@ -147,8 +147,8 @@ void to_kill(object tar)
     doing_kill=1;
     
     call_out("remove_kill",120);
-    message_vision("$N¶Ô$nËµµ½£ºÉ±ÈË³¥Ãü£¬Ç·Õ®»¹Ç®¡£ÄãÕâ"+
-	    RANK_D->query_rude(tar)+"ÄÃÃüÀ´°É£¡\n", this_object(), tar);
+    message_vision("$Nå¯¹$nè¯´åˆ°ï¼šæ€äººå¿å‘½ï¼Œæ¬ å€ºè¿˜é’±ã€‚ä½ è¿™"+
+	    RANK_D->query_rude(tar)+"æ‹¿å‘½æ¥å§ï¼\n", this_object(), tar);
     if(tar->query("combat_exp")>20000)
 	command("follow "+tar->parse_command_id_list()[0]);
     this_object()->kill_ob(tar);
@@ -340,7 +340,7 @@ void find_newplace()
     command("drop "+ 
       check_give(inv[random(size)]));
   }
-  message_vision("$NÏòµØÀïÒ»×ê£¬ÏûÊ§µÃÎŞÓ°ÎŞ×ÙÁË¡£\n",me);
+  message_vision("$Nå‘åœ°é‡Œä¸€é’»ï¼Œæ¶ˆå¤±å¾—æ— å½±æ— è¸ªäº†ã€‚\n",me);
   
   if(find_user() && 
     me->move(curr_env=environment(new_user))) {
@@ -355,7 +355,7 @@ void find_newplace()
   }
 
   me->remove_all_killer();
-  message_vision("$N×ßÁË¹ıÀ´¡£\n",me);
+  message_vision("$Nèµ°äº†è¿‡æ¥ã€‚\n",me);
 
   return;
 }

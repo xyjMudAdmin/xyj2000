@@ -7,9 +7,9 @@ inherit F_VENDOR_SALE;
 void create()
 {
   reload("zhuzi_zui_fangxiu");
-  set_name("×í·½ÐÝ", ({"zui fangxiu", "zui"}));
+  set_name("é†‰æ–¹ä¼‘", ({"zui fangxiu", "zui"}));
   set("shop_id", ({"zuifangxiu", "fangxiu", "zui"}));
-  set("gender", "ÄÐÐÔ");
+  set("gender", "ç”·æ€§");
   set("combat_exp", 5000);
   set("age", 40);
   set("per", 34);

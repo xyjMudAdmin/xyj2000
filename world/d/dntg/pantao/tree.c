@@ -12,11 +12,11 @@ void falldown(object me,object env) {
     string dest;
     
     if (env!=environment(me)) return;
-    message_vision("$N½ÅÏÂÒ»»¬£¬´ÓÊ÷ÉÏË¤ÁËÏÂÈ¥¡£\n",me);
+    message_vision("$Nè„šä¸‹ä¸€æ»‘ï¼Œä»æ ‘ä¸Šæ‘”äº†ä¸‹å»ã€‚\n",me);
     dest=env->query("exits/down");
     if (!dest) return;
     me->move(dest);
-    tell_room(environment(me),"Ò»Éù¾ŞÏì£¬"+me->query("name")+
-          "´ÓÌì¶ø½µ£¬Ë¤ÁË¸ö´óÂíÅ¿£¡\n",me);
+    tell_room(environment(me),"ä¸€å£°å·¨å“ï¼Œ"+me->query("name")+
+          "ä»å¤©è€Œé™ï¼Œæ‘”äº†ä¸ªå¤§é©¬è¶´ï¼\n",me);
    me->set_busy(3+random(3));
 }

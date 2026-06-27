@@ -3,8 +3,8 @@ inherit NPC;
 
 void create()
 {
-       	set_name("¶àÎÅÌìÍõ", ({"zengzhang tianwang", "tianwang"}));
-       	set("gender", "ÄĞĞÔ");
+       	set_name("å¤šé—»å¤©ç‹", ({"zengzhang tianwang", "tianwang"}));
+       	set("gender", "ç”·æ€§");
        	set("age", 40);
         set("class", "fighter");
        	set("attitude", "friendly");

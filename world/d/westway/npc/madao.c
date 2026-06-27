@@ -7,11 +7,11 @@ inherit NPC;
 void create()
 {
   string dir;
-  set_name("ÂíµÁ", ({"ma dao", "madao", "ma", "dao"}) );
-  set("gender", "ÄÐÐÔ" );
+  set_name("é©¬ç›—", ({"ma dao", "madao", "ma", "dao"}) );
+  set("gender", "ç”·æ€§" );
   set("age", 22+random(10));
   set("per", 14);
-  set("long","Ò»¸öÂùºáÐ×ºÝµÄÂíµÁ£¬×¨ÃÅÏ®»÷¹ýÂ·Âí³µ¡£\n");
+  set("long","ä¸€ä¸ªè›®æ¨ªå‡¶ç‹ çš„é©¬ç›—ï¼Œä¸“é—¨è¢­å‡»è¿‡è·¯é©¬è½¦ã€‚\n");
 
   set_temp("apply/attack", 30);
   set_temp("apply/defense", 30);
@@ -50,12 +50,12 @@ int accept_object (object who, object ob)
   if ((! ob) ||
        ob->value() < 200) 
   {
-    message_vision ("$NÒ»µÉÑÛ£º¾ÍÕâµã¶«Î÷£¿²»Ïë»îÁË£¿£¿£¿\n", me);
+    message_vision ("$Nä¸€çžªçœ¼ï¼šå°±è¿™ç‚¹ä¸œè¥¿ï¼Ÿä¸æƒ³æ´»äº†ï¼Ÿï¼Ÿï¼Ÿ\n", me);
     return 1;
   }  
   who->set_temp("has_paid", 2);
   me->remove_all_killer();
-  message_vision ("$NºÙºÙºÙ¼¸Éù¹ÖÐ¦£¬ÉÁÉíÈÃµÀ¡£\n",me);
+  message_vision ("$Nå˜¿å˜¿å˜¿å‡ å£°æ€ªç¬‘ï¼Œé—ªèº«è®©é“ã€‚\n",me);
   return 1;
 }
 
@@ -70,9 +70,9 @@ void asking(object who)
     return;
 
   if ((who && who->query_temp("has_paid") <= 0) 
-	&& (string)who->query("family/family_name")!="Îå×¯¹Û" )
+	&& (string)who->query("family/family_name")!="äº”åº„è§‚" )
   {
-    message_vision ("$N³å¹ýÀ´£¬¶Ô$n´óºÈÒ»Éù£ºÒªÇ®»¹ÊÇÒªÃü£¿\n",me,who);
+    message_vision ("$Nå†²è¿‡æ¥ï¼Œå¯¹$nå¤§å–ä¸€å£°ï¼šè¦é’±è¿˜æ˜¯è¦å‘½ï¼Ÿ\n",me,who);
     remove_call_out ("warning1");
     remove_call_out ("warning2");
     remove_call_out ("warning3");
@@ -83,7 +83,7 @@ void asking(object who)
   }
   else
   { 
-    message_vision ("$N¶Ô$nÒ»¹°ÊÖ£¬ÉÁÉíÈÃµÀ¡£\n",me,who);
+    message_vision ("$Nå¯¹$nä¸€æ‹±æ‰‹ï¼Œé—ªèº«è®©é“ã€‚\n",me,who);
     me->remove_all_killer();
   }
 }
@@ -98,7 +98,7 @@ void warning1(object who)
       living(me) &&
       who->query_temp("has_paid") <= 0)
   {
-    message_vision ("$N´óÉùºÈµÀ£º¿ì¸øÇ®£¡\n",me,who);
+    message_vision ("$Nå¤§å£°å–é“ï¼šå¿«ç»™é’±ï¼\n",me,who);
   }
 }
 
@@ -112,7 +112,7 @@ void warning2(object who)
       living(me) &&
       who->query_temp("has_paid") <= 0)
   {
-    message_vision ("$NÓÖº°½Ð¼¸Éù£ºÄÃÇ®À´ÂòÃü£¡\n",me,who);
+    message_vision ("$Nåˆå–Šå«å‡ å£°ï¼šæ‹¿é’±æ¥ä¹°å‘½ï¼\n",me,who);
   }
 }
 
@@ -126,7 +126,7 @@ void warning3(object who)
       living(me) &&
       who->query_temp("has_paid") <= 0)
   {
-    message_vision ("$N¼±ÁË£ºÄãµ½µ×¸ø²»¸øÇ®£¿\n",me,who);
+    message_vision ("$Næ€¥äº†ï¼šä½ åˆ°åº•ç»™ä¸ç»™é’±ï¼Ÿ\n",me,who);
   }
 }
 

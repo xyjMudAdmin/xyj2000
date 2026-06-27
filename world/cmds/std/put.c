@@ -13,29 +13,29 @@ int main(object me, string arg)
 	object obj, dest, *inv, obj2;
 	int i, amount;
 
-	if(!arg) return notify_fail("ÄãÒª½«Ê²Ã´¶«Î÷·Å½øÄÄÀï£¿\n");
+	if(!arg) return notify_fail("ä½ è¦å°†ä»€ä¹ˆä¸œè¥¿æ”¾è¿›å“ªé‡Œï¼Ÿ\n");
 
 	if( sscanf(arg, "%s in %s", item, target)!=2 )
-		return notify_fail("ÄãÒª¸øË­Ê²Ã´¶«Î÷£¿\n");
+		return notify_fail("ä½ è¦ç»™è°ä»€ä¹ˆä¸œè¥¿ï¼Ÿ\n");
 
 	dest = present(target, me);
 	if( !dest || living(dest) ) dest = present(target, environment(me));
 	if( !dest || living(dest) )
-		return notify_fail("ÕâÀïÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+		return notify_fail("è¿™é‡Œæ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
 
 
 	if(sscanf(item, "%d %s", amount, item)==2) {
 		if( !objectp(obj = present(item, me)) )
-			return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+			return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
 		if( obj->query("no_give") || 
 			obj->query("no_drop") || obj->query("no_get") )
 			return notify_fail( "Ok.\n" );
 		if( !obj->query_amount() )
-			return notify_fail( obj->name() + "²»ÄÜ±»·Ö¿ª¡£\n");
+			return notify_fail( obj->name() + "ä¸èƒ½è¢«åˆ†å¼€ã€‚\n");
 		if( amount < 1 )
-			return notify_fail("¶«Î÷µÄÊıÁ¿ÖÁÉÙÊÇÒ»¸ö¡£\n");
+			return notify_fail("ä¸œè¥¿çš„æ•°é‡è‡³å°‘æ˜¯ä¸€ä¸ªã€‚\n");
 		if( amount > obj->query_amount() )
-			return notify_fail("ÄãÃ»ÓĞÄÇÃ´¶àµÄ" + obj->name() + "¡£\n");
+			return notify_fail("ä½ æ²¡æœ‰é‚£ä¹ˆå¤šçš„" + obj->name() + "ã€‚\n");
 		else if( amount == (int)obj->query_amount() )
 			return do_put(me, obj, dest);
 		else {
@@ -64,9 +64,9 @@ int main(object me, string arg)
 	}
 
 	if(!objectp(obj = present(item, me)))
-		return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+		return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
         if( obj->query("unique") )
-                return notify_fail("Äã²»ÄÜ½«"+obj->query("name")+"·Åµ½±ğµÄÈİÆ÷ÖĞÈ¥¡£\n");
+                return notify_fail("ä½ ä¸èƒ½å°†"+obj->query("name")+"æ”¾åˆ°åˆ«çš„å®¹å™¨ä¸­å»ã€‚\n");
 
 	if( obj->query("no_give") || 
 		obj->query("no_drop") || obj->query("no_get") )
@@ -82,23 +82,23 @@ int do_put(object me, object obj, object dest)
 	if( userp(dest) )  {
     	inv = all_inventory(dest);
 		if( sizeof(inv) > 30 )
-		   return notify_fail("¶Ô·½ÉíÉÏÔÙÒ²×°²»ÏÂÈÎºÎ¶«Î÷ÁË¡£\n");
+		   return notify_fail("å¯¹æ–¹èº«ä¸Šå†ä¹Ÿè£…ä¸ä¸‹ä»»ä½•ä¸œè¥¿äº†ã€‚\n");
 	}
 	else if( !dest->is_character() && dest->is_container() )   {
     	inv = all_inventory(dest);
 		if( !(amount=dest->query("max_items")) )   amount = 5;
 		if( sizeof(inv) >= amount )
-		   return notify_fail(dest->name()+ "ÀïÔÙÒ²×°²»ÏÂÈÎºÎ¶«Î÷ÁË¡£\n");
+		   return notify_fail(dest->name()+ "é‡Œå†ä¹Ÿè£…ä¸ä¸‹ä»»ä½•ä¸œè¥¿äº†ã€‚\n");
 	}
 */
 	
 	if(!dest->is_character() &&
 		!dest->is_container())
-	    return notify_fail("Äã²»ÄÜ°Ñ"+obj->name()+
-		    "·Åµ½"+dest->name()+"ÖĞÈ¥¡£\n");
+	    return notify_fail("ä½ ä¸èƒ½æŠŠ"+obj->name()+
+		    "æ”¾åˆ°"+dest->name()+"ä¸­å»ã€‚\n");
 
 	if( obj->move(dest) ) {
-		message_vision( sprintf("$N½«Ò»%s%s·Å½ø%s¡£\n",
+		message_vision( sprintf("$Nå°†ä¸€%s%sæ”¾è¿›%sã€‚\n",
 			obj->query("unit"), obj->name(), dest->name()),
 			me );
 		return 1;
@@ -109,9 +109,9 @@ int do_put(object me, object obj, object dest)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : put <ÎïÆ·Ãû³Æ> in <Ä³ÈİÆ÷>
+æŒ‡ä»¤æ ¼å¼ : put <ç‰©å“åç§°> in <æŸå®¹å™¨>
  
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄã½«Ä³ÑùÎïÆ··Å½øÒ»¸öÈİÆ÷£¬µ±È»£¬Ê×ÏÈÄãÒªÓµÓĞÕâÑùÎïÆ·¡£
+è¿™ä¸ªæŒ‡ä»¤å¯ä»¥è®©ä½ å°†æŸæ ·ç‰©å“æ”¾è¿›ä¸€ä¸ªå®¹å™¨ï¼Œå½“ç„¶ï¼Œé¦–å…ˆä½ è¦æ‹¥æœ‰è¿™æ ·ç‰©å“ã€‚
  
 HELP
     );

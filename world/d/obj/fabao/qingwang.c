@@ -12,7 +12,7 @@ void self_destruct() {
 
 void create()
 {
-     set_name("ÇéÍø",({"qing wang"}));     
+     set_name("æƒ…ç½‘",({"qing wang"}));     
      set("env/invisibility",1);
      set_weight(10000000);
      set("no_get",1);
@@ -20,7 +20,7 @@ void create()
      if( clonep() )
                 set_default_object(__FILE__);
      else {
-           set("unit", "ÕÅ");
+           set("unit", "å¼ ");
            set("no_sell", 1);
            set("no_get",1);
            set("no_give",1);
@@ -49,6 +49,6 @@ int do_cast() {
     if (time()>query("time_expired") || who->query_temp("weapon")!=weapon) {
       self_destruct();
     }    
-    write(MAG"ÄãÂÔÒ»ÔË¹¦£¬ÑÛÇ°Á¢¿Ì³öÏÖÁËÄÇÌõÊìÏ¤µÄÉíÓ°£¬¼ô²»¶Ï£¬Àí»¹ÂÒ£¬½ÁµÃÄãÐÄ·³ÆøÔï¡£\n"NOR);
+    write(MAG"ä½ ç•¥ä¸€è¿åŠŸï¼Œçœ¼å‰ç«‹åˆ»å‡ºçŽ°äº†é‚£æ¡ç†Ÿæ‚‰çš„èº«å½±ï¼Œå‰ªä¸æ–­ï¼Œç†è¿˜ä¹±ï¼Œæ…å¾—ä½ å¿ƒçƒ¦æ°”ç‡¥ã€‚\n"NOR);
     return 1;
 }

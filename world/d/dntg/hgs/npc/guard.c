@@ -4,10 +4,10 @@ inherit NPC;
 
 void create()
 {
-       set_name("ÀÏÆë", ({"guard"}));
-       set("long", "¶«·½Îä¹İµÄ¿´ÃÅÈË£¬ÕıÔÚ´òî§Ë¯£®\n");
-       set("title", "ÃÅ·¿");
-       set("gender", "ÄĞĞÔ");
+       set_name("è€é½", ({"guard"}));
+       set("long", "ä¸œæ–¹æ­¦é¦†çš„çœ‹é—¨äººï¼Œæ­£åœ¨æ‰“çŒç¡ï¼\n");
+       set("title", "é—¨æˆ¿");
+       set("gender", "ç”·æ€§");
         set("combat_exp", 2000);
 	set("per", 18);
        set("age", 56);

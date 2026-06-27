@@ -5,10 +5,10 @@ inherit BULLETIN_BOARD;
 
 void create()
 {
-	set_name("黑板", ({ "chalkboard" }) );
+	set_name("榛戞澘", ({ "chalkboard" }) );
 	set("location", "/u/pickle/workroom");
 	set("board_id", "chalkboard");
-	set("long",	"这是一面脏脏的黑板，上面写满了杂乱无章的留言。\n" );
+	set("long",	"杩欐槸涓�闈㈣剰鑴忕殑榛戞澘锛屼笂闈㈠啓婊′簡鏉備贡鏃犵珷鐨勭暀瑷�銆俓n" );
 	setup();
 	set("capacity", 100);
 	replace_program(BULLETIN_BOARD);

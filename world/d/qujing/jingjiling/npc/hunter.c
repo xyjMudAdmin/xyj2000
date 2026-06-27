@@ -1,7 +1,7 @@
 // cracked by vikee 2/09/2002   vikee@263.net
 inherit NPC;
-string *first_name = ({ "ÕÔ","Ç®","Ëï","Àî","ÖÜ","Îâ","Ö£","Íõ"});
-string *name_words = ({ "Ò»", "¶ş", "Èı", "ËÄ", "Îå", "Áù", "Æß", "°Ë", "¾Å"});
+string *first_name = ({ "èµµ","é’±","å­™","æ","å‘¨","å´","éƒ‘","ç‹"});
+string *name_words = ({ "ä¸€", "äºŒ", "ä¸‰", "å››", "äº”", "å…­", "ä¸ƒ", "å…«", "ä¹"});
 void create()
 {
 	string name;
@@ -9,11 +9,11 @@ void create()
         name += name_words[random(sizeof(name_words))];
 
         set_name(name, ({"lie hu", "hu"}));
-	set("title", "ÁÔ»§");
-        set("long", "Ò»¸öÉ½¼äÁÔÊÖ¡£\n");
+	set("title", "çŒæˆ·");
+        set("long", "ä¸€ä¸ªå±±é—´çŒæ‰‹ã€‚\n");
         set("age", 30+random(20));
 	set("attitude", "heroism");
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("str", 25);
         set("int", 20);
         set("per", 10);
@@ -32,8 +32,8 @@ void create()
         set_skill("dodge", 60);
 	set_skill("fork", 60);
 set("inquiry", ([
-"name": "Ïç¼ä²İÃñ£¬´òÁÔÎªÉú£¬Ëµ³öÀ´ÅÂÄúÒ²²»ÖªµÀ¡£\n",
-"here": "´ËµØÄËÂÒÊ¯É½£¬É½ÉÏÒ°ÊŞÉõ¶à£¬Äã¿ÉÒªĞ¡ĞÄÄÄ¡£\n",
+"name": "ä¹¡é—´è‰æ°‘ï¼Œæ‰“çŒä¸ºç”Ÿï¼Œè¯´å‡ºæ¥æ€•æ‚¨ä¹Ÿä¸çŸ¥é“ã€‚\n",
+"here": "æ­¤åœ°ä¹ƒä¹±çŸ³å±±ï¼Œå±±ä¸Šé‡å…½ç”šå¤šï¼Œä½ å¯è¦å°å¿ƒå“ªã€‚\n",
 ]) );
 
         setup();

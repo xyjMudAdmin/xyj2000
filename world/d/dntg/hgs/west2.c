@@ -1,16 +1,16 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// Room: /d/4world/��ܾ��
+// Room: /d/4world/西芫街
 inherit ROOM;
 
 void create ()
 {
-  set ("short", "��ܾ��");
+  set ("short", "西芫街");
   set ("long", @LONG
 
-��ܾ�ֿ���Ľֵ�������ʯ�壬ż����ƥ�۹���������ʯ����
-�����������������߾�ͨ�������ģ�ԶԶ�ɼ������ع㳡
-�͹㳡�еĴ��켰ʯ̨�������Ǹ�С���������ϱ��Ǽ���լ��
-�ſڹ���Щ�첼��
+西芫街宽广的街道上铺着石板，偶尔马匹驰过，马蹄在石板上
+发出清脆地嗒嗒声。东边就通到城中心，远远可见宽阔地广场
+和广场中的大旗及石台。北边是个小土地庙，南边是家民宅，
+门口挂着些红布。
 LONG);
 
   set("exits", ([ /* sizeof() == 3 */

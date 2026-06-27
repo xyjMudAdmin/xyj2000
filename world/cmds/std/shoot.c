@@ -19,21 +19,21 @@ int main(object me, string arg)
 
 	if(environment(me)->query("no_fight") || 
            environment(me)->query("no_magic") )
-              return notify_fail("°²È«ÇøÄÚÉä¼ı¿ÉÊÇ»áÒıÆğ¹«·ßµÄàŞ£¡\n");
+              return notify_fail("å®‰å…¨åŒºå†…å°„ç®­å¯æ˜¯ä¼šå¼•èµ·å…¬æ„¤çš„å™¢ï¼\n");
 
     	if( this_player()->is_busy() )
-		return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+		return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
 
 	if( !arg || sscanf(arg, "%s on %s", item, targ)!=2 )
-		return notify_fail("Ö¸Áî¸ñÊ½£ºshoot <Ä³Îï> on <Ä³ÈË>\n");
+		return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šshoot <æŸç‰©> on <æŸäºº>\n");
 
 	if(targ == me->query("id"))
-		return notify_fail("Ïë×ÔÉ±Ó¦¸ÃÓÃsuicide°É£¿\n");
+		return notify_fail("æƒ³è‡ªæ€åº”è¯¥ç”¨suicideå§ï¼Ÿ\n");
 	if( !objectp(ob = present(item, me)))
-		return notify_fail("ÄãÉíÉÏÃ»ÓĞ "+item+"\n");
+		return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰ "+item+"\n");
 
 	if(ob->query("skill_type")!="sword" || ob->query("apply/skill_type")!="archery")
-		return notify_fail(ob->query("name")+"²»ÊÇ¼ı£¡\n");
+		return notify_fail(ob->query("name")+"ä¸æ˜¯ç®­ï¼\n");
 	
 
 	success=0;
@@ -48,13 +48,13 @@ int main(object me, string arg)
 		}
 	}
 	if(!success)
-		return notify_fail("Äã±ØĞëÏÈÅªÕÅ¹­¡£\n");
+		return notify_fail("ä½ å¿…é¡»å…ˆå¼„å¼ å¼“ã€‚\n");
 			
 	if( !objectp(victim = present(targ, environment(me))) )
-		return notify_fail("ÄãÏëÏòÉäË­£¿\n");
+		return notify_fail("ä½ æƒ³å‘å°„è°ï¼Ÿ\n");
 
 	if( !living(victim)) 
-                return notify_fail("Ê²Ã´Äã¶¼ÏëÉ±£¿\n");
+                return notify_fail("ä»€ä¹ˆä½ éƒ½æƒ³æ€ï¼Ÿ\n");
 
 	if(!valid_kill(me,victim,0)) return 0;
 
@@ -65,16 +65,16 @@ int main(object me, string arg)
 	wound=0;
 	ap=COMBAT_D->skill_power(me, "archery", SKILL_USAGE_ATTACK);
 	dp=COMBAT_D->skill_power(victim, "dodge", SKILL_USAGE_DEFENSE);
-	dp/=2;			// ¹­¼ıÄÑ·À 
+	dp/=2;			// å¼“ç®­éš¾é˜² 
 	if(random(ap+dp) > dp) {
 		success=1;
 		if(ap<dp) lucky=1;
 	}
-	msg="$NÉìÊÖ´Ó»³ÀïÌÍ³öÒ»"+ob->query("base_unit")+ob->query("name")+"£¬´îÔÚ"+ob2->query("name")+"ÉÏ¡£\n";
-	msg+="Ò»ËÉÊÖ£¬Ö»¼ûÒ»µÀº®¹â·ÉÏò$nµÄÃæÃÅ£¬";
+	msg="$Nä¼¸æ‰‹ä»æ€€é‡Œæå‡ºä¸€"+ob->query("base_unit")+ob->query("name")+"ï¼Œæ­åœ¨"+ob2->query("name")+"ä¸Šã€‚\n";
+	msg+="ä¸€æ¾æ‰‹ï¼Œåªè§ä¸€é“å¯’å…‰é£å‘$nçš„é¢é—¨ï¼Œ";
 
 	if(success) {
-		msg+="$nÏë¶ãÈ´Ã»¶ã¿ª¡£\n";
+		msg+="$næƒ³èº²å´æ²¡èº²å¼€ã€‚\n";
 		damage=ob->query("weapon_prop/damage");
 		damage+=random(damage);
 		damage_bonus=me->query_str();
@@ -94,7 +94,7 @@ int main(object me, string arg)
 		if(damage>0) {
 			victim->receive_damage("kee", damage, me);
 			if(wound >0) victim->receive_wound("kee", wound, me);
-			msg+=COMBAT_D->damage_msg(damage,"ÉËº¦");
+			msg+=COMBAT_D->damage_msg(damage,"ä¼¤å®³");
 		}
 		if(random(me->query("sen")*100/me->query("max_sen") + me->query_int()*me->query_cps()) > 150) {
 			if(lucky) {
@@ -106,11 +106,11 @@ int main(object me, string arg)
 		}
 	}
 	else 
-		msg+="µ«ÊÇ±»$n¶ã¿ªÁË¡£\n";
+		msg+="ä½†æ˜¯è¢«$nèº²å¼€äº†ã€‚\n";
 
 	if((int)ob->query_amount()==1) {
 		if(stringp(ob->query("equipped"))) ob->unequip();
-		tell_object(me, "ÄãµÄ" + ob->query("name") + "ÓÃÍêÁË£¡\n");
+		tell_object(me, "ä½ çš„" + ob->query("name") + "ç”¨å®Œäº†ï¼\n");
 	}
 	ob->add_amount(-1);
 
@@ -118,7 +118,7 @@ int main(object me, string arg)
 	if(damage > 0) COMBAT_D->report_status(victim);
 
 	if(living(victim)) {
-		msg="$nÅ­ÊÓ$N£¬´óÉùºÈµÀ£ºĞ¡ÍÃáÌ×Ó¸Ò·ÅÀä¼ı£¡\n";
+		msg="$næ€’è§†$Nï¼Œå¤§å£°å–é“ï¼šå°å…”å´½å­æ•¢æ”¾å†·ç®­ï¼\n";
 		message_vision(msg, me, victim);
 		if(userp(victim)) victim->fight_ob(me);
 		else victim->kill_ob(me);
@@ -132,9 +132,9 @@ int main(object me, string arg)
 int help(object me)
 {
    write( @HELP
-Ö¸Áî¸ñÊ½: shoot <something> on <someone>
+æŒ‡ä»¤æ ¼å¼: shoot <something> on <someone>
 
-ÕâÒ»Ö¸ÁîÈÃÄã¿ÉÒÔÏòÄ³ÈËÉä¼ı¡£
+è¿™ä¸€æŒ‡ä»¤è®©ä½ å¯ä»¥å‘æŸäººå°„ç®­ã€‚
 HELP
    );
    return 1;

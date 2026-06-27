@@ -1,49 +1,49 @@
 // cracked by vikee 2/09/2002   vikee@263.net
 
-//¡¾·üÄ§ÕÈ¡¿fumo-zhang.c, weiqi...980305
+//ã€ä¼é­”æ–ã€‘fumo-zhang.c, weiqi...980305
 inherit SKILL;
 
 /*
-·üÄ§ÕÈ    dodge  2.5    parry  -6    damage  23
-Îå×¯¹Û¹¦·ò¡£
+ä¼é­”æ–    dodge  2.5    parry  -6    damage  23
+äº”åº„è§‚åŠŸå¤«ã€‚
 */
 
 mapping *action = ({
-	([	"action":		"$NÔË×ãÁ¦Æø½«$wÂÕÁË¼¸¸ö´óÔ²£¬ºô£¡µØÒ»ÉùÏò$nµ±Í·ÔÒÏÂ",
+	([	"action":		"$Nè¿è¶³åŠ›æ°”å°†$wæŠ¡äº†å‡ ä¸ªå¤§åœ†ï¼Œå‘¼ï¼åœ°ä¸€å£°å‘$nå½“å¤´ç ¸ä¸‹",
 		"dodge":		15,
 		"parry":		-5,
 		"damage":		35,
-		"damage_type":	"ÔÒÉË"
+		"damage_type":	"ç ¸ä¼¤"
 	]),
-	([	"action":		"Ö»Ìı$NÒ»Éù¸ß½Ğ£º»¹²»¸¿ÊÖ¾ÍÇÜ£¡ÊÖÖĞµÄ$wÒ»½Ê£¬É¨Ïò$n$l",
+	([	"action":		"åªå¬$Nä¸€å£°é«˜å«ï¼šè¿˜ä¸ç¼šæ‰‹å°±æ“’ï¼æ‰‹ä¸­çš„$wä¸€ç»ï¼Œæ‰«å‘$n$l",
 		"dodge":		0,
 		"parry":		-15,
 		"damage":		15,
-		"damage_type":	"ÔÒÉË"
+		"damage_type":	"ç ¸ä¼¤"
 	]),
-	([	"action":		"$NÊ¹³öÒ»ÕĞ¡¸ÈºÄ§·üÊ×¡¹£¬ÊÖÖĞµÄ$w´ø³ö·ÉÉ³×ßÊ¯°ãµÄÕÈ·çÑ¹Ïò$nµÄ$l",
+	([	"action":		"$Nä½¿å‡ºä¸€æ‹›ã€Œç¾¤é­”ä¼é¦–ã€ï¼Œæ‰‹ä¸­çš„$wå¸¦å‡ºé£æ²™èµ°çŸ³èˆ¬çš„æ–é£å‹å‘$nçš„$l",
 		"dodge":		5,
 		"parry":		-5,
 		"damage":		30,
-		"damage_type":	"ÔÒÉË"
+		"damage_type":	"ç ¸ä¼¤"
 	]),
-	([	"action":		"Ö»¼û$NÂÔÂÔÒ»ÍË£¬Ğı¼´Ò»¸ö¿ç²½£¬$w»®³öÒ»µÀ»¡¹â´ÌÏò$n$l",
+	([	"action":		"åªè§$Nç•¥ç•¥ä¸€é€€ï¼Œæ—‹å³ä¸€ä¸ªè·¨æ­¥ï¼Œ$wåˆ’å‡ºä¸€é“å¼§å…‰åˆºå‘$n$l",
 		"dodge":		5,
 		"parry":		0,
 		"damage":		20,
-		"damage_type":	"´ÌÉË"
+		"damage_type":	"åˆºä¼¤"
 	]),
-	([	"action":		"$Nºá³Ö$w£¬°µÔËÕæÆø£¬ºöÈ»¼äÖ»¼ûÕÈÍ·Ò»Ìø£¬ÁéÉß°ã×êÏò$nµÄ$l",
+	([	"action":		"$Næ¨ªæŒ$wï¼Œæš—è¿çœŸæ°”ï¼Œå¿½ç„¶é—´åªè§æ–å¤´ä¸€è·³ï¼Œçµè›‡èˆ¬é’»å‘$nçš„$l",
 		"dodge":		-5,
 		"parry":		0,
 		"damage":		15,
-		"damage_type":	"´ÌÉË"
+		"damage_type":	"åˆºä¼¤"
 	]),
-	([	"action":		"$NµÄ$wÍûÉÏÒ»Ìô£¬ÖĞÍ¾È´Ê¹ÁË¸öÇÉ¾¢£¬ÕÈÎ²à²£¡µØÒ»·­£¬ÔÒÏò$n$l",
+	([	"action":		"$Nçš„$wæœ›ä¸Šä¸€æŒ‘ï¼Œä¸­é€”å´ä½¿äº†ä¸ªå·§åŠ²ï¼Œæ–å°¾å—–ï¼åœ°ä¸€ç¿»ï¼Œç ¸å‘$n$l",
 		"dodge":		-5,
 		"parry":		-10,
 		"damage":		25,
-		"damage_type":	"ÔÒÉË"
+		"damage_type":	"ç ¸ä¼¤"
 	]),
 });
 
@@ -52,10 +52,10 @@ int valid_learn(object me)
 	object ob;
 
 	if( (int)me->query("max_force") < 100 )
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬Ã»ÓĞ°ì·¨Ñ§·üÄ§ÕÈ¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼Œæ²¡æœ‰åŠæ³•å­¦ä¼é­”æ–ã€‚\n");
 
 	if( !(ob = me->query_temp("weapon")) || (string)ob->query("skill_type") != "staff" )
-		return notify_fail("Äã±ØĞëÏÈÕÒÒ»ÌõìøÕÈ²ÅÄÜÑ§·üÄ§ÕÈ¡£\n");
+		return notify_fail("ä½ å¿…é¡»å…ˆæ‰¾ä¸€æ¡ç¦…æ–æ‰èƒ½å­¦ä¼é­”æ–ã€‚\n");
 
 	return 1;
 }
@@ -73,10 +73,10 @@ mapping query_action(object me, object weapon)
 int practice_skill(object me)
 {
 	if( (int)me->query("kee") < 30 || (int)me->query("force") < 5 )
-		return notify_fail("ÄãÏÖÔÚÌ«ÀÛÁË£¬Ç¿Á·ÎŞÒæ¡£\n");
+		return notify_fail("ä½ ç°åœ¨å¤ªç´¯äº†ï¼Œå¼ºç»ƒæ— ç›Šã€‚\n");
 	me->receive_damage("kee", 30);
 	me->add("force", -5);
-	write("Äã°´×ÅËùÑ§Á·ÁËÒ»±é·üÄ§ÕÈ¡£\n");
+	write("ä½ æŒ‰ç€æ‰€å­¦ç»ƒäº†ä¸€éä¼é­”æ–ã€‚\n");
 	return 1;
 }
 

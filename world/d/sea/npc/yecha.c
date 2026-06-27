@@ -3,9 +3,9 @@ inherit NPC;
 
 void create()
 {
-       	set_name("Ñ²º£Ò¹²æ", ({"ye cha", "yecha", "cha"}));
-       	set("long","Ò»¸öÑ²º£µÄÒ¹²æ£¬³¤µÄÇàÃæâ²ÑÀ£®\n");
-       	set("gender", "ÄĞĞÔ");
+       	set_name("å·¡æµ·å¤œå‰", ({"ye cha", "yecha", "cha"}));
+       	set("long","ä¸€ä¸ªå·¡æµ·çš„å¤œå‰ï¼Œé•¿çš„é’é¢ç ç‰™ï¼\n");
+       	set("gender", "ç”·æ€§");
        	set("per", 10);
 	set("str", 20);
        	set("max_kee",700);
@@ -30,4 +30,3 @@ void create()
 }
 
 
-ÿ

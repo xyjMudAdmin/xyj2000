@@ -6,10 +6,10 @@ inherit NPC;
 int reset_status();
 void create()
 {
-	set_name("÷¼÷Ã±ø", ({ "kulou bing","bing", "guard" }) );
+	set_name("éª·é«…å…µ", ({ "kulou bing","bing", "guard" }) );
 
 	set("people", 1);
-	set("long", "Ò»¾ß±»ÈËÓÃÖäÓï¿ØÖÆ×ÅµÄ÷¼÷Ã¡£\n");
+	set("long", "ä¸€å…·è¢«äººç”¨å’’è¯­æ§åˆ¶ç€çš„éª·é«…ã€‚\n");
 	set("attitude", "heroism");
 
 	set("max_gin", 300);
@@ -23,7 +23,7 @@ void create()
 
 	set("str", 30);
 	set("per", 100);
-	set("looking", "È«ÉíÖ»ÓĞÒ»¸±¹Ç¼Ü£¬¿´ÆğÀ´ÉõÊÇ¿Ö²À¡£");
+	set("looking", "å…¨èº«åªæœ‰ä¸€å‰¯éª¨æ¶ï¼Œçœ‹èµ·æ¥ç”šæ˜¯ææ€–ã€‚");
 
 	set("combat_exp", 50000);
 	set("daoxing", 50000);
@@ -48,19 +48,19 @@ int do_attack(string arg)
 	object obj, owner;
 
 	if( (string)this_player()->query("id") != (string)this_object()->query("owner") )
-		return notify_fail("÷¼÷Ã±ø¿ÚÖĞÎØÎØÁ½Éù£¬ºÃÏñ²»Ô¸ÀíÄã£¡\n");
+		return notify_fail("éª·é«…å…µå£ä¸­å‘œå‘œä¸¤å£°ï¼Œå¥½åƒä¸æ„¿ç†ä½ ï¼\n");
 
 	if( !arg || !objectp(obj=present(arg,environment(this_player()))))
-           return notify_fail("ÄãÏëÈÃ÷¼÷Ã±øÈ¥¹¥»÷Ë­£¿\n");
+           return notify_fail("ä½ æƒ³è®©éª·é«…å…µå»æ”»å‡»è°ï¼Ÿ\n");
 
 	if( !obj->is_character() )
-                return notify_fail("¿´Çå³şÒ»µã£¬ÄÇ²¢²»ÊÇÉúÎï¡£\n");
+                return notify_fail("çœ‹æ¸…æ¥šä¸€ç‚¹ï¼Œé‚£å¹¶ä¸æ˜¯ç”Ÿç‰©ã€‚\n");
 
 	if( userp(obj) )
-		return notify_fail("÷¼÷Ã±ø²»»áÈ¥¹¥»÷Íæ¼Ò¡£\n");
+		return notify_fail("éª·é«…å…µä¸ä¼šå»æ”»å‡»ç©å®¶ã€‚\n");
 
-	message_vision("$N¸½¶ú¶Ô$nËµÁËĞ©Ê²Ã´¡£\n", this_player(), this_object());
-        message_vision("$N¶Ô$nº°µÀ£ºÈ¥ËÀ°É£¡\n", this_object(), obj);
+	message_vision("$Né™„è€³å¯¹$nè¯´äº†äº›ä»€ä¹ˆã€‚\n", this_player(), this_object());
+        message_vision("$Nå¯¹$nå–Šé“ï¼šå»æ­»å§ï¼\n", this_object(), obj);
 
 	command("kill "+obj->query("id"));
 	return 1;
@@ -77,13 +77,13 @@ void invocation(object who)
 
 void die()
 {
-	message_vision("\n$Nµ¹ÁËÏÂÈ¥£¬»¯ÎªÒ»¶Ñ¿İ¹Ç¡£\n", this_object());
+	message_vision("\n$Nå€’äº†ä¸‹å»ï¼ŒåŒ–ä¸ºä¸€å †æ¯éª¨ã€‚\n", this_object());
 	destruct(this_object());
 }
 
 void unconcious()
 {
-	message_vision("\n$Nµ¹ÁËÏÂÈ¥£¬»¯ÎªÒ»¶Ñ¿İ¹Ç¡£\n", this_object());
+	message_vision("\n$Nå€’äº†ä¸‹å»ï¼ŒåŒ–ä¸ºä¸€å †æ¯éª¨ã€‚\n", this_object());
         destruct(this_object());
 }
 
@@ -94,7 +94,7 @@ int reset_status()
 
 	if(  !query("owner")
 	|| !objectp(owner=present( query("owner"), environment(this_object()) )) ){
-		message_vision("$Nµ¹ÁËÏÂÈ¥£¬»¯ÎªÒ»¶Ñ¿İ¹Ç¡£\n", this_object());
+		message_vision("$Nå€’äº†ä¸‹å»ï¼ŒåŒ–ä¸ºä¸€å †æ¯éª¨ã€‚\n", this_object());
 		destruct( this_object());
 		return 1;
 	}
@@ -117,8 +117,8 @@ int reset_status()
 	set_skill("parry", 20 + 15 * n );
 	set_skill("dodge", 20 + 15 * n );
 
-	set("short", chinese_number(n)+"¾ß÷¼÷Ã±ø(Kulou bing)");
-	set("long", chinese_number(n)+"¾ß±»ÈËÓÃÖäÓï¿ØÖÆ×ÅµÄ÷¼÷Ã¡£\n");
+	set("short", chinese_number(n)+"å…·éª·é«…å…µ(Kulou bing)");
+	set("long", chinese_number(n)+"å…·è¢«äººç”¨å’’è¯­æ§åˆ¶ç€çš„éª·é«…ã€‚\n");
 	call_out("reset_status", 3);
 	return 1;
 }

@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "�Ž�����");
+  set ("short", "芭蕉洞口");
   set ("long", @LONG
 
-��һ̧ͷ�����Ѿ�����һ���޴�Ķ��ڣ�������״����һ�����޵�
-���졣���Ž����ιأ�������������
+你一抬头，见已经来到一个巨大的洞口，洞的形状犹如一个怪兽的
+大嘴。洞门紧闭牢关，洞外风光秀丽。
 
 LONG);
 

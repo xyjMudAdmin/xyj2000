@@ -4,10 +4,10 @@ inherit F_VENDOR_SALE;
 void create()
 {
   reload("jisaiguo_huoji");
-  set_name("»ï¼Æ", ({"huoji"}));
+  set_name("ä¼™è®¡", ({"huoji"}));
   set("shop_id", ({"huoji"}));
-  set("shop_title", "Ğ¡»ï¼Æ");
-  set("gender", "ÄĞĞÔ" );
+  set("shop_title", "å°ä¼™è®¡");
+  set("gender", "ç”·æ€§" );
   set("age", 18);
   set("per", 25);
   set("combat_exp", 1000);

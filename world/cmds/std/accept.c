@@ -11,16 +11,16 @@ int main(object me, string arg)
   object obj, env;
 
   if (!arg)
-    return notify_fail("ÄãÒª½ÓÊÜË­µÄ¹«¿ªÑûÇë£¿\n");
+    return notify_fail("ä½ è¦æ¥å—è°çš„å…¬å¼€é‚€è¯·ï¼Ÿ\n");
 
   if( me->is_ghost() )
-    return notify_fail("×öÁË¹íÁË£¬¾ÍÀÏÊµµã°É£¡\n");
+    return notify_fail("åšäº†é¬¼äº†ï¼Œå°±è€å®ç‚¹å§ï¼\n");
 
   if( me->is_fighting() )
-    return notify_fail("Õ½¶·ÖĞ²»ÄÜ½ÓÊÜ¹«¿ªÑûÇë¡£\n");
+    return notify_fail("æˆ˜æ–—ä¸­ä¸èƒ½æ¥å—å…¬å¼€é‚€è¯·ã€‚\n");
 
   if( me->is_busy() )
-    return notify_fail("ÄãºÜÃ¦£¬²»ÄÜ½ÓÊÜ¹«¿ªÑûÇë¡£\n");
+    return notify_fail("ä½ å¾ˆå¿™ï¼Œä¸èƒ½æ¥å—å…¬å¼€é‚€è¯·ã€‚\n");
 
   obj = find_player(arg);
   if (!obj)
@@ -28,22 +28,22 @@ int main(object me, string arg)
   if (!obj)
     obj = LOGIN_D->find_body(arg);
   if (!obj)
-    return notify_fail("Ã»ÓĞÕâ¸öÈË¡£\n");
+    return notify_fail("æ²¡æœ‰è¿™ä¸ªäººã€‚\n");
 
   if (obj->query_temp("invite") != "public")
-    return notify_fail(obj->query("name")+"ÏÖÔÚ²¢Ã»ÓĞ¹«¿ªÑûÇë±ğÈË¡£\n");
+    return notify_fail(obj->query("name")+"ç°åœ¨å¹¶æ²¡æœ‰å…¬å¼€é‚€è¯·åˆ«äººã€‚\n");
 
   // mon 4/27/98
   if (env=environment(me))
      if(!env->query("outdoors"))
-      return notify_fail("Äã»¹ÊÇµ½ÍâÃæÈ¥½ÓÊÜ"+
-	      obj->query("name")+"µÄÑûÇë°É£¡\n");
+      return notify_fail("ä½ è¿˜æ˜¯åˆ°å¤–é¢å»æ¥å—"+
+	      obj->query("name")+"çš„é‚€è¯·å§ï¼\n");
 
   if (me->query_temp("accept") == obj->query("id"))
-    return notify_fail("ÄãÒÑ¾­½ÓÊÜ"+obj->query("name")+"µÄ¹«¿ªÑûÇëÁË¡£\n");
+    return notify_fail("ä½ å·²ç»æ¥å—"+obj->query("name")+"çš„å…¬å¼€é‚€è¯·äº†ã€‚\n");
 
-  tell_object (me,"Äã½ÓÊÜ"+obj->query("name")+"µÄ¹«¿ªÑûÇë¡£\n");
-  tell_object (obj, me->query("name")+"ÏÖÔÚ½ÓÊÜÄãµÄ¹«¿ªÑûÇë¡£\n");
+  tell_object (me,"ä½ æ¥å—"+obj->query("name")+"çš„å…¬å¼€é‚€è¯·ã€‚\n");
+  tell_object (obj, me->query("name")+"ç°åœ¨æ¥å—ä½ çš„å…¬å¼€é‚€è¯·ã€‚\n");
   me->set_temp("accept",obj->query("id"));
   return 1;
 }
@@ -51,9 +51,9 @@ int main(object me, string arg)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : accept <Ä³ÈË>
+æŒ‡ä»¤æ ¼å¼ : accept <æŸäºº>
 
-Õâ¸öÖ¸Áî¸æËß±ğÈËÄã½ÓÊÜËû/ËıµÄ¹«¿ªÑûÇë.
+è¿™ä¸ªæŒ‡ä»¤å‘Šè¯‰åˆ«äººä½ æ¥å—ä»–/å¥¹çš„å…¬å¼€é‚€è¯·.
 
 HELP
     );

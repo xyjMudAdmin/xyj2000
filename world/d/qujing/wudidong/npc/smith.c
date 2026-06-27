@@ -7,14 +7,14 @@ inherit F_VENDOR_SALE;
 void create()
 {
         reload("wudidong_blacksmith");
-        set_name("ÕÅÌú±Û", ({ "blacksmith", "smith", "zhang", "zhang tiebi", "tiebi" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("å¼ é“è‡‚", ({ "blacksmith", "smith", "zhang", "zhang tiebi", "tiebi" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 42);
-        set("title", "Ìú½³");
-        set("long","ÕÅÌú½³ÕıÔÚ´òÌú£¬Â¯»ğ°ÑËûµÄÁ³Ó³µÃÍ¨ºì¡£\n");
+        set("title", "é“åŒ ");
+        set("long","å¼ é“åŒ æ­£åœ¨æ‰“é“ï¼Œç‚‰ç«æŠŠä»–çš„è„¸æ˜ å¾—é€šçº¢ã€‚\n");
         set("combat_exp", 5000);
         set("attitude", "friendly");
-        set("rank_info/respect", "ÕÅ´ó¸ç");
+        set("rank_info/respect", "å¼ å¤§å“¥");
         set("per",25);
         set("vendor_goods", ([
 		"zhadao"  : "/d/obj/weapon/blade/zhadao.c",
@@ -43,6 +43,6 @@ void init()
 void greeting(object ob)
 {
 	if( !ob || environment(ob) != environment() ) return;
-	say("ÕÅÌú½³ËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-		+"£¬ÒªµãÊ²Ã´ÌúÆ÷£¿\n");
+	say("å¼ é“åŒ è¯´é“ï¼šè¿™ä½" + RANK_D->query_respect(ob)
+		+"ï¼Œè¦ç‚¹ä»€ä¹ˆé“å™¨ï¼Ÿ\n");
 }

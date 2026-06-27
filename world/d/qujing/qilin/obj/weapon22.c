@@ -5,9 +5,9 @@ inherit STICK;
 
 void create()
 {
-  set_name("Ô§Ñì¹÷", ({ "yuanyang gun", "gun", "stick" }) );
+  set_name("é¸³é¸¯æ£", ({ "yuanyang gun", "gun", "stick" }) );
   init_stick(40);
-  set("unit", "¸ù");
+  set("unit", "æ ¹");
   set_weight(700);
   if( clonep() )
      set_default_object(__FILE__);
@@ -15,7 +15,7 @@ void create()
     set("value", 410);
     set("material", "bone");
   }
-  set("wield_msg","$N²ÙÆğ$nÎÕÔÚÊÖÀï¡£\n");
+  set("wield_msg","$Næ“èµ·$næ¡åœ¨æ‰‹é‡Œã€‚\n");
   setup();
 }
 

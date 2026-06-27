@@ -6,15 +6,15 @@ inherit ITEM;
 int do_kan(string arg);
 void create()
 {
-  set_name("¡¶Î÷ÓÎ¼Ç¡·", ({"xyj story","xyj","book"}));
+  set_name("ã€Šè¥¿æ¸¸è®°ã€‹", ({"xyj story","xyj","book"}));
   set_weight(200);
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("unit", "±¾");
+    set("unit", "æœ¬");
     set("value", 100);
     set("no_sell", 1);
-    set("long", " ¡¶Î÷ÓÎ¼Ç¡· ÇëÓÃ kan ÔÄ¶Á(1-100)¡£\n");
+    set("long", " ã€Šè¥¿æ¸¸è®°ã€‹ è¯·ç”¨ kan é˜…è¯»(1-100)ã€‚\n");
     set("material", "paper");
   }
 }
@@ -40,12 +40,12 @@ int do_kan(string arg)
     write("\n");
     me->start_more(read_file("/d/obj/books-nonskill/text/xyjindex"));
     write("\n");
-    write ("ÇëÓÃ kan <number> ²ÎÔÄÓĞ¹ØÕÂ½Ú(1-100)¡£\n");
+    write ("è¯·ç”¨ kan <number> å‚é˜…æœ‰å…³ç« èŠ‚(1-100)ã€‚\n");
     return 1;
   }
 
   if ( nb <= 0 || nb > size)
-    return notify_fail ("ÄãÒª¶ÁÄÄÒ»ÕÂ£¿\n");
+    return notify_fail ("ä½ è¦è¯»å“ªä¸€ç« ï¼Ÿ\n");
 
   else 
   {  
@@ -54,7 +54,7 @@ int do_kan(string arg)
       me->start_more(read_file("/d/obj/books-nonskill/text/xyj0"+nb));
   else if (file_size("/d/obj/books-nonskill/text/xyj"+nb) >= 0)
       me->start_more(read_file("/d/obj/books-nonskill/text/xyj"+nb));
-  else write("ÉĞÎ´ÊäÈë£¬ÇëÉÔºò¡£");
+  else write("å°šæœªè¾“å…¥ï¼Œè¯·ç¨å€™ã€‚");
   write("\n");
   return 1;
   }

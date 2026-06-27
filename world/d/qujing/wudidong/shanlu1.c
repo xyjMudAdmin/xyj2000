@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ɽ��");
+	set("short", "山腹");
 	set("long", @LONG
 
-�Ĵ��ڳ����ģ�ʲôҲ�����壬ֻ��������ǰ����������Ϊ��ʪ��ù
-���˱ǡ����߱��϶��ǰ�͹��ƽ�ļ�ʯ������Ҳ��ʱ��ʱ�͡�
+四处黑沉沉的，什么也看不清，只能摸索着前进。地面颇为潮湿，霉
+气扑鼻。两边壁上都是凹凸不平的尖石，脚下也是时高时低。
 LONG
 	);
 	set("exits", ([ /* sizeof() == 2 */

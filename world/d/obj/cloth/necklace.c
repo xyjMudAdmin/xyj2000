@@ -5,12 +5,12 @@ inherit NECK;
 
 void create()
 {
-        set_name("ÏîÁ´", ({ "necklace" }) );
+        set_name("é¡¹é“¾", ({ "necklace" }) );
         set_weight(800);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "´®");
+                set("unit", "ä¸²");
                 set("material", "pearl");
 		set("value", 100);
                 set("armor_prop/armor", 2);

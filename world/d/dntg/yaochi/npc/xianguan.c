@@ -8,10 +8,10 @@ inherit NPC;
 void create()
 {
 
-  set_name("Ôì¾ÆÏÉ¹Ù",({ "zaojiu xianguan","xianguan","xian" }) );
+  set_name("é€ é…’ä»™å®˜",({ "zaojiu xianguan","xianguan","xian" }) );
   set("can_sleep",1);
-  set("gender", "ÄĞĞÔ" );
-  set("long", "Ò»Î»×Ïç·½ğÕÂÜ½ÈØ¹ÚµÄÏÉ³¤£¬ÕıÔÚ¾Æ¸×Ç°Ã¦Âµ×Å¡£\n");
+  set("gender", "ç”·æ€§" );
+  set("long", "ä¸€ä½ç´«ç»¶é‡‘ç« èŠ™è“‰å† çš„ä»™é•¿ï¼Œæ­£åœ¨é…’ç¼¸å‰å¿™ç¢Œç€ã€‚\n");
   set("age", 100+random(100));
   set("attitude", "peaceful");
   set("str", 50);
@@ -31,7 +31,7 @@ void create()
   set_skill("parry",200);
   set_skill("spear",100);
   set_skill("force",100);
-  set("no_get","Ôì¾ÆÏÉ¹Ù¶ÔÄã¶øÑÔÌ«ÖØÁË¡£\n");
+  set("no_get","é€ é…’ä»™å®˜å¯¹ä½ è€Œè¨€å¤ªé‡äº†ã€‚\n");
   setup();
   carry_object("/d/obj/cloth/xianpao")->wear();
 }
@@ -51,9 +51,9 @@ void heart_beat() {
   if (!living(me)) return;
 //  message_vision("$N is a living.\n",me);
   if (!env->query("xianguan")) {
-    message_vision("$N´Ò´ÒÃ¦Ã¦µØÀë¿ªÁË¡£\n",this_object());
+    message_vision("$NåŒ†åŒ†å¿™å¿™åœ°ç¦»å¼€äº†ã€‚\n",this_object());
     if (this_object()->move(DONGLANG)) 
-        message_vision("$N¿ì²½×ßÁË¹ıÀ´¡£\n",this_object());
+        message_vision("$Nå¿«æ­¥èµ°äº†è¿‡æ¥ã€‚\n",this_object());
     else destruct(this_object());
   }
 }

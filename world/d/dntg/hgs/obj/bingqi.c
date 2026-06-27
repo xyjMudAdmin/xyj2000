@@ -3,16 +3,16 @@ inherit ITEM;
 
 void create()
 {
-        set_name("±øÆ÷",({"bing qi"}) );
-        set("long","Ò»´óÀ¦±øÆ÷£¬µ¶¡¢Ç¹¡¢½£¡¢êª¡¢¸«¡¢îá¡¢¹³¡¢²æ\n
-Ê²Ã´¶¼ÓĞ£¬ÉÏÃæ¶¼¿ÌÓĞ¼¸¸ö´ó×Ö£º£¢°ÁÀ´¹úÖÆ£¢¡£\n");
+        set_name("å…µå™¨",({"bing qi"}) );
+        set("long","ä¸€å¤§æ†å…µå™¨ï¼Œåˆ€ã€æªã€å‰‘ã€æˆŸã€æ–§ã€é’ºã€é’©ã€å‰\n
+ä»€ä¹ˆéƒ½æœ‰ï¼Œä¸Šé¢éƒ½åˆ»æœ‰å‡ ä¸ªå¤§å­—ï¼šï¼‚å‚²æ¥å›½åˆ¶ï¼‚ã€‚\n");
         set_weight(20000);
-        set("unit","À¦");
+        set("unit","æ†");
 }
 
 void destruct_me(object where, object me)
 {
-  message_vision("±øÆ÷ßñÁ¨ÍÛÀ²ÈöÁËÒ»µØ¡£\n",where,me);
+  message_vision("å…µå™¨å”å“©å“‡å•¦æ’’äº†ä¸€åœ°ã€‚\n",where,me);
   destruct (me);
 }
 

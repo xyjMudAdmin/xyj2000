@@ -8,12 +8,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "×¡Õ¬Çø");
+  set ("short", "ä½å®…åŒº");
   set ("long", @LONG
 
-ãþË®Ö®±õµÄÒ»¿é×¡Õ¬Çø£¬ÑØºÓ×øÂä×ÅÒ»¶°¶°Æ¯ÁÁµÄÐ¡±ðÊû¡£
-ÕâÀï·ç¹âì½ì»£¬ÆøÏ¢ÇåÐÂ£¬ÕýÊÇ×¡¼ÒµÄ¾øºÃËùÔÚ¡£¼¸×ùÐ¡Â¥
-Ç°¹Ò×ÅÅÆ×Ó(paizi)£¬Ð´×ÅÐ©ÈË¼ÒµÄÃû×Ö¡£
+æ³¾æ°´ä¹‹æ»¨çš„ä¸€å—ä½å®…åŒºï¼Œæ²¿æ²³åè½ç€ä¸€æ ‹æ ‹æ¼‚äº®çš„å°åˆ«å¢…ã€‚
+è¿™é‡Œé£Žå…‰æ—–æ—Žï¼Œæ°”æ¯æ¸…æ–°ï¼Œæ­£æ˜¯ä½å®¶çš„ç»å¥½æ‰€åœ¨ã€‚å‡ åº§å°æ¥¼
+å‰æŒ‚ç€ç‰Œå­(paizi)ï¼Œå†™ç€äº›äººå®¶çš„åå­—ã€‚
 
 LONG);
 
@@ -50,7 +50,7 @@ int show_name(string arg)
 	  ++j;
         }
       }
-      result="\n                        Íæ¼ÒÖ®¼Ò \n";
+      result="\n                        çŽ©å®¶ä¹‹å®¶ \n";
       if (j>0) {
 	--j;
 	k=0;
@@ -82,7 +82,7 @@ int show_name(string arg)
       }
       
       result="\n"+result+"\n\n\n"+
-        "×¢£ºÇë¼üÈë¸÷¼ÒµÄµÚÒ»¸öÃû×ÖÀ´½øÈë¡£\n";
+        "æ³¨ï¼šè¯·é”®å…¥å„å®¶çš„ç¬¬ä¸€ä¸ªåå­—æ¥è¿›å…¥ã€‚\n";
         
       this_player()->start_more(result);
       
@@ -128,11 +128,11 @@ int enter_home(string arg)
   if (member_array(me->query("id"),home_host)==-1) {
 // mon
 //    if (member_array( (me->parse_command_id_list())[0],home_host)>-1)
-//   {  message_vision("¿´ÃÅÀÏÍ·Ò»°ÑÀ­×¡$NµÄÒÂ·þ£¬ÐË·ÜµØËµ£º¡°"+me->name()+"£¬ÕâÏÂ¿É´þ×ÅÄãÁË£¡»¹²»¿ì¸¶Ç·ÏÂµÄ¹ÜÀí·Ñ£¡¡±\n",me);me->start_busy(1);return 1;}
-    if (!me->query_temp("armor/cloth")) return notify_fail("ÒÂ¹Ú²»Õû£¬Ë¡²»½Ó´ý¡£\n");
-    if (me->query_temp("weapon")) return notify_fail("ÊÖ³ÖÐ×Æ÷£¬ÄãÊÇÈ¥×ö¿Í»¹ÊÇÈ¥´ò½Ù°¡£¿\n");
+//   {  message_vision("çœ‹é—¨è€å¤´ä¸€æŠŠæ‹‰ä½$Nçš„è¡£æœï¼Œå…´å¥‹åœ°è¯´ï¼šâ€œ"+me->name()+"ï¼Œè¿™ä¸‹å¯é€®ç€ä½ äº†ï¼è¿˜ä¸å¿«ä»˜æ¬ ä¸‹çš„ç®¡ç†è´¹ï¼â€\n",me);me->start_busy(1);return 1;}
+    if (!me->query_temp("armor/cloth")) return notify_fail("è¡£å† ä¸æ•´ï¼Œæ•ä¸æŽ¥å¾…ã€‚\n");
+    if (me->query_temp("weapon")) return notify_fail("æ‰‹æŒå‡¶å™¨ï¼Œä½ æ˜¯åŽ»åšå®¢è¿˜æ˜¯åŽ»æ‰“åŠ«å•Šï¼Ÿ\n");
   }
-      message_vision("$NÇáÇá´ò¿ªÒ»ÉÈÃÅ£¬×ßÁË½øÈ¥¡£\n",me);
+      message_vision("$Nè½»è½»æ‰“å¼€ä¸€æ‰‡é—¨ï¼Œèµ°äº†è¿›åŽ»ã€‚\n",me);
       me->move(room);
       return 1;
 }

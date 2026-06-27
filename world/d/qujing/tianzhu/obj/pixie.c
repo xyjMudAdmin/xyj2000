@@ -5,13 +5,13 @@ inherit BOOTS;
 
 void create()
 {
-  set_name( "¹ƤЬ", ({ "pi xie", "pixue", "xie" }) );
+  set_name( "鹿皮鞋", ({ "pi xie", "pixue", "xie" }) );
   set_weight(1000);
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("unit", "˫");
-    set("long", "һ˫����Ӳ�׵�¹ƤЬ��\n");
+    set("unit", "双");
+    set("long", "一双软身硬底的鹿皮鞋。\n");
     set("value", 140);
     set("material", "boots");
     set("armor_prop/dodge", 3);

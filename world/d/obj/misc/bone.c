@@ -8,13 +8,13 @@ inherit ITEM;
 
 void create()
 {
-  set_name("ÊÞ¹Ç", ({ "bone" }));
+  set_name("å…½éª¨", ({ "bone" }));
   set_weight(8000);
-  set("long", "ÕâÊÇÒ»¸±ÕýÔÚ·ç»¯µÄÊÞ¹Ç¡£\n" );
+  set("long", "è¿™æ˜¯ä¸€å‰¯æ­£åœ¨é£ŽåŒ–çš„å…½éª¨ã€‚\n" );
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("unit", "¸±");
+    set("unit", "å‰¯");
     set("material", "bone");
   }
   setup();

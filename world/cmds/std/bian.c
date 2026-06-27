@@ -15,19 +15,19 @@ int main(object me, string arg)
       seteuid(getuid());
 
       if( me->is_fighting() )
-        return notify_fail("ÄãÕıÔÚÕ½¶·£¬ÎŞÏ¾±äÉí¡£\n");
+        return notify_fail("ä½ æ­£åœ¨æˆ˜æ–—ï¼Œæ— æš‡å˜èº«ã€‚\n");
 
 	if( me->is_ghost() )
-		return notify_fail("»¹ÊÇ¸Ï½ô»¹ÑôÈ¥°É¡£\n");
+		return notify_fail("è¿˜æ˜¯èµ¶ç´§è¿˜é˜³å»å§ã€‚\n");
 
       if( me->is_busy() || me->query_temp("pending/exercising"))
-	return notify_fail("ÄãÕıÃ¦×ÅÄØ£¬Ã»¹¤·ò±äÉí¡£\n");
+	return notify_fail("ä½ æ­£å¿™ç€å‘¢ï¼Œæ²¡å·¥å¤«å˜èº«ã€‚\n");
  
       if (!arg || arg=="me" || arg==me->query("id")) 
 	who=me;
       else {
 	if(!objectp(who=present(arg,environment(me)))) 
-	   return notify_fail("ÄãÏë±ä³ÉË­£¿\n");
+	   return notify_fail("ä½ æƒ³å˜æˆè°ï¼Ÿ\n");
       }
 
       if(who==me) {
@@ -46,10 +46,10 @@ int main(object me, string arg)
 	     me->move(environment(environment(me)));
 	     //mon 9/25/97. to prevent being carried by another player
 	     //after bianed back.
-          message_vision(HIY "$N¿ÚÄîÖäÓï£¬ÉíĞÎÒ»»Î£¬ÏÖÁËÕæÉí¡£\n"
+          message_vision(HIY "$Nå£å¿µå’’è¯­ï¼Œèº«å½¢ä¸€æ™ƒï¼Œç°äº†çœŸèº«ã€‚\n"
 	    NOR,me);
         } else {
-	  return notify_fail("ÄãÏë±ä³ÉË­£¿\n");
+	  return notify_fail("ä½ æƒ³å˜æˆè°ï¼Ÿ\n");
         }
       }
       else {
@@ -57,25 +57,25 @@ int main(object me, string arg)
 	mana=me->query("mana");
 
 	if( RANK_D->grade_dx( RANK_D->describe_dx( (int)me->query("daoxing") ) ) 
-		< RANK_D->grade_dx(BLU "³õÁìÃîµÀ" NOR) )
-		return notify_fail("ÄãÏÖÔÚ»¹³õÁìÃîµÀ¶¼Ì¸²»ÉÏ£¬ÄÄÀïÄÜ±ä¡£\n");
+		< RANK_D->grade_dx(BLU "åˆé¢†å¦™é“" NOR) )
+		return notify_fail("ä½ ç°åœ¨è¿˜åˆé¢†å¦™é“éƒ½è°ˆä¸ä¸Šï¼Œå“ªé‡Œèƒ½å˜ã€‚\n");
 
 	if( RANK_D->grade_fali( RANK_D->describe_fali( (int)me->query("max_mana") ) ) 
-		< RANK_D->grade_fali(HIB "Éñ³ö¹íÃ»" NOR) )
-		return notify_fail("¿´À´ÒÔÄãµÄ·¨Á¦ĞŞÎª»¹²»ÄÜÉñ³ö¹íÃ»¡£\n");
+		< RANK_D->grade_fali(HIB "ç¥å‡ºé¬¼æ²¡" NOR) )
+		return notify_fail("çœ‹æ¥ä»¥ä½ çš„æ³•åŠ›ä¿®ä¸ºè¿˜ä¸èƒ½ç¥å‡ºé¬¼æ²¡ã€‚\n");
 
 	if (spells<25)
-	   return notify_fail("ÄãµÄ·¨Êõ²»¹»¡£\n");
+	   return notify_fail("ä½ çš„æ³•æœ¯ä¸å¤Ÿã€‚\n");
 
         if (mana<150)
-	   return notify_fail("ÄãÄ¿Ç°·¨Á¦²»¹»³äÓ¯¡£\n");
+	   return notify_fail("ä½ ç›®å‰æ³•åŠ›ä¸å¤Ÿå……ç›ˆã€‚\n");
 
         if (wizardp(who) && !wizardp(me))
-	   return notify_fail("ÄãµÄ·¨Êõ²»×ãÒÔ±ä³ÉÎ×Ê¦¡£\n");
+	   return notify_fail("ä½ çš„æ³•æœ¯ä¸è¶³ä»¥å˜æˆå·«å¸ˆã€‚\n");
 	
 	dmana=30+400/(spells-20); 
 	
-	message_vision(HIY "$NÊÖÄí¿Ú¾÷£¬Äî¶¯ÕæÑÔ£¬Ò¡ÉíÒ»±ä£¬±äµÃºÍ$nÒ»Ä£Ò»Ñù£¡\n" NOR,me,who);
+	message_vision(HIY "$Næ‰‹æ»å£è¯€ï¼Œå¿µåŠ¨çœŸè¨€ï¼Œæ‘‡èº«ä¸€å˜ï¼Œå˜å¾—å’Œ$nä¸€æ¨¡ä¸€æ ·ï¼\n" NOR,me,who);
         me->set_temp("spellslevel",spells);
 	me->set_temp("apply/name",({who->name()}));
 	me->set_temp("apply/id",who->parse_command_id_list());
@@ -140,7 +140,7 @@ int do_bian(object me)
                    me->move(environment(environment(me)));
       if (dmana>0) 
         message_vision(HIY
-        "Ö»¼û$NÃæÉ«²Ô°×£¬Ò»¸ö»Ğã±Ö®¼ä£¬ÒÑ¾­ÏÖÁËÔ­ĞÎ¡£\n" NOR,me);
+        "åªè§$Né¢è‰²è‹ç™½ï¼Œä¸€ä¸ªææƒšä¹‹é—´ï¼Œå·²ç»ç°äº†åŸå½¢ã€‚\n" NOR,me);
       
       me->delete_temp("no_heal_up/bian");
     }
@@ -152,12 +152,12 @@ int help(object me)
 {
 	write(@HELP
 
-Ö¸Áî¸ñÊ½ £º bian [<ÈËÎï>|<NPC>|<me>]
+æŒ‡ä»¤æ ¼å¼ ï¼š bian [<äººç‰©>|<NPC>|<me>]
 
-±äÉíÊõ£¬Õâ¸öÖ¸ÁîÈÃÄã±ä»¯³ÉÆäËûÈËÎïµÄÄ£Ñù¡£ÊÇ·ñÄÜ±ä£¬»¹ÒªÈ¡¾öÓÚ
-ÄãµÄ·¨ÊõºÍ·¨Á¦´óĞ¡¡£
+å˜èº«æœ¯ï¼Œè¿™ä¸ªæŒ‡ä»¤è®©ä½ å˜åŒ–æˆå…¶ä»–äººç‰©çš„æ¨¡æ ·ã€‚æ˜¯å¦èƒ½å˜ï¼Œè¿˜è¦å–å†³äº
+ä½ çš„æ³•æœ¯å’Œæ³•åŠ›å¤§å°ã€‚
 
-ÆäËûÏà¹ØÖ¸Áî£º observe¡£
+å…¶ä»–ç›¸å…³æŒ‡ä»¤ï¼š observeã€‚
 HELP
 	);
 	return 1;

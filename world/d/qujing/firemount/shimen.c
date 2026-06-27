@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "Ê¯¶´ÃÅ");
+  set ("short", "çŸ³æ´é—¨");
   set ("long", @LONG
 
-¶´ÃÅÓÉÁ½¿é´óÊ¯°åÒÀÉ½ÊÆĞŞİİ¶ø³É¡£ÅÔÓĞÒ»¶ÑÂÒÊ¯(stone)£¬ËÆÊÇ
-Îª·âÑÏ¶´ÃÅÊ±×¼±¸µÄ¡£
+æ´é—¨ç”±ä¸¤å—å¤§çŸ³æ¿ä¾å±±åŠ¿ä¿®è‘ºè€Œæˆã€‚æ—æœ‰ä¸€å †ä¹±çŸ³(stone)ï¼Œä¼¼æ˜¯
+ä¸ºå°ä¸¥æ´é—¨æ—¶å‡†å¤‡çš„ã€‚
 
 LONG);
 
@@ -20,7 +20,7 @@ LONG);
         "west" : __DIR__"dongkou",
       ]));
   set("item_desc", ([
-        "stone" : "Ò»¶ÑÊ¯Í·£¬²»·ÁÄÃĞ©Ê¯Í·À´ÔÒÔÒÃÅ¡£\n",
+        "stone" : "ä¸€å †çŸ³å¤´ï¼Œä¸å¦¨æ‹¿äº›çŸ³å¤´æ¥ç ¸ç ¸é—¨ã€‚\n",
       ]));
 
   setup();
@@ -42,7 +42,7 @@ int do_get (string arg)
 
   stone = new (__DIR__"obj/stone");
   stone->move(me);
-  message_vision("$N´ÓÊ¯¶ÑÀïÄÃ³öÒ»¿éÊ¯Í·¡£\n",me);
+  message_vision("$Nä»çŸ³å †é‡Œæ‹¿å‡ºä¸€å—çŸ³å¤´ã€‚\n",me);
   return 1;
 }
 
@@ -58,10 +58,10 @@ int do_hit (string arg)
        arg != "door") ||
       me->query_temp("obstacle/firemount_hit_door") > 10)
   {
-    message_vision("$NÄÃÆğÊ¯Í·£¬Ò»²»Ğ¡ĞÄÔÒÔÚ×Ô¼º½ÅÉÏ¡£\n",me);
+    message_vision("$Næ‹¿èµ·çŸ³å¤´ï¼Œä¸€ä¸å°å¿ƒç ¸åœ¨è‡ªå·±è„šä¸Šã€‚\n",me);
     return 1;
   }
-  message_vision("$NÄÃÆğÊ¯Í·£¬ÓÃÁ¦µØÔÒÆğÊ¯ÃÅ¡£\n",me);
+  message_vision("$Næ‹¿èµ·çŸ³å¤´ï¼Œç”¨åŠ›åœ°ç ¸èµ·çŸ³é—¨ã€‚\n",me);
   call_out("cloud_or_fog_appear",random(5)+5,me);
   return 1;
 }
@@ -69,7 +69,7 @@ int do_hit (string arg)
 void cloud_or_fog_disappear(object me)
 {
   if(!me) return;
-  message_vision ("$NÂıÂıµØÔÚºìÉ«ÔÆÎíÀïÏûÊ§ÁË¡£\n",me);
+  message_vision ("$Næ…¢æ…¢åœ°åœ¨çº¢è‰²äº‘é›¾é‡Œæ¶ˆå¤±äº†ã€‚\n",me);
   destruct(me);
 }
 
@@ -85,7 +85,7 @@ void cloud_or_fog_appear(object me)
   {
     cloud = new (__DIR__"npc/cloud");
     cloud->move(environment(me));
-    message_vision("Ò»ÕóºìÔÆ½µÁÙ£¬$NÔÚÔÆÀï³öÏÖ¡£\n",cloud);
+    message_vision("ä¸€é˜µçº¢äº‘é™ä¸´ï¼Œ$Nåœ¨äº‘é‡Œå‡ºç°ã€‚\n",cloud);
     call_out("cloud_or_fog_disappear",20,cloud);
   }
 
@@ -94,7 +94,7 @@ void cloud_or_fog_appear(object me)
   {
     fog = new (__DIR__"npc/fog");
     fog->move(environment(me));
-    message_vision("Ò»ÕóºìÎí½µÁÙ£¬$NÔÚÎíÀï³öÏÖ¡£\n",fog);
+    message_vision("ä¸€é˜µçº¢é›¾é™ä¸´ï¼Œ$Nåœ¨é›¾é‡Œå‡ºç°ã€‚\n",fog);
     call_out("cloud_or_fog_disappear",20,fog);
   }
 }

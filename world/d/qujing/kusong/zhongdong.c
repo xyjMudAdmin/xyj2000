@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "�ж�");
+  set ("short", "中洞");
   set ("long", @LONG
 
-������������࣬����һƬ�����������кܶ�С���߶���������
-�µ�Ҳʮ�����֣��Ĵ���·������ز�֪ͨ��η���
+这里宽敞了许多，洞内一片光亮。来回有很多小妖走动，嘻嘻嚷
+嚷地也十分热闹，四处的路口深深地不知通向何方。
 LONG);
   set("exits", ([ /* sizeof() == 4 */
   "north" : __DIR__"yongdao7",

@@ -13,34 +13,34 @@ int cast(object me, object target)
         if( !target ) target = offensive_target(me);
 
 	if( !(ob = present("jingu zhou", me))) 
-		return notify_fail("ÄãÉíÉÏÃ»ÓĞ½ô¹¿Öä¡¢½ğ¹¿Öä»ò½û¹¿Öä£¬ÎŞ·¨Ê©ÓÃÖäÓï£¡\n");
-	name="¡°"+ob->query("name")+"¡±";
+		return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰ç´§ç®å’’ã€é‡‘ç®å’’æˆ–ç¦ç®å’’ï¼Œæ— æ³•æ–½ç”¨å’’è¯­ï¼\n");
+	name="â€œ"+ob->query("name")+"â€";
 
         if( !target
         ||      !target->is_character()
         ||      target->is_corpse()
         ||      target==me)
-                return notify_fail("ÄãÒª¶ÔË­Äî"+name+"£¿\n");
+                return notify_fail("ä½ è¦å¯¹è°å¿µ"+name+"ï¼Ÿ\n");
 
         if((int)me->query_skill("spells") < 100)
-                return notify_fail("Äã»¹Ã»Ñ§»áÄî"+name+"¡£\n");
+                return notify_fail("ä½ è¿˜æ²¡å­¦ä¼šå¿µ"+name+"ã€‚\n");
 
 	if((int)me->query("mana") < 25+(int)me->query("mana_factor") )
-                return notify_fail("ÄãµÄ·¨Á¦²»¹»£¡\n");
+                return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿï¼\n");
 
         if((int)me->query("sen") < 10 )
-                return notify_fail("ÄãÎŞ·¨¼¯ÖĞ¾«Á¦£¬±ğÊ©ÓÃµ½×Ô¼ºÍ·ÉÏ£¡\n");
+                return notify_fail("ä½ æ— æ³•é›†ä¸­ç²¾åŠ›ï¼Œåˆ«æ–½ç”¨åˆ°è‡ªå·±å¤´ä¸Šï¼\n");
 
         me->add("mana", -25-(int)me->query("mana_factor"));
         me->receive_damage("sen", 10);
 
         if( random(me->query("max_mana")) < 50 ) {
-                write("ÄãÊ§°ÜÁË£¡\n");
+                write("ä½ å¤±è´¥äº†ï¼\n");
                 return 1;
         }
 
         msg = HIC
-"$NÄ¬Ä¬µØ½«ÄÇ"+name+"ÄîÁË¼¸±é¡£\n" NOR;
+"$Né»˜é»˜åœ°å°†é‚£"+name+"å¿µäº†å‡ éã€‚\n" NOR;
  
         ap = me->query_skill("spells");
         ap = ( ap * ap * ap / (4 * 400) ) * (int)me->query("sen");
@@ -54,10 +54,10 @@ random((int)target->query("eff_sen") / 5);
                 damage+=(int)me->query("mana_factor")-random((int)target->query("mana_factor"));
 //here we can see if 2 players are at same status, the attacker has higher chance.
                 if( damage > 0 ) {
-                msg += HIC "°Ñ¸ö$nÍ´µÃÊúòßòÑ£¬·­½î¶·£¬¶úºìÃæ³à£¬ÑÛÕÍÉíÂé£¬²»ÓÉµÃ×¥ÆÆÁË×Ô¼ºµÄÍ·£¡\n" NOR;
+                msg += HIC "æŠŠä¸ª$nç—›å¾—ç«–èœ»èœ“ï¼Œç¿»ç­‹æ–—ï¼Œè€³çº¢é¢èµ¤ï¼Œçœ¼èƒ€èº«éº»ï¼Œä¸ç”±å¾—æŠ“ç ´äº†è‡ªå·±çš„å¤´ï¼\n" NOR;
 //finally damage also depends on enabled spells level.
                 damage +=random((damage*(int)me->query_skill("spells"))/80);
-		if (name != "¡°½ô¹¿Öä¡±") damage /= 2;
+		if (name != "â€œç´§ç®å’’â€") damage /= 2;
                         target->receive_damage("sen", damage, me);
                         target->receive_wound("sen", damage/3, me);
                         target->receive_damage("kee", damage, me);
@@ -66,14 +66,14 @@ random((int)target->query("eff_sen") / 5);
                         me->improve_skill("buddhism", 1, 1);
                 howlong = 15 + random((me->query_skill("spells") -100));
                 if(howlong>60) howlong=60;
-		if (name != "¡°½ô¹¿Öä¡±") howlong /= 2;
+		if (name != "â€œç´§ç®å’’â€") howlong /= 2;
 //a typical level is 100+100 ->enabled 150, so will "ding" about 1 minute in the best case.
 
                 }
-		else msg += "µ«ÊÇÊ²Ã´Ò²Ã»·¢Éú¡£\n";
+		else msg += "ä½†æ˜¯ä»€ä¹ˆä¹Ÿæ²¡å‘ç”Ÿã€‚\n";
              } 
         else
-                msg += "µ«ÊÇÊ²Ã´Ò²Ã»·¢Éú¡£\n";
+                msg += "ä½†æ˜¯ä»€ä¹ˆä¹Ÿæ²¡å‘ç”Ÿã€‚\n";
 
         message_vision(msg, me, target);
 

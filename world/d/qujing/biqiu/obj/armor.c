@@ -4,10 +4,10 @@
 inherit ARMOR;
 
 string *names = ({
-  "ÇàÁøÌÙ¼×",
-  "³àÁøÌÙ¼×",
-  "×ÏÁøÌÙ¼×",
-  "ºÚÁøÌÙ¼×",
+  "é’æŸ³è—¤ç”²",
+  "èµ¤æŸ³è—¤ç”²",
+  "ç´«æŸ³è—¤ç”²",
+  "é»‘æŸ³è—¤ç”²",
 });
 
 string *ids = ({
@@ -25,7 +25,7 @@ void create()
   if ( clonep() )
      set_default_object(__FILE__);
   else {
-   set("unit", "¼ş");
+   set("unit", "ä»¶");
    set("value", 500);
    set("material", "wood");
    set("armor_prop/armor", 30);

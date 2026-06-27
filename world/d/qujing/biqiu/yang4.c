@@ -5,12 +5,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ÑîÊ÷");
+  set ("short", "æ¨æ ‘");
   set ("long", @LONG
 
-ÑîÊ÷ÁÖÀï£¬Ê÷Ä¾Ã¯Ê¢¸ß´ó£¬Ö¦Ò¶ÇàÂÌ°ß°×¡£Ðí¶àÊ÷(tree)µÄ¸ù
-¸ù²æ²æ½»²øÔÚÒ»Æð£¬¿´ÉÏÈ¥Ê®·ÖÆæÌØ¡£·ç´µÔÚÊ÷ÉÏ£¬·¢³öÓÐÒ»
-µãÒìÑùµÄÉùÏì¡£
+æ¨æ ‘æž—é‡Œï¼Œæ ‘æœ¨èŒ‚ç››é«˜å¤§ï¼Œæžå¶é’ç»¿æ–‘ç™½ã€‚è®¸å¤šæ ‘(tree)çš„æ ¹
+æ ¹å‰å‰äº¤ç¼ åœ¨ä¸€èµ·ï¼Œçœ‹ä¸ŠåŽ»ååˆ†å¥‡ç‰¹ã€‚é£Žå¹åœ¨æ ‘ä¸Šï¼Œå‘å‡ºæœ‰ä¸€
+ç‚¹å¼‚æ ·çš„å£°å“ã€‚
 
 LONG);
 
@@ -20,7 +20,7 @@ LONG);
         "east"    : __DIR__"yang5",
       ]));
   set("item_desc", ([
-       "tree" : "Ê÷µÄÖ¦Ìõ½ÊÔÚÒ»Æð£¬³¤ÔÚÍ¬Ò»¸ö¸ùÉÏ¡£\n",
+       "tree" : "æ ‘çš„æžæ¡ç»žåœ¨ä¸€èµ·ï¼Œé•¿åœ¨åŒä¸€ä¸ªæ ¹ä¸Šã€‚\n",
       ]));
   set("outdoors",__DIR__"");
   setup();
@@ -40,15 +40,15 @@ int do_turn (string arg)
   if (! arg ||
       (arg != "left" &&
       arg != "right"))
-    return notify_fail ("ÄãÏóÎÞÍ·²ÔÓ¬Ò»ÑùÎ§×ÅÊ÷×ªÁËÆðÀ´¡£\n");
+    return notify_fail ("ä½ è±¡æ— å¤´è‹è‡ä¸€æ ·å›´ç€æ ‘è½¬äº†èµ·æ¥ã€‚\n");
  
   if (arg == "left")
   {
-    message_vision ("$NÎ§×ÅÊ÷Íù×ó×ªÁËÒ»È¦¡£\n",who);
+    message_vision ("$Nå›´ç€æ ‘å¾€å·¦è½¬äº†ä¸€åœˆã€‚\n",who);
   }  
   if (arg == "right")
   {
-    message_vision ("$NÎ§×ÅÊ÷ÍùÓÒ×ªÁËÒ»È¦¡£\n",who);
+    message_vision ("$Nå›´ç€æ ‘å¾€å³è½¬äº†ä¸€åœˆã€‚\n",who);
   }  
   who->set_temp("obstacle/biqiu_turns",0);
   return 1;
@@ -60,9 +60,9 @@ int do_push (string arg)
 
   if (! arg ||
       arg != "tree")
-    return notify_fail ("ÄãÉì³öÊÖÏëÍÆÊ²Ã´¡£\n");
+    return notify_fail ("ä½ ä¼¸å‡ºæ‰‹æƒ³æŽ¨ä»€ä¹ˆã€‚\n");
  
-  message_vision ("$NÉì³öÊÖ½«Ê÷ÓÃÁ¦Ò»ÍÆ¡£\n",who);
+  message_vision ("$Nä¼¸å‡ºæ‰‹å°†æ ‘ç”¨åŠ›ä¸€æŽ¨ã€‚\n",who);
   who->set_temp("obstacle/biqiu_turns",0);
   return 1;
 }

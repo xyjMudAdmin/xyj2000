@@ -3,10 +3,10 @@ inherit NPC;
 
 void create()
 {
-	set_name("ÀÏ´óÄï", ({ "lao daniang", "woman", "daniang" }) );
-        set("gender", "Å®ĞÔ" );
+	set_name("è€å¤§å¨˜", ({ "lao daniang", "woman", "daniang" }) );
+        set("gender", "å¥³æ€§" );
 	set("age", 60);
-	set("long", "Ò»¸öÃæÈİºÍ°ªµÄÀÏ´óÄï¡£\n");
+	set("long", "ä¸€ä¸ªé¢å®¹å’Œè”¼çš„è€å¤§å¨˜ã€‚\n");
         set("per", 26);
 	set("combat_exp", 100);
 	set("attitude", "friendly");

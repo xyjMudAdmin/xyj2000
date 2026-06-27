@@ -11,11 +11,11 @@ int update_condition(object me, int duration)
 	me->receive_damage("gin", 25);
 	me->receive_wound("kee", 25);
 	me->receive_damage("sen", 25);
-        me->set_temp("death_msg","意寒掌毒发作死了。\n");
+        me->set_temp("death_msg","鎰忓瘨鎺屾瘨鍙戜綔姝讳簡銆俓n");
 
 	me->apply_condition("iceshock", duration - 1);
 
-	tell_object(me, HIB "你中的意寒掌毒发作了！\n" NOR );
+	tell_object(me, HIB "浣犱腑鐨勬剰瀵掓帉姣掑彂浣滀簡锛乗n" NOR );
 	if( duration < 1 ) return 0;
 
 	return CND_CONTINUE;

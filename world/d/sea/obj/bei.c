@@ -5,7 +5,7 @@ inherit ARMOR;
 
 void create()
 {
-        set_name("²Ê±´¼×", ({"color shell","jia","armor","shell"}));
+        set_name("å½©è´ç”²", ({"color shell","jia","armor","shell"}));
         set_weight(8000);
 	set_max_encumbrance(3);
         if( clonep() ) {
@@ -15,8 +15,8 @@ void create()
 			a->move(this_object());
                 set_default_object(__FILE__);
        } else {
-                set("unit", "¼ş");
-            set("long", "Ò»¼şÆß²Ê±´¼×¡£\n");
+                set("unit", "ä»¶");
+            set("long", "ä¸€ä»¶ä¸ƒå½©è´ç”²ã€‚\n");
                 set("value", 0);
 		set("no_sell",1);
                 set("material", "wood");

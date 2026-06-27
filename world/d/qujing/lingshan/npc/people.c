@@ -4,13 +4,13 @@
 inherit NPC;
 
 string *names = ({
-  "´åÃñ",
-  "Å©¸¾",
-  "Â·ÈË",
-  "Å©ÈË",
-  "ÓÎ¿Í",
-  "ºÍÉĞ",
-  "Ïã¿Í",
+  "æ‘æ°‘",
+  "å†œå¦‡",
+  "è·¯äºº",
+  "å†œäºº",
+  "æ¸¸å®¢",
+  "å’Œå°š",
+  "é¦™å®¢",
 });
 
 string *ids = ({
@@ -24,13 +24,13 @@ string *ids = ({
 });
 
 string *genders = ({
-  "ÄĞĞÔ",
-  "Å®ĞÔ",
-  "ÄĞĞÔ",
-  "ÄĞĞÔ",
-  "ÄĞĞÔ",
-  "ÄĞĞÔ",
-  "ÄĞĞÔ",
+  "ç”·æ€§",
+  "å¥³æ€§",
+  "ç”·æ€§",
+  "ç”·æ€§",
+  "ç”·æ€§",
+  "ç”·æ€§",
+  "ç”·æ€§",
 });
 
 void create()
@@ -62,7 +62,7 @@ void create()
 void random_move ()
 {
   if (random(2))
-    message_vision ("$N×øÏÂÀ´ĞŞµÀ¡£\n",this_object());
+    message_vision ("$Nåä¸‹æ¥ä¿®é“ã€‚\n",this_object());
   else
-    message_vision ("$NÇáÉùËĞ¾­¡£\n",this_object());
+    message_vision ("$Nè½»å£°è¯µç»ã€‚\n",this_object());
 }

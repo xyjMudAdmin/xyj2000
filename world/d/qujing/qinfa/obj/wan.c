@@ -7,16 +7,16 @@ inherit ITEM;
 
 void create()
 {
-  set_name( "±Ù¹ÈÍè" , ({"pigu wan", "wan"}));
+  set_name( "è¾Ÿè°·ä¸¸" , ({"pigu wan", "wan"}));
   set_weight(120);
   if (clonep())
     set_default_object(__FILE__);
   else {
-    set("unit", "¿Å");
-    set("long", "Ò»¿Å³È»ÆÉ«µÄ±Ù¹ÈÍè¡£\n");
+    set("unit", "é¢—");
+    set("long", "ä¸€é¢—æ©™é»„è‰²çš„è¾Ÿè°·ä¸¸ã€‚\n");
     set("value", 1000);
     set("no_sell", 1);
-    set("drug_type", "²¹Æ·");
+    set("drug_type", "è¡¥å“");
   }
   setup();
   call_out ("becoming_old",1800);
@@ -45,8 +45,8 @@ int do_eat(string arg)
   
   me->set("food", (int)me->max_food_capacity()*3+random(100));
   me->set("water", (int)me->max_water_capacity()*3+random(100));
-  message_vision(HIG "$NÄóÆğÒ»¿ÅĞ¡Ğ¡µÄ±Ù¹ÈÍèÍùÉàÏÂÒ»·Å¡£\n" NOR, me);
-  tell_object(me, "¶ÙÊ±Äã¾õµÃ¿ÚÖĞÉú½ò£¬Ò»¹ÉÏÉÆø×ÔÉÏ¶øÏÂÈçõ®õ­¹à¶¥¡£\n");
+  message_vision(HIG "$Næèµ·ä¸€é¢—å°å°çš„è¾Ÿè°·ä¸¸å¾€èˆŒä¸‹ä¸€æ”¾ã€‚\n" NOR, me);
+  tell_object(me, "é¡¿æ—¶ä½ è§‰å¾—å£ä¸­ç”Ÿæ´¥ï¼Œä¸€è‚¡ä»™æ°”è‡ªä¸Šè€Œä¸‹å¦‚é†é†çŒé¡¶ã€‚\n");
   destruct(this_object());
   return 1;
 }

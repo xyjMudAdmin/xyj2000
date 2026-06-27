@@ -6,13 +6,13 @@ int give_me(object ob);
 
 void create()
 {
-       set_name("¾¨ÎÞµÐ", ({"jing wudi", "jing"}));
+       set_name("é²¸æ— æ•Œ", ({"jing wudi", "jing"}));
 
-set("long","Éí¸ß°ËÕÉ£¬°ò´óÑüÔ²£®ºÅ³Æ¶«º£µÚÒ»ÓÂÊ¿¡£
-Ë®×åÐèÓÐËû·¢µÄÑüÅÆ²ÅÄÜ×ÔÓÉ³öÈëÓÚË®¾§¹¬ÖÐ¡£\n");
-       set("gender", "ÄÐÐÔ");
+set("long","èº«é«˜å…«ä¸ˆï¼Œè†€å¤§è…°åœ†ï¼Žå·ç§°ä¸œæµ·ç¬¬ä¸€å‹‡å£«ã€‚
+æ°´æ—éœ€æœ‰ä»–å‘çš„è…°ç‰Œæ‰èƒ½è‡ªç”±å‡ºå…¥äºŽæ°´æ™¶å®«ä¸­ã€‚\n");
+       set("gender", "ç”·æ€§");
        set("age", 56);
-        set("title", "´ó½«¾ü");
+        set("title", "å¤§å°†å†›");
         set("per", 10);
         set("str", 35);
 	set("con", 30);
@@ -49,9 +49,9 @@ set("long","Éí¸ß°ËÕÉ£¬°ò´óÑüÔ²£®ºÅ³Æ¶«º£µÚÒ»ÓÂÊ¿¡£
 	set("mana_factor", 40);
 	set("have", 3);
 
-    create_family("¶«º£Áú¹¬", 2, "Ë®×å");
+    create_family("ä¸œæµ·é¾™å®«", 2, "æ°´æ—");
         set("inquiry", ([
-                "ÑüÅÆ": (: give_me :),
+                "è…°ç‰Œ": (: give_me :),
                 "pai": (: give_me :),
         ]) );
 
@@ -81,13 +81,13 @@ int give_me(object ob)
 	who=this_player();
 	me=this_object();
 
-	if( (string)who->query("family/family_name")!="¶«º£Áú¹¬" ) {
+	if( (string)who->query("family/family_name")!="ä¸œæµ·é¾™å®«" ) {
 		if( (int)who->query_temp("pending/ask_time") >= 3) {
-			message_vision("$NÍ»È»ÌøÆð£¬¶ñºÝºÝµÄµÉ×Å$nËµ£º¿´À´ÄãÊÇ²»Ïë»îÁË£¡\n", me, who);
+			message_vision("$Nçªç„¶è·³èµ·ï¼Œæ¶ç‹ ç‹ çš„çžªç€$nè¯´ï¼šçœ‹æ¥ä½ æ˜¯ä¸æƒ³æ´»äº†ï¼\n", me, who);
 			command("kill " + who->query("id"));
 			return 1;
 			}
-		message_vision("$NÐ±Ð±µØî©ÁË$nÒ»ÑÛ£¬Ëµ£º´Ë²»×ãÎªÍâÈËµÀÒ²£¡\n", me, who);
+		message_vision("$Næ–œæ–œåœ°çžŸäº†$nä¸€çœ¼ï¼Œè¯´ï¼šæ­¤ä¸è¶³ä¸ºå¤–äººé“ä¹Ÿï¼\n", me, who);
 		who->add_temp("pending/ask_time", 1);
 		return 1;
 	} else {
@@ -97,20 +97,20 @@ int give_me(object ob)
 				pai=new("/d/sea/obj/pai");
 				pai->move(who);
 				who->set("pai_time", time());
-				message_vision("$NÄÃ³öÒ»¸öË®¾§ÑüÅÆ½»¸ø$n¡£\n",me,who);
+				message_vision("$Næ‹¿å‡ºä¸€ä¸ªæ°´æ™¶è…°ç‰Œäº¤ç»™$nã€‚\n",me,who);
 				return 1;
 			}else if( time() - 1800 < (int)who->query("pai") )
 {
-				message_vision("$N¶Ô$nËµ£ºÄã²»ÊÇ¸ÕÒª¹ýÂð£¿\n",me,who);
+				message_vision("$Nå¯¹$nè¯´ï¼šä½ ä¸æ˜¯åˆšè¦è¿‡å—ï¼Ÿ\n",me,who);
 				return 1;
 			}else if( !me->query("have")) {
-				message_vision("$N¶Ô$nËµ£º½ñÌìµÄÑüÅÆÈ«·¢ÍêÁË¡£\n",me,who);
+				message_vision("$Nå¯¹$nè¯´ï¼šä»Šå¤©çš„è…°ç‰Œå…¨å‘å®Œäº†ã€‚\n",me,who);
 				return 1;
 			}else{
 				pai=new("/d/sea/obj/pai");
 				pai->move(who);
 				who->set("pai", time());
-				message_vision("$NÄÃ³öÒ»¸öË®¾§ÑüÅÆ½»¸ø$n¡£\n",me,who);
+				message_vision("$Næ‹¿å‡ºä¸€ä¸ªæ°´æ™¶è…°ç‰Œäº¤ç»™$nã€‚\n",me,who);
 				me->add("have", -1);
 				return 1;
 			}
@@ -120,7 +120,7 @@ int give_me(object ob)
 			return 1;
 		}
 		if( time() - 600 < (int)who->query("pai") ) {
-                                message_vision("$N¶Ô$nËµ£ºÄã²»ÊÇ¸ÕÒª¹ýÂð£¿\n",me,who);
+                                message_vision("$Nå¯¹$nè¯´ï¼šä½ ä¸æ˜¯åˆšè¦è¿‡å—ï¼Ÿ\n",me,who);
                                 return 1;
 		}
 		if( (int)me->query("have") ){
@@ -128,13 +128,13 @@ int give_me(object ob)
 			pai=new("/d/sea/obj/pai");
 			pai->move(who);
 			who->set("pai", time());
-			message_vision("$NÄÃ³öÒ»¸öË®¾§ÑüÅÆ½»¸ø$n¡£\n",me,who);
+			message_vision("$Næ‹¿å‡ºä¸€ä¸ªæ°´æ™¶è…°ç‰Œäº¤ç»™$nã€‚\n",me,who);
 			me->add("have", -1);
 			return 1;
 		}
 	}
 
-	message_vision("$N¶Ô$nÎÞÄÎµÄÒ»ÉìÊÖ£¬Ëµ£º½ñÈÕÑüÅÆÒÑ·¢ÍêÁË£¬Ã÷ÈÕÔÙÀ´Áì°É¡£\n", me, who);
+	message_vision("$Nå¯¹$næ— å¥ˆçš„ä¸€ä¼¸æ‰‹ï¼Œè¯´ï¼šä»Šæ—¥è…°ç‰Œå·²å‘å®Œäº†ï¼Œæ˜Žæ—¥å†æ¥é¢†å§ã€‚\n", me, who);
 	if(!me->query("ref") ) {	
 		call_out("reg",1200);
 		me->set("ref",1);

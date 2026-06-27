@@ -8,10 +8,10 @@ inherit ITEM;
 
 void create()
 {
-  set_name(HIB "Óã" NOR, ({ "fish"})); 
+  set_name(HIB "é±¼" NOR, ({ "fish"})); 
   set_weight(100);
-  set("long","Ò»ÌõÓã¡£\n");
-  set("unit", "Ìõ");
+  set("long","ä¸€æ¡é±¼ã€‚\n");
+  set("unit", "æ¡");
   set("value",100);
   setup();
   call_out ("start_jump",1+random(1));
@@ -32,11 +32,11 @@ int do_get (string arg)
     return 0;
   if (random(2) < 1){
       fish->move(who);
-      message_vision("$NÉì³öÊÖÈ¥×½Óã£¬¹ş¹ş£¬×½µ½ÁË!\n", who);
+      message_vision("$Nä¼¸å‡ºæ‰‹å»æ‰é±¼ï¼Œå“ˆå“ˆï¼Œæ‰åˆ°äº†!\n", who);
       remove_call_out("do_jump");
 	}
   else
-      message_vision("$NÉì³öÊÖÈ¥×½Óã£¬Óã¶ùÒ»°Ú´Ó$NÊÖÖĞ»¬×ßÁË¡£\n",who);
+      message_vision("$Nä¼¸å‡ºæ‰‹å»æ‰é±¼ï¼Œé±¼å„¿ä¸€æ‘†ä»$Næ‰‹ä¸­æ»‘èµ°äº†ã€‚\n",who);
   return 1;
 }
 
@@ -44,7 +44,7 @@ int do_get (string arg)
 int start_jump ()
 {
   object fish = this_object();
-  message_vision ("Óã¶ù´ÓË®ÀïÌøÁË³öÀ´¡£\n",fish);
+  message_vision ("é±¼å„¿ä»æ°´é‡Œè·³äº†å‡ºæ¥ã€‚\n",fish);
   call_out("do_jump",5+random(5));
   return 1;
 }
@@ -53,12 +53,12 @@ int do_jump ()
 {
   object fish = this_object();
   string *msgs = ({
-    "Å¾µØÒ»Éù£¬Óã¶ùÌøÁËÆğÀ´¡£\n",
-    "Óã¶ùÌøÁËÌø¡£\n",
-    "Óã¶ùÅ¾µØÒ»Ìø¡£\n",
-    "Óã¶ùÒ»Í¦£¬Ô¾ÔÚ¿ÕÖĞ¡£\n",
-    "Óã¶ùÇáÇáÒ»Ô¾¡£\n",
-    "Óã¶ù¶¯ÁË¶¯¡£\n",
+    "å•ªåœ°ä¸€å£°ï¼Œé±¼å„¿è·³äº†èµ·æ¥ã€‚\n",
+    "é±¼å„¿è·³äº†è·³ã€‚\n",
+    "é±¼å„¿å•ªåœ°ä¸€è·³ã€‚\n",
+    "é±¼å„¿ä¸€æŒºï¼Œè·ƒåœ¨ç©ºä¸­ã€‚\n",
+    "é±¼å„¿è½»è½»ä¸€è·ƒã€‚\n",
+    "é±¼å„¿åŠ¨äº†åŠ¨ã€‚\n",
   });
 
   if (random(4) == 0)
@@ -75,7 +75,7 @@ int do_jump ()
 int jump_back ()
 {
   object fish = this_object();
-  message_vision ("Óã¶ùÌøÈëË®ÖĞ²»¼ûÁË¡£\n",fish);
+  message_vision ("é±¼å„¿è·³å…¥æ°´ä¸­ä¸è§äº†ã€‚\n",fish);
   destruct (fish);
   return 1;
 }

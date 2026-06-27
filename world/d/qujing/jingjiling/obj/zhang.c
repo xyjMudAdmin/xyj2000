@@ -5,16 +5,16 @@ inherit STICK;
 
 void create()
 {
-        set_name("¹ÅÌÙÕÈ", ({ "guteng zhang","zhang","gun", "bang" }) );
+        set_name("å¤è—¤æ–", ({ "guteng zhang","zhang","gun", "bang" }) );
         set_weight(2000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ù");
+                set("unit", "æ ¹");
                 set("material", "wood");
-                set("long", "Ò»¸ùÇáÆ®Æ®ÉîÉ«¹ÅÌÙÕÈ¡£\n");
-                set("wield_msg", "$NÄÃÆğÒ»¸ù$nÖôÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«$n²å»ØºóÑü¡£\n");
+                set("long", "ä¸€æ ¹è½»é£˜é£˜æ·±è‰²å¤è—¤æ–ã€‚\n");
+                set("wield_msg", "$Næ‹¿èµ·ä¸€æ ¹$næ‹„åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°†$næ’å›åè…°ã€‚\n");
         }
         init_stick(10);
         setup();

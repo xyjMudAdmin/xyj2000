@@ -4,11 +4,11 @@ inherit F_VENDOR_SALE;
 void create()
 {
     reload("yao_fugui");
-       set_name("Ò¦¸»¹ó", ({"yao fugui", "yao"}));
+       set_name("å§šå¯Œè´µ", ({"yao fugui", "yao"}));
        set("long",
-"Ò¦ÀÏ°åÊÇ¸ß¼Ò¼¯ÈË£¬ºóÀ´ÕõÁËÇ®£¬¿ªÁË¼Ò²¼µê¡£\n");
-       set("gender", "ÄĞĞÔ");
-        set("title", "²¼µêÀÏ°å");
+"å§šè€æ¿æ˜¯é«˜å®¶é›†äººï¼Œåæ¥æŒ£äº†é’±ï¼Œå¼€äº†å®¶å¸ƒåº—ã€‚\n");
+       set("gender", "ç”·æ€§");
+        set("title", "å¸ƒåº—è€æ¿");
         set("combat_exp", 10000);
        set("age", 36);
        set("attitude", "friendly");
@@ -44,9 +44,9 @@ void greeting(object ob)
         if( !ob || !visible(ob) || environment(ob) != environment() ) return;
         switch( random(1) ) {
                 case 0:
-                        say(name()+ "Ğ¦ÃĞÃĞµÄÓ­ÉÏÀ´£ºÕâÎ»" +
+                        say(name()+ "ç¬‘çœ¯çœ¯çš„è¿ä¸Šæ¥ï¼šè¿™ä½" +
 RANK_D->query_respect(ob)
-                                + "£¬Ëæ±ã¿´¿´£®\n");
+                                + "ï¼Œéšä¾¿çœ‹çœ‹ï¼\n");
                         break;
         }
 }
@@ -64,7 +64,7 @@ void accept_kill(object me)
                 ob=new("/d/city/npc/xunluobing");
                 ob->move(environment());
         }
-        message_vision("\nºöÈ»´ÓÃÅÍâ³å½øÀ´¸öÑ²Âß¹Ù±ø£¬¶Ô$N´óº°Ò»Éù¡°¸ÉÊ²Ã´£¿ÏëÉ±ÈËÄ±²ÆÃ´£¡\n\n",me);        
+        message_vision("\nå¿½ç„¶ä»é—¨å¤–å†²è¿›æ¥ä¸ªå·¡é€»å®˜å…µï¼Œå¯¹$Nå¤§å–Šä¸€å£°â€œå¹²ä»€ä¹ˆï¼Ÿæƒ³æ€äººè°‹è´¢ä¹ˆï¼\n\n",me);        
 
         ob->kill_ob(me);
         ob->set_leader(me);

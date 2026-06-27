@@ -18,7 +18,7 @@ void create()
    int size, i;
 
    seteuid(getuid());
-   set("name", "¼à¿Ø¾«Áé");
+   set("name", "ç›‘æ§ç²¾çµ");
    set("id", "miscd");
 
    maps=([]);
@@ -48,15 +48,15 @@ int random_capture(object me,int chance,int silent)
 
         if(random(chance)==0) {
 	    if(silent)
-                tell_object(me,"\nºöÈ»Ò»Õó»Æ·çºôĞ¥¶øÀ´£¬ÄãÉí²»ÓÉ¼º"+
-                    "±»¾íÁË½øÈ¥£¡\n");
+                tell_object(me,"\nå¿½ç„¶ä¸€é˜µé»„é£å‘¼å•¸è€Œæ¥ï¼Œä½ èº«ä¸ç”±å·±"+
+                    "è¢«å·äº†è¿›å»ï¼\n");
 	    else
-                message_vision("\nºöÈ»Ò»Õó»Æ·çºôĞ¥¶øÀ´£¬$NÉí²»ÓÉ¼º"+
-                    "±»¾íÁË½øÈ¥£¡\n",me);
-            tell_object(me,"\n²»Öª¹ıÁË¶à¾Ã£®£®£®\n\n");
+                message_vision("\nå¿½ç„¶ä¸€é˜µé»„é£å‘¼å•¸è€Œæ¥ï¼Œ$Nèº«ä¸ç”±å·±"+
+                    "è¢«å·äº†è¿›å»ï¼\n",me);
+            tell_object(me,"\nä¸çŸ¥è¿‡äº†å¤šä¹…ï¼ï¼ï¼\n\n");
             me->set_temp("old_place",environment(me));
             me->move("/d/qujing/baihuling/jail",1);
-            message_vision("$N±»àØµØÒ»ÉùË¤ÔÚµØÉÏ£¡\n",me);
+            message_vision("$Nè¢«å˜­åœ°ä¸€å£°æ‘”åœ¨åœ°ä¸Šï¼\n",me);
             return 1;
         }
 	return 0;
@@ -84,13 +84,13 @@ string find_place(object where)
 
         if(sscanf(filename,"/d/changan/bed#%*s")==1) {
 	//this need check first.
-	  answer="´²ÉÏ";
+	  answer="åºŠä¸Š";
         } else if(!undefinedp(maps[filename1])) {
 	  answer=maps[filename1];
 	} else if(where->is_character()) {
-	  answer=where->query("name")+"ÉíÉÏ";
+	  answer=where->query("name")+"èº«ä¸Š";
         } else if(sscanf(filename,"/obj/home#%*s")==1) {
-          answer="×¡¼ÒÀï";
+          answer="ä½å®¶é‡Œ";
         } else { 
           answer=undefinedp(where->query("short"))?
 		  where->short():
@@ -104,7 +104,7 @@ string find_place(object where)
 int check_date()
 {
 //2002-2-9 0:16
-//annotated by Ò»Ò¶ÖªÇï(vikee).skip the date check.
+//annotated by ä¸€å¶çŸ¥ç§‹(vikee).skip the date check.
 //xyj2000 use date check to persuade other to span the MudLIB.
 
 /*

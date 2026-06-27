@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "�Ľ���Ұ");
+  set ("short", "荒郊草野");
   set ("long", @LONG
 
-��ΧʲôҲû�У�������һ����Ӱ��������ֻ�����صķ�����
-������������Ұ��������߿�Х��
+周围什么也没有，看不到一个人影，听到的只是呜呜的风声，
+就象有无数的野鬼在你耳边狂啸．
 LONG);
 
   set("exits", ([ /* sizeof() == 3 */

@@ -5,16 +5,16 @@ inherit ROOM;
 
 void create()
 {
-set("short", "É½Â·");
+set("short", "å±±è·¯");
 set("long", @LONG
     
-¡¡¡¡ÓÉ´ËÉÏÉ½¾Íµ½ÇåÁ¹ËÂÁË£¬Ç°ÃæÒ»´óÊ¯£¬±ãÊÇ´«ËµÖÐÎÄÊâ
-ÆÐÈø´ÓÁú¹¬µÃÀ´µÄÇåÁ¹Ê¯(stone)¡£
+ã€€ã€€ç”±æ­¤ä¸Šå±±å°±åˆ°æ¸…å‡‰å¯ºäº†ï¼Œå‰é¢ä¸€å¤§çŸ³ï¼Œä¾¿æ˜¯ä¼ è¯´ä¸­æ–‡æ®Š
+è©è¨ä»Žé¾™å®«å¾—æ¥çš„æ¸…å‡‰çŸ³(stone)ã€‚
 LONG );
 
 set("item_desc",(["stone":
-"´ËÊ¯Ê¯³¤ÎåÃ×£¬¿í¶þÃ×°ë£¬ ºñÁ½£¬Î§Ê®ÎåÃ×£¬Ê¯ÃæÇàÉ«£¬ÓÐ
-ÔÆÎÆ£¬ÈË×øÆäÉÏ£¬¶ÙÉúÁ¹Òâ¡£
+"æ­¤çŸ³çŸ³é•¿äº”ç±³ï¼Œå®½äºŒç±³åŠï¼Œ åŽšä¸¤ï¼Œå›´åäº”ç±³ï¼ŒçŸ³é¢é’è‰²ï¼Œæœ‰
+äº‘çº¹ï¼Œäººåå…¶ä¸Šï¼Œé¡¿ç”Ÿå‡‰æ„ã€‚
 "
 ]));
 

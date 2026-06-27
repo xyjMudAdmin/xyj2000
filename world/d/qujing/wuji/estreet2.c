@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "��Ԫ��");
+  set ("short", "坤元街");
   set ("long", @LONG
 
-��������Ԫ���жΣ�·���Լ������������С����������һ�Ҳ���
-�꣬�ϱ���һ�ҿ͵ꡣ
+这里是坤元街中段，路两旁挤满了做生意的小贩。北边有一家裁衣
+店，南边是一家客店。
 
 LONG);
 

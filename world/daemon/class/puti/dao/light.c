@@ -17,19 +17,19 @@ int cast(object me, object target)
 	||      !target->is_character()
 	||      target->is_corpse()
 	||      target==me)
-		return notify_fail("ÄãÒª¶ÔË­Ê©Õ¹²ÔÁé¼ý£¿\n");
+		return notify_fail("ä½ è¦å¯¹è°æ–½å±•è‹çµç®­ï¼Ÿ\n");
 
 	if((int)me->query("mana") < 100+2*(int)me->query("mana_factor") )
-		return notify_fail("ÄãµÄ·¨Á¦²»¹»£¡\n");
+		return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿï¼\n");
 
 	if((int)me->query("sen") < 100 )
-		return notify_fail("ÄãÎÞ·¨¼¯ÖÐ¾«Á¦£¡\n");
+		return notify_fail("ä½ æ— æ³•é›†ä¸­ç²¾åŠ›ï¼\n");
 
 	me->add("mana", -25-2*(int)me->query("mana_factor"));
 	me->receive_damage("sen", 50);
 
 	if( random(me->query("max_mana")) < 50 ) {
-		write("¿´À´µçÄ¸½ñÌìÃ»¿Õ¡£\n");
+		write("çœ‹æ¥ç”µæ¯ä»Šå¤©æ²¡ç©ºã€‚\n");
 		return 1;
 	}
 	
@@ -45,15 +45,15 @@ int cast(object me, object target)
 			//damage adjustment
 		"qi", 		
 			//damage type: could be "qi"/"kee", "shen"/"sen", ...default "both"
-		HIC "\n$N¿ÚÖÐÄîÁË¾äÖäÎÄ£¬°ë¿Õ×ß³öÒ»Î»ÈÝÃ²ÐãÑÅµÄµçÄ¸£¬Ë«ÊÖ¸÷³ÖÒ»Ã¶Í­¾µ¡£Í­¾µÏà×ª£¬ºöµÄÉÁ³öÒ»µÀ½ð¹âÉäÏò$n£¡\n" NOR,
+		HIC "\n$Nå£ä¸­å¿µäº†å¥å’’æ–‡ï¼ŒåŠç©ºèµ°å‡ºä¸€ä½å®¹è²Œç§€é›…çš„ç”µæ¯ï¼ŒåŒæ‰‹å„æŒä¸€æžšé“œé•œã€‚é“œé•œç›¸è½¬ï¼Œå¿½çš„é—ªå‡ºä¸€é“é‡‘å…‰å°„å‘$nï¼\n" NOR,
 			//initial message
-		HIR "\n½á¹û¡¸àÍ¡¹µØÒ»Éù£¬½ð¹â´Ó$nÉíÉÏÍ¸Ìå¶ø¹ý£¬\nÍÏ³öÒ»Ìõ³¤³¤µÄÑª¼ý£¬Ö±Éäµ½Á½ÈýÕÉÍâµÄµØÏÂ£¡\n" NOR, 
+		HIR "\nç»“æžœã€Œå—¤ã€åœ°ä¸€å£°ï¼Œé‡‘å…‰ä»Ž$nèº«ä¸Šé€ä½“è€Œè¿‡ï¼Œ\næ‹–å‡ºä¸€æ¡é•¿é•¿çš„è¡€ç®­ï¼Œç›´å°„åˆ°ä¸¤ä¸‰ä¸ˆå¤–çš„åœ°ä¸‹ï¼\n" NOR, 
 			//success message
-		HIC "½á¹ûàÍ£¡µØÒ»Éù$nÎÅµ½ÁËÒ»¹É½¹Î¶¡£»¹ºÃÖ»ÉÕµôÁË¼¸¸ùÍ··¢¡£\n" NOR, 
+		HIC "ç»“æžœå—¤ï¼åœ°ä¸€å£°$né—»åˆ°äº†ä¸€è‚¡ç„¦å‘³ã€‚è¿˜å¥½åªçƒ§æŽ‰äº†å‡ æ ¹å¤´å‘ã€‚\n" NOR, 
 			//fail message
-		HIC "µ«ÊÇ½ð¹â±»$nÒÔ·¨Á¦·´¼¤£¬·´Ïò$NÉäÈ¥£¡\n" NOR, 
+		HIC "ä½†æ˜¯é‡‘å…‰è¢«$nä»¥æ³•åŠ›åæ¿€ï¼Œåå‘$Nå°„åŽ»ï¼\n" NOR, 
 			//backfire initial message
-		HIR "½á¹û½ð¹â´Ó$nÉíÉÏÍ¸Ìå¶ø¹ý£¬ÍÏ³öÒ»Ìõ³¤³¤µÄÑª¼ý£¬Ö±Éäµ½Á½ÈýÕÉÍâµÄµØÏÂ£¡\n" NOR
+		HIR "ç»“æžœé‡‘å…‰ä»Ž$nèº«ä¸Šé€ä½“è€Œè¿‡ï¼Œæ‹–å‡ºä¸€æ¡é•¿é•¿çš„è¡€ç®­ï¼Œç›´å°„åˆ°ä¸¤ä¸‰ä¸ˆå¤–çš„åœ°ä¸‹ï¼\n" NOR
 			//backfire hit message. note here $N and $n!!!
 	);
 

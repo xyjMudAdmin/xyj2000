@@ -1,6 +1,6 @@
 // cracked by vikee 2/09/2002   vikee@263.net
 
-//ÁùµÀÂÖ»Ø
+//å…­é“è½®å›
 
 #include <ansi.h>
  
@@ -13,24 +13,24 @@ int perform(object me, object target)
 {
         int delay,skill;
         object weapon=me->query_temp("weapon");
-        //if (!wizardp(me)) return notify_fail("Äã²»»á¡£\n");
-        if (!target) return notify_fail("´òË­£¿\n");
+        //if (!wizardp(me)) return notify_fail("ä½ ä¸ä¼šã€‚\n");
+        if (!target) return notify_fail("æ‰“è°ï¼Ÿ\n");
         if (!me->is_fighting(target))
-          return notify_fail("ÄãÃÇ²»ÔÚ´ò¼Ü¡£\n");
+          return notify_fail("ä½ ä»¬ä¸åœ¨æ‰“æ¶ã€‚\n");
         skill=me->query_skill("tonsillit",1);        
-        if (skill<60) return notify_fail("ÄãµÄÉãÆø¾÷²»¹»´¿Êì¡£\n");
+        if (skill<60) return notify_fail("ä½ çš„æ‘„æ°”è¯€ä¸å¤Ÿçº¯ç†Ÿã€‚\n");
         skill=me->query_skill("whip");
         if (skill<100) 
-           return notify_fail("ÄãµÄ±Ş·¨Ì«²î¾¢ÁË¡£\n"); 
+           return notify_fail("ä½ çš„é­æ³•å¤ªå·®åŠ²äº†ã€‚\n"); 
         if( (int)me->query("force") < 300 )      
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
         if( (int)me->query_temp("lunhui_delay") )
-                return notify_fail("ÄãÒÑ¾­ÔÚÊ©Õ¹ÁùµÀÂÖ»ØÁË¡£\n");
+                return notify_fail("ä½ å·²ç»åœ¨æ–½å±•å…­é“è½®å›äº†ã€‚\n");
         
         me->add("force", -200);
         delay=random(4)+1;
-        message_vision(HIB"$NÒõâüâüµØÒ»Ğ¦£¬ÊÖÖĞ"+weapon->name()+
-             HIB"Í»È»ÂıÁËÏÂÀ´£¬$nÒ»¼û´óÏ²£¬×¥×¡»ú»á£¬ÉÏÇ°¾ÍÊÇÒ»ÂÖ¼²¹¥£¡\n"NOR, me,target);
+        message_vision(HIB"$Né˜´æ»æ»åœ°ä¸€ç¬‘ï¼Œæ‰‹ä¸­"+weapon->name()+
+             HIB"çªç„¶æ…¢äº†ä¸‹æ¥ï¼Œ$nä¸€è§å¤§å–œï¼ŒæŠ“ä½æœºä¼šï¼Œä¸Šå‰å°±æ˜¯ä¸€è½®ç–¾æ”»ï¼\n"NOR, me,target);
 //        tell_object(me,delay+"\n");
         me->set_temp("lunhui_delay", 1);
         me->start_busy(delay*2);
@@ -51,9 +51,9 @@ void delay_effect(object me,object target,object weapon,int power)
         if (environment(me)!=environment(target)) return;
         if (me->query_temp("weapon")!=weapon) return;
 
-        message_vision(HIR"$N±ŞÊÆÍ»È»Ò»±ä£¬ÊÖÖĞ"+weapon->name()+
-            HIR"»Ã×öÂşÌì±ŞÓ°£¬½«$nµÄÍËÂ·È«²¿·âËÀ¡£\n"NOR,me,target);
-        message_vision(HIR"$N¾õµÃÓĞÈçÖÃÉíÁ¶Óü£¬ËÄÖÜ¶¼ÊÇĞÜĞÜ¹í»ğ£¬ÉîÊÜÂÖ»ØÖ®¿à£¬Á¬Æø¶¼Í¸²»¹ıÀ´¡£\n"NOR,target);
+        message_vision(HIR"$Né­åŠ¿çªç„¶ä¸€å˜ï¼Œæ‰‹ä¸­"+weapon->name()+
+            HIR"å¹»åšæ¼«å¤©é­å½±ï¼Œå°†$nçš„é€€è·¯å…¨éƒ¨å°æ­»ã€‚\n"NOR,me,target);
+        message_vision(HIR"$Nè§‰å¾—æœ‰å¦‚ç½®èº«ç‚¼ç‹±ï¼Œå››å‘¨éƒ½æ˜¯ç†Šç†Šé¬¼ç«ï¼Œæ·±å—è½®å›ä¹‹è‹¦ï¼Œè¿æ°”éƒ½é€ä¸è¿‡æ¥ã€‚\n"NOR,target);
 
         me->set("actions", (: call_other, SKILL_D("hellfire-whip"), "query_pfm_action" :) );
 

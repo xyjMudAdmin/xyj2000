@@ -3,14 +3,14 @@ inherit NPC;
 
 void create()
 {
-	set_name("½µÁúÂŞºº", ({ "luo han"}));
+	set_name("é™é¾™ç½—æ±‰", ({ "luo han"}));
 	set("long", @LONG
-ÄÏº£¹ÛÒô×ùÏÂÊ®°ËÂŞºº¡£
+å—æµ·è§‚éŸ³åº§ä¸‹åå…«ç½—æ±‰ã€‚
 LONG);
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("age", 25);
 	set("attitude", "peaceful");
-	set("rank_info/self", "Æ¶É®");
+	set("rank_info/self", "è´«åƒ§");
 	set("class", "bonze");
 	set("max_kee", 2000);
 	set("max_gin", 2000);

@@ -6,12 +6,12 @@ string heal_me(object me);
 void create()
 {
 	reload("yangzhongshun");
-        set_name("ÑîÖĞË³", ({"yang zhongshun", "yang", "boss"}));
-        set("title", "Ò©ÆÌÕÆ¹ñ");
-        set("gender", "ÄĞĞÔ");
+        set_name("æ¨ä¸­é¡º", ({"yang zhongshun", "yang", "boss"}));
+        set("title", "è¯é“ºæŒæŸœ");
+        set("gender", "ç”·æ€§");
         set("age", 37);
         set("long",
-"ÑîÀÏ°åÊÇ³¤°²³ÇÀï×æ´«µÄÃûÒ½¡£ËäÈ»ÄêÇá£¬È´ÔçÒÑÃûÉùÔÚÍâ¡£\n");
+"æ¨è€æ¿æ˜¯é•¿å®‰åŸé‡Œç¥–ä¼ çš„ååŒ»ã€‚è™½ç„¶å¹´è½»ï¼Œå´æ—©å·²åå£°åœ¨å¤–ã€‚\n");
         set("kee", 300); 
         set("max_kee", 300);
         set("sen", 200);
@@ -21,9 +21,9 @@ void create()
         set("env/wimpy", 50);
 
         set("inquiry", ([
-                "ÖÎÉË": (: heal_me :),
-                "ÁÆÉË": (: heal_me :),
-                "¿ªÒ©": (: heal_me :),
+                "æ²»ä¼¤": (: heal_me :),
+                "ç–—ä¼¤": (: heal_me :),
+                "å¼€è¯": (: heal_me :),
         ]) );
 
         set("vendor_goods", ([
@@ -51,11 +51,11 @@ string heal_me(object ob)
         ratio = (int)me->query("eff_kee") * 100 /
 (int)me->query("max_kee");
         if( ratio >= 100 )
-                return "ÕâÎ»" + RANK_D->query_respect(me) +
-"£¬Äú¿´ÆğÀ´ÆøÉ«ºÜºÃ°¡£¬²»ÏñÓĞÊÜÉËµÄÑù×Ó¡£";
+                return "è¿™ä½" + RANK_D->query_respect(me) +
+"ï¼Œæ‚¨çœ‹èµ·æ¥æ°”è‰²å¾ˆå¥½å•Šï¼Œä¸åƒæœ‰å—ä¼¤çš„æ ·å­ã€‚";
         if( ratio >= 95 )
                 return
-"Å¶....ÎÒ¿´¿´....Ö»ÊÇĞ©Æ¤ÈâĞ¡ÉË£¬ÄúÂò°ü½ğ´´Ò©»ØÈ¥·ó·ó¾ÍÃ»ÊÂÁË¡£";
+"å“¦....æˆ‘çœ‹çœ‹....åªæ˜¯äº›çš®è‚‰å°ä¼¤ï¼Œæ‚¨ä¹°åŒ…é‡‘åˆ›è¯å›å»æ•·æ•·å°±æ²¡äº‹äº†ã€‚";
 
 }
 
@@ -84,7 +84,7 @@ void accept_kill(object me)
                 ob=new("/d/city/npc/xunluobing");
                 ob->move(environment());
         }
-        message_vision("\nºöÈ»´ÓÃÅÍâ³å½øÀ´¸öÑ²Âß¹Ù±ø£¬¶Ô$N´óº°Ò»Éù¡°¸ÉÊ²Ã´£¿ÏëÉ±ÈËÄ±²ÆÃ´£¡\n\n",me);        
+        message_vision("\nå¿½ç„¶ä»é—¨å¤–å†²è¿›æ¥ä¸ªå·¡é€»å®˜å…µï¼Œå¯¹$Nå¤§å–Šä¸€å£°â€œå¹²ä»€ä¹ˆï¼Ÿæƒ³æ€äººè°‹è´¢ä¹ˆï¼\n\n",me);        
 
         ob->kill_ob(me);
         ob->set_leader(me);

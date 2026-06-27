@@ -7,10 +7,10 @@ int show_king();
 
 void create()
 {
-  set_name("¹úÍõ", ({"guo wang", "wang", "king"}));
-  set("long", "Í·´÷Ò»¶¥³åÌì¹Ú£¬ÑüÊøÒ»Ìõ±ÌÓñ´ø£¬Éí´©Ò»Áì·ÉÁúÎè·ïô÷»ÆÅÛ¡£\n");
-  set("title", "ÎÚ¼¦¹ú");
-  set("gender", "ÄÐÐÔ");
+  set_name("å›½çŽ‹", ({"guo wang", "wang", "king"}));
+  set("long", "å¤´æˆ´ä¸€é¡¶å†²å¤©å† ï¼Œè…°æŸä¸€æ¡ç¢§çŽ‰å¸¦ï¼Œèº«ç©¿ä¸€é¢†é£žé¾™èˆžå‡¤èµ­é»„è¢ã€‚\n");
+  set("title", "ä¹Œé¸¡å›½");
+  set("gender", "ç”·æ€§");
   set("age", 46);
   set("per", 30);
   set("attitude", "peaceful");
@@ -61,7 +61,7 @@ void announce(object me, object who)
 
   if (who->query("obstacle/wuji") == "done")
   {
-    //tell_object (who,"ÄãÒÑ¾­¹ýÁËÕâÒ»¹Ø£¬Ê²Ã´¶¼µÃ²»µ½ÁË£¡\n");
+    //tell_object (who,"ä½ å·²ç»è¿‡äº†è¿™ä¸€å…³ï¼Œä»€ä¹ˆéƒ½å¾—ä¸åˆ°äº†ï¼\n");
     return;
   }  
 
@@ -70,11 +70,11 @@ void announce(object me, object who)
   who->set("obstacle/wuji","done");
   //who->add("daoxing",i+4000);
   command("thank "+who->query("id"));
-  //command("chat "+who->query("name")+"ÎÚ¼¦¹ú¾ÈÎÒ»ØÉú£¬´óÃðÑýµÀ»¹ÎÒÇ¬À¤£¡");
-  //command("chat "+who->query("name")+"Ë³Àû´³¹ýÎ÷ÐÐÓÖÒ»¹Ø£¡");
-  //tell_object (who,"ÄãÓ®µÃÁË"+chinese_number(4)+"Äê"+
-  //             chinese_number(i/4)+"Ìì"+
-  //             chinese_number((i-(i/4)*4)*3)+"Ê±³½µÄµÀÐÐ£¡\n");
+  //command("chat "+who->query("name")+"ä¹Œé¸¡å›½æ•‘æˆ‘å›žç”Ÿï¼Œå¤§ç­å¦–é“è¿˜æˆ‘ä¹¾å¤ï¼");
+  //command("chat "+who->query("name")+"é¡ºåˆ©é—¯è¿‡è¥¿è¡Œåˆä¸€å…³ï¼");
+  //tell_object (who,"ä½ èµ¢å¾—äº†"+chinese_number(4)+"å¹´"+
+  //             chinese_number(i/4)+"å¤©"+
+  //             chinese_number((i-(i/4)*4)*3)+"æ—¶è¾°çš„é“è¡Œï¼\n");
   who->save();
   command("follow none");
 }

@@ -34,12 +34,12 @@ void dest();
 
 void create ()
 {
-  set ("short", "ÓíÍõÁÖ");
+  set ("short", "ç¦¹ç‹æ—");
   set ("long", @LONG
 
-ÓíÍõÁÖÅ¨ÃÜºÆå«Èçº££¬Ô¶·ç´µ¹ı£¬ÁÖÌÎÕóÕó¡£Îí´Ó½ÅÏÂÉú£¬ÓĞÈçÒ»Íû
-ÎŞ¼ÊÍòÀïµÄÉ´ÕÊÆ®ÃìËÆÑÌ²¨º£ÉÏ¡£½ü´¦ÓĞÒ»¾Ş´óµÄÇàÍ­µñ»¨Æì¸Ë£¬ÓĞ
-Ò»ÆìÖÄÆ®Ñï£¬ÉÏÊé¡°ÌìÓùÓñÖ´ÓíÍõÒ¯ÍòÄêÑıÄ§´ó»á¡±¡£
+ç¦¹ç‹æ—æµ“å¯†æµ©ç€šå¦‚æµ·ï¼Œè¿œé£å¹è¿‡ï¼Œæ—æ¶›é˜µé˜µã€‚é›¾ä»è„šä¸‹ç”Ÿï¼Œæœ‰å¦‚ä¸€æœ›
+æ— é™…ä¸‡é‡Œçš„çº±å¸é£˜æ¸ºä¼¼çƒŸæ³¢æµ·ä¸Šã€‚è¿‘å¤„æœ‰ä¸€å·¨å¤§çš„é’é“œé›•èŠ±æ——æ†ï¼Œæœ‰
+ä¸€æ——å¸œé£˜æ‰¬ï¼Œä¸Šä¹¦â€œå¤©å¾¡ç‰æ‰§ç¦¹ç‹çˆ·ä¸‡å¹´å¦–é­”å¤§ä¼šâ€ã€‚
 
 LONG);
 
@@ -68,7 +68,7 @@ LONG);
 int valid_leave(object me, string dir)
 {
     if ( !wizardp(me) && dir == "east" )
-	return notify_fail("ÓíÍõ×äÒ»°ÑÀ¹×¡ÁËÄã¡£\n");
+	return notify_fail("ç¦¹ç‹å’ä¸€æŠŠæ‹¦ä½äº†ä½ ã€‚\n");
     return ::valid_leave(me, dir);
 }
 
@@ -91,7 +91,7 @@ void die(object who)
 //  if (! str) {
     killer = who->query_temp("last_damage_from");
     if (killer) {
-      str = "±»"+killer->query("name")+"É±ËÀÁË";
+      str = "è¢«"+killer->query("name")+"æ€æ­»äº†";
     
     // mon
     if(userp(killer) && member_array(killer, obj)>-1) { // killed by attendee.
@@ -106,29 +106,29 @@ void die(object who)
 	
 	kill_bonus*=multiplier;
 
-	str+="£¬"+killer->query("name")+"µÃµ½"+
-	    chinese_number(kill_bonus)+"µãÇ±ÄÜ£¡\n";
+	str+="ï¼Œ"+killer->query("name")+"å¾—åˆ°"+
+	    chinese_number(kill_bonus)+"ç‚¹æ½œèƒ½ï¼\n";
 	killer->add("potential",kill_bonus);
 	log_file("ymdh",ctime(time())+" "+
 		killer->query("id")+" got "+kill_bonus+" pot.\n");
     } else {
-	str+="¡£\n";
+	str+="ã€‚\n";
     }
     } else {
         str = who->query_temp("death_msg");
         if (! str)
-          str = "±»É±ËÀÁË¡£\n";
+          str = "è¢«æ€æ­»äº†ã€‚\n";
     }
 
 //  }
-  str = "ÑıÄ§´ó»á£º"+name+str;
+  str = "å¦–é­”å¤§ä¼šï¼š"+name+str;
   ye->announce(str);
   tell_object(this_object(),
-	  "Ö»¼û"+who->name()+
-	  "ÃæÈçËÀ»Ò±»¼¸Î»ÓíÍõ×äÆßÊÖ°Ë½ÅµØ´ÓÁÖÖĞÌ§ÁË³öÀ´£¬"+
-	  "´ÓÖÚÈËÇ°Í¨¹ı¡£\n",who);
+	  "åªè§"+who->name()+
+	  "é¢å¦‚æ­»ç°è¢«å‡ ä½ç¦¹ç‹å’ä¸ƒæ‰‹å…«è„šåœ°ä»æ—ä¸­æŠ¬äº†å‡ºæ¥ï¼Œ"+
+	  "ä»ä¼—äººå‰é€šè¿‡ã€‚\n",who);
   who->move(__DIR__"yuwang6");
-  message_vision ("$NÃæÈçËÀ»Ò±»¼¸Î»ÓíÍõ×äÆßÊÖ°Ë½ÅµØÌ§ÁË¹ıÀ´¡£\n",who);
+  message_vision ("$Né¢å¦‚æ­»ç°è¢«å‡ ä½ç¦¹ç‹å’ä¸ƒæ‰‹å…«è„šåœ°æŠ¬äº†è¿‡æ¥ã€‚\n",who);
   who->clear_condition();
   who->set("eff_kee",who->query("max_kee"));
   who->set("eff_sen",who->query("max_sen"));
@@ -149,7 +149,7 @@ void escaped(string nameid)
     ye->move(this_object());
   }
   
-  str = "ÑıÄ§´ó»á£º"+nameid+"ÁÙÕóÌÓÍÑÁË¡£\n";
+  str = "å¦–é­”å¤§ä¼šï¼š"+nameid+"ä¸´é˜µé€ƒè„±äº†ã€‚\n";
   ye->announce(str);
   delete("players/"+nameid);
 }
@@ -260,7 +260,7 @@ void dest()
 	    while(j--) {
 		if(userp(inv[j])) {
 		    tell_object(inv[j],
-			    "\nÄãÔÎÔÎºõºõµØÀ´µ½ÁËÒ»¸öĞÂµÄµØ·½£®£®£®\n\n");
+			    "\nä½ æ™•æ™•ä¹ä¹åœ°æ¥åˆ°äº†ä¸€ä¸ªæ–°çš„åœ°æ–¹ï¼ï¼ï¼\n\n");
 		    inv[j]->move(__DIR__"yuwang6",1);
 		    inv[j]->clear_condition();
 		    inv[j]->set("eff_kee",inv[j]->query("max_kee"));
@@ -268,7 +268,7 @@ void dest()
 		    inv[j]->set("kee",inv[j]->query("max_kee"));
 		    inv[j]->set("sen",inv[j]->query("max_sen"));
 		    inv[j]->remove_all_killer();
-		    tell_object(inv[j],"Äã¾õµÃÉíÌåÍêÈ«»Ö¸´ÁË£¡\n");
+		    tell_object(inv[j],"ä½ è§‰å¾—èº«ä½“å®Œå…¨æ¢å¤äº†ï¼\n");
 		}
 	    }
 	    destruct(child[i]);
@@ -326,7 +326,7 @@ void checks  ()
     
     // mon
     if(i>2 && i*2<=(max_i-1)*(max_j-1)) { // reset room size.
-        str1 = "ÑıÄ§´ó»á½øÈëĞÂÒ»ÂÖ½ÏÁ¿£¡\n";
+        str1 = "å¦–é­”å¤§ä¼šè¿›å…¥æ–°ä¸€è½®è¾ƒé‡ï¼\n";
         ye->announce(str1);
 
 	start(current_year, 1);
@@ -372,12 +372,12 @@ int do_watch(string str)
     object *plys;
     string *key;
 
-    notify_fail("ÄãÏë¹Û²ìË­£¿\n");
+    notify_fail("ä½ æƒ³è§‚å¯Ÿè°ï¼Ÿ\n");
     if(!str) return 0;
     if(!(obj=find_player(str))) return 0;
     if(!this_player()->visible(obj) && wizardp(obj)) return 0;
 
-    notify_fail(obj->name()+"²¢Ã»ÓĞ²Î¼ÓÑıÄ§´ó»á¡£\n");
+    notify_fail(obj->name()+"å¹¶æ²¡æœ‰å‚åŠ å¦–é­”å¤§ä¼šã€‚\n");
 //    if(!sizeof(players)) return 0;
 //    plys=values(players);
 //    if(member_array(obj, plys)==-1) return 0;
@@ -400,7 +400,7 @@ int do_watch(string str)
 	watch_list[str]+=({this_player()});
     }
     
-    write("Äã¿ªÊ¼¹Û¿´"+obj->name()+"²Î¼ÓÑıÄ§´ó»á¡£\n");
+    write("ä½ å¼€å§‹è§‚çœ‹"+obj->name()+"å‚åŠ å¦–é­”å¤§ä¼šã€‚\n");
     return 1;
 }
 	    

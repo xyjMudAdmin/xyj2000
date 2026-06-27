@@ -10,12 +10,12 @@ int update_condition(object me,int duration)
 	int myyf = me->query_skill("yaofa", 1)/10;
 	int ff = me->query("force")/100;
 
-	// ÄÚÁ¦¸ß, ·¢×÷Çá
+	// å†…åŠ›é«˜, å‘ä½œè½»
 	if(ff < 1) ff = 1;
 	damage_kee /= ff;
 	damage_sen /= ff;
 
-	// Ñı·¨¸ß, ·¢×÷Çá
+	// å¦–æ³•é«˜, å‘ä½œè½»
 	if(myyf < 1) myyf = 1;
 	damage_kee /= myyf;
 	damage_sen /= myyf;
@@ -25,15 +25,15 @@ int update_condition(object me,int duration)
 
         me->receive_wound("sen", damage_sen);
         me->receive_wound("kee", damage_kee);
-        me->set_temp("death_msg","´©³¦¶¾·¢×÷ËÀÁË¡£\n");
+        me->set_temp("death_msg","ç©¿è‚ æ¯’å‘ä½œæ­»äº†ã€‚\n");
         me->apply_condition("chuanchang_poison", duration - 1);
 
 	if ((int)me->query("kee") < (int)me->query("max_kee")/4)
-		message_vision(HIR "$N³¦Èçµ¶½Á£¬»ëÉíº¹ÈçÓêÏÂ£¬¿´À´²¡µÃ²»Çá¡£\n" NOR, me);
+		message_vision(HIR "$Nè‚ å¦‚åˆ€æ…ï¼Œæµ‘èº«æ±—å¦‚é›¨ä¸‹ï¼Œçœ‹æ¥ç—…å¾—ä¸è½»ã€‚\n" NOR, me);
 	else if ((int)me->query("kee") < (int)me->query("max_kee")/2)
-		message_vision(RED "$NË«ÊÖÎæ×¡¸¹²¿£¬»ëÉí·¢²ü£¬ºÃÏó¶Ç×ÓÌÛµÃÀ÷º¦¡£\n" NOR, me);
+		message_vision(RED "$NåŒæ‰‹æ‚ä½è…¹éƒ¨ï¼Œæµ‘èº«å‘é¢¤ï¼Œå¥½è±¡è‚šå­ç–¼å¾—å‰å®³ã€‚\n" NOR, me);
 	else
-		message_vision("$N¸Ğµ½¸¹ÖĞÒ»Í´£¬²»ÓÉµÃ»ëÉíÒ»²ü¡£\n", me);
+		message_vision("$Næ„Ÿåˆ°è…¹ä¸­ä¸€ç—›ï¼Œä¸ç”±å¾—æµ‘èº«ä¸€é¢¤ã€‚\n", me);
 
 	if( duration < 1 ) return 0;
         return 1;

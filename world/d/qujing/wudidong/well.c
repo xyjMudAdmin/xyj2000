@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "����");
+	set("short", "井底");
 	set("long", @LONG
 
-������ˮһֱ�ε��ף��㷢�־�����ʵ�Ǹɵġ�������һ��ʯ�죬��
-���ƺ�����յ��ƣ�Ҳ����ʲô��ʥס�����
+拨开井水一直游到底，你发现井底其实是干的。东边有一道石缝，里
+面似乎有两盏红灯，也许有什么神圣住在这里？
 LONG
 	);
 	set("exits", ([ /* sizeof() == 2 */

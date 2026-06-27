@@ -5,14 +5,14 @@ inherit __DIR__"beast.c";
 
 void create()
 {
-  set_name("½ğÑÛÍÕ",({"jinyan tuo", "tuo"}));
-  set("race", "Ò°ÊŞ");
+  set_name("é‡‘çœ¼é©¼",({"jinyan tuo", "tuo"}));
+  set("race", "é‡å…½");
   set("age", 20);
-  set("long", "Ò»Í·½ğÑÛ·Å¹âµÄÎåÔÆÍÕ£¬ÈÕĞĞÒ»Ç§£¬Ò¹×ß°Ë°Ù¡£\n");
+  set("long", "ä¸€å¤´é‡‘çœ¼æ”¾å…‰çš„äº”äº‘é©¼ï¼Œæ—¥è¡Œä¸€åƒï¼Œå¤œèµ°å…«ç™¾ã€‚\n");
   set("daoxing", 150000);
 
   set("combat_exp", 150000);
-  set("limbs", ({ "Í·²¿", "ÉíÌå", "Ç°½Å", "áá½Å", "Î²°Í" }) );
+  set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å‰è„š", "å¾Œè„š", "å°¾å·´" }) );
   set("verbs", ({ "bite"}));
 
   set("max_kee", 800);
@@ -25,7 +25,7 @@ void create()
   set_skill("unarmed", 150);
 
   set("ride/need_train", 1);
-  set("ride/msg", "Æï");
+  set("ride/msg", "éª‘");
   set("ride/dodge", 27);
 
   set_temp("apply/dodge", 40);

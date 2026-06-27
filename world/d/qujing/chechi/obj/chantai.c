@@ -5,14 +5,14 @@ inherit ITEM;
 
 void create()
 {
-  set_name("ÔÆìøÌ¨", ({"yun chantai", "chantai"}));
+  set_name("äº‘ç¦…å°", ({"yun chantai", "chantai"}));
   set_weight(6000000);
   set_max_encumbrance(100000000000);
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("unit", "Ö»");
-    set("long", "Ò»×ùÓÉÎåÊ®ÕÅ×À×Ó¼¶¼¶Àİ³ÉµÄìøÌ¨£¬¸ßËÊÈëÔÆ¡£\n"),
+    set("unit", "åª");
+    set("long", "ä¸€åº§ç”±äº”åå¼ æ¡Œå­çº§çº§å’æˆçš„ç¦…å°ï¼Œé«˜è€¸å…¥äº‘ã€‚\n"),
     set("value", 50000);
   }
   setup();
@@ -36,13 +36,13 @@ void init()
 void disturbed (object me, object who)
 {
   string *msgs = ({
-    "$NÈÌÄÍ²»×¡£¬»ÎÁËÒ»ÏÂ£¬¸Ï½ô×ø¶¨¡£\n",
-    "$NÇ¿ÈÌ×Å£¬¾Í×ÅÒÂ½ó²äÁË²äÍ·¡£\n",
-    "$NÉí×ÓÒ»Íá£¬²îµã¶ùË¤ÏÂ¡£\n",
-    "$NÂÔ¶¯ÁËÒ»¶¯¡£\n",
-    "$NÒ»¸ö²»ÎÈÁ¬Ã¦×øÕı¡£\n",
-    "$NÍáÍáĞ±Ğ±ÓĞµã×ø²»×¡ÁË¡£\n",
-    "$NÏóºÈ×íÁËÒ»Ñù£¬Éí×ÓÖ±»Î¡£\n",
+    "$Nå¿è€ä¸ä½ï¼Œæ™ƒäº†ä¸€ä¸‹ï¼Œèµ¶ç´§åå®šã€‚\n",
+    "$Nå¼ºå¿ç€ï¼Œå°±ç€è¡£è¥Ÿè¹­äº†è¹­å¤´ã€‚\n",
+    "$Nèº«å­ä¸€æ­ªï¼Œå·®ç‚¹å„¿æ‘”ä¸‹ã€‚\n",
+    "$Nç•¥åŠ¨äº†ä¸€åŠ¨ã€‚\n",
+    "$Nä¸€ä¸ªä¸ç¨³è¿å¿™åæ­£ã€‚\n",
+    "$Næ­ªæ­ªæ–œæ–œæœ‰ç‚¹åä¸ä½äº†ã€‚\n",
+    "$Nè±¡å–é†‰äº†ä¸€æ ·ï¼Œèº«å­ç›´æ™ƒã€‚\n",
   });
   string msg = msgs[random(sizeof(msgs))];
   object where = environment(me);
@@ -56,7 +56,7 @@ void disturbed (object me, object who)
     return;
   message_vision (msg,who);
   msg = replace_string (msg,"$N",who->name());
-  tell_room(where,"ìøÌ¨ÉÏ"+msg,who);    
+  tell_room(where,"ç¦…å°ä¸Š"+msg,who);    
   call_out("disturbed",5+random(20),me,who);
 }
 
@@ -74,7 +74,7 @@ void autoleave (object me, object who, int i)
     return;
   }
   who->move(environment(me));
-  message_vision ("Ö»¼û$Nµ¹ÔÔ´ĞÒ»°ãË¤½«ÏÂÀ´£¬°ğµØÔÒÔÚµØÉÏ¡£\n",who);
+  message_vision ("åªè§$Nå€’æ ½è‘±ä¸€èˆ¬æ‘”å°†ä¸‹æ¥ï¼Œæ¢†åœ°ç ¸åœ¨åœ°ä¸Šã€‚\n",who);
   if (interactive(who))
     who->unconcious(); 
 }
@@ -100,7 +100,7 @@ int do_look (string arg)
   i = sizeof(inv);
   if (i)
   {
-    tell_object(who,"ÉÏÃæÓĞ£º\n");
+    tell_object(who,"ä¸Šé¢æœ‰ï¼š\n");
     while (i--)
     {
       tell_object(who,"  "+inv[i]->short()+"\n");
@@ -122,7 +122,7 @@ int do_put (string arg)
   if (me != present(id,where))
     return 0;
 
-  tell_object(who,"ÕâÀïÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+  tell_object(who,"è¿™é‡Œæ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
   return 1;
 }
 
@@ -139,6 +139,6 @@ int do_get (string arg)
   if (me != present(id,where))
     return 0;
 
-  tell_object(who,"ÕâÀïÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+  tell_object(who,"è¿™é‡Œæ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
   return 1;
 }

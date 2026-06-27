@@ -1,18 +1,18 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// ptmj.c ÆÏÌÑÃÀ¾Æ
+// ptmj.c è‘¡è„ç¾é…’
 
 inherit ITEM;
 inherit F_LIQUID;
 
 void create()
 {
-	set_name("ÔÂ¹â±­", ({"ptmj", "yueguangbei", "bei"}));
+	set_name("æœˆå…‰æ¯", ({"ptmj", "yueguangbei", "bei"}));
 	set_weight(700);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "ÓùÓÃÔÂ¹â±­\n");
-		set("unit", "¸ö");
+		set("long", "å¾¡ç”¨æœˆå…‰æ¯\n");
+		set("unit", "ä¸ª");
 		set("value", 100);
 		set("max_liquid", 15);
 	}
@@ -21,7 +21,7 @@ void create()
 	// we set it to contain wine at the beginning
 	set("liquid", ([
 		"type": "alcohol",
-		"name": "ÆÏÌÑÃÀ¾Æ",
+		"name": "è‘¡è„ç¾é…’",
 		"remaining": 15,
 		"drunk_apply": 5,
 	]));

@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create ()
 {
-	set ("short", "É½ÆÂ");
+	set ("short", "å±±å¡");
 	set ("long", @LONG
 
-ÕâÀï±ãÊÇÑ©É½µÜ×ÓÆ½ÈÕÆğ¾ÓµÄ´¦ËùÁË£¬µØÉÏ»ıÁË
-ºñºñµÄÑ©£¬¶øÍùÀ´µÄÑ©É½µÜ×Ó´Ó²»¸Ğµ½ÑÏº®¡£
+è¿™é‡Œä¾¿æ˜¯é›ªå±±å¼Ÿå­å¹³æ—¥èµ·å±…çš„å¤„æ‰€äº†ï¼Œåœ°ä¸Šç§¯äº†
+åšåšçš„é›ªï¼Œè€Œå¾€æ¥çš„é›ªå±±å¼Ÿå­ä»ä¸æ„Ÿåˆ°ä¸¥å¯’ã€‚
 LONG);
 
 
@@ -29,7 +29,7 @@ LONG);
 
 	set("outdoors", "xueshan");
 
-        create_door("east", "³ø·¿ÃÅ", "west", DOOR_CLOSED);
+        create_door("east", "å¨æˆ¿é—¨", "west", DOOR_CLOSED);
         set("no_clean_up", 0);
 
 	setup();

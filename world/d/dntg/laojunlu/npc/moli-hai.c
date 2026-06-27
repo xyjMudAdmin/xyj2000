@@ -5,14 +5,14 @@
 inherit NPC;
 void create()
 {
-        set_name("Ä§Àñº£", ({ "tian wang", "duowen tianwang", "hai", "tianwang" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("é­”ç¤¼æµ·", ({ "tian wang", "duowen tianwang", "hai", "tianwang" }) );
+        set("gender", "ç”·æ€§" );
 	set("long",
-		"Ä§¼ÒËÄ½«Ö®Ò»£¬Ê¹Ò»¸ùÅÌÁú¹÷£¬±³ÉÏÒ»ÃæÅıÅÃ£¬ÉÏÓĞËÄÌõÏÒ£»Ò²°´\n"
-                "µØ¡¢Ë®¡¢»ğ¡¢·ç£¬²¦¶¯ÏÒÉù£¬·ç»ğÆëÖÁ£¬ÈçÇàÔÆ½£Ò»°ã¡£\n"
+		"é­”å®¶å››å°†ä¹‹ä¸€ï¼Œä½¿ä¸€æ ¹ç›˜é¾™æ£ï¼ŒèƒŒä¸Šä¸€é¢çµç¶ï¼Œä¸Šæœ‰å››æ¡å¼¦ï¼›ä¹ŸæŒ‰\n"
+                "åœ°ã€æ°´ã€ç«ã€é£ï¼Œæ‹¨åŠ¨å¼¦å£°ï¼Œé£ç«é½è‡³ï¼Œå¦‚é’äº‘å‰‘ä¸€èˆ¬ã€‚\n"
 	);
 	set("age",50);
-	set("title", "¶àÎÅÌìÍõ");
+	set("title", "å¤šé—»å¤©ç‹");
 	set("attitude", "heroism");
 	set("str",40);
 	set("int",30);
@@ -46,8 +46,8 @@ void create()
 	map_skill("spear","bawang-qiang");
 	map_skill("unarmed", "yingzhaogong");
 	set("inquiry", ([
-		"name" : "ÔÚÏÂ¶àÎÅÌìÍõÄ§Àñº££¬·îÊ¥ÚÍ°ÑÊØÎ÷ÌìÃÅ¡£",
-		"here" : "ÕâÀï¾ÍÊÇÎ÷ÌìÃÅ, ÈëÄÚ¾ÍÊÇÌì½çÁË¡£",
+		"name" : "åœ¨ä¸‹å¤šé—»å¤©ç‹é­”ç¤¼æµ·ï¼Œå¥‰åœ£è°•æŠŠå®ˆè¥¿å¤©é—¨ã€‚",
+		"here" : "è¿™é‡Œå°±æ˜¯è¥¿å¤©é—¨, å…¥å†…å°±æ˜¯å¤©ç•Œäº†ã€‚",
 	]) );
 
 	setup();
@@ -82,13 +82,13 @@ void pipa (object me, object ob)
   if (environment(ob) != environment(me))
     return;
 
-  message_vision (HIY"$NÌÍ³ö±ÌÓñÅıÅÃ£¬¾¹ÔÚÕ½³¡ÉÏÓÆÈ»×ÔµÃµÄµ¯ÁËÆğÀ´£¡\n"NOR,me);
+  message_vision (HIY"$Næå‡ºç¢§ç‰çµç¶ï¼Œç«Ÿåœ¨æˆ˜åœºä¸Šæ‚ ç„¶è‡ªå¾—çš„å¼¹äº†èµ·æ¥ï¼\n"NOR,me);
 
   if ( (ob->query("mana")+random(1000)) > 3000 )
-     message_vision (HIY"$N³ä¶ú²»ÎÅ£¬²»ÎªËù¶¯¡£\n"NOR,ob);
+     message_vision (HIY"$Nå……è€³ä¸é—»ï¼Œä¸ä¸ºæ‰€åŠ¨ã€‚\n"NOR,ob);
   else 
     {
-     message_vision (HIY"$N¾ÍÏó×ÅÁËÄ§Ò»Ñù£¬¶Ù¸ĞÍ·»èÄÔÕÇ£¡\n"NOR,ob);
+     message_vision (HIY"$Nå°±è±¡ç€äº†é­”ä¸€æ ·ï¼Œé¡¿æ„Ÿå¤´æ˜è„‘æ¶¨ï¼\n"NOR,ob);
      damage=(me->query("mana"))/5; 
      if ( ob->query("sen") < damage ) ob->unconcious();
      else ob->add("sen",-damage);
@@ -102,7 +102,7 @@ void pipa (object me, object ob)
 void die ()
 {
   object me = this_object();
-  message_vision (HIY"$NÏÅµÃÈöÍÈ¾ÍÅÜ¡£\n"NOR,me);
+  message_vision (HIY"$Nå“å¾—æ’’è…¿å°±è·‘ã€‚\n"NOR,me);
   destruct (this_object());
   return ;
 }

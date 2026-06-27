@@ -5,9 +5,9 @@ inherit STAFF;
 
 void create()
 {
-  set_name("ìøÕÈ", ({ "chan zhang", "zhang", "staff" }) );
+  set_name("ç¦…æ–", ({ "chan zhang", "zhang", "staff" }) );
   init_staff(35);
-  set("unit", "¸ù");
+  set("unit", "æ ¹");
   set_weight(1000);
   if( clonep() )
      set_default_object(__FILE__);

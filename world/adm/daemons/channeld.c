@@ -22,47 +22,47 @@ int check_string(string arg, string who, int emote_mode);
 string query_buffer() {return sprintf("%O\n",msg_buf);}
 
 mapping channels = ([
-	"sys":	([	"msg_speak": HIG "¡¾ÏµÍ³¡¿%s£º%s\n" NOR, "wiz_only": 1 ]),
-	"wiz":	([	"msg_speak": HIY "¡¾Î×Ê¦¡¿%s£º%s\n" NOR,
-				"msg_emote": HIY "¡¾Î×Ê¦¡¿%s\n" NOR,
+	"sys":	([	"msg_speak": HIG "ã€ç³»ç»Ÿã€‘%sï¼š%s\n" NOR, "wiz_only": 1 ]),
+	"wiz":	([	"msg_speak": HIY "ã€å·«å¸ˆã€‘%sï¼š%s\n" NOR,
+				"msg_emote": HIY "ã€å·«å¸ˆã€‘%s\n" NOR,
 				"wiz_only": 1
 			]),
-	"gwiz":	([	"msg_speak": GRN "¡¾Íø¼ÊÎ×Ê¦¡¿%s£º%s\n" NOR,
-				"msg_emote": GRN "¡¾Íø¼ÊÎ×Ê¦¡¿%s\n" NOR,
+	"gwiz":	([	"msg_speak": GRN "ã€ç½‘é™…å·«å¸ˆã€‘%sï¼š%s\n" NOR,
+				"msg_emote": GRN "ã€ç½‘é™…å·«å¸ˆã€‘%s\n" NOR,
 				"wiz_only": 1, "intermud": GWIZ, "channel": "CREATOR",
 				"filter": 1,
 				"intermud_emote": 1 ]),
-	"xyj":	([	"msg_speak": HIR "¡¾Î÷ÓÎ¼Ç¡¿%s£º%s\n" NOR,
-				"msg_emote": HIR "¡¾Î÷ÓÎ¼Ç¡¿%s\n" NOR,
+	"xyj":	([	"msg_speak": HIR "ã€è¥¿æ¸¸è®°ã€‘%sï¼š%s\n" NOR,
+				"msg_emote": HIR "ã€è¥¿æ¸¸è®°ã€‘%s\n" NOR,
 				"intermud": GCHANNEL, "channel": "xyj",
 				"filter": (:$1["MUDLIB"]=="A Journey to the West" :) ]),
-	"xx":	([	"msg_speak": HIR "¡¾Î÷ÓÎ¡¿%s£º%s\n" NOR,
-				"msg_emote": HIR "¡¾Î÷ÓÎ¡¿%s\n" NOR,
+	"xx":	([	"msg_speak": HIR "ã€è¥¿æ¸¸ã€‘%sï¼š%s\n" NOR,
+				"msg_emote": HIR "ã€è¥¿æ¸¸ã€‘%s\n" NOR,
 				"intermud": GCHANNEL, "channel": "xx",
 				"filter": (:$1["MUDLIB"]=="A Journey to the West" :) ]),
-	"es":	([	"msg_speak": HIR "¡¾Ì¶¼ÊÏĞÁÄ¡¿%s£º%s\n" NOR,
-				"msg_emote": HIR "¡¾Ì¶¼ÊÏĞÁÄ¡¿%s\n" NOR,
+	"es":	([	"msg_speak": HIR "ã€æ½­é™…é—²èŠã€‘%sï¼š%s\n" NOR,
+				"msg_emote": HIR "ã€æ½­é™…é—²èŠã€‘%s\n" NOR,
 				"intermud": GCHANNEL, "channel": "es",
 				"filter": 1 ]), //keep the channel name
 				//as "es" to be compatible with other
 				//ES2 type muds.
-        "sldh": ([      "msg_speak": HIC "¡¾Ë®Â½´ó»á¡¿%s£º%s\n" NOR,
-                                "msg_emote": HIC "¡¾Ë®Â½´ó»á¡¿%s\n" NOR,
+        "sldh": ([      "msg_speak": HIC "ã€æ°´é™†å¤§ä¼šã€‘%sï¼š%s\n" NOR,
+                                "msg_emote": HIC "ã€æ°´é™†å¤§ä¼šã€‘%s\n" NOR,
                          ]),
 
-	"chat":	([	"msg_speak": HIC "¡¾ÏĞÁÄ¡¿%s£º%s\n" NOR,
-				"msg_emote": HIC "¡¾ÏĞÁÄ¡¿%s\n" NOR,
+	"chat":	([	"msg_speak": HIC "ã€é—²èŠã€‘%sï¼š%s\n" NOR,
+				"msg_emote": HIC "ã€é—²èŠã€‘%s\n" NOR,
 			 ]),
-	"rumor":([	"msg_speak": HIM "¡¾Ò¥ÑÔ¡¿%s£º%s\n" NOR,
-				"msg_emote": HIM "¡¾Ò¥ÑÔ¡¿%s\n" NOR,
-				"anonymous": "Ä³ÈË"
+	"rumor":([	"msg_speak": HIM "ã€è°£è¨€ã€‘%sï¼š%s\n" NOR,
+				"msg_emote": HIM "ã€è°£è¨€ã€‘%s\n" NOR,
+				"anonymous": "æŸäºº"
 			]),
 ]);
 
 void create()
 {
 	seteuid(getuid());	// This is required to pass intermud access check.
-        set("channel_id", "ÆµµÀ¾«Áé");
+        set("channel_id", "é¢‘é“ç²¾çµ");
 }
 
 varargs int do_channel(object me, string verb, string arg, int emote,
@@ -94,7 +94,7 @@ varargs int do_channel(object me, string verb, string arg, int emote,
 		time=time();
 		if(me->query("channel/chat_block") &&
 		  (time-me->query("channel/chat_block"))<0 )
-		   return notify_fail("ÄãµÄ½»Ì¸ÆµµÀ±»ÔİÊ±¹Ø±ÕÁË¡£\n");
+		   return notify_fail("ä½ çš„äº¤è°ˆé¢‘é“è¢«æš‚æ—¶å…³é—­äº†ã€‚\n");
               
 	        count=me->query("channel/chat_count");
 		// if the channel arg contains too many lines,
@@ -109,13 +109,13 @@ varargs int do_channel(object me, string verb, string arg, int emote,
 		  me->set("channel/last_chat",time);
 		  if (time==last_chat || count1>2) {
 		    me->set("channel/chat_block",time+180);
-		    return notify_fail("ÒòÎªÒ»´Î½²»°Ì«¶à£¬ÄãµÄ½»Ì¸ÆµµÀ±»ÔİÊ±¹Ø±ÕÁË¡£\n");
+		    return notify_fail("å› ä¸ºä¸€æ¬¡è®²è¯å¤ªå¤šï¼Œä½ çš„äº¤è°ˆé¢‘é“è¢«æš‚æ—¶å…³é—­äº†ã€‚\n");
 		  }
 	        }
 		me->set("channel/chat_count",count);
 
 		if( arg==(string)me->query_temp("last_channel_msg") )
-			return notify_fail("ÓÃ½»Ì¸ÆµµÀËµ»°Çë²»ÒªÖØ¸´ÏàÍ¬µÄÑ¶Ï¢¡£\n");
+			return notify_fail("ç”¨äº¤è°ˆé¢‘é“è¯´è¯è¯·ä¸è¦é‡å¤ç›¸åŒçš„è®¯æ¯ã€‚\n");
 
 		// If we speaks something in this channel, then must tune it in.
 		tuned_ch = me->query("channels");
@@ -145,11 +145,11 @@ varargs int do_channel(object me, string verb, string arg, int emote,
 			// prevent login  newbie to flood channels.
 			if(!wizardp(me)) {
 			    if(age<3600) return notify_fail(
-				    "ÄãÏÖÔÚ»¹²»ÄÜÊ¹ÓÃÕâ¸öÆµµÀ¡£\n");
+				    "ä½ ç°åœ¨è¿˜ä¸èƒ½ä½¿ç”¨è¿™ä¸ªé¢‘é“ã€‚\n");
 			    else if(age<86400) {
 				if((int)me->query("sen")<30) return 
 				    notify_fail
-					("ÄãÏÖÔÚ¾«Éñ²»×ã£¬²»ÄÜÊ¹ÓÃÕâ¸öÆµµÀ¡£\n");
+					("ä½ ç°åœ¨ç²¾ç¥ä¸è¶³ï¼Œä¸èƒ½ä½¿ç”¨è¿™ä¸ªé¢‘é“ã€‚\n");
 				me->add("sen",-5);
 			    }
 			}
@@ -179,10 +179,10 @@ varargs int do_channel(object me, string verb, string arg, int emote,
 		who = channels[verb]["anonymous"];
 		if (userp(me)) {
 		    if((int)me->query("sen")<50) return
-			notify_fail("ÄãÒÑ¾­Ã»ÓĞ¾«ÉñÉ¢²¼Ò¥ÑÔÁË¡£\n");
+			notify_fail("ä½ å·²ç»æ²¡æœ‰ç²¾ç¥æ•£å¸ƒè°£è¨€äº†ã€‚\n");
 		    me->add("sen",-5);
                   do_channel( this_object(), "sys", 
-		    sprintf("Ò¥ÑÔ£º%s(%s)¡£", me->name(),me->query("id")));
+		    sprintf("è°£è¨€ï¼š%s(%s)ã€‚", me->name(),me->query("id")));
 		}
 	}
 	else if( userp(me) || !stringp(who = me->query("channel_id")) ) {
@@ -194,7 +194,7 @@ varargs int do_channel(object me, string verb, string arg, int emote,
 	// Ok, now send the message to those people listening us.
 
 	ob = filter_array( users(), "filter_listener", this_object(), channels[verb] );
-	if( !arg ) arg = "£®£®£®";
+	if( !arg ) arg = "ï¼ï¼ï¼";
 
 	// check whether repeated messages. -- mon 8/5/99
 	if( !undefinedp(channels[verb]["intermud"])) {
@@ -235,11 +235,11 @@ varargs int do_channel(object me, string verb, string arg, int emote,
 	    // prevent login  newbie to flood channels.
 	    if(!wizardp(me)) {
 	      if(age<3600) return notify_fail(
-		    "ÄãÏÖÔÚ»¹²»ÄÜÊ¹ÓÃÕâ¸öÆµµÀ¡£\n");
+		    "ä½ ç°åœ¨è¿˜ä¸èƒ½ä½¿ç”¨è¿™ä¸ªé¢‘é“ã€‚\n");
 	      else if(age<86400) {
 		if((int)me->query("sen")<30) return 
 		    notify_fail
-			("ÄãÏÖÔÚ¾«Éñ²»×ã£¬²»ÄÜÊ¹ÓÃÕâ¸öÆµµÀ¡£\n");
+			("ä½ ç°åœ¨ç²¾ç¥ä¸è¶³ï¼Œä¸èƒ½ä½¿ç”¨è¿™ä¸ªé¢‘é“ã€‚\n");
 		me->add("sen",-5);
 	      }
 	    }
@@ -328,7 +328,7 @@ int check_string(string arg, string who, int emote_mode)
     arg=replace_string(arg,"\n","");
     arg=replace_string(arg,"|","");
     
-    notify_fail("Çë²»ÒªÔÚÌ¶¼ÊÆµµÀ·¢ËÍÖØ¸´ĞÅÏ¢£¬Ğ»Ğ»ºÏ×÷¡£\n");
+    notify_fail("è¯·ä¸è¦åœ¨æ½­é™…é¢‘é“å‘é€é‡å¤ä¿¡æ¯ï¼Œè°¢è°¢åˆä½œã€‚\n");
 
     if(!who || sscanf(who, "%*s@%s)", site)!=2 || !sizeof(site)) {
 	site="local_host";

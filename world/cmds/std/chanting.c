@@ -16,31 +16,31 @@ int main(object me, string arg)
 	where=environment(me);
 
 	if (!where->query("jingzuo_room"))
-		return notify_fail("´Ë´¦²»ÒË¾²×øĞŞÁ·£¡\n");
+		return notify_fail("æ­¤å¤„ä¸å®œé™åä¿®ç»ƒï¼\n");
 
 	if ( (int)me->query_skill("buddhism", 1) < 20 ) 
-		return notify_fail("ÄãµÄ´ó³Ë·ğ·¨ĞŞÎªÌ«µÍ£¬²»ÄÜĞĞ¹¦ĞŞÁ¶£¡\n");
+		return notify_fail("ä½ çš„å¤§ä¹˜ä½›æ³•ä¿®ä¸ºå¤ªä½ï¼Œä¸èƒ½è¡ŒåŠŸä¿®ç‚¼ï¼\n");
 	
 	if( (string)me->query("class")!="bonze") 
-		return notify_fail("ÄãÓÖÃ»ÓĞ³ö¼Ò£¬ËĞÊ²Ã´¾­ÄÄ£¡\n");
+		return notify_fail("ä½ åˆæ²¡æœ‰å‡ºå®¶ï¼Œè¯µä»€ä¹ˆç»å“ªï¼\n");
 
 	if (me->is_busy() || me->query_temp("pending/exercising"))
-		return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+		return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
 
 	if( me->is_fighting() )
-		return notify_fail("Õ½¶·ÖĞ»¹ÒªËĞ¾­£¿\n");
+		return notify_fail("æˆ˜æ–—ä¸­è¿˜è¦è¯µç»ï¼Ÿ\n");
 
 	if( (int)me->query("sen") * 100 / (int)me->query("max_sen") < 50 )
-		return notify_fail("ÄãÏÖÔÚÉñÖÇ²»Çå£¬ÔÙÁ¶¿ÖÅÂÒª×ß»ğÈëÄ§£¡\n");
+		return notify_fail("ä½ ç°åœ¨ç¥æ™ºä¸æ¸…ï¼Œå†ç‚¼ææ€•è¦èµ°ç«å…¥é­”ï¼\n");
 
 	if( (int)me->query("kee") * 100 / (int)me->query("max_kee") < 50 )
-		return notify_fail("ÄãÏÖÔÚÌåÁ¦²»¹»£¬ÔÙÁ·¾ÍÒªÀÛËÀÁË£¡\n");
+		return notify_fail("ä½ ç°åœ¨ä½“åŠ›ä¸å¤Ÿï¼Œå†ç»ƒå°±è¦ç´¯æ­»äº†ï¼\n");
 	
 	if( (int)me->query("water") < 10 )
-		return notify_fail("ÄãÏÖÔÚ¿Ú¸ÉÉàÔï£¬»¹ÊÇĞªĞª°É¡£\n");
+		return notify_fail("ä½ ç°åœ¨å£å¹²èˆŒç‡¥ï¼Œè¿˜æ˜¯æ­‡æ­‡å§ã€‚\n");
 
 	if( (int)me->query("mana") < 50 )
-		return notify_fail("ÄãÏÖÔÚ·¨Á¦Ì«µÍ£¬ÔÙÁ¶¿ÖÅÂÒª×ß»ğÈëÄ§£¡\n");
+		return notify_fail("ä½ ç°åœ¨æ³•åŠ›å¤ªä½ï¼Œå†ç‚¼ææ€•è¦èµ°ç«å…¥é­”ï¼\n");
 
 
 	level=(int)me->query_skill("buddhism",1);
@@ -67,7 +67,7 @@ int main(object me, string arg)
 
 	pot_gain= time/10 + (int)me->query("int")/5 + 1;
 
-	message_vision(HIY "$NÏ¯µØ¶ø×ø£¬Ë«Ä¿Î¢±Õ£¬¿ÚÖĞÇáÉùËĞÆğÁË¾­ÎÄ¡£\n" NOR, me);
+	message_vision(HIY "$Nå¸­åœ°è€Œåï¼ŒåŒç›®å¾®é—­ï¼Œå£ä¸­è½»å£°è¯µèµ·äº†ç»æ–‡ã€‚\n" NOR, me);
 	me->start_busy(time);
 	call_out("finish",time, me, dx_gain,pot_gain);
 	return 1;
@@ -77,36 +77,36 @@ void finish(object me,int dx_gain, int pot_gain)
 {
 	int i;
 	string *msg=({
-		"¶àÓûÎª¿à£¬ÉúËÀÆ£ÀÍ£¬´ÓÌ°ÓûÆğ£»ÉÙÓûÎŞÎª£¬ÉíĞÄ×ÔÔÚ¡£",
-		"Ğ¸µ¡×¹Âä£¬³£ĞĞ¾«½ø£¬ÆÆ·³ÄÕ¶ñ£¬´İ·üËÄÄ§£¬³öÒõ½çÓü¡£",
-		"ÓŞ³ÕÉúËÀ£¬ÆĞÈø³£Äî£¬¹ãÑ§¶àÎÅ£¬Ôö³¤ÖÇ»Û£¬³É¾Í±ç²Å£¬½Ì»¯Ò»ÇĞ£¬Ï¤ÒÔ´óÀÖ¡£",
-		"Æ¶¿à¶àÔ¹£¬ºá½á¶ñÔµ£¬ÆĞÈø²¼Ê©£¬µÈÄîÔ¹Ç×£¬²»Äî¾É¶ñ£¬²»Ô÷¶ñÈË¡£",
-		"ÉúËÀ³ãÈ¼£¬¿àÄÕÎŞÁ¿£¬·¢´ó³ËĞÄ£¬ÆÕ¼ÃÒ»ÇĞ¡£",
-		"Ô¸´úÖÚÉú£¬ÊÜÎŞÁ¿¿à£¬ÁîÖîÖÚÉú£¬±Ï¾¹´óÀÖ¡£",
-		"Ô¸ÒÔ´Ë¹¦µÂ£¬×¯ÑÏ·ğ¾»ÍÁ£¬ÉÏ±¨ËÄÖØ¶÷£¬ÏÂ¼ÃÈıÍ¾¿à¡£",
-		"ÈôÓĞ¼ûÎÅÕß£¬Ï¤·¢ÆĞÌáĞÄ£¬³£ĞĞÆĞÈøµÀ£¬¹ã¶ÈÖîÓĞÇé¡£",
+		"å¤šæ¬²ä¸ºè‹¦ï¼Œç”Ÿæ­»ç–²åŠ³ï¼Œä»è´ªæ¬²èµ·ï¼›å°‘æ¬²æ— ä¸ºï¼Œèº«å¿ƒè‡ªåœ¨ã€‚",
+		"æ‡ˆæ€ å è½ï¼Œå¸¸è¡Œç²¾è¿›ï¼Œç ´çƒ¦æ¼æ¶ï¼Œæ‘§ä¼å››é­”ï¼Œå‡ºé˜´ç•Œç‹±ã€‚",
+		"æ„šç—´ç”Ÿæ­»ï¼Œè©è¨å¸¸å¿µï¼Œå¹¿å­¦å¤šé—»ï¼Œå¢é•¿æ™ºæ…§ï¼Œæˆå°±è¾©æ‰ï¼Œæ•™åŒ–ä¸€åˆ‡ï¼Œæ‚‰ä»¥å¤§ä¹ã€‚",
+		"è´«è‹¦å¤šæ€¨ï¼Œæ¨ªç»“æ¶ç¼˜ï¼Œè©è¨å¸ƒæ–½ï¼Œç­‰å¿µæ€¨äº²ï¼Œä¸å¿µæ—§æ¶ï¼Œä¸æ†æ¶äººã€‚",
+		"ç”Ÿæ­»ç‚½ç‡ƒï¼Œè‹¦æ¼æ— é‡ï¼Œå‘å¤§ä¹˜å¿ƒï¼Œæ™®æµä¸€åˆ‡ã€‚",
+		"æ„¿ä»£ä¼—ç”Ÿï¼Œå—æ— é‡è‹¦ï¼Œä»¤è¯¸ä¼—ç”Ÿï¼Œæ¯•ç«Ÿå¤§ä¹ã€‚",
+		"æ„¿ä»¥æ­¤åŠŸå¾·ï¼Œåº„ä¸¥ä½›å‡€åœŸï¼Œä¸ŠæŠ¥å››é‡æ©ï¼Œä¸‹æµä¸‰é€”è‹¦ã€‚",
+		"è‹¥æœ‰è§é—»è€…ï¼Œæ‚‰å‘è©æå¿ƒï¼Œå¸¸è¡Œè©è¨é“ï¼Œå¹¿åº¦è¯¸æœ‰æƒ…ã€‚",
 		});
-	message_vision(HIY "$NÇáÉùÄîµÀ£º"+msg[random(sizeof(msg))]+"\n" NOR, me);
-	message_vision(HIY "$N»º»ºÕö¿ªÑÛ¾¦£¬³¤ÊæÒ»¿ÚÆøÕ¾ÁËÆğÀ´¡£\n" NOR, me);
+	message_vision(HIY "$Nè½»å£°å¿µé“ï¼š"+msg[random(sizeof(msg))]+"\n" NOR, me);
+	message_vision(HIY "$Nç¼“ç¼“çå¼€çœ¼ç›ï¼Œé•¿èˆ’ä¸€å£æ°”ç«™äº†èµ·æ¥ã€‚\n" NOR, me);
 
 
 	me->add("daoxing", dx_gain);
-	tell_object(me, HIC "ÄãµÄµÀĞĞÔö¼ÓÁË" + chinese_number(dx_gain*3) + "Ê±³½£¡\n" NOR);
+	tell_object(me, HIC "ä½ çš„é“è¡Œå¢åŠ äº†" + chinese_number(dx_gain*3) + "æ—¶è¾°ï¼\n" NOR);
 	me->add("chanting/dx", dx_gain); 
         if ((me->query("potential") - me->query("learned_points")) < 1000){
                 me->add("potential", pot_gain);
 		me->add("chanting/pot", pot_gain);
-		tell_object(me, HIC "ÄãµÄÇ±ÄÜÔö¼ÓÁË" + chinese_number(pot_gain) + "µã£¡\n" NOR);
+		tell_object(me, HIC "ä½ çš„æ½œèƒ½å¢åŠ äº†" + chinese_number(pot_gain) + "ç‚¹ï¼\n" NOR);
 	}
 	i=dx_gain*3+random(dx_gain*2);
 
-if((string)me->query("family/family_name") =="ÄÏº£ÆÕÍÓÉ½"){
+if((string)me->query("family/family_name") =="å—æµ·æ™®é™€å±±"){
 	me->improve_skill("buddhism", i, 1);
-	tell_object(me, HIC "ÄãµÄ´ó³Ë·ğ·¨Ôö¼ÓÁË" + chinese_number(i)+ "µã£¡\n" NOR);
+	tell_object(me, HIC "ä½ çš„å¤§ä¹˜ä½›æ³•å¢åŠ äº†" + chinese_number(i)+ "ç‚¹ï¼\n" NOR);
 	me->add("chanting/bud", i);
 } else {
         me->improve_skill("buddhism", i/3, 1);
-        tell_object(me, HIC "ÄãµÄ´ó³Ë·ğ·¨Ôö¼ÓÁË" + chinese_number(i/3)+ "µã£¡\n" NOR);
+        tell_object(me, HIC "ä½ çš„å¤§ä¹˜ä½›æ³•å¢åŠ äº†" + chinese_number(i/3)+ "ç‚¹ï¼\n" NOR);
         me->add("chanting/bud", i/3);
 }
 
@@ -122,9 +122,9 @@ if((string)me->query("family/family_name") =="ÄÏº£ÆÕÍÓÉ½"){
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : chanting
+æŒ‡ä»¤æ ¼å¼ : chanting
 
-ËĞ¾­ĞŞÁ¶ÒÔÌá¸ßµÀĞĞ¡£
+è¯µç»ä¿®ç‚¼ä»¥æé«˜é“è¡Œã€‚
 HELP
         );
         return 1;

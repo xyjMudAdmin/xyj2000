@@ -8,11 +8,11 @@ void create() {
 
   mapping exits=allocate_mapping(4);
 
-  set("short","ÔÆÂ·");
+  set("short","äº‘è·¯");
   set("long",@LONG
 
-Ì¤×ÅÕâÌõ¿í³¨µÄÌì¹¬ÔÆÂ·£¬½ÅÏÂÆ®¹ý¶ä¶ä°×ÔÆ£¬¸©ÊÓÈË¼äÅ©Éá
-ÖÐÆ®ÆðµÄôÁôÁ´¶ÑÌ£¬ÁîÈË±¶¸ÐÐÄ¿õÉñâù¡£
+è¸ç€è¿™æ¡å®½æ•žçš„å¤©å®«äº‘è·¯ï¼Œè„šä¸‹é£˜è¿‡æœµæœµç™½äº‘ï¼Œä¿¯è§†äººé—´å†œèˆ
+ä¸­é£˜èµ·çš„è¢…è¢…ç‚ŠçƒŸï¼Œä»¤äººå€æ„Ÿå¿ƒæ—·ç¥žæ€¡ã€‚
 
 LONG );
   exits=(["southwest":"/d/dntg/sky/yunlue3"]);
@@ -26,7 +26,7 @@ LONG );
 
 void init() {
   string* place=allocate(4);
-  string *dest=({"¶µÂÊ¹¬","ó´ÌÒÔ°","ÆëÌì´óÊ¥¸®","Ñþ³Ø"});
+  string *dest=({"å…œçŽ‡å®«","èŸ æ¡ƒå›­","é½å¤©å¤§åœ£åºœ","ç‘¶æ± "});
   mapping map=allocate_mapping(4);
   int r;
 
@@ -52,7 +52,7 @@ int is_drunk(object me) {
 
 
 int do_look(string arg) {
-  string msg="\nÄã×íÑÛÐÊËÉ£¬ÔçÒÑ²»±æ¶«Î÷£¬¿´Ê²Ã´¶¼ÊÇÁ½¸öÓ°¶ù¡£\n";
+  string msg="\nä½ é†‰çœ¼æƒºæ¾ï¼Œæ—©å·²ä¸è¾¨ä¸œè¥¿ï¼Œçœ‹ä»€ä¹ˆéƒ½æ˜¯ä¸¤ä¸ªå½±å„¿ã€‚\n";
   object me=this_player();
   mapping dir=me->query_temp("laojunmaze/dir");
 
@@ -60,7 +60,7 @@ int do_look(string arg) {
   if (!dir) return 0;
   if (!dir[arg]) return 0;
 
-  msg=msg+"ÄãÃÔÃÔºýºýÖÐ¸Ð¾õµ½ÕâÀïËÆºõÊÇÈ¥"+dir[arg]+"µÄÂ·¡£\n\n";
+  msg=msg+"ä½ è¿·è¿·ç³Šç³Šä¸­æ„Ÿè§‰åˆ°è¿™é‡Œä¼¼ä¹Žæ˜¯åŽ»"+dir[arg]+"çš„è·¯ã€‚\n\n";
   write(msg);
 
   return 1;
@@ -79,22 +79,22 @@ int valid_leave(object me,string dir) {
   if (!map[dir]) return 1;
 
   
-  if (map[dir]=="ÆëÌì´óÊ¥¸®") steps--;
+  if (map[dir]=="é½å¤©å¤§åœ£åºœ") steps--;
     else steps++;
   if (steps>10) steps=10;
   me->set_temp("laojunmaze/steps",steps);
   if (steps) return 1;
 
   if (ridee = me->ride()) {
-     ridemsg = ridee->query("ride/msg")+"×Å"+ridee->name();
+     ridemsg = ridee->query("ride/msg")+"ç€"+ridee->name();
      ridee->move(loc);
   }  
     else  
       ridemsg = "";
    tell_room(environment(me),me->name()+ridemsg+
-          "Ò»Í·ÔÔ½øÔÆ¶ËÀï²»¼ûÁË¡£\n",me); 
+          "ä¸€å¤´æ ½è¿›äº‘ç«¯é‡Œä¸è§äº†ã€‚\n",me); 
    me->move(loc);
-   tell_room(environment(me),me->name()+ridemsg+"×ßÁË¹ýÀ´¡£\n", me);
+   tell_room(environment(me),me->name()+ridemsg+"èµ°äº†è¿‡æ¥ã€‚\n", me);
    me->delete_temp("laojunmaze");
 
    return 2;

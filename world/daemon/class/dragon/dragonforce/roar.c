@@ -11,15 +11,15 @@ int exert(object me, object target)
 
 	where=environment(me);
 	if( where->query("no_fight") )
-		return notify_fail("°²È«ÇøÄÚ²»ÄÜÂÒºðÂÒ½Ð£¡\n");
+		return notify_fail("å®‰å…¨åŒºå†…ä¸èƒ½ä¹±å¼ä¹±å«ï¼\n");
 
         if( !me->is_fighting() )
-                return notify_fail("±Ìº£ÁúÒ÷Ö»ÄÜÔÚÕ½¶·ÖÐÊ¹ÓÃ¡£\n");
+                return notify_fail("ç¢§æµ·é¾™åŸåªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
 
         if( (int)me->query("force") < 200 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 	if( (int)me->query("kee") < 100)
-		return notify_fail("ÄãµÄÁ¦Æø²»¹»ÁË¡£\n");
+		return notify_fail("ä½ çš„åŠ›æ°”ä¸å¤Ÿäº†ã€‚\n");
 
         skill = me->query_skill("force");
 	force = me->query("max_force");
@@ -27,7 +27,7 @@ int exert(object me, object target)
         me->receive_damage("kee", 50);
 
         me->start_busy(5);
-	message_vision(HIR "\n$NÍËºóÁ½²½£¬ÉîÉîµØÎüÒ»¿ÚÆø£¬ÃÍÈ»·¢³ö¹ÉÈçÉ½±Àº£Ð¥°ãµÄÁúÒ÷£¡\n\n"
+	message_vision(HIR "\n$Né€€åŽä¸¤æ­¥ï¼Œæ·±æ·±åœ°å¸ä¸€å£æ°”ï¼ŒçŒ›ç„¶å‘å‡ºè‚¡å¦‚å±±å´©æµ·å•¸èˆ¬çš„é¾™åŸï¼\n\n"
 NOR, me);
         ob = all_inventory(environment(me));
         for(i=0; i<sizeof(ob); i++) {
@@ -43,7 +43,7 @@ NOR, me);
                         ob[i]->receive_damage("sen", damage, me);
                         if( (int)ob[i]->query("force") < skill * 2 )
                                 ob[i]->receive_wound("sen", damage/2, me);
-                        tell_object(ob[i], "Äã¾õµÃÑÛÇ°Ò»Õó½ðÐÇÂÒÃ°£¬¶ú¶äÍ´µÃÏñÊÇÒªÁÑ¿ªÒ»Ñù£¡\n");
+                        tell_object(ob[i], "ä½ è§‰å¾—çœ¼å‰ä¸€é˜µé‡‘æ˜Ÿä¹±å†’ï¼Œè€³æœµç—›å¾—åƒæ˜¯è¦è£‚å¼€ä¸€æ ·ï¼\n");
                 }
 		COMBAT_D->report_sen_status(ob[i]);		
                 if( userp(ob[i]) ) ob[i]->fight_ob(me);

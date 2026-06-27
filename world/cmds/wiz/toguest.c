@@ -16,12 +16,12 @@ int main(object me, string arg)
 
 	seteuid(geteuid(me));
 
-        if (!arg) return notify_fail("ÄãÏëÒª½«Ë­ËÍÈëÓ­¿ÍÌü£¿\n");
+        if (!arg) return notify_fail("ä½ æƒ³è¦å°†è°é€å…¥è¿å®¢å…ï¼Ÿ\n");
 	arg=replace_string(arg,"#"," ");
 	arg=replace_string(arg,"."," ");
 
 	if(sscanf(arg, "%s for %d", id, howlong)==2) {
-	    if(howlong<1) return notify_fail("ÌìÊıÓ¦¸ÃÖÁÉÙÎªÒ»Ìì¡£\n");
+	    if(howlong<1) return notify_fail("å¤©æ•°åº”è¯¥è‡³å°‘ä¸ºä¸€å¤©ã€‚\n");
 	} else {
 	    id=arg;
 	    howlong=2;
@@ -31,13 +31,13 @@ int main(object me, string arg)
 	if(who) { //player online now.
 	    online=1;
 	    if(env=environment(who))
-		message_vision("Ìì¿ÕÖĞÌ½³öÒ»Ö»´óÊÖ½«$N×¥ÆğÀ´²»¼ûÁË¡£\n",
+		message_vision("å¤©ç©ºä¸­æ¢å‡ºä¸€åªå¤§æ‰‹å°†$NæŠ“èµ·æ¥ä¸è§äº†ã€‚\n",
 			who);
 	} else {
 	    who=new(USER_OB);
 	    who->set("id",id);
 	    if(!who->restore()) {
-		write("Ã»ÓĞ"+id+"Õâ¸öÍæ¼Ò»òÎÄ¼ş³ö´í¡£\n");
+		write("æ²¡æœ‰"+id+"è¿™ä¸ªç©å®¶æˆ–æ–‡ä»¶å‡ºé”™ã€‚\n");
 		if(who) destruct(who);
 		return 1;
 	    }
@@ -53,8 +53,8 @@ int main(object me, string arg)
 	log_file("to_jail","["+ctime(time())+"]"+
 		this_player()->query("id")+" send "+who->query("id")+
 		" to guestroom for "+howlong+" day(s).\n");
-	write("Äã½«"+who->query("name")+"("+id+")ËÍ½øÁËÓ­¿ÍÌü£¬"+
-		chinese_number(howlong)+"ÌìºóÊÍ·Å¡£\n");
+	write("ä½ å°†"+who->query("name")+"("+id+")é€è¿›äº†è¿å®¢å…ï¼Œ"+
+		chinese_number(howlong)+"å¤©åé‡Šæ”¾ã€‚\n");
 
 	if(!online) {
 	    destruct(who);
@@ -66,7 +66,7 @@ int main(object me, string arg)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½£ºtoguest id               -- send to guest for 2 days.
+æŒ‡ä»¤æ ¼å¼ï¼štoguest id               -- send to guest for 2 days.
           toguest id for <number>  -- send to guest for <number> days.
 	  
 	  e.g.: toguest id for 7 

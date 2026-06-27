@@ -10,24 +10,24 @@ void init();
 void init()
 {
   if (!wizardp(this_player())) {
-    set("no_give","ÕâÃ´Õä¹óµÄÒ©£¬ÄÄÄÜËæ±ã¸øÈË£¿\n");
-    set("no_drop","ÕâÃ´±¦¹óµÄµ¤Ò©£¬ÈÓÁË¶à¿ÉÏ§Ñ½£¡\n");
-    set("no_sell","·²ÈËÄÄÀïÖªµÀ"+this_object()->query("name")+"µÄ¼ÛÖµ£¿»¹ÊÇ×Ô¼ºÁô×Å°É¡£\n");
+    set("no_give","è¿™ä¹ˆçè´µçš„è¯ï¼Œå“ªèƒ½éšä¾¿ç»™äººï¼Ÿ\n");
+    set("no_drop","è¿™ä¹ˆå®è´µçš„ä¸¹è¯ï¼Œæ‰”äº†å¤šå¯æƒœå‘€ï¼\n");
+    set("no_sell","å‡¡äººå“ªé‡ŒçŸ¥é“"+this_object()->query("name")+"çš„ä»·å€¼ï¼Ÿè¿˜æ˜¯è‡ªå·±ç•™ç€å§ã€‚\n");
   }                                    
   add_action("do_eat", "eat");
 }
 
 void create()
 {
-  set_name(HIM "ó´ÌÒ" NOR, ({"pan tao","pantao","tao"}));
+  set_name(HIM "èŸ æ¡ƒ" NOR, ({"pan tao","pantao","tao"}));
   set_weight(20);
   if (clonep())
     set_default_object(__FILE__);
   else {
-    set("unit", "Ã¶");
-//    set("long", "Ò»ÌÒ£¬Õæ½ĞÈË´¹ÏÑÓûµÎ¡£\n");
+    set("unit", "æš");
+//    set("long", "ä¸€æ¡ƒï¼ŒçœŸå«äººå‚æ¶æ¬²æ»´ã€‚\n");
     set("value", 5000);
-    set("drug_type", "²¹Æ·");
+    set("drug_type", "è¡¥å“");
     set("reward_value",1);
   }
   
@@ -39,14 +39,14 @@ int do_eat(string arg)
   object me = this_player(),taohe;
   int food_allowed=(int)me->max_food_capacity()-me->query("food");
   if (!id(arg))
-    return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+    return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
   
   if (food_allowed<0) {
-     message_vision(HIM"$NÁ¬Æ¤´øºËÍÌÏÂÒ»Ã¶ó´ÌÒ£¬¾õµÃ¶Ç×ÓÕÍµÄÄÑÊÜ¡£\n"NOR,me);
+     message_vision(HIM"$Nè¿çš®å¸¦æ ¸åä¸‹ä¸€æšèŸ æ¡ƒï¼Œè§‰å¾—è‚šå­èƒ€çš„éš¾å—ã€‚\n"NOR,me);
      destruct(this_object());
      return 1;
   }
-  message_vision(HIM "$N³ÔÏÂÒ»Ã¶ó´ÌÒ£¬Ö»¾õ¿Ú½ÇÉú½ò£¬Êæ³©ÎŞ±È£¬ÈÌ²»×¡´ó½Ğ£ººÃ³Ô£¡»¹Òª£¡ \n" NOR, me);
+  message_vision(HIM "$Nåƒä¸‹ä¸€æšèŸ æ¡ƒï¼Œåªè§‰å£è§’ç”Ÿæ´¥ï¼Œèˆ’ç•…æ— æ¯”ï¼Œå¿ä¸ä½å¤§å«ï¼šå¥½åƒï¼è¿˜è¦ï¼ \n" NOR, me);
   me->set("food",me->query("food")+30);
   give_reward(me);  
   
@@ -60,7 +60,7 @@ int do_eat(string arg)
 int give_reward(object me) {
   int tao_eaten;
 
-//  if (me->query("title")!="ÆëÌì´óÊ¥") return 0;
+//  if (me->query("title")!="é½å¤©å¤§åœ£") return 0;
 //  if (me->query("dntg/pantao")=="done") return 0;
   if ((int)me->query("dntg/pantao_eaten") )
        tao_eaten=(int)me->query("dntg/pantao_eaten");
@@ -73,7 +73,7 @@ int give_reward(object me) {
     {
        me->add_maximum_force(-1);
        me->add_maximum_mana(-1);
-       tell_object(me,HIR"ÄãÍ»È»¾õµÃÌåÄÚÆøÑª·­Ó¿£¬»ëÉíÉÏÏÂËµ²»³öµÄÄÑÊÜ£¡\n"NOR);
+       tell_object(me,HIR"ä½ çªç„¶è§‰å¾—ä½“å†…æ°”è¡€ç¿»æ¶Œï¼Œæµ‘èº«ä¸Šä¸‹è¯´ä¸å‡ºçš„éš¾å—ï¼\n"NOR);
     }
     return 0;
 }

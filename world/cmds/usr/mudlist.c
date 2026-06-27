@@ -17,7 +17,7 @@ int main(object me, string arg)
 	int show_all=0;
 
 	if( !find_object(DNS_MASTER) )
-		return notify_fail("ÍøÂ·¾«Áé²¢Ã»ÓĞ±»ÔØÈë£¬ÇëÏÈ½«ÍøÂ·¾«ÁéÔØÈë¡£\n");
+		return notify_fail("ç½‘è·¯ç²¾çµå¹¶æ²¡æœ‰è¢«è½½å…¥ï¼Œè¯·å…ˆå°†ç½‘è·¯ç²¾çµè½½å…¥ã€‚\n");
 
 	//	Obtain mapping containing mud data
 	mud_list = (mapping)DNS_MASTER->query_muds();
@@ -26,7 +26,7 @@ int main(object me, string arg)
 	mud_svc = DNS_MASTER->query_svc() + ([ Mud_name() : 0 ]);
 
 	if(!mud_list)
-		return notify_fail( MUD_NAME + "Ä¿Ç°²¢Ã»ÓĞ¸úÍøÂ·ÉÏÆäËû Mud È¡µÃÁªÏµ¡£\n");
+		return notify_fail( MUD_NAME + "ç›®å‰å¹¶æ²¡æœ‰è·Ÿç½‘è·¯ä¸Šå…¶ä»– Mud å–å¾—è”ç³»ã€‚\n");
 
 	//	Get list of all mud names within name server
 	muds = keys( mud_list ) - ({ "DEFAULT" });
@@ -49,86 +49,86 @@ int main(object me, string arg)
 		arg = htonn(arg);
 
 		if(!mapp( mud_list[arg] )) {
-			write(MUD_NAME + "²¢Ã»ÓĞºÍÕâ¸ö Mud È¡µÃÁªÏµ¡£\n");
+			write(MUD_NAME + "å¹¶æ²¡æœ‰å’Œè¿™ä¸ª Mud å–å¾—è”ç³»ã€‚\n");
 			return 1;
 		}
-//		printf("ÓĞ¹Ø %s µÄ×ÊÑ¶£º\n%O\n", arg, mud_list[arg]);
-		printf("ÓĞ¹Ø %s µÄ×ÊÑ¶£º\n", arg);
-		write("©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n");
+//		printf("æœ‰å…³ %s çš„èµ„è®¯ï¼š\n%O\n", arg, mud_list[arg]);
+		printf("æœ‰å…³ %s çš„èµ„è®¯ï¼š\n", arg);
+		write("â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n");
 		mud=copy(mud_list[arg]);
 		if(!undefinedp(mud["MUDNAME"])){
-		    write("ÖĞÎÄÃû³Æ£º"+mud["MUDNAME"]+"\n");
+		    write("ä¸­æ–‡åç§°ï¼š"+mud["MUDNAME"]+"\n");
 		    map_delete(mud,"MUDNAME");
 		}
 		if(!undefinedp(mud["NAME"]))
 		{
-		    write("Ãû³Æ¡¡¡¡£º"+mud["NAME"]+"\n");
+		    write("åç§°ã€€ã€€ï¼š"+mud["NAME"]+"\n");
 		    map_delete(mud,"NAME");
 		}
 		if(!undefinedp(mud["MUDLIB"]))
 		{
-		    write("MUDLIB¡¡£º"+mud["MUDLIB"]+"\n");
+		    write("MUDLIBã€€ï¼š"+mud["MUDLIB"]+"\n");
 		    map_delete(mud,"MUDLIB");
 		}
 		if(!undefinedp(mud["VERSION"]))
 		{
-		    write("°æ±¾¡¡¡¡£º"+mud["VERSION"]+"\n");
+		    write("ç‰ˆæœ¬ã€€ã€€ï¼š"+mud["VERSION"]+"\n");
 		    map_delete(mud,"VERSION");
 		}
 		if(!undefinedp(mud["ENCODING"])) {
 		    if(mud["ENCODING"]=="GB")
-			write("±àÂë·½Ê½£º¹ú±ê£¨£Ç£Â£©\n");
+			write("ç¼–ç æ–¹å¼ï¼šå›½æ ‡ï¼ˆï¼§ï¼¢ï¼‰\n");
 		    else if(mud["ENCODING"]=="BIG5")
-			write("±àÂë·½Ê½£º´óÎå£¨£Â£É£Ç£µ£©\n");
+			write("ç¼–ç æ–¹å¼ï¼šå¤§äº”ï¼ˆï¼¢ï¼©ï¼§ï¼•ï¼‰\n");
 		    map_delete(mud,"ENCODING");
 		}
 		if(!undefinedp(mud["HOST"]))
 		{
-		    write("·şÎñÆ÷¡¡£º"+mud["HOST"]+"\n");
+		    write("æœåŠ¡å™¨ã€€ï¼š"+mud["HOST"]+"\n");
 		    map_delete(mud,"HOST");
 		}
 		if(!undefinedp(mud["HOSTADDRESS"]))
 		{
-		    write("ÍøÂ·Î»Ö·£º"+mud["HOSTADDRESS"]+"\n");
+		    write("ç½‘è·¯ä½å€ï¼š"+mud["HOSTADDRESS"]+"\n");
 		    map_delete(mud,"HOSTADDRESS");
 		}
 		if(!undefinedp(mud["PORT"]))
 		{
-		    write("¶Ë¿Ú¡¡¡¡£º"+mud["PORT"]+"\n");
+		    write("ç«¯å£ã€€ã€€ï¼š"+mud["PORT"]+"\n");
 		    map_delete(mud,"PORT");
 		}
 		if(!undefinedp(mud["USERS"]))
 		{
-		    write("ÔÚÏßÍæ¼Ò£º"+mud["USERS"]+"\n");
+		    write("åœ¨çº¿ç©å®¶ï¼š"+mud["USERS"]+"\n");
 		    map_delete(mud,"USERS");
 		}
 		if(!undefinedp(mud["TIME"]))
 		{
-		    write("µ±µØÊ±¼ä£º"+mud["TIME"]+"\n");
+		    write("å½“åœ°æ—¶é—´ï¼š"+mud["TIME"]+"\n");
 		    map_delete(mud,"TIME");
 		}
 		if(!undefinedp(mud["DRIVER"]))
 		{
-		    write("DRIVER¡¡£º"+mud["DRIVER"]+"\n");
+		    write("DRIVERã€€ï¼š"+mud["DRIVER"]+"\n");
 		    map_delete(mud,"DRIVER");
 		}
 		if(wizardp(this_player())) {
-		write("©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n");
+		write("â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n");
 		key=keys(mud);
 		size=sizeof(key);
 		while(size--)
-		    write(key[size]+" £º"+mud[key[size]]+"\n");
+		    write(key[size]+" ï¼š"+mud[key[size]]+"\n");
 		}
 
-		write("©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n\n");
+		write("â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n\n");
 		
 		return 1;
            }
 	}
 
 	output = "\n\n"+
-"   £Í£õ£äÃû³Æ              ¹ú¼ÊÍøÂ·Î»Ö·   ²ººÅ      µ±µØÊ±¼ä     ÔÚÏßÍæ¼Ò\n"+
-"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n";
+"   ï¼­ï½•ï½„åç§°              å›½é™…ç½‘è·¯ä½å€   åŸ å·      å½“åœ°æ—¶é—´     åœ¨çº¿ç©å®¶\n"+
+"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n";
 
 	total = 0;
 	totmud=0;
@@ -147,7 +147,7 @@ int main(object me, string arg)
 			mudname,
 			mud_list[muds[loop]]["HOSTADDRESS"],
 			mud_list[muds[loop]]["PORT"],
-//			undefinedp(mud_svc[muds[loop]]) ? "  " : "¡õ",
+//			undefinedp(mud_svc[muds[loop]]) ? "  " : "â–¡",
 		        undefinedp(mud_list[muds[loop]]["TIME"])?
 			"                ":
 			mudtime[0..15],
@@ -185,10 +185,10 @@ int main(object me, string arg)
         }
 	output+=output2;
 	output+=
-"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n";
-	output+="¹²ÓĞ" +
-	    chinese_number(totmud) + "×ùÄàÌ¶£¬¼Æ"
-	    + chinese_number(total) + "Î»Íæ¼ÒÁ¬ÏßÖĞ¡£\n";
+"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n";
+	output+="å…±æœ‰" +
+	    chinese_number(totmud) + "åº§æ³¥æ½­ï¼Œè®¡"
+	    + chinese_number(total) + "ä½ç©å®¶è¿çº¿ä¸­ã€‚\n";
 
 	//	Display dumped mudlist output through user's more pager
 	this_player()->start_more( output );
@@ -200,10 +200,10 @@ int help()
 {
         write(@HELP
 
-Ö¸Áî¸ñÊ½£ºmudlist               ÁĞ³öÁ¬ÏßÖĞµÄÎ÷ÓÎ¼ÇÕ¾µã
-          mudlist -es           ÁĞ³öÁ¬ÏßÖĞµÄËùÓĞ£Å£Ó£²Õ¾µã
-          mudlist -all          ÁĞ³öÁ¬ÏßÖĞµÄËùÓĞ£Í£õ£äÕ¾µã
-          mudlist <Mud Ãû³Æ>    ÁĞ³öÖ¸¶¨£Í£õ£äµÄĞÅÏ¢
+æŒ‡ä»¤æ ¼å¼ï¼šmudlist               åˆ—å‡ºè¿çº¿ä¸­çš„è¥¿æ¸¸è®°ç«™ç‚¹
+          mudlist -es           åˆ—å‡ºè¿çº¿ä¸­çš„æ‰€æœ‰ï¼¥ï¼³ï¼’ç«™ç‚¹
+          mudlist -all          åˆ—å‡ºè¿çº¿ä¸­çš„æ‰€æœ‰ï¼­ï½•ï½„ç«™ç‚¹
+          mudlist <Mud åç§°>    åˆ—å‡ºæŒ‡å®šï¼­ï½•ï½„çš„ä¿¡æ¯
 
 HELP
 	);

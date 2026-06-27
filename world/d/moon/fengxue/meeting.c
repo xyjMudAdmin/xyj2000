@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "������");
+  set ("short", "议会大厅");
   set ("long", @LONG
 
-���ǹ���ѩ��ػ�ĳ�Ա���»�ĵط����������Ŵ�Բ����ʮ�������ӡ�
+这是供枫雪天地会的成员开月会的地方。里面有张大圆桌和十几把椅子。
 LONG);
 
   set("exits", ([ /* sizeof() == 1 */

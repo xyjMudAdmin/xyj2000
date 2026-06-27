@@ -6,15 +6,15 @@ inherit CLOTH;
 
 void create()
 {
-  set_name("²ÊÉ«ÅûÌº", ({"caise pitan", "caisepitan", "pitan"}));
+  set_name("å½©è‰²æŠ«æ¯¯", ({"caise pitan", "caisepitan", "pitan"}));
   set_weight(3000);
   if( clonep() )
     set_default_object(__FILE__);
   else
   {
-    set("long", "Ò»¼ş²ÊÉ«ÅûÌº¡£\n");
+    set("long", "ä¸€ä»¶å½©è‰²æŠ«æ¯¯ã€‚\n");
     set("material", "cloth");
-    set("unit", "¼ş");
+    set("unit", "ä»¶");
     set("value", 400);
     set("armor_prop/armor", 15);
   }

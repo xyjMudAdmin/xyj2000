@@ -6,34 +6,34 @@ inherit NPC;
 void do_kill(object obs);
 
 string *names1 = ({
-  "Ì¡",
-  "Â¹",
-  "âµ",
-  "¹·",
-  "Öí",
-  "ºï",
-  "áô",
-  "òş",
+  "ç­",
+  "é¹¿",
+  "ç¾",
+  "ç‹—",
+  "çŒª",
+  "çŒ´",
+  "ç‹’",
+  "èŸ’",
 });
 
 string *names2 = ({
-  "Í·",
-  "Î²",
-  "½Å",
-  "×¦",
-  "×ì",
-  "ÑÀ",
+  "å¤´",
+  "å°¾",
+  "è„š",
+  "çˆª",
+  "å˜´",
+  "ç‰™",
 });
 
 string *names3 = ({
-  "»¢",
-  "Ê¨",
-  "±ª",
-  "ĞÜ",
-  "î¼",
-  "ÀÇ",
-  "±·",
-  "²ò",
+  "è™",
+  "ç‹®",
+  "è±¹",
+  "ç†Š",
+  "ç½´",
+  "ç‹¼",
+  "ç‹ˆ",
+  "è±º",
 });
 
 int eff_dx;
@@ -48,7 +48,7 @@ void create()
   string str;
   str = names1[random(sizeof(names1))]+names2[random(sizeof(names2))]+names3[random(sizeof(names3))];
   set_name(str, ({"yao mo", "yao", "mo"}));
-  set("gender", "ÄĞĞÔ");
+  set("gender", "ç”·æ€§");
   set("attitude", "aggressive");
   set("chat_chance", 10);
   set("chat_msg", ({
@@ -140,13 +140,13 @@ void set_data()
   eff_dx=dx*j;
   set("eff_dx",eff_dx);
   set("nkgain",600);
-  long="Ò»Í·"+name()+"£¬ĞŞÁ·ÁËÓĞ"+
+  long="ä¸€å¤´"+name()+"ï¼Œä¿®ç»ƒäº†æœ‰"+
       chinese_number((dx/1000/10)*10)+
-      "¶àÄêµÀĞĞ¡£Ëü";
+      "å¤šå¹´é“è¡Œã€‚å®ƒ";
   if(j==1) {
-      set("long",long+"Í¨ÌåÍ¸³öÒ»Ë¿ÏÉÆø¡£\n");
+      set("long",long+"é€šä½“é€å‡ºä¸€ä¸ä»™æ°”ã€‚\n");
   } else {
-      set("long",long+"»ìÉíÉÏÏÂÑıÆø±ÆÈË¡£\n");
+      set("long",long+"æ··èº«ä¸Šä¸‹å¦–æ°”é€¼äººã€‚\n");
   }
   if(random(10)<3) set("env/wimpy",30);
 
@@ -199,11 +199,11 @@ int nk_reward(object killer, int reward)
    if(!killer || !userp(killer)) return 0;
 
    str=COMBAT_D->chinese_daoxing(reward); 
-   tell_object(killer,"\nÄãµÃµ½ÁË"+str+"µÀĞĞ£¡\n");
+   tell_object(killer,"\nä½ å¾—åˆ°äº†"+str+"é“è¡Œï¼\n");
    killer->add("kill/nkgain",reward);
    killer->add("daoxing",reward);
 
-   msg=sprintf("%s(%d)É±ËÀÁË%s(%d)£¬µÃµ½%dµãµÀĞĞ¡£",
+   msg=sprintf("%s(%d)æ€æ­»äº†%s(%d)ï¼Œå¾—åˆ°%dç‚¹é“è¡Œã€‚",
       killer->query("id"),(killer->query("daoxing")+
       killer->query("combat_exp"))/2,
       this_object()->query("id"),(this_object()->query("daoxing")+
@@ -212,8 +212,8 @@ int nk_reward(object killer, int reward)
 
    killer->add_temp("ymdh/yaomokilled",1);
    __DIR__"ye.c"->announce(killer->query("name")+
-	   "´òËÀÁË"+this_object()->query("name")+
-	   "£¬µÃµ½"+str+"µÀĞĞ£¡\n");
+	   "æ‰“æ­»äº†"+this_object()->query("name")+
+	   "ï¼Œå¾—åˆ°"+str+"é“è¡Œï¼\n");
 	   
    return 1;
 }

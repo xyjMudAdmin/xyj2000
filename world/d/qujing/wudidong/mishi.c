@@ -9,20 +9,20 @@ void reset();
 
 void create()
 {
-  set ("short", "°µÊÒ");
+  set ("short", "æš—å®¤");
   set ("long", @LONG
 
-Õâ¶ùÊÇÎŞµ×¶´µÄÒ»¸öÖ§¶´£¬Ò²ÊÇÓñÊó¾«µÄÁ·¹¦·¿¡£³ıÁËÓñÊóÖ®Íâ£¬
-ºÜÉÙÓĞÆäËûÈË½ø³ö¡£·¿¼ä²¼ÖÃµÃÊ®·Ö¼òµ¥£¬µ«ÊÇÎİÖĞÑë°Ú×ÅÒ»ÕÅ
-Ê®·ÖĞÑÄ¿µÄÓñÌ¨(tai)¡£
+è¿™å„¿æ˜¯æ— åº•æ´çš„ä¸€ä¸ªæ”¯æ´ï¼Œä¹Ÿæ˜¯ç‰é¼ ç²¾çš„ç»ƒåŠŸæˆ¿ã€‚é™¤äº†ç‰é¼ ä¹‹å¤–ï¼Œ
+å¾ˆå°‘æœ‰å…¶ä»–äººè¿›å‡ºã€‚æˆ¿é—´å¸ƒç½®å¾—ååˆ†ç®€å•ï¼Œä½†æ˜¯å±‹ä¸­å¤®æ‘†ç€ä¸€å¼ 
+ååˆ†é†’ç›®çš„ç‰å°(tai)ã€‚
 LONG);
   set("item_desc",([
 		    "tai" : "
-ÕâÊÇÒ»ÕÅÓÃÍòÄêÄÏ¼«±ùÓñËùµñ³ÉµÄÓñÌ¨£¬ÁáççÍ¸ÌŞ¡£ÏëÀ´±ØÊÇÓñÊóÁ·
-¹¦Ö®ÓÃ¡£Ì¨ÉÏ¿Ì×Å¼¸¸öÒóºìµÄ´ó×Ö£º
+è¿™æ˜¯ä¸€å¼ ç”¨ä¸‡å¹´å—æå†°ç‰æ‰€é›•æˆçš„ç‰å°ï¼Œç²ç‘é€å‰”ã€‚æƒ³æ¥å¿…æ˜¯ç‰é¼ ç»ƒ
+åŠŸä¹‹ç”¨ã€‚å°ä¸Šåˆ»ç€å‡ ä¸ªæ®·çº¢çš„å¤§å­—ï¼š
 
-\t\t\tÌìÄ§×ù\n\n
-\t\t  ÈëÎÒÃÅÀ´£¬Íò½Ù²»¸´
+\t\t\tå¤©é­”åº§\n\n
+\t\t  å…¥æˆ‘é—¨æ¥ï¼Œä¸‡åŠ«ä¸å¤
 \n",
 		    ]));
   set("exits", ([ /* sizeof() == 2 */
@@ -48,27 +48,27 @@ int do_climb(string arg)
 {
   object me=this_player();
   if ( !arg || (arg !="tai" && arg != "off" && arg != "down" && arg!="xia") )
-    return notify_fail("ÄãÒªÅÀÊ²Ã´£¿\n");
+    return notify_fail("ä½ è¦çˆ¬ä»€ä¹ˆï¼Ÿ\n");
   if (arg == "tai")
     {
-      if ((int)me->query_temp("mark/ÎŞµ×¶´ÌìÄ§Ì¨climbed"))
-	return notify_fail("ÄãÒÑ¾­×øÔÚÌ¨ÉÏÁË£¬»¹ÏëÅÀµ½ÄÄ¶ùÈ¥£¿\n");
-      message_vision("$N×İÉíÒ»Ô¾£¬ÅÀÉÏÌìÄ§Ì¨È¥ÁË¡£\n", me);
-      me->set_temp("mark/ÎŞµ×¶´ÌìÄ§Ì¨climbed", 1);
+      if ((int)me->query_temp("mark/æ— åº•æ´å¤©é­”å°climbed"))
+	return notify_fail("ä½ å·²ç»ååœ¨å°ä¸Šäº†ï¼Œè¿˜æƒ³çˆ¬åˆ°å“ªå„¿å»ï¼Ÿ\n");
+      message_vision("$Nçºµèº«ä¸€è·ƒï¼Œçˆ¬ä¸Šå¤©é­”å°å»äº†ã€‚\n", me);
+      me->set_temp("mark/æ— åº•æ´å¤©é­”å°climbed", 1);
       return 1;
     }
-  if(!(int)me->query_temp("mark/ÎŞµ×¶´ÌìÄ§Ì¨climbed"))
-    return notify_fail("Äã²»ÔÚÌ¨ÉÏ¡£\n");
-  message_vision("$N´ÓÌ¨ÉÏÌøÁËÏÂÀ´¡£\n", me);
-  me->delete_temp("mark/ÎŞµ×¶´ÌìÄ§Ì¨climbed");
+  if(!(int)me->query_temp("mark/æ— åº•æ´å¤©é­”å°climbed"))
+    return notify_fail("ä½ ä¸åœ¨å°ä¸Šã€‚\n");
+  message_vision("$Nä»å°ä¸Šè·³äº†ä¸‹æ¥ã€‚\n", me);
+  me->delete_temp("mark/æ— åº•æ´å¤©é­”å°climbed");
   return 1;
 }
 int do_lian()
 {
   object me=this_player();
   int myspells, myspi, learned, sencost;
-  if ((int)me->query_temp("mark/ÎŞµ×¶´ÌìÄ§Ì¨climbed") != 1)
-    return notify_fail("Ö»ÓĞÉíÔÚÌìÄ§Ì¨²Å¿ÉÁ·¹¦¡£\n");
+  if ((int)me->query_temp("mark/æ— åº•æ´å¤©é­”å°climbed") != 1)
+    return notify_fail("åªæœ‰èº«åœ¨å¤©é­”å°æ‰å¯ç»ƒåŠŸã€‚\n");
   if((  (int)me->query_skill("dao", 1)>50
      || (int)me->query_skill("taiyi",1)>50
      || (int)me->query_skill("gouhunshu", 1)>50
@@ -77,16 +77,16 @@ int do_lian()
      || (int)me->query_skill("dengxian-dafa", 1)>50
      || (int)me->query_skill("baguazhou", 1)>50)
      && !wizardp(me))
-    return notify_fail("²»ÖªÎªºÎÄãµÄÏÈÌìÁéÆø²»ÄÜÓëÌìÄ§Ì¨µÄÄ§»ê½»ºÏ£¬Ò²Ğí
-ÄãÏÖÓĞµÄ·¨ÊõÒÑÑ§µÃÌ«ÉîÁË¡£\n");
+    return notify_fail("ä¸çŸ¥ä¸ºä½•ä½ çš„å…ˆå¤©çµæ°”ä¸èƒ½ä¸å¤©é­”å°çš„é­”é­‚äº¤åˆï¼Œä¹Ÿè®¸
+ä½ ç°æœ‰çš„æ³•æœ¯å·²å­¦å¾—å¤ªæ·±äº†ã€‚\n");
   myspells=(int)me->query_skill("spells", 1);			
   if(me->query_skill("yaofa", 1)>=myspells)
-    return notify_fail("ÄãµÄ»ù±¾·¨ÊõĞŞÎª²»¹»¸ßÉî£¬ÄÑÒÔÓëÌìÄ§Ì¨µÄÄ§»ê½»ºÏ¡£\n");
+    return notify_fail("ä½ çš„åŸºæœ¬æ³•æœ¯ä¿®ä¸ºä¸å¤Ÿé«˜æ·±ï¼Œéš¾ä»¥ä¸å¤©é­”å°çš„é­”é­‚äº¤åˆã€‚\n");
   myspi=(int)me->query_spi();
   learned=(myspells+myspi)/6;
 
   if( myspells > 200 ) {
-	if( (string)me->query("family/family_name")!="Ïİ¿ÕÉ½ÎŞµ×¶´" ) {
+	if( (string)me->query("family/family_name")!="é™·ç©ºå±±æ— åº•æ´" ) {
 		sencost=30+myspells;
 	}else{
 		sencost=30+myspells/5;
@@ -100,9 +100,9 @@ int do_lian()
   }
 
   if ((int)me->query("sen")<=sencost)
-      return notify_fail("ÄãÉñÖÇ²»Çå£¬ÔÙÁ·ÏÂÈ¥»áÓĞÎ£ÏÕµÄ£¡\n");
+      return notify_fail("ä½ ç¥æ™ºä¸æ¸…ï¼Œå†ç»ƒä¸‹å»ä¼šæœ‰å±é™©çš„ï¼\n");
   if(me->query("mana")<=(sencost/2))
-      return notify_fail("ÄãµÄ·¨Á¦²»×ã£¬ÄÑÒÔÁì»á¸ßÉîµÄÑı·¨¡£\n");
+      return notify_fail("ä½ çš„æ³•åŠ›ä¸è¶³ï¼Œéš¾ä»¥é¢†ä¼šé«˜æ·±çš„å¦–æ³•ã€‚\n");
   me->delete_temp("spellslevel");
   me->delete_temp("d_mana");
   me->delete_temp("apply/name");
@@ -111,7 +111,7 @@ int do_lian()
   me->delete_temp("apply/long"); 
   me->receive_damage("sen", sencost);
   me->add("mana", -(sencost/2));
-  tell_object (me, "ÄãµÄ¡¸Ñı·¨¡¹ÂÔÓĞ½øÕ¹¡£\n");
+  tell_object (me, "ä½ çš„ã€Œå¦–æ³•ã€ç•¥æœ‰è¿›å±•ã€‚\n");
 
 //add by bula 7/25/99
 
@@ -125,8 +125,8 @@ if( me->query_skill("yaofa", 1) >=200 ){
   //mon 1/23/98. old formula was <1, I changed to <5.
   //don't know exactly, but <1 seems impossible.
   {
-    message_vision("$N»è»èµØË¯ÁË¹ıÈ¥¡£\n", me);
-    me->delete_temp("mark/ÎŞµ×¶´ÌìÄ§Ì¨climbed");
+    message_vision("$Næ˜æ˜åœ°ç¡äº†è¿‡å»ã€‚\n", me);
+    me->delete_temp("mark/æ— åº•æ´å¤©é­”å°climbed");
     me->move("/d/ourhome/honglou/main");
     if (random(40-me->query_kar())<10)
 	me->set("dream_place", "/d/qujing/wudidong/mishi");
@@ -136,7 +136,7 @@ if( me->query_skill("yaofa", 1) >=200 ){
 
 int valid_leave(object me, string dir)
 {
-  if(dir=="out" && (int)me->query_temp("mark/ÎŞµ×¶´ÌìÄ§Ì¨climbed")==1)
-    return notify_fail("ÏÈ´ÓÌ¨ÉÏÌøÏÂÈ¥°É£¡\n");
+  if(dir=="out" && (int)me->query_temp("mark/æ— åº•æ´å¤©é­”å°climbed")==1)
+    return notify_fail("å…ˆä»å°ä¸Šè·³ä¸‹å»å§ï¼\n");
   return ::valid_leave(me, dir);
 }

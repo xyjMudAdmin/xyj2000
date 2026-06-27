@@ -7,9 +7,9 @@ inherit F_VENDOR_SALE;
 void create()
 {
   reload("qinfa_sun_xiaoer");
-  set_name("ËïĞ¡¶ş", ({"sun xiaoer", "sun", "xiaoer", "xiao", "er"}));
+  set_name("å­™å°äºŒ", ({"sun xiaoer", "sun", "xiaoer", "xiao", "er"}));
   set("shop_id", ({"xiaoer", "xiao", "er"}));
-  set("gender", "ÄĞĞÔ");
+  set("gender", "ç”·æ€§");
   set("combat_exp", 5000);
   set("age", 30);
   set("per", 21);

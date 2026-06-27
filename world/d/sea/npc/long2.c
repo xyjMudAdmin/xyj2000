@@ -9,11 +9,11 @@ inherit NPC;
 
 void create()
 {
-  set_name("áùáí",({"bi an","bi","an","long","bian","dragon"}));
-  set("long","ÁúÉú¾Å×Ó²»³ÉÁú£¬¸÷ÓĞËùºÃ£ºáùáíÄËµÚ¶ş×Ó£¬Æ½ÉúºÃËÏ¡£\n");
-  set("gender", "ÄĞĞÔ");
+  set_name("ç‹´çŠ´",({"bi an","bi","an","long","bian","dragon"}));
+  set("long","é¾™ç”Ÿä¹å­ä¸æˆé¾™ï¼Œå„æœ‰æ‰€å¥½ï¼šç‹´çŠ´ä¹ƒç¬¬äºŒå­ï¼Œå¹³ç”Ÿå¥½è®¼ã€‚\n");
+  set("gender", "ç”·æ€§");
   set("age", 39);
-  set("title", "ÁúÍõ¾Å×ÓÖ®");
+  set("title", "é¾™ç‹ä¹å­ä¹‹");
   set("class","dragon");
   set("attitude", "peaceful");
   set("max_kee", 1200);
@@ -56,7 +56,7 @@ void create()
   set("chat_msg_combat", ({
     (: cast_spell, "hufa" :),
     (: exert_function, "shield" :),
-    "áùáíº°µÀ£º³ıÁËÄã»¹ÄÜÊÇË­£¿\n,"
+    "ç‹´çŠ´å–Šé“ï¼šé™¤äº†ä½ è¿˜èƒ½æ˜¯è°ï¼Ÿ\n,"
   }) );
 
   setup();  
@@ -70,7 +70,7 @@ int accept_fight(object me)
 {
   command("consider");
   command("grin");
-  command("say ÎÒ×÷Ìì¶ªÁËÒ»¿ÅÃ÷Öé£¬Ò»¶¨ÊÇÄãÕâ"+RANK_D->query_rude(me)+"ÍµµÄ£¡");
+  command("say æˆ‘ä½œå¤©ä¸¢äº†ä¸€é¢—æ˜ç ï¼Œä¸€å®šæ˜¯ä½ è¿™"+RANK_D->query_rude(me)+"å·çš„ï¼");
   command("kill "+ me->query("id"));
   return 1;
 }

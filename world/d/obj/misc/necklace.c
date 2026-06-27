@@ -1,5 +1,5 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// necklace.c ½ğÏîÁ´
+// necklace.c é‡‘é¡¹é“¾
 
 #include <armor.h>
 
@@ -7,12 +7,12 @@ inherit NECK;
 
 void create()
 {
-	set_name("½ğÏîÁ´", ({ "xiang lian", "necklace" }));
+	set_name("é‡‘é¡¹é“¾", ({ "xiang lian", "necklace" }));
 	set("weight", 500);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "´®");
+		set("unit", "ä¸²");
 		set("value", 2500);
 		set("material", "gold");
 		set("armor_prop/armor", 1);

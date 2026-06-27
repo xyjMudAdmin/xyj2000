@@ -36,5 +36,5 @@ void incoming_request(mapping info)
 void create()
 {
   seteuid(ROOT_UID);
-  set("channel_id", "ÍøÂ·Á¬Í¨¾«Áé");
+  set("channel_id", "ç½‘è·¯è¿é€šç²¾çµ");
 }

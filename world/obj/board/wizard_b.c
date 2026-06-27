@@ -5,11 +5,11 @@ inherit BULLETIN_BOARD;
 
 void create()
 {
-	set_name("Î×Ê¦ÁôÑÔ°å", ({ "board" }) );
+	set_name("å·«å¸ˆç•™è¨€æ¿", ({ "board" }) );
 	set("location", "/d/wiz/wizroom");
 	set("board_id", "wizard_b");
 	set("long",
-		"ÕâÊÇÒ»¸ö¹©ÈËÁôÑÔ¼ÇÊÂµÄÁôÑÔ°å¡£\n" );
+		"è¿™æ˜¯ä¸€ä¸ªä¾›äººç•™è¨€è®°äº‹çš„ç•™è¨€æ¿ã€‚\n" );
 	setup();
 	set("capacity", 200);
 	set("env/invisibility",1);

@@ -5,16 +5,16 @@ inherit NECK;
 
 void create()
 {
-        set_name("ÒøÏîÁ´", ({ "silver necklace", "necklace" }));
+        set_name("é“¶é¡¹é“¾", ({ "silver necklace", "necklace" }));
         set("weight", 500);
-        set("long", "Ò»´®Òø¹â²Ó²ÓµÄÏîÁ´£¬ÊÇÉÙÅ®ÃÇÏ²°®µÄÊÎÎï¡£\n");
+        set("long", "ä¸€ä¸²é“¶å…‰ç¿ç¿çš„é¡¹é“¾ï¼Œæ˜¯å°‘å¥³ä»¬å–œçˆ±çš„é¥°ç‰©ã€‚\n");
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ìõ");
+                set("unit", "æ¡");
                 set("value", 400);
                 set("material", "gold");
-		set("wear_msg", "$N´÷ÉÏÒ»Ìõ$n¡£\n");
+		set("wear_msg", "$Næˆ´ä¸Šä¸€æ¡$nã€‚\n");
                 set("armor_prop/armor", 1);
         }
         setup();

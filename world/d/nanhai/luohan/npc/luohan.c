@@ -7,27 +7,27 @@ inherit NPC;
 #define ID 0
 #endif
 
-string *first_name = ({ "½µÁú",
-			"·ü»¢",
-			"Çå¾²",
-			"½ÓÒı",
-			"¹éÕæ",
-			"½ğ¸Õ",
-			"¾«½ø",
-			"¹¦µÂ",
-			"ì¹Ì´",
-			"¹âÃ÷",
-			"ÏÍÉÆ",
-			"×¯ÑÏ",
-			"ÖÇ»Û",
-			"ÈÕÔÂ",
-			"ÃîÒô",
-			"ĞëÃÖ",
-			"½ğÉí",
-			"¹ãÁ¦"
+string *first_name = ({ "é™é¾™",
+			"ä¼è™",
+			"æ¸…é™",
+			"æ¥å¼•",
+			"å½’çœŸ",
+			"é‡‘åˆš",
+			"ç²¾è¿›",
+			"åŠŸå¾·",
+			"æ—ƒæª€",
+			"å…‰æ˜",
+			"è´¤å–„",
+			"åº„ä¸¥",
+			"æ™ºæ…§",
+			"æ—¥æœˆ",
+			"å¦™éŸ³",
+			"é¡»å¼¥",
+			"é‡‘èº«",
+			"å¹¿åŠ›"
 });
 
-string *name_words = ({"ÂŞºº"});
+string *name_words = ({"ç½—æ±‰"});
 
 int create()
 {
@@ -37,12 +37,12 @@ int create()
 	name+= name_words[random(sizeof(name_words))];
 
 	set_name(name, ({"luo han", "luohan"}));
-  	set("long", "ÄÏº£¹ÛÒô×ùÏÂÊ®°ËÂŞºº¡£\n");
-	set("title", "Ê®°ËÂŞºº");
-        set("gender", "ÄĞĞÔ");
+  	set("long", "å—æµ·è§‚éŸ³åº§ä¸‹åå…«ç½—æ±‰ã€‚\n");
+	set("title", "åå…«ç½—æ±‰");
+        set("gender", "ç”·æ€§");
         set("age", 25);
         set("attitude", "peaceful");
-        set("rank_info/self", "Æ¶É®");
+        set("rank_info/self", "è´«åƒ§");
         set("class", "bonze");
         set("max_kee", 2000);
         set("max_gin", 2000);
@@ -86,7 +86,7 @@ int create()
 		(: perform_action, "staff", "diyu" :),
         }) );
 */
-        create_family("ÄÏº£ÆÕÍÓÉ½", 2, "µÜ×Ó");
+        create_family("å—æµ·æ™®é™€å±±", 2, "å¼Ÿå­");
 
         setup();
         carry_object("/d/nanhai/obj/sengpao")->wear();

@@ -1,5 +1,5 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-//��Ůɢ�� 
+//天女散花 
 // dream 7/17/97
 // modified by xlb 11/98
 
@@ -20,15 +20,15 @@ int perform(object me, object target)
         ||      !target->is_character()
         ||      target->is_corpse()
         ||      target==me)
-                return notify_fail("��Ҫ��˭ʩչ����Ůɢ������\n");
+                return notify_fail("你要对谁施展「天女散花」？\n");
 
         if((int)me->query("force") < 25+(int)me->query("force_factor") )
-                return notify_fail("�������������\n");
+                return notify_fail("你的内力不够！\n");
         if((int)me->query("kee") < 100 )
-                return notify_fail("�����Ѫ���㣬û����ʩ���⹦��\n");
+                return notify_fail("你的气血不足，没法子施用外功！\n");
 
         if((int)me->query_skill("baihua-zhang", 1) <80)
-                return notify_fail("��İٻ��Ƽ��𻹲�����\n");
+                return notify_fail("你的百花掌级别还不够！\n");
 
         tar=all_inventory(me);
         size = sizeof(tar); 
@@ -43,13 +43,13 @@ int perform(object me, object target)
         write((string)number+"\n");
         
         if((int)number < 5)
-                return notify_fail("��Ļ�������ʩչ����Ůɢ������\n");
+                return notify_fail("你的花不足以施展「天女散花」！\n");
 
         me->add("force", -125-(int)me->query("force_factor"));
         me->receive_damage("kee", 100);
         msg = HIC
-"\n$N΢΢һЦ��������ն����������컨�꣬һʱ��������\n"+
-"$nֻ������������Ӱ��ס�ˣ�һʱ��Ȼ��֪����мܣ�������˵�����ˣ�\n" NOR;
+"\n$N微微一笑，身子凌空而起，洒下漫天花雨，一时花香缭绕\n"+
+"$n只觉周身都被花影罩住了，一时竟然不知如何招架，更不用说躲闪了！\n" NOR;
 
         ap = me->query_skill("baihua-zhang", 1);
 // + me->query_skill("parry");
@@ -61,13 +61,13 @@ int perform(object me, object target)
 // + (int)target->query("kee");
         dp = dp*250 + target->query("combat_exp"); 
         if( random((ap + dp)/1000+1) <  dp/1000 ) {
-                msg += HIC "˭֪$n��������ʤ������һ�ڣ��ѽ����л�����䣡\n\n"NOR;
+                msg += HIC "谁知$n竟险中求胜，长袖一摆，已将所有花瓣打落！\n\n"NOR;
                 message_vision(msg, me, target);
         } else {
                 damage = (int)me->query_skill("baihua-zhang",1) / 10 +
                         (int)me->query("sen") / 400 + random((int)me->query("sen") / 200 ) +
                         (int)me->query("kee") / 400 + random((int)me->query("kee") / 200 );
-                msg += HIC "��Щ���꿴������������ȴ�缲�����������$n,�����Ƕ�����\n" NOR;
+                msg += HIC "这些花瓣看似柔弱无力，却如疾风骤雨般射向$n,深深的嵌入肉里！\n" NOR;
                 if (number < 10) damage = damage *  (random(number+1)/5);
                 else damage = damage * (random(10)/5);
                         target->receive_damage("sen", me->query("eff_sen")*damage/100, me);

@@ -1,5 +1,5 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// zijinbo.c	×Ï½ğ²§
+// zijinbo.c	ç´«é‡‘é’µ
 
 #include <ansi.h>
 #include <weapon.h>
@@ -9,7 +9,7 @@ inherit ITEM;
 
 void create()
 {
-	set_name("×Ï½ğ²§", ({"zijinbo", "zijin bo", "bo"}));
+	set_name("ç´«é‡‘é’µ", ({"zijinbo", "zijin bo", "bo"}));
 	set_weight(7000);
 //  	set_max_encumbrance(50000);
 //  	set("max_items",10);
@@ -17,16 +17,16 @@ void create()
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "Óù´Í×Ï½ğ²§,Õâ¿ÉÊÇÎŞ¼ÛÖ®±¦,¿ÉÌÖÍò·½Õ«²Ë\n");
-		set("unit", "¸ö");
+		set("long", "å¾¡èµç´«é‡‘é’µ,è¿™å¯æ˜¯æ— ä»·ä¹‹å®,å¯è®¨ä¸‡æ–¹æ–‹èœ\n");
+		set("unit", "ä¸ª");
 		set("value", 1000000);
 		set("max_liquid", 15);
 	}
 
   	set("unique", 1);
-  	set("no_sell", "Õâ¿ÉÊÇÎŞ¼ÛÖ®±¦,¿ÖÅÂÃ»ÈËÂòµÃÆğ°É¡£\n");
-  	set("no_drop", "³Ô·¹µÄ¼Ò»ï,¿ÉÊÇ²»ÄÜÇáÒ×¶ªÆú\n");
-  	set("no_give", "´óÌÆÌì×ÓÓù´Í±¦Îï,¸øÈËÄã¿ÉÕæ´ó·½\n");
+  	set("no_sell", "è¿™å¯æ˜¯æ— ä»·ä¹‹å®,ææ€•æ²¡äººä¹°å¾—èµ·å§ã€‚\n");
+  	set("no_drop", "åƒé¥­çš„å®¶ä¼™,å¯æ˜¯ä¸èƒ½è½»æ˜“ä¸¢å¼ƒ\n");
+  	set("no_give", "å¤§å”å¤©å­å¾¡èµå®ç‰©,ç»™äººä½ å¯çœŸå¤§æ–¹\n");
   	set("is_monitored",1);
   	setup();
 
@@ -37,11 +37,11 @@ void destruct_me(object where, object me)
 {
   object who;
   who=find_player(me->query("owned"))	;
-  message_vision("$n·ÉÉıµ½¿ÕÖĞ,·¢³öÒ«ÑÛµÄ¹âÃ¢ÏòÔË·½Æ®È¥¡­¡­\n",where,me);
+  message_vision("$né£å‡åˆ°ç©ºä¸­,å‘å‡ºè€€çœ¼çš„å…‰èŠ’å‘è¿æ–¹é£˜å»â€¦â€¦\n",where,me);
 
   if (!who)destruct(me);
   me->move(who)				;
-  tell_object(who,"Äã¾õµÃÉíÉÏÒ»½ô,ºÃÏó¶àÁËÊ²Ã´¶«Î÷");
+  tell_object(who,"ä½ è§‰å¾—èº«ä¸Šä¸€ç´§,å¥½è±¡å¤šäº†ä»€ä¹ˆä¸œè¥¿");
     
 }
 
@@ -75,41 +75,41 @@ int do_huayuan(string arg)
    who=this_player();
    where=environment(who);
  
-   if (!arg)return notify_fail("ÄãÒªÏòË­»¯Ôµ\n");
+   if (!arg)return notify_fail("ä½ è¦å‘è°åŒ–ç¼˜\n");
    if (target=present(arg,where))
      {
 	if (me->query("have_food"))
-		return notify_fail("×Ï½ğ²§ÀïÒÑ¾­ÓĞ¶«Î÷ÁË\n");
-	if (who->is_busy())return notify_fail("ÄãºÃÏóÃ¦²»¹ıÀ´\n");
-	if (who->is_fight())return notify_fail("²»»á°É.\n");
+		return notify_fail("ç´«é‡‘é’µé‡Œå·²ç»æœ‰ä¸œè¥¿äº†\n");
+	if (who->is_busy())return notify_fail("ä½ å¥½è±¡å¿™ä¸è¿‡æ¥\n");
+	if (who->is_fight())return notify_fail("ä¸ä¼šå§.\n");
 	if (target->query("id")=="qujing ren")
-		return notify_fail("Ëû¹À¼Æ±ÈÄã»¹Çî\n");
+		return notify_fail("ä»–ä¼°è®¡æ¯”ä½ è¿˜ç©·\n");
 	if (target->query("attitude")!="friendly")
-		return notify_fail(target->query("name")+"¿´ÆğÀ´²»Ì«ÓÑºÃ\n");
+		return notify_fail(target->query("name")+"çœ‹èµ·æ¥ä¸å¤ªå‹å¥½\n");
 	if (target->query_temp("give_beg")) 
 		return notify_fail(target->query("name")
-			+"¿´ÆğÀ´Ã»Ê²Ã´¿ÉÒÔ¸øÄãµÄ\n");	  
+			+"çœ‹èµ·æ¥æ²¡ä»€ä¹ˆå¯ä»¥ç»™ä½ çš„\n");	  
 /*	if (!target->query("vendor_goods"))
 		return notify_fail(target->query("name")
-			+"¿´ÆğÀ´Ã»Ê²Ã´¿ÉÒÔ¸øÄãµÄ.\n");	  
-	//½öÄÜÔÚÉÌµê»¯Ôµ.
+			+"çœ‹èµ·æ¥æ²¡ä»€ä¹ˆå¯ä»¥ç»™ä½ çš„.\n");	  
+	//ä»…èƒ½åœ¨å•†åº—åŒ–ç¼˜.
 */
 
 	if (random(2)!=0) 
 	  {
- 	    target->set_temp("give_beg",1);//ÒªÇóÒ»´Î³É¹¦
+ 	    target->set_temp("give_beg",1);//è¦æ±‚ä¸€æ¬¡æˆåŠŸ
 	    return notify_fail(target->query("name")
-		+"¿´ÆğÀ´Ã»Ê²Ã´¿ÉÒÔ¸øÄãµÄ\n");
+		+"çœ‹èµ·æ¥æ²¡ä»€ä¹ˆå¯ä»¥ç»™ä½ çš„\n");
 	  }
 
-	target->command_function("say ÎÒÕâÀï»¹ÓĞĞ©·¹²Ë,Äã¾Í½«¾ÍÓÃ°É\n");
-        message_vision("$N¸øÁËÄãĞ©·¹²Ë\n",target);
+	target->command_function("say æˆ‘è¿™é‡Œè¿˜æœ‰äº›é¥­èœ,ä½ å°±å°†å°±ç”¨å§\n");
+        message_vision("$Nç»™äº†ä½ äº›é¥­èœ\n",target);
 	target->set_temp("give_beg",1);
 	me->set("have_food",1);
      }
    else
      {
-	return notify_fail("ÄãÒªÏòË­»¯Ôµ\n");
+	return notify_fail("ä½ è¦å‘è°åŒ–ç¼˜\n");
      }
   
    return 1;

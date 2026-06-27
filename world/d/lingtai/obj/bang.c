@@ -5,15 +5,15 @@ inherit STICK;
 
 void create()
 {
-        set_name("Ä¾ÕÈ", ({"mu zhang"}));
+        set_name("æœ¨æ–", ({"mu zhang"}));
         set_weight(2000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
+                set("unit", "æŠŠ");
                 set("value", 400);
                 set("material", "wood");
-                set("wield_msg", "$N¡¸ºô¡¹µØÒ»Éù³é³öÒ»°Ñ$nÎÕÔÚÊÖÖĞ¡£\n");
+                set("wield_msg", "$Nã€Œå‘¼ã€åœ°ä¸€å£°æŠ½å‡ºä¸€æŠŠ$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
         }
         init_stick(20);
         setup();

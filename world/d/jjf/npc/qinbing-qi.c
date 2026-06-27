@@ -1,17 +1,17 @@
 // cracked by vikee 2/09/2002   vikee@263.net
 //created 6-9-97 pickle
-//Ç×±ø
+//äº²å…µ
  
 inherit NPC;
 
 void create()
 {
-  set_name("Ç×±ø", ({"qin bing", "qin", "bing", "soldier", "qinbing"}));
+  set_name("äº²å…µ", ({"qin bing", "qin", "bing", "soldier", "qinbing"}));
   set ("long", @LONG
-Ò»¸ö±ëÐÎ´óºº£¬¿´ÉíÉÏÒÂ·þ´ó¸ÅÊÇÆë¸®µÄÇ×±ø£¬ÆëÍõÀî½¨³ÉµÄ½üÉí»¤ÎÀ¡£
+ä¸€ä¸ªå½ªå½¢å¤§æ±‰ï¼Œçœ‹èº«ä¸Šè¡£æœå¤§æ¦‚æ˜¯é½åºœçš„äº²å…µï¼Œé½çŽ‹æŽå»ºæˆçš„è¿‘èº«æŠ¤å«ã€‚
 LONG); 
-  set("title", "ÆëÍõ¸®");
-  set("gender", "ÄÐÐÔ");
+  set("title", "é½çŽ‹åºœ");
+  set("gender", "ç”·æ€§");
   set("age", 25);
   set("combat_exp", 80000);
   set_skill("blade", 80);
@@ -23,10 +23,10 @@ LONG);
   set("max_kee", 300);
   set("chat_chance", 7);
   set("inquiry", ([
-        "name" : "ÎÊÊ²Ã´ÎÊ£¿³¤×ÅÑÛ¾¦²»»á¿´ÄÄ£¿",
-        "here" : "Õâ¶ù¾ÍÊÇ×íÐÇÂ¥£¡ÔìµÄ¿É±È¶ÔÃæÄÇÆÆ·¿×ÓÇ¿µÃ¶àÀ²£¡",
-        "rumors" : " ÌýËµÓÐÈËÏëÀ´²ð·¿×Ó£¬ºß£¡",
-        "²ð·¿×Ó" : "ºß£¬³ý·Ç°ÑÀÏ×Ó´ò·¢ÁË£¬·ñÔòË­Ò²±ðÏëÀ´Õâ¶ùÈöÒ°£¡",
+        "name" : "é—®ä»€ä¹ˆé—®ï¼Ÿé•¿ç€çœ¼ç›ä¸ä¼šçœ‹å“ªï¼Ÿ",
+        "here" : "è¿™å„¿å°±æ˜¯é†‰æ˜Ÿæ¥¼ï¼é€ çš„å¯æ¯”å¯¹é¢é‚£ç ´æˆ¿å­å¼ºå¾—å¤šå•¦ï¼",
+        "rumors" : " å¬è¯´æœ‰äººæƒ³æ¥æ‹†æˆ¿å­ï¼Œå“¼ï¼",
+        "æ‹†æˆ¿å­" : "å“¼ï¼Œé™¤éžæŠŠè€å­æ‰“å‘äº†ï¼Œå¦åˆ™è°ä¹Ÿåˆ«æƒ³æ¥è¿™å„¿æ’’é‡Žï¼",
          ]) );
   setup();
  
@@ -37,9 +37,9 @@ int accept_object(object me, object ob)
 {
   object npc=this_object();
  
-  if ((string)ob->query("name_recognized")!="Æë¸®Áî¼ý")
+  if ((string)ob->query("name_recognized")!="é½åºœä»¤ç®­")
     {
-      command ("say ¹þ¹þ£¡ÀÏ×Ó×î°®ÊÜÈË»ßÂçÁË£¡");
+      command ("say å“ˆå“ˆï¼è€å­æœ€çˆ±å—äººè´¿ç»œäº†ï¼");
       call_out("destroy", 1, ob);
       return 1;
     }
@@ -49,7 +49,7 @@ int accept_object(object me, object ob)
 void leavehere(object npc, object me)
 {
   command("ah");
-  command("say ¼ÈÈ»ÆëÍõÓÐ¼±ÊÂ£¬ÎÒÕâ¾ÍÈ¥°ì£¡");
+  command("say æ—¢ç„¶é½çŽ‹æœ‰æ€¥äº‹ï¼Œæˆ‘è¿™å°±åŽ»åŠžï¼");
   command("thank "+me->query("id"));
   command("go northwest");
   destruct(npc);

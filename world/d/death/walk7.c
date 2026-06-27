@@ -5,12 +5,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ÑÖÂŞ´óÌÃ");
+  set ("short", "é˜ç½—å¤§å ‚");
   set ("long", @LONG
 
-ÕâÀï±ãÊÇÃûÎÅÌìÏÂ£¬ÁîÈËÌáÆğĞÄ¾ªµ¨º®µÄÑÖÂŞµØ¸®¡£ÈËËÀºó¶¼»á
-ÔÚÕâÀïÊÜµ½Ó¦ÓĞµÄ´¦ÖÃ¡£×óÓÒ·ÖÁ¢ËÄÃûÇàÃæâ²ÑÀ¹í£¬¿´ÆğÀ´¿Ö²À
-Ö®¼«£®ËÄÖÜ»¹°Ú×ÅÒ»Ğ©ĞÌ¾ß£¬ÉÏÃæ¶¼ÊÇÑª¡£
+è¿™é‡Œä¾¿æ˜¯åé—»å¤©ä¸‹ï¼Œä»¤äººæèµ·å¿ƒæƒŠèƒ†å¯’çš„é˜ç½—åœ°åºœã€‚äººæ­»åéƒ½ä¼š
+åœ¨è¿™é‡Œå—åˆ°åº”æœ‰çš„å¤„ç½®ã€‚å·¦å³åˆ†ç«‹å››åé’é¢ç ç‰™é¬¼ï¼Œçœ‹èµ·æ¥ææ€–
+ä¹‹æï¼å››å‘¨è¿˜æ‘†ç€ä¸€äº›åˆ‘å…·ï¼Œä¸Šé¢éƒ½æ˜¯è¡€ã€‚
 LONG);
 
   set("exits", ([ /* sizeof() == 4 */
@@ -31,11 +31,11 @@ LONG);
 
 int valid_leave(object me, string dir)
 {       if (dir == "north") {
-	if((string)me->query("family/family_name")!="ÑÖÂŞµØ¸®") {
+	if((string)me->query("family/family_name")!="é˜ç½—åœ°åºœ") {
 
         if (objectp(present("qingmian gui", environment(me)))
 		|| objectp(present("liaoya gui", environment(me)))) {
-return notify_fail("ºÃÏóÉíºóÓĞ¸öÈË±§×¡ÁËÄã£¬Äã¶¯Ò²¶¯²»ÁË£¡\n");
+return notify_fail("å¥½è±¡èº«åæœ‰ä¸ªäººæŠ±ä½äº†ä½ ï¼Œä½ åŠ¨ä¹ŸåŠ¨ä¸äº†ï¼\n");
                 }
         return ::valid_leave(me, dir);
         }

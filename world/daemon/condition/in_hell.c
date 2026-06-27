@@ -20,13 +20,13 @@ int update_condition(object me, int duration)
 	ratio = (int)me->query("eff_sen")*100 / (int)me->query("max_sen");
 	if( !duration ) return 0;
     	if (ratio > 80) 
-		tell_object(me, "Äã¾õµÃÍ·ÄÔ²»´óÇåÐÑ£¬Éí×ÓÇáÆ®Æ®µÄ¡£\n");
+		tell_object(me, "ä½ è§‰å¾—å¤´è„‘ä¸å¤§æ¸…é†’ï¼Œèº«å­è½»é£˜é£˜çš„ã€‚\n");
     	else if (ratio > 60) 
-		tell_object(me, "Äã¾õµÃÄÔ´üÓÖÍ´ÓÖÕÇ£¬Éí×ÓÒÑ²»´óÌýÊ¹»½ÁË¡£\n");
+		tell_object(me, "ä½ è§‰å¾—è„‘è¢‹åˆç—›åˆæ¶¨ï¼Œèº«å­å·²ä¸å¤§å¬ä½¿å”¤äº†ã€‚\n");
     	else if (ratio > 40) 
-		tell_object(me, "Äã¾õµÃºôÎüÀ§ÄÑ£¬ÑÛÇ°Ò»ÇÐ¶¼Ä£ºýÁËÆðÀ´¡£\n");
+		tell_object(me, "ä½ è§‰å¾—å‘¼å¸å›°éš¾ï¼Œçœ¼å‰ä¸€åˆ‡éƒ½æ¨¡ç³Šäº†èµ·æ¥ã€‚\n");
     	else 
-		tell_object(me, "Äã»è»èÓûË¯£¬ÂíÉÏ¾ÍÒªµ¹ÔÚµØÏÂÁË¡£\n");
+		tell_object(me, "ä½ æ˜æ˜æ¬²ç¡ï¼Œé©¬ä¸Šå°±è¦å€’åœ¨åœ°ä¸‹äº†ã€‚\n");
 
     me->receive_wound("sen", 2);
     if (me->query("mana") < 0) me->set("mana", 0);

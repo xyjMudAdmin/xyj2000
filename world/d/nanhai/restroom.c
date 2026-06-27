@@ -5,11 +5,11 @@ inherit "/d/wiz/no_get";
 
 void create ()
 {
-  set ("short", "��Ϣ��");
+  set ("short", "休息室");
   set ("long", @LONG
 
-����������ɽ����Ϣ�ң�������յ�����ʲôҲû�У���֪����
-ɽ���˵���������ô��˯���ġ�
+这里是普陀山的休息室，屋子里空荡荡的什么也没有，不知普陀
+山门人弟子们是怎么样睡觉的。
 LONG);
 
   set("exits", ([ /* sizeof() == 1 */

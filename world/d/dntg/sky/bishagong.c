@@ -19,9 +19,9 @@ string *files = ({
 
 void create()
 {
-set("short", "ÅşÉ³¹¬");
+set("short", "æ¯—æ²™å®«");
 set("long", @LONG
-ÅşÉ³¹¬ÖĞÕ¾Á¢×Å¼¸¸ö×¯ÑÏµÄÎäÊ¿£¬É¨ÊÓ×ÅÃ»Ò»¸öÀ´ÍùµÄÈË¡£
+æ¯—æ²™å®«ä¸­ç«™ç«‹ç€å‡ ä¸ªåº„ä¸¥çš„æ­¦å£«ï¼Œæ‰«è§†ç€æ²¡ä¸€ä¸ªæ¥å¾€çš„äººã€‚
 LONG );
 
 set("exits", ([
@@ -51,18 +51,18 @@ void init()
 
    if (who->query("dntg/laojunlu")=="allow1")
      {
-     tell_room(environment(who),who->name()+"Å­³å³å´³ÁË¹ıÀ´¡£\n",who); 
+     tell_room(environment(who),who->name()+"æ€’å†²å†²é—¯äº†è¿‡æ¥ã€‚\n",who); 
 
      if (! present ("yisheng zhenjun",where))
        {
        zhenjun=new (__DIR__"npc/yishengzhenjun");
        zhenjun->move(where);
-       tell_room(environment(who),zhenjun->name()+"´Ò´Ò¸ÏÀ´¡£\n",who); 
+       tell_room(environment(who),zhenjun->name()+"åŒ†åŒ†èµ¶æ¥ã€‚\n",who); 
        }
        zhenjun=( present ("yisheng zhenjun", where));
        zhenjun->command("chat "+who->query("name")
-          +"Õâ"+RANK_D->query_rude(who)+"´òµ½ÅşÉ³¹¬ÁË£¡ËÄ´óÌìÍõ¿ìÀ´¾È¼İ£¡");
-       message_vision("Ö»¼ûËÄ´óÌìÍõ·äÓµ¶øÀ´£¬½«$NÎ§ÔÚµ±ÖĞ£¡\n",who);
+          +"è¿™"+RANK_D->query_rude(who)+"æ‰“åˆ°æ¯—æ²™å®«äº†ï¼å››å¤§å¤©ç‹å¿«æ¥æ•‘é©¾ï¼");
+       message_vision("åªè§å››å¤§å¤©ç‹èœ‚æ‹¥è€Œæ¥ï¼Œå°†$Nå›´åœ¨å½“ä¸­ï¼\n",who);
        for (i=0;i<4;i++)
          {
          defender=new (files[i]);
@@ -71,9 +71,9 @@ void init()
          }
        where->set("fight_here","yes");
        zhenjun->kill_ob(who);
-       leave_here("ñ´Ê¥Õæ¾ı",who);	
+       leave_here("ç¿Šåœ£çœŸå›",who);	
      }
-   else if(where->query("fight_here") == "yes") you_leave("ñ´Ê¥Õæ¾ı",who);
+   else if(where->query("fight_here") == "yes") you_leave("ç¿Šåœ£çœŸå›",who);
   }
 
 
@@ -84,9 +84,9 @@ int valid_leave(object me, string dir)
    if (me->query("dntg/laojunlu") != "allow1")
       return ::valid_leave(me, dir);
    else if (present ("yisheng zhenjun",where) || present ("tian wang",where))
-      return notify_fail("ÕâÃ´¶àÈËÎ§×ÅÄã£¬ÔõÃ´×ß£¿\n");
+      return notify_fail("è¿™ä¹ˆå¤šäººå›´ç€ä½ ï¼Œæ€ä¹ˆèµ°ï¼Ÿ\n");
    else if (dir != "north")
-      return notify_fail("ÒÑ¾­ÄÖµ½Õâ²½ÌïµØ£¬²»ÈçÒ»²»×÷£¬¶ş²»ĞŞ£¬´ò½øÁéÏö±¦µî£¡\n");
+      return notify_fail("å·²ç»é—¹åˆ°è¿™æ­¥ç”°åœ°ï¼Œä¸å¦‚ä¸€ä¸ä½œï¼ŒäºŒä¸ä¿®ï¼Œæ‰“è¿›çµéœ„å®æ®¿ï¼\n");
    else 
      {
      me->set("dntg/laojunlu","finish");
@@ -103,15 +103,15 @@ int do_cast (string arg)
   if (who->query("dntg/laojunlu")=="allow1" 
          && (arg=="escape" || arg=="shuidun" || arg=="tudun" || arg=="chuqiao"))
      {
-      tell_object(who,"ÄÄÀïÅÜ£¡\n");
+      tell_object(who,"å“ªé‡Œè·‘ï¼\n");
       return 1;
      }
   else if (who->query("dntg/laojunlu")=="allow1" 
         && ((sscanf(arg, "%s on %s", cast_id,cast_name) == 2 
                 && cast_id=="qiankun") || arg=="qiankun"))
      {
-      tell_object(who,"ÄãÒşÒşµÄÌıµ½ÕòÔª´óÏÉµÄÉùÒô£ºÄãÕâÄæÍ½£¡"
-                +"ÄÖµ½½ñÈÕÕâ²½ÌïµØ£¬ĞİÒªÓÃÎÒ¹ÛÖĞ·¨Êõ£¬ÒÔÃâÇ£´øÎÒÈ«¹ÛµÜ×Ó£¡\n");
+      tell_object(who,"ä½ éšéšçš„å¬åˆ°é•‡å…ƒå¤§ä»™çš„å£°éŸ³ï¼šä½ è¿™é€†å¾’ï¼"
+                +"é—¹åˆ°ä»Šæ—¥è¿™æ­¥ç”°åœ°ï¼Œä¼‘è¦ç”¨æˆ‘è§‚ä¸­æ³•æœ¯ï¼Œä»¥å…ç‰µå¸¦æˆ‘å…¨è§‚å¼Ÿå­ï¼\n");
       return 1;
      }
   else return 0;
@@ -119,7 +119,7 @@ int do_cast (string arg)
 
 int do_quit(string arg)
 {
-    tell_object(this_player(), "ÕâÀï²»ÄÜÀë¿ªÓÎÏ·¡£\n");
+    tell_object(this_player(), "è¿™é‡Œä¸èƒ½ç¦»å¼€æ¸¸æˆã€‚\n");
     return 1;
 }
 

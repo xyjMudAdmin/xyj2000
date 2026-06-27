@@ -7,21 +7,21 @@ inherit NPC;
 void create()
 {
 
-  set_name("��������", ({ "puxian pusa", "pusa", "pu sa", "puxian" }) );
-  set("gender", "����" );
+  set_name("普贤菩萨", ({ "puxian pusa", "pusa", "pu sa", "puxian" }) );
+  set("gender", "男性" );
   set("long", @LONG
 
-    ���ͣ�Ϊ��̴������֮һ����������ͬΪ���ȷ��в�̡���˵
-���������ڻ��Ϸ����Ϸ���ʮ����Ը�����������Ϊ��ʮ��Ը������
-������Ը�������˷�̵�������̸�����ǣ��պ�����Ϊʲ���������
-����Ի��������֮ѧ����У���֮������Ī���󣬹ʺ��󡣡�
-���󣬼���ζ����Ը�й�󣬹���Բ����
+    普贤，为佛教大乘菩萨之一，它与文殊同为释迦佛的胁侍。传说
+，普贤曾在华严法会上发「十大行愿」，佛教尊他为「十大愿王」。
+「普贤愿海」成了佛教的老生常谈。但是，普贺菩萨为什麽骑白象呢
+？佛经曰，「普贤之学得於行，行之谨审静重莫若象，故好象。」
+白象，即意味着它愿行广大，功德圆满。
     
 LONG );
   set("age",55);
-  set("title", "��̴������");
+  set("title", "佛教大乘菩萨");
   set("attitude", "peaceful");
-  set("rank_info/self", "ƶɮ");
+  set("rank_info/self", "贫僧");
   set("class", "bonze");
   set("max_kee", 5000);
   set("max_gin", 5000);

@@ -5,9 +5,9 @@ inherit SPEAR;
 
 void create()
 {
-  set_name("ºìÓ§Ç¹", ({ "hongying qiang", "qiang", "spear" }) );
+  set_name("çº¢ç¼¨æžª", ({ "hongying qiang", "qiang", "spear" }) );
   init_spear(35);
-  set("unit", "¸ù");
+  set("unit", "æ ¹");
   set_weight(1000);
   if( clonep() )
      set_default_object(__FILE__);

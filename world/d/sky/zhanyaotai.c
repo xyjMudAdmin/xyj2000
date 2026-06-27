@@ -7,12 +7,12 @@ int valid_leave();
 
 void create ()
 {
-  set ("short", "ն��̨");
+  set ("short", "斩妖台");
   set ("long", @LONG
 
-��ʷ�����������Ϊ��罵ħ��Ԫ˧����������ն����ĺ�Ը��
-�ķ���ն��̨������һ��߶�ߵ��׭�������ķ�����ػ�����
-����ɱ�����ڡ�
+玉皇封托塔李天王为五界降魔大元帅，给了他先斩后奏的宏愿。
+四方的斩妖台正中立一五尺多高雕符篆玉柱，四方神兵守护，端
+地是杀气腾腾。
 LONG);
 
   set("exits", ([ /* sizeof() == 1 */

@@ -6,7 +6,7 @@ inherit "/d/dntg/pantao/npc/xiannu.c";
 void create()
 {
   ::create();
-  set_name("皂衣仙女",({ "zaoyi xiannu", "xian","zaoyi xiannu" }) );
-  set("long", "一位玉簪珠履皂纱衣的仙女，七大仙女之一。\n");
+  set_name("鐨傝。浠欏コ",({ "zaoyi xiannu", "xian","zaoyi xiannu" }) );
+  set("long", "涓�浣嶇帀绨彔灞ョ殏绾辫。鐨勪粰濂筹紝涓冨ぇ浠欏コ涔嬩竴銆俓n");
 
 }

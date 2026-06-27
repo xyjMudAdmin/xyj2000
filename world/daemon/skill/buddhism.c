@@ -8,9 +8,9 @@ int valid_enable(string usage) { return usage=="spells"; }
 int valid_learn(object me)
 {
 	if( (int)me->query_skill("spells") <= (int)me->query_skill("buddhism") )
-		return notify_fail("你的法术修为还不够高深，无法学习大乘佛法。\n");
+		return notify_fail("浣犵殑娉曟湳淇负杩樹笉澶熼珮娣憋紝鏃犳硶瀛︿範澶т箻浣涙硶銆俓n");
 	if( (int)me->query("bellicosity") > 100 )
-		return notify_fail("你的杀气太重，无法修炼大乘佛法。\n");
+		return notify_fail("浣犵殑鏉�姘斿お閲嶏紝鏃犳硶淇偧澶т箻浣涙硶銆俓n");
 	return 1;
 }
 

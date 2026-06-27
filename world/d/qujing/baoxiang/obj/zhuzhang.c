@@ -8,13 +8,13 @@ inherit STAFF;
 
 void create()
 {
-  set_name( "ÖñÕÈ", ({ "zhu zhang", "zhang", "staff" }) );
+  set_name( "ç«¹æ–", ({ "zhu zhang", "zhang", "staff" }) );
   set_weight(800); 
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("unit", "¸ù");
-    set("long", "Ò»¸ù³¤³¤µÄÖñÕÈ¡£\n");
+    set("unit", "æ ¹");
+    set("long", "ä¸€æ ¹é•¿é•¿çš„ç«¹æ–ã€‚\n");
     set("value", 100);
     set("material", "bamboo");
   }

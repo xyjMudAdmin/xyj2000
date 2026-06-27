@@ -5,9 +5,9 @@ inherit SWORD;
 
 void create()
 {
-  set_name("»¨óÃ½£", ({ "huazhu jian", "jian", "sword" }) );
+  set_name("èŠ±ç«ºå‰‘", ({ "huazhu jian", "jian", "sword" }) );
   init_sword(35);
-  set("unit", "°Ñ");
+  set("unit", "æŠŠ");
   set_weight(800);
   if( clonep() )
      set_default_object(__FILE__);

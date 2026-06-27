@@ -9,11 +9,11 @@ inherit NPC;
 
 void create()
 {
-  set_name("ó¤ÎÇ",({"chi wen","chi","wen","long","chiwen","dragon"}));
-  set("long","ÁúÉú¾Å×Ó²»³ÉÁú£¬¸÷ÓĞËùºÃ£ºó¤ÎÇÄËµÚÎå×Ó£¬Æ½ÉúºÃÍû¡£\n");
-  set("gender", "ÄĞĞÔ");
+  set_name("è­å»",({"chi wen","chi","wen","long","chiwen","dragon"}));
+  set("long","é¾™ç”Ÿä¹å­ä¸æˆé¾™ï¼Œå„æœ‰æ‰€å¥½ï¼šè­å»ä¹ƒç¬¬äº”å­ï¼Œå¹³ç”Ÿå¥½æœ›ã€‚\n");
+  set("gender", "ç”·æ€§");
   set("age", 32);
-  set("title", "ÁúÍõ¾Å×ÓÖ®");
+  set("title", "é¾™ç‹ä¹å­ä¹‹");
   set("class","dragon");
   set("attitude", "peaceful");
   set("max_kee", 1200);
@@ -62,7 +62,7 @@ void create()
 int accept_fight(object me)
 {
   command("ok");
-  command("say ÄÇ¾ÍÍæÍæ°É£¡");
+  command("say é‚£å°±ç©ç©å§ï¼");
   command("wield rake");
   return 1;
 }

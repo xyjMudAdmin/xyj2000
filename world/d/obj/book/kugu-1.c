@@ -1,5 +1,5 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// ¿İ¹Çµ¶£­£­¡¼ÑªÊé¡½1
+// æ¯éª¨åˆ€ï¼ï¼ã€–è¡€ä¹¦ã€—1
 // pickle 9/8/97
 #include <ansi.h>
 inherit F_UNIQUE;
@@ -13,18 +13,18 @@ int do_stain(string arg);
 
 void create()
 {
-        set_name("¿Õ°×ÕÊ±¾", ({"zhang ben", "zhangben", "book", "shu", "zhang",}));
+        set_name("ç©ºç™½å¸æœ¬", ({"zhang ben", "zhangben", "book", "shu", "zhang",}));
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
+                set("unit", "æœ¬");
 	set("long",
-	"Ò»±¾¿Õ°×µÄÕÊ±¾£¬¸úÒ»°ã¿ÍµêÀïµÄÃ»Ê²Ã´Á½Ñù¡£\n");
+	"ä¸€æœ¬ç©ºç™½çš„å¸æœ¬ï¼Œè·Ÿä¸€èˆ¬å®¢åº—é‡Œçš„æ²¡ä»€ä¹ˆä¸¤æ ·ã€‚\n");
         set("material", "paper");
         set("value", 0);
-	set("name_recognized", "¿İ¹Çµ¶ÃØóÅ");
-	set("²á", 1);
+	set("name_recognized", "æ¯éª¨åˆ€ç§˜ç¬ˆ");
+	set("å†Œ", 1);
 	set("no_drop", 1);
 	set("no_put", 1);
         set("skill", ([
@@ -56,13 +56,13 @@ int do_read(string arg)
     if (!id(arg)) return 0;
     if (!interactive(environment(book)))
     {
-        tell_object(me, "Ê²Ã´£¿\n");
+        tell_object(me, "ä»€ä¹ˆï¼Ÿ\n");
 	return 1;
     }
     if (!book->query("stained"))
     {
-        message_vision("$NÄÃÆğ"+book->query("name")+"·´¸´ÑĞ¾¿ÁËÒ»»á¶ù¡£\n", this_player());
-        tell_object(this_player(), "¿Õ°×µÄĞ¡²á×ÓÓĞÊ²Ã´¿É¿´µÄ£¿\n");
+        message_vision("$Næ‹¿èµ·"+book->query("name")+"åå¤ç ”ç©¶äº†ä¸€ä¼šå„¿ã€‚\n", this_player());
+        tell_object(this_player(), "ç©ºç™½çš„å°å†Œå­æœ‰ä»€ä¹ˆå¯çœ‹çš„ï¼Ÿ\n");
         return 1;
     }
     return 0;
@@ -74,37 +74,37 @@ int do_cut(string arg)
     weapon=me->query_temp("apply/weapon");
     if (!weapon) weapon=me->query_temp("weapon");
     if (!weapon)
-        return notify_fail("ÄÃÊ²Ã´À´¸î£¿\n");
+        return notify_fail("æ‹¿ä»€ä¹ˆæ¥å‰²ï¼Ÿ\n");
     if(weapon->query("id") != "bi shou")
-        return notify_fail("¸ÉÂï£¿ÓÖ²»ÊÇÒª×ÔÉ±£¡»¹ÊÇÓÃØ°Ê×°É¡£\n");
+        return notify_fail("å¹²å˜›ï¼Ÿåˆä¸æ˜¯è¦è‡ªæ€ï¼è¿˜æ˜¯ç”¨åŒ•é¦–å§ã€‚\n");
     if (arg != "me" && arg != me->query("id"))
-        return notify_fail("ÄãÏë¸îË­µÄÑª£¿\n");
+        return notify_fail("ä½ æƒ³å‰²è°çš„è¡€ï¼Ÿ\n");
     me->receive_wound("kee", random(me->query("str")*me->query("max_kee")/100));
-    message_vision("$NÄÃÆğÊÖÖĞ"+weapon->query("name")+"£¬ÔÚ¸ì²²ÉÏ¸îÁË¸öĞ¡¿Ú×Ó¡£\n", me);
+    message_vision("$Næ‹¿èµ·æ‰‹ä¸­"+weapon->query("name")+"ï¼Œåœ¨èƒ³è†Šä¸Šå‰²äº†ä¸ªå°å£å­ã€‚\n", me);
     return 1;
 }
 int do_stain(string arg)
 {
     object book=this_object(),me=this_player();
     if(me->query("eff_kee")>=me->query("max_kee"))
-        return notify_fail("»¹ÊÇÓÃ×Ô¼ºµÄÑª±È½ÏºÃ¡£\n");
-    if(!id(arg)) return notify_fail("ÄãÒªÈ¾Ê²Ã´£¿\n");
-    message_vision("$NÓÃÉË¿ÚµÄÑªÈ¾ºìÁË"+book->query("name")+"¡£\n", me);
-    tell_object(me, book->query("name")+"ÉÏ½¥½¥ÏÔ³öÁËÍ¼ĞÎºÍĞ¡×Ö¡£\n");
+        return notify_fail("è¿˜æ˜¯ç”¨è‡ªå·±çš„è¡€æ¯”è¾ƒå¥½ã€‚\n");
+    if(!id(arg)) return notify_fail("ä½ è¦æŸ“ä»€ä¹ˆï¼Ÿ\n");
+    message_vision("$Nç”¨ä¼¤å£çš„è¡€æŸ“çº¢äº†"+book->query("name")+"ã€‚\n", me);
+    tell_object(me, book->query("name")+"ä¸Šæ¸æ¸æ˜¾å‡ºäº†å›¾å½¢å’Œå°å­—ã€‚\n");
     remove_call_out("dry");
     call_out("dry", 300, book);
     book->add("stained", 1);
-    book->set_name(RED"¡¼ÑªÊé¡½"NOR, ({"xue shu", "xueshu", "blood book", "book", "shu"}));
+    book->set_name(RED"ã€–è¡€ä¹¦ã€—"NOR, ({"xue shu", "xueshu", "blood book", "book", "shu"}));
     book->set("long",
-"Ò»±¾°µºìÉ«µÄĞ¡²á×Ó£¬ÀïÃæĞ´ÂúÁËÓ¬Í·Ğ¡×Ö¡£\n");
+"ä¸€æœ¬æš—çº¢è‰²çš„å°å†Œå­ï¼Œé‡Œé¢å†™æ»¡äº†è‡å¤´å°å­—ã€‚\n");
     return 1;
 }
 void dry(object book)
 {
     book->delete("stained");
-    tell_object(environment(book), book->query("name")+"½¥½¥¸ÉÁË£¬ÓÖ±ä»ØÁËÕÊ±¾Ñù×Ó¡£\n");
-    book->set_name("¿Õ°×ÕÊ±¾", ({"zhang ben", "zhangben", "book", "shu", "zhang",}));
+    tell_object(environment(book), book->query("name")+"æ¸æ¸å¹²äº†ï¼Œåˆå˜å›äº†å¸æœ¬æ ·å­ã€‚\n");
+    book->set_name("ç©ºç™½å¸æœ¬", ({"zhang ben", "zhangben", "book", "shu", "zhang",}));
     book->set("long",
-	"Ò»±¾¿Õ°×µÄÕÊ±¾£¬¸úÒ»°ã¿ÍµêÀïµÄÃ»Ê²Ã´Á½Ñù¡£\n");
+	"ä¸€æœ¬ç©ºç™½çš„å¸æœ¬ï¼Œè·Ÿä¸€èˆ¬å®¢åº—é‡Œçš„æ²¡ä»€ä¹ˆä¸¤æ ·ã€‚\n");
     return;
 }

@@ -3,14 +3,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name("åĞÒ£´ü", ({ "xiaoyao dai","bag","dai" }) );
+        set_name("é€é¥è¢‹", ({ "xiaoyao dai","bag","dai" }) );
         set_weight(10000);
         set_max_encumbrance(50000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Ú");
-                set("long", "ÕâÊÇÒ»¸ö½õĞåµÄÀ¶¶Ğ×Ó¿Ú´ü£¬ÄÃÔÚÊÖÉÏÈ´Ïàµ±µÄ³Á£¬²¢Ïàµ±µÄÈÍ¡£\n");
+                set("unit", "å£");
+                set("long", "è¿™æ˜¯ä¸€ä¸ªé”¦ç»£çš„è“ç¼å­å£è¢‹ï¼Œæ‹¿åœ¨æ‰‹ä¸Šå´ç›¸å½“çš„æ²‰ï¼Œå¹¶ç›¸å½“çš„éŸ§ã€‚\n");
                 set("value", 0);
 		set("no_sell",1);
         }

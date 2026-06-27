@@ -5,14 +5,14 @@ inherit NPC;
 
 void create()
 {
-	set_name("Ë¾»ú", ({ "driver", "siji" }) );
-	set("gender", "ÄĞĞÔ" );
+	set_name("å¸æœº", ({ "driver", "siji" }) );
+	set("gender", "ç”·æ€§" );
 	set("age", 32);
 	set("long",
-		"Ëû½Ò¿ª¸ÇÔÚÁ³ÉÏµÄÆÆ²İÃ±¿´ÁËÄãÒ»ÑÛ £¬ÓÖ·ÅÏÂÀ´¼ÌĞø´òî§Ë¯¡£\n");
+		"ä»–æ­å¼€ç›–åœ¨è„¸ä¸Šçš„ç ´è‰å¸½çœ‹äº†ä½ ä¸€çœ¼ ï¼Œåˆæ”¾ä¸‹æ¥ç»§ç»­æ‰“çŒç¡ã€‚\n");
 	set("combat_exp", 100);
 	set("attitude", "friendly");
-	set("rank_info/respect", "Ê¦¸µ");
+	set("rank_info/respect", "å¸ˆå‚…");
 	setup();
 	carry_object("/obj/cloth")->wear();
 }

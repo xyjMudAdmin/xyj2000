@@ -7,11 +7,11 @@ int block_cmd();
 
 void create ()
 {
-  set ("short", "Î×Ê¦»áÒéÌü");
+  set ("short", "å·«å¸ˆä¼šè®®åŽ…");
   set ("long", @LONG
 
-ÕâÀïÊÇÎ×Ê¦ÁÄÌìÌÖÂÛµÄµØ·½£¬Èç¹ûÎ×Ê¦ÃÇÒª¿ª»áµÄ»°£¬Ò²¶à°ë»áÑ¡ÔÚÕâ
-Àï¾ÙÐÐ¡£
+è¿™é‡Œæ˜¯å·«å¸ˆèŠå¤©è®¨è®ºçš„åœ°æ–¹ï¼Œå¦‚æžœå·«å¸ˆä»¬è¦å¼€ä¼šçš„è¯ï¼Œä¹Ÿå¤šåŠä¼šé€‰åœ¨è¿™
+é‡Œä¸¾è¡Œã€‚
 LONG);
 
   set("exits", ([ /* sizeof() == 2 */

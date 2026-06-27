@@ -7,8 +7,8 @@ inherit NPC;
 
 void create()
 {
-	set_name("酆都鬼使", ({"hell guard", "guard"}));
-	set("long", "这是一位来自阴界的守护神，专门担任护法之责。\n");
+	set_name("閰嗛兘楝间娇", ({"hell guard", "guard"}));
+	set("long", "杩欐槸涓�浣嶆潵鑷槾鐣岀殑瀹堟姢绁烇紝涓撻棬鎷呬换鎶ゆ硶涔嬭矗銆俓n");
 	set("attitude", "friendly");
 	set("class", "youling");
 	set("max_gin", 600);
@@ -34,7 +34,7 @@ void create()
 
 	set("chat_chance", 15);
 	set("chat_msg_combat", ({
-		name() + "喝道：孽障！随我赴阴司受审吧。\n"
+		name() + "鍠濋亾锛氬闅滐紒闅忔垜璧撮槾鍙稿彈瀹″惂銆俓n"
 	}) );
 
 	set_skill("parry", 70);
@@ -66,8 +66,8 @@ int heal_up()
 void leave()
 {
 	message("vision", "\n" +
-		HIB + name() + "说道：谁与我们阴府作对，那不是自讨苦吃吗！\n\n"
-		+ name() + "的身形发出幽暗的蓝光，沉入地下不见了。\n\n" NOR, environment(),
+		HIB + name() + "璇撮亾锛氳皝涓庢垜浠槾搴滀綔瀵癸紝閭ｄ笉鏄嚜璁ㄨ嫤鍚冨悧锛乗n\n"
+		+ name() + "鐨勮韩褰㈠彂鍑哄菇鏆楃殑钃濆厜锛屾矇鍏ュ湴涓嬩笉瑙佷簡銆俓n\n" NOR, environment(),
 		this_object() );
 	destruct(this_object());
 }

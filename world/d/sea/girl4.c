@@ -5,12 +5,12 @@ inherit ROOM;
 
 void create()
 {
-  set ("short", "ÔÆ·¿");
+  set ("short", "äº‘æˆ¿");
   set ("long", @LONG
 
-Õû¸ö·¿¼äÏóÊÇ°üÔÚÒ»ÍÅÔÆÖÐ¡£ÌýËµÊÇµ±ÄêÁúÍõÓëÌ«ÉÏÀÏ¾ý´ò¶ÄÓ®À´
-µÄ¡£ÔÚÕâÀïÁ·Îä(lianwu)¸Ðµ½ÇáÆ®Æ®µÄ£¬¶ÔÁ·Ï°Çá¹¦È´ÊÇÓÐÄª´óµÄ
-ºÃ´¦¡£
+æ•´ä¸ªæˆ¿é—´è±¡æ˜¯åŒ…åœ¨ä¸€å›¢äº‘ä¸­ã€‚å¬è¯´æ˜¯å½“å¹´é¾™çŽ‹ä¸Žå¤ªä¸Šè€å›æ‰“èµŒèµ¢æ¥
+çš„ã€‚åœ¨è¿™é‡Œç»ƒæ­¦(lianwu)æ„Ÿåˆ°è½»é£˜é£˜çš„ï¼Œå¯¹ç»ƒä¹ è½»åŠŸå´æ˜¯æœ‰èŽ«å¤§çš„
+å¥½å¤„ã€‚
 LONG);
 set("exits", ([ /* sizeof() == 4 */
 "north" : __DIR__"girl2",
@@ -36,29 +36,29 @@ int do_dodge()
 {
 	object me=this_player();
 
-	if( (string)me->query("family/family_name")!="¶«º£Áú¹¬" ){
-		if( (string)me->query_temp("family/family_name")!="¶«º£Áú¹¬"){
-		message_vision("$NÔÚÔÆÉÏÌøÁË¼¸Ìø£¬½ÅÏÂÒ»¸ö²»ÎÈ£¬¹àÁËÒ»¶Ç×ÓË®¡£\n", me);
+	if( (string)me->query("family/family_name")!="ä¸œæµ·é¾™å®«" ){
+		if( (string)me->query_temp("family/family_name")!="ä¸œæµ·é¾™å®«"){
+		message_vision("$Nåœ¨äº‘ä¸Šè·³äº†å‡ è·³ï¼Œè„šä¸‹ä¸€ä¸ªä¸ç¨³ï¼ŒçŒäº†ä¸€è‚šå­æ°´ã€‚\n", me);
   if (me->query("water")<me->max_water_capacity())         me->set("water", (int)me->max_water_capacity());
 		return 1;
 		}
 	}
 
 	if( (int)me->query_skill("dodge")  >= 50)
-		return notify_fail("ÄãµÄÇá¹¦ÒÑ¾­ºÜ¸ßÁË£¬ÔÙÁ·Ò²°ï²»ÁË¶àÉÙÁË¡£\n");
+		return notify_fail("ä½ çš„è½»åŠŸå·²ç»å¾ˆé«˜äº†ï¼Œå†ç»ƒä¹Ÿå¸®ä¸äº†å¤šå°‘äº†ã€‚\n");
 
         if( (int)me->query_skill("dodge",1)  >= 150)
                 return
-notify_fail("ÄãµÄÇá¹¦ÒÑ¾­ºÜ¸ßÁË£¬ÔÙÁ·Ò²°ï²»ÁË¶àÉÙÁË¡£\n");
+notify_fail("ä½ çš„è½»åŠŸå·²ç»å¾ˆé«˜äº†ï¼Œå†ç»ƒä¹Ÿå¸®ä¸äº†å¤šå°‘äº†ã€‚\n");
 
 
 	if( (int)me->query("kee") < 30 )
-		return notify_fail("ÄãÏÖÔÚºÜÀÛ£¬ÐªÐª°É£¡\n");
+		return notify_fail("ä½ çŽ°åœ¨å¾ˆç´¯ï¼Œæ­‡æ­‡å§ï¼\n");
 	if( (int)me->query("sen") < 50 )
-		return notify_fail("ÄãµÄ¾«Éñ²»¼Ã£¬ÐªÐª°É£¡\n");
+		return notify_fail("ä½ çš„ç²¾ç¥žä¸æµŽï¼Œæ­‡æ­‡å§ï¼\n");
 
-	message_vision("$NÔÚ°ëÔÆ°ëÎíÖÐÁ·ÁËÆðÀ´£¬¿´ÆðÀ´ÇáÆ®Æ®µÄ¡£\n", me);
-	tell_object(me, "ÄãµÄ¡¸»ù±¾Çá¹¦¡¹½ø²½ÁË¡£\n");
+	message_vision("$Nåœ¨åŠäº‘åŠé›¾ä¸­ç»ƒäº†èµ·æ¥ï¼Œçœ‹èµ·æ¥è½»é£˜é£˜çš„ã€‚\n", me);
+	tell_object(me, "ä½ çš„ã€ŒåŸºæœ¬è½»åŠŸã€è¿›æ­¥äº†ã€‚\n");
 	me->improve_skill("dodge", (int)me->query_int()/5);
 	me->receive_damage("kee", 20+random(5));
 	

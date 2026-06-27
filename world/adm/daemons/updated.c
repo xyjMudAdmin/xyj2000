@@ -14,12 +14,12 @@ void check_user(object ob, int reconnect)
     string key;
     int i,j,k;
 
-	//check if daoxing ²»¶éÂÖ»Ø 
+	//check if daoxing ä¸å •è½®å› 
 	if( RANK_D->grade_dx( RANK_D->describe_dx( (int)ob->query("daoxing") ) ) 
-		                >= RANK_D->grade_dx(HIC "²»¶éÂÖ»Ø" NOR) )
+		                >= RANK_D->grade_dx(HIC "ä¸å •è½®å›" NOR) )
         {
             ob->announce_live_forever(ob->query("name")+
-    "µÄµÀĞĞ´ïµ½ÁË²»¶éÂÖ»ØµÄ¾³½ç£¬´Ó´ËÌø³öÈı½çÍâ£¬²»ÔÚÎåĞĞÖĞ£¬ÓÀÎŞÉúËÀ´óÏŞÁË£¡");    
+    "çš„é“è¡Œè¾¾åˆ°äº†ä¸å •è½®å›çš„å¢ƒç•Œï¼Œä»æ­¤è·³å‡ºä¸‰ç•Œå¤–ï¼Œä¸åœ¨äº”è¡Œä¸­ï¼Œæ°¸æ— ç”Ÿæ­»å¤§é™äº†ï¼");    
         }
 	
 	//set player's life time here.
@@ -108,7 +108,7 @@ void check_user(object ob, int reconnect)
 	      {
 	        if (ob->query("family/family_name"))
 	          ob->set("title",
-	                    sprintf("%sµÚ%s´ú%s",
+	                    sprintf("%sç¬¬%sä»£%s",
 	                            ob->query("family/family_name"),
 	                            chinese_number(ob->query("family/generation")),
 	                            ob->query("family/title")));
@@ -128,7 +128,7 @@ void check_user(object ob, int reconnect)
 	    {
 	      /*
 	      ob->set("title",
-	                sprintf("%sµÚ%s´ú%s",
+	                sprintf("%sç¬¬%sä»£%s",
 	                        ob->query("family/family_name"),
 	                        chinese_number(ob->query("family/generation")),
 	                        ob->query("family/title")));
@@ -199,19 +199,19 @@ void check_user(object ob, int reconnect)
 	      ob->set("obstacle/wuzhuang","done");
 
 	// by snowcat
-	// the following is a filter for ¶«º£Áú¹¬
+	// the following is a filter for ä¸œæµ·é¾™å®«
 	{
           string tmpstr;
 
           tmpstr = ob->query("family/family_name");
-	  if (tmpstr == "Áú¹¬")
-	    ob->set("family/family_name","¶«º£Áú¹¬");
+	  if (tmpstr == "é¾™å®«")
+	    ob->set("family/family_name","ä¸œæµ·é¾™å®«");
 
           tmpstr = ob->query("title");
-	  if (tmpstr == "Áú¹¬µÚ¶ş´úµÜ×Ó")
-	    ob->set("title","¶«º£Áú¹¬µÚ¶ş´úµÜ×Ó");
-	  if (tmpstr == "Áú¹¬µÚÈı´úµÜ×Ó")
-	    ob->set("title","¶«º£Áú¹¬µÚÈı´úµÜ×Ó");
+	  if (tmpstr == "é¾™å®«ç¬¬äºŒä»£å¼Ÿå­")
+	    ob->set("title","ä¸œæµ·é¾™å®«ç¬¬äºŒä»£å¼Ÿå­");
+	  if (tmpstr == "é¾™å®«ç¬¬ä¸‰ä»£å¼Ÿå­")
+	    ob->set("title","ä¸œæµ·é¾™å®«ç¬¬ä¸‰ä»£å¼Ÿå­");
 	}
 
 	// by snowcat

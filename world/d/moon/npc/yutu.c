@@ -9,9 +9,9 @@ void endfight();
 void reward(object,object,object,int);
 
 void create() {
-  set_name("ÓñÍÃ",({"yu tu","tu","rabbit"}));
-  set("long","Ò»Ö»»îÆÃ¿É°®µÄĞ¡°×ÍÃ£¬ºìÑÛ¾¦£¬Èı°ê×ì£¬Á½Ö»¶ú¶ä³¤ºõºõ¡£\n");
-  set("gender","Å®ĞÔ");
+  set_name("ç‰å…”",({"yu tu","tu","rabbit"}));
+  set("long","ä¸€åªæ´»æ³¼å¯çˆ±çš„å°ç™½å…”ï¼Œçº¢çœ¼ç›ï¼Œä¸‰ç“£å˜´ï¼Œä¸¤åªè€³æœµé•¿ä¹ä¹ã€‚\n");
+  set("gender","å¥³æ€§");
   set("age",10);
   set("per",999);
   set("str",30+random(10));
@@ -31,9 +31,9 @@ void create() {
   set_skill("dodge", 20);
   
   set("limbs", ({
-               "Í·²¿", "¾±²¿", "ĞØ¿Ú", "ºóĞÄ", "Î²°Í","¶ú¶ä",
-               "×ó×¦", "ÓÒ×¦", "Ñü¼ä", "Ğ¡¸¹", "Ç°ÍÈ", "ºóÍÈ",
-               "Ç°×¦", "ºó×¦" }) );
+               "å¤´éƒ¨", "é¢ˆéƒ¨", "èƒ¸å£", "åå¿ƒ", "å°¾å·´","è€³æœµ",
+               "å·¦çˆª", "å³çˆª", "è…°é—´", "å°è…¹", "å‰è…¿", "åè…¿",
+               "å‰çˆª", "åçˆª" }) );
 
   setup();
   carry_object("/d/moon/obj/daoyaochu")->wield();
@@ -44,7 +44,7 @@ void create() {
   set("chat_chance",3);
   set("chat_chance_combat", 4);
   set("chat_msg_combat", ({
-        (CYN"ÓñÍÃÔ½´òÔ½¸ßĞË£¬¿ÚÖĞÁ¬ºô£º¡°ºÃÍæ£¬ºÃÍæ£¡ÔÙ´ò£¬ÔÙ´ò£¡¡±\n"NOR),
+        (CYN"ç‰å…”è¶Šæ‰“è¶Šé«˜å…´ï¼Œå£ä¸­è¿å‘¼ï¼šâ€œå¥½ç©ï¼Œå¥½ç©ï¼å†æ‰“ï¼Œå†æ‰“ï¼â€\n"NOR),
         (: endfight :),
       }) );
 }
@@ -52,10 +52,10 @@ void create() {
 void endfight() {
   command("surrender");
   if (random(2)) {
-    command("say Äã´òµÄÎÒºÃÍ´£¬²»ºÍÄãÍæÁË¡£");
+    command("say ä½ æ‰“çš„æˆ‘å¥½ç—›ï¼Œä¸å’Œä½ ç©äº†ã€‚");
     command("angry");
   } else {
-      command("say ²»´òÁË£¬²»´òÁË£¬ÄãÌ«²»¾­´òÁË¡£");
+      command("say ä¸æ‰“äº†ï¼Œä¸æ‰“äº†ï¼Œä½ å¤ªä¸ç»æ‰“äº†ã€‚");
       command("sigh");
     }
   random_move();
@@ -74,7 +74,7 @@ int accept_fight(object me)
 {
   //if (!is_fighting()) {
     command("jump");
-    command("say ×ÜËãÓĞÈËÅãÎÒÍæÁË¡£");
+    command("say æ€»ç®—æœ‰äººé™ªæˆ‘ç©äº†ã€‚");
     kill_ob(me);
     return 1;
 }

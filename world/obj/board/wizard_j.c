@@ -5,10 +5,10 @@ inherit "/std/jboard";
 
 void create()
 {
-	set_name("巫师工作进度报告", ({ "job board", "board" }) );
+	set_name("宸笀宸ヤ綔杩涘害鎶ュ憡", ({ "job board", "board" }) );
 	set("location", "/d/wiz/jobroom");
 	set("board_id", "wizard_j");
-	set("long",	"这是一个特殊的留言板供巫师报告自己的工作进度。\n" );
+	set("long",	"杩欐槸涓�涓壒娈婄殑鐣欒█鏉夸緵宸笀鎶ュ憡鑷繁鐨勫伐浣滆繘搴︺�俓n" );
 	setup();
 	replace_program("/std/jboard");
 }

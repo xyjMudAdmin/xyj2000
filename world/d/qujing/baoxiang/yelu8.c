@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "Ò°Â·");
+  set ("short", "é‡è·¯");
   set ("long", @LONG
 
-Ò°Â·µÀÂ·Ï¸³¤Æéá«£¬Æğ·ü²»Í£¡£ËÄÖÜÔ¶Ô¶¶¼ÊÇ´óĞ¡É½ÂÍ£¬µÍÍİ´¦
-ÊÇÒ»Æ¬ÊªÊªµÄÕÓÔóµØ´ø£¬¿´²»¼ûÈË¼äÑÌ»ğ¡£×ßÔÚÉ½Â·ÉÏ¾²ÇÄÇÄ£¬
-ÎíÆøÅ¨Óô£¬²»ÓÉµÃÈÃÈËĞ¡ĞÄ¼Ó¿ì²½·¥¡£
+é‡è·¯é“è·¯ç»†é•¿å´å²–ï¼Œèµ·ä¼ä¸åœã€‚å››å‘¨è¿œè¿œéƒ½æ˜¯å¤§å°å±±å³¦ï¼Œä½æ´¼å¤„
+æ˜¯ä¸€ç‰‡æ¹¿æ¹¿çš„æ²¼æ³½åœ°å¸¦ï¼Œçœ‹ä¸è§äººé—´çƒŸç«ã€‚èµ°åœ¨å±±è·¯ä¸Šé™æ‚„æ‚„ï¼Œ
+é›¾æ°”æµ“éƒï¼Œä¸ç”±å¾—è®©äººå°å¿ƒåŠ å¿«æ­¥ä¼ã€‚
 
 LONG);
 
@@ -48,7 +48,7 @@ int valid_leave (object who, string dir)
       object ob = new (__DIR__"npc/nuzi");
       ob->move(where);
     }
-    return notify_fail("ÄãÑÛÇ°ÉíÓ°Ò»»Î£¬ËÆºõÓĞË­µ²×¡ÁËÄãµÄÂ·¡£\n");
+    return notify_fail("ä½ çœ¼å‰èº«å½±ä¸€æ™ƒï¼Œä¼¼ä¹æœ‰è°æŒ¡ä½äº†ä½ çš„è·¯ã€‚\n");
   }
   if (who->query_temp("obstacle/baoxiang_killed_furen") == 0)
   {
@@ -58,7 +58,7 @@ int valid_leave (object who, string dir)
       ob->move(where);
     }
     if (present ("fu ren",where))
-    return notify_fail("ÄãÑÛÇ°ÉíÓ°Ò»»Î£¬ËÆºõÓĞË­µ²×¡ÁËÄãµÄÂ·¡£\n");
+    return notify_fail("ä½ çœ¼å‰èº«å½±ä¸€æ™ƒï¼Œä¼¼ä¹æœ‰è°æŒ¡ä½äº†ä½ çš„è·¯ã€‚\n");
   }
   if (who->query_temp("obstacle/baoxiang_killed_gonggong") == 0)
   {
@@ -67,7 +67,7 @@ int valid_leave (object who, string dir)
       object ob = new (__DIR__"npc/gonggong");
       ob->move(where);
     }
-    return notify_fail("ÄãÑÛÇ°ÉíÓ°Ò»»Î£¬ËÆºõÓĞË­µ²×¡ÁËÄãµÄÂ·¡£\n");
+    return notify_fail("ä½ çœ¼å‰èº«å½±ä¸€æ™ƒï¼Œä¼¼ä¹æœ‰è°æŒ¡ä½äº†ä½ çš„è·¯ã€‚\n");
   }
   return ::valid_leave (who, dir);
 }

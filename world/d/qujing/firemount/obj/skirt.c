@@ -8,14 +8,14 @@ inherit CLOTH;
 
 void create()
 {
-  set_name(HIG "°Å½¶È¹" NOR, ({ "palm skirt", "skirt" }) );
+  set_name(HIG "èŠ­è•‰è£™" NOR, ({ "palm skirt", "skirt" }) );
   set_weight(1000);
   if (clonep())
     set_default_object(__FILE__);
   else
   {
-    set("long", "Ò»ÌõÂÌÉ«µÄ°ÙÒ¶°Å½¶È¹¡£\n");
-    set("unit", "Ìõ");
+    set("long", "ä¸€æ¡ç»¿è‰²çš„ç™¾å¶èŠ­è•‰è£™ã€‚\n");
+    set("unit", "æ¡");
     set("value", 0);
     set("material", "cloth");
     set("armor_prop/armor", 10);

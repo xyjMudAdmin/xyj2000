@@ -6,18 +6,18 @@ inherit ITEM;
 
 void create()
 {
-  set_name( HIY"¾Å×ª½ğµ¤"NOR , ({"jiuzhuan jindan", "jindan","dan"}));
+  set_name( HIY"ä¹è½¬é‡‘ä¸¹"NOR , ({"jiuzhuan jindan", "jindan","dan"}));
   set_weight(120);
   if (clonep())
     set_default_object(__FILE__);
   else {
-    set("unit", "¿Å");
-    set("long","Ò»¿Å½ğ¹âÉÁÉÁµÄÏÉµ¤£¬ÄËÊÇÌ«ÉÏÀÏ¾ıÎªÓñµÛµÄµ¤Ôª´ó»áÌØ±ğÁ¶ÖÆ¶ø³É£¬·şÖ®ÑÓÄêÒæÊÙ¡£\n");
+    set("unit", "é¢—");
+    set("long","ä¸€é¢—é‡‘å…‰é—ªé—ªçš„ä»™ä¸¹ï¼Œä¹ƒæ˜¯å¤ªä¸Šè€å›ä¸ºç‰å¸çš„ä¸¹å…ƒå¤§ä¼šç‰¹åˆ«ç‚¼åˆ¶è€Œæˆï¼Œæœä¹‹å»¶å¹´ç›Šå¯¿ã€‚\n");
     set("value", 800000);
     set("no_sell", 1);
-    set("no_drop","ÄãÉáµÃ£¿\n");
-    set("no_give","ÄãÉáµÃ£¿\n");
-    set("drug_type", "²¹Æ·");
+    set("no_drop","ä½ èˆå¾—ï¼Ÿ\n");
+    set("no_give","ä½ èˆå¾—ï¼Ÿ\n");
+    set("drug_type", "è¡¥å“");
   }
   setup();
   call_out("self_dest",600);
@@ -28,7 +28,7 @@ void self_dest()
     object env;
     if(this_object()) {
         if(env=environment(this_object()))
-            tell_object(env,name()+"µôÔÚµØÉÏ²»¼ûÁË¡£\n");
+            tell_object(env,name()+"æ‰åœ¨åœ°ä¸Šä¸è§äº†ã€‚\n");
         destruct(this_object());
     }
 }
@@ -47,31 +47,31 @@ int do_eat(string arg)
     return 0;
   
   if (environment()!=me) {
-     write("ÄãÉíÉÏÃ»ÓĞ½ğµ¤¡£\n");
+     write("ä½ èº«ä¸Šæ²¡æœ‰é‡‘ä¸¹ã€‚\n");
      return 1;
   }
   if (r<30) r=30;
 
-  message_vision(HIG "$NÄóÆğ½ğµ¤ËÍ½ø×ìÀï£¬Èç½À³´¶¹°ã³ÔÁË¡£\n" NOR, me);
+  message_vision(HIG "$Næèµ·é‡‘ä¸¹é€è¿›å˜´é‡Œï¼Œå¦‚åš¼ç‚’è±†èˆ¬åƒäº†ã€‚\n" NOR, me);
   me->set("dntg/laojun","done");
   if (time()-me->query("jindan_last_eaten")<ONEDAY) return 1;
   if (random(r)>28) {
-    tell_object(me, HIG"Äã¶ÙÊ±¾õµÃÉíÇáÌå½¡£¬Æ®Æ®ÓûÏÉ£¡\n"NOR);
+    tell_object(me, HIG"ä½ é¡¿æ—¶è§‰å¾—èº«è½»ä½“å¥ï¼Œé£˜é£˜æ¬²ä»™ï¼\n"NOR);
     me->add("life/life_time",1);
     MONITOR_D->report_system_object_msg(me," eats jindan and gets 1 year life time.\n" );
   me->set("jindan_last_eaten",time());
   } else {
-      tell_object(me,HIR"ÄãÍ»È»¾õµÃÍ·ÔÎÑÛ»¨£¬ËÄÖ«·¦Á¦£¬·³ÃÆÓûÅ»£¬Ô­À´ÄãÎŞ¸£ÏûÊÜÏÉµ¤£¬Ç¦¹¯ÖĞ¶¾ÁË¡£\n"NOR);
+      tell_object(me,HIR"ä½ çªç„¶è§‰å¾—å¤´æ™•çœ¼èŠ±ï¼Œå››è‚¢ä¹åŠ›ï¼Œçƒ¦é—·æ¬²å‘•ï¼ŒåŸæ¥ä½ æ— ç¦æ¶ˆå—ä»™ä¸¹ï¼Œé“…æ±ä¸­æ¯’äº†ã€‚\n"NOR);
   me->add("bad_jindan",1);
   if (me->query("bad_jindan")>40) {
     me->delete("bad_jindan");
-    me->set_temp("death_msg","·şÊ³½ğÊ¯ÏÉµ¤¹ıÁ¿£¬ÖĞ¶¾¶øËÀ¡£\n");
+    me->set_temp("death_msg","æœé£Ÿé‡‘çŸ³ä»™ä¸¹è¿‡é‡ï¼Œä¸­æ¯’è€Œæ­»ã€‚\n");
     me->die();
     me->delete_temp("death_msg");
     return 1;
   }
       if (!random(3)) {
-        tell_object(me,HIR"ÄãÃÍµØÏëÆğººÎäµÛÒòÎó·şµ¤Ò©¶øÒ»ÃüÎØºôµÄÍùÊÂ£¬²»ÓÉÏÅµÃĞÄµ¨¾ãÁÑ£¬»ê·ÉÆÇÉ¢¡£\n"NOR);
+        tell_object(me,HIR"ä½ çŒ›åœ°æƒ³èµ·æ±‰æ­¦å¸å› è¯¯æœä¸¹è¯è€Œä¸€å‘½å‘œå‘¼çš„å¾€äº‹ï¼Œä¸ç”±å“å¾—å¿ƒèƒ†ä¿±è£‚ï¼Œé­‚é£é­„æ•£ã€‚\n"NOR);
         me->unconcious();
       }
   }

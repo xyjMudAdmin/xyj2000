@@ -5,15 +5,15 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ɽ��");
+  set ("short", "山门");
   set ("long", @LONG
 
-�������Ϻ�����ɽ��ɽ�ţ�ɽ����д�ţ�
+这里是南海普陀山的山门，山门上写着：
 
-     ��ƿ��¶����ʢ��б�崹�������ࡣ
-     ��٤ɽ�ϴȱ�������������������
+     净瓶甘露年年盛，斜插垂杨岁岁青。
+     落伽山上慈悲主，潮音洞里活观音。
 
-�����ɽ���أ��������죡
+真个仙山宝地，福岛洞天！
 
 LONG);
 
@@ -26,7 +26,7 @@ LONG);
   "southdown" : __DIR__"shanglu",
 ]));
 
-  create_door("north", "ʯ��", "south", DOOR_CLOSED);
+  create_door("north", "石门", "south", DOOR_CLOSED);
 set("valid_startroom", 1);
 setup();
 

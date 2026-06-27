@@ -9,7 +9,7 @@ int main(object me, string arg)
 {
 	string *txt;
 
-	if( !arg ) return notify_fail("Ö¸Áî¸ñÊ½£ºdescribe <ÃèÊö>\n");
+	if( !arg ) return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šdescribe <æè¿°>\n");
 
 	if( arg=="none" ) {
 	        me->delete("long");
@@ -20,7 +20,7 @@ int main(object me, string arg)
 
 	txt = explode(arg, "\n");
 	if( (wizardp(me) && sizeof(txt) > 20) || sizeof(txt) > 8 )
-		return notify_fail("Çë½«Äú¶Ô×Ô¼ºµÄÃèÊö¿ØÖÆÔÚ°ËĞĞÒÔÄÚ¡£\n");
+		return notify_fail("è¯·å°†æ‚¨å¯¹è‡ªå·±çš„æè¿°æ§åˆ¶åœ¨å…«è¡Œä»¥å†…ã€‚\n");
 
 	arg = implode(txt, "\n") + "\n";
 
@@ -49,12 +49,12 @@ int main(object me, string arg)
 int help()
 {
 	write(@TEXT
-Ö¸Áî¸ñÊ½£ºdescribe <ÃèÊö>
+æŒ‡ä»¤æ ¼å¼ï¼šdescribe <æè¿°>
 
-Õâ¸öÖ¸ÁîÈÃÄãÉè¶¨µ±±ğÈËÓÃ look Ö¸Áî¿´ÄãÊ±£¬¶ÔÄãµÄÃèÊö£¬Í¨³£µ±Äã
-µÄÃèÊö³¬¹ıÒ»ĞĞÊ±¿ÉÒÔÓÃ to describe µÄ·½Ê½À´ÊäÈë¡£
+è¿™ä¸ªæŒ‡ä»¤è®©ä½ è®¾å®šå½“åˆ«äººç”¨ look æŒ‡ä»¤çœ‹ä½ æ—¶ï¼Œå¯¹ä½ çš„æè¿°ï¼Œé€šå¸¸å½“ä½ 
+çš„æè¿°è¶…è¿‡ä¸€è¡Œæ—¶å¯ä»¥ç”¨ to describe çš„æ–¹å¼æ¥è¾“å…¥ã€‚
 
-È¡Ïû£ºdescribe none
+å–æ¶ˆï¼šdescribe none
 
 TEXT
 	);

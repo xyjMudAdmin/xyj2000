@@ -7,9 +7,9 @@ inherit F_VENDOR_SALE;
 void create()
 {
   reload("tianzhu_huang_tang");
-  set_name("»ÆÌÀ", ({"huang tang", "huang", "tang"}));
+  set_name("é»„æ±¤", ({"huang tang", "huang", "tang"}));
   set("shop_id", ({"huangtang", "huang", "tang"}));
-  set("gender", "ÄÐÐÔ");
+  set("gender", "ç”·æ€§");
   set("combat_exp", 90000);
   set("age", 38);
   set("per", 21);

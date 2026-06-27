@@ -4,11 +4,11 @@ inherit "/d/wiz/no_get";
 
 void create ()
 {
-	set ("short", "Ë¯·¿");
+	set ("short", "ç¡æˆ¿");
 	set ("long", @LONG
 
-Ë¯·¿ÖÐÕûÆëµÄ°Ú×Å¶þÈýÊ®¸öÈíé½£¬ÉÏÃæÆÌ×ÅÐþÉ«µÄ±»×Ó¡£ÊÒÖÐ
-·Ç³£µÄ°²¾²£¬Å¼¶û´ÓÍâÃæµÄÖñÁÖÖÐ´«À´Ò»Á½ÉùÄñ½Ð¡£
+ç¡æˆ¿ä¸­æ•´é½çš„æ‘†ç€äºŒä¸‰åä¸ªè½¯æ¦»ï¼Œä¸Šé¢é“ºç€çŽ„è‰²çš„è¢«å­ã€‚å®¤ä¸­
+éžå¸¸çš„å®‰é™ï¼Œå¶å°”ä»Žå¤–é¢çš„ç«¹æž—ä¸­ä¼ æ¥ä¸€ä¸¤å£°é¸Ÿå«ã€‚
 LONG);
 
   set("no_magic",1);

@@ -5,8 +5,8 @@ inherit NPC;
 
 void create()
 {
-  set_name("ÇÇÀÏ°å", ({ "qiao laoban", "qiao", "laoban" }) );
-  set("gender", "ÄĞĞÔ");
+  set_name("ä¹”è€æ¿", ({ "qiao laoban", "qiao", "laoban" }) );
+  set("gender", "ç”·æ€§");
   set("age", 40);
   set("combat_exp", 10000+random(1000));
   set("attitude", "heroism");
@@ -35,8 +35,8 @@ int random_move ()
   object me = this_object ();
 
   if (random(2))
-    message_vision ("$N¾íÆğĞä×Ó¡£\n",me);
+    message_vision ("$Nå·èµ·è¢–å­ã€‚\n",me);
   else
-    message_vision ("$NÄÃÆğÒ»°Ñ¶çÈâµ¶£¬ÏëÏëÓÖ½«µ¶Íù×À±ßÒ»ÈÓ¡£\n",me);
+    message_vision ("$Næ‹¿èµ·ä¸€æŠŠå‰è‚‰åˆ€ï¼Œæƒ³æƒ³åˆå°†åˆ€å¾€æ¡Œè¾¹ä¸€æ‰”ã€‚\n",me);
 }
 

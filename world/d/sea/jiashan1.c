@@ -4,15 +4,15 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "¼ÙÉ½");
+  set ("short", "å‡å±±");
   set ("long", @LONG
 
-¼ÙÉ½ÉÏ¶àÓÐ¼âÊ¯Ááçç£¬ËÊ°ÎÊÝÏ÷¡£Ô¶¹ÛÈçÓÐÉ½ÔÆÍ»Ó¿£¬¼ÐÔÓ²ÝÄ¾ÄÛ
-ÂÌÂúÉ½¡£¼ÙÉ½ÉÏÈ´ÓÐÒ»Í­Ê¯£¬ÖÐÓÐÐ¡¿×(hole)¡£¼äÎÅÔ°ÖÐÐ¦ÒôÕóÕó£¬
-¼«ÊÇÈÈÄÖ¡£
+å‡å±±ä¸Šå¤šæœ‰å°–çŸ³çŽ²ç‘ï¼Œè€¸æ‹”ç˜¦å‰Šã€‚è¿œè§‚å¦‚æœ‰å±±äº‘çªæ¶Œï¼Œå¤¹æ‚è‰æœ¨å«©
+ç»¿æ»¡å±±ã€‚å‡å±±ä¸Šå´æœ‰ä¸€é“œçŸ³ï¼Œä¸­æœ‰å°å­”(hole)ã€‚é—´é—»å›­ä¸­ç¬‘éŸ³é˜µé˜µï¼Œ
+æžæ˜¯çƒ­é—¹ã€‚
 LONG);
   set("item_desc", ([ /* sizeof() == 1 */
-  "hole" : "¶´ÖÐËÆºõÊÇ¸ö»ú¹Ø£¬ÄÜ·Å(insert)ÏÂÊ²Ã´¶«Î÷¡£\n",
+  "hole" : "æ´žä¸­ä¼¼ä¹Žæ˜¯ä¸ªæœºå…³ï¼Œèƒ½æ”¾(insert)ä¸‹ä»€ä¹ˆä¸œè¥¿ã€‚\n",
 ]));
 
 
@@ -34,13 +34,13 @@ int do_insert(string arg)
         object mishi, ob, me;
 	me=this_player();
 	if( !arg )
-		return notify_fail("ÄãÒª·ÅÊ²Ã´¶«Î÷£¿\n");
+		return notify_fail("ä½ è¦æ”¾ä»€ä¹ˆä¸œè¥¿ï¼Ÿ\n");
 
 	if( !arg || arg!="yao pai" || !(ob=present(arg, me)) )
-		return notify_fail("ËÆºõ¿×ÖÐ·Å²»ÏÂÕâ¸ö¶«Î÷¡£\n");
+		return notify_fail("ä¼¼ä¹Žå­”ä¸­æ”¾ä¸ä¸‹è¿™ä¸ªä¸œè¥¿ã€‚\n");
 
 	if( !ob->query("longgong"))
-		return notify_fail("ËÆºõ¿×ÖÐ·Å²»ÏÂÕâ¸ö¶«Î÷¡£\n");
+		return notify_fail("ä¼¼ä¹Žå­”ä¸­æ”¾ä¸ä¸‹è¿™ä¸ªä¸œè¥¿ã€‚\n");
 
         if( !(mishi = find_object(__DIR__"mishi1")) )
                 mishi = load_object(__DIR__"mishi1");
@@ -48,8 +48,8 @@ int do_insert(string arg)
         if( mishi = find_object(__DIR__"mishi1") ) 
         {
                 set("exits/enter", __DIR__"mishi1");
-                message_vision("$N½«$nÈûÈëÐ¡¿×£¬Ö»Ìý¿¦¿¦¼¸Éù£¬Ò»×ù´óÊ¯ÒÆ¿ª£¬Â¶³öÏòÏÂÒ»¸öÍ¨¿Ú¡£\n", me, ob);
-                message("vision", "´óÊ¯±»ÈË´ÓÍâÍÆ¿ªÁË¡£¡£\n", mishi );
+                message_vision("$Nå°†$nå¡žå…¥å°å­”ï¼Œåªå¬å–€å–€å‡ å£°ï¼Œä¸€åº§å¤§çŸ³ç§»å¼€ï¼Œéœ²å‡ºå‘ä¸‹ä¸€ä¸ªé€šå£ã€‚\n", me, ob);
+                message("vision", "å¤§çŸ³è¢«äººä»Žå¤–æŽ¨å¼€äº†ã€‚ã€‚\n", mishi );
 		mishi->set("exits/out", __DIR__"jiashan1");
 		destruct(ob);
         call_out("close_down", 10);
@@ -61,9 +61,9 @@ void close_down()
 {
         object mishi;
 
-        message("vision", "´óÊ¯ºäµØÓÖ»Øµ½Ô­Î»¡£\n", this_object() );
+        message("vision", "å¤§çŸ³è½°åœ°åˆå›žåˆ°åŽŸä½ã€‚\n", this_object() );
         if( mishi= find_object(__DIR__"mishi1")) {
-        message("vision", "´óÊ¯ºäµØÓÖ»Øµ½Ô­Î»¡£\n", mishi);
+        message("vision", "å¤§çŸ³è½°åœ°åˆå›žåˆ°åŽŸä½ã€‚\n", mishi);
         mishi->delete("exits/out");
         }
 

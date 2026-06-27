@@ -5,10 +5,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("Ğ¡µÀÊ¿", ({"xiao dao", "dao"}));
-        set("gender", "ÄĞĞÔ" );
+        set_name("å°é“å£«", ({"xiao dao", "dao"}));
+        set("gender", "ç”·æ€§" );
         set("age", 13);
-        set("long", "Ò»¸öĞ¡µÀÊ¿£¬Õı¸ú×ÅÊ¦¸¸Á·Îä£®\n");
+        set("long", "ä¸€ä¸ªå°é“å£«ï¼Œæ­£è·Ÿç€å¸ˆçˆ¶ç»ƒæ­¦ï¼\n");
         set("combat_exp", 30);
         set("attitude", "peaceful");
         setup();

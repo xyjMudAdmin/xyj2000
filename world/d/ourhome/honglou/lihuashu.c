@@ -4,10 +4,10 @@ inherit ROOM;
 int number=1+random(10);
 void create ()
 {
-  set ("short", "Àæ»¨Ê÷ÏÂ");
+  set ("short", "æ¢¨èŠ±æ ‘ä¸‹");
   set ("long", @LONG
 
-     Àæ»¨ÔºÂäÈÜÈÜÔÂ£¬ÁøÐõ³ØÌÁµ­µ­·ç¡£
+     æ¢¨èŠ±é™¢è½æº¶æº¶æœˆï¼ŒæŸ³çµ®æ± å¡˜æ·¡æ·¡é£Žã€‚
 
 LONG);
 
@@ -25,18 +25,18 @@ int do_dig(string arg) {
   object wan,me=this_player();
 
   if (!arg && arg!="tree" && arg!="lihua tree")
-    return notify_fail("ÄãÒªÍÚÊ²Ã´£¿\n");
+    return notify_fail("ä½ è¦æŒ–ä»€ä¹ˆï¼Ÿ\n");
   
-  if (me->is_busy()) return notify_fail("ÐÝÏ¢Ò»»á¶ùÔÙÍÚ°É¡£\n");
+  if (me->is_busy()) return notify_fail("ä¼‘æ¯ä¸€ä¼šå„¿å†æŒ–å§ã€‚\n");
 
   me->add("kee",-50);
-  message_vision("$NÔÚÀæ»¨Ê÷ÏÂÍÚÁË°ëÌì£¬ÀÛµÃÂúÍ·´óº¹¡£\n",me);
+  message_vision("$Nåœ¨æ¢¨èŠ±æ ‘ä¸‹æŒ–äº†åŠå¤©ï¼Œç´¯å¾—æ»¡å¤´å¤§æ±—ã€‚\n",me);
   if (me->query("daoxing")<10000) {me->start_busy(3);return 1;}
   if (!random(5))
       if (!number)
-         message_vision("$NÍÚ³öÒ»¸öÏ¸´ÅÒ©Ì³£¬È´·¢ÏÖÀïÃæ¿Õ¿ÕÈçÒ²¡£\n",me);
+         message_vision("$NæŒ–å‡ºä¸€ä¸ªç»†ç£è¯å›ï¼Œå´å‘çŽ°é‡Œé¢ç©ºç©ºå¦‚ä¹Ÿã€‚\n",me);
       else {
-         message_vision("$NÍÚ³öÒ»¸öÏ¸´ÅÒ©Ì³£¬´ÓÀïÃæÄÃ³öÁËÒ»Á£Ò©Íè¡£\n",me);
+         message_vision("$NæŒ–å‡ºä¸€ä¸ªç»†ç£è¯å›ï¼Œä»Žé‡Œé¢æ‹¿å‡ºäº†ä¸€ç²’è¯ä¸¸ã€‚\n",me);
          wan=new("/d/obj/drug/lengxiangwan");
          if (!wan->move(me)) wan->move(this_object());
          number--;

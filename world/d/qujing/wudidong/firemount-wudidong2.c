@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "Сɽͷ");
+  set ("short", "小山头");
   set ("long", @LONG
 
-����һ��Сɽͷ���������ܿ���ƬƬ���̵ĵ�������׶���������
-ɽ�Ѿ�ֻʣһ��ģ���������ˡ�
+爬上一个小山头，西边已能看到片片碧绿的稻田。而回首东望，火焰
+山已经只剩一个模糊的轮廓了。
 LONG);
 
   set("exits", ([ /* sizeof() == 2 */

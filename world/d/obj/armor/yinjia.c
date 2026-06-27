@@ -5,13 +5,13 @@ inherit ARMOR;
 
 void create()
 {
-        set_name("ÁÁÒø¼×", ({"silver armor", "jia", "armor"}));
+        set_name("äº®é“¶ç”²", ({"silver armor", "jia", "armor"}));
         set_weight(30000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼ş");
-	        set("long", "Ò»¼şÒø¹â²Ó²ÓµÄ¿ø¼×£®\n");
+                set("unit", "ä»¶");
+	        set("long", "ä¸€ä»¶é“¶å…‰ç¿ç¿çš„ç›”ç”²ï¼\n");
                 set("value", 5000);
                 set("material", "iron");
                 set("armor_prop/armor", 45);

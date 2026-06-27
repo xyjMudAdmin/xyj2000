@@ -4,12 +4,12 @@ void consider();
 
 void create()
 {
-        set_name("ÁÖ¹ÚÓê", ({"lin guanyu", "lin"}));
+        set_name("æ—å† é›¨", ({"lin guanyu", "lin"}));
         set("age", 42);
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("long",
-"¹Å¶­µêµÄÀÏ°å£¬Ğ¦ÃĞÃĞµÄ¿´×ÅÄã¡£\nµ«Ğ¦ÈİµÄºóÃæºÃÏóÓÖÓĞÒ»Ë¿£®£®£®\n");
-	set("title", "¹Å¶­µêÀÏ°å");
+"å¤è‘£åº—çš„è€æ¿ï¼Œç¬‘çœ¯çœ¯çš„çœ‹ç€ä½ ã€‚\nä½†ç¬‘å®¹çš„åé¢å¥½è±¡åˆæœ‰ä¸€ä¸ï¼ï¼ï¼\n");
+	set("title", "å¤è‘£åº—è€æ¿");
         set("attitude", "friendly");
 
         set("combat_exp", 20000);
@@ -39,7 +39,7 @@ void create()
 }
 int accept_fight(object me)
 {
-        command("say ±ğ£¬±ğ£¬ÎÒÕâÀï¶«Î÷¶¼ÊÇ±¦±´£¬Åö»µÁË¿É²»µÃÁË£¡\n");
+        command("say åˆ«ï¼Œåˆ«ï¼Œæˆ‘è¿™é‡Œä¸œè¥¿éƒ½æ˜¯å®è´ï¼Œç¢°åäº†å¯ä¸å¾—äº†ï¼\n");
         return 0;
 }
 
@@ -53,7 +53,7 @@ void consider()
                 if( !living(enemy[i]) ) continue;
                         flag++;
 		if(     !query_temp("weapon") ) {
-                command("say ¼ÈÈ»¸óÏÂ±ÆÈËÌ«Éõ£¬ÎÒÒ²²»ÔÙÊÖÏÂÁôÇéÁË£¡\n");
+                command("say æ—¢ç„¶é˜ä¸‹é€¼äººå¤ªç”šï¼Œæˆ‘ä¹Ÿä¸å†æ‰‹ä¸‹ç•™æƒ…äº†ï¼\n");
                         command("wield sword");
 
                         break;

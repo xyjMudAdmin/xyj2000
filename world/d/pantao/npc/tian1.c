@@ -1,6 +1,6 @@
 // cracked by vikee 2/09/2002   vikee@263.net
 // by snowcat 5/6/1997
-// tian1.c ÌìÉñ
+// tian1.c å¤©ç¥
 #include "tian.h"
 
 inherit NPC;
@@ -15,8 +15,8 @@ void create()
 {
   set_name(get_honor_str(), ({ "tian shen", "shen", "tian" }) );
   set("title", get_respect_str());
-  set("gender", "ÄĞĞÔ" );
-  set("long",get_respect_str()+"¡£\n");
+  set("gender", "ç”·æ€§" );
+  set("long",get_respect_str()+"ã€‚\n");
   set("current_player","none of us");
 
   setup();

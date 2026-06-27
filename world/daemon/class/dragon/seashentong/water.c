@@ -17,19 +17,19 @@ int cast(object me, object target)
 	||      !target->is_character()
 	||      target->is_corpse()
 	||      target==me)
-		return notify_fail("ÄãÒªÒýÁúÉñÏ®»÷Ë­£¿\n");
+		return notify_fail("ä½ è¦å¼•é¾™ç¥žè¢­å‡»è°ï¼Ÿ\n");
 
 	if((int)me->query("mana") < 100+2*(int)me->query("mana_factor") )
-		return notify_fail("ÄãµÄ·¨Á¦²»¹»£¡\n");
+		return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿï¼\n");
 
 	if((int)me->query("sen") < 100 )
-		return notify_fail("ÄãÎÞ·¨¼¯ÖÐ¾«Á¦£¡\n");
+		return notify_fail("ä½ æ— æ³•é›†ä¸­ç²¾åŠ›ï¼\n");
 
 	me->add("mana", -25-2*(int)me->query("mana_factor"));
 	me->receive_damage("sen", 50);
 
 	if( random(me->query("max_mana")) < 50 ) {
-		message_vision(HIM"$N¿ÚÖÐÄîÄîÓÐ´Ê¡£¡£¡£µ«Ê²Ã´Ò²Ã»ÓÐ·¢Éú£¡\n"NOR,me);
+		message_vision(HIM"$Nå£ä¸­å¿µå¿µæœ‰è¯ã€‚ã€‚ã€‚ä½†ä»€ä¹ˆä¹Ÿæ²¡æœ‰å‘ç”Ÿï¼\n"NOR,me);
 		return 1;
 	}
 	
@@ -45,16 +45,16 @@ int cast(object me, object target)
 			//damage adjustment
 		"qi", 		
 			//damage type: could be "qi"/"kee", "shen"/"sen", ...default "both"
-HIM"\n$NºóÍË¼¸²½£¬¿ÚÖÐÄîÁË¼¸¾äÖäÎÄ£¬´ó½ÐÒ»Éù£º¡°ÉñÁúºÎÔÚ£¿¡°
-°ë¿ÕÖÐºôµØÏÖ³öÁ½ÌõÆøÊÆÍþÃÍµÄÒø½Ç±³²ÔÁú£¬×ÝÉíÒ»ÍÂ£¬Á½¹ÉÆæº®ÎÞ±ÈµÄË®ÖùÅçÏò$n\n"NOR,
+HIM"\n$NåŽé€€å‡ æ­¥ï¼Œå£ä¸­å¿µäº†å‡ å¥å’’æ–‡ï¼Œå¤§å«ä¸€å£°ï¼šâ€œç¥žé¾™ä½•åœ¨ï¼Ÿâ€œ
+åŠç©ºä¸­å‘¼åœ°çŽ°å‡ºä¸¤æ¡æ°”åŠ¿å¨çŒ›çš„é“¶è§’èƒŒè‹é¾™ï¼Œçºµèº«ä¸€åï¼Œä¸¤è‚¡å¥‡å¯’æ— æ¯”çš„æ°´æŸ±å–·å‘$n\n"NOR,
 			//initial message
-HIR"\n½á¹û$n¶ã±Ü²»¼°£¬±»Ë®Öù¼¤¸öÕý×Å£¡\n"NOR,
+HIR"\nç»“æžœ$nèº²é¿ä¸åŠï¼Œè¢«æ°´æŸ±æ¿€ä¸ªæ­£ç€ï¼\n"NOR,
 			//success message
-HIC"\n½á¹û±»$n¶ã¿ªÁË¡£\n"NOR,
+HIC"\nç»“æžœè¢«$nèº²å¼€äº†ã€‚\n"NOR,
 			//fail message
-HIR"µ«Ë®ÊÆ±»$nÒÔ·¨Á¦·´¼¤£¬·´Ïò$NÉäÈ¥£¡\n" NOR,
+HIR"ä½†æ°´åŠ¿è¢«$nä»¥æ³•åŠ›åæ¿€ï¼Œåå‘$Nå°„åŽ»ï¼\n" NOR,
 			//backfire initial message
-HIR"\n½á¹û$n¶ã±Ü²»¼°£¬±»Ë®Öù¼¤¸öÕý×Å£¡\n"NOR,
+HIR"\nç»“æžœ$nèº²é¿ä¸åŠï¼Œè¢«æ°´æŸ±æ¿€ä¸ªæ­£ç€ï¼\n"NOR,
 			//backfire hit message. note here $N and $n!!!
 	);
 

@@ -1,12 +1,12 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// jiading.c ¼Ò¶¡
+// jiading.c å®¶ä¸
 
 inherit NPC;
 
 void create()
 {
-  set_name("¼Ò½«", ({ "jia jiang", "jia", "jiang"}));
-  set("gender", "ÄĞĞÔ");
+  set_name("å®¶å°†", ({ "jia jiang", "jia", "jiang"}));
+  set("gender", "ç”·æ€§");
   set("age", 19+random(30));
   
   set("combat_exp", 200000+random(50000));

@@ -3,9 +3,9 @@ inherit NPC;
 
 void create()
 {
-  set_name("¹¬ÎÀ", ({ "gong wei", "wei" }));
+  set_name("å®«å«", ({ "gong wei", "wei" }));
   set("age", 35);
-  set("gender", "ÄĞĞÔ");
+  set("gender", "ç”·æ€§");
   set("attitude", "peaceful");
   set("str", 20);
   set("combat_exp", 20000);

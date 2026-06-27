@@ -9,14 +9,14 @@ inherit ITEM;
 
 void create()
 {
-  set_name("»¨×Ñ", ({ "seed"}));
+  set_name("èŠ±ç±½", ({ "seed"}));
   set_weight(100);
   if( clonep() )
     set_default_object(__FILE__);
   else
   {
-    set("long","Ò»¿ÅĞ¡Ğ¡µÄ»¨×Ñ¡£\n");
-    set("unit", "¿Å");
+    set("long","ä¸€é¢—å°å°çš„èŠ±ç±½ã€‚\n");
+    set("unit", "é¢—");
   }
   setup();
   call_out("need_water", 3, environment(this_object()));
@@ -45,15 +45,15 @@ void grow (object where)
   {
     if (random(6) == 0)
     {
-      message_vision ("»¨×ÑÕÀÁÑ¿ª£¬Â¶³öÁËÒ»¿ÅÂÌÑ¿¡£\n",who);
-      me->set_name("ÂÌÑ¿", ({ "germ"}));
-      //me->set("name","ÂÌÑ¿");
+      message_vision ("èŠ±ç±½ç»½è£‚å¼€ï¼Œéœ²å‡ºäº†ä¸€é¢—ç»¿èŠ½ã€‚\n",who);
+      me->set_name("ç»¿èŠ½", ({ "germ"}));
+      //me->set("name","ç»¿èŠ½");
       //me->set("id","germ");
-      me->set("long","Ò»¿ÅÕıÔÚ³¤´óµÄĞ¡ÂÌÑ¿¡£\n");
-      me->set("unit", "¿Å");
+      me->set("long","ä¸€é¢—æ­£åœ¨é•¿å¤§çš„å°ç»¿èŠ½ã€‚\n");
+      me->set("unit", "é¢—");
     }
     else
-      message_vision ("»¨×Ñ¶¯ÁËÒ»ÏÂ£¬ÕÍ´óÁËÒ»µãµã¡£\n",who);
+      message_vision ("èŠ±ç±½åŠ¨äº†ä¸€ä¸‹ï¼Œèƒ€å¤§äº†ä¸€ç‚¹ç‚¹ã€‚\n",who);
     return;
   }
 
@@ -61,15 +61,15 @@ void grow (object where)
   {
     if (random(9) == 0)
     {
-      message_vision ("ÂÌÑ¿ÖÕÓÚ³¤¸ßÁË£¬ÔÚ·çÖĞ»¶¿ìµØÒ¡ß®¡£\n",who);
-      me->set_name("ÂÌ²İ", ({ "plant"}));
-      //me->set("name","ÂÌ²İ");
+      message_vision ("ç»¿èŠ½ç»ˆäºé•¿é«˜äº†ï¼Œåœ¨é£ä¸­æ¬¢å¿«åœ°æ‘‡å¼‹ã€‚\n",who);
+      me->set_name("ç»¿è‰", ({ "plant"}));
+      //me->set("name","ç»¿è‰");
       //me->set("id","plant");
-      me->set("long","Ò»¿Ã×Â×³µÄÂÌ²İ£¬ÉÏÃæÓĞ»¨°ú¡£\n");
-      me->set("unit", "¿Ã");
+      me->set("long","ä¸€æ£µèŒå£®çš„ç»¿è‰ï¼Œä¸Šé¢æœ‰èŠ±è‹ã€‚\n");
+      me->set("unit", "æ£µ");
     }
     else
-      message_vision ("ÂÌÑ¿ßÇàêÒ»Éù³¤¸ßÁËÒ»½Ø¡£\n",who);
+      message_vision ("ç»¿èŠ½å’”åš“ä¸€å£°é•¿é«˜äº†ä¸€æˆªã€‚\n",who);
     return;
   }
 
@@ -78,7 +78,7 @@ void grow (object where)
     if (random(12) == 0)
     {
       object flower;
-      message_vision ("ÂÌ²İÉÏµÄ»¨°úÕÀ¿ªÁË£¡´ºÌìÀ´ÁË£¡\n",who);
+      message_vision ("ç»¿è‰ä¸Šçš„èŠ±è‹ç»½å¼€äº†ï¼æ˜¥å¤©æ¥äº†ï¼\n",who);
       flower = new (__DIR__"flower");
       flower->move(who);
       destruct(me);
@@ -88,11 +88,11 @@ void grow (object where)
       switch (random(3))
       {
         case 0:
-          { message_vision ("ÂÌ²İÔÚ·çÖĞÌøÆğÁËÎè¡£\n",who); break; }
+          { message_vision ("ç»¿è‰åœ¨é£ä¸­è·³èµ·äº†èˆã€‚\n",who); break; }
         case 1:
-          { message_vision ("ÂÌ²İÒª¿ª»¨ÁË¡£\n",who); break; }
+          { message_vision ("ç»¿è‰è¦å¼€èŠ±äº†ã€‚\n",who); break; }
         case 2:
-          { message_vision ("ÂÌ²İÎ¢Ğ¦×Å¡£\n",who); break; }
+          { message_vision ("ç»¿è‰å¾®ç¬‘ç€ã€‚\n",who); break; }
       }
     }
   }
@@ -119,18 +119,18 @@ void need_water (object where)
   switch (me->query("water"))
   {
     case 0:
-      { msg = name+"³¤¸ßÁËÒ»µã¡£\n"; break; }
+      { msg = name+"é•¿é«˜äº†ä¸€ç‚¹ã€‚\n"; break; }
     case 1:
-      { msg = name+"ÓĞµãÄèÁË£¬¿ìÁÜÒ»µãË®°É¡£\n"; break; }
+      { msg = name+"æœ‰ç‚¹è”«äº†ï¼Œå¿«æ·‹ä¸€ç‚¹æ°´å§ã€‚\n"; break; }
     case 2:
-      { msg = name+"¿ªÊ¼·¢»ÆÁË¡£\n"; break; }
+      { msg = name+"å¼€å§‹å‘é»„äº†ã€‚\n"; break; }
     case 3:
-      { msg = name+"ÒÑ¾­Ê§È¥ÁËÂÌÉ«µÄ¹âÔó¡£\n"; break; }
+      { msg = name+"å·²ç»å¤±å»äº†ç»¿è‰²çš„å…‰æ³½ã€‚\n"; break; }
     case 4:
-      { msg = name+"¿´ÉÏÈ¥ÑÏÖØÈ±Ë®£¬ÑÙÑÙÒ»Ï¢ÁË¡£\n"; break; }
+      { msg = name+"çœ‹ä¸Šå»ä¸¥é‡ç¼ºæ°´ï¼Œå¥„å¥„ä¸€æ¯äº†ã€‚\n"; break; }
     default:
-      { msg = name+"¸É¿İÁË¡£\n";
-        me->set("name","¸É"+name);
+      { msg = name+"å¹²æ¯äº†ã€‚\n";
+        me->set("name","å¹²"+name);
         me->set("dried",1);
         break; }
   }
@@ -153,7 +153,7 @@ int do_water (string arg)
 
   if (me->query("water") >= 5)
   {
-    message_vision ("$NµÄÀáË®Ò»µÎµÎÁ÷ÔÚ"+name+"ÉÏ¡£\n",who);
+    message_vision ("$Nçš„æ³ªæ°´ä¸€æ»´æ»´æµåœ¨"+name+"ä¸Šã€‚\n",who);
     return 1;
   }
 
@@ -170,23 +170,23 @@ int do_water (string arg)
   switch (random(9))
   {
     case 0:
-      { msg = "$N¿Úº¬ÇåË®£¬ÅçÔÚ"+name+"ÉÏ¡£\n"; break; }
+      { msg = "$Nå£å«æ¸…æ°´ï¼Œå–·åœ¨"+name+"ä¸Šã€‚\n"; break; }
     case 1:
-      { msg = "$N½«Ò»µãÇåË®È÷ÔÚ"+name+"ÉÏ¡£\n"; break; }
+      { msg = "$Nå°†ä¸€ç‚¹æ¸…æ°´æ´’åœ¨"+name+"ä¸Šã€‚\n"; break; }
     case 2:
-      { msg = "$NÉì³öÊÖ×¥×¡Ï¸Ï¸µÄĞ¡Óê£¬ÁÜÔÚ"+name+"ÉÏ¡£\n"; break; }
+      { msg = "$Nä¼¸å‡ºæ‰‹æŠ“ä½ç»†ç»†çš„å°é›¨ï¼Œæ·‹åœ¨"+name+"ä¸Šã€‚\n"; break; }
     case 3:
-      { msg = "$NĞ¡ĞÄµØÅõÆğÒ»µãµãÂ¶Ë®£¬µÎÔÚ"+name+"ÉÏ¡£\n"; break; }
+      { msg = "$Nå°å¿ƒåœ°æ§èµ·ä¸€ç‚¹ç‚¹éœ²æ°´ï¼Œæ»´åœ¨"+name+"ä¸Šã€‚\n"; break; }
     case 4:
-      { msg = "$NÒ»ÕóĞÄÍ´£¬ÀáË®Á÷ÔÚ"+name+"ÉÏ¡£\n";break; }
+      { msg = "$Nä¸€é˜µå¿ƒç—›ï¼Œæ³ªæ°´æµåœ¨"+name+"ä¸Šã€‚\n";break; }
     case 5:
-      { msg = "$NË«ÊÖÅõ×Å"+name+"£¬Éìµ½´°ÍâµÄĞ¡ÓêÖĞ¡­¡­\n";break; }
+      { msg = "$NåŒæ‰‹æ§ç€"+name+"ï¼Œä¼¸åˆ°çª—å¤–çš„å°é›¨ä¸­â€¦â€¦\n";break; }
     case 6:
-      { msg = "$N×ĞÏ¸µØÄÃÆğÒ»Ö»Ğ¡±­×Ó£¬½«Ë®µÎÔÚ"+name+"ÉÏ¡£\n";break; }
+      { msg = "$Nä»”ç»†åœ°æ‹¿èµ·ä¸€åªå°æ¯å­ï¼Œå°†æ°´æ»´åœ¨"+name+"ä¸Šã€‚\n";break; }
     case 7:
-      { msg = "$NÅõÆğ´ÓÒ°Íâ²ÉÀ´µÄ³¿Â¶£¬È÷ÔÚ"+name+"ÉÏ¡£\n";break; }
+      { msg = "$Næ§èµ·ä»é‡å¤–é‡‡æ¥çš„æ™¨éœ²ï¼Œæ´’åœ¨"+name+"ä¸Šã€‚\n";break; }
     case 8:
-      { msg = "$NÓÃÊÖÖ¸Õº×ÅÇåË®£¬Ò»µãµãµÎÔÚ"+name+"ÉÏ¡£\n";break; }
+      { msg = "$Nç”¨æ‰‹æŒ‡è˜¸ç€æ¸…æ°´ï¼Œä¸€ç‚¹ç‚¹æ»´åœ¨"+name+"ä¸Šã€‚\n";break; }
   }
   message_vision (msg,who);
   me->set("water",0);

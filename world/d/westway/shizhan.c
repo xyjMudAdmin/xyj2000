@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "Ê¯Õ»µÀ");
+  set ("short", "çŸ³æ ˆé“");
   set ("long", @LONG
 
-ÕâÊÇÒ»Ìõ¼«³¤µÄÓÃ´óÊ¯¿éÆÌ³ÉµÄÕ»µÀ£¬Ô¶´¦Õ»µÀÉì½øÊ¯ÆÂ£¬²»
-µÃ²»ÔÚÓÐµÄµØ·½ÔäÊ¯±ÙÂ·¼ÜÂ·¡£¾ÝËµÎ÷ÃæÔÙÔ¶Ò»µã¾ÍÊÇÖøÃûµÄ
-¼ÎÓø¹ØÁË£¬Íù¶«ÊÇÈ¥¾ÆÈªµÄ·½Ïò¡£
+è¿™æ˜¯ä¸€æ¡æžé•¿çš„ç”¨å¤§çŸ³å—é“ºæˆçš„æ ˆé“ï¼Œè¿œå¤„æ ˆé“ä¼¸è¿›çŸ³å¡ï¼Œä¸
+å¾—ä¸åœ¨æœ‰çš„åœ°æ–¹å‡¿çŸ³è¾Ÿè·¯æž¶è·¯ã€‚æ®è¯´è¥¿é¢å†è¿œä¸€ç‚¹å°±æ˜¯è‘—åçš„
+å˜‰å³ªå…³äº†ï¼Œå¾€ä¸œæ˜¯åŽ»é…’æ³‰çš„æ–¹å‘ã€‚
 
 LONG);
 
@@ -40,7 +40,7 @@ int greeting(object me)
 	object *list, ob;
 	int i;
 	if( !me || environment(me) != this_object() ) return 1;
-	tell_room(this_object(), "ÄãºöÈ»¾õµÃ½ÅÏÂµÄÊ¯°åËÉ¶¯ÁË¡­¡­¡­\n");
+	tell_room(this_object(), "ä½ å¿½ç„¶è§‰å¾—è„šä¸‹çš„çŸ³æ¿æ¾åŠ¨äº†â€¦â€¦â€¦\n");
 
 	list=all_inventory(this_object());
 	i=sizeof(list);
@@ -48,7 +48,7 @@ int greeting(object me)
 	{
 		ob=list[i];
 		ob->move("/d/westway/tielong");
-		message_vision("¡¸ßË¡¹µÄÒ»Éù£¬$N´Ó»ú¹Øµôµ½ÁËÌúÁýÖÐ¡­¡­¡­\n", ob);
+		message_vision("ã€Œå’šã€çš„ä¸€å£°ï¼Œ$Nä»Žæœºå…³æŽ‰åˆ°äº†é“ç¬¼ä¸­â€¦â€¦â€¦\n", ob);
 	}
 	this_object()->set("done");
 	call_out("reg", 300);

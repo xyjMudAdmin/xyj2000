@@ -6,11 +6,11 @@ inherit F_VENDOR_SALE;
 void create()
 {
   reload("laosun");
-  set_name("ÀÏËï", ({"lao sun", "sun"}));
-  set("title","Æ¤»õµêÀÏ°å");
-  set("gender", "ÄĞĞÔ");
+  set_name("è€å­™", ({"lao sun", "sun"}));
+  set("title","çš®è´§åº—è€æ¿");
+  set("gender", "ç”·æ€§");
   set("age", 58);
-  set("long","Ò»Î»³¤µÃÊİºïËÆµÄÀÏÍ·¡£\n");
+  set("long","ä¸€ä½é•¿å¾—ç˜¦çŒ´ä¼¼çš„è€å¤´ã€‚\n");
   set("attitude", "peaceful");
   set("combat_exp", 15000);
   set_skill("dodge", 30);
@@ -58,7 +58,7 @@ void accept_kill(object me)
                 ob=new("/d/city/npc/xunluobing");
                 ob->move(environment());
         }
-        message_vision("\nºöÈ»´ÓÃÅÍâ³å½øÀ´¸öÑ²Âß¹Ù±ø£¬¶Ô$N´óº°Ò»Éù¡°¸ÉÊ²Ã´£¿ÏëÉ±ÈËÄ±²ÆÃ´£¡\n\n",me);        
+        message_vision("\nå¿½ç„¶ä»é—¨å¤–å†²è¿›æ¥ä¸ªå·¡é€»å®˜å…µï¼Œå¯¹$Nå¤§å–Šä¸€å£°â€œå¹²ä»€ä¹ˆï¼Ÿæƒ³æ€äººè°‹è´¢ä¹ˆï¼\n\n",me);        
 
         ob->kill_ob(me);
         ob->set_leader(me);

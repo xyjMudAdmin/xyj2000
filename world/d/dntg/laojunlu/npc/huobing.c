@@ -3,19 +3,19 @@
 inherit NPC;
 
 string *names = ({
-  "»ğÁú",
-  "»ğÂí",
-  "»ğÑ»",
-  "»ğÊó",
+  "ç«é¾™",
+  "ç«é©¬",
+  "ç«é¸¦",
+  "ç«é¼ ",
 });
 
 
 void create()
 {
 	set_name(names[random(sizeof(names))], ({"huo bing", "bing"}));
-	set("gender", "ÄĞĞÔ" );
+	set("gender", "ç”·æ€§" );
 	set("age", 33);
-	set("long", "Ìì¹¬»ğ²¿Õ½½«£¬¾Ã¾«É³³¡¡£\n");
+	set("long", "å¤©å®«ç«éƒ¨æˆ˜å°†ï¼Œä¹…ç²¾æ²™åœºã€‚\n");
 	set("class", "xian");
 	set("combat_exp", 35000);
         set("daoxing", 1500000);
@@ -70,7 +70,7 @@ void die ()
   object me = this_object();
   object ob = query_temp("my_killer");
   ob->add_temp("dntg/laojunlu_day",1);
-  message_vision ("$NÏûÊ§ÔÚ»ğ¹âÖ®ÖĞ¡£\n",me);
+  message_vision ("$Næ¶ˆå¤±åœ¨ç«å…‰ä¹‹ä¸­ã€‚\n",me);
   destruct (this_object());
   return ;
 }

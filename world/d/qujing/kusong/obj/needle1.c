@@ -4,16 +4,16 @@ inherit DAGGER;
 
 void create()
 {
-        set_name("³İãÚ»·", ({"chique huan", "huan", "dagger"}));
+        set_name("é½¿é˜™ç¯", ({"chique huan", "huan", "dagger"}));
         set_weight(5000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
-                set("long", "ÕâÊÇÒ»±úÔ²Ìú»·£¬±ßÉÏÓĞ´Ì¿Ú¡£\n");
+                set("unit", "æŸ„");
+                set("long", "è¿™æ˜¯ä¸€æŸ„åœ†é“ç¯ï¼Œè¾¹ä¸Šæœ‰åˆºå£ã€‚\n");
                 set("value", 500);
                 set("material", "steel");
-                set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù³é³öÒ»±ú$nÎÕÔÚÊÖÖĞ¡£\n");
+                set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€å£°æŠ½å‡ºä¸€æŸ„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
         }
         init_dagger(10);
         setup();

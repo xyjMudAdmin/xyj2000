@@ -15,7 +15,7 @@ int main(object me, string arg)
 	seteuid(getuid());
 	
 	if( ! arg )
-		return notify_fail("whois <ÖĞÎÄÃû×Ö>\n");
+		return notify_fail("whois <ä¸­æ–‡åå­—>\n");
 	
 	all_user = users();
 	
@@ -25,14 +25,14 @@ int main(object me, string arg)
 	
 	switch(i){
 	case 0:
-		printf("ÔÚÏßµÄÃ»ÈË½Ğ%s¡£\n", arg);
+		printf("åœ¨çº¿çš„æ²¡äººå«%sã€‚\n", arg);
 		break;
 	case 1:
-		printf("%sµÄÓ¢ÎÄÃû×ÖÊÇ"BOLD"%s¡£\n"NOR,
+		printf("%sçš„è‹±æ–‡åå­—æ˜¯"BOLD"%sã€‚\n"NOR,
 			arg, named_user[0]->query("id"));
 		break;
 	default:
-		printf("Ò»¹²ÓĞ%s¸öÔÚÏßÍæ¼Ò½Ğ%s£º\n", chinese_number(i), arg);
+		printf("ä¸€å…±æœ‰%sä¸ªåœ¨çº¿ç©å®¶å«%sï¼š\n", chinese_number(i), arg);
 		while(i --)
 			printf(BOLD"%s\n"NOR, named_user[i]->query("id"));
 		break;
@@ -52,9 +52,9 @@ int check_name(object who, string arg)
 int help(object me)
 {
     write(@HELP
-Ö¸Áî¸ñÊ½£ºwhois <ÖĞÎÄÃû×Ö> 
+æŒ‡ä»¤æ ¼å¼ï¼šwhois <ä¸­æ–‡åå­—> 
  
-Õâ¸öÖ¸Áî¿ÉÒÔ¸ù¾İÍæ¼ÒµÄÖĞÎÄÃû×Ö²é³öÏàÓ¦µÄÓ¢ÎÄ£é£ä¡£ 
+è¿™ä¸ªæŒ‡ä»¤å¯ä»¥æ ¹æ®ç©å®¶çš„ä¸­æ–‡åå­—æŸ¥å‡ºç›¸åº”çš„è‹±æ–‡ï½‰ï½„ã€‚ 
 HELP
     );
 	return 1;

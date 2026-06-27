@@ -5,17 +5,17 @@ inherit NPC;
 
 void create()
 {
-	set_name(HIY"ÌÆÌ«×Ú"NOR, ({ "tang taizong", "tang", "emperor" }));
-	set("gender", "ÄĞĞÔ");
+	set_name(HIY"å”å¤ªå®—"NOR, ({ "tang taizong", "tang", "emperor" }));
+	set("gender", "ç”·æ€§");
 	set("age", 50);
 	set("per", 30);
 	set("str", 20);
 	set("dex", 20);
-	set("long", "ÌÆÌ«×ÚÀîÊÀÃñ£¬·á×ËÓ¢Î°£¬²½ÂÄ¶ËÏê¡£\n");
+	set("long", "å”å¤ªå®—æä¸–æ°‘ï¼Œä¸°å§¿è‹±ä¼Ÿï¼Œæ­¥å±¥ç«¯è¯¦ã€‚\n");
 	set("combat_exp", 60000);
 	set("attitude", "heroism");
-	set("rank_info/respect", "ÍòËêÒ¯");
-	set("rank_info/rude", "ÎŞµÀ»è¾ı");
+	set("rank_info/respect", "ä¸‡å²çˆ·");
+	set("rank_info/rude", "æ— é“æ˜å›");
 
 	set_skill("unarmed", 80);
 	set_skill("force", 80);

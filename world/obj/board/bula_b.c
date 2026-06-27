@@ -3,12 +3,12 @@ inherit BULLETIN_BOARD;
 
 void create()
 {
-	set_name("±Ê¼Ç±¾", ({"board"}) );
+	set_name("ç¬”è®°æœ¬", ({"board"}) );
 set("location", "/u/bula/workroom");
 set("board_id", "bula_b");
 set("capacity", 100);
 set("long", "
-©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n");
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n");
         setup();
         replace_program(BULLETIN_BOARD);
 }

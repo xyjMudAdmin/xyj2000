@@ -18,12 +18,12 @@ int cast(object me, object target)
         if( !target ) target = offensive_target(me);
 
         if( (int)me->query("mana") < 100 )
-                return notify_fail("ÄãµÄ·¨Á¦²»¹»£¡\n");
+                return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿï¼\n");
 
         if( (int)me->query("sen") < 100 )
-                return notify_fail("ÄãµÄ¾«ÉñÎŞ·¨¼¯ÖĞ£¡\n");
+                return notify_fail("ä½ çš„ç²¾ç¥æ— æ³•é›†ä¸­ï¼\n");
 
-        message_vision(HIC"$Nà«à«µØÄîÁË¼¸¾äÖäÓï¡£\n"NOR, me);
+        message_vision(HIC"$Nå–ƒå–ƒåœ°å¿µäº†å‡ å¥å’’è¯­ã€‚\n"NOR, me);
 
 	a=(int)me->query_skill("spells");
 	a=a*a*a/10;
@@ -60,7 +60,7 @@ int success_move(object me)
 	string* dirs;
 	dirs=({"/d/sea/", "/d/qujing/bibotan/"});
 
-	message_vision(HIC"\n$NµÄ½ÅÏÂÍ»È»Ó¿ÆğÒ»¹ÉË®²¨£¬Ë®Á÷¹ıºó£¬$NËæÖ®²»¼ûÁË£¡\n"NOR, me);
+	message_vision(HIC"\n$Nçš„è„šä¸‹çªç„¶æ¶Œèµ·ä¸€è‚¡æ°´æ³¢ï¼Œæ°´æµè¿‡åï¼Œ$Néšä¹‹ä¸è§äº†ï¼\n"NOR, me);
 
 	random_go(me, dirs);
 	
@@ -90,7 +90,7 @@ int random_go(object me, string* dirs)
 			return 1;
 		}
                 me->move( newob ); 
-message_vision(HIC"\nÍ»È»Ò»ÕóË®²¨Ó¿Æğ£¬$N´ÓÖĞ×ßÁË³öÀ´£¡\n"NOR, me);
+message_vision(HIC"\nçªç„¶ä¸€é˜µæ°´æ³¢æ¶Œèµ·ï¼Œ$Nä»ä¸­èµ°äº†å‡ºæ¥ï¼\n"NOR, me);
         }
         else  {
                 seteuid(getuid());
@@ -102,7 +102,7 @@ message_vision(HIC"\nÍ»È»Ò»ÕóË®²¨Ó¿Æğ£¬$N´ÓÖĞ×ßÁË³öÀ´£¡\n"NOR, me);
 				return 1;
 			}
                         me->move(newob);
-message_vision(HIC"\nÍ»È»Ò»ÕóË®²¨Ó¿Æğ£¬$N´ÓÖĞ×ßÁË³öÀ´£¡\n"NOR, me);
+message_vision(HIC"\nçªç„¶ä¸€é˜µæ°´æ³¢æ¶Œèµ·ï¼Œ$Nä»ä¸­èµ°äº†å‡ºæ¥ï¼\n"NOR, me);
 	}
         else  {
                         tell_object(me, "Error.\n");
@@ -115,7 +115,7 @@ message_vision(HIC"\nÍ»È»Ò»ÕóË®²¨Ó¿Æğ£¬$N´ÓÖĞ×ßÁË³öÀ´£¡\n"NOR, me);
 
 int failure_move(object me, object target)
 {
-	message_vision(HIR"$NµÄ½ÅÏÂÍ»È»Ó¿ÆğÒ»¹ÉË®²¨£¬È´±»$nÊ¶ÆÆ£¬$NÃ»ÄÜÅÜµô£¡\n"NOR, me, target);
+	message_vision(HIR"$Nçš„è„šä¸‹çªç„¶æ¶Œèµ·ä¸€è‚¡æ°´æ³¢ï¼Œå´è¢«$nè¯†ç ´ï¼Œ$Næ²¡èƒ½è·‘æ‰ï¼\n"NOR, me, target);
 	me->start_busy(3+random(3));
 	return 5+random(5);
 }

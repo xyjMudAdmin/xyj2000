@@ -5,17 +5,17 @@ inherit F_MASTER;
 
 void create()
 {
-       set_name("µûÒÂ",({"butterfly","die yi", "fairy"}));
+       set_name("è¶è¡£",({"butterfly","die yi", "fairy"}));
        set("long",
-"ÆäÏÉñÇÕ§Æ®Ùâ£¬ÎÅ÷êÀ¼Ö®ğ¥Óô£»ºÉ»¨Óû¶¯Ùâ£¬Ìı»·ÅåÖ®ï¬ïÏ¡£ØÌĞ¦´º
-ÌÒÙâ£¬ÔÆ÷Ù¶Ñ´ä£»´½ÕÀÓ£¿ÅÙâ£¬Áñ³İº¬Ïã¡£ÏËÑüÖ®³şÙâ£¬Èô·ç»ØÑ©Îè
+"å…¶ä»™è¢‚ä¹é£˜å…®ï¼Œé—»éºå…°ä¹‹é¦¥éƒï¼›è·èŠ±æ¬²åŠ¨å…®ï¼Œå¬ç¯ä½©ä¹‹é“¿é”µã€‚é¥ç¬‘æ˜¥
+æ¡ƒå…®ï¼Œäº‘é«»å †ç¿ ï¼›å”‡ç»½æ¨±é¢—å…®ï¼Œæ¦´é½¿å«é¦™ã€‚çº¤è…°ä¹‹æ¥šå…®ï¼Œè‹¥é£å›é›ªèˆ
 \n");
-       set("title", "ÔÂ¹¬ÎèÏÉ");
-       set("gender", "Å®ĞÔ");
+       set("title", "æœˆå®«èˆä»™");
+       set("gender", "å¥³æ€§");
        set("age", 18);
        set("class", "xian");
        set("attitude", "friendly");
-       set("rank_info/respect", "ÏÉ¹Ã");
+       set("rank_info/respect", "ä»™å§‘");
        set("per", 30);
 	set("int", 30);
        set("max_kee", 800);
@@ -49,7 +49,7 @@ void create()
         map_skill("parry", "snowsword");
         map_skill("dodge", "moondance");
 
-create_family("ÔÂ¹¬", 2, "µÜ×Ó");
+create_family("æœˆå®«", 2, "å¼Ÿå­");
 setup();
 
         carry_object("/d/obj/cloth/luoyi")->wear();
@@ -57,4 +57,3 @@ setup();
 }
 
 
-ÿ

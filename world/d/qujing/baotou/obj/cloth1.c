@@ -4,12 +4,12 @@
 inherit CLOTH;
 
 string *names = ({
-  "����Ƥ",
-  "�׻�Ƥ",
-  "�ڻ�Ƥ",
-  "��ʨƤ",
-  "��ëʨƤ",
-  "ɽèƤ",
+  "花豹皮",
+  "白虎皮",
+  "黑虎皮",
+  "金狮皮",
+  "卷毛狮皮",
+  "山猫皮",
 });
 
 string *ids = ({
@@ -29,7 +29,7 @@ void create()
   if ( clonep() )
      set_default_object(__FILE__);
   else {
-   set("unit", "��");
+   set("unit", "件");
    set("value", 500);
    set("material", "leather");
    set("armor_prop/armor", 15);

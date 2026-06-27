@@ -6,10 +6,10 @@ int do_serve();
 
 void create ()
 {
-  set ("short", "×º½õ¸ó");
+  set ("short", "ç¼€é”¦é˜");
   set ("long", @LONG
 
-¡¡¡¡´ó¹ÛÂ¥¶«Ãæ·ÉÂ¥¡£
+ã€€ã€€å¤§è§‚æ¥¼ä¸œé¢é£æ¥¼ã€‚
 
 LONG);
 
@@ -39,7 +39,7 @@ int do_serve()
 
         obn = new("/obj/example/chicken_leg");
         obn->move(room);
-        message_vision("Ê³ÎïºÍË®³öÏÖÔÚ$NÑÛÇ°¡£\n", who);
+        message_vision("é£Ÿç‰©å’Œæ°´å‡ºç°åœ¨$Nçœ¼å‰ã€‚\n", who);
 
         return 1;
 }

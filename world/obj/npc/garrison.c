@@ -7,11 +7,11 @@ inherit NPC;
 
 void create()
 {
-	set_name("县城官兵", ({ "town garrison", "garrison" }) );
+	set_name("鍘垮煄瀹樺叺", ({ "town garrison", "garrison" }) );
 	set("long",
-		"这是个正在执行公务的县城官兵，虽然和许\多武林人物比起来，官兵\n"
-		"们的武功\实在稀松平常，但是他们是有组织、有纪律的战士，谁也不\n"
-		"轻易地招惹他们。\n");
+		"杩欐槸涓鍦ㄦ墽琛屽叕鍔＄殑鍘垮煄瀹樺叺锛岃櫧鐒跺拰璁竆澶氭鏋椾汉鐗╂瘮璧锋潵锛屽畼鍏礬n"
+		"浠殑姝﹀姛\瀹炲湪绋�鏉惧钩甯革紝浣嗘槸浠栦滑鏄湁缁勭粐銆佹湁绾緥鐨勬垬澹紝璋佷篃涓峔n"
+		"杞绘槗鍦版嫑鎯逛粬浠�俓n");
 
 	set("attitude", "heroism");
 	set("vendetta_mark", "authority");
@@ -30,8 +30,8 @@ void create()
 
 	set("chat_chance_combat", 15);
 	set("chat_msg_combat", ({
-		"县城官兵喝道：还不快放下武器束手就缚？\n",
-		"县城官兵喝道：大胆刁民竟敢拒捕？反了！反了！\n"
+		"鍘垮煄瀹樺叺鍠濋亾锛氳繕涓嶅揩鏀句笅姝﹀櫒鏉熸墜灏辩細锛焅n",
+		"鍘垮煄瀹樺叺鍠濋亾锛氬ぇ鑳嗗垇姘戠珶鏁㈡嫆鎹曪紵鍙嶄簡锛佸弽浜嗭紒\n"
 	}) );
 
 	set_skill("unarmed", 70);

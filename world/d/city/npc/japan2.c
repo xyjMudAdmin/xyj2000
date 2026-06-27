@@ -9,12 +9,12 @@ void create()
 {
 
         seteuid(getuid());
-        set_name("Ğ¡Ğ¡ÙÁÔô", ({"little jap", "jap"}));
-        set("long", "Ò»¸öĞ¡ÙÁÔô£¬ÍµÍµÃşÃşµØÏëÔÚ³¤°²³ÇÀÌĞ©Ê²Ã´¡£\n");
-        set("gender",((random(2)==1)?"ÄĞĞÔ":"Å®ĞÔ"));
+        set_name("å°å°å€­è´¼", ({"little jap", "jap"}));
+        set("long", "ä¸€ä¸ªå°å€­è´¼ï¼Œå·å·æ‘¸æ‘¸åœ°æƒ³åœ¨é•¿å®‰åŸæäº›ä»€ä¹ˆã€‚\n");
+        set("gender",((random(2)==1)?"ç”·æ€§":"å¥³æ€§"));
         set("age",14);
         set("con",30);
-        set("per",2+10*(query("gender")=="Å®ĞÔ"));
+        set("per",2+10*(query("gender")=="å¥³æ€§"));
         set("str",25);
         set("int",15);
         
@@ -84,7 +84,7 @@ void do_drink()
       if(random(2)==1)
         command("sigh");
       else
-        command("say ÌòÁËÌò×ì´½£¬à«à«µÀ£ºÒªÊÇÓĞ¾Æ¾ÍºÃÁË£®£®£®");
+        command("say èˆ”äº†èˆ”å˜´å”‡ï¼Œå–ƒå–ƒé“ï¼šè¦æ˜¯æœ‰é…’å°±å¥½äº†ï¼ï¼ï¼");
     }
     return;
 }

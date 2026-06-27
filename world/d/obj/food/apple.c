@@ -1,18 +1,18 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// xueli.c Ñ©Àæ
+// xueli.c é›ªæ¢¨
 
 inherit ITEM;
 inherit F_FOOD;
 
 void create()
 {
-        set_name("Æ»¹û", ({"ping guo", "apple","pingguo"}));
+        set_name("è‹¹æœ", ({"ping guo", "apple","pingguo"}));
 	set_weight(40);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-                set("long", "ÓÖ´óÓÖ´àµÄÇàÆ»¹û¡£\n");
-                set("unit", "¿Å");
+                set("long", "åˆå¤§åˆè„†çš„é’è‹¹æœã€‚\n");
+                set("unit", "é¢—");
 		set("value", 50);
 		set("food_remaining", 4);
 		set("food_supply", 30);

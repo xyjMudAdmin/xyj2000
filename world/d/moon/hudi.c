@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ºþµ×");
+  set ("short", "æ¹–åº•");
   set ("long", @LONG
 
-µ½ÁËºþµ×Äã²ÅÃ÷°×£¢Á«³öÓÙÄà¶ø²»È¾£¢µÄÕæÕýº¬Òå£®
+åˆ°äº†æ¹–åº•ä½ æ‰æ˜Žç™½ï¼‚èŽ²å‡ºæ·¤æ³¥è€Œä¸æŸ“ï¼‚çš„çœŸæ­£å«ä¹‰ï¼Ž
 LONG);
   set("exits", ([ /* sizeof() == 3 */
   "up" : __DIR__"lotuspond",
@@ -24,7 +24,7 @@ void init()
 
 int valid_leave(object me, string dir)
 {
-    	message_vision("$NÆ´ÃüÕõÔú×ÅÅÀÉÏ°¶£¬¶Ç×ÓÀï¹àÂúÁËË®£®\n", me);
+    	message_vision("$Næ‹¼å‘½æŒ£æ‰Žç€çˆ¬ä¸Šå²¸ï¼Œè‚šå­é‡ŒçŒæ»¡äº†æ°´ï¼Ž\n", me);
 	me->set("water", (int)me->max_water_capacity());
 	return ::valid_leave(me, dir);
 }
@@ -34,13 +34,13 @@ int do_dig(string arg)
   object me=this_player();
   object m; 
   if( (!arg) || !((arg == "lotusroot") || (arg == "root") || (arg == "ou")))
-    return notify_fail("ÍÚÊ²Ã´£¿\n");
+    return notify_fail("æŒ–ä»€ä¹ˆï¼Ÿ\n");
   else
     {
-      message_vision("$NÓÃÊÖÅÙÁËÓÙÄàÁ½ÏÂ£¬Ï£ÍûÄÜÅªµãÅº³Ô£®\n", me);
+      message_vision("$Nç”¨æ‰‹åˆ¨äº†æ·¤æ³¥ä¸¤ä¸‹ï¼Œå¸Œæœ›èƒ½å¼„ç‚¹è—•åƒï¼Ž\n", me);
       if (random(6) < 1)
         {
-       		 message_vision("$NÅÙ°¡ÅÙ£¬ÅÙµ½Ò»¿Ã´óÁ«Åº£®\n", me);
+       		 message_vision("$Nåˆ¨å•Šåˆ¨ï¼Œåˆ¨åˆ°ä¸€æ£µå¤§èŽ²è—•ï¼Ž\n", me);
 		 m = new(__DIR__"obj/ou.c");
        	   	 m->move(this_player()); 
 	}

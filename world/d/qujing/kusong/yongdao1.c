@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ğ®µÀ");
+  set ("short", "ç”¬é“");
   set ("long", @LONG
 
-ğ®µÀÄÚ·¢³öÒ»¹ÉÑªĞÈÆø¡£Ç½ÉÏ¹Ò×ÅÓÍµÆ£¬ºöÃ÷ºö°µµÄµÆ¹âÒşÒşÕÕ
-³öÁËÇ°ºóµÄµÀÂ·¡£ÄÏÃæÊÇÒ»ÉÈÊ¯ÃÅ¡£
+ç”¬é“å†…å‘å‡ºä¸€è‚¡è¡€è…¥æ°”ã€‚å¢™ä¸ŠæŒ‚ç€æ²¹ç¯ï¼Œå¿½æ˜å¿½æš—çš„ç¯å…‰éšéšç…§
+å‡ºäº†å‰åçš„é“è·¯ã€‚å—é¢æ˜¯ä¸€æ‰‡çŸ³é—¨ã€‚
 LONG);
   set("exits", ([ /* sizeof() == 4 */
   "south" : __DIR__"guaishiya", 
@@ -21,7 +21,7 @@ LONG);
 ]));
 
 
-  create_door("south", "Ê¯ÃÅ", "north", DOOR_CLOSED);
+  create_door("south", "çŸ³é—¨", "north", DOOR_CLOSED);
 
 
   setup();

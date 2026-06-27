@@ -12,56 +12,56 @@ int main(object me, string arg)
         if( !arg ) {
 		if(me->query_temp("protect") ) {
 			if( objectp(obj=find_living(me->query_temp("protect")) )){
-				tell_object(me, "ÄãÏÖÔÚÕıÔÚ±£»¤"+obj->query("name")+"¡£\n");
+				tell_object(me, "ä½ ç°åœ¨æ­£åœ¨ä¿æŠ¤"+obj->query("name")+"ã€‚\n");
 				return 1;
 			}
 		}
-		tell_object(me,"ÄãÒª±£»¤Ê²Ã´ÈË£¿\n");
+		tell_object(me,"ä½ è¦ä¿æŠ¤ä»€ä¹ˆäººï¼Ÿ\n");
 		return 1;
 	}
 	
 	if( arg=="me" || arg==me->query("id") )  
-                return notify_fail("ÄãÒª±£»¤Ê²Ã´ÈË£¿\n");
+                return notify_fail("ä½ è¦ä¿æŠ¤ä»€ä¹ˆäººï¼Ÿ\n");
 
         if( arg=="none") {
 		if( !me->query_temp("protect") ){
-			tell_object(me, "Äã²¢Ã»ÓĞ±£»¤ÈÎºÎÈË¡£\n");
+			tell_object(me, "ä½ å¹¶æ²¡æœ‰ä¿æŠ¤ä»»ä½•äººã€‚\n");
 			return 1;
 		}
                 if( objectp(obj=find_living(me->query_temp("protect")) )) {
-                        tell_object(obj, me->query("name")+"·ÅÆú±£»¤ÄãÁË¡£\n");
-			tell_object(me, "Äã·ÅÆú±£»¤"+obj->query("name")+"¡£\n");
+                        tell_object(obj, me->query("name")+"æ”¾å¼ƒä¿æŠ¤ä½ äº†ã€‚\n");
+			tell_object(me, "ä½ æ”¾å¼ƒä¿æŠ¤"+obj->query("name")+"ã€‚\n");
 			me->delete_temp("protect");
 			return 1;
 		}
-		tell_object(me, "Äã·ÅÆú±£»¤±ğÈË¡£\n");                
+		tell_object(me, "ä½ æ”¾å¼ƒä¿æŠ¤åˆ«äººã€‚\n");                
 		me->delete_temp("protect");                
 		return 1;
         }
 
 	if( !objectp(who=present(arg, environment(me))))
-		return notify_fail("ÄãÒª±£»¤Ê²Ã´ÈË£¿\n");
+		return notify_fail("ä½ è¦ä¿æŠ¤ä»€ä¹ˆäººï¼Ÿ\n");
 
 	if( !living(who) )
-		return notify_fail("Äã²»ÄÜ±£»¤"+who->query("name")+"¡£\n");
+		return notify_fail("ä½ ä¸èƒ½ä¿æŠ¤"+who->query("name")+"ã€‚\n");
 
 	if( me->query_temp("protect") == who->query("id") )
-		return notify_fail("ÄãÒÑ¾­ÔÚ±£»¤Õâ¸öÈËÁË¡£\n");
+		return notify_fail("ä½ å·²ç»åœ¨ä¿æŠ¤è¿™ä¸ªäººäº†ã€‚\n");
 
         if( time()-30 <= (int)me->query_temp("protect_time") )
-                return notify_fail("Äã±£»¤Ì«¶àÈËÁË¡£\n");
+                return notify_fail("ä½ ä¿æŠ¤å¤ªå¤šäººäº†ã€‚\n");
 
 	if((int)me->query_condition("no_pk_time") > 480 )
-		return notify_fail("Äã×î½üÉ±ÈËÌ«¶à¡£¡£¡£\n");
+		return notify_fail("ä½ æœ€è¿‘æ€äººå¤ªå¤šã€‚ã€‚ã€‚\n");
 
 	if( me->query_temp("protect") ) {
                 if( objectp(obj=find_living(me->query_temp("protect")) )) {
-                        tell_object(obj, me->query("name")+"·ÅÆú±£»¤ÄãÁË¡£\n");
-			tell_object(me, "Äã·ÅÆú±£»¤"+obj->query("name")+"¡£\n");
+                        tell_object(obj, me->query("name")+"æ”¾å¼ƒä¿æŠ¤ä½ äº†ã€‚\n");
+			tell_object(me, "ä½ æ”¾å¼ƒä¿æŠ¤"+obj->query("name")+"ã€‚\n");
 		}
         }
 
-	message_vision(HIC"$N¿ªÊ¼±£»¤$n¡£\n"NOR, me, who);
+	message_vision(HIC"$Nå¼€å§‹ä¿æŠ¤$nã€‚\n"NOR, me, who);
 
 	who->set_temp("protected", 1);
 	who->set_temp("protect_ob", me->query("id"));
@@ -74,9 +74,9 @@ int main(object me, string arg)
 int help(object me)
 {
    write( @HELP
-Ö¸Áî¸ñÊ½: protect [<ÈËÎï>|<NPC>|none]
+æŒ‡ä»¤æ ¼å¼: protect [<äººç‰©>|<NPC>|none]
 
-¿ªÊ¼±£»¤£¯·ÅÆú±£»¤Ä³ÈË¡£
+å¼€å§‹ä¿æŠ¤ï¼æ”¾å¼ƒä¿æŠ¤æŸäººã€‚
 HELP
    );
    return 1;

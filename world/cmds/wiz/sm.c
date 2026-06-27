@@ -34,23 +34,23 @@ int main(object me, string arg)
 	int  fabao_num;
 
 	if( me->query("combat_exp") < 20000)
-		return notify_fail("ÄãµÄµÀĞĞ²»¹»£¬²»ÄÜ×ÔÔì·¨±¦¡£\n");
+		return notify_fail("ä½ çš„é“è¡Œä¸å¤Ÿï¼Œä¸èƒ½è‡ªé€ æ³•å®ã€‚\n");
 	
 	if( me->query("max_force") < 300 )
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬²»ÄÜ×ÔÔì·¨±¦¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼Œä¸èƒ½è‡ªé€ æ³•å®ã€‚\n");
 		
 	if( me->query("max_mana") < 300)
-		return notify_fail("ÄãµÄ·¨Á¦²»¹»£¬²»ÄÜ×ÔÔì·¨±¦¡£\n");
+		return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿï¼Œä¸èƒ½è‡ªé€ æ³•å®ã€‚\n");
 	
 	if( me->query("force") < (me->query("max_force")+100) )
-		return notify_fail("ÄãµÄÕæÆø²»×ã£¬²»ÄÜ×ÔÔì·¨±¦¡£\n");
+		return notify_fail("ä½ çš„çœŸæ°”ä¸è¶³ï¼Œä¸èƒ½è‡ªé€ æ³•å®ã€‚\n");
 	
 	if( me->query("mana") < (me->query("max_mana")+100) )
-		return notify_fail("ÄãµÄÄ§Á¦²»×ã£¬²»ÄÜ×ÔÔì·¨±¦¡£\n");
+		return notify_fail("ä½ çš„é­”åŠ›ä¸è¶³ï¼Œä¸èƒ½è‡ªé€ æ³•å®ã€‚\n");
 	
 	if( me->query("kee") != me->query("max_kee") ||
 	    me->query("sen") != me->query("max_sen") ) 
-		return notify_fail("ÄãµÄ¾«Æø²»×ã£¬²»ÄÜ×ÔÔì·¨±¦¡£\n");
+		return notify_fail("ä½ çš„ç²¾æ°”ä¸è¶³ï¼Œä¸èƒ½è‡ªé€ æ³•å®ã€‚\n");
 
     fabao_num = 0;		
 	if( me->query("fabao/weapon") )		fabao_num++;
@@ -58,17 +58,17 @@ int main(object me, string arg)
 	if( me->query("fabao/armor2") )		fabao_num++;
 	
 	if( fabao_num >= MAX_FABAO )
-		return notify_fail("Äã²»ÄÜÔÙ×ÔÖÆ·¨±¦ÁË£¬ÇëÓÃ dispose »ÙÃğ²»ÒªµÄ·¨±¦¡£\n");
+		return notify_fail("ä½ ä¸èƒ½å†è‡ªåˆ¶æ³•å®äº†ï¼Œè¯·ç”¨ dispose æ¯ç­ä¸è¦çš„æ³•å®ã€‚\n");
 		
-	write("ÄúÒªÔìÄÄÀà·¨±¦£º\n");
+	write("æ‚¨è¦é€ å“ªç±»æ³•å®ï¼š\n");
 	if( !me->query("fabao/weapon") )
-		write("w. ÎäÆ÷\n");
+		write("w. æ­¦å™¨\n");
 	if( !me->query("fabao/armor1") || !me->query("fabao/armor2") )
-		write("a. ·À¾ß\n");
+		write("a. é˜²å…·\n");
 
 	// Other kinds of fabao can be added too.. if there is somefile
 	// we can use as a default object.
-	write("ÇëÑ¡Ôñ£º");
+	write("è¯·é€‰æ‹©ï¼š");
 	input_to( (: get_type :), me );
 	
 	return 1;	
@@ -79,12 +79,12 @@ void get_type(string arg, object ob)
 	if( (arg != "w" || ob->query("fabao/weapon"))
 	  && (arg != "a" || ( ob->query("fabao/armor1")
 	  && ob->query("fabao/armor2") )) )   {
-		write("ÄúÒªÔìÄÄÀà·¨±¦£º\n");
+		write("æ‚¨è¦é€ å“ªç±»æ³•å®ï¼š\n");
 		if( !ob->query("fabao/weapon") )
-			write("w. ÎäÆ÷\n");
+			write("w. æ­¦å™¨\n");
 		if( !ob->query("fabao/armor1") || !ob->query("fabao/armor2") )
-			write("a. ·À¾ß\n");
-		write("ÇëÑ¡Ôñ£º");
+			write("a. é˜²å…·\n");
+		write("è¯·é€‰æ‹©ï¼š");
 		input_to( (: get_type :), ob );
 		return;
 	}
@@ -92,18 +92,18 @@ void get_type(string arg, object ob)
 	if( arg == "w" )    {
 		fabao_type = "weapon";
 		write("\n");
-		write("¿ÉÑ¡ÔñÎäÆ÷ÖÖÀà£º\n");
-		write("1. ¸«  2. µ¶  3. ²æ  4. ´¸  5. ïµ  6. Ç¹\n");
-		write("7. ÕÈ  8. °ô  9. ½£  10. ±Ş\n");
-		write("ÇëÑ¡Ôñ£º");
+		write("å¯é€‰æ‹©æ­¦å™¨ç§ç±»ï¼š\n");
+		write("1. æ–§  2. åˆ€  3. å‰  4. é”¤  5. é”  6. æª\n");
+		write("7. æ–  8. æ£’  9. å‰‘  10. é­\n");
+		write("è¯·é€‰æ‹©ï¼š");
 	}
 	else if( arg == "a" )   {
 		fabao_type = "armor";	
 		write("\n");
-		write("¿ÉÑ¡Ôñ·À¾ßÖÖÀà£º\n");
-		write("1. ¼×  2. Ğ¬  3. ÒÂ·ş  4. Ö¸Ì×  5. »¤ÕÆ  6. Í·ÕÖ\n");
-		write("7. ²±Ì×  8. ¶Ü  9. Åû·ç  10. »¤Íó  11. Ñü´ø\n");
-		write("ÇëÑ¡Ôñ£º");
+		write("å¯é€‰æ‹©é˜²å…·ç§ç±»ï¼š\n");
+		write("1. ç”²  2. é‹  3. è¡£æœ  4. æŒ‡å¥—  5. æŠ¤æŒ  6. å¤´ç½©\n");
+		write("7. è„–å¥—  8. ç›¾  9. æŠ«é£  10. æŠ¤è…•  11. è…°å¸¦\n");
+		write("è¯·é€‰æ‹©ï¼š");
 	}
 	input_to( (: get_subtype :), ob);
 }
@@ -119,18 +119,18 @@ void get_subtype(string arg, object ob)
 		if( arg == "w" )    {
 			fabao_type = "weapon";
 			write("\n");
-			write("¿ÉÑ¡ÔñÎäÆ÷ÖÖÀà£º\n");
-			write("1. ¸«  2. µ¶  3. ²æ  4. ´¸  5. ïµ  6. Ç¹\n");
-			write("7. ÕÈ  8. °ô  9. ½£  10. ±Ş\n");
-			write("ÇëÑ¡Ôñ£º");
+			write("å¯é€‰æ‹©æ­¦å™¨ç§ç±»ï¼š\n");
+			write("1. æ–§  2. åˆ€  3. å‰  4. é”¤  5. é”  6. æª\n");
+			write("7. æ–  8. æ£’  9. å‰‘  10. é­\n");
+			write("è¯·é€‰æ‹©ï¼š");
 		}
 		else if( arg == "a" )   {
 			fabao_type = "armor";	
 			write("\n");
-			write("¿ÉÑ¡Ôñ·À¾ßÖÖÀà£º\n");
-			write("1. ¼×  2. Ğ¬  3. ÒÂ·ş  4. Ö¸Ì×  5. »¤ÕÆ  6. Í·ÕÖ\n");
-			write("7. ²±Ì×  8. ¶Ü  9. Åû·ç  10. »¤Íó  11. Ñü´ø\n");
-			write("ÇëÑ¡Ôñ£º");
+			write("å¯é€‰æ‹©é˜²å…·ç§ç±»ï¼š\n");
+			write("1. ç”²  2. é‹  3. è¡£æœ  4. æŒ‡å¥—  5. æŠ¤æŒ  6. å¤´ç½©\n");
+			write("7. è„–å¥—  8. ç›¾  9. æŠ«é£  10. æŠ¤è…•  11. è…°å¸¦\n");
+			write("è¯·é€‰æ‹©ï¼š");
 		}
 		input_to( (: get_subtype :), ob);
 		return;
@@ -139,7 +139,7 @@ void get_subtype(string arg, object ob)
 	fabao_subtype = order;
 
 	write("\n");
-	write("ÇëÉè¶¨Ó¢ÎÄ id £º");
+	write("è¯·è®¾å®šè‹±æ–‡ id ï¼š");
 	input_to( (: get_id :), ob ); 
 }
 
@@ -151,19 +151,19 @@ int check_legal_id(string id)
 	
 	i = strlen(id);
     if( (strlen(id) < 3) || (strlen(id) > 20 ) ) {
-		write("¶Ô²»Æğ£¬Ó¢ÎÄ id ±ØĞëÊÇ 3 µ½ 20 ¸öÓ¢ÎÄ×ÖÄ¸¡£\n");
+		write("å¯¹ä¸èµ·ï¼Œè‹±æ–‡ id å¿…é¡»æ˜¯ 3 åˆ° 20 ä¸ªè‹±æ–‡å­—æ¯ã€‚\n");
 		return 0;
     }
     while(i--)
     	if( id[i] != ' ' && (id[i]<'a' || id[i]>'z') )  {
-    		write("¶Ô²»Æğ£¬Ó¢ÎÄ id Ö»ÄÜÓÃÓ¢ÎÄ×ÖÄ¸¡£\n");
+    		write("å¯¹ä¸èµ·ï¼Œè‹±æ–‡ id åªèƒ½ç”¨è‹±æ–‡å­—æ¯ã€‚\n");
     		return 0;
     	}
     
     legalid = explode(read_file(BANNED_ID), "\n");
     for(i=0; i<sizeof(legalid); i++)   {
     	if( id == legalid[i] )   {
-    		write("¶Ô²»Æğ£¬ÕâÖÖ id »áÔì³ÉÆäËûÈËµÄÀ§ÈÅ¡£\n");
+    		write("å¯¹ä¸èµ·ï¼Œè¿™ç§ id ä¼šé€ æˆå…¶ä»–äººçš„å›°æ‰°ã€‚\n");
     		return 0;
     	}
     }
@@ -179,17 +179,17 @@ int check_legal_name(string name, int max_len)
 	
 	i = strlen(name);
     if( (strlen(name) < 3) || (strlen(name) > max_len ) ) {
-    	write( sprintf("¶Ô²»Æğ£¬·¨±¦ÖĞÎÄÃû×Ö±ØĞëÊÇ 2 µ½ %d ¸öÖĞÎÄ×Ö¡£\n",
+    	write( sprintf("å¯¹ä¸èµ·ï¼Œæ³•å®ä¸­æ–‡åå­—å¿…é¡»æ˜¯ 2 åˆ° %d ä¸ªä¸­æ–‡å­—ã€‚\n",
     	 max_len/2) );
 		return 0;
     }
     while(i--)   {
     	if( name[i]<=' ' )   {
-    		write("¶Ô²»Æğ£¬·¨±¦ÖĞÎÄÃû×Ö²»ÄÜÓÃ¿ØÖÆ×ÖÔª¡£\n");
+    		write("å¯¹ä¸èµ·ï¼Œæ³•å®ä¸­æ–‡åå­—ä¸èƒ½ç”¨æ§åˆ¶å­—å…ƒã€‚\n");
     		return 0;
     	}
     	if( i%2==0 && !is_chinese(name[i..<0]) )  {
-    		write("¶Ô²»Æğ£¬ÇëÄúÓÃ¡¸ÖĞÎÄ¡¹¸ø·¨±¦È¡Ãû×Ö¡£\n");
+    		write("å¯¹ä¸èµ·ï¼Œè¯·æ‚¨ç”¨ã€Œä¸­æ–‡ã€ç»™æ³•å®å–åå­—ã€‚\n");
     		return 0;
     	}
     }
@@ -202,7 +202,7 @@ void get_id(string arg, object ob)
 {
 	arg = lower_case(arg);
 	if( !check_legal_id(arg) )   {
-		write("ÇëÉè¶¨Ó¢ÎÄ id £º");
+		write("è¯·è®¾å®šè‹±æ–‡ id ï¼š");
 		input_to( (: get_id :), ob ); 
 		return;
 	}
@@ -210,7 +210,7 @@ void get_id(string arg, object ob)
 	fabao_id = arg;
 	
 	write("\n");
-	write("ÇëÉè¶¨ÖĞÎÄÃû£º");
+	write("è¯·è®¾å®šä¸­æ–‡åï¼š");
 	input_to( (: get_name :), ob);
 }
 
@@ -237,7 +237,7 @@ void get_name(string arg, object ob)
         arg = replace_string(arg, "$NOR$", "");
 
 	if( !check_legal_name(arg, 8) )  {
-		write("ÇëÉè¶¨ÖĞÎÄÃû£º");
+		write("è¯·è®¾å®šä¸­æ–‡åï¼š");
 		input_to( (: get_name :), ob);
 		return;
 	}
@@ -264,14 +264,14 @@ void get_name(string arg, object ob)
 	fabao_name = arg + NOR;
 	
 	write("\n");
-	write("ÇëÃèÊö·¨±¦£º");
+	write("è¯·æè¿°æ³•å®ï¼š");
 	input_to( (: get_desc :), ob);
 }
 
 void get_desc(string arg, object ob)
 {
 	if( !check_legal_name(arg, 40) )  {
-		write("ÇëÃèÊö·¨±¦£º");
+		write("è¯·æè¿°æ³•å®ï¼š");
 		input_to( (: get_desc :), ob);
 		return;
 	}
@@ -413,12 +413,12 @@ void build_armor(object ob)
 			ob_file = armor_dir + "cloth/linen";
 			break;
 		case 4:
-			write("¶Ô²»Æğ£¬ÔİÊ±²»ÄÜ×÷ÕâÖÖ·¨±¦¡£\n");
+			write("å¯¹ä¸èµ·ï¼Œæš‚æ—¶ä¸èƒ½ä½œè¿™ç§æ³•å®ã€‚\n");
 			destruct(newob);
 			return;
 			break;
 		case 5:
-			write("¶Ô²»Æğ£¬ÔİÊ±²»ÄÜ×÷ÕâÖÖ·¨±¦¡£\n");
+			write("å¯¹ä¸èµ·ï¼Œæš‚æ—¶ä¸èƒ½ä½œè¿™ç§æ³•å®ã€‚\n");
 			destruct(newob);
 			return;
 			break;
@@ -426,27 +426,27 @@ void build_armor(object ob)
 			ob_file = armor_dir + "cloth/hat";
 			break;
 		case 7:
-			write("¶Ô²»Æğ£¬ÔİÊ±²»ÄÜ×÷ÕâÖÖ·¨±¦¡£\n");
+			write("å¯¹ä¸èµ·ï¼Œæš‚æ—¶ä¸èƒ½ä½œè¿™ç§æ³•å®ã€‚\n");
 			destruct(newob);
 			return;
 			break;
 		case 8:
-			write("¶Ô²»Æğ£¬ÔİÊ±²»ÄÜ×÷ÕâÖÖ·¨±¦¡£\n");
+			write("å¯¹ä¸èµ·ï¼Œæš‚æ—¶ä¸èƒ½ä½œè¿™ç§æ³•å®ã€‚\n");
 			destruct(newob);
 			return;
 			break;
 		case 9:
-			write("¶Ô²»Æğ£¬ÔİÊ±²»ÄÜ×÷ÕâÖÖ·¨±¦¡£\n");
+			write("å¯¹ä¸èµ·ï¼Œæš‚æ—¶ä¸èƒ½ä½œè¿™ç§æ³•å®ã€‚\n");
 			destruct(newob);
 			return;
 			break;
 		case 10:
-			write("¶Ô²»Æğ£¬ÔİÊ±²»ÄÜ×÷ÕâÖÖ·¨±¦¡£\n");
+			write("å¯¹ä¸èµ·ï¼Œæš‚æ—¶ä¸èƒ½ä½œè¿™ç§æ³•å®ã€‚\n");
 			destruct(newob);
 			return;
 			break;
 		case 11:
-			write("¶Ô²»Æğ£¬ÔİÊ±²»ÄÜ×÷ÕâÖÖ·¨±¦¡£\n");
+			write("å¯¹ä¸èµ·ï¼Œæš‚æ—¶ä¸èƒ½ä½œè¿™ç§æ³•å®ã€‚\n");
 			destruct(newob);
 			return;
 			break;

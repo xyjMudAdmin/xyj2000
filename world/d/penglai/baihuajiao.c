@@ -3,10 +3,10 @@ inherit ROOM;
 #include <room.h>
 
 void create() {
-  set("short","°Ù»¨½Ñ");
+  set("short","ç™¾èŠ±çª–");
   set("long",@LONG
 
-Ò»¼äÃÜ²»Í¸·çµÄÒ¤¶´£¬ÕâÀï¾ÍÊÇ°Ù»¨ÏÉ×ÓÄğ¾ÆµÄËùÔÚÁË¡£
+ä¸€é—´å¯†ä¸é€é£çš„çª‘æ´ï¼Œè¿™é‡Œå°±æ˜¯ç™¾èŠ±ä»™å­é…¿é…’çš„æ‰€åœ¨äº†ã€‚
 
 LONG);
   set("exits",(["north":__DIR__"hongyandong",]));

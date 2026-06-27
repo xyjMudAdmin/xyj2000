@@ -23,8 +23,8 @@ void more(string cmd, string *text, int line)
 			if( line>=sizeof(text) ) return;
 			break;
 	}
-	printf("== Î´Íê¼ÌĞø " HIY "%d%%" NOR 
-	  " == (ENTER ¼ÌĞøÏÂÒ»Ò³£¬q Àë¿ª£¬b Ç°Ò»Ò³)",
+	printf("== æœªå®Œç»§ç»­ " HIY "%d%%" NOR 
+	  " == (ENTER ç»§ç»­ä¸‹ä¸€é¡µï¼Œq ç¦»å¼€ï¼Œb å‰ä¸€é¡µ)",
 		(line*100/sizeof(text)) );
 	input_to("more", text, line);
 }

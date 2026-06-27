@@ -5,8 +5,8 @@ inherit NPC;
 
 void create()
 {
-  set_name("ÔªÏÈÉú", ({ "yuan xiansheng", "xiansheng", "yuan" }) );
-  set("gender", "ÄĞĞÔ");
+  set_name("å…ƒå…ˆç”Ÿ", ({ "yuan xiansheng", "xiansheng", "yuan" }) );
+  set("gender", "ç”·æ€§");
   set("age", 50);
   set("combat_exp", 10000+random(1000));
   set("attitude", "heroism");

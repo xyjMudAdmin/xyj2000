@@ -9,12 +9,12 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "¶şÂ¥ÑÅ×ù");
+        set("short", "äºŒæ¥¼é›…åº§");
         set("long", @LONG
 
-ÕâÀï°ÚÉè½²¾¿£¬ÓÃµÄ²Í¾ß¶¼ÊÇ´Ó¾°µÂÕòÔËÀ´¡£°ÚµÄ×ÀÒÎ¶¼ÊÇºìÄ¾µÄ£¬
-ÔÚ¹âÕÕÖ®ÏÂ·´Éä³öµ­µ­µÄ¹âÔó¡£ÍÆ´°ÍûÈ¥£¬³¤°²³ÇÖĞĞÄ¾¡ÊÕÑÛµ×¡£
-Ò»Èº¾Æ¿ÍÍÆ±­»»Õµ£¬ÕıºÈµÄÈÈÄÖ¡£
+è¿™é‡Œæ‘†è®¾è®²ç©¶ï¼Œç”¨çš„é¤å…·éƒ½æ˜¯ä»æ™¯å¾·é•‡è¿æ¥ã€‚æ‘†çš„æ¡Œæ¤…éƒ½æ˜¯çº¢æœ¨çš„ï¼Œ
+åœ¨å…‰ç…§ä¹‹ä¸‹åå°„å‡ºæ·¡æ·¡çš„å…‰æ³½ã€‚æ¨çª—æœ›å»ï¼Œé•¿å®‰åŸä¸­å¿ƒå°½æ”¶çœ¼åº•ã€‚
+ä¸€ç¾¤é…’å®¢æ¨æ¯æ¢ç›ï¼Œæ­£å–çš„çƒ­é—¹ã€‚
 LONG);
 
         set("exits", ([
@@ -38,7 +38,7 @@ int valid_leave(object me, string dir)
 	//temp access for future wiz.
 
         if( dir=="north" && !wizardp(me) )
-                return notify_fail("ÄÇÀïÖ»ÓĞÎ×Ê¦²ÅÄÜ½øÈ¥¡£\n");
+                return notify_fail("é‚£é‡Œåªæœ‰å·«å¸ˆæ‰èƒ½è¿›å»ã€‚\n");
         return ::valid_leave(me, dir);
 }
 
@@ -54,24 +54,24 @@ int do_accuse(string arg)
 
         if( ob = find_player(arg) ) {
                 if( ob==this_player() )
-                        return notify_fail("ÄãÒª¼ì¾Ù×Ô¼º£¿\n");
+                        return notify_fail("ä½ è¦æ£€ä¸¾è‡ªå·±ï¼Ÿ\n");
                 if( ob->is_ghost() )
                         return notify_fail( ob->name(1) +
-"ÒÑ¾­ËÀÁË£¬·ÅËûÒ»Âí°É¡£\n");
+"å·²ç»æ­»äº†ï¼Œæ”¾ä»–ä¸€é©¬å§ã€‚\n");
                 if( wizardp(ob) )
-                        return notify_fail("Äã²»ÄÜ¼ì¾ÙÎ×Ê¦¡£\n");
+                        return notify_fail("ä½ ä¸èƒ½æ£€ä¸¾å·«å¸ˆã€‚\n");
                 tell_object(ob, HIW + this_player()->name(1) +
-"¼ì¾ÙÄãÊÇ¸ö»úÆ÷ÈË£¬ÇëÄã½ÓÊÜÒ»¸öĞ¡Ğ¡µÄ²âÑé¡£\n" NOR);
+"æ£€ä¸¾ä½ æ˜¯ä¸ªæœºå™¨äººï¼Œè¯·ä½ æ¥å—ä¸€ä¸ªå°å°çš„æµ‹éªŒã€‚\n" NOR);
                 ROBOT_CHECK->test_me(ob);
-                write("Ok. ÒÑ¾­½«Äã¼ì¾ÙµÄ¶ÔÏóËÍÈ¥×ö²âÑé¡£\n");
+                write("Ok. å·²ç»å°†ä½ æ£€ä¸¾çš„å¯¹è±¡é€å»åšæµ‹éªŒã€‚\n");
 
-write("ÎªÁË±ÜÃâÓĞÈËÓÃ»úÆ÷ÈËÂÒ¼ì¾ÙÉ§ÈÅ±ğÈË£¬ÇëÄãÒ²½ÓÊÜÏàÍ¬µÄ²âÑé¡£\n");
+write("ä¸ºäº†é¿å…æœ‰äººç”¨æœºå™¨äººä¹±æ£€ä¸¾éªšæ‰°åˆ«äººï¼Œè¯·ä½ ä¹Ÿæ¥å—ç›¸åŒçš„æµ‹éªŒã€‚\n");
                 ROBOT_CHECK->test_me(this_player());
                 log_file("robot_accuse",
                         sprintf("%s accused %s on %s.\n",
 this_player()->query("id"), ob->query("id"), ctime(time())));
                 return 1;
         }
-        return notify_fail("Ä¿Ç°ÏßÉÏ²¢Ã»ÓĞÕâÎ»Íæ¼Ò¡£\n");
+        return notify_fail("ç›®å‰çº¿ä¸Šå¹¶æ²¡æœ‰è¿™ä½ç©å®¶ã€‚\n");
 }
 */

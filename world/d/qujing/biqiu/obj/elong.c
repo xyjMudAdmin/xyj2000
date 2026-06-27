@@ -5,14 +5,14 @@ inherit ITEM;
 
 void create()
 {
-  set_name("¶ìÁı", ({"e long", "long"}));
+  set_name("é¹…ç¬¼", ({"e long", "long"}));
   set_weight(6000000);
   set_max_encumbrance(100000000000);
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("unit", "Ö»");
-    set("long", "Ò»Ö»Í­¿ò´ó¶ìÁı¡£\n"),
+    set("unit", "åª");
+    set("long", "ä¸€åªé“œæ¡†å¤§é¹…ç¬¼ã€‚\n"),
     set("value", 50000);
   }
   setup();
@@ -46,7 +46,7 @@ int do_open (string arg)
   object ob;
 
   if (!arg)
-    return notify_fail("ÄãÒª´ò¿ªÊ²Ã´£¿\n");
+    return notify_fail("ä½ è¦æ‰“å¼€ä»€ä¹ˆï¼Ÿ\n");
 
   ob = present(arg,environment(who));
   if (ob != me)
@@ -55,15 +55,15 @@ int do_open (string arg)
   kid = present ("xiao er",me);
   if (kid)
   {
-    message_vision ("$N½«¶ìÁıÃÅÖ¨µØÒ»Éù´ò¿ª¡£\n",who);
-    message_vision ("Ò»Î»Ğ¡¶ù´ÓÀïÃæÅÀ³öÀ´£¬µßµßµÅµÅµØ×ßÁË¡£\n",who);
+    message_vision ("$Nå°†é¹…ç¬¼é—¨å±åœ°ä¸€å£°æ‰“å¼€ã€‚\n",who);
+    message_vision ("ä¸€ä½å°å„¿ä»é‡Œé¢çˆ¬å‡ºæ¥ï¼Œé¢ é¢ è¹¬è¹¬åœ°èµ°äº†ã€‚\n",who);
     who->add_temp("obstacle/biqiu_xiaoer",1);
     call_out ("reset_elong",1800);
     destruct (kid);
   }  
   else
   {
-    message_vision ("$N½«¶ìÁı´ò¿ª£¬½«Í·Éì½øÈ¥¿´ÁË¿´¡£\n",who);
+    message_vision ("$Nå°†é¹…ç¬¼æ‰“å¼€ï¼Œå°†å¤´ä¼¸è¿›å»çœ‹äº†çœ‹ã€‚\n",who);
   }  
   return 1;
 }
@@ -86,7 +86,7 @@ int do_get (string arg)
   if (me != present(id,where))
     return 0;
 
-  tell_object(who,"ÕâÀïÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+  tell_object(who,"è¿™é‡Œæ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
   return 1;
 }
 
@@ -105,7 +105,7 @@ int do_put (string arg)
   if (me != present(id,where))
     return 0;
 
-  tell_object(who,"ÕâÀïÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+  tell_object(who,"è¿™é‡Œæ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
   return 1;
 }
 

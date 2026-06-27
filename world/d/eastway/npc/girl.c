@@ -5,8 +5,8 @@ inherit NPC;
 
 void create()
 {
-  set_name("ä½ÒÂÅ®", ({"girl"}));
-  set("gender", "Å®ĞÔ");
+  set_name("æµ£è¡£å¥³", ({"girl"}));
+  set("gender", "å¥³æ€§");
   set("age", 22);
   set("combat_exp", 1500);
   set_skill("unarmed", 5);
@@ -34,7 +34,7 @@ int wash ()
 
   if(sizeof(filter_array(all_inventory(environment(this_object())), (:userp:))))
   call_out ("wash",random(10)+30);
-  if (where->query("short") != "ÏÉÈª")
+  if (where->query("short") != "ä»™æ³‰")
   {
     //command ("rascal");
     return 1;
@@ -78,11 +78,11 @@ int do_look (string arg)
   if (
       arg &&
       me == present(arg,environment(me)) &&
-      who->query("gender") != "Å®ĞÔ" &&
+      who->query("gender") != "å¥³æ€§" &&
       where && 
-      where->query("short") == "ÏÉÈª")
+      where->query("short") == "ä»™æ³‰")
   {
-    message_vision ("$N³¯×Å$n³Ô¾ªµØÑ½ÁËÒ»Éù£¬Á¢¿Ì½«ÉíÌå²ØÈëË®ÖĞ¡£\n",me,who);
+    message_vision ("$Næœç€$nåƒæƒŠåœ°å‘€äº†ä¸€å£°ï¼Œç«‹åˆ»å°†èº«ä½“è—å…¥æ°´ä¸­ã€‚\n",me,who);
     return 1;
   }
   return 0; // to invoke normal look

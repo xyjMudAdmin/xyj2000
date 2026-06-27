@@ -5,15 +5,15 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ÏµÍ³¹«¸æÊÒ");
+	set("short", "ç³»ç»Ÿå…¬å‘Šå®¤");
 	set("long", @LONG
 
-ÕâÊÇÒ»¼äºÜÆÕÍ¨µÄ·¿¼ä£¬·¿ÄÚÌù×ÅÒ»Ğ©ÓĞ¹ØÕâ¸öÊÀ½çµÄ×ÊÑ¶¡£
+è¿™æ˜¯ä¸€é—´å¾ˆæ™®é€šçš„æˆ¿é—´ï¼Œæˆ¿å†…è´´ç€ä¸€äº›æœ‰å…³è¿™ä¸ªä¸–ç•Œçš„èµ„è®¯ã€‚
 
 LONG
 	);
 set("item_desc" , ([ /* sizeof() == 1 */
-"east": "·¿×ÓÀïÔÆÎíçÔÈÆ£¬Ê²Ã´Ò²¿´²»Çå³ş¡£\n",
+"east": "æˆ¿å­é‡Œäº‘é›¾ç¼­ç»•ï¼Œä»€ä¹ˆä¹Ÿçœ‹ä¸æ¸…æ¥šã€‚\n",
 ]));
 	set("exits", ([ /* sizeof() == 2 */
   "east" : "/d/wiz/wizroom",
@@ -36,7 +36,7 @@ int valid_leave(object me, string dir)
 		  //temp access for future wiz.
 
 		if( dir=="east" && !wizardp(me) )
-			return notify_fail("ÄÇÀïÖ»ÓĞÎ×Ê¦²ÅÄÜ½øÈ¥¡£\n");
+			return notify_fail("é‚£é‡Œåªæœ‰å·«å¸ˆæ‰èƒ½è¿›å»ã€‚\n");
 		return ::valid_leave(me, dir);
 }
 

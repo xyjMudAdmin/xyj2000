@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "Ë®Á±¶´ÄÚ²¿");
+  set ("short", "æ°´å¸˜æ´å†…éƒ¨");
   set ("long", @LONG
 
-ÕâÀïÊÇË®Á±¶´µÄÉî´¦¡£¶´ÄÚÒ»Æ¬ºÚ°µ£¬Ê¯·ìÄÚÒÀÏ¡¿ÉÒÔ¿´¼ûÊ²Ã´¶«Î÷
-ºÚºõºõµÄ¡£ÄãÊÔÍ¼½«Ê¯·ìÀ©´ó(expand)Ò»Ğ©£¬´ÓÖĞÈ¡³öÄÇ¼ş¶«Î÷¡£
+è¿™é‡Œæ˜¯æ°´å¸˜æ´çš„æ·±å¤„ã€‚æ´å†…ä¸€ç‰‡é»‘æš—ï¼ŒçŸ³ç¼å†…ä¾ç¨€å¯ä»¥çœ‹è§ä»€ä¹ˆä¸œè¥¿
+é»‘ä¹ä¹çš„ã€‚ä½ è¯•å›¾å°†çŸ³ç¼æ‰©å¤§(expand)ä¸€äº›ï¼Œä»ä¸­å–å‡ºé‚£ä»¶ä¸œè¥¿ã€‚
 LONG);
 
 //  set("not_generating_jingbubang", 0);
@@ -26,33 +26,33 @@ int do_expand(string arg)
 	object me=this_player();
 	object ob; 
 
-	if( (!arg) || !((arg == "gap") || (arg == "Ê¯·ì")))
-		return notify_fail("ÄãÒª°Ç¿ªÊ²Ã´£¿\n");
+	if( (!arg) || !((arg == "gap") || (arg == "çŸ³ç¼")))
+		return notify_fail("ä½ è¦æ‰’å¼€ä»€ä¹ˆï¼Ÿ\n");
 
 	if( !(ob = me->query_temp("weapon")) || ( (string)ob->query("skill_type")!="axe" && (string)ob->query("skill_type")!="blade" && (string)ob->query("skill_type")!="sword" ) ) 
-		return notify_fail("Ã»ÓĞ¹¤¾ßÔõÃ´¸É»î£¿\n");
+		return notify_fail("æ²¡æœ‰å·¥å…·æ€ä¹ˆå¹²æ´»ï¼Ÿ\n");
 
 	if( me->query_str() < 50 )
-		return notify_fail("ÄãµÄÁ¦Á¿²»¹»´ó£¡\n");
+		return notify_fail("ä½ çš„åŠ›é‡ä¸å¤Ÿå¤§ï¼\n");
 
 	if (me->query("kee") < 200) {
-		message_vision(HIR"\nÖ»ÌıµÃºäµÄÒ»Éù£¬Ò»´ó¿éÊ¯±ÚËúÁËÏÂÀ´£¬½«$NÔÒÔÎÁË¹ıÈ¥¡£\n\n"NOR, me);
+		message_vision(HIR"\nåªå¬å¾—è½°çš„ä¸€å£°ï¼Œä¸€å¤§å—çŸ³å£å¡Œäº†ä¸‹æ¥ï¼Œå°†$Nç ¸æ™•äº†è¿‡å»ã€‚\n\n"NOR, me);
 		me->unconcious();
 		}
 	else {
 		me->receive_damage("kee", 200);
-		message("vission", HIR "\nÖ»ÌıµÃºäµÄÒ»Éù£¬Ò»´ó¿éÊ¯±ÚËúÁËÏÂÀ´¡£\n\n" NOR, environment(me));
+		message("vission", HIR "\nåªå¬å¾—è½°çš„ä¸€å£°ï¼Œä¸€å¤§å—çŸ³å£å¡Œäº†ä¸‹æ¥ã€‚\n\n" NOR, environment(me));
 		}
 		
 
     if( "/d/obj/weapon/stick/fake-jingubang"->in_mud() )  {
-  	   message("vission", HIR "Äã¿´¼ûÊ¯¿éÖ®ÖĞ¿Õ¿ÕÈçÒ²¡£\n"NOR, me);
+  	   message("vission", HIR "ä½ çœ‹è§çŸ³å—ä¹‹ä¸­ç©ºç©ºå¦‚ä¹Ÿã€‚\n"NOR, me);
   	   return 1;
     }
 //	if (query("not_generating_jingbubang")) return 1;
 	ob=new("/d/obj/weapon/stick/fake-jingubang.c");
 	ob->move(environment(me));
-	message("vission", HIR "Äã¿´¼ûÊ¯¿éÖ®ÖĞÂ¶³öÒ»°Ñ½ğ¹¿°ô¡£\n"NOR, me);
+	message("vission", HIR "ä½ çœ‹è§çŸ³å—ä¹‹ä¸­éœ²å‡ºä¸€æŠŠé‡‘ç®æ£’ã€‚\n"NOR, me);
 //	set("not_generating_jingbubang", 1);
 //	call_out("regenerate", 1200);
 	return 1;

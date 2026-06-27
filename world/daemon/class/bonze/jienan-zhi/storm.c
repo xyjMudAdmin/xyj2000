@@ -1,5 +1,5 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// ±©·çÖèÓê
+// æš´é£éª¤é›¨
 // dream 7/17/97
 #include <ansi.h>
 
@@ -13,23 +13,23 @@ int perform(object me, object target)
         ||      !target->is_character()
         ||      target->is_corpse()
         ||      target==me)
-                return notify_fail("ÄãÒª¶ÔË­Ê©Õ¹¡¸±©·çÖèÓê¡¹£¿\n");
+                return notify_fail("ä½ è¦å¯¹è°æ–½å±•ã€Œæš´é£éª¤é›¨ã€ï¼Ÿ\n");
 
         if((int)me->query("force") < 25+(int)me->query("force_factor") )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¡\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼\n");
 
         if((int)me->query("kee") < 100 )
-                return notify_fail("ÄãµÄÆøÑª²»×ã£¬Ã»·¨×ÓÊ©ÓÃÍâ¹¦£¡\n");
+                return notify_fail("ä½ çš„æ°”è¡€ä¸è¶³ï¼Œæ²¡æ³•å­æ–½ç”¨å¤–åŠŸï¼\n");
 
 	if((int)me->query_skill("jienan-zhi", 1) <100)
-		return notify_fail("ÄãµÄ½ÙÄÑÖ¸¼¶±ğ»¹²»¹»£¡\n");
+		return notify_fail("ä½ çš„åŠ«éš¾æŒ‡çº§åˆ«è¿˜ä¸å¤Ÿï¼\n");
 
 
         me->add("force", -25-(int)me->query("force_factor"));
         me->receive_damage("kee", 100);
 
         if( random(me->query("max_force")) < 50 ) {
-                write("Ôã¸â£¬Ã»³É¹¦£¡\n");
+                write("ç³Ÿç³•ï¼Œæ²¡æˆåŠŸï¼\n");
                 return 1;
         }
 
@@ -47,16 +47,16 @@ int perform(object me, object target)
                         //damage adjustment
                 "qi", 
                         //damage type: could be "qi"/"kee", "shen"/"sen", ...default "both"
-                HIC "\n$N¿ÚÖĞ´óºÈÁËÒ»Éù£¬Ê©Õ¹³ö¡¸±©·çÖèÓê¡¹£¬Ë«ÊÖÊ®Ö¸ÉÏÏÂ·­·É£¬ÉíĞÎÇ°ºó×óÓÒÒÆ¶¯£¬\n
-$nÖ»¾õµÃµ½´¦ÊÇ$NµÄÓ°×Ó£¬¸ù±¾²»ÖªÈçºÎÕĞ¼Ü£¬¸ü²»ÓÃËµ¶ãÉÁÁË£¡\n\n" NOR,
+                HIC "\n$Nå£ä¸­å¤§å–äº†ä¸€å£°ï¼Œæ–½å±•å‡ºã€Œæš´é£éª¤é›¨ã€ï¼ŒåŒæ‰‹åæŒ‡ä¸Šä¸‹ç¿»é£ï¼Œèº«å½¢å‰åå·¦å³ç§»åŠ¨ï¼Œ\n
+$nåªè§‰å¾—åˆ°å¤„æ˜¯$Nçš„å½±å­ï¼Œæ ¹æœ¬ä¸çŸ¥å¦‚ä½•æ‹›æ¶ï¼Œæ›´ä¸ç”¨è¯´èº²é—ªäº†ï¼\n\n" NOR,
                         //initial message
-                HIC "½á¹ûÊ®Ö¸½á½áÊµÊµÈ«²¿»÷ÖĞÁË$n£¬²îµãÃ»°Ñ$n´ÁÁË¸öÍ¸ĞÄÁ¹£¡\n" NOR, 
+                HIC "ç»“æœåæŒ‡ç»“ç»“å®å®å…¨éƒ¨å‡»ä¸­äº†$nï¼Œå·®ç‚¹æ²¡æŠŠ$næˆ³äº†ä¸ªé€å¿ƒå‡‰ï¼\n" NOR, 
                         //success message
-                HIC "µ«ÊÇ$nÇáÇáÒ»Ìø¾Í¶ãÁË¿ªÀ´¡£\n" NOR, 
+                HIC "ä½†æ˜¯$nè½»è½»ä¸€è·³å°±èº²äº†å¼€æ¥ã€‚\n" NOR, 
                         //fail message
-                HIC "µ«ÊÇ±»$nÒÔÄÚÁ¦Ò»±Æ£¬Ö¸Á¦¾¡Êı·´´ì£¡\n" NOR, 
+                HIC "ä½†æ˜¯è¢«$nä»¥å†…åŠ›ä¸€é€¼ï¼ŒæŒ‡åŠ›å°½æ•°åæŒ«ï¼\n" NOR, 
                         //backfire initial message
-                HIC "½á¹ûÖ»Ìı¿¦àê£¡¼¸Éù£¬$nÊ®Ö¸¼¸ºõÈ«²¿ÕÛ¶Ï£¡\n" NOR
+                HIC "ç»“æœåªå¬å–€åš“ï¼å‡ å£°ï¼Œ$nåæŒ‡å‡ ä¹å…¨éƒ¨æŠ˜æ–­ï¼\n" NOR
                         //backfire hit message. note here $N and $n!!!
         );
 

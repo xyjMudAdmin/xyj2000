@@ -8,10 +8,10 @@ int do_sit(string temp3);
 
 void create()
 {
-  set ("short", "Ìì¾®");
+  set ("short", "å¤©äº•");
   set ("long", @LONG
 
-ÔºÖĞÂú¼ÜÇ¾Ş±ğ¥Óô£¬ÖĞ¼äÓĞÒ»¿Ú¾®¡£
+é™¢ä¸­æ»¡æ¶è”·è–‡é¦¥éƒï¼Œä¸­é—´æœ‰ä¸€å£äº•ã€‚
 LONG);
 
           set("valid_startroom",1);

@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "Ğ¡Ôº");
+  set ("short", "å°é™¢");
   set ("long", @LONG
 
-ÕâÊÇÒ»¼äĞ¡Ôº£¬ÔºÖĞ±é²¼Ææ»¨Òì²İ£¬²ÎÌì´óÊ÷½«Ôº×ÓËÄÖÜÕÚ
-µÃÑÏÑÏÊµÊµ£¬ºÃÒ»¸öĞŞÉíÑøĞÔÖ®ËùÔÚ¡£
+è¿™æ˜¯ä¸€é—´å°é™¢ï¼Œé™¢ä¸­éå¸ƒå¥‡èŠ±å¼‚è‰ï¼Œå‚å¤©å¤§æ ‘å°†é™¢å­å››å‘¨é®
+å¾—ä¸¥ä¸¥å®å®ï¼Œå¥½ä¸€ä¸ªä¿®èº«å…»æ€§ä¹‹æ‰€åœ¨ã€‚
 LONG);
 
   set("objects", ([ /* sizeof() == 1 */
@@ -23,6 +23,6 @@ __DIR__"npc/tidu" : 1,
   "east" : __DIR__"zoulang2",
 ]));
 
-create_door("south", "Ê¯ÃÅ", "north", DOOR_CLOSED);
+create_door("south", "çŸ³é—¨", "north", DOOR_CLOSED);
   setup();
 }

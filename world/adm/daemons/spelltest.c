@@ -4,10 +4,10 @@
 
 #include <ansi.h>
 
-/* table for ·¨ÊõÏà¿Ë 
+/* table for æ³•æœ¯ç›¸å…‹ 
    for example,
 	"dao": ({"yaofa","dengxian-dafa"}),
-   means, dao can ¿ËÖÆ yaofa and dengxian-dafa.
+   means, dao can å…‹åˆ¶ yaofa and dengxian-dafa.
    */
 mapping table=([
 	// xian
@@ -26,9 +26,9 @@ mapping table=([
 	"seashentong": ({"taiyi"}),
 	]);
 
-/* determine whether two ·¨Êõ are Ïà¿ËÖÆ
-   if spell1 ¿ËÖÆ spell2, then return = 1.
-   if spell2 ¿ËÖÆ spell1, then return = -1.
+/* determine whether two æ³•æœ¯ are ç›¸å…‹åˆ¶
+   if spell1 å…‹åˆ¶ spell2, then return = 1.
+   if spell2 å…‹åˆ¶ spell1, then return = -1.
    otherwise, return 0.
    */
 int skill_xiangke(string spell1, string spell2)
@@ -40,10 +40,10 @@ int skill_xiangke(string spell1, string spell2)
 	    undefinedp(table[spell2])) return neutral;
 
     if(member_array(spell1, table[spell2])>-1) {
-	// spell2 can ¿ËÖÆ spell1.
+	// spell2 can å…‹åˆ¶ spell1.
 	result=-1;
     } else if(member_array(spell2, table[spell1])>-1) {
-	// spell1 can ¿ËÖÆ spell2.
+	// spell1 can å…‹åˆ¶ spell2.
 	result=1;
     } else {
 	result=neutral;
@@ -52,12 +52,12 @@ int skill_xiangke(string spell1, string spell2)
     return result;
 }
 
-/* determine whether two players' ·¨Êõ are Ïà¿ËÖÆ
+/* determine whether two players' æ³•æœ¯ are ç›¸å…‹åˆ¶
    only effective between two players,
    or a NPC against a player,
    can't a player take advantage of a npc.
-   if obj1 ¿ËÖÆ obj2, then return = 1.
-   if obj2 ¿ËÖÆ obj1, then return = -1.
+   if obj1 å…‹åˆ¶ obj2, then return = 1.
+   if obj2 å…‹åˆ¶ obj1, then return = -1.
    otherwise, return 0.
    */
 int check_xiangke(object obj1, object obj2)
@@ -193,10 +193,10 @@ void apply_damage(object winner, object victim,
 	object *inv;
 	int def_count = 0;
 	string *msg_fabao = ({
-		"Ö»¼û$NµÄ$nÏ¼¹âÒ»ÉÁ£¡\n",
-		"Ö»¼û$NµÄ$nÏ¼¹âÔÙÉÁ£¡\n",
-		"Ö»¼û$NµÄ$nÏ¼¹âÓÖÒ»ÉÁ£¡\n",
-		"Ö»¼û$NµÄ$nÏ¼¹âÔÙÒ»ÉÁ£¡\n"
+		"åªè§$Nçš„$néœå…‰ä¸€é—ªï¼\n",
+		"åªè§$Nçš„$néœå…‰å†é—ªï¼\n",
+		"åªè§$Nçš„$néœå…‰åˆä¸€é—ªï¼\n",
+		"åªè§$Nçš„$néœå…‰å†ä¸€é—ªï¼\n"
 	});
 
 	if( damage <= 0 ) return;
@@ -260,7 +260,7 @@ void apply_damage(object winner, object victim,
 		message_vision(msg_hit, winner, victim);
 	else
 		//the fabao saved the target...
-		message_vision("½á¹û$NµÄ¹¥»÷ÍêÈ«±»$nµÄ·¨±¦µ²×¡£¡
+		message_vision("ç»“æœ$Nçš„æ”»å‡»å®Œå…¨è¢«$nçš„æ³•å®æŒ¡ä½ï¼
 \n", winner, victim);
 
 	if( victim->query_temp("anti_magic") )
@@ -278,9 +278,9 @@ void apply_damage(object winner, object victim,
 			damage_qi=damage_qi - adjust/2;
 			damage_shen=damage_shen - adjust/2;
 			if ( damage_qi > 0 || damage_shen > 0 )
-				message_vision("\nÖ»¼û$NÉíºó»Ã³öÇ§¶ä°×Á«£¬µ²×¡ÁË$nµÄ¹¥ÊÆ¡£\n", victim, winner);
+				message_vision("\nåªè§$Nèº«åå¹»å‡ºåƒæœµç™½è²ï¼ŒæŒ¡ä½äº†$nçš„æ”»åŠ¿ã€‚\n", victim, winner);
 			else
-				message_vision("\nÖ»¼û$NÉíºó»Ã³öÇ§¶ä°×Á«£¬½«$nµÄ¹¥ÊÆ¾¡Êı»¯½â¡£\n", victim, winner);
+				message_vision("\nåªè§$Nèº«åå¹»å‡ºåƒæœµç™½è²ï¼Œå°†$nçš„æ”»åŠ¿å°½æ•°åŒ–è§£ã€‚\n", victim, winner);
 		}
 	}
 
@@ -317,15 +317,15 @@ a typical call would be:
 			//damage adjustment
 		"both", 		
 			//damage type: could be "qi"/"kee", "shen"/"sen", ...default "both"
-		HIC "$N¼¸¸öÖ¸Í·Ñ¸ËÙÄí¶¯£¬Í»È»ÕÅ×ìÒ»Åç£¡ºì³È»ÆÈıµÀ»ğÑæºô£¡µØÒ»ÉùÏò$n¾íÈ¥£¡\n" NOR,
+		HIC "$Nå‡ ä¸ªæŒ‡å¤´è¿…é€Ÿæ»åŠ¨ï¼Œçªç„¶å¼ å˜´ä¸€å–·ï¼çº¢æ©™é»„ä¸‰é“ç«ç„°å‘¼ï¼åœ°ä¸€å£°å‘$nå·å»ï¼\n" NOR,
 			//initial message
-		HIC "½á¹û$n±»ÉÕµÃ½¹Í·ÀÃ¶î£¡\n" NOR, 
+		HIC "ç»“æœ$nè¢«çƒ§å¾—ç„¦å¤´çƒ‚é¢ï¼\n" NOR, 
 			//success message
-		HIC "µ«ÊÇ$nÇáÇáÒ»Ìø¾Í¶ãÁË¿ªÀ´¡£\n" NOR, 
+		HIC "ä½†æ˜¯$nè½»è½»ä¸€è·³å°±èº²äº†å¼€æ¥ã€‚\n" NOR, 
 			//fail message
-		HIC "µ«ÊÇ»ğÑæ±»$nÒÔ·¨Á¦Ò»±Æ£¬·´Ïò$N»Ø¾í¶øÈ¥£¡\n" NOR, 
+		HIC "ä½†æ˜¯ç«ç„°è¢«$nä»¥æ³•åŠ›ä¸€é€¼ï¼Œåå‘$Nå›å·è€Œå»ï¼\n" NOR, 
 			//backfire initial message
-		HIC "½á¹ûÌ«ÒÒÕæ»ğ·´ÊÉ£¬$n±»ÉÕµÃ½¹Í·ÀÃ¶î£¡\n" NOR
+		HIC "ç»“æœå¤ªä¹™çœŸç«åå™¬ï¼Œ$nè¢«çƒ§å¾—ç„¦å¤´çƒ‚é¢ï¼\n" NOR
 			//backfire hit message. note here $N and $n!!!
 	);
 */
@@ -367,7 +367,7 @@ void attacking_cast(
 	}
 
 	else //damge=0
-		message_vision(HIB "½á¹ûÕıºÃ±»$NÒÔ·¨Á¦±Æ×¡£¬Ë­Ò²Ã»ÓĞ³Ô¿÷¡£\n" NOR, target);
+		message_vision(HIB "ç»“æœæ­£å¥½è¢«$Nä»¥æ³•åŠ›é€¼ä½ï¼Œè°ä¹Ÿæ²¡æœ‰åƒäºã€‚\n" NOR, target);
 
 	//let the target kill attacker.
 	target->kill_ob(attacker);

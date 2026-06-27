@@ -1,5 +1,5 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// moonforce.c  ¡¾Ô²ÔÂĞÄ·¨¡¿
+// moonforce.c  ã€åœ†æœˆå¿ƒæ³•ã€‘
 inherit FORCE;
 
 int valid_enable(string usage) { return usage=="force"; }
@@ -9,7 +9,7 @@ int valid_learn(object me) { return 1; }
 int practice_skill(object me)
 {
         return
-notify_fail("Ô²ÔÂĞÄ·¨Ö»ÄÜÏòÊ¦¸¸Ñ§£¬»òÊÇ´ÓÔËÓÃ(exert)ÖĞÔö¼ÓÊìÁ·¶È¡£\n");
+notify_fail("åœ†æœˆå¿ƒæ³•åªèƒ½å‘å¸ˆçˆ¶å­¦ï¼Œæˆ–æ˜¯ä»è¿ç”¨(exert)ä¸­å¢åŠ ç†Ÿç»ƒåº¦ã€‚\n");
 }
 string exert_function_file(string func)
 {

@@ -7,13 +7,13 @@ inherit SWORD;
 
 void create()
 {
-        set_name("Ìú½£", ({"sword"}));
+        set_name("é“å‰‘", ({"sword"}));
 	set_weight(2000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long","Ò»°Ñ³¤½££®\n");
-                set("unit", "°Ñ");
+                set("long","ä¸€æŠŠé•¿å‰‘ï¼\n");
+                set("unit", "æŠŠ");
                 set("value", 1000);
         }
         init_sword(20);

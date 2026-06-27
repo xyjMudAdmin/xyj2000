@@ -4,13 +4,13 @@ inherit F_VENDOR_SALE;
 void create()
 {
   reload("jisaiguo_doctor_jsg");
-  set_name("������", ({"liu miaoshou","liu"}));
+  set_name("柳妙手", ({"liu miaoshou","liu"}));
   set("shop_id", ({"doctor"}));
-  set("shop_title", "���ֻش�");
-  set("gender", "����" );
+  set("shop_title", "妙手回春");
+  set("gender", "男性" );
   set("age", 62);
   set("per", 18);
-  set("long", "һλ�ϴ�򣬺������ѧ�ʵ����ӡ�\n");
+  set("long", "一位老大夫，好象很有学问的样子。\n");
   set("combat_exp", 1000);
   set("max_kee", 300);
   set("max_sen", 300);
@@ -40,12 +40,12 @@ void greeting(object ob)
         if( !ob || !visible(ob) || environment(ob) != environment() ) return;
         switch( random(3) ) { 
                 case 0:
-                say( name()+"Ц�����˵������λ" +
+                say( name()+"笑咪咪地说道：这位" +
 RANK_D->query_respect(ob)
-                                + "�����ﲻ�������\n");
+                                + "，那里不舒服啊？\n");
                         break;
 		case 1:
-		say(name()+"̧ͷ���˿��㣬̾�˿�����˵����û���ˡ�����\n");
+		say(name()+"抬头看了看你，叹了口气，说道：没救了。。。\n");
 		break;
         }
 }

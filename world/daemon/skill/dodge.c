@@ -5,11 +5,11 @@
 inherit SKILL;
 
 string *dodge_msg = ({
-	"���Ǻ�$p$lƫ�˼��硣\n",
-	"���Ǳ�$p����ض㿪�ˡ�\n",
-	"����$n����һ�࣬���˿�ȥ��\n",
-	"���Ǳ�$p��ʱ�ܿ���\n",
-	"����$n����׼�������Ų�æ�ض㿪��\n",
+	"但是和$p$l偏了几寸。\n",
+	"但是被$p机灵地躲开了。\n",
+	"但是$n身子一侧，闪了开去。\n",
+	"但是被$p及时避开。\n",
+	"但是$n已有准备，不慌不忙地躲开。\n",
 });
 
 string query_dodge_msg()
@@ -21,17 +21,17 @@ string level_description(int level)
 {
 	int grade;
 	string *level_desc = ({
-		BLU "���ֱ���" NOR,     
-		BLU "������ӯ" NOR,
-		HIB "�����鶯" NOR,     
-		HIB "��������" NOR,
-		HIB "�����ɺ�" NOR,
-		CYN "̤ѩ�޺�" NOR,
-		CYN "��Ƽ��ˮ" NOR,
-		CYN "��ȥ���" NOR,     
-		HIC "һкǧ��" NOR,
-		HIC "���λ�Ӱ" NOR,
-		HIW "��ն���" NOR     
+		BLU "笨手笨脚" NOR,     
+		BLU "步伐轻盈" NOR,
+		HIB "身形灵动" NOR,     
+		HIB "身轻如燕" NOR,
+		HIB "疾若飞鸿" NOR,
+		CYN "踏雪无痕" NOR,
+		CYN "登萍渡水" NOR,
+		CYN "来去如风" NOR,     
+		HIC "一泻千里" NOR,
+		HIC "移形换影" NOR,
+		HIW "凌空渡虚" NOR     
 	});
 
 	grade = level / 20;

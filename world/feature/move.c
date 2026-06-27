@@ -45,7 +45,7 @@ nomask void add_encumbrance(int w)
 void over_encumbrance()
 {
 	if( !userp(this_object()) ) return;
-	tell_object(this_object(), "ÄãµÄ¸ººÉ¹ıÖØÁË£¡\n");
+	tell_object(this_object(), "ä½ çš„è´Ÿè·è¿‡é‡äº†ï¼\n");
 }
 
 nomask int query_weight() { return weight; }
@@ -71,7 +71,7 @@ string ride_suffix (object me)
 
   ridee = me->ride();
   if (ridee)
-    ridemsg = ridee->query("ride/msg")+"ÔÚ"+ridee->name()+"ÉÏ";
+    ridemsg = ridee->query("ride/msg")+"åœ¨"+ridee->name()+"ä¸Š";
   return ridemsg;
 }
 
@@ -105,7 +105,7 @@ varargs int _move(mixed dest, int silently)
 
 	// If we are equipped, unequip first.
 	if( query("equipped") && !this_object()->unequip() )
-		return notify_fail("ÄãÃ»ÓĞ°ì·¨È¡ÏÂÕâÑù¶«Î÷¡£\n");
+		return notify_fail("ä½ æ²¡æœ‰åŠæ³•å–ä¸‹è¿™æ ·ä¸œè¥¿ã€‚\n");
 
 	// Find the destination ob for moving.
 	if(dest && objectp(dest) )
@@ -123,14 +123,14 @@ varargs int _move(mixed dest, int silently)
 	if(!(me->is_character()) &&
 		sizeof(all_inventory(ob))>=ob->query_max_items()) {
 	    if(ob==this_player())
-		return notify_fail("ÄãÉíÉÏ×°²»ÏÂ¸ü¶à¶«Î÷ÁË¡£\n");
+		return notify_fail("ä½ èº«ä¸Šè£…ä¸ä¸‹æ›´å¤šä¸œè¥¿äº†ã€‚\n");
 	    else if(userp(ob))
-		return notify_fail(ob->name()+"ÉíÉÏ×°²»ÏÂ¸ü¶à¶«Î÷ÁË¡£\n");
+		return notify_fail(ob->name()+"èº«ä¸Šè£…ä¸ä¸‹æ›´å¤šä¸œè¥¿äº†ã€‚\n");
 	    else  { // for rooms and container.
 		string name=ob->name();
 		if(!name) name=ob->query("short");
 		if(!name) name=ob->short();
-		return notify_fail(name+"ÒÑ¾­Ì«Óµ¼·ÁË¡£\n");
+		return notify_fail(name+"å·²ç»å¤ªæ‹¥æŒ¤äº†ã€‚\n");
 	    }
 	}
 
@@ -138,10 +138,10 @@ varargs int _move(mixed dest, int silently)
 	// mon 9/1/98
 	env = ob;
         if(env==this_object()) //mon 8/25/97
-	    return notify_fail("Äã²»ÄÜ°ÑÎïÆ··ÅÈë×ÔÉíÖ®ÖĞ¡£\n");
+	    return notify_fail("ä½ ä¸èƒ½æŠŠç‰©å“æ”¾å…¥è‡ªèº«ä¹‹ä¸­ã€‚\n");
 	while(env=environment(env)) {
 	    if(env==this_object()) 
-		return notify_fail("Äã²»ÄÜ°ÑÎïÆ··ÅÈë×ÔÉíÖ®ÖĞ¡£\n");
+		return notify_fail("ä½ ä¸èƒ½æŠŠç‰©å“æ”¾å…¥è‡ªèº«ä¹‹ä¸­ã€‚\n");
 	}
 
 	// Check if the destination ob can hold this object.
@@ -158,10 +158,10 @@ varargs int _move(mixed dest, int silently)
 		> (int)ob->query_max_encumbrance() ) {
 		if( ob==this_player() )
 			return notify_fail( this_object()->name() + 
-				"¶ÔÄã¶øÑÔÌ«ÖØÁË¡£\n");
+				"å¯¹ä½ è€Œè¨€å¤ªé‡äº†ã€‚\n");
 		else
 			return notify_fail( this_object()->name() + 
-				"¶Ô" + ob->name() + "¶øÑÔÌ«ÖØÁË¡£\n");
+				"å¯¹" + ob->name() + "è€Œè¨€å¤ªé‡äº†ã€‚\n");
 	}
 
 	// Move the object and update encumbrance
@@ -175,7 +175,7 @@ varargs int _move(mixed dest, int silently)
 		if(base_name(ob)!=VOID_OB) { // allow move to void.
 		  if(stringp(str2)) return notify_fail(str2);
 		  else return 
-		    notify_fail("Ò»¹ÉÉñÃØµÄÁ¦Á¿½«Äã×èµ²×¡ÁË¡£\n");
+		    notify_fail("ä¸€è‚¡ç¥ç§˜çš„åŠ›é‡å°†ä½ é˜»æŒ¡ä½äº†ã€‚\n");
 		}
 	    }
 
@@ -190,8 +190,8 @@ varargs int _move(mixed dest, int silently)
 	if (userp(ob) && this_object()->value() >= 1000000)
 	{
 	        object where1, where2;
-	        string place_me = "Ä³";
-	        string place_ob = "Ä³";
+	        string place_me = "æŸ";
+	        string place_ob = "æŸ";
 
 		where1 = environment();
 	        if (where1)
@@ -200,8 +200,8 @@ varargs int _move(mixed dest, int silently)
 	        if (where2)
 	        	place_ob = (where2->short()?where2->short():where2->query("short"))+"["+file_name(where2)+"]";
 	        if (where1 != ob)
-	        	MONITOR_D->report_system_object_msg (ob,"£¨ÔÚ"+place_ob+"£©×Ô"+
-	                   place_me+"´¦µÃµ½ÁË¼ÛÖµÎª"+to_chinese(this_object()->value()/10000)+"goldµÄ¾Ş¿î¡£");
+	        	MONITOR_D->report_system_object_msg (ob,"ï¼ˆåœ¨"+place_ob+"ï¼‰è‡ª"+
+	                   place_me+"å¤„å¾—åˆ°äº†ä»·å€¼ä¸º"+to_chinese(this_object()->value()/10000)+"goldçš„å·¨æ¬¾ã€‚");
 	}
 
 	move_object(ob);
@@ -227,12 +227,12 @@ varargs int _move(mixed dest, int silently)
                                 	dirs[i] = 0;
        			dirs -= ({ 0 });
                		if( sizeof(dirs)==0 )
-                       		str += "    ÕâÀïÃ»ÓĞÈÎºÎÃ÷ÏÔµÄ³öÂ·¡£\n";
+                       		str += "    è¿™é‡Œæ²¡æœ‰ä»»ä½•æ˜æ˜¾çš„å‡ºè·¯ã€‚\n";
                		else if( sizeof(dirs)==1 )
-                       		str += "    ÕâÀïÎ¨Ò»µÄ³ö¿ÚÊÇ " + BOLD + dirs[0] + NOR + "¡£\n";
+                       		str += "    è¿™é‡Œå”¯ä¸€çš„å‡ºå£æ˜¯ " + BOLD + dirs[0] + NOR + "ã€‚\n";
                		else
-                       		str += sprintf("    ÕâÀïÃ÷ÏÔµÄ³ö¿ÚÊÇ " + BOLD + "%s" + NOR + " ºÍ " + BOLD + "%s" + NOR + "¡£\n",
-               		implode(dirs[0..sizeof(dirs)-2], "¡¢"), dirs[sizeof(dirs)-1]);
+                       		str += sprintf("    è¿™é‡Œæ˜æ˜¾çš„å‡ºå£æ˜¯ " + BOLD + "%s" + NOR + " å’Œ " + BOLD + "%s" + NOR + "ã€‚\n",
+               		implode(dirs[0..sizeof(dirs)-2], "ã€"), dirs[sizeof(dirs)-1]);
        		}
        		inv = all_inventory(environment());
        		i=sizeof(inv);
@@ -254,9 +254,9 @@ varargs int _move(mixed dest, int silently)
         if ((this_object()->query("is_monitored") ||
 	     file_name(this_object())[0..2]=="/u/") 
 	     && userp(ob))
-        	MONITOR_D->report_system_object_msg (ob,"µÃµ½ÁË"+
+        	MONITOR_D->report_system_object_msg (ob,"å¾—åˆ°äº†"+
         	  this_object()->query("name")
-		  +"("+file_name(this_object())+")¡£");
+		  +"("+file_name(this_object())+")ã€‚");
 	return 1;
 }
 
@@ -271,7 +271,7 @@ void remove(string euid)
 	if( userp(this_object()) && euid!=ROOT_UID ) {
 		log_file("destruct", sprintf("%s attempt to destruct user object %s (%s)\n",
 			euid, this_object()->query("id"), ctime(time())));
-		error("Äã(" + euid + ")²»ÄÜ´İ»ÙÆäËûµÄÊ¹ÓÃÕß¡£\n");
+		error("ä½ (" + euid + ")ä¸èƒ½æ‘§æ¯å…¶ä»–çš„ä½¿ç”¨è€…ã€‚\n");
 	} else if( this_object()->query("equipped")) {
 		if(	!this_object()->unequip() )
 			log_file("destruct", sprintf("Failed to unequip %s when destructed.\n",file_name(this_object())));
@@ -289,7 +289,7 @@ int move_or_destruct( object dest )
 {
 	if( userp(this_object()) ) {
 		tell_object(this_object(), 
-			"Ò»ÕóÊ±¿ÕµÄÅ¤Çú½«Äã´«ËÍµ½ÁíÒ»¸öµØ·½£®£®£®\n");
+			"ä¸€é˜µæ—¶ç©ºçš„æ‰­æ›²å°†ä½ ä¼ é€åˆ°å¦ä¸€ä¸ªåœ°æ–¹ï¼ï¼ï¼\n");
 		move(VOID_OB);
 	}
 }

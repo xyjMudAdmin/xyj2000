@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ɽ·");
+  set ("short", "山路");
   set ("long", @LONG
 
-�߷����ƣ��������ף����ִ�����ʱ�㱸��Գ�����������۾�Ծ��
-ʵ������֮�ɶ���
+高峰入云，清流见底，青林翠竹，四时俱备。猿鸟乱鸣，沉鳞竞跃，
+实是欲界之仙都。
 LONG);
 
   set("outdoors", __DIR__"");

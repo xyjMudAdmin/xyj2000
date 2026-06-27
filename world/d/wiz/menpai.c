@@ -14,25 +14,25 @@ int *exp = ({0,0,0,0,0,0,0,0,0,0,0,0,0,0});
 
 
 string *names = ({
-           "·½´çÉ½ÈıĞÇ¶´¡¡¡¡",
-           "ÄÏº£ÆÕÍÓÉ½¡¡¡¡¡¡",
-           "ÑÖÂŞµØ¸®¡¡¡¡¡¡¡¡",
-           "ÔÂ¹¬¡¡¡¡¡¡¡¡¡¡¡¡",
-           "Îå×¯¹Û¡¡¡¡¡¡¡¡¡¡",
-           "Ïİ¿ÕÉ½ÎŞµ×¶´¡¡¡¡",
-           "´óÑ©É½¡¡¡¡¡¡¡¡¡¡",
-           "¶«º£Áú¹¬¡¡¡¡¡¡¡¡",
+           "æ–¹å¯¸å±±ä¸‰æ˜Ÿæ´ã€€ã€€",
+           "å—æµ·æ™®é™€å±±ã€€ã€€ã€€",
+           "é˜ç½—åœ°åºœã€€ã€€ã€€ã€€",
+           "æœˆå®«ã€€ã€€ã€€ã€€ã€€ã€€",
+           "äº”åº„è§‚ã€€ã€€ã€€ã€€ã€€",
+           "é™·ç©ºå±±æ— åº•æ´ã€€ã€€",
+           "å¤§é›ªå±±ã€€ã€€ã€€ã€€ã€€",
+           "ä¸œæµ·é¾™å®«ã€€ã€€ã€€ã€€",
 });
 
 string long=@LONG
 
-´«Ëµ¸÷ÃÅ¸÷ÅÉÎªÁË¹â´ó±¾ÃÅ£¬¶¼½«ÅÉÈËÀ´³¤°²ÕĞÄÉÈË²Å£¬
-ÄÏ³Ç¿ÍÕ»ÀÏ°å×¨¿ªÒ»¼äÑÅ×ù£¬¹©¸÷ÅÉÉñÑıĞª½Å¡£
+ä¼ è¯´å„é—¨å„æ´¾ä¸ºäº†å…‰å¤§æœ¬é—¨ï¼Œéƒ½å°†æ´¾äººæ¥é•¿å®‰æ‹›çº³äººæ‰ï¼Œ
+å—åŸå®¢æ ˆè€æ¿ä¸“å¼€ä¸€é—´é›…åº§ï¼Œä¾›å„æ´¾ç¥å¦–æ­‡è„šã€‚
 LONG;
 
 void create()
 {
-set("short", "ÕĞÏÍ¹İ");
+set("short", "æ‹›è´¤é¦†");
 
 
 set("exits", ([
@@ -87,14 +87,14 @@ void reset_long()
 
         switch(str)
           {
-           case "·½´çÉ½ÈıĞÇ¶´\n": num_online[0]++;continue;
-           case "ÄÏº£ÆÕÍÓÉ½\n": num_online[1]++;continue;
-           case "ÑÖÂŞµØ¸®\n": num_online[2]++;continue;
-           case "ÔÂ¹¬\n": num_online[3]++;continue;
-           case "Îå×¯¹Û\n": num_online[4]++;continue;
-           case "Ïİ¿ÕÉ½ÎŞµ×¶´\n": num_online[5]++;continue;
-           case "´óÑ©É½\n": num_online[6]++;continue;
-           case "¶«º£Áú¹¬\n": num_online[7]++;continue;
+           case "æ–¹å¯¸å±±ä¸‰æ˜Ÿæ´\n": num_online[0]++;continue;
+           case "å—æµ·æ™®é™€å±±\n": num_online[1]++;continue;
+           case "é˜ç½—åœ°åºœ\n": num_online[2]++;continue;
+           case "æœˆå®«\n": num_online[3]++;continue;
+           case "äº”åº„è§‚\n": num_online[4]++;continue;
+           case "é™·ç©ºå±±æ— åº•æ´\n": num_online[5]++;continue;
+           case "å¤§é›ªå±±\n": num_online[6]++;continue;
+           case "ä¸œæµ·é¾™å®«\n": num_online[7]++;continue;
            default:   pmin++;
           } 
 
@@ -113,9 +113,9 @@ void reset_long()
           }
       }
    
-    result =  "\n¡¡¡¡ÃÅÅÉ¡¡¡¡¡¡ÔÚÏßÈËÊı¡¡\n";
+    result =  "\nã€€ã€€é—¨æ´¾ã€€ã€€ã€€åœ¨çº¿äººæ•°ã€€\n";
     for (i=0;i<sizeof(names);i++) result=result+names[i]+num_online[i]+"\n";
-    result=result+"ÆÕÍ¨°ÙĞÕ£º¡¡¡¡¡¡"+pmin+"\n";
+    result=result+"æ™®é€šç™¾å§“ï¼šã€€ã€€ã€€"+pmin+"\n";
 
     set("long",long+"\n"+result);
 }

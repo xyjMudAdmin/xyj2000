@@ -3,12 +3,12 @@ inherit F_VENDOR_SALE;
 void create()
 {
     reload("liuyuntian");
-        set_name("ÁøÔÆÌì", ({"liu yuntian", "liu"}));
+        set_name("æŸ³äº‘å¤©", ({"liu yuntian", "liu"}));
         set("age", 22);
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("long",
-"Áø¼Ç²¼×¯µÄÉÙ¶«¼Ò£¬Ò²ÊÇÄêÉÙÓĞÎª£¬Ò»¸±µÃÒâÑóÑóµØÑù×Ó¡£\n");
-	set("title", "Áø¼Ç²¼×¯¶«¼Ò");
+"æŸ³è®°å¸ƒåº„çš„å°‘ä¸œå®¶ï¼Œä¹Ÿæ˜¯å¹´å°‘æœ‰ä¸ºï¼Œä¸€å‰¯å¾—æ„æ´‹æ´‹åœ°æ ·å­ã€‚\n");
+	set("title", "æŸ³è®°å¸ƒåº„ä¸œå®¶");
         set("attitude", "friendly");
         set("combat_exp", 20000);
         set("shen_type", 1);
@@ -47,7 +47,7 @@ void greeting(object ob)
         if( !ob || !visible(ob) || environment(ob) != environment() ) return;
         switch( random(1) ) {
                 case 0:
-                        say(name()+ "Ğ¦ÃĞÃĞµØÓ­ÉÏÀ´£ºÕâÎ»" + RANK_D->query_respect(ob) + "£¬ÒªÂòĞ©Ê²Ã´¶«Î÷£¿\n");
+                        say(name()+ "ç¬‘çœ¯çœ¯åœ°è¿ä¸Šæ¥ï¼šè¿™ä½" + RANK_D->query_respect(ob) + "ï¼Œè¦ä¹°äº›ä»€ä¹ˆä¸œè¥¿ï¼Ÿ\n");
                         break;
         }
 }
@@ -65,7 +65,7 @@ void accept_kill(object me)
                 ob=new("/d/city/npc/xunluobing");
                 ob->move(environment());
         }
-        message_vision("\nºöÈ»´ÓÃÅÍâ³å½øÀ´¸öÑ²Âß¹Ù±ø£¬¶Ô$N´óº°Ò»Éù¡°¸ÉÊ²Ã´£¿ÏëÉ±ÈËÄ±²ÆÃ´£¡\n\n",me);        
+        message_vision("\nå¿½ç„¶ä»é—¨å¤–å†²è¿›æ¥ä¸ªå·¡é€»å®˜å…µï¼Œå¯¹$Nå¤§å–Šä¸€å£°â€œå¹²ä»€ä¹ˆï¼Ÿæƒ³æ€äººè°‹è´¢ä¹ˆï¼\n\n",me);        
 
         ob->kill_ob(me);
         ob->set_leader(me);

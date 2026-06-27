@@ -5,10 +5,10 @@ inherit NPC;
 
 void create()
 {
-  set_name("½ðîÎÅ®", ({"jinchai nu", "nu", "girl"}) );
-  set("gender", "Å®ÐÔ" );
+  set_name("é‡‘é’—å¥³", ({"jinchai nu", "nu", "girl"}) );
+  set("gender", "å¥³æ€§" );
   set("age", 20);
-  set("long","Ò»Î»ÁøÃ¼·ÛÃæº¬Ð¦£¬¶êÈ¹ÁìÂ¶ËÖÐØµÄÃÀÅ®¡£\n");
+  set("long","ä¸€ä½æŸ³çœ‰ç²‰é¢å«ç¬‘ï¼Œè›¾è£™é¢†éœ²é…¥èƒ¸çš„ç¾Žå¥³ã€‚\n");
 
   set("combat_exp", 2500);
   set("str", 15);
@@ -30,12 +30,12 @@ void init()
 void says (object me)
 {
   string *msgs = ({
-    "$N³Ô³ÔÒ»Ð¦£¬Ãò×ì¿´×ÅÄã¡£\n",
-    "$Nº¬ÇéÂöÂöµØ¶ÔÄãËµ¡­¡­ÎÒ¡­¡­\n",
-    "¿´À´$NºÜÏë¸úÄã¡­¡­Èç¹ûÄãÔ¸Òâ£¬Ò²ÇëÏÂÒ»´Î sleep ÃüÁî¡£\n",
-    "$N³å×ÅÄã»áÐÄµØÒ»Ð¦£¬µãÁËµãÍ·¡£\n",
-    "$NºÜÏë¸úÄã¡­¡­\n",
-    "$N¶ÔÄãÍñ¶ûÒ»Ð¦¡£\n",
+    "$Nåƒåƒä¸€ç¬‘ï¼ŒæŠ¿å˜´çœ‹ç€ä½ ã€‚\n",
+    "$Nå«æƒ…è„‰è„‰åœ°å¯¹ä½ è¯´â€¦â€¦æˆ‘â€¦â€¦\n",
+    "çœ‹æ¥$Nå¾ˆæƒ³è·Ÿä½ â€¦â€¦å¦‚æžœä½ æ„¿æ„ï¼Œä¹Ÿè¯·ä¸‹ä¸€æ¬¡ sleep å‘½ä»¤ã€‚\n",
+    "$Nå†²ç€ä½ ä¼šå¿ƒåœ°ä¸€ç¬‘ï¼Œç‚¹äº†ç‚¹å¤´ã€‚\n",
+    "$Nå¾ˆæƒ³è·Ÿä½ â€¦â€¦\n",
+    "$Nå¯¹ä½ å©‰å°”ä¸€ç¬‘ã€‚\n",
   });
   message_vision (msgs[random(sizeof(msgs))],me);
   remove_call_out ("says");
@@ -47,7 +47,7 @@ int do_sleep ()
 {
   object me = this_object();
   object who = this_player();
-  message_vision ("$NÂ§×Å$nÈáÈíµÄÉíÌå£¬²»ÓÉµÃÐÄ×íÉñÃÔ¡­¡­\n\n",who,me);
+  message_vision ("$Næ‚ç€$næŸ”è½¯çš„èº«ä½“ï¼Œä¸ç”±å¾—å¿ƒé†‰ç¥žè¿·â€¦â€¦\n\n",who,me);
   who->command_function("remove all");
   who->start_busy(3,3);
   remove_call_out ("get_fainted");
@@ -61,12 +61,12 @@ void get_fainted (object who, object me)
 {
   object *objs = all_inventory(who);
   int i = sizeof (objs);
-  message_vision ("$N¶Ô$nÉñÃØµØÒ»Ð¦¡£\n\n",me,who);
+  message_vision ("$Nå¯¹$nç¥žç§˜åœ°ä¸€ç¬‘ã€‚\n\n",me,who);
   who->unconcious();    
   while (i--)
   {
     object obj = objs[i];
-    message_vision ("$N´Ó$nÉíÉÏÄÃ³ö"+obj->query("name")+"¡£\n",me,who);
+    message_vision ("$Nä»Ž$nèº«ä¸Šæ‹¿å‡º"+obj->query("name")+"ã€‚\n",me,who);
     obj->move(me);
     destruct(obj);
   }

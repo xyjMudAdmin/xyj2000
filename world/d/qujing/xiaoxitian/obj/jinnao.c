@@ -8,16 +8,16 @@ inherit ITEM;
  
 void create()
 {
-  set_name("½ğîó",({"jin nao", "nao"}));
+  set_name("é‡‘é“™",({"jin nao", "nao"}));
   set_weight(9000000);
   set_max_encumbrance(100000000000);
   if(clonep())
     set_default_object(__FILE__);
   else {
-    set("unit","Ö»");
+    set("unit","åª");
     set("value", 100000);
     set("material","gold");
-    set("long", "Ò»Ö»ÓĞÕÉ°Ñ¸ßµÄ¾Ş´ó½ğîó¡£\n");
+    set("long", "ä¸€åªæœ‰ä¸ˆæŠŠé«˜çš„å·¨å¤§é‡‘é“™ã€‚\n");
   }
   set("no_fight", 1);
   set("no_magic", 1);
@@ -42,19 +42,19 @@ int do_out ()
   if (who->query_temp("no_move") ||
       who->is_busy())
   {
-    tell_object (who, "ÄãÔÚºÚ°µÖĞÃşË÷×ÅÏòÉÏÅÀ£¬µ±µØÒ»Éù×²ÔÚ½ğîóÉÏ¡£\n");
+    tell_object (who, "ä½ åœ¨é»‘æš—ä¸­æ‘¸ç´¢ç€å‘ä¸Šçˆ¬ï¼Œå½“åœ°ä¸€å£°æ’åœ¨é‡‘é“™ä¸Šã€‚\n");
     return 1;
   }
   if (random (10))
   {
-    tell_object (who, "ÄãµÄÍ·µ±µØÒ»Éù×²ÔÚ½ğîó±ÚÉÏ¡£\n");
+    tell_object (who, "ä½ çš„å¤´å½“åœ°ä¸€å£°æ’åœ¨é‡‘é“™å£ä¸Šã€‚\n");
     return 1;
   }
-  tell_object (who, "Äã½«½ğîóÏÆÆğÒ»µÀ·ì£¬ÍùÍâÅÀÈ¥¡£\n",who,me);
+  tell_object (who, "ä½ å°†é‡‘é“™æ€èµ·ä¸€é“ç¼ï¼Œå¾€å¤–çˆ¬å»ã€‚\n",who,me);
   if (room->is_character())
     room = environment (room);
   who->move(room);
-  message_vision ("½ğîó±»¶¥ÁËÆğÀ´£¬$N´ÓÀïÃæ³ÔÁ¦µØÅÀÁË³öÀ´¡£\n",who,me);
+  message_vision ("é‡‘é“™è¢«é¡¶äº†èµ·æ¥ï¼Œ$Nä»é‡Œé¢åƒåŠ›åœ°çˆ¬äº†å‡ºæ¥ã€‚\n",who,me);
   return 1;
 }
 

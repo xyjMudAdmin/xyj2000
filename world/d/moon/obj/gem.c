@@ -4,39 +4,39 @@
 inherit ITEM;
 
 string *names = ({
-HIW"×êÊ¯"NOR,
-HIG"×æÄ¸ÂÌ"NOR,
-HIR"ºì±¦Ê¯"NOR,
-HIB"À¶±¦Ê¯"NOR,
-HIG"Ã¨¶ùÑÛ"NOR,
-HIW"Ë®¾§"NOR,
-HIG"Âêè§"NOR,
-HIW"ÕäÖé"NOR,
-HIG"ôä´ä"NOR,
-HIW"Éºº÷"NOR,
-HIW"ÏóÑÀ"NOR,
-HIC"çéè£"NOR,
-YEL"çúçê"NOR,
-MAG"×Ï¾§"NOR,
-HIR"¼¦ÑªÊ¯"NOR,
-HIW"ºÍãÙÓñ"NOR,
+HIW"é’»çŸ³"NOR,
+HIG"ç¥–æ¯ç»¿"NOR,
+HIR"çº¢å®çŸ³"NOR,
+HIB"è“å®çŸ³"NOR,
+HIG"çŒ«å„¿çœ¼"NOR,
+HIW"æ°´æ™¶"NOR,
+HIG"ç›ç‘™"NOR,
+HIW"çç "NOR,
+HIG"ç¿¡ç¿ "NOR,
+HIW"çŠç‘š"NOR,
+HIW"è±¡ç‰™"NOR,
+HIC"ç³ç‘"NOR,
+YEL"ç¥ç€"NOR,
+MAG"ç´«æ™¶"NOR,
+HIR"é¸¡è¡€çŸ³"NOR,
+HIW"å’Œé˜—ç‰"NOR,
 });
 
 void create()
 {
-  set_name("¸÷É«±¦Ê¯", ({"bao shi", "gem",}));
+  set_name("å„è‰²å®çŸ³", ({"bao shi", "gem",}));
   set_weight(100);
   if (clonep())
     set_default_object(__FILE__);
   else {
-    set("unit", "¿é");
+    set("unit", "å—");
     set("value", 200000);
   }
 }
 
 void init()
 {
-  if (query("name")=="¸÷É«±¦Ê¯")
+  if (query("name")=="å„è‰²å®çŸ³")
     set_name(names[random(sizeof(names))], ({"bao shi","gem"}));
 //  ::init();
 }

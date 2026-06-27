@@ -5,14 +5,14 @@ inherit ITEM;
 
 void create()
 {
-  set_name("µñÓñÏä", ({ "diaoyu xiang", "xiang" }) );
+  set_name("é›•çŽ‰ç®±", ({ "diaoyu xiang", "xiang" }) );
   set_weight(250000);
   set_max_encumbrance(8000);
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("unit", "¸ö");
-    set("long", "ÕâÊÇÒ»¸ö³ÁÖØµÄµñÓñÏä¡£\n");
+    set("unit", "ä¸ª");
+    set("long", "è¿™æ˜¯ä¸€ä¸ªæ²‰é‡çš„é›•çŽ‰ç®±ã€‚\n");
     set("value", 2000);
   }
 }
@@ -37,18 +37,18 @@ int do_donate (string arg)
 
   if(arg && sscanf(arg, "%d %s", amount, item)==2) {
     if( !objectp(obj = present(item, who)) )
-      return notify_fail("ÄãÉíÉÏÃ»ÓÐÕâÑù¶«Î÷¡£\n");
+      return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
 
     if(!obj->value() || obj->query("base_value")<100) 
-       return notify_fail("ÕâÀïÖ»½ÓÊÜ½ðÒø¾è¿î¡£\n");
+       return notify_fail("è¿™é‡ŒåªæŽ¥å—é‡‘é“¶ææ¬¾ã€‚\n");
 
     if( amount < 1 )
-       return notify_fail(obj->name()+"µÄÊýÁ¿ÖÁÉÙÊÇÒ»¸ö¡£\n");
+       return notify_fail(obj->name()+"çš„æ•°é‡è‡³å°‘æ˜¯ä¸€ä¸ªã€‚\n");
     if( amount > obj->query_amount() )
-       return notify_fail("ÄãÃ»ÓÐÄÇÃ´¶àµÄ" + obj->name() + "¡£\n");
+       return notify_fail("ä½ æ²¡æœ‰é‚£ä¹ˆå¤šçš„" + obj->name() + "ã€‚\n");
   } else {
     if (! silver)
-      return notify_fail("ÄãÉíÉÏÃ»ÓÐÒø×Ó¡£\n");
+      return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰é“¶å­ã€‚\n");
     obj=silver;
     amount=1;
   }
@@ -63,12 +63,12 @@ int do_donate (string arg)
   else if(val>0)
       who->add_temp("kaifeng_donate_silver", val);
 
-  message_vision ("$N´ÓÉíÉÏÈ¡³ö"+chinese_number(amount)+
-     "Á½"+obj->name()+"·Åµ½µñÓñÏäÀï¡£\n",who);
+  message_vision ("$Nä»Žèº«ä¸Šå–å‡º"+chinese_number(amount)+
+     "ä¸¤"+obj->name()+"æ”¾åˆ°é›•çŽ‰ç®±é‡Œã€‚\n",who);
   
   if(val>0)
-    write("ºÃ£¡ÄãÔÚ¹¬ÖÐÈý°ÝËùÐèµÄÊ±¼ä½«¼õÉÙ"+
-	  chinese_number(val*3)+"Ãë£¡\n");
+    write("å¥½ï¼ä½ åœ¨å®«ä¸­ä¸‰æ‹œæ‰€éœ€çš„æ—¶é—´å°†å‡å°‘"+
+	  chinese_number(val*3)+"ç§’ï¼\n");
 
   obj->set_amount( (int)obj->query_amount()-amount );
   if (obj && obj->query_amount() == 0)

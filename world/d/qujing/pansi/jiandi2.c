@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "����");
+  set ("short", "涧底");
   set ("long", @LONG
 
-ɽ�����ݵش����Ĵ��ǽ�ˮ�����������޷���š������Ǹ�ɽ
-���룬���߽���ˮ������������ϱ���һ���¡�
+山涧低洼地带，四处是涧水潺潺，几乎无法落脚。两边是高山
+峻岭，东边涧流水急很难涉过，上边有一陡坡。
 
 LONG);
 

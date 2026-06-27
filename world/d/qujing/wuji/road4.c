@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "É½Â·");
+  set ("short", "å±±è·¯");
   set ("long", @LONG
 
-Â·Á½±ßÇ§ÖêÀÏ°Ø£¬´øÓê°ë¿ÕÇàÈ½È½£»Íò½ÚÐÞóò£¬º¬ÑÌÒ»ÛÖÉ«²Ô²Ô¡£ÁÖ
-ÖÐÒþÒþÓÐÖÓÉù´«À´£¬ºÃÏóÊÇÒ»×ùËÂÃí¡£
+è·¯ä¸¤è¾¹åƒæ ªè€æŸï¼Œå¸¦é›¨åŠç©ºé’å†‰å†‰ï¼›ä¸‡èŠ‚ä¿®ç¯ï¼Œå«çƒŸä¸€å£‘è‰²è‹è‹ã€‚æž—
+ä¸­éšéšæœ‰é’Ÿå£°ä¼ æ¥ï¼Œå¥½è±¡æ˜¯ä¸€åº§å¯ºåº™ã€‚
 LONG);
 
   set("outdoors", __DIR__"");

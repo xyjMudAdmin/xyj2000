@@ -5,16 +5,16 @@
 inherit NPC;
 void create()
 {
-        set_name("Ä§Àñºì", ({ "tian wang", "guangmu tianwang", "hong", "tianwang" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("é­”ç¤¼çº¢", ({ "tian wang", "guangmu tianwang", "hong", "tianwang" }) );
+        set("gender", "ç”·æ€§" );
 	set("long",
-		"Ä§¼ÒËÄ½«Ö®Ò»£¬Ê¹Ò»¸Ë·½Ìì»­êª£¬ÃØÊÚÒ»°ÑÉ¡¡£ÃûÔ»£º¡¸»ìÔªÉ¡¡£¡¹\n"
-                "É¡½ÔÃ÷Öé´©³É£¬ÓĞ×æÄ¸ÂÌ£¬×æÄ¸±Ì£¬Ò¹Ã÷Öé£¬±Ù³¾Öé£¬±Ù»ğÖé£¬±ÙË®\n"
-                "Öé£¬ÏûÁ¹Öé£¬¾ÅÇúÖé£¬¶¨ÑÕÖé£¬¶¨·çÖé¡£»¹ÓĞÕäÖé´©³É¡¸×°ÔØÇ¬À¤¡¹\n"
-                "ËÄ×Ö£¬Õâ°ÑÉ¡²»¸Ò³Å£¬³Å¿ªÊ±Ìì»èµØ°µ£¬ÈÕÔÂÎŞ¹â£¬×ªÒ»×ªÇ¬À¤»Î¶¯¡£\n"
+		"é­”å®¶å››å°†ä¹‹ä¸€ï¼Œä½¿ä¸€æ†æ–¹å¤©ç”»æˆŸï¼Œç§˜æˆä¸€æŠŠä¼ã€‚åæ›°ï¼šã€Œæ··å…ƒä¼ã€‚ã€\n"
+                "ä¼çš†æ˜ç ç©¿æˆï¼Œæœ‰ç¥–æ¯ç»¿ï¼Œç¥–æ¯ç¢§ï¼Œå¤œæ˜ç ï¼Œè¾Ÿå°˜ç ï¼Œè¾Ÿç«ç ï¼Œè¾Ÿæ°´\n"
+                "ç ï¼Œæ¶ˆå‡‰ç ï¼Œä¹æ›²ç ï¼Œå®šé¢œç ï¼Œå®šé£ç ã€‚è¿˜æœ‰çç ç©¿æˆã€Œè£…è½½ä¹¾å¤ã€\n"
+                "å››å­—ï¼Œè¿™æŠŠä¼ä¸æ•¢æ’‘ï¼Œæ’‘å¼€æ—¶å¤©æ˜åœ°æš—ï¼Œæ—¥æœˆæ— å…‰ï¼Œè½¬ä¸€è½¬ä¹¾å¤æ™ƒåŠ¨ã€‚\n"
 	);
 	set("age",50);
-	set("title", "¹ãÄ¿ÌìÍõ");
+	set("title", "å¹¿ç›®å¤©ç‹");
 	set("attitude", "heroism");
 	set("str",40);
 	set("int",30);
@@ -50,8 +50,8 @@ void create()
 	map_skill("spear","bawang-qiang");
 	map_skill("unarmed", "yingzhaogong");
 	set("inquiry", ([
-		"name" : "ÔÚÏÂ¹ãÄ¿ÌìÍõÄ§Àñºì£¬·îÊ¥ÚÍ°ÑÊØ¶«ÌìÃÅ¡£",
-		"here" : "ÕâÀï¾ÍÊÇ¶«ÌìÃÅ, ÈëÄÚ¾ÍÊÇÌì½çÁË¡£",
+		"name" : "åœ¨ä¸‹å¹¿ç›®å¤©ç‹é­”ç¤¼çº¢ï¼Œå¥‰åœ£è°•æŠŠå®ˆä¸œå¤©é—¨ã€‚",
+		"here" : "è¿™é‡Œå°±æ˜¯ä¸œå¤©é—¨, å…¥å†…å°±æ˜¯å¤©ç•Œäº†ã€‚",
 	]) );
 
 	setup();
@@ -86,13 +86,13 @@ void san (object me, object ob)
   if (environment(ob) != environment(me))
     return;
 
-  message_vision (HIY"$N´Ó»³ÖĞ³é³ö½µÄ§É¡£¬µÍÉùÄîÁË¼¸ÉùÖäÓï£¬½µÄ§É¡ÈçÌìÂŞµØÍø°ãÏò£»$nÕÖÀ´£¡\n"NOR,me,ob);
+  message_vision (HIY"$Nä»æ€€ä¸­æŠ½å‡ºé™é­”ä¼ï¼Œä½å£°å¿µäº†å‡ å£°å’’è¯­ï¼Œé™é­”ä¼å¦‚å¤©ç½—åœ°ç½‘èˆ¬å‘ï¼›$nç½©æ¥ï¼\n"NOR,me,ob);
 
   if ( ((int)ob->query_skill("dodge", 1)+ random(100)) > 240 )
-     message_vision (HIY"$N×İÉíÔ¾µ½½µÄ§É¡¶¥£¬ÉÁ¹ıÁËÕâÒ»»÷¡£\n"NOR,ob);
+     message_vision (HIY"$Nçºµèº«è·ƒåˆ°é™é­”ä¼é¡¶ï¼Œé—ªè¿‡äº†è¿™ä¸€å‡»ã€‚\n"NOR,ob);
   else 
     {
-     message_vision (HIY"½á¹û$N±»ÕÖ×¡²»ÄÜĞĞ¶¯£¡\n"NOR,ob,me);
+     message_vision (HIY"ç»“æœ$Nè¢«ç½©ä½ä¸èƒ½è¡ŒåŠ¨ï¼\n"NOR,ob,me);
      ob->start_busy(10+random(10));
     } 
 
@@ -104,7 +104,7 @@ void san (object me, object ob)
 void die ()
 {
   object me = this_object();
-  message_vision (HIY"$NÏÅµÃÈöÍÈ¾ÍÅÜ¡£\n"NOR,me);
+  message_vision (HIY"$Nå“å¾—æ’’è…¿å°±è·‘ã€‚\n"NOR,me);
   destruct (this_object());
   return ;
 }

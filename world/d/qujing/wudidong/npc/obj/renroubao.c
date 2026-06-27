@@ -1,5 +1,5 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// Èâ°ü×Ó renroubao.c
+// è‚‰åŒ…å­ renroubao.c
 // 9-16-97 pickle
 
 #include <ansi.h>
@@ -8,16 +8,16 @@ inherit F_FOOD;
 
 void create()
 {
-  set_name("Èâ°ü×Ó", ({ "rou baozi","baozi","bao", "dumpling" }) );
+  set_name("è‚‰åŒ…å­", ({ "rou baozi","baozi","bao", "dumpling" }) );
   set_weight(80);
   if( clonep() )
     set_default_object(__FILE__);
   else {
     set("long", 
-"Ò»¸öÏãÅçÅç¡¢ÈÈÌÚÌÚµÄ´ó°ü×Ó¡£\n");
-    set("unit", "¸ö");
+"ä¸€ä¸ªé¦™å–·å–·ã€çƒ­è…¾è…¾çš„å¤§åŒ…å­ã€‚\n");
+    set("unit", "ä¸ª");
     set("value", 0);
-    set("name_recognized", "ÈËÈâ°ü×Ó");
+    set("name_recognized", "äººè‚‰åŒ…å­");
   }
 }
 
@@ -35,13 +35,13 @@ int do_eat(string arg)
     string msg, str;
 
     if(!id(arg)) return 0;
-    if(myfood>mycap*9/10) {write("ÄãÃ»Î¸¿Ú£¬³Ô²»ÏÂÕâÃ´´óµÄÒ»¸ö°ü×Ó¡£\n");return 1;}
-    message_vision("$NÄÃÆğ$n£¬ÓĞ×ÌÓĞÎ¶µØ³ÔÁËÏÂÈ¥¡£\n", me, baozi);
+    if(myfood>mycap*9/10) {write("ä½ æ²¡èƒƒå£ï¼Œåƒä¸ä¸‹è¿™ä¹ˆå¤§çš„ä¸€ä¸ªåŒ…å­ã€‚\n");return 1;}
+    message_vision("$Næ‹¿èµ·$nï¼Œæœ‰æ»‹æœ‰å‘³åœ°åƒäº†ä¸‹å»ã€‚\n", me, baozi);
     me->set("food", mycap);
     if(!owner || owner != me->query("id")
-    || !query("reward") || (query("type") != "ÓĞ½±Àø"))
+    || !query("reward") || (query("type") != "æœ‰å¥–åŠ±"))
 	return 1;
-    msg=GRN"ÄãÍ»È»¸Ğµ½ÉíÌåÓĞĞ©±ä»¯£¬ËÆºõ½«°ü×ÓÏÚ»î×ÅÊ±µÄµÀĞĞÎüÊÕÁËÒ»Ğ©£¡\n"NOR;
+    msg=GRN"ä½ çªç„¶æ„Ÿåˆ°èº«ä½“æœ‰äº›å˜åŒ–ï¼Œä¼¼ä¹å°†åŒ…å­é¦…æ´»ç€æ—¶çš„é“è¡Œå¸æ”¶äº†ä¸€äº›ï¼\n"NOR;
     tell_object(me, msg);
     me->add("daoxing", query("reward"));
     me->add("wudidong/sell_reward", query("reward"));
@@ -49,9 +49,9 @@ int do_eat(string arg)
     me->add("kill/nkgain", query("reward"));
     str=COMBAT_D->chinese_daoxing((int)query("reward"));
     log_file("npc_kill","["+ctime(time())+"] "+me->query("id")
-       +" got "+str +" µÀĞĞ by selling.\n");
+       +" got "+str +" é“è¡Œ by selling.\n");
     CHANNEL_D->do_channel(this_object(), "sys",me->query("id")
-       +" got "+str +" µÀĞĞ by selling.");
+       +" got "+str +" é“è¡Œ by selling.");
 
     destruct(baozi);
 

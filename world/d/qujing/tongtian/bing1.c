@@ -5,12 +5,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "±ùµÀ");
+  set ("short", "å†°é“");
   set ("long", @LONG
 
-ºÓÃæ¶³µÃ½á½áÊµÊµ£¬ºñºñµÄÒ»²ã±ùÒÑ¾­±»ÈË×ß³öÒ»Ìõ³¤³¤µÄ±ù
-µÀ£¬Ò²ÓÐ´ó±ùÇË»¬¹ýÁôÏÂµÄºÛ¼£¡£·çºôºôµØ´òÔÚÁ³ÉÏ£¬´Ì¹ÇµØ
-º®Àä¡£
+æ²³é¢å†»å¾—ç»“ç»“å®žå®žï¼ŒåŽšåŽšçš„ä¸€å±‚å†°å·²ç»è¢«äººèµ°å‡ºä¸€æ¡é•¿é•¿çš„å†°
+é“ï¼Œä¹Ÿæœ‰å¤§å†°æ’¬æ»‘è¿‡ç•™ä¸‹çš„ç—•è¿¹ã€‚é£Žå‘¼å‘¼åœ°æ‰“åœ¨è„¸ä¸Šï¼Œåˆºéª¨åœ°
+å¯’å†·ã€‚
 
 LONG);
 
@@ -38,7 +38,7 @@ void init ()
 
 void cracking (object where)
 {
-  tell_room (where, "±ù·¢³ößÇµØÒ»ÉùÇáÏì¡£\n");
+  tell_room (where, "å†°å‘å‡ºå’”åœ°ä¸€å£°è½»å“ã€‚\n");
 }
 
 int test_player (object who)
@@ -58,7 +58,7 @@ int test_player (object who)
 
   name = names[0];
 
-  if (name != "Ð¡Í¯")
+  if (name != "å°ç«¥")
     return 0;
 
   if (present ("bishui zhou",who))
@@ -72,17 +72,17 @@ void testing (object who, object where)
 
   if (status==0)
   {
-    tell_room (where, "±ùßÇßÇ×÷Ïì¡£\n");
+    tell_room (where, "å†°å’”å’”ä½œå“ã€‚\n");
     return;
   }
 
   if (environment (who) != where)
     return;
 
-  message_vision ("±ùÃæÉÏÁÑ¿ªÒ»µÀÁÑ·ì£¬$NÒ»¸öôóôò²»ÓÉ×ÔÖ÷µØË¤½øË®ÖÐ£¡\n",who);
+  message_vision ("å†°é¢ä¸Šè£‚å¼€ä¸€é“è£‚ç¼ï¼Œ$Nä¸€ä¸ªè¶”è¶„ä¸ç”±è‡ªä¸»åœ°æ‘”è¿›æ°´ä¸­ï¼\n",who);
   if (status == 1)
   {
-    message_vision ("ÖÚÈË¸ÏÀ´£¬Á¬Ã¦½«$N±ù¹÷Ò»°ãÍÏ³ö±ùË®¡£\n",who);
+    message_vision ("ä¼—äººèµ¶æ¥ï¼Œè¿žå¿™å°†$Nå†°æ£ä¸€èˆ¬æ‹–å‡ºå†°æ°´ã€‚\n",who);
     who->unconcious();
     return;
   }

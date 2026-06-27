@@ -17,25 +17,25 @@ int main(object me, string arg)
 	if( !where->query("sleep_room") &&
 	    !me->query_temp("force_sleep") )
 	    //mon 12/18/97, allow forced sleep by "keshui chong".
-		return notify_fail("ÕâÀï²»ÊÇË¯¾õµÄµØ·½¡£\n");
+		return notify_fail("è¿™é‡Œä¸æ˜¯ç¡è§‰çš„åœ°æ–¹ã€‚\n");
 
 	if (me->is_busy())
-		return notify_fail("ÄãÕıÃ¦×ÅÄØ£¡\n");
+		return notify_fail("ä½ æ­£å¿™ç€å‘¢ï¼\n");
 
 	if( me->is_fighting() )
-		return notify_fail("Õ½¶·ÖĞ²»ÄÜË¯¾õ£¡\n");
+		return notify_fail("æˆ˜æ–—ä¸­ä¸èƒ½ç¡è§‰ï¼\n");
         
 	if ((time()-me->query("last_sleep"))<90)
-		return notify_fail("Äã¸ÕË¯¹ıÒ»¾õ, ÏÈ»î¶¯»î¶¯°É¡£ \n");
+		return notify_fail("ä½ åˆšç¡è¿‡ä¸€è§‰, å…ˆæ´»åŠ¨æ´»åŠ¨å§ã€‚ \n");
 	
 	// mon 5/25/99
 	if(me->query("sen")<1 ||
 		me->query("eff_sen")<1) 
-	  return notify_fail("ÄãÏÖÔÚ¾«ÉñÌ«²î£¬Ò»Ë¯µ¹¿ÖÅÂ¾ÍÔÙÒ²ĞÑ²»¹ıÀ´ÁË¡£\n");
+	  return notify_fail("ä½ ç°åœ¨ç²¾ç¥å¤ªå·®ï¼Œä¸€ç¡å€’ææ€•å°±å†ä¹Ÿé†’ä¸è¿‡æ¥äº†ã€‚\n");
 
 	if(me->query("kee")<1 ||
 		me->query("eff_kee")<1) 
-	  return notify_fail("ÄãÏÖÔÚÆøÑª²»×ã£¬Ò»Ë¯µ¹¿ÖÅÂ¾ÍÔÙÒ²ĞÑ²»¹ıÀ´ÁË¡£\n");
+	  return notify_fail("ä½ ç°åœ¨æ°”è¡€ä¸è¶³ï¼Œä¸€ç¡å€’ææ€•å°±å†ä¹Ÿé†’ä¸è¿‡æ¥äº†ã€‚\n");
 
         if((!arg)||arg==(string)me->query("id")) {
           string sleep_msg;
@@ -45,35 +45,35 @@ int main(object me, string arg)
 	      ugly=0;
 	  } else if(random(me->query_str())<5) { // str smaller better here.
 	      ugly=0;
-	  } else if((me->query("gender")=="Å®ĞÔ") && (random(5)>0)) {
+	  } else if((me->query("gender")=="å¥³æ€§") && (random(5)>0)) {
 	      ugly=0;
 	  }
 
 	  if(ugly) {
-	      sleep_msg=({"²»Ò»¿Ì±ã÷ıÉù´ó×÷£¬½øÈëÁËÃÎÏç¡£\n",
-		      "²»Ò»»á¶ù±ã÷ıÉù´ó×÷£¬³ÁË¯¹ıÈ¥¡£\n",
-		      "ÈçÀ×µÄ÷ıÉùÁ¢¿ÌÏìÁËÆğÀ´¡£\n",
-		      "ÂñÍ·Ë¯È¥¡£\n",
+	      sleep_msg=({"ä¸ä¸€åˆ»ä¾¿é¼¾å£°å¤§ä½œï¼Œè¿›å…¥äº†æ¢¦ä¹¡ã€‚\n",
+		      "ä¸ä¸€ä¼šå„¿ä¾¿é¼¾å£°å¤§ä½œï¼Œæ²‰ç¡è¿‡å»ã€‚\n",
+		      "å¦‚é›·çš„é¼¾å£°ç«‹åˆ»å“äº†èµ·æ¥ã€‚\n",
+		      "åŸ‹å¤´ç¡å»ã€‚\n",
 		      })[random(2)];
 	  } else {
-	      sleep_msg=({"²»Ò»»á¶ù¾ÍÌğÌğµØ½øÈëÁËÃÎÏç¡£\n",
-			  "²»Ò»»á¶ù¾Í¾²¾²µØ½øÈëÁËÃÎÏç¡£\n",
-			  "½øÈëÁËÌğÃÛµÄÃÎÏç¡£\n",
+	      sleep_msg=({"ä¸ä¸€ä¼šå„¿å°±ç”œç”œåœ°è¿›å…¥äº†æ¢¦ä¹¡ã€‚\n",
+			  "ä¸ä¸€ä¼šå„¿å°±é™é™åœ°è¿›å…¥äº†æ¢¦ä¹¡ã€‚\n",
+			  "è¿›å…¥äº†ç”œèœœçš„æ¢¦ä¹¡ã€‚\n",
 			  })[random(2)];
 	  }
 
 	  if (where->query("if_bed")) {
-		write("ÄãÍù±»ÖĞÒ»×ê£¬¿ªÊ¼Ë¯¾õ¡£\n");
-		write("²»Ò»»á¶ù£¬Äã¾Í½øÈëÁËÃÎÏç¡£\n");
+		write("ä½ å¾€è¢«ä¸­ä¸€é’»ï¼Œå¼€å§‹ç¡è§‰ã€‚\n");
+		write("ä¸ä¸€ä¼šå„¿ï¼Œä½ å°±è¿›å…¥äº†æ¢¦ä¹¡ã€‚\n");
 		me->set("last_sleep",time());
 		me->set_temp("block_msg/all",1);
-		message_vision(HIY "$NÍù±»ÖĞÒ»×ê£¬"+sleep_msg+ NOR,me);
+		message_vision(HIY "$Nå¾€è¢«ä¸­ä¸€é’»ï¼Œ"+sleep_msg+ NOR,me);
 	  } else { 
-		write("Äã¾ÍµØÒ»ÌÉ£¬¿ªÊ¼Ë¯¾õ¡£\n");
-		write("²»Ò»»á¶ù£¬Äã¾Í½øÈëÁËÃÎÏç¡£\n");
+		write("ä½ å°±åœ°ä¸€èººï¼Œå¼€å§‹ç¡è§‰ã€‚\n");
+		write("ä¸ä¸€ä¼šå„¿ï¼Œä½ å°±è¿›å…¥äº†æ¢¦ä¹¡ã€‚\n");
 		me->set("last_sleep",time());
 		me->set_temp("block_msg/all",1);
-		message_vision(HIY "$N¾ÍµØÒ»ÌÉ£¬"+sleep_msg+ NOR,me);
+		message_vision(HIY "$Nå°±åœ°ä¸€èººï¼Œ"+sleep_msg+ NOR,me);
 	  }
 
 	if (me->query_temp("ridee"))
@@ -81,7 +81,7 @@ int main(object me, string arg)
 	me->set_temp("ridee",0);
 	me->add_temp("apply/dodge",-me->query_temp("ride/dodge"));
 	me->set_temp("ride/dodge",0);
-	me->disable_player("<Ë¯ÃÎÖĞ>");
+	me->disable_player("<ç¡æ¢¦ä¸­>");
 
 	call_out("wakeup1",random(45 - me->query("con")) + 10, me, where);
         
@@ -90,39 +90,39 @@ int main(object me, string arg)
         }
 
 	if(!objectp(obj = present(arg, where)))
-		return notify_fail("ÄãÏë¸úË­Ò»ÆğË¯£¿\n");
+		return notify_fail("ä½ æƒ³è·Ÿè°ä¸€èµ·ç¡ï¼Ÿ\n");
 
 	if( !obj->is_character() )
-		return notify_fail("£¿ÄÔ´ü³öÃ«²¡ÁË£¿\n");
+		return notify_fail("ï¼Ÿè„‘è¢‹å‡ºæ¯›ç—…äº†ï¼Ÿ\n");
 
 	if( !userp(obj) )
-		return notify_fail("ÈË¼Ò¿É²»Ô¸ÀíÄã£¡\n");
+		return notify_fail("äººå®¶å¯ä¸æ„¿ç†ä½ ï¼\n");
 	//can't sleep with npc...
 
 	if(me->query("gender")==obj->query("gender"))
-		return notify_fail("£¿¶Ô·½¸úÄã¿ÉÊÇÍ¬ĞÔÄØ£®£®£®\n");
+		return notify_fail("ï¼Ÿå¯¹æ–¹è·Ÿä½ å¯æ˜¯åŒæ€§å‘¢ï¼ï¼ï¼\n");
 
 	if( !living(obj) )
-		return notify_fail(obj->name() + "Ã»·¨¸úÄãË¯ÁË¡£\n"); 
+		return notify_fail(obj->name() + "æ²¡æ³•è·Ÿä½ ç¡äº†ã€‚\n"); 
 
-	if (!where->query("if_bed"))	return notify_fail("¾ÍÔÚÕâÀï£¿²»Ì«ºÃ°É¡£\n");
+	if (!where->query("if_bed"))	return notify_fail("å°±åœ¨è¿™é‡Œï¼Ÿä¸å¤ªå¥½å§ã€‚\n");
 
 	if( (int)me->query("kee") * 100 / (int)me->query("max_kee") < 50 )
-		return notify_fail("ÄãÏÖÔÚÊÇĞÄÓĞÓà¶øÁ¦²»×ã¡£\n");
+		return notify_fail("ä½ ç°åœ¨æ˜¯å¿ƒæœ‰ä½™è€ŒåŠ›ä¸è¶³ã€‚\n");
 
 	if( userp(obj) && (object)obj->query_temp("pending/sleep")!=me ) {
-		message_vision(RED "\n$Nº¬ÇéÂöÂöµØ¶Ô$nËµ£ºÎÒ£®£®£®\n\n" NOR, me, obj);
+		message_vision(RED "\n$Nå«æƒ…è„‰è„‰åœ°å¯¹$nè¯´ï¼šæˆ‘ï¼ï¼ï¼\n\n" NOR, me, obj);
 		if( objectp(old_target = me->query_temp("pending/sleep")) &&!((string)old_target->query("id")==(string)obj->query("id")))
-			tell_object(old_target, YEL + me->name() + "¸Ä±äÖ÷Òâ²»Ïë¸úÄãË¯ÁË¡£\n" NOR);
+			tell_object(old_target, YEL + me->name() + "æ”¹å˜ä¸»æ„ä¸æƒ³è·Ÿä½ ç¡äº†ã€‚\n" NOR);
 		me->set_temp("pending/sleep", obj);
-		tell_object(obj, YEL "¿´À´" + me->name() +
+		tell_object(obj, YEL "çœ‹æ¥" + me->name() +
 		"("+(string)me->query("id")+")"+ 
-		"ºÜÏë¸úÄã£®£®£®Èç¹ûÄãÔ¸Òâ£¬ÇëÒ²ÏÂÒ»´Î sleep Ö¸Áî¡£\n" NOR);
-		write(YEL "¶Ô·½ÕıÔÚ¿¼ÂÇÖĞ£®£®£®\n" NOR);
+		"å¾ˆæƒ³è·Ÿä½ ï¼ï¼ï¼å¦‚æœä½ æ„¿æ„ï¼Œè¯·ä¹Ÿä¸‹ä¸€æ¬¡ sleep æŒ‡ä»¤ã€‚\n" NOR);
+		write(YEL "å¯¹æ–¹æ­£åœ¨è€ƒè™‘ä¸­ï¼ï¼ï¼\n" NOR);
 		return 1;
 	}
 
-		message_vision(RED "\n$N³å×Å$n»áĞÄµØÒ»Ğ¦£¬µãÁËµãÍ·¡£\n\n" NOR, me, obj);
+		message_vision(RED "\n$Nå†²ç€$nä¼šå¿ƒåœ°ä¸€ç¬‘ï¼Œç‚¹äº†ç‚¹å¤´ã€‚\n\n" NOR, me, obj);
 		
 	inv = all_inventory(me);
                 for(i=0; i<sizeof(inv); i++)
@@ -132,23 +132,23 @@ int main(object me, string arg)
                                 REMOVE_CMD->do_remove(obj, inv[i]);
 	
 	
-	if(me->query("gender")=="ÄĞĞÔ"){
-		tell_object(me, HIY "\n\nÄãÂ§×Å"+obj->query("name")+
-		"ÎÂÈíµÄÉíÌå£¬²»ÓÉµÃĞÄ×íÉñÃÔ£®£®£®\n\n\n" NOR);
-		tell_object(obj, HIY "\n\nÄãÌÉÔÚ"+me->query("name")+
-		"µÄ»³Àï£¬²»ÓÉµÃĞÄ×íÉñÃÔ£®£®£®\n\n\n" NOR);
+	if(me->query("gender")=="ç”·æ€§"){
+		tell_object(me, HIY "\n\nä½ æ‚ç€"+obj->query("name")+
+		"æ¸©è½¯çš„èº«ä½“ï¼Œä¸ç”±å¾—å¿ƒé†‰ç¥è¿·ï¼ï¼ï¼\n\n\n" NOR);
+		tell_object(obj, HIY "\n\nä½ èººåœ¨"+me->query("name")+
+		"çš„æ€€é‡Œï¼Œä¸ç”±å¾—å¿ƒé†‰ç¥è¿·ï¼ï¼ï¼\n\n\n" NOR);
 	}
 	else{
-		tell_object(obj, HIY "\n\nÄãÂ§×Å"+me->query("name")+
-		"ÎÂÈíµÄÉíÌå£¬²»ÓÉµÃĞÄ×íÉñÃÔ£®£®£®\n\n\n" NOR);
-		tell_object(me, HIY "\n\nÄãÌÉÔÚ"+obj->query("name")+
-		"µÄ»³Àï£¬²»ÓÉµÃĞÄ×íÉñÃÔ£®£®£®\n\n\n" NOR);
+		tell_object(obj, HIY "\n\nä½ æ‚ç€"+me->query("name")+
+		"æ¸©è½¯çš„èº«ä½“ï¼Œä¸ç”±å¾—å¿ƒé†‰ç¥è¿·ï¼ï¼ï¼\n\n\n" NOR);
+		tell_object(me, HIY "\n\nä½ èººåœ¨"+obj->query("name")+
+		"çš„æ€€é‡Œï¼Œä¸ç”±å¾—å¿ƒé†‰ç¥è¿·ï¼ï¼ï¼\n\n\n" NOR);
 	}
 		me->set("last_sleep",time());
 		obj->set("last_sleep",time());
 		me->set_temp("block_msg/all",1);
 		obj->set_temp("block_msg/all",1);
-		message_vision(HIY "$NºÍ$n×êÈë±»ÖĞ£¬Â§ÔÚÒ»ÆğË¯×ÅÁË£®£®£®\n\n\n" NOR,me,obj);
+		message_vision(HIY "$Nå’Œ$né’»å…¥è¢«ä¸­ï¼Œæ‚åœ¨ä¸€èµ·ç¡ç€äº†ï¼ï¼ï¼\n\n\n" NOR,me,obj);
 
 
 	if (me->query_temp("ridee"))
@@ -161,8 +161,8 @@ int main(object me, string arg)
 	obj->set_temp("ridee",0);
 	obj->add_temp("apply/dodge",-obj->query_temp("ride/dodge"));
 	obj->set_temp("ride/dodge",0);
-	me->disable_player("<Ë¯ÃÎÖĞ>");
-	obj->disable_player("<Ë¯ÃÎÖĞ>");
+	me->disable_player("<ç¡æ¢¦ä¸­>");
+	obj->disable_player("<ç¡æ¢¦ä¸­>");
 
 	call_out("wakeup2",random(45 - me->query("con")) + 10, me,obj, where);
 	call_out("wakeup2",random(45 - obj->query("con")) + 10, obj, me,where);
@@ -197,9 +197,9 @@ me->set("mana", (int)me->query("max_mana"));
 	    }
 	}
 	
-	message_vision(HIY "$NÒ»¾õĞÑÀ´£¬¾«Á¦³äÅæµØ»î¶¯ÁËÒ»ÏÂ½î¹Ç¡£\n" NOR,me);
+	message_vision(HIY "$Nä¸€è§‰é†’æ¥ï¼Œç²¾åŠ›å……æ²›åœ°æ´»åŠ¨äº†ä¸€ä¸‹ç­‹éª¨ã€‚\n" NOR,me);
 	me->set_temp("block_msg/all", 0);
-	write("ÄãÒ»¾õĞÑÀ´£¬Ö»¾õ¾«Á¦³äÅæ¡£¸Ã»î¶¯Ò»ÏÂÁË¡£\n");
+	write("ä½ ä¸€è§‰é†’æ¥ï¼Œåªè§‰ç²¾åŠ›å……æ²›ã€‚è¯¥æ´»åŠ¨ä¸€ä¸‹äº†ã€‚\n");
 }
 
 int wakeup2(object me,object slept,object where)
@@ -236,17 +236,17 @@ int wakeup2(object me,object slept,object where)
 	    }
 	}
 //	else{
-		if(me->query("gender")=="ÄĞĞÔ"){
-			message_vision(HIY "$NĞÑÁË¹ıÀ´£¬ËÆºõ»¹³Á½şÔÚĞÒ¸£Ö®ÖĞ¡£\n" NOR,me);
+		if(me->query("gender")=="ç”·æ€§"){
+			message_vision(HIY "$Né†’äº†è¿‡æ¥ï¼Œä¼¼ä¹è¿˜æ²‰æµ¸åœ¨å¹¸ç¦ä¹‹ä¸­ã€‚\n" NOR,me);
 			me->set_temp("block_msg/all", 0);
-			write("ÄãĞÑÁË¹ıÀ´£¬ËÆºõ»¹³Á½şÔÚĞÒ¸£Ö®ÖĞ¡£\n");
+			write("ä½ é†’äº†è¿‡æ¥ï¼Œä¼¼ä¹è¿˜æ²‰æµ¸åœ¨å¹¸ç¦ä¹‹ä¸­ã€‚\n");
                         return 1;
 	}
 		else{
 		// we add bearing function here. wuliao@xyj Feb. 1997	
-			message_vision(HIY "$NĞÑÁË¹ıÀ´£¬Á³ÉÏ»¹¹Ò×ÅÌğÃÛµÄĞ¦Èİ¡£\n" NOR,me);
+			message_vision(HIY "$Né†’äº†è¿‡æ¥ï¼Œè„¸ä¸Šè¿˜æŒ‚ç€ç”œèœœçš„ç¬‘å®¹ã€‚\n" NOR,me);
 			me->set_temp("block_msg/all", 0);
-                        write("ÄãĞÑÁË¹ıÀ´£¬Á³ÉÏ»¹¹Ò×ÅÌğÃÛµÄĞ¦Èİ¡£\n");
+                        write("ä½ é†’äº†è¿‡æ¥ï¼Œè„¸ä¸Šè¿˜æŒ‚ç€ç”œèœœçš„ç¬‘å®¹ã€‚\n");
 	//		if (me->query("husband"))
 	//			obj = present ( keys(me->query("husband"))[0], where);
 // added by pickle 10-13-97
@@ -258,12 +258,12 @@ int wakeup2(object me,object slept,object where)
                         if (obj!=slept ){
 	          if (!obj || !userp(obj)
 		  || !find_player(obj->query("id"))) {
-			message_vision(HIY "\n$NËÆºõ¾õµÃ¸¹ÖĞÒ»Õó²üÍ´£¬Ğı¼´Ò§Ò§ÑÀ£¬Íä×ÅÑüÕ¾ÁËÆğÀ´¡£\n"NOR, me);
-			write("\nÕÉ·ò¶¼²»ÔÚ£¬ÔõÃ´Ò²²»ÄÜ°Ñº¢×ÓÉúÏÂÀ´£®£®£®\n");
+			message_vision(HIY "\n$Nä¼¼ä¹è§‰å¾—è…¹ä¸­ä¸€é˜µé¢¤ç—›ï¼Œæ—‹å³å’¬å’¬ç‰™ï¼Œå¼¯ç€è…°ç«™äº†èµ·æ¥ã€‚\n"NOR, me);
+			write("\nä¸ˆå¤«éƒ½ä¸åœ¨ï¼Œæ€ä¹ˆä¹Ÿä¸èƒ½æŠŠå­©å­ç”Ÿä¸‹æ¥ï¼ï¼ï¼\n");
 			}
 			else{
-			message_vision(HIY "\n$NËÆºõ¾õµÃ¸¹ÖĞÒ»Õó²üÍ´£¬Ğı¼´Ğßºì×ÅÁ³£¬Ò§Ò§ÑÀÕ¾ÁËÆğÀ´¡£\n"NOR, me);
-			write("\nÔõÃ´»áÈÃËû×²ÉÏÁË£¿£®£®£®\n");
+			message_vision(HIY "\n$Nä¼¼ä¹è§‰å¾—è…¹ä¸­ä¸€é˜µé¢¤ç—›ï¼Œæ—‹å³ç¾çº¢ç€è„¸ï¼Œå’¬å’¬ç‰™ç«™äº†èµ·æ¥ã€‚\n"NOR, me);
+			write("\næ€ä¹ˆä¼šè®©ä»–æ’ä¸Šäº†ï¼Ÿï¼ï¼ï¼\n");
 			}
 			me->set("sen", me->query("sen")/2);
 			me->set("kee", me->query("kee")/2);
@@ -274,12 +274,12 @@ int wakeup2(object me,object slept,object where)
                         {
                         if(obj->query("max_atman")<40 || 
 				obj->query("max_atman")/100 < obj->query("child") ){
-			message_vision(HIY "\n$Nºö¾õ¸¹ÖĞÒ»Õó²ü¶¯£¬²»¹ıÂíÉÏÓÖÆ½¾²ÏÂÀ´¡£\n"NOR,me);
+			message_vision(HIY "\n$Nå¿½è§‰è…¹ä¸­ä¸€é˜µé¢¤åŠ¨ï¼Œä¸è¿‡é©¬ä¸Šåˆå¹³é™ä¸‹æ¥ã€‚\n"NOR,me);
 			return 1;}
 			me->set_temp("is_bearing",1);
 			me->start(100);
 			obj->start(100);
-			message_vision(HIY "\n$Nºö¾õ¸¹ÖĞÒ»Õó²ü¶¯£¬¸Ï½ôÀ­×¡$nµÄÊÖ£¬ÈáÉùËµµÀ£ºÒªÉúÁË! \n" NOR, me,obj);
+			message_vision(HIY "\n$Nå¿½è§‰è…¹ä¸­ä¸€é˜µé¢¤åŠ¨ï¼Œèµ¶ç´§æ‹‰ä½$nçš„æ‰‹ï¼ŒæŸ”å£°è¯´é“ï¼šè¦ç”Ÿäº†! \n" NOR, me,obj);
 			call_out("birth1",15,me,obj);
 			return 3;
                         }
@@ -291,8 +291,8 @@ int wakeup2(object me,object slept,object where)
 
 int birth1(object me,object obj)
 {
-	message_vision(HIY "\n$NÒÑÊÇ´óº¹ÁÜÀì£¬Ò»Ö±¶¼ÔÚºôÌìÇÀµØ£¬Ë«ÊÖ½ô½ô¿Û×¡$nµÄÊÖ²»·Å¡£\n"+
-	 "\nÓ¤¶ùÒÑ¾­Ì½³öÁËÍ·£®£®£®\n"NOR,me,obj);
+	message_vision(HIY "\n$Nå·²æ˜¯å¤§æ±—æ·‹æ¼“ï¼Œä¸€ç›´éƒ½åœ¨å‘¼å¤©æŠ¢åœ°ï¼ŒåŒæ‰‹ç´§ç´§æ‰£ä½$nçš„æ‰‹ä¸æ”¾ã€‚\n"+
+	 "\nå©´å„¿å·²ç»æ¢å‡ºäº†å¤´ï¼ï¼ï¼\n"NOR,me,obj);
 	call_out("birth2",15,me,obj);
 	return 1;
 }
@@ -301,22 +301,22 @@ void birth2(object me,object obj)
 {
         object baby;
 	int number;
-	message_vision(HIY "\n¡¸ÍÛ¡¹£®£®£®£¬Ó¤¶ù³öÊÀÁË£¡\n"+
-"\n$NÃæÉ«²Ô°×£¬Ğ±ÒĞÔÚ´²Í·£¬¿´¿´º¢×ÓÂúÒâµØÂ¶³öÒ»Ë¿Î¢Ğ¦¡£\n"NOR, me);
+	message_vision(HIY "\nã€Œå“‡ã€ï¼ï¼ï¼ï¼Œå©´å„¿å‡ºä¸–äº†ï¼\n"+
+"\n$Né¢è‰²è‹ç™½ï¼Œæ–œå€šåœ¨åºŠå¤´ï¼Œçœ‹çœ‹å­©å­æ»¡æ„åœ°éœ²å‡ºä¸€ä¸å¾®ç¬‘ã€‚\n"NOR, me);
 	me->start_busy(1);
 	obj->start_busy(1);
 	me->set("sen",0);
 	me->set("kee",0);
 	me->set("gin",0);
         baby=new("/d/changan/playerhomes/npc/baby");
-	baby->set("long", baby->query("long")+"ÕâÊÇ"+obj->query("name")+"ºÍ"+me->query("name")+"µÄº¢×Ó¡£\n");
+	baby->set("long", baby->query("long")+"è¿™æ˜¯"+obj->query("name")+"å’Œ"+me->query("name")+"çš„å­©å­ã€‚\n");
 	if (random(100)<50){
-	baby->set("gender","ÄĞĞÔ");
-	baby->set_name("Ğ¡"+obj->query("name"),({"xiao "+obj->query("id"),"baby"}));
+	baby->set("gender","ç”·æ€§");
+	baby->set_name("å°"+obj->query("name"),({"xiao "+obj->query("id"),"baby"}));
 	}	
 	else{	
-	baby->set("gender","Å®ĞÔ");
-	baby->set_name("Ğ¡"+me->query("name"),({"xiao "+me->query("id"),"baby"}));
+	baby->set("gender","å¥³æ€§");
+	baby->set_name("å°"+me->query("name"),({"xiao "+me->query("id"),"baby"}));
 	}
         me->add("child",1);
         obj->add("child",1);
@@ -345,9 +345,9 @@ void birth2(object me,object obj)
 int help(object me)
 {
   write(@HELP
-Ö¸Áî¸ñÊ½ : sleep <ÈËÎï>
+æŒ‡ä»¤æ ¼å¼ : sleep <äººç‰©>
  
-¹ËÃûË¼Òå£¬Õâ¸öÖ¸ÁîÊÇÓÃÀ´Ë¯¾õµÄ¡£
+é¡¾åæ€ä¹‰ï¼Œè¿™ä¸ªæŒ‡ä»¤æ˜¯ç”¨æ¥ç¡è§‰çš„ã€‚
 HELP
     );
     return 1;

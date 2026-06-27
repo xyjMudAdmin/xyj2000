@@ -4,8 +4,8 @@ inherit NPC;
 
 void create()
 {
-       set_name("»ÆÒÂÍ¯×Ó", ({"tongzi"}));
-       set("gender", "ÄĞĞÔ");
+       set_name("é»„è¡£ç«¥å­", ({"tongzi"}));
+       set("gender", "ç”·æ€§");
        set("age", 15);
        set("attitude", "peaceful");
        set("shen_type", 1);

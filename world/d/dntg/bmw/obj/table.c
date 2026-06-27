@@ -8,16 +8,16 @@ inherit ITEM;
 
 void create()
 {
-  set_name("¹«°¸", ({ "table"}));
+  set_name("å…¬æ¡ˆ", ({ "table"}));
   set_weight(30000);
-  set("long", "Ò»ÕÅ³¤³¤µÄ¹«°¸£¬ÉÏÃæ¶ÑµÄ¹«ÎÄÒÑ±»ÅªµÃÂÒÆß°ËÔã£¬
-Ö»ÓĞÖĞ¼äÒ»´ó±¾ÎÄ²¾(book)¿´À´»¹ËãÍêºÃ¡£\n" );
+  set("long", "ä¸€å¼ é•¿é•¿çš„å…¬æ¡ˆï¼Œä¸Šé¢å †çš„å…¬æ–‡å·²è¢«å¼„å¾—ä¹±ä¸ƒå…«ç³Ÿï¼Œ
+åªæœ‰ä¸­é—´ä¸€å¤§æœ¬æ–‡ç°¿(book)çœ‹æ¥è¿˜ç®—å®Œå¥½ã€‚\n" );
 
 
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("unit", "ÕÅ");
+    set("unit", "å¼ ");
     set("material", "stone");
     set("value", 2000);
     set("no_get", 1);

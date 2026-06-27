@@ -6,18 +6,18 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ÓñÅ®·å¶¥");
+  set ("short", "ç‰å¥³å³°é¡¶");
   set ("long", @LONG
 
-ÏéÔÆ¹âÂú£¬Èğö°Ïã¸¡¡£ÔÚÕâ±ùÌìÑ©µØÀï¾ÓÈ»»¹ÓĞÈç´ËÏÉ¾³¡£ÕâÀïÕıÊÇ¶ÀÁ¢
-ÔÆº££¬°ÁÔ½Ç§É½µÄÀ¥ÂØ¼«¶¥¡£¿¿ÄÏËÆºõÓĞÒ»ÌõÏÂÉ½µÄĞ¡Â·¡£¿¿±±ÔòÓĞÒ»È¦
-Àé°Ê£¬Î§×Å¼¸¼ä¾«ÖÂµÄĞ¡Îİ£¬Èë¿Ú´¦ÓĞÒ»Öê¹ğÊ÷(tree)¡£Íù¶«¿ÉÍû¼ûÒ»Æ¬
-ĞÓÁÖ¡£
+ç¥¥äº‘å…‰æ»¡ï¼Œç‘éœ­é¦™æµ®ã€‚åœ¨è¿™å†°å¤©é›ªåœ°é‡Œå±…ç„¶è¿˜æœ‰å¦‚æ­¤ä»™å¢ƒã€‚è¿™é‡Œæ­£æ˜¯ç‹¬ç«‹
+äº‘æµ·ï¼Œå‚²è¶Šåƒå±±çš„æ˜†ä»‘æé¡¶ã€‚é å—ä¼¼ä¹æœ‰ä¸€æ¡ä¸‹å±±çš„å°è·¯ã€‚é åŒ—åˆ™æœ‰ä¸€åœˆ
+ç¯±ç¬†ï¼Œå›´ç€å‡ é—´ç²¾è‡´çš„å°å±‹ï¼Œå…¥å£å¤„æœ‰ä¸€æ ªæ¡‚æ ‘(tree)ã€‚å¾€ä¸œå¯æœ›è§ä¸€ç‰‡
+ææ—ã€‚
 LONG);
 
   set("item_desc", ([ /* sizeof() == 1 */
-  "tree" : "Ò»Öê¸ßËÊÈëÔÆµÄ´ó¹ğÊ÷ ¡£ÉÏÃæÎŞÊıµÄ¹ğ»¨
-ÕıÉ¢·¢³öÕóÕóÇåÏã£¬²»ÖªµÀÔõÑù²ÅÄÜ²É¼¯µ½¡£
+  "tree" : "ä¸€æ ªé«˜è€¸å…¥äº‘çš„å¤§æ¡‚æ ‘ ã€‚ä¸Šé¢æ— æ•°çš„æ¡‚èŠ±
+æ­£æ•£å‘å‡ºé˜µé˜µæ¸…é¦™ï¼Œä¸çŸ¥é“æ€æ ·æ‰èƒ½é‡‡é›†åˆ°ã€‚
 ",
 ]));
   set("objects", ([ /* sizeof() == 2 */
@@ -45,10 +45,10 @@ void init()
 int valid_leave(object me, string dir)
 {
         object wugang;
-    if (me->query("gender") == "ÄĞĞÔ" && dir == "north" ) {
+    if (me->query("gender") == "ç”·æ€§" && dir == "north" ) {
         if(objectp(wugang=present("wu gang", environment(me))) && living(wugang) )
 
-            return notify_fail("¹ğ»¨Ê÷ºó×ª³öÎâ¸Õ£¬Éì³öÒ»°Ñ´ó°å¸«À¹×¡ÄãµÀ£º\nÂı×Å...Ôº×ÓÀï×¡µÄÈ«ÊÇÅ®ÈË£¬ÄãÅÜ½øÈ¥Ïë¸ÉÊ²Ã´£¿\n");
+            return notify_fail("æ¡‚èŠ±æ ‘åè½¬å‡ºå´åˆšï¼Œä¼¸å‡ºä¸€æŠŠå¤§æ¿æ–§æ‹¦ä½ä½ é“ï¼š\næ…¢ç€...é™¢å­é‡Œä½çš„å…¨æ˜¯å¥³äººï¼Œä½ è·‘è¿›å»æƒ³å¹²ä»€ä¹ˆï¼Ÿ\n");
     }
     return ::valid_leave(me, dir);
 }
@@ -58,29 +58,29 @@ int do_climb(string arg)
 	object wugang;
   object me=this_player();
  
-  if( (!arg) || !((arg == "tree") || (arg == "¹ğÊ÷")))
-    return notify_fail("ÅÀÊ²Ã´£¿\n");
-  if (me->is_busy()) return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£");
+  if( (!arg) || !((arg == "tree") || (arg == "æ¡‚æ ‘")))
+    return notify_fail("çˆ¬ä»€ä¹ˆï¼Ÿ\n");
+  if (me->is_busy()) return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚");
   if( me->query("kee") < (int)(me->query("max_kee")/3)){
     me->receive_damage("kee",(int)me->query("max_kee")*20/100);
-    return notify_fail("ÄãÉí×Ó·¢Ğé£¬Ò»Í·ÔÔÁËÏÂÀ´£¬°¥Ñ½£¡\n");
+    return notify_fail("ä½ èº«å­å‘è™šï¼Œä¸€å¤´æ ½äº†ä¸‹æ¥ï¼Œå“å‘€ï¼\n");
 }
-  if (!((string)me->query("family/family_name")=="ÔÂ¹¬")
+  if (!((string)me->query("family/family_name")=="æœˆå®«")
 	 && objectp(wugang=present("wu gang", environment(me))) && living(wugang) )
     {
-      message_vision("Îâ¸ÕÀ¹µÀ£º´Ë¼ä²¢·ÇÏ·Ë£Ö®´¦£¬ÇëÎğÉ§ÈÅÎÒÏÉ¼ÒÇåĞŞ\n", me);
+      message_vision("å´åˆšæ‹¦é“ï¼šæ­¤é—´å¹¶éæˆè€ä¹‹å¤„ï¼Œè¯·å‹¿éªšæ‰°æˆ‘ä»™å®¶æ¸…ä¿®\n", me);
     }
   else
     {
       if ((int)me->query_skill("dodge", 1)<40 && (int)me->query_skill("moondance", 1) < 80)
         {
-	  message_vision("$NĞ¡ĞÄÒíÒíµÄÍùÉÏÅÀÁËÒ»µã£¬¾õµÃÍ·ÔÎÑÛ»¨£¬¾Í¸Ï½ôÅÀÁËÏÂÀ´£®\n", me);
+	  message_vision("$Nå°å¿ƒç¿¼ç¿¼çš„å¾€ä¸Šçˆ¬äº†ä¸€ç‚¹ï¼Œè§‰å¾—å¤´æ™•çœ¼èŠ±ï¼Œå°±èµ¶ç´§çˆ¬äº†ä¸‹æ¥ï¼\n", me);
           me->improve_skill("dodge", 40-me->query("str"));
-          tell_object(me, "ÄãÁìÎò³öÒ»Ğ©»ù±¾Çá¹¦·½ÃæµÄÇÏÃÅ¡£\n");
+          tell_object(me, "ä½ é¢†æ‚Ÿå‡ºä¸€äº›åŸºæœ¬è½»åŠŸæ–¹é¢çš„çªé—¨ã€‚\n");
         }
       else
         {
-	  message_vision("$N×İÉíÍù¹ğÊ÷ÉÏÒ»Ìø£¬½Ó×ÅÅÀÈëÊ÷´ÔÖĞ²»¼ûÁË¡£\n", me);
+	  message_vision("$Nçºµèº«å¾€æ¡‚æ ‘ä¸Šä¸€è·³ï¼Œæ¥ç€çˆ¬å…¥æ ‘ä¸›ä¸­ä¸è§äº†ã€‚\n", me);
           me->move(__DIR__"tree1.c");
         }
     }
@@ -93,28 +93,28 @@ int do_kan(string arg)
   object me=this_player();
   object ob; 
   object wugang;
-  if( (!arg) || !((arg == "tree") || (arg == "¹ğÊ÷")))
-    return notify_fail("ÄãÒª¿³Ê²Ã´£¿\n");
-    if (me->is_busy()) return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£");
+  if( (!arg) || !((arg == "tree") || (arg == "æ¡‚æ ‘")))
+    return notify_fail("ä½ è¦ç ä»€ä¹ˆï¼Ÿ\n");
+    if (me->is_busy()) return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚");
    if( !(ob = me->query_temp("weapon"))|| (string)ob->query("skill_type") != "axe")
-    return notify_fail("ÏÈÈ¥ÕÒ°Ñ¸«Í·°É£¡\n");
+    return notify_fail("å…ˆå»æ‰¾æŠŠæ–§å¤´å§ï¼\n");
   if( me->query("kee") < (int)(me->query("max_kee")/3))
-    return notify_fail("ÔÙ¿³ÏÂÈ¥ÊÖ¶¼ÒªÄ¥ÆÆÁË£¡\n");
-  if (!((string)me->query("family/family_name")=="ÔÂ¹¬" )&&
+    return notify_fail("å†ç ä¸‹å»æ‰‹éƒ½è¦ç£¨ç ´äº†ï¼\n");
+  if (!((string)me->query("family/family_name")=="æœˆå®«" )&&
 	objectp(wugang = present("wugang", environment(me))) && living(wugang))
     {
-      message_vision("Îâ¸ÕÀ¹µÀ£º´Ë¼ä²¢·ÇÏ·Ë£Ö®´¦£¬ÇëÎğÉ§ÈÅÎÒÏÉ¼ÒÇåĞŞ!\n",me);
+      message_vision("å´åˆšæ‹¦é“ï¼šæ­¤é—´å¹¶éæˆè€ä¹‹å¤„ï¼Œè¯·å‹¿éªšæ‰°æˆ‘ä»™å®¶æ¸…ä¿®!\n",me);
     }
   else
     {
-      message_vision("$N³¯¹ğÊ÷Ê¹¾¢¶ù¿³ÁË¼¸ÏÂ£®\n", me);
+      message_vision("$Næœæ¡‚æ ‘ä½¿åŠ²å„¿ç äº†å‡ ä¸‹ï¼\n", me);
       if ((int)me->query_skill("unarmed", 1)< 50 )
         {
           me->improve_skill("unarmed", me->query("str"));
-          tell_object(me, "ÀÛÁË¸ö³ôËÀ£¬Äã×ÜËãÁìÎò³öÒ»Ğ©ÔË¾¢Ê¹Á¦·½ÃæµÄÇÏÃÅ¡£\n");
+          tell_object(me, "ç´¯äº†ä¸ªè‡­æ­»ï¼Œä½ æ€»ç®—é¢†æ‚Ÿå‡ºä¸€äº›è¿åŠ²ä½¿åŠ›æ–¹é¢çš„çªé—¨ã€‚\n");
         }
       else {
-	tell_object(me, "ÄãÊÔ×Å¿³ÁË¼¸ÏÂ£¬²»Ã÷°×ÎªÊ²Ã´ÓĞÈË»á×öÕâÖÖÉµÊÂ¡£\n"); 
+	tell_object(me, "ä½ è¯•ç€ç äº†å‡ ä¸‹ï¼Œä¸æ˜ç™½ä¸ºä»€ä¹ˆæœ‰äººä¼šåšè¿™ç§å‚»äº‹ã€‚\n"); 
 	}
 
     }

@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ºÓµ×");
+  set ("short", "æ²³åº•");
   set ("long", @LONG
 
-¡­¡­±ùÀäµÄºÓµ×¡­¡­
+â€¦â€¦å†°å†·çš„æ²³åº•â€¦â€¦
 
 LONG);
 
@@ -35,7 +35,7 @@ void init ()
 
 void cold (object where, object who)
 {
-  tell_room (where, "Äã¶³µÃ»ëÉí·¢¶¶¡£\n");
+  tell_room (where, "ä½ å†»å¾—æµ‘èº«å‘æŠ–ã€‚\n");
   if (who &&
       environment(who) == where)
   {

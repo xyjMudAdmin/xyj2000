@@ -1,5 +1,5 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// yunnandrug.c ÔÆÄÏ°×Ò©
+// yunnandrug.c äº‘å—ç™½è¯
 
 inherit ITEM;
 
@@ -13,12 +13,12 @@ void init()
 
 void create()
 {
-	set_name("ÔÆÄÏ°×Ò©", ({"yunnan baiyao", "baiyao", "yao","drug"}));
+	set_name("äº‘å—ç™½è¯", ({"yunnan baiyao", "baiyao", "yao","drug"}));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "Æ¿");
-		set("long", "ÕâÊÇÒ»Æ¿¹óÖØµÄÔÆÄÏ°×Ò©£¬Ê¡×ÅµãÓÃ¡£\n");
+		set("unit", "ç“¶");
+		set("long", "è¿™æ˜¯ä¸€ç“¶è´µé‡çš„äº‘å—ç™½è¯ï¼Œçœç€ç‚¹ç”¨ã€‚\n");
 		set("value", 5000);
 		set("no_sell",1);
 	}
@@ -28,13 +28,13 @@ void create()
 int do_eat(string arg)
 {
 	if (!id(arg))
-		return notify_fail("ÄãÒª³ÔÊ²Ã´Ò©£¿\n");
+		return notify_fail("ä½ è¦åƒä»€ä¹ˆè¯ï¼Ÿ\n");
 	if ((int)this_player()->query("eff_kee") == 
 	    (int)this_player()->query("max_kee"))
-		return notify_fail("Ã»²¡±ğÂÒ³ÔÒ©¡£\n");
+		return notify_fail("æ²¡ç—…åˆ«ä¹±åƒè¯ã€‚\n");
 	else {
 		this_player()->receive_curing("kee", 50);
-		message_vision("$NÄÃÆğÆ¿ÔÆÄÏ°×Ò©Íù×ìÀïÒ»µ¹£¬ºúÂÒÑÊÁËÏÂÈ¥¡£\n", this_player());
+		message_vision("$Næ‹¿èµ·ç“¶äº‘å—ç™½è¯å¾€å˜´é‡Œä¸€å€’ï¼Œèƒ¡ä¹±å’½äº†ä¸‹å»ã€‚\n", this_player());
 		destruct(this_object());
 		return 1;
 	}

@@ -1,32 +1,32 @@
-//Ç¬ØÔÏóÕ÷Ìì
-//Ç¬¡¢ÄÏ·½
+//ä¹¾å¦è±¡å¾å¤©
+//ä¹¾ã€å—æ–¹
 
 #include <room.h>
 inherit ROOM;
 
 void create ()
 {
-  set ("short", "ºó»¨Ô°");
+  set ("short", "åèŠ±å›­");
   set ("long", @LONG
 
-ºó»¨Ô°ÖĞ·Ç³£µÄÇåÑÅ£¬¿´²»µ½Ê²Ã´ÈË¡£ËäËµÊÇ»¨Ô°£¬Ææ¹ÖµÄÊÇ²»
-¼ûÓĞ»¨¶ä¡£ÖÖÖ²µÄ´ó¶àÊÇĞ©Ææ¹ÖµÄ²İÀà£¬ÎåÑÕÁùÉ«µÄ¡£¶«Ò»¶Ñ£¬
-Î÷Ò»´Ø£¬ÏòÊÇ¹æ»®µÄ·Ç³£×ĞÏ¸¡£Òş¼û»¨Ô°ÕıÖĞÒ»×ùĞ¡Ìü£¬ÔÚ²İÄ¾
-³ÄÍĞÖ®ÏÂÏÔµÃ·Ç³£ÑÅÖÂ¡£
+åèŠ±å›­ä¸­éå¸¸çš„æ¸…é›…ï¼Œçœ‹ä¸åˆ°ä»€ä¹ˆäººã€‚è™½è¯´æ˜¯èŠ±å›­ï¼Œå¥‡æ€ªçš„æ˜¯ä¸
+è§æœ‰èŠ±æœµã€‚ç§æ¤çš„å¤§å¤šæ˜¯äº›å¥‡æ€ªçš„è‰ç±»ï¼Œäº”é¢œå…­è‰²çš„ã€‚ä¸œä¸€å †ï¼Œ
+è¥¿ä¸€ç°‡ï¼Œå‘æ˜¯è§„åˆ’çš„éå¸¸ä»”ç»†ã€‚éšè§èŠ±å›­æ­£ä¸­ä¸€åº§å°å…ï¼Œåœ¨è‰æœ¨
+è¡¬æ‰˜ä¹‹ä¸‹æ˜¾å¾—éå¸¸é›…è‡´ã€‚
 LONG);
 
 //  set("objects", ([ /* sizeof() == 1*/ 
 //  __DIR__"npc/erlang" : 1,
 //]));
 //  set("outdoors", 1);
-  set("position", "Ç¬");  
+  set("position", "ä¹¾");  
 
   set("exits", ([ /* sizeof() == 2 */
   "south" : __DIR__"yuemen",
   "northeast" : __DIR__"hua_dui",
   "northwest" : __DIR__"hua_gong",
 ]));
-  create_door("south", "ÔÂÑÀÃÅ", "north", DOOR_CLOSED);
+  create_door("south", "æœˆç‰™é—¨", "north", DOOR_CLOSED);
 //      
         set("water", 1);
 //  
@@ -43,10 +43,10 @@ int do_jump(string arg)
         object me;
         me=this_player();
 
-        message_vision("$NÇáÇáÒ»Ìø£¬¾ÓÈ»Ìøµ½ÁËĞ¡Í¤ÖĞ¡£\n",me);
+        message_vision("$Nè½»è½»ä¸€è·³ï¼Œå±…ç„¶è·³åˆ°äº†å°äº­ä¸­ã€‚\n",me);
                 me->move("/d/qujing/bibotan/furong");
-		me->set_temp("enter_position", "Ç¬");
-                tell_room( environment(me), "àÛàÌÒ»Éù£¬ÓĞ¸öÈËÌøÁË½øÀ´¡£\n", ({me}));
+		me->set_temp("enter_position", "ä¹¾");
+                tell_room( environment(me), "å™—å—µä¸€å£°ï¼Œæœ‰ä¸ªäººè·³äº†è¿›æ¥ã€‚\n", ({me}));
                 return 1;
 }
 

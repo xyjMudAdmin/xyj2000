@@ -8,9 +8,9 @@ string try_me(object me);
 
 void create()
 {
-  set_name("ÇØ¸»", ({"qin fu", "qin", "fu", "master"}));
-  set("title", "½«¾ü¸®¹Ü¼Ò");
-  set("gender", "ÄĞĞÔ");
+  set_name("ç§¦å¯Œ", ({"qin fu", "qin", "fu", "master"}));
+  set("title", "å°†å†›åºœç®¡å®¶");
+  set("gender", "ç”·æ€§");
   set("age", 38);
   set("str", 30);
   set("int", 25);
@@ -37,7 +37,7 @@ void create()
 
   setup();
   
-  create_family("½«¾ü¸®", 3, "À¶");
+  create_family("å°†å†›åºœ", 3, "è“");
   carry_object("/d/obj/armor/tenjia")->wear();
   carry_object("/d/obj/weapon/spear/tieqiang")->wield();
 }
@@ -46,7 +46,7 @@ int attempt_apprentice(object me)
 {
   string myname=RANK_D->query_respect(me);
   command("pat "+me->query("id"));
-  command("say ºÜºÃ£¬Ê±ÏÂÕıÊÇÓÃÈËÖ®¼Ê"+myname+"¶à¼ÓÅ¬Á¦£¬ËûÈÕ±Ø¶¨ÓĞ³É¡£");
+  command("say å¾ˆå¥½ï¼Œæ—¶ä¸‹æ­£æ˜¯ç”¨äººä¹‹é™…"+myname+"å¤šåŠ åŠªåŠ›ï¼Œä»–æ—¥å¿…å®šæœ‰æˆã€‚");
   command("recruit " + me->query("id") );
   return 1;
 }

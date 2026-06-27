@@ -5,10 +5,10 @@ inherit F_VENDOR_SALE;
 void create()
 {
   reload("honglou_lengzixing");
-  set_name("Àä×ÓĞË", ({"leng zixing","leng","zixing"}));
+  set_name("å†·å­å…´", ({"leng zixing","leng","zixing"}));
   set("shop_id",({"gudong","gudong shang"}));
-  set("title", "¹Å¶­ÉÌ");
-  set("gender", "ÄĞĞÔ");
+  set("title", "å¤è‘£å•†");
+  set("gender", "ç”·æ€§");
   set("combat_exp", 10000);
   set("age", 46);
   set("attitude", "friendly");

@@ -3,13 +3,13 @@ inherit NPC;
 
 void create()
 {
-       	set_name("Ä¦ÀûÖ®", ({"moli zhi", "zhi"}));
-       	set("gender", "Å®ĞÔ");
+       	set_name("æ‘©åˆ©ä¹‹", ({"moli zhi", "zhi"}));
+       	set("gender", "å¥³æ€§");
        	set("age", 20);
         set("class", "xian");
-	set("title", "»ğÑæÖ®Éñ");
+	set("title", "ç«ç„°ä¹‹ç¥");
        	set("attitude", "friendly");
-       	set("rank_info/respect", "ÌìÅ®");
+       	set("rank_info/respect", "å¤©å¥³");
         set("per", 30);
         set("int", 30);
 	set("str", 30);

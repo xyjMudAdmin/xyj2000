@@ -6,12 +6,12 @@ inherit "/d/wiz/no_get";
 
 void create ()
 {
-  set ("short", "˾��");
+  set ("short", "司房");
   set ("long", @LONG
 
-���ڹ��߰����������Ũ������ʱ�شӰ뿪�ŵ��ŷ�Ʈ����������
-��ɢ��һЩ�ƾɵ���Ʒ�������������Ѿ��޷��ֱ������Щʲô
-�����ˡ�
+房内光线暗淡，外面的浓雾还不时地从半开着的门缝飘进来。地面
+上散着一些破旧的物品，不过光从外表已经无法分辨出那是些什么
+东西了。
 LONG);
   set("no_magic",1);
 

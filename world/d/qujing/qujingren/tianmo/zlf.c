@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ÕôÁı·¿");
+  set ("short", "è’¸ç¬¼æˆ¿");
   set ("long", @LONG
-Ò»¸öÙ¼´óµÄÕôÁı·ÅÔÚ·¿×ÓÖĞÑë,ËÄ´¦ÑÌÎíÃÖÂş,ÈÈÆøÌÚÌÚ,Ææ¹ÖµÄÊÇ
-¾¹È»Ã»ÓĞÒ»Ë¿»ğĞÇ.ÄãÖ»¸Ğ¾õµ½ÈÈ,»¹ÓĞÒ»¹ÉÄªÃûµÄÏãÎ¶.
+ä¸€ä¸ªåŒå¤§çš„è’¸ç¬¼æ”¾åœ¨æˆ¿å­ä¸­å¤®,å››å¤„çƒŸé›¾å¼¥æ¼«,çƒ­æ°”è…¾è…¾,å¥‡æ€ªçš„æ˜¯
+ç«Ÿç„¶æ²¡æœ‰ä¸€ä¸ç«æ˜Ÿ.ä½ åªæ„Ÿè§‰åˆ°çƒ­,è¿˜æœ‰ä¸€è‚¡è«åçš„é¦™å‘³.
 LONG);
 
   set("exits", ([ /* sizeof() == 4 */
@@ -19,7 +19,7 @@ LONG);
 void init()
 {
    add_action("do_xian","xian");
-   add_action("do_xian","ÏÆ");
+   add_action("do_xian","æ€");
 }
 
 int do_xian()
@@ -32,8 +32,8 @@ int do_xian()
   if (me->query_temp("xian"))return 0;
   if (who->query("obstacle/qujing")=="ren")
     {
-  	message_vision("$NÓÃÁ¦µÄÏÆ¿ªÕôÁı¸Ç,¿´µ½¿ÉÁ¯µÄÈ¡¾­ÈËÕıÌÉÔÚÀïÃæ\n",who);
-  	message_vision("$NÒ»°Ñ°ÑÈ¡¾­ÈË±§ÁË³öÀ´\n",who);
+  	message_vision("$Nç”¨åŠ›çš„æ€å¼€è’¸ç¬¼ç›–,çœ‹åˆ°å¯æ€œçš„å–ç»äººæ­£èººåœ¨é‡Œé¢\n",who);
+  	message_vision("$Nä¸€æŠŠæŠŠå–ç»äººæŠ±äº†å‡ºæ¥\n",who);
  
   	qujingren=new("/d/qujing/qujingren/"+OBSTACLE_D->query("guan")
                    +"/qujingren");
@@ -49,10 +49,10 @@ int do_xian()
     {
 	if (OBSTACLE_D->query("obstacle_fail"))
 	  {
-		message_vision("$NĞË¸ß²ÉÁÒµÄÏÆÆğÕôÁı¸Ç,ÍÚÈû!Áù¿éÈ¡¾­ÈËµÄÈâ\n",
+		message_vision("$Nå…´é«˜é‡‡çƒˆçš„æ€èµ·è’¸ç¬¼ç›–,æŒ–å¡!å…­å—å–ç»äººçš„è‚‰\n",
 			who);
 		who->command_function("rumor "+who->query("name")+
-			"»ñµÃÁù¿éÈ¡¾­ÈËµÄÈâ");
+			"è·å¾—å…­å—å–ç»äººçš„è‚‰");
 		for (int i=1;i<=6;i++)
 		   {
  		      rou=new("/d/qujing/qujingren/obj/rou");
@@ -62,7 +62,7 @@ int do_xian()
 		return 1;
 	  }  
     }
-    return notify_fail("ÁıÀïÕıÕô×Å¶«Î÷ÄØ,»¹Ã»ÊìµÄ»°£¬×îºÃ²»ÒªÂÒÏÆ\n");
+    return notify_fail("ç¬¼é‡Œæ­£è’¸ç€ä¸œè¥¿å‘¢,è¿˜æ²¡ç†Ÿçš„è¯ï¼Œæœ€å¥½ä¸è¦ä¹±æ€\n");
 
 
 }
@@ -74,7 +74,7 @@ void append_laoren()
 
 	laoren=new("/d/qujing/qujingren/tianmo/npc/laoren");
 	laoren->move(me);
-     	message_vision("$N×ßÁË¹ıÀ´\n",laoren);
+     	message_vision("$Nèµ°äº†è¿‡æ¥\n",laoren);
 	
 }
 

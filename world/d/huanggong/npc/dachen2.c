@@ -7,9 +7,9 @@ inherit NPC;
 
 void create()
 {
-  set_name("ÐìÃ¯¹¦", ({ "xu maogong", "xu", "maogong", "da chen" }));
-  set("title", "´ó³¼");
-  set("gender", "ÄÐÐÔ");
+  set_name("å¾èŒ‚åŠŸ", ({ "xu maogong", "xu", "maogong", "da chen" }));
+  set("title", "å¤§è‡£");
+  set("gender", "ç”·æ€§");
   set("age", 60);
   set("per", 30);
   set("combat_exp", 300000);
@@ -49,14 +49,14 @@ void reward (object who)
 
   points=40+points*4;
 
-  message_vision ("$N¶Ô$nÒ»°Ý£ºÆÐÈøÍÐ±ÝÏÂ´«·¨Ö¼£¬´Í"+RANK_D->query_respect(who)+
-                  COMBAT_D->chinese_daoxing(points)+"µÀÐÐ£¡\n",me,who);
+  message_vision ("$Nå¯¹$nä¸€æ‹œï¼šè©è¨æ‰˜é™›ä¸‹ä¼ æ³•æ—¨ï¼Œèµ"+RANK_D->query_respect(who)+
+                  COMBAT_D->chinese_daoxing(points)+"é“è¡Œï¼\n",me,who);
 /*
-  command (channel+" "+who->query("name")+who->query("quest/reason")+"±ÝÏÂÓÐÖ¼£¬´Í"+
-           COMBAT_D->chinese_daoxing(points)+"µÀÐÐ£¡");
+  command (channel+" "+who->query("name")+who->query("quest/reason")+"é™›ä¸‹æœ‰æ—¨ï¼Œèµ"+
+           COMBAT_D->chinese_daoxing(points)+"é“è¡Œï¼");
 */                  
   who->add("quest/gain/daoxing",points);
-  reporting (who, who->query("quest/reason"), points, "µãµÀÐÐ");
+  reporting (who, who->query("quest/reason"), points, "ç‚¹é“è¡Œ");
   who->add("daoxing",points);
 }
 

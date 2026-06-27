@@ -9,16 +9,16 @@ inherit WHIP;
 
 void create()
 {
-  set_name(HIR "»ìÌìç±" NOR,({"huntian ling", "ling", "huntianling", "huntian"}));
+  set_name(HIR "æ··å¤©ç»«" NOR,({"huntian ling", "ling", "huntianling", "huntian"}));
   set_weight(5000);
   if(clonep())
     set_default_object(__FILE__);
   else {
-    set("unit","Ìõ");
+    set("unit","æ¡");
     set("value",0);
-    set("long","ÕâÊÇÒ»ÌõºìÉ«µÄ³ñ´ø£¬Ò²²»ÖªµÀÊÇ¸ÉÊ²Ã´ÓÃµÄ¡£\n");
-    set("wield_msg","$N´ÓÑü¼ä½âÏÂÒ»Ìõ$n£¬¶ÙÊ±È¾ºìÁËÒ»ÌìÔÆÏ¼¡£\n");
-    set("unequip_msg","$N°Ñ$nÏ¸ÐÄµÄ¾íºÃÏµÔÚÑü¼ä¡£\n");
+    set("long","è¿™æ˜¯ä¸€æ¡çº¢è‰²çš„ç»¸å¸¦ï¼Œä¹Ÿä¸çŸ¥é“æ˜¯å¹²ä»€ä¹ˆç”¨çš„ã€‚\n");
+    set("wield_msg","$Nä»Žè…°é—´è§£ä¸‹ä¸€æ¡$nï¼Œé¡¿æ—¶æŸ“çº¢äº†ä¸€å¤©äº‘éœžã€‚\n");
+    set("unequip_msg","$NæŠŠ$nç»†å¿ƒçš„å·å¥½ç³»åœ¨è…°é—´ã€‚\n");
   }
   init_whip(10);
   setup();
@@ -28,15 +28,15 @@ int ji(string target)
     string objname=this_object()->name();
     object me=this_player(), victim;
 
-    if (!target) return notify_fail("ÄãÏëÓÃ¶ÔË­ÓÃ"+objname+"£¿\n");
+    if (!target) return notify_fail("ä½ æƒ³ç”¨å¯¹è°ç”¨"+objname+"ï¼Ÿ\n");
     victim=present(target,environment(me));
-    if(!victim) return notify_fail("ÕâÀïÃ»ÓÐ "+target+"¡£\n");
-    if(!living(victim)) return notify_fail("ÄãµÄÄ¿±ê²»ÊÇ»îÎï£¡\n");
-    if(!me->is_fighting()) return notify_fail("Ö»ÓÐÕ½¶·ÖÐ²ÅÄÜ¼À"+objname+"¡£\n");  
-    if(victim->query("no_move")) return notify_fail("¶Ô·½ÒÑ¾­ÎÞÏ¾×Ô¹ËÁË£¬ÓÐ±ØÒªÓÃ"+objname+"Ã´£¿\n");
+    if(!victim) return notify_fail("è¿™é‡Œæ²¡æœ‰ "+target+"ã€‚\n");
+    if(!living(victim)) return notify_fail("ä½ çš„ç›®æ ‡ä¸æ˜¯æ´»ç‰©ï¼\n");
+    if(!me->is_fighting()) return notify_fail("åªæœ‰æˆ˜æ–—ä¸­æ‰èƒ½ç¥­"+objname+"ã€‚\n");  
+    if(victim->query("no_move")) return notify_fail("å¯¹æ–¹å·²ç»æ— æš‡è‡ªé¡¾äº†ï¼Œæœ‰å¿…è¦ç”¨"+objname+"ä¹ˆï¼Ÿ\n");
     if( (int)me->query("mana") < 250)
-        return notify_fail("ÄãµÄ·¨Á¦²»¹»ÁË£¡\n");
+        return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿäº†ï¼\n");
     if( (int)me->query("sen") < 100)
-        return notify_fail("ÄãµÄ¾«ÉñÎÞ·¨¼¯ÖÐ£¡\n");
-    return notify_fail("ÎÞÂÛÄãÔõÃ´ÄîÖä£¬"+objname+"¾ÍÊÇ²»¶¯¡£\n");
+        return notify_fail("ä½ çš„ç²¾ç¥žæ— æ³•é›†ä¸­ï¼\n");
+    return notify_fail("æ— è®ºä½ æ€Žä¹ˆå¿µå’’ï¼Œ"+objname+"å°±æ˜¯ä¸åŠ¨ã€‚\n");
 }

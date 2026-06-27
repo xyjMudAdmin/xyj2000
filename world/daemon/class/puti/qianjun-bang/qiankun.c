@@ -13,27 +13,27 @@ int perform(object me, object target)
         ||      !target->is_character()
         ||      target->is_corpse()
         ||      target==me)
-                return notify_fail("��Ҫ��˭ʩչ��һ�С�Ǭ��һ������\n");
+                return notify_fail("你要对谁施展这一招「乾坤一棒」？\n");
 
         if(!me->is_fighting())
-                return notify_fail("��Ǭ��һ����ֻ����ս����ʹ�ã�\n");
+                return notify_fail("「乾坤一棒」只能在战斗中使用！\n");
 
         if((int)me->query("max_force") < 1000 )
-                return notify_fail("�������������\n");
+                return notify_fail("你的内力不够！\n");
 
         if((int)me->query("force") < 1000 )
-                return notify_fail("����������㣡\n");
+                return notify_fail("你的内力不足！\n");
 
         if((int)me->query("sen") < 500 )
-                return notify_fail("��ľ����㣬û����ʩ���⹦��\n");
+                return notify_fail("你的精神不足，没法子施用外功！\n");
 
 	i=(int)me->query_skill("qianjun-bang",1)+(int)me->query_kar();
 
         if( i < 150)
-                return notify_fail("���ǧ�������𻹲�����ʹ����һ�л������ѣ�\n");
+                return notify_fail("你的千钧棒级别还不够，使用这一招会有困难！\n");
 
-  if (me->query_temp("fc_pfm_busy")) return notify_fail("�����õ�̫��̫�ľͲ����ˡ�\n");
-	message_vision(HIC"\n$N���㾫��һ�������ڿգ�ʹ���ˡ�Ǭ��һ�����ľ�����\n"NOR,me);
+  if (me->query_temp("fc_pfm_busy")) return notify_fail("绝招用的太多太滥就不灵了。\n");
+	message_vision(HIC"\n$N运足精神，一个高跳在空，使出了「乾坤一棒」的绝技！\n"NOR,me);
 
 	me->delete("env/brief_message");
 	target->delete("env/brief_message");

@@ -11,16 +11,16 @@ int exert(object me, object target)
         int skill;
 
         if( target != me ) 
-                return notify_fail("你只能用龙神心法保护自己。\n");
+                return notify_fail("浣犲彧鑳界敤榫欑蹇冩硶淇濇姢鑷繁銆俓n");
 
         if( (int)me->query("force") < 100 )     
-                return notify_fail("你的内力不够。\n");
+                return notify_fail("浣犵殑鍐呭姏涓嶅銆俓n");
 	if( (int)me->query("kee") < 50 )
-		return notify_fail("你的气血不足。\n");
+		return notify_fail("浣犵殑姘旇涓嶈冻銆俓n");
 	if( (int)me->query("sen") < 50 )
-		return notify_fail("你的精神不足。\n");
+		return notify_fail("浣犵殑绮剧涓嶈冻銆俓n");
         if( (int)me->query_temp("powerup") ) 
-                return notify_fail("你已经在运功中了。\n");
+                return notify_fail("浣犲凡缁忓湪杩愬姛涓簡銆俓n");
 
         skill = me->query_skill("force");
 
@@ -29,7 +29,7 @@ int exert(object me, object target)
 	me->receive_damage("sen", 30);
 
         message_vision(
-                HIC"$N微一凝神，运起龙神心法，浑身上下顿时结出了青色的龙鳞。\n" NOR, me);
+                HIC"$N寰竴鍑濈锛岃繍璧烽緳绁炲績娉曪紝娴戣韩涓婁笅椤挎椂缁撳嚭浜嗛潚鑹茬殑榫欓碁銆俓n" NOR, me);
 
         me->add_temp("apply/armor", skill/3);
         me->set_temp("powerup", 1);
@@ -45,7 +45,7 @@ void remove_effect(object me, int amount)
 {
         me->add_temp("apply/armor", - amount);
         me->delete_temp("powerup");
-        tell_object(me, "你的龙神心法运行一周天完毕，龙鳞渐渐消去了。\n");
+        tell_object(me, "浣犵殑榫欑蹇冩硶杩愯涓�鍛ㄥぉ瀹屾瘯锛岄緳槌炴笎娓愭秷鍘讳簡銆俓n");
 	return;
 }
 

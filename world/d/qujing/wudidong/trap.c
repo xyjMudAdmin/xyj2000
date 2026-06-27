@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "Ê¯¶´Éî´¦");
+  set ("short", "çŸ³æ´žæ·±å¤„");
   set ("long", @LONG
 
-¶Ï¶ÏÐøÐøµÄÉëÒ÷±äµÃ¸ü¼ÓÇåÎúÁË£¬Ç°·½Ò²Í¸³öÁËÒ»µã¶¹´óµÄµÆ¹â£¬ÒÀ
-Ï¡¿É¼ûºÚÓ°´±´±¡£½ÅÏÂÍ»È»Ìßµ½¼¸¾ßºáÆßÊú°ËµÄ÷¼÷Ã£¬Äã²»½ûÄóÁËÒ»
-°ÑÀäº¹¡£
+æ–­æ–­ç»­ç»­çš„å‘»åŸå˜å¾—æ›´åŠ æ¸…æ™°äº†ï¼Œå‰æ–¹ä¹Ÿé€å‡ºäº†ä¸€ç‚¹è±†å¤§çš„ç¯å…‰ï¼Œä¾
+ç¨€å¯è§é»‘å½±å¹¢å¹¢ã€‚è„šä¸‹çªç„¶è¸¢åˆ°å‡ å…·æ¨ªä¸ƒç«–å…«çš„éª·é«…ï¼Œä½ ä¸ç¦æäº†ä¸€
+æŠŠå†·æ±—ã€‚
 LONG);
   set("trap", 1);
   set("exits", ([ /* sizeof() == 2 */
@@ -37,19 +37,19 @@ int do_disarm()
   kee=(int)me->query("kee");
   damage=maxkee*3/5;
   if (!me->query_temp("mark/wudidong_aware_of_trap"))
-    return notify_fail("ÄãÒª¸ÉÊ²Ã´£¿ÕâÀïÒõÉ­É­µÄ£¬»¹²»¿ì×ß£¿\n");
+    return notify_fail("ä½ è¦å¹²ä»€ä¹ˆï¼Ÿè¿™é‡Œé˜´æ£®æ£®çš„ï¼Œè¿˜ä¸å¿«èµ°ï¼Ÿ\n");
   me->delete_temp("mark/wudidong_aware_of_trap");
   if (!room->query("trap"))
-    return notify_fail("»ú¹ØÒÑ¾­±»²ð³ýÁË£¡\n");
+    return notify_fail("æœºå…³å·²ç»è¢«æ‹†é™¤äº†ï¼\n");
   if (random(factor)>50)
     {
-      message_vision(BLU "$N³É¹¦µØ²ð³ýÁË·¿¼äÀïµÄ»ú¹Ø¡£\n" NOR, me);
+      message_vision(BLU "$NæˆåŠŸåœ°æ‹†é™¤äº†æˆ¿é—´é‡Œçš„æœºå…³ã€‚\n" NOR, me);
       room->delete("trap");
       return 1;
     }
   else
     {
-      message_vision(RED "Ò»ÕóÂÒ¼ýÏò$NÉäÀ´¡£" NOR, me);
+      message_vision(RED "ä¸€é˜µä¹±ç®­å‘$Nå°„æ¥ã€‚" NOR, me);
       if(damage>kee)
 	{
 	  room->set("trap", 1);
@@ -58,8 +58,8 @@ int do_disarm()
 	}
       else
 	{
-	  message_vision(RED "$NÉËµÃ²»Çá¡£\n" NOR, me);
-	  message_vision(BLU "»ú¹Ø±»²ð³ýÁË. \n" NOR, me);
+	  message_vision(RED "$Nä¼¤å¾—ä¸è½»ã€‚\n" NOR, me);
+	  message_vision(BLU "æœºå…³è¢«æ‹†é™¤äº†. \n" NOR, me);
 	  me->receive_damage("kee", damage);
 	  me->receive_wound("kee", damage-10);
 	  room->delete("trap");
@@ -77,7 +77,7 @@ int valid_leave(object me, string dir)
     {
 	if(!userp(me)) return 0;
 
-      message_vision(RED "$NÏò±±×ßÈ¥£¬Í»È»¼ä£¬Ç½ÀïÉä³öÒ»Õó¼ýÓê¡£\n" NOR, me);
+      message_vision(RED "$Nå‘åŒ—èµ°åŽ»ï¼Œçªç„¶é—´ï¼Œå¢™é‡Œå°„å‡ºä¸€é˜µç®­é›¨ã€‚\n" NOR, me);
       call_out("playerdead", 1, me);
       return notify_fail("");
     }
@@ -91,7 +91,7 @@ void playerdead(object me)
   if (me->query("combat_exp")<800000 && random(2))
   {
     me->delete_temp("last_damage_from");
-    me->set_temp("death_msg", "±»ÂÒ¼ýÉäËÀÁË¡£\n");
+    me->set_temp("death_msg", "è¢«ä¹±ç®­å°„æ­»äº†ã€‚\n");
     me->die();
     me->save();
   }

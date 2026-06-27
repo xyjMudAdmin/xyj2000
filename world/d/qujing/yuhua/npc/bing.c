@@ -5,8 +5,8 @@ inherit NPC;
 
 void create()
 {
-  set_name("Ê¿±ø", ({ "shi bing", "bing" }) );
-  set("gender", "ÄÐÐÔ");
+  set_name("å£«å…µ", ({ "shi bing", "bing" }) );
+  set("gender", "ç”·æ€§");
   set("age", 15+random(15));
   set("combat_exp", 200000+random(20000));
   set("attitude", "heroism");

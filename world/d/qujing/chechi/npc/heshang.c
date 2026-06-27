@@ -4,19 +4,19 @@
 inherit NPC;
 
 string *names = ({
-  "ÖªÊéºÍÉÐ",
-  "ÉÐÀñºÍÉÐ",
-  "Ë×¼ÒºÍÉÐ",
-  "´óºÍÉÐ",
-  "ÇîºÍÉÐ",
-  "ÊÝºÍÉÐ",
+  "çŸ¥ä¹¦å’Œå°š",
+  "å°šç¤¼å’Œå°š",
+  "ä¿—å®¶å’Œå°š",
+  "å¤§å’Œå°š",
+  "ç©·å’Œå°š",
+  "ç˜¦å’Œå°š",
 });
 
 void create()
 {
   int i = random(sizeof(names));
   set_name(names[i], ({"he shang"}));
-  set("gender", "ÄÐÐÔ");
+  set("gender", "ç”·æ€§");
   set("combat_exp", 1000+random(50000));
   set("age", 40+random(20));
   set("per", 14+random(20));

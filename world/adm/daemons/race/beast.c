@@ -6,23 +6,23 @@
 mapping combat_action =
 ([
 	"hoof": ([
-		"action":		"$NÓÃááÍÈÍù$nµÄ$lÓÃÁ¦Ò»µÅ",
+		"action":		"$Nç”¨å¾Œè…¿å¾€$nçš„$lç”¨åŠ›ä¸€è¹¬",
 		"damage":		100,
-		"damage_type":	"ðöÉË",
+		"damage_type":	"ç˜€ä¼¤",
 	]),
 	"bite": ([
-		"action":		"$NÆËÉÏÀ´ÕÅ×ìÍù$nµÄ$lºÝºÝµØÒ»Ò§",
+		"action":		"$Næ‰‘ä¸Šæ¥å¼ å˜´å¾€$nçš„$lç‹ ç‹ åœ°ä¸€å’¬",
 		"damage":		20,
-		"damage_type":	"Ò§ÉË",
+		"damage_type":	"å’¬ä¼¤",
 	]),
 	"claw": ([
-		"action":		"$NÓÃ×¦×ÓÍù$nµÄ$lÒ»×¥",
-		"damage_type":	"×¥ÉË",
+		"action":		"$Nç”¨çˆªå­å¾€$nçš„$lä¸€æŠ“",
+		"damage_type":	"æŠ“ä¼¤",
 	]),
 	"poke": ([
-		"action":		"$NÓÃ×ìÍù$nµÄ$lÒ»×Ä",
+		"action":		"$Nç”¨å˜´å¾€$nçš„$lä¸€å•„",
 		"damage":		30,
-		"damage_type":	"´ÌÉË",
+		"damage_type":	"åˆºä¼¤",
 	]),
 ]);
 
@@ -39,18 +39,18 @@ void setup_beast(object ob)
 
 	my = ob->query_entire_dbase();
 
-	my["unit"] = "Ö»";
+	my["unit"] = "åª";
 
 	if( undefinedp(my["actions"]) ) {
 		if( pointerp(my["verbs"]) )
 			ob->set("default_actions", (: call_other, __FILE__, "query_action" :) );
 		else
 			my["default_actions"] = ([
-				"action": "$N¹¥»÷$nµÄ%s£¬%s\n",
+				"action": "$Næ”»å‡»$nçš„%sï¼Œ%s\n",
 			]);
 	}
 	
-	if( undefinedp(my["gender"]) ) my["gender"] = "ÐÛÐÔ";
+	if( undefinedp(my["gender"]) ) my["gender"] = "é›„æ€§";
 	if( undefinedp(my["age"]) ) my["age"] = random(40) + 5;
 
 	if( undefinedp(my["str"]) ) my["str"] = random(41) + 5;

@@ -7,10 +7,10 @@ inherit F_FOOD;
 void create()
 {
   string *names = ({
-    "Áú¸Î",
-    "·ïËè",
-    "ĞÜÕÆ",
-    "ĞÉ´½",
+    "é¾™è‚",
+    "å‡¤é«“",
+    "ç†ŠæŒ",
+    "çŒ©å”‡",
     });
   string *ids = ({
     "long gan",
@@ -25,7 +25,7 @@ void create()
   if (clonep())
     set_default_object(__FILE__);
   else {
-    set("unit", "½ğÍë");
+    set("unit", "é‡‘ç¢—");
     set("value", 10000);
     set("food_remaining", 20);
     set("food_supply", 100);
@@ -33,6 +33,6 @@ void create()
     set("no_drop",1);
     set("no_sell",1);
   }
-  set("long", "Ò»½ğÍëÌìÉÏ²ÅÓĞµÄÏÉëÈÕäâÊ£­£­"+names[i]+"¡£\n");
+  set("long", "ä¸€é‡‘ç¢—å¤©ä¸Šæ‰æœ‰çš„ä»™è‚´çé¦ï¼ï¼"+names[i]+"ã€‚\n");
 }
 

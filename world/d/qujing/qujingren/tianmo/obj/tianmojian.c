@@ -1,5 +1,5 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// tianmojian.c 	ÌìÄ§¼ë
+// tianmojian.c 	å¤©é­”èŒ§
 
 #include <ansi.h>
 #include <weapon.h>
@@ -9,7 +9,7 @@ inherit ITEM;
 
 void create()
 {
-	set_name("ÌìÄ§¼ë", ({"tianmojian", "tianmo jian", "jian"}));
+	set_name("å¤©é­”èŒ§", ({"tianmojian", "tianmo jian", "jian"}));
 	set_weight(7000);
 //  	set_max_encumbrance(50000);
 //  	set("max_items",10);
@@ -17,14 +17,14 @@ void create()
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "ÕôÁıÀÏÈËµÄÌìÄ§¼ë,×¨ÃÅÓÃÀ´ÊÕÈ¡¾­ÈË\n");
-		set("unit", "¸ö");
+		set("long", "è’¸ç¬¼è€äººçš„å¤©é­”èŒ§,ä¸“é—¨ç”¨æ¥æ”¶å–ç»äºº\n");
+		set("unit", "ä¸ª");
 		set("max_liquid", 15);
 	}
 
 	set("value",1);
   	set("unique", 1);
-  	set("no_sell", "ÄãÕÒËÀ°¡¡£\n");
+  	set("no_sell", "ä½ æ‰¾æ­»å•Šã€‚\n");
   	set("is_monitored",1);
   	setup();
 
@@ -46,7 +46,7 @@ void init()
    	}
   }
 
-  add_action("do_shou","ÊÕ");
+  add_action("do_shou","æ”¶");
   add_action("do_shou","shou");
   add_action("do_shou","zhua");
 }
@@ -55,7 +55,7 @@ void init()
 void destruct_me(object where, object me)
 {
     object env=environment(where);
-    message("sound","¿ÕÖĞÒ»Éù´óºğ,ÎŞÓÃµÄ¼Ò»ï,»¹ÎÒÌìÄ§¼ëÀ´\n",env);
+    message("sound","ç©ºä¸­ä¸€å£°å¤§å¼,æ— ç”¨çš„å®¶ä¼™,è¿˜æˆ‘å¤©é­”èŒ§æ¥\n",env);
     destruct(me);
     OBSTACLE_D->delete("last_jie_id")	;
 }
@@ -70,22 +70,22 @@ int do_shou()
 	who=this_player()	;
         where=environment(who)	;
 	if (!(qjr=present("qujing ren",where)))
- 	  return notify_fail("È¡¾­ÈË²»ÔÚÕâÀï\n");
+ 	  return notify_fail("å–ç»äººä¸åœ¨è¿™é‡Œ\n");
 	husong=OBSTACLE_D->query("husong");
 	husongren=find_player(husong);  	    	
         if (husongren)
  	  {  
    	     if (where==environment(husongren))
-	     return notify_fail("ÓĞÈËÔÚ±£»¤×ÅÄØ\n");
+	     return notify_fail("æœ‰äººåœ¨ä¿æŠ¤ç€å‘¢\n");
   	  }
 
-	message_vision("$N¼ÀÆğÌìÄ§¼ë,Ö»¼ûÄÇ¼ëÉä³öÍòÂÆÇáË¿½«È¡¾­ÈËÍÅÍÅÀ¦×¡\n",who);
-	write("Äã¶ú±ß·Â·ğÌıµ½ÕôÁıÀÏÈËµÄ½ĞºÃÉù,ÄÇ¼ë±ãÏûÊ§ÁË\n");
+	message_vision("$Nç¥­èµ·å¤©é­”èŒ§,åªè§é‚£èŒ§å°„å‡ºä¸‡ç¼•è½»ä¸å°†å–ç»äººå›¢å›¢æ†ä½\n",who);
+	write("ä½ è€³è¾¹ä»¿ä½›å¬åˆ°è’¸ç¬¼è€äººçš„å«å¥½å£°,é‚£èŒ§ä¾¿æ¶ˆå¤±äº†\n");
 
 	OBSTACLE_D->set("cated_qjr",1);
 	OBSTACLE_D->set("cated_id",who->query("id"));
 	OBSTACLE_D->set("cated_type","player");
-		//È¡¾­ÈËÒÑ¾­±»×¥.¶øÇÒÊÇÍæ¼Ò×¥µÄ
+		//å–ç»äººå·²ç»è¢«æŠ“.è€Œä¸”æ˜¯ç©å®¶æŠ“çš„
 	OBSTACLE_D->set("last_env",base_name(where));
 	OBSTACLE_D->set("where_qujingren","/d/qujing/qujingren/tianmo/zlf");
 	OBSTACLE_D->save();	

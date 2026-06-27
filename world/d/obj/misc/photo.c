@@ -5,14 +5,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name("»Ò½ı", ({ "huijin", "ash" }) );
+        set_name("ç°çƒ¬", ({ "huijin", "ash" }) );
         set_weight(100);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                                set("unit", "ÕÅ");
+                                set("unit", "å¼ ");
                                 set("value",0);
-                set("long", "Ò»¶ÑÎŞ·¨±æÈÏµÄ½¹ºÚµÄ»Ò½ı£¬ÏóÊÇÒ»³¡ºÆ½ÙºóÁôÏÂµÄ²ĞÓà¡£\n");
+                set("long", "ä¸€å †æ— æ³•è¾¨è®¤çš„ç„¦é»‘çš„ç°çƒ¬ï¼Œè±¡æ˜¯ä¸€åœºæµ©åŠ«åç•™ä¸‹çš„æ®‹ä½™ã€‚\n");
                 }
         setup();
 }
@@ -27,15 +27,15 @@ int do_sign(string arg) {
    string str;
 
    if (arg!="photo") return 0;
-   if (query("name")!=me->query("name")+"µÄÕÕÆ¬")
-        return notify_fail("½ûÖ¹ÔÚ±ğÈËµÄÕÕÆ¬ÉÏÂÒÍ¿ÂÒ»­£¡\n");
+   if (query("name")!=me->query("name")+"çš„ç…§ç‰‡")
+        return notify_fail("ç¦æ­¢åœ¨åˆ«äººçš„ç…§ç‰‡ä¸Šä¹±æ¶‚ä¹±ç”»ï¼\n");
 
    str=query("long");
-   str=str+ "ÕÕÆ¬ÉÏÓĞ"+me->query("name")+"µÄÇ×±ÊÇ©Ãû¡£\n";
+   str=str+ "ç…§ç‰‡ä¸Šæœ‰"+me->query("name")+"çš„äº²ç¬”ç­¾åã€‚\n";
    
-   message_vision("$NÔÚÕÕÆ¬ÉÏÁú·É·ïÎèµÄÇ©ÉÏÁË×Ô¼ºµÄ´óÃû¡£\n",me);
+   message_vision("$Nåœ¨ç…§ç‰‡ä¸Šé¾™é£å‡¤èˆçš„ç­¾ä¸Šäº†è‡ªå·±çš„å¤§åã€‚\n",me);
    set("long",str);
-   set("name",me->query("name")+"µÄÇ©ÃûÕÕÆ¬");
+   set("name",me->query("name")+"çš„ç­¾åç…§ç‰‡");
    remove_action("do_sign","sign");
    return 1;
 }

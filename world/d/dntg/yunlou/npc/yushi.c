@@ -5,9 +5,9 @@ inherit NPC;
 void create()
 {
  
-        set_name("ÓãÊ¦½«", ({ "yushi jiang", "jiang", "yushi" }) );
-        set("gender", "ÄĞĞÔ" );
-        set("long","ÍĞËşÀîÌìÍõÕÊÏÂ´ó½«£¬°òÀ«ÑüÔ²£¬Á¦´óÎŞÇî¡£\n");
+        set_name("é±¼å¸ˆå°†", ({ "yushi jiang", "jiang", "yushi" }) );
+        set("gender", "ç”·æ€§" );
+        set("long","æ‰˜å¡”æå¤©ç‹å¸ä¸‹å¤§å°†ï¼Œè†€é˜”è…°åœ†ï¼ŒåŠ›å¤§æ— ç©·ã€‚\n");
         set("age",40);
         set("str", 30);
         set("int", 20);
@@ -40,4 +40,3 @@ void create()
 }
  
 
-ÿ

@@ -13,9 +13,9 @@ int do_add(string);
 void create()
 {
 	seteuid(getuid());
-	set_name(RED "Ë«" NOR + HIB "É«" NOR + HIW "±ù" NOR, ({ "shuangse bing", "bingkuai", "bing", "ice" }) );
-	set("long", "ÕâÊÇÒ»Æ¬³¤³¤µÄ£¬ÍäÍäµÄ£¬Àäì¬ì¬µÄ±ù¿é£¬¿´ÆğÀ´ÓĞÊ±Í¸ºì£¬ÓĞÊ±ÓÖÍ¸À¶¡£\n");
-	set("unit", "Æ¬" );
+	set_name(RED "åŒ" NOR + HIB "è‰²" NOR + HIW "å†°" NOR, ({ "shuangse bing", "bingkuai", "bing", "ice" }) );
+	set("long", "è¿™æ˜¯ä¸€ç‰‡é•¿é•¿çš„ï¼Œå¼¯å¼¯çš„ï¼Œå†·é£•é£•çš„å†°å—ï¼Œçœ‹èµ·æ¥æœ‰æ—¶é€çº¢ï¼Œæœ‰æ—¶åˆé€è“ã€‚\n");
+	set("unit", "ç‰‡" );
 	set("value", 8000);
 	set("material", "ice");
 	melted = 0;
@@ -36,9 +36,9 @@ void melt(int count)
 	{//a player or a NPC.
 		if( (int)env->query_skill("ningxie-force", 1) < 50 )
 		{
-			message_vision("$N¾õµÃÉíÉÏÁ¹Á¹µÄ£¬ÊªÊªµÄ£¬Ô­À´ÊÇ±ù¿é»¯ÁË¡£\n", env);
+			message_vision("$Nè§‰å¾—èº«ä¸Šå‡‰å‡‰çš„ï¼Œæ¹¿æ¹¿çš„ï¼ŒåŸæ¥æ˜¯å†°å—åŒ–äº†ã€‚\n", env);
 			env->apply_condition("double_ice_poison", 10);
-			//note, ÖĞ¶¾ÁË¡£			
+			//note, ä¸­æ¯’äº†ã€‚			
 			destruct(this_object());
 			return;
 		}
@@ -48,8 +48,8 @@ void melt(int count)
 	{//a room.
 		if( (string)env->query("outdoors") != "xueshan" )
 		{
-			tell_object(env,"±ù¿éÖÕÓÚ»¯³ÉÁËÒ»Ì²Ë®£¬Á÷µÃµ½´¦¶¼ÊÇ¡£\n");
-			//ÎÛÈ¾»·¾³¡£
+			tell_object(env,"å†°å—ç»ˆäºåŒ–æˆäº†ä¸€æ»©æ°´ï¼Œæµå¾—åˆ°å¤„éƒ½æ˜¯ã€‚\n");
+			//æ±¡æŸ“ç¯å¢ƒã€‚
 			if( env->query("resource") ) env->set("resource/double_ice_poison", 1);
 
 			destruct(this_object());
@@ -77,15 +77,15 @@ int do_make(string arg)
 	me = this_player();
 
 	if( !arg || (arg != "blade" && arg != "dao" && arg != "sword" && arg != "jian" ) )
-		return notify_fail("ÄãÒª×öÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦åšä»€ä¹ˆï¼Ÿ\n");
 	if( arg == "sword" || arg =="jian" )
-		return notify_fail("ÕâÆ¬±ùÊÇÍäµÄ£¬×ö²»ÁË½£¡£\n");
+		return notify_fail("è¿™ç‰‡å†°æ˜¯å¼¯çš„ï¼Œåšä¸äº†å‰‘ã€‚\n");
 
 	if( (int)me->query("force") < 200 || (int)me->query_skill("ningxie-force", 1) < 20 )
 	{
-		message_vision("$NÄÃÆğ±ù¿éÄóÀ´ÄóÈ¥£¬½á¹û±ù¿éºÜ¿ì¾Í»¯µôÁË¡£\n", me);
+		message_vision("$Næ‹¿èµ·å†°å—ææ¥æå»ï¼Œç»“æœå†°å—å¾ˆå¿«å°±åŒ–æ‰äº†ã€‚\n", me);
 		me->apply_condition("double_ice_poison", 10);
-		//note, ÖĞ¶¾ÁË¡£
+		//note, ä¸­æ¯’äº†ã€‚
 		destruct(this_object());
 		return 1;
 	}	
@@ -93,7 +93,7 @@ int do_make(string arg)
 	ob=new("/d/obj/weapon/blade/handudao-redblue");
 	ob->move(me);
 	me->add("force", -100);
-	message_vision("$NÄÃÆğ±ù¿éÄóÀ´ÄóÈ¥£¬¾ÓÈ»×ö³öÁËÒ»°ÑÍäÍäµÄ±ùµ¶£¡\n", me);
+	message_vision("$Næ‹¿èµ·å†°å—ææ¥æå»ï¼Œå±…ç„¶åšå‡ºäº†ä¸€æŠŠå¼¯å¼¯çš„å†°åˆ€ï¼\n", me);
 	destruct(this_object());
 
 	return 1;
@@ -103,11 +103,11 @@ int do_chi(string arg)
 {	
 	if( !this_object()->id(arg) ) return 0;
 	if( this_player()->is_busy() )
-		return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É¡£\n");
+		return notify_fail("ä½ ä¸Šä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆã€‚\n");
 
-	if(!arg) return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	if(!arg) return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 
-	message_vision( "$NÄÃÆğ±ù¿éÊ¹¾¢Ò»Ò§£¬Ö»Ìı¸ÂßÕ£¡Ò»Éù£¬ÑÀ±ÂÁË¡£\n" , this_player());
+	message_vision( "$Næ‹¿èµ·å†°å—ä½¿åŠ²ä¸€å’¬ï¼Œåªå¬å˜å“’ï¼ä¸€å£°ï¼Œç‰™ç”­äº†ã€‚\n" , this_player());
 
 	if( (int)this_player()->query("kee") > 20 )
 		this_player()->add("kee", -20);
@@ -125,23 +125,23 @@ int do_add(string arg)
 	object destination;
 	object me = this_player();
 
-	if(!arg) return notify_fail("ÄãÒª½«Ê²Ã´¶«Î÷¼Ó½øÄÄÀï£¿\n");
+	if(!arg) return notify_fail("ä½ è¦å°†ä»€ä¹ˆä¸œè¥¿åŠ è¿›å“ªé‡Œï¼Ÿ\n");
 
 	if( sscanf(arg, "%s in %s", item, target)!=2 )
-		return notify_fail("ÓÃ·¨£ºadd <> in <>¡£\n");
+		return notify_fail("ç”¨æ³•ï¼šadd <> in <>ã€‚\n");
 
-	if( !this_object()->id(item) ) return notify_fail("ÄãÒª¼ÓÊ²Ã´£¿\n");
+	if( !this_object()->id(item) ) return notify_fail("ä½ è¦åŠ ä»€ä¹ˆï¼Ÿ\n");
 
 	destination = present(target, me);
 	if( !destination ) destination = present(target, environment(me));
-	if( !destination) return notify_fail("ÕâÀïÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+	if( !destination) return notify_fail("è¿™é‡Œæ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
 
-	if( !destination->query("liquid") ) return notify_fail("ÕâÍæÒâ¶ùÖ»ÓĞ¼Óµ½ÒºÌåÖĞ²Å²»×ÅºÛ¼£¡£\n"); 
+	if( !destination->query("liquid") ) return notify_fail("è¿™ç©æ„å„¿åªæœ‰åŠ åˆ°æ¶²ä½“ä¸­æ‰ä¸ç€ç—•è¿¹ã€‚\n"); 
 	
 	//now, time to change it to poison...
 	destination->set("liquid/type", "double_ice_poison");
 	destination->set_temp("destroy_after_sell", 1);
-	message_vision( "$NÍµÍµÃşÃşµØ°ÑÒ»¿é"+ this_object()->query("name") +"¼Óµ½ÁË"+ destination->query("name") +"ÖĞ£¬ÈÌ²»×¡µÃÒâµØ¼éĞ¦ÁË¼¸Éù¡£\n" , me);
+	message_vision( "$Nå·å·æ‘¸æ‘¸åœ°æŠŠä¸€å—"+ this_object()->query("name") +"åŠ åˆ°äº†"+ destination->query("name") +"ä¸­ï¼Œå¿ä¸ä½å¾—æ„åœ°å¥¸ç¬‘äº†å‡ å£°ã€‚\n" , me);
 	destruct(this_object());
 	return 1;
 }

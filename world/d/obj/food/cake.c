@@ -5,13 +5,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name("ÉúÈÕµ°¸â" , ({"cake"}));
+        set_name("ç”Ÿæ—¥è›‹ç³•" , ({"cake"}));
         set_weight(1);
-        set("unit", "¸ö");
-        set("long", "Ò»¸öºÃ´óµÄÄÌÓÍµ°¸â,×¨ÎªÇì×£ÉúÈÕ¶ø×ö¡£\n");
+        set("unit", "ä¸ª");
+        set("long", "ä¸€ä¸ªå¥½å¤§çš„å¥¶æ²¹è›‹ç³•,ä¸“ä¸ºåº†ç¥ç”Ÿæ—¥è€Œåšã€‚\n");
         set("value",100000);
         set("no_get",1);
-        set("no_drop","ÕâÃ´ºÃ³ÔµÄ¸â£¬¿É²»ÄÜËæ±ãÈÓ£¡ \n");
+        set("no_drop","è¿™ä¹ˆå¥½åƒçš„ç³•ï¼Œå¯ä¸èƒ½éšä¾¿æ‰”ï¼ \n");
         setup();
 }
 
@@ -33,10 +33,10 @@ int do_eat(string arg)
         object me = this_player();
  
         if (!id(arg))
-           return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+           return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
         write(HIW
-"ÏëÒ»¸öÈË³ÔÕâÃ´´óÒ»¸öµ°¸â£¿
-±ğ×öÃÎÁË¡£»¹ÊÇÇĞ(cut)¿ªÀ´·Ö×Å³Ô°É¡£\n"NOR,me);
+"æƒ³ä¸€ä¸ªäººåƒè¿™ä¹ˆå¤§ä¸€ä¸ªè›‹ç³•ï¼Ÿ
+åˆ«åšæ¢¦äº†ã€‚è¿˜æ˜¯åˆ‡(cut)å¼€æ¥åˆ†ç€åƒå§ã€‚\n"NOR,me);
         return 1;
 }
 
@@ -48,15 +48,15 @@ int do_cut(string arg)
         object room=environment(this_player());
         
         if (query("owner")!=getuid(me))
-            return notify_fail("ÓÖ²»ÊÇÄã¹ıÉúÈÕ£¬²»ÒªÏ¹»ı¼«£¡\n");
+            return notify_fail("åˆä¸æ˜¯ä½ è¿‡ç”Ÿæ—¥ï¼Œä¸è¦çç§¯æï¼\n");
         if (!arg || arg!="cake")
-           return notify_fail("ÄãÒªÇĞÊ²Ã´£¿\n");
+           return notify_fail("ä½ è¦åˆ‡ä»€ä¹ˆï¼Ÿ\n");
         
-        if (!query("blow")) return notify_fail("ÏÈ´µ(blow candle)À¯Öò¡£\n");
+        if (!query("blow")) return notify_fail("å…ˆå¹(blow candle)èœ¡çƒ›ã€‚\n");
         alluser=users();        
         s=sizeof(alluser);
-        message_vision(HIW"$N°Ñ´óµ°¸âÇĞ³ÉÁË"+chinese_number(s)+ 
-              "Ğ¡¿é¡£\n$N¸ø´ó¼ÒÒ»ÈË·ÖÁËÒ»Ğ¡¿éµ°¸â¡£\n"NOR,me);
+        message_vision(HIW"$NæŠŠå¤§è›‹ç³•åˆ‡æˆäº†"+chinese_number(s)+ 
+              "å°å—ã€‚\n$Nç»™å¤§å®¶ä¸€äººåˆ†äº†ä¸€å°å—è›‹ç³•ã€‚\n"NOR,me);
 
         
         for (int i=0;i<s;i++) {
@@ -65,7 +65,7 @@ int do_cut(string arg)
             cakepiece->move(obj);
             if (obj!=me)
 
-message("vision",me->query("name")+"·ÖÄãÒ»¿é"+this_object()->query("name")+"¡£\n",obj);
+message("vision",me->query("name")+"åˆ†ä½ ä¸€å—"+this_object()->query("name")+"ã€‚\n",obj);
         }
 
         destruct(this_object());
@@ -79,14 +79,14 @@ int do_celebrate(string arg) {
     int space;
     me=this_player();
     if (query("owner")) return 0;
-    if (!arg) return notify_fail("ÄãÒª¸øË­Çì×£ÉúÈÕ£¿\n");
+    if (!arg) return notify_fail("ä½ è¦ç»™è°åº†ç¥ç”Ÿæ—¥ï¼Ÿ\n");
     if(!objectp(obj = present(arg, environment(this_player()))))
-         return notify_fail("ÕâÀïÃ»ÓĞÕâ¸öÈË¡£\n");
+         return notify_fail("è¿™é‡Œæ²¡æœ‰è¿™ä¸ªäººã€‚\n");
     if(!userp(obj))
-         return notify_fail("ÄãÉÕµÄ²»Çá£¡\n");
+         return notify_fail("ä½ çƒ§çš„ä¸è½»ï¼\n");
     if (obj==me) 
-         write("Äã¸ø×Ô¼º×¼±¸ÁËÒ»¸öÉúÈÕµ°¸â¡£\n");
-    else message_vision("$N¶Ô$nËµ£º¡°ÉúÈÕ¿ìÀÖ£¡¡±ËµÍêµİÉÏÒ»¸ö´óµ°¸â¡£\n",me,obj);
+         write("ä½ ç»™è‡ªå·±å‡†å¤‡äº†ä¸€ä¸ªç”Ÿæ—¥è›‹ç³•ã€‚\n");
+    else message_vision("$Nå¯¹$nè¯´ï¼šâ€œç”Ÿæ—¥å¿«ä¹ï¼â€è¯´å®Œé€’ä¸Šä¸€ä¸ªå¤§è›‹ç³•ã€‚\n",me,obj);
 
     this_object()->move(obj);
     set("owner",getuid(obj));       
@@ -98,7 +98,7 @@ int do_celebrate(string arg) {
          "          @@";
     space=(14-strlen(obj->query("name")))/2;
     for (int i=0;i<space;i++) msg+=HIG" ";
-    msg+=obj->query("name")+"ÉúÈÕ¿ìÀÖ";
+    msg+=obj->query("name")+"ç”Ÿæ—¥å¿«ä¹";
     for (int i=0;i<space;i++) msg+=" ";
     msg+=HIW"@@\n"+
          "          @@    "+HIM"@>-  @>-  @>-     "+HIW"@@\n"+
@@ -115,11 +115,11 @@ int do_wish(string arg) {
 
     object me=this_player();
 
-    if (!arg) return notify_fail("ÄãÒªĞíÊ²÷áÔ¸£¿\n");
-    if (query("owner")!=getuid(me)) notify_fail("ÓÖ²»ÊÇÄã¹ıÉúÈÕ£¬ĞíÊ²÷áÔ¸£¡\n");
+    if (!arg) return notify_fail("ä½ è¦è®¸ä»€éº½æ„¿ï¼Ÿ\n");
+    if (query("owner")!=getuid(me)) notify_fail("åˆä¸æ˜¯ä½ è¿‡ç”Ÿæ—¥ï¼Œè®¸ä»€éº½æ„¿ï¼\n");
     
-    write("×£Ô¸"+arg+"\n");
-    message_vision("$N±ÕÉÏË«ÑÛ£¬×ìÀïà½à½àìàì²»ÖªµÀËµÁËĞ©Ê²÷á¡£\n",me); 
+    write("ç¥æ„¿"+arg+"\n");
+    message_vision("$Né—­ä¸ŠåŒçœ¼ï¼Œå˜´é‡Œå˜Ÿå˜Ÿå›”å›”ä¸çŸ¥é“è¯´äº†äº›ä»€éº½ã€‚\n",me); 
   
     set("wish",1);
     remove_action("do_wish","wish");
@@ -129,12 +129,12 @@ int do_wish(string arg) {
 int do_blow(string arg)  {
     object me=this_player();
 
-    if (!arg || arg!="candle") return notify_fail("´µÊ²÷á£¿\n");
+    if (!arg || arg!="candle") return notify_fail("å¹ä»€éº½ï¼Ÿ\n");
     if (query("owner")!=getuid(me)) 
-       notify_fail("ÓÖ²»ÊÇÄã¹ıÉúÈÕ£¬²»ÒªÏ¹»ı¼«£¡\n");
-    if (!query("wish")) return notify_fail("ÏÈĞí(wish)¸öÔ¸¡£\n");
+       notify_fail("åˆä¸æ˜¯ä½ è¿‡ç”Ÿæ—¥ï¼Œä¸è¦çç§¯æï¼\n");
+    if (!query("wish")) return notify_fail("å…ˆè®¸(wish)ä¸ªæ„¿ã€‚\n");
 
-    message_vision("$NÉîÉîµØÎüÁËÒ»¿ÚÆø£¬¹ÄÆğÈù°ï£¬Ò»¿ÚÆø´µÏ¨ÁËÀ¯Öò¡£\n",me); 
+    message_vision("$Næ·±æ·±åœ°å¸äº†ä¸€å£æ°”ï¼Œé¼“èµ·è…®å¸®ï¼Œä¸€å£æ°”å¹ç†„äº†èœ¡çƒ›ã€‚\n",me); 
     remove_action("do_blow","blow");
     set("blow",1);
     return 1;

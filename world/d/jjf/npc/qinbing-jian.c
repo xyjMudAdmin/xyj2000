@@ -1,6 +1,6 @@
 // cracked by vikee 2/09/2002   vikee@263.net
 //created 6-9-97 pickle
-//Ç×±ø
+//äº²å…µ
 
 #include <ansi.h>
 inherit NPC;
@@ -8,14 +8,14 @@ string ask_me(object me);
 
 void create()
 {
-  set_name("Ç×±ø", ({"qin bing", "qin", "bing", "soldier", "qinbing"}));
+  set_name("äº²å…µ", ({"qin bing", "qin", "bing", "soldier", "qinbing"}));
   set ("long", @LONG
-Ò»¸ö±ëĞÎ´óºº£¬¿´ÉíÉÏÒÂ·ş´ó¸ÅÊÇ½¨¸®µÄÇ×±ø£¬ÄËÊÇ¸ß×æ
-µÚÈı×ÓÀîÔª¼ªµÄ½üÉí»¤ÎÀ¡£Ëû³ıÁË±£»¤ÀîÔª¼ªÍâËÆºõ»¹¹Ü
-·¢É¢Ç®²Æ³ÔºÈ¡£
+ä¸€ä¸ªå½ªå½¢å¤§æ±‰ï¼Œçœ‹èº«ä¸Šè¡£æœå¤§æ¦‚æ˜¯å»ºåºœçš„äº²å…µï¼Œä¹ƒæ˜¯é«˜ç¥–
+ç¬¬ä¸‰å­æå…ƒå‰çš„è¿‘èº«æŠ¤å«ã€‚ä»–é™¤äº†ä¿æŠ¤æå…ƒå‰å¤–ä¼¼ä¹è¿˜ç®¡
+å‘æ•£é’±è´¢åƒå–ã€‚
 LONG); 
-  set("title", "½¨Íõ¸®");
-  set("gender", "ÄĞĞÔ");
+  set("title", "å»ºç‹åºœ");
+  set("gender", "ç”·æ€§");
   set("age", 25);
   set("combat_exp", 80000);
   set_skill("blade", 80);
@@ -26,16 +26,16 @@ LONG);
   set("max_sen", 200);
   set("max_kee", 300);
   set("inquiry", ([
-        "name" : "ÎÊÊ²Ã´ÎÊ£¿³¤×ÅÑÛ¾¦²»»á¿´ÄÄ£¿",
-        "here" : "Õâ¶ù¾ÍÊÇ×íĞÇÂ¥£¡ÔìµÄ¿É±È¶ÔÃæÄÇÆÆ·¿×ÓÇ¿µÃ¶àÀ²£¡",
-        "rumors" : " ÌıËµÓĞÈËÏëÀ´²ğ·¿×Ó£¬ºß£¡",
-        "Ê³Îï" : "Èç¹ûÊÇÁ¼Ãñ£¬¿ÉÒÔÁìĞ©°ü×ÓÈ¥¡£",
-        "Ç®²Æ" : "Èç¹ûÊÇÁ¼Ãñ£¬¿ÉÒÔÁìĞ©Òø×ÓÈ¥¡£",
-        "°ü×Ó" : (: ask_me :),
+        "name" : "é—®ä»€ä¹ˆé—®ï¼Ÿé•¿ç€çœ¼ç›ä¸ä¼šçœ‹å“ªï¼Ÿ",
+        "here" : "è¿™å„¿å°±æ˜¯é†‰æ˜Ÿæ¥¼ï¼é€ çš„å¯æ¯”å¯¹é¢é‚£ç ´æˆ¿å­å¼ºå¾—å¤šå•¦ï¼",
+        "rumors" : " å¬è¯´æœ‰äººæƒ³æ¥æ‹†æˆ¿å­ï¼Œå“¼ï¼",
+        "é£Ÿç‰©" : "å¦‚æœæ˜¯è‰¯æ°‘ï¼Œå¯ä»¥é¢†äº›åŒ…å­å»ã€‚",
+        "é’±è´¢" : "å¦‚æœæ˜¯è‰¯æ°‘ï¼Œå¯ä»¥é¢†äº›é“¶å­å»ã€‚",
+        "åŒ…å­" : (: ask_me :),
         "baozi" : (: ask_me :),
-        "Òø×Ó" : (: ask_me :),
+        "é“¶å­" : (: ask_me :),
         "silver" : (: ask_me :),
-        "²ğ·¿×Ó" : "ºß£¬³ı·Ç°ÑÀÏ×Ó´ò·¢ÁË£¬·ñÔòË­Ò²±ğÏëÀ´Õâ¶ùÈöÒ°£¡",
+        "æ‹†æˆ¿å­" : "å“¼ï¼Œé™¤éæŠŠè€å­æ‰“å‘äº†ï¼Œå¦åˆ™è°ä¹Ÿåˆ«æƒ³æ¥è¿™å„¿æ’’é‡ï¼",
          ]) );
   setup();
  
@@ -46,9 +46,9 @@ int accept_object(object me, object ob)
 {
   object npc=this_object();
  
-  if ((string)ob->query("name_recognized")!="½¨¸®Áî¼ı")
+  if ((string)ob->query("name_recognized")!="å»ºåºœä»¤ç®­")
     {
-      command ("say ¹ş¹ş£¡ÀÏ×Ó×î°®ÊÜÈË»ßÂçÁË£¡");
+      command ("say å“ˆå“ˆï¼è€å­æœ€çˆ±å—äººè´¿ç»œäº†ï¼");
       call_out("destroy", 1, ob);
       return 1;
     }
@@ -57,7 +57,7 @@ int accept_object(object me, object ob)
 }
 string ask_me(object me)
 {
-  return("¿ÉÒÔ´ÓÎÒÕâÀïÁìµ½(ling)°ü×Ó»òÒø×Ó¡£");
+  return("å¯ä»¥ä»æˆ‘è¿™é‡Œé¢†åˆ°(ling)åŒ…å­æˆ–é“¶å­ã€‚");
 }
 void init()
 {
@@ -69,82 +69,82 @@ int do_ling(string arg)
   int kar=me->query_kar(), diff=kar-10;
   string player=me->query("id");
 
-  if (!arg || (arg != "baozi" && arg != "°ü×Ó" && arg != "silver" && arg!="Òø×Ó"))
-    return notify_fail("ÄãÏëÒªÊ²Ã´£¿\n");
-  if ((string)me->query("family/family_name") == "½«¾ü¸®")
+  if (!arg || (arg != "baozi" && arg != "åŒ…å­" && arg != "silver" && arg!="é“¶å­"))
+    return notify_fail("ä½ æƒ³è¦ä»€ä¹ˆï¼Ÿ\n");
+  if ((string)me->query("family/family_name") == "å°†å†›åºœ")
     {
-       me->add_temp("jjf/×íĞÇÂ¥Òª¶«Î÷", 1);
-       switch(me->query_temp("jjf/×íĞÇÂ¥Òª¶«Î÷"))
+       me->add_temp("jjf/é†‰æ˜Ÿæ¥¼è¦ä¸œè¥¿", 1);
+       switch(me->query_temp("jjf/é†‰æ˜Ÿæ¥¼è¦ä¸œè¥¿"))
          {
            case(1):
              {
                 command("slap "+player);
-                command("say ß¾£¡¶şÎ»ÍõÒ¯×îºŞµÄ¾ÍÊÇ½«¾ü¸®µÜ×Ó£¡¸øÎÒ¹ö£¡");
-                message_vision(CYN"Ç×±ø·ÉÆğÒ»½ÅÌßÔÚ$NÆ¨¹ÉÉÏ£¬½«$NÌß³öÃÅÍâ¡£\n"NOR, me);
+                command("say å‘”ï¼äºŒä½ç‹çˆ·æœ€æ¨çš„å°±æ˜¯å°†å†›åºœå¼Ÿå­ï¼ç»™æˆ‘æ»šï¼");
+                message_vision(CYN"äº²å…µé£èµ·ä¸€è„šè¸¢åœ¨$Nå±è‚¡ä¸Šï¼Œå°†$Nè¸¢å‡ºé—¨å¤–ã€‚\n"NOR, me);
                 me->move("/d/city/center");
                 return 1;
              }
            case(2):
              {
                 command("slap "+player);
-                command("say ÄªÒª¾´¾Æ²»³Ô³Ô·£¾Æ£¡ÔÙÀ´Ò»´Î¿É±ğ¹ÖÀÏ×Ó²»¿ÍÆøÁË£¡");
-                message_vision(CYN "Ç×±ø·ÉÆğÒ»½ÅÌßÔÚ$NÆ¨¹ÉÉÏ£¬½«$NÌß³öÃÅÍâ¡£\n" NOR, me);
+                command("say è«è¦æ•¬é…’ä¸åƒåƒç½šé…’ï¼å†æ¥ä¸€æ¬¡å¯åˆ«æ€ªè€å­ä¸å®¢æ°”äº†ï¼");
+                message_vision(CYN "äº²å…µé£èµ·ä¸€è„šè¸¢åœ¨$Nå±è‚¡ä¸Šï¼Œå°†$Nè¸¢å‡ºé—¨å¤–ã€‚\n" NOR, me);
                 me->move("/d/city/center");
                 return 1;
             }
            default:
              {
-                command("say ÓÖÊÇÄã£¡ÀÏ×Ó¿´ÄãÊµÔÚ²»Ë³ÑÛ£¬È¥ËÀ°É£¡");
+                command("say åˆæ˜¯ä½ ï¼è€å­çœ‹ä½ å®åœ¨ä¸é¡ºçœ¼ï¼Œå»æ­»å§ï¼");
                 kill_ob(me);
                 return 1;
             }
           } 
    }
-  if ((string)me->query("title") != "ÆÕÍ¨°ÙĞÕ")
+  if ((string)me->query("title") != "æ™®é€šç™¾å§“")
     {
       command("sneer "+player);
-      command("say »ìÕÊ£¡ÓĞ±¾ÊÂµÄ×Ô¼º¸É»îÈ¥£¡");
+      command("say æ··å¸ï¼æœ‰æœ¬äº‹çš„è‡ªå·±å¹²æ´»å»ï¼");
       return 1;
     }
-  if (arg == "baozi" || arg == "°ü×Ó")
+  if (arg == "baozi" || arg == "åŒ…å­")
     {
       if (me->query("kee") < 40 || me->query("sen") < 40)
-	return notify_fail("ÄãÌ«ÀÛÁË£¬¼·²»µ½Ç×±ø±ßÉÏ¡£¿´À´°ü×ÓÄÃ²»µ½ÁË¡£\n");
+	return notify_fail("ä½ å¤ªç´¯äº†ï¼ŒæŒ¤ä¸åˆ°äº²å…µè¾¹ä¸Šã€‚çœ‹æ¥åŒ…å­æ‹¿ä¸åˆ°äº†ã€‚\n");
       ob=new("/d/obj/food/baozi");
       ob->move(npc);
-      command("say ºÃ°É£¬¾ÍÉÍÄã¸ö°ü×Ó°É£¡±ğÍüÁËÊÇË­¸øÄãµÄºÃ´¦£¡");
+      command("say å¥½å§ï¼Œå°±èµä½ ä¸ªåŒ…å­å§ï¼åˆ«å¿˜äº†æ˜¯è°ç»™ä½ çš„å¥½å¤„ï¼");
       me->receive_damage("kee", 40-kar);
       me->receive_damage("sen", 40-kar);
-      message_vision("$N·Ñ¾¡¾ÅÅ£¶ş»¢Ö®Á¦£¬±»¼·µÃ»ëÉíËáÍ´£¬²Å´ÓÈËÈºÖĞ¼·µ½Ç×±øÃæÇ°¡£\n",me);
+      message_vision("$Nè´¹å°½ä¹ç‰›äºŒè™ä¹‹åŠ›ï¼Œè¢«æŒ¤å¾—æµ‘èº«é…¸ç—›ï¼Œæ‰ä»äººç¾¤ä¸­æŒ¤åˆ°äº²å…µé¢å‰ã€‚\n",me);
       command("give bao to "+player);
       return 1;
     }
   if (diff < 5)
     {
       command("slap "+player);
-      command("say ÀÏ×Ó¿´×ÅÄãÕâ"+RANK_D->query_rude(me)+"¾Í²»Ë³ÑÛ£¡Òø×ÓÃ»ÄãµÄ·İ£¡");
+      command("say è€å­çœ‹ç€ä½ è¿™"+RANK_D->query_rude(me)+"å°±ä¸é¡ºçœ¼ï¼é“¶å­æ²¡ä½ çš„ä»½ï¼");
       return 1;
     }
   if (me->query("kee") < 60 || me->query("sen") < 60)
-    return notify_fail("ÄãÌ«ÀÛÁË£¬¼·²»µ½Ç×±ø±ßÉÏ¡£¿´À´Òø×ÓÄÃ²»µ½ÁË¡£\n");
+    return notify_fail("ä½ å¤ªç´¯äº†ï¼ŒæŒ¤ä¸åˆ°äº²å…µè¾¹ä¸Šã€‚çœ‹æ¥é“¶å­æ‹¿ä¸åˆ°äº†ã€‚\n");
 
   if( (int)npc->query("time") > 10 ) 
-    return notify_fail("Ç×±øÒ»¹°ÊÖ£¬Ëµ£º½ñÌìµÄÒø×Ó·¢ÍêÁË£¬Ã÷ÌìÔÙÀ´°É¡£\n");
+    return notify_fail("äº²å…µä¸€æ‹±æ‰‹ï¼Œè¯´ï¼šä»Šå¤©çš„é“¶å­å‘å®Œäº†ï¼Œæ˜å¤©å†æ¥å§ã€‚\n");
 
 
   npc->add_money("silver", 2*(int)diff/5);
-  command("say ºÃ°É£¬¾ÍÉÍÄãÁ©Ç®¶ù£¡±ğÍüÁËÊÇË­¸øÄãµÄºÃ´¦£¡");
+  command("say å¥½å§ï¼Œå°±èµä½ ä¿©é’±å„¿ï¼åˆ«å¿˜äº†æ˜¯è°ç»™ä½ çš„å¥½å¤„ï¼");
   npc->add("time", 1);
   me->receive_damage("kee", (40-kar)*2);
   me->receive_damage("sen", (40-kar)*2);
-  message_vision("$N·Ñ¾¡¾ÅÅ£¶ş»¢Ö®Á¦£¬±»¼·µÃ»ëÉíËáÍ´£¬²Å´ÓÈËÈºÖĞ¼·µ½Ç×±øÃæÇ°¡£\n",me);
+  message_vision("$Nè´¹å°½ä¹ç‰›äºŒè™ä¹‹åŠ›ï¼Œè¢«æŒ¤å¾—æµ‘èº«é…¸ç—›ï¼Œæ‰ä»äººç¾¤ä¸­æŒ¤åˆ°äº²å…µé¢å‰ã€‚\n",me);
   command("give silver to "+player);
   return 1;
 }
 void leavehere(object npc, object me)
 {
   command("ah");
-  command("say ¼ÈÈ»ÆëÍõÓĞ¼±ÊÂ£¬ÎÒÕâ¾ÍÈ¥°ì£¡");
+  command("say æ—¢ç„¶é½ç‹æœ‰æ€¥äº‹ï¼Œæˆ‘è¿™å°±å»åŠï¼");
   command("thank "+me->query("id"));
   command("go northwest");
   destruct(npc);

@@ -3,8 +3,8 @@ inherit NPC;
 
 void create()
 {
-       set_name("Îâ±¾Ç®", ({"wu benqian","wu","nomoney"}));
-       set("gender", "ÄĞĞÔ");
+       set_name("å´æœ¬é’±", ({"wu benqian","wu","nomoney"}));
+       set("gender", "ç”·æ€§");
         set("combat_exp", 8000);
        set("age", 36);
        set("per", 18);
@@ -33,9 +33,9 @@ void greeting(object ob)
         if( !ob || !visible(ob) || environment(ob) != environment() ) return;
         switch( random(1) ) {
                 case 0:
-                        say( "Îâ±¾Ç®Ğ¦ßäßäµØËµµÀ£ºÕâÎ»" +
+                        say( "å´æœ¬é’±ç¬‘å’ªå’ªåœ°è¯´é“ï¼šè¿™ä½" +
 RANK_D->query_respect(ob)
-                                + "£¬½øÀ´Ëæ±ã¿´¿´¡£\n");
+                                + "ï¼Œè¿›æ¥éšä¾¿çœ‹çœ‹ã€‚\n");
                         break;
         }
 }

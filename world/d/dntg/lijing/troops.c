@@ -23,8 +23,8 @@ int valid_killer(object killer) {
 
    if (target!=killer && environment(me)==environment(target)) {
      command("sneer");
-     command("say ÒÐ¶àÈ¡Ê¤£¿"+target->query("name")+
-        "ºÃ´óµÄÃûÍ·£¬Ô­À´²»¹ýÈç´Ë£¡»¹ºÃÒâË¼½ÐÊ²Ã´ÆëÌì´óÊ¥£¿£¡");
+     command("say å€šå¤šå–èƒœï¼Ÿ"+target->query("name")+
+        "å¥½å¤§çš„åå¤´ï¼ŒåŽŸæ¥ä¸è¿‡å¦‚æ­¤ï¼è¿˜å¥½æ„æ€å«ä»€ä¹ˆé½å¤©å¤§åœ£ï¼Ÿï¼");
      command("bye");
      target->delete_temp("lijing");
      query("master")->go_home();
@@ -52,7 +52,7 @@ void die() {
    }
    command("over");
    command("drop all");
-   message_vision("$N±»$nÉ±µÃ´ó°Ü£¬¶ª¿øÆú¼×£¬ÀÇ±·²»¿°µØÌÓÁË»ØÈ¥¡£\n",me,target);
+   message_vision("$Nè¢«$næ€å¾—å¤§è´¥ï¼Œä¸¢ç›”å¼ƒç”²ï¼Œç‹¼ç‹ˆä¸å ªåœ°é€ƒäº†å›žåŽ»ã€‚\n",me,target);
 
    me->remove_killer(target);
    me->remove_enemy(target);

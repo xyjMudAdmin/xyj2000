@@ -5,11 +5,11 @@ inherit NPC;
 void create()
 {
  
-        set_name("Àî¾¸", ({ "li jing", "jing" }) );
-        set("gender", "ÄĞĞÔ" );
-	set("long", "ÍĞËşÀîÌìÍõÄËÊÇÌì½çÔªË§£¬÷âÏÂÊ®ÍòÌì±øÌì½«£¬·¨Á¦ÎŞ±ß¡£\n");
+        set_name("æé–", ({ "li jing", "jing" }) );
+        set("gender", "ç”·æ€§" );
+	set("long", "æ‰˜å¡”æå¤©ç‹ä¹ƒæ˜¯å¤©ç•Œå…ƒå¸…ï¼Œéº¾ä¸‹åä¸‡å¤©å…µå¤©å°†ï¼Œæ³•åŠ›æ— è¾¹ã€‚\n");
         set("age",40);
-	set("title", "ÍĞËşÌìÍõ");
+	set("title", "æ‰˜å¡”å¤©ç‹");
         set("str", 40);
         set("int", 20);
 	set("con", 30);
@@ -56,4 +56,3 @@ void create()
 }
  
 
-ÿ

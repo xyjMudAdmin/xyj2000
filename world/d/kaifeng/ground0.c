@@ -18,7 +18,7 @@ void announcing (string str)
     object snowcat = find_player ("snowcat");
 
     if (wizardp(snowcat))
-      tell_object (snowcat," ¡ó "+str);
+      tell_object (snowcat," â—‡ "+str);
   }
   else
   {
@@ -48,10 +48,10 @@ void announce (string str)
 varargs void inform (object who, string str, string msg)
 {
   string *msgs = ({
-    "\nÎºÕ÷¶Ô$NµãÍ·ËµµÀ£ººÃ£¬",
-    "\nÎºÕ÷Ïò$NÒ»°İµÀ£º×ñÃü£¬",
-    "\nÎºÕ÷¶Ô$NµãµãÍ·£ºÊÇ£¬",
-    "\nÎºÕ÷Á¬Ã¦¶Ô$NËµµÀ£ºĞĞ£¬",
+    "\né­å¾å¯¹$Nç‚¹å¤´è¯´é“ï¼šå¥½ï¼Œ",
+    "\né­å¾å‘$Nä¸€æ‹œé“ï¼šéµå‘½ï¼Œ",
+    "\né­å¾å¯¹$Nç‚¹ç‚¹å¤´ï¼šæ˜¯ï¼Œ",
+    "\né­å¾è¿å¿™å¯¹$Nè¯´é“ï¼šè¡Œï¼Œ",
   });
   if (who)
   {
@@ -61,12 +61,12 @@ varargs void inform (object who, string str, string msg)
       message_vision (msgs[random(sizeof(msgs))]+str,who);
   }
   else
-    tell_room (this_room(),"\nÎºÕ÷µãµãÍ·£º"+str);  
+    tell_room (this_room(),"\né­å¾ç‚¹ç‚¹å¤´ï¼š"+str);  
 }
 
 void broadcast_room (object room, string str)
 {
-  string prefix = "¡¼Èü³¡ÄÚ¡½";
+  string prefix = "ã€–èµ›åœºå†…ã€—";
   string s1 = str, s2 = "";
 
   reset_eval_cost();
@@ -125,9 +125,9 @@ void broadcast (string str)
 string write_item (string str, int selected)
 {
   if (selected)
-    return "¡ñ"+str;
+    return "â—"+str;
   else
-    return "¡ğ"+str;
+    return "â—‹"+str;
 }
 
 int do_report1();

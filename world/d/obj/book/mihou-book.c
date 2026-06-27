@@ -9,14 +9,14 @@ int do_read(string arg);
 
 void create()
 {
-        set_name("¡¾â¨ºïÊÖ¼Ç¡¿", ({"mihou shouji","book","shu"}));
+        set_name("ã€çŒ•çŒ´æ‰‹è®°ã€‘", ({"mihou shouji","book","shu"}));
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
+                set("unit", "æœ¬");
 	set("long",
-	"±¡±¡µÄÒ»±¾Ğ¡²á×Ó£¬·âÃæÉÏÍáÍáĞ±Ğ±µØµØĞ´×Å¡°â¨ºïÊÖ¼Ç¡±¡£\n");
+	"è–„è–„çš„ä¸€æœ¬å°å†Œå­ï¼Œå°é¢ä¸Šæ­ªæ­ªæ–œæ–œåœ°åœ°å†™ç€â€œçŒ•çŒ´æ‰‹è®°â€ã€‚\n");
         set("material", "paper");
         set("value", 500);   
 	set("no_sell",1);
@@ -39,7 +39,7 @@ void init()
 
 void destroy_book()
 {
-	message_vision("Ò»Õó·ç´µÀ´£¬" + (string)this_object()->query("name") + "Æ¬Æ¬ËéÂä£¬Ëæ·ç¶øÈ¥ÁË¡£\n", environment(this_object()));
+	message_vision("ä¸€é˜µé£å¹æ¥ï¼Œ" + (string)this_object()->query("name") + "ç‰‡ç‰‡ç¢è½ï¼Œéšé£è€Œå»äº†ã€‚\n", environment(this_object()));
 	destruct(this_object());
 }
 
@@ -51,34 +51,34 @@ int do_read(string arg)
 	me=this_player();
 
     	if( !this_object()->id(arg) ) return 0;
-	if( environment(this_object())!=me ) return notify_fail("ÊéÒªÄÃÆğÀ´¶Á¡£\n");
+	if( environment(this_object())!=me ) return notify_fail("ä¹¦è¦æ‹¿èµ·æ¥è¯»ã€‚\n");
 
 
 
 	if( environment(me)->query("no_fight") )
-		return notify_fail("°²È«ÇøÄÚ²»ÄÜ¶ÁÊé¡£\n");
+		return notify_fail("å®‰å…¨åŒºå†…ä¸èƒ½è¯»ä¹¦ã€‚\n");
 
 
 
     	if( me->is_busy() )
-        		return notify_fail("ÄãÏÖÔÚÃ¦×ÅÄØ£¬ÄÄÓĞ¿ÉÄÜ¾²ĞÄÑĞ¶Á...\n");
+        		return notify_fail("ä½ ç°åœ¨å¿™ç€å‘¢ï¼Œå“ªæœ‰å¯èƒ½é™å¿ƒç ”è¯»...\n");
    	if( me->is_fighting() )
-        		return notify_fail("ÏÖÔÚ²ÅÏëµ½¾«ÑĞ·¨Êõ£¬Ì«ÍíÁË°É£¿\n");
+        		return notify_fail("ç°åœ¨æ‰æƒ³åˆ°ç²¾ç ”æ³•æœ¯ï¼Œå¤ªæ™šäº†å§ï¼Ÿ\n");
 	
 	if( (int)me->query_skill("spells",1)<100 )
-		return notify_fail("Äã¿´À´¿´È¥£¬¾ÍÊÇÃ»Ã÷°×ÕâÎ»ºïÒ¯Ğ´µÄ¶¼ÊÇÉ¶¡£\n");
+		return notify_fail("ä½ çœ‹æ¥çœ‹å»ï¼Œå°±æ˜¯æ²¡æ˜ç™½è¿™ä½çŒ´çˆ·å†™çš„éƒ½æ˜¯å•¥ã€‚\n");
 	if( (int)me->query_skill("spells",1)>140 )
-		return notify_fail("ÄãÔÚ·¨Êõ·½ÃæÒÑ¾­ºÜÓĞÔìÒè£¬Õâ±¾Êé²»»áÈÃÄã³¤½ø¶àÉÙ¡£\n");
+		return notify_fail("ä½ åœ¨æ³•æœ¯æ–¹é¢å·²ç»å¾ˆæœ‰é€ è¯£ï¼Œè¿™æœ¬ä¹¦ä¸ä¼šè®©ä½ é•¿è¿›å¤šå°‘ã€‚\n");
 
 	sen_cost = 35 + (35-(int)me->query("int"));
 	if( (int)me->query("sen")<sen_cost )
-		return notify_fail("ÄãÏÖÔÚÍ·ÔÎÄÔÕÍ£¬¸ÃĞİÏ¢ĞİÏ¢ÁË¡£\n");	
+		return notify_fail("ä½ ç°åœ¨å¤´æ™•è„‘èƒ€ï¼Œè¯¥ä¼‘æ¯ä¼‘æ¯äº†ã€‚\n");	
 	me->receive_damage("sen", sen_cost);
 
 	gain = (int)me->query_skill("spells", 1)/5+(int)me->query("int")+1;
 	me->improve_skill("spells", gain);
 
-    	message_vision("$NÄÃ×Å±¾Ğ¡²á×Ó±ß¿´±ßÔŞµÀ£ººÃ£¡ÕâÎ»ºïÒ¯¹ûÈ»ÓĞ¼¸ÊÖ£¡\n", me);
+    	message_vision("$Næ‹¿ç€æœ¬å°å†Œå­è¾¹çœ‹è¾¹èµé“ï¼šå¥½ï¼è¿™ä½çŒ´çˆ·æœç„¶æœ‰å‡ æ‰‹ï¼\n", me);
 		
 	return 1;
 }

@@ -18,13 +18,13 @@ void reward(object me, object victim, object weapon,int damage);
 void create()
 {
   name=flowers[random(sizeof(flowers))];
-  set_name(name+"ÏÉ×Ó", ({ "hua xianzi","xianzi","xian" }) );
+  set_name(name+"ä»™å­", ({ "hua xianzi","xianzi","xian" }) );
   set("long",@LONG
-Ò»Î»Æ·Ã²ĞãÀö£¬ÆøÖÊ¸ßÑÅµÄ»¨ÏÉ×Ó£¬»ëÉíÉ¢·¢³öÒ»¹ÉÒìÏã£¬
-¼È·Ç±ù÷ê£¬ÓÖ·Çì»Ì´£¬ËÆ»¨Ïã¶ø·Ç»¨Ïã£¬Ê±¿Ì±ä»»£¬¾¹ÓĞ°Ù
-ÖÖÏãÆø¡£
+ä¸€ä½å“è²Œç§€ä¸½ï¼Œæ°”è´¨é«˜é›…çš„èŠ±ä»™å­ï¼Œæµ‘èº«æ•£å‘å‡ºä¸€è‚¡å¼‚é¦™ï¼Œ
+æ—¢éå†°éºï¼Œåˆéæ—æª€ï¼Œä¼¼èŠ±é¦™è€ŒéèŠ±é¦™ï¼Œæ—¶åˆ»å˜æ¢ï¼Œç«Ÿæœ‰ç™¾
+ç§é¦™æ°”ã€‚
 LONG);
-  set("gender", "Å®ĞÔ");
+  set("gender", "å¥³æ€§");
   set("age", 20);
   set("str", 10+random(21));
   set("dex", 10+random(21));
@@ -56,10 +56,10 @@ LONG);
   set("force", 2000);
   set("max_force", 1000);
   set("inquiry",([
-    "»¨" : "ÄãÅãÎÒ´ò¼ÜÍæ(fight)£¬°ÑÎÒºå¸ßĞËÁË£¬×ÔÈ»ÓĞÄãµÄºÃ´¦¡£\n",
-    "ÏÉ»¨" : "ÄãÅãÎÒ´ò¼ÜÍæ(fight)£¬°ÑÎÒºå¸ßĞËÁË£¬×ÔÈ»ÓĞÄãµÄºÃ´¦¡£\n",
-    "flower" : "ÄãÅãÎÒ´ò¼ÜÍæ(fight)£¬°ÑÎÒºå¸ßĞËÁË£¬×ÔÈ»ÓĞÄãµÄºÃ´¦¡£\n",
-    "hua" : "ÄãÅãÎÒ´ò¼ÜÍæ(fight)£¬°ÑÎÒºå¸ßĞËÁË£¬×ÔÈ»ÓĞÄãµÄºÃ´¦¡£\n",
+    "èŠ±" : "ä½ é™ªæˆ‘æ‰“æ¶ç©(fight)ï¼ŒæŠŠæˆ‘å“„é«˜å…´äº†ï¼Œè‡ªç„¶æœ‰ä½ çš„å¥½å¤„ã€‚\n",
+    "ä»™èŠ±" : "ä½ é™ªæˆ‘æ‰“æ¶ç©(fight)ï¼ŒæŠŠæˆ‘å“„é«˜å…´äº†ï¼Œè‡ªç„¶æœ‰ä½ çš„å¥½å¤„ã€‚\n",
+    "flower" : "ä½ é™ªæˆ‘æ‰“æ¶ç©(fight)ï¼ŒæŠŠæˆ‘å“„é«˜å…´äº†ï¼Œè‡ªç„¶æœ‰ä½ çš„å¥½å¤„ã€‚\n",
+    "hua" : "ä½ é™ªæˆ‘æ‰“æ¶ç©(fight)ï¼ŒæŠŠæˆ‘å“„é«˜å…´äº†ï¼Œè‡ªç„¶æœ‰ä½ çš„å¥½å¤„ã€‚\n",
   ]));
   setup();
   if (clonep())  carry_object("/obj/loginload/skirt")->wear();
@@ -83,20 +83,20 @@ void cast_shiyue() {
 void unconcious() { die(); }
 void die() {
   command("drop all");
-  message_vision(MAG"$N"+MAG"»¯×÷Ò»ÂÆÓÄÏã£¬ÏûÊ§ÔÚºì³¾Ö®ÖĞ¡£\n"NOR,this_object());
+  message_vision(MAG"$N"+MAG"åŒ–ä½œä¸€ç¼•å¹½é¦™ï¼Œæ¶ˆå¤±åœ¨çº¢å°˜ä¹‹ä¸­ã€‚\n"NOR,this_object());
   destruct(this_object());
 }
 int accept_object(object me, object ob) {
   object weapon=query_temp("weapon");
   string msg="$N";
   if (!mapp(ob->query("weapon_prop"))) return 0;
-  message_vision("$N¸ø$nÒ»"+ob->query("unit")+ob->query("name")+"¡£\n",me,this_object());
+  message_vision("$Nç»™$nä¸€"+ob->query("unit")+ob->query("name")+"ã€‚\n",me,this_object());
   command("nod");
   if (weapon) {
-     msg+="·ÅÏÂ"+weapon->query("name")+"£¬";
+     msg+="æ”¾ä¸‹"+weapon->query("name")+"ï¼Œ";
      destruct(weapon);
   }
-  msg+="×°±¸"+ob->query("name")+"¡£\n";
+  msg+="è£…å¤‡"+ob->query("name")+"ã€‚\n";
   ob->move(this_object());
   ob->wield();
   message_vision(msg,this_object());
@@ -108,12 +108,12 @@ void equip() {
   string msg;
 
   switch (random(6)) {
-    case 0: weapon=new("/d/obj/weapon/hammer/baiyuban");msg="$N´Ó»³ÖĞÌÍ³öÁËÒ»Ãæ°×Óñ°å¡£\n";break; 
-    case 1: weapon=new("/d/obj/weapon/mace/bamboo");msg="$NË³ÊÖ´ÓÉíÅÔµÄÖñÁÖÖĞÕÛÏÂÒ»¶Î¶ÌÖñ¡£\n";break; 
-    case 2: weapon=new("/d/obj/weapon/staff/shugan");msg="$NÔÚµØÉÏ¼ğÆğÒ»¸ùÊ÷¸É¡£\n";break; 
-    case 3: weapon=new("/d/obj/weapon/stick/shuzhi");msg="$NËæÊÖ´ÓÉí±ßµÄĞ¡Ê÷ÉÏÕÛÏÂÒ»¸ùÊ÷Ö¦¡£\n";break; 
-    case 4: weapon=new("/d/obj/weapon/sword/guishuzhi");msg="$NĞ¡ĞÄÒíÒíµØ´Ó¹ğ»¨Ê÷ÉÏÕªÏÂÒ»¶ÎÊ÷Ö¦¡£\n";break; 
-    case 5: weapon=new("/d/obj/weapon/whip/wuchou");msg="$N´Ó»³ÀïÃş³öÒ»ÌõÎå²ÊçÍ·×µÄ³ñ´ø¡£\n";break; 
+    case 0: weapon=new("/d/obj/weapon/hammer/baiyuban");msg="$Nä»æ€€ä¸­æå‡ºäº†ä¸€é¢ç™½ç‰æ¿ã€‚\n";break; 
+    case 1: weapon=new("/d/obj/weapon/mace/bamboo");msg="$Né¡ºæ‰‹ä»èº«æ—çš„ç«¹æ—ä¸­æŠ˜ä¸‹ä¸€æ®µçŸ­ç«¹ã€‚\n";break; 
+    case 2: weapon=new("/d/obj/weapon/staff/shugan");msg="$Nåœ¨åœ°ä¸Šæ‹£èµ·ä¸€æ ¹æ ‘å¹²ã€‚\n";break; 
+    case 3: weapon=new("/d/obj/weapon/stick/shuzhi");msg="$Néšæ‰‹ä»èº«è¾¹çš„å°æ ‘ä¸ŠæŠ˜ä¸‹ä¸€æ ¹æ ‘æã€‚\n";break; 
+    case 4: weapon=new("/d/obj/weapon/sword/guishuzhi");msg="$Nå°å¿ƒç¿¼ç¿¼åœ°ä»æ¡‚èŠ±æ ‘ä¸Šæ‘˜ä¸‹ä¸€æ®µæ ‘æã€‚\n";break; 
+    case 5: weapon=new("/d/obj/weapon/whip/wuchou");msg="$Nä»æ€€é‡Œæ‘¸å‡ºä¸€æ¡äº”å½©ç¼¤çº·çš„ç»¸å¸¦ã€‚\n";break; 
     default: weapon=new("/d/obj/weapon/");msg="$N\n";break; 
   }
   if (weapon->move(me))
@@ -126,12 +126,12 @@ int accept_fight(object me)
   object ob=this_object(),target=query("target");
 
   if (me!=target) {
-     message_vision("$Nî©ÁË$nÒ»ÑÛ£¬²»Ğ¼µØËµ£º¡°ÄãÕâÈËÆøÖÊÌ«²î£¬ÎÒ²»ºÍÄãÍæ¡£¡±\n",ob,me);
+     message_vision("$NçŸäº†$nä¸€çœ¼ï¼Œä¸å±‘åœ°è¯´ï¼šâ€œä½ è¿™äººæ°”è´¨å¤ªå·®ï¼Œæˆ‘ä¸å’Œä½ ç©ã€‚â€\n",ob,me);
      return 0;
   }
   if (is_fighting()) 
     return ::accept_fight(me);
-  message_vision("$N¶Ô×Å$næÌÈ»Ò»Ğ¦£¬ËµµÀ£º¡°Äã³öÊÖ¿É±ğÌ«ÖØÁË¡£Èç¹û´òÀÛÁË£¬¿ÉÒÔËæÊ±½ĞÍ£(stop)¡£¡±\n",ob,me);
+  message_vision("$Nå¯¹ç€$nå«£ç„¶ä¸€ç¬‘ï¼Œè¯´é“ï¼šâ€œä½ å‡ºæ‰‹å¯åˆ«å¤ªé‡äº†ã€‚å¦‚æœæ‰“ç´¯äº†ï¼Œå¯ä»¥éšæ—¶å«åœ(stop)ã€‚â€\n",ob,me);
   set_skills(me);
   set("mode","fighting");
   score=0;
@@ -147,7 +147,7 @@ void heart_beat() {
 
   if (!target || environment(target)!=environment(me) ||
       !living(target)) {
-    message_vision("$NÓÄÓÄµØÌ¾ÁË¿ÚÆø£¬×ªÉí×ßÁË¡£\n",me);
+    message_vision("$Nå¹½å¹½åœ°å¹äº†å£æ°”ï¼Œè½¬èº«èµ°äº†ã€‚\n",me);
     destruct(me);
     return;
   }
@@ -203,8 +203,8 @@ void hurt(object ob,object me) {
   if (!ob || !me) return;
   if (!random(10)) {
     ob->command("surrender");
-    ob->command("say ÍæÍæ¶øÒÑ£¬¸ÉÂïÏÂÊÖÕâÃ´ÖØ£¿ËãÄãÀ÷º¦ĞĞ²»ĞĞ£¿²»ºÍÄã´òÁË£¡");
-    message_vision("$NºİºİµØ°×ÁË$nÒ»ÑÛ£¬Ò»×ªÉí£¬¾¶×Ô×ßÁË¡£\n\n",ob,me);
+    ob->command("say ç©ç©è€Œå·²ï¼Œå¹²å˜›ä¸‹æ‰‹è¿™ä¹ˆé‡ï¼Ÿç®—ä½ å‰å®³è¡Œä¸è¡Œï¼Ÿä¸å’Œä½ æ‰“äº†ï¼");
+    message_vision("$Nç‹ ç‹ åœ°ç™½äº†$nä¸€çœ¼ï¼Œä¸€è½¬èº«ï¼Œå¾„è‡ªèµ°äº†ã€‚\n\n",ob,me);
     remove_call_out("hurt");
     destruct(ob);
     return;
@@ -248,28 +248,28 @@ int do_stop() {
 
   if (target!=query("target")) return 0;
   if (!target->is_fighting(me)) 
-    return notify_fail("ÄãÃÇÃ»ÔÚ´ò¼Ü¡£\n");
+    return notify_fail("ä½ ä»¬æ²¡åœ¨æ‰“æ¶ã€‚\n");
 
-  message_vision("$NÌø³öÈ¦Íâ£¬ËµµÀ£º¡°½ñÌì¾ÍÍæµ½ÕâÀï°É¡£¡±\n",target);
+  message_vision("$Nè·³å‡ºåœˆå¤–ï¼Œè¯´é“ï¼šâ€œä»Šå¤©å°±ç©åˆ°è¿™é‡Œå§ã€‚â€\n",target);
   me->remove_killer(target);
   target->remove_killer(me);
   me->remove_enemy(target);
   target->remove_enemy(me);
   command("ok");
-  command("say Ğ»Ğ»ÄãÅãÎÒÍæ£¬ÎÒÓĞ¶äÏÉ»¨£¬ÄãÏ²»¶µÄ»°¾ÍËÍ¸øÄã°É¡£");
+  command("say è°¢è°¢ä½ é™ªæˆ‘ç©ï¼Œæˆ‘æœ‰æœµä»™èŠ±ï¼Œä½ å–œæ¬¢çš„è¯å°±é€ç»™ä½ å§ã€‚");
 
   flower=new(__DIR__"obj/hua");
   flower->set("name",name);
   flower->set("score",random(score));
   flower->set("target",target);
   if (flower->move(target)) {
-     message_vision("$NËÍ$nÒ»¶ä"+name+"¡£\n",me,target);
+     message_vision("$Né€$nä¸€æœµ"+name+"ã€‚\n",me,target);
      command("smile");
    } else {
       target->command("norose");
       me->command(":P");
    }
-   message_vision("$NËµÁËÉù¡°ºó»áÓĞÆÚ¡±£¬Æ®È»¶øÈ¥¡£\n",me);
+   message_vision("$Nè¯´äº†å£°â€œåä¼šæœ‰æœŸâ€ï¼Œé£˜ç„¶è€Œå»ã€‚\n",me);
    destruct(me);    
    return 1;
 }

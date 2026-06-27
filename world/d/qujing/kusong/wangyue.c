@@ -3,12 +3,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "���¹�");
+  set ("short", "望月谷");
   set ("long", @LONG
 
-���ߵ�Сɽ�����������γ���һ������״��ɽ�ȡ����п�����
-�಻֪����Ұ����������ʮ�ֵ����Ű������ȵı�����һƬ��
-������ˮ��
+两边的小山对立，这里形成了一个弯月状的山谷。谷中开着许
+多不知名的野花，看起来十分的悠雅安静。谷的北面有一片白
+汪汪的水泽。
 LONG);
   set("exits", ([ /* sizeof() == 4 */
   "southwest" : __DIR__"jiandi2",

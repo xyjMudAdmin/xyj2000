@@ -6,16 +6,16 @@ inherit NPC;
 void create()
 {
 
-  set_name("Ð¡½ðÓã", ({"xiao jin yu", "xiao yu", "fish", "yu"}));
-  set("long","Ò»ÌõÐ¡½ðÓã£¬ÕýÔÚº£ÖÐ×ÔÓÉ×ÔÔÚµÄÓÎ×Å¡£\n");
+  set_name("å°é‡‘é±¼", ({"xiao jin yu", "xiao yu", "fish", "yu"}));
+  set("long","ä¸€æ¡å°é‡‘é±¼ï¼Œæ­£åœ¨æµ·ä¸­è‡ªç”±è‡ªåœ¨çš„æ¸¸ç€ã€‚\n");
 
-  set("title", "ÒýÂ·Ê¹Õß");
+  set("title", "å¼•è·¯ä½¿è€…");
   set("age", 2);
-  set("race", "Ò°ÊÞ");
+  set("race", "é‡Žå…½");
 
   set_skill("dodge", 60);
   set("combat_exp", 10);
-  set("limbs", ({ "Í·²¿", "ÉíÌå", "Ç°½Å", "áá½Å", "Î²°Í" }) );
+  set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å‰è„š", "å¾Œè„š", "å°¾å·´" }) );
   set("verbs", ({ "bite"}));
 
   setup();
@@ -69,7 +69,7 @@ void yinlu5 (object me)
 void yinlu6 (object me)
 {
   me->command("south");
-  message_vision("Ð¡½ðÓãÒ»°ÚÎ²°Í²»ÖªÓÎµ½ÄÄÀïÈ¥ÁË¡£\n",me);
+  message_vision("å°é‡‘é±¼ä¸€æ‘†å°¾å·´ä¸çŸ¥æ¸¸åˆ°å“ªé‡ŒåŽ»äº†ã€‚\n",me);
   me->move("/d/dntg/donghai/mazee");
 }
 

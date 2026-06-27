@@ -5,12 +5,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "�ɷ��");
+  set ("short", "飞凤峰");
   set ("long", @LONG
 
-����ɽ�߶������ܣ�Ψɽ����������ƣ���ͬ�������ǻ�����
-�ò�ɢ�����˾��졣���཭��С�򣬽�é���ݶ��������ʣ���
-Ȼ�������ŵ���Ȥ��
+立于山颠而望四周，唯山边有数朵白云，如同鸾鹤翔舞徘徊，久
+久不散，令人惊异。望灌江边小镇，皆茅草屋顶，竹编篱笆，宛
+然有着幽雅的情趣。
 LONG);
 
   set("objects", ([ /* sizeof() == 1*/ 

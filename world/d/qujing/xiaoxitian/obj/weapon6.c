@@ -5,9 +5,9 @@ inherit STICK;
 
 void create()
 {
-  set_name("ÉÕ»ğ¹÷", ({ "shaohuo gun", "gun", "stick" }) );
+  set_name("çƒ§ç«æ£", ({ "shaohuo gun", "gun", "stick" }) );
   init_stick(15);
-  set("unit", "¸ù");
+  set("unit", "æ ¹");
   set_weight(500);
   if( clonep() )
      set_default_object(__FILE__);

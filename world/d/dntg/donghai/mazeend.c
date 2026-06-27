@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-set("short", "º£²Ø");
+set("short", "æµ·è—");
 set("long", @LONG
     
-¿Õµ´µ´µÄº£²ØÖĞÖ±Á¢×ÅÒ»¸ùÌúÖù×Ó£¬½ğ¹âÉÁÉÁ
-ÕÕµÃÈËÕö²»¿ªÑÛ¡£
+ç©ºè¡è¡çš„æµ·è—ä¸­ç›´ç«‹ç€ä¸€æ ¹é“æŸ±å­ï¼Œé‡‘å…‰é—ªé—ª
+ç…§å¾—äººçä¸å¼€çœ¼ã€‚
 LONG );
 
 
@@ -54,7 +54,7 @@ int valid_leave(object me, string dir)
   {
    wang = new (__DIR__"npc/announcer");
    wang->announce_success (this_player());
-   message_vision("$NÊÖ³Ö½ğ¹¿°ôÏòÉÏÒ»×İ£¬Ò»¹É¾ŞÀËËæ×Å$N³åÌì¶øÆğ¡£\n",this_player());
+   message_vision("$Næ‰‹æŒé‡‘ç®æ£’å‘ä¸Šä¸€çºµï¼Œä¸€è‚¡å·¨æµªéšç€$Nå†²å¤©è€Œèµ·ã€‚\n",this_player());
   }
   return ::valid_leave(me, dir);
 }

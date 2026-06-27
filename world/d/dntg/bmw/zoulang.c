@@ -5,10 +5,10 @@ inherit ROOM;
  
 void create()
 {
-        set("short", "×ßÀÈ");
+        set("short", "èµ°å»Š");
         set("long", @LONG
 
-Ò»Ìõ¿í³¨µÄ×ßÀÈ£¬×ã¿É¹©ÎåÆ¥Âí²¢ÅÅĞĞ×ß¡£
+ä¸€æ¡å®½æ•çš„èµ°å»Šï¼Œè¶³å¯ä¾›äº”åŒ¹é©¬å¹¶æ’è¡Œèµ°ã€‚
 LONG
         );
  
@@ -21,7 +21,7 @@ LONG
                 __DIR__"npc/jianfu" : 1,
         ]));
  
-        create_door("east", "Ğ¡ºìÃÅ", "west", DOOR_CLOSED);
+        create_door("east", "å°çº¢é—¨", "west", DOOR_CLOSED);
         set("no_clean_up", 0);
 
 

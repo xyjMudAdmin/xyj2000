@@ -3,11 +3,11 @@
 inherit ROOM;
 void create()
 {
-        set("short", "�ͷ�");
+        set("short", "客房");
         set("long", @LONG
 
-    ����ɸɾ����ģ���������Ϣ��һ�����󴲣��Ѿ���ĥ�÷���
-�ˡ��ݽ�����Ÿ�¯�ӣ��Ա�����ȡů��
+    房里干干净净的，供客人休息。一排竹板大床，已经被磨得发黄
+了。屋角里摆着个炉子，以备冬天取暖。
 
 LONG
         );

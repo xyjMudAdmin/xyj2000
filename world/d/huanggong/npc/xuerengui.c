@@ -5,13 +5,13 @@ inherit NPC;
 
 void create()
 {
-        set_name("Ñ¦ÈÊ¹ó", ({ "xue rengui", "xue", "rengui" }) );
-        set("gender", "ÄĞĞÔ");
+        set_name("è–›ä»è´µ", ({ "xue rengui", "xue", "rengui" }) );
+        set("gender", "ç”·æ€§");
         set("age", 35);
-        set("long","Ñ¦ÈÊ¹óÊÇ³¤°²³Ç¾ÅÃÅÌá¶½£¬¸ºÔğ»Ê¹¬ÄÚÍâ°²È«¡£\n");
+        set("long","è–›ä»è´µæ˜¯é•¿å®‰åŸä¹é—¨æç£ï¼Œè´Ÿè´£çš‡å®«å†…å¤–å®‰å…¨ã€‚\n");
         set("combat_exp", 350000);
-	set("title", "¾ÅÃÅÌá¶½");
-	set("nickname", "ÓÂ¹ÚÈı¾ü");
+	set("title", "ä¹é—¨æç£");
+	set("nickname", "å‹‡å† ä¸‰å†›");
         set("attitude", "friendly");
 	set("per", 25);
         set("str", 35);
@@ -46,7 +46,7 @@ void init ()
 
 int accept_fight(object me)
 {
-        command("say ÎÒÎªµîÇ°½«¾ü£¬ÆñÄÜÓëÄã´åÒ°Æ¥·ò½ÏÒÕ£¡");
+        command("say æˆ‘ä¸ºæ®¿å‰å°†å†›ï¼Œå²‚èƒ½ä¸ä½ æ‘é‡åŒ¹å¤«è¾ƒè‰ºï¼");
         return 0;
 }
 

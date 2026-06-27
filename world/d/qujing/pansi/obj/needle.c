@@ -6,15 +6,15 @@ inherit SWORD;
 
 void create()
 {
-  set_name("Ğå»¨Õë", ({"xiuhua zhen", "zhen", "needle"}));
+  set_name("ç»£èŠ±é’ˆ", ({"xiuhua zhen", "zhen", "needle"}));
   set_weight(100);
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("unit", "¸ù");
-    set("long", "Ò»¸ùĞÇ¹âÉÁÉÁµÄĞå»¨Õë¡£\n");
-    set("wield_msg", "$N°Î³öÒ»¸ùĞå»¨Õë£¬ÄóÔÚÊÖÀï¡£\n");
-    set("unwield_msg", "$N½«Ğå»¨Õë²ØÆğ¡£\n");
+    set("unit", "æ ¹");
+    set("long", "ä¸€æ ¹æ˜Ÿå…‰é—ªé—ªçš„ç»£èŠ±é’ˆã€‚\n");
+    set("wield_msg", "$Næ‹”å‡ºä¸€æ ¹ç»£èŠ±é’ˆï¼Œæåœ¨æ‰‹é‡Œã€‚\n");
+    set("unwield_msg", "$Nå°†ç»£èŠ±é’ˆè—èµ·ã€‚\n");
   }
   set("is_monitored",1);
   init_sword(3);
@@ -23,7 +23,7 @@ void create()
 
 void destruct_me(object where, object me)
 {
-  message_vision("$nÍ»È»µôÔÚµØÉÏ²»¼ûÁË£¡\n",where,me);
+  message_vision("$nçªç„¶æ‰åœ¨åœ°ä¸Šä¸è§äº†ï¼\n",where,me);
   destruct (me);
 }
 

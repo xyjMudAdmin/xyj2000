@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-set("short", "ÑÝÎä³¡Èë¿Ú");
+set("short", "æ¼”æ­¦åœºå…¥å£");
 set("long", @LONG
-ÔÚ°ÁÀ´¹úÑÝÎä³¡µÄÈë¿Ú£¬Õ¾Á¢×Å¼¸¸öÍþÎäµÄ½û¾ü½ÌÍ·£¬
-ÊØÎÀ×ÅÕâÀï¡£ÀïÃæ²»Ê±´«À´ÐÛ×³µÄºÅ½ÇÉù¡£
+åœ¨å‚²æ¥å›½æ¼”æ­¦åœºçš„å…¥å£ï¼Œç«™ç«‹ç€å‡ ä¸ªå¨æ­¦çš„ç¦å†›æ•™å¤´ï¼Œ
+å®ˆå«ç€è¿™é‡Œã€‚é‡Œé¢ä¸æ—¶ä¼ æ¥é›„å£®çš„å·è§’å£°ã€‚
 LONG
 	);
 
@@ -34,8 +34,8 @@ int valid_leave(object me, string dir)
       if ( me->query_temp("donghai") !=1 ) 
          {
          return
-         notify_fail("½û¾ü½ÌÍ·ºÈµÀ£ºÎÒ¹ú±øÂíÕýÔÚÀïÃæÑµÁ·£¡ÄãÀ´Õâ¸ÉÊ²Ã´(answer)£¿\n"
-                    +"(£°£®±ÈÎä¡¡£±£®¿´ÈÈÄÖ¡¡£²£®µ·ÂÒ¡¡£³£®´Ó¾ü)\n");
+         notify_fail("ç¦å†›æ•™å¤´å–é“ï¼šæˆ‘å›½å…µé©¬æ­£åœ¨é‡Œé¢è®­ç»ƒï¼ä½ æ¥è¿™å¹²ä»€ä¹ˆ(answer)ï¼Ÿ\n"
+                    +"(ï¼ï¼Žæ¯”æ­¦ã€€ï¼‘ï¼Žçœ‹çƒ­é—¹ã€€ï¼’ï¼Žæ£ä¹±ã€€ï¼“ï¼Žä»Žå†›)\n");
          }
       }
       else 

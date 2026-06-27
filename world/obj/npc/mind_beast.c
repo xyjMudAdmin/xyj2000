@@ -5,10 +5,10 @@ inherit NPC;
 
 void create()
 {
-	set_name("¹ÛÏëÊÞ", ({ "mind beast", "beast" }) );
-	set("race", "Ò°ÊÞ");
+	set_name("è§‚æƒ³å…½", ({ "mind beast", "beast" }) );
+	set("race", "é‡Žå…½");
 	set("age", 3);
-	set("long", "ÕâÊÇÒ»Ö»ÓÉÐÞµÀÈËµÄÔÓÄîç²Ë¼Ëù»¯µÄ¹ÛÏëÊÞ£¬»á²ø×¡ÈËµÄ»êÆÇ¡£\n");
+	set("long", "è¿™æ˜¯ä¸€åªç”±ä¿®é“äººçš„æ‚å¿µç»®æ€æ‰€åŒ–çš„è§‚æƒ³å…½ï¼Œä¼šç¼ ä½äººçš„é­‚é­„ã€‚\n");
 	
 	set("str", 48);
 	set("cor", 52);
@@ -18,7 +18,7 @@ void create()
 	set("max_gin", 600);
 	set("max_sen", 900);
 
-	set("limbs", ({ "Í·²¿", "ÉíÌå", "Ç°½Å", "ºó½Å", "Î²°Í" }) );
+	set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å‰è„š", "åŽè„š", "å°¾å·´" }) );
 	set("verbs", ({ "bite", "claw" }) );
 
 	if( this_player() ) {
@@ -41,10 +41,10 @@ void die()
 
 	if( objectp(owner_ob = find_player(owner)) ) {
 		if( (object)query_temp("last_damage_from") != owner_ob ) {
-			tell_object(owner_ob, "ÄãµÄ¹ÛÏëÊÞ±»ÈËÉ±ËÀÁË£¡\nÄã¾õµÃÒ»ÕóÌìÐýµØ×ª....\n");
+			tell_object(owner_ob, "ä½ çš„è§‚æƒ³å…½è¢«äººæ€æ­»äº†ï¼\nä½ è§‰å¾—ä¸€é˜µå¤©æ—‹åœ°è½¬....\n");
 			owner_ob->unconcious();
 		} else {
-			tell_object(owner_ob, "ÄãÉ±ËÀÁËÄãµÄ¹ÛÏëÊÞ£¬²¢ÇÒ´ÓÖÐÎòµ½ÁËÒ»Ð©ÖäÊõµÄµÀÀí¡£\n");
+			tell_object(owner_ob, "ä½ æ€æ­»äº†ä½ çš„è§‚æƒ³å…½ï¼Œå¹¶ä¸”ä»Žä¸­æ‚Ÿåˆ°äº†ä¸€äº›å’’æœ¯çš„é“ç†ã€‚\n");
 			owner_ob->improve_skill("spells", random(owner_ob->query("spi"))+1);
 		}
 	}

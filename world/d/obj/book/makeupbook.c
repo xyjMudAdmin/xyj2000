@@ -5,13 +5,13 @@
 inherit F_UNIQUE;
 inherit ITEM;
 void create() {
-        set_name(HIM"Ì´ÏãÉÈ"NOR, ({"tanxiang shan","shan","book"}));
-    set("long","Ò»°ÑÏãÆøÆË±ÇµÄÌ´ÏãÉÈ£¬ÉÈÃæÉÏÃÜÃÜÂéÂéĞ´ÂúÁËÒ»±Ê¾êĞãµÄÓ¬Í·Ğ¡¿¬¡£");
+        set_name(HIM"æª€é¦™æ‰‡"NOR, ({"tanxiang shan","shan","book"}));
+    set("long","ä¸€æŠŠé¦™æ°”æ‰‘é¼»çš„æª€é¦™æ‰‡ï¼Œæ‰‡é¢ä¸Šå¯†å¯†éº»éº»å†™æ»¡äº†ä¸€ç¬”å¨Ÿç§€çš„è‡å¤´å°æ¥·ã€‚");
         set_weight(600);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
+                set("unit", "æŠŠ");
                 set("value", 100000);
 //              set("no_sell",1);
         set("material", "paper");

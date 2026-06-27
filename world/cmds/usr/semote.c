@@ -22,9 +22,9 @@ int main(object me, string arg)
 int help(object me)
 {
   write(@HELP
-指令格式 : semote
+鎸囦护鏍煎紡 : semote
 
-这个指令可以列出目前所能使用的emote.
+杩欎釜鎸囦护鍙互鍒楀嚭鐩墠鎵�鑳戒娇鐢ㄧ殑emote.
 HELP
     );
     return 1;

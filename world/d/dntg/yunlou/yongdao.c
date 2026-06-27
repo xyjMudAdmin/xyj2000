@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create()
 {
-set("short", "��");
+set("short", "甬道");
 set("long", @LONG
     
-��������ʯ�����̵أ���������ʱ��л֮�ɻ���ݣ���طҷ���
-�������з�����ɫ��Ʈ�㡣��Χ���������¥���������
-�̲���
+甬道上是青石碎瓦铺地，道旁有四时不谢之仙花异草，遍地芬芳。
+翠竹林中风带鸟语，色润飘香。周围见迭迭朱阁画楼，逐逐彩雾
+烟波。
 LONG );
 
 
@@ -26,7 +26,7 @@ set("objects", ([
     __DIR__"npc/tong-nan" : 1,
 ]));
 
-  create_door("west", "��¥����", "east", DOOR_CLOSED);
+  create_door("west", "云楼宫门", "east", DOOR_CLOSED);
 
 
 setup();

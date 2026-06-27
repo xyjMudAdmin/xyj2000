@@ -3,14 +3,14 @@ inherit NPC;
 
 void create()
 {
-       	set_name("À×Éñ", ({"lei shen", "shen", "lei"}));
-       	set("gender", "ÄĞĞÔ");
+       	set_name("é›·ç¥", ({"lei shen", "shen", "lei"}));
+       	set("gender", "ç”·æ€§");
        	set("age", 40);
         set("class", "taoist");
        	set("attitude", "friendly");
-       	set("rank_info/respect", "À×¹«");
+       	set("rank_info/respect", "é›·å…¬");
         set("per", 26);
-        set("looking", "¼âÍ·Í»×ì£¬ÑÛÔ²¾¦³à£¬ÉíÓĞË«Òí£¬ĞÎÈİ¹Å¹Ö¡£");
+        set("looking", "å°–å¤´çªå˜´ï¼Œçœ¼åœ†ç›èµ¤ï¼Œèº«æœ‰åŒç¿¼ï¼Œå½¢å®¹å¤æ€ªã€‚");
         set("int", 30);
        	set("max_kee", 1000);
        	set("max_gin", 1000);

@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "̫��þ�");
+  set ("short", "太虚幻境");
   set ("long", @LONG
 
-����������˭���뻪�㾳��ǧ�ŷ�����ҵ��
+　　　　问谁幻入华胥境　千古风流造业人
 
 LONG);
 

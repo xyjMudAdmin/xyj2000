@@ -5,12 +5,12 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ºÚ°µÖ®ÖĞ");
+        set("short", "é»‘æš—ä¹‹ä¸­");
         set("long", @LONG
 
-Ò²²»ÖªÊÇµ½ÁËÄÇÀï£¬Ö»¾õµÃËÄÖÜÒì³£ÏÁĞ¡£®ÉÏÏÂ×óÓÒ²»¹ı´çÓà£®
-Á¬·­Éí¶¼ÊÇ²»¿ÉÄÜµÄ£®Ê²Ã´Ò²¿´²»µ½£¬Ê²Ã´Ò²Ìı²»µ½£®¿ÕÆøÖĞ
-ÓĞÒ»¹É¸¯ÀÃµÄÎ¶µÀ£®
+ä¹Ÿä¸çŸ¥æ˜¯åˆ°äº†é‚£é‡Œï¼Œåªè§‰å¾—å››å‘¨å¼‚å¸¸ç‹­å°ï¼ä¸Šä¸‹å·¦å³ä¸è¿‡å¯¸ä½™ï¼
+è¿ç¿»èº«éƒ½æ˜¯ä¸å¯èƒ½çš„ï¼ä»€ä¹ˆä¹Ÿçœ‹ä¸åˆ°ï¼Œä»€ä¹ˆä¹Ÿå¬ä¸åˆ°ï¼ç©ºæ°”ä¸­
+æœ‰ä¸€è‚¡è…çƒ‚çš„å‘³é“ï¼
 LONG
         );
 set("exits", ([ /* sizeof() == 4 */
@@ -24,7 +24,7 @@ set("exits", ([ /* sizeof() == 4 */
 void init()
 {
 	object who=this_player();
-	if( (string)who->query("family/family_name")=="ÑÖÂŞµØ¸®" ) {
+	if( (string)who->query("family/family_name")=="é˜ç½—åœ°åºœ" ) {
 		call_out("heal_up", 10, who);
 	}
 
@@ -37,19 +37,19 @@ int do_open(string arg)
         int sen,damage;
         me=this_player();
 
-        if ( !arg || ((arg != "guancai")&&(arg != "¹×²Ä") ) )
-                return notify_fail("ÄãÒª´ò¿ªÊ²Ã´£¿\n");
+        if ( !arg || ((arg != "guancai")&&(arg != "æ£ºæ") ) )
+                return notify_fail("ä½ è¦æ‰“å¼€ä»€ä¹ˆï¼Ÿ\n");
         else {
           sen=me->query("sen");
           damage=random(10)+10;
 	  if(sen>damage) {
-            message_vision("$N·ÉÆğÒ»½ÅÌß¿ª¹×²Ä£¬ÅÀÁË³öÈ¥¡£\n\n",me);
+            message_vision("$Né£èµ·ä¸€è„šè¸¢å¼€æ£ºæï¼Œçˆ¬äº†å‡ºå»ã€‚\n\n",me);
             me->receive_damage("sen",damage);
 	    me->set("gin", (int)me->query("max_gin"));
             me->move("/d/changan/fendui");
-            message_vision("\n·ØÉÏµÄÍÁ¶¯ÁË¶¯£¬$N¶¥×ÅÂúÍ·µÄÔÓ²İ×êÁË³öÀ´¡£\n",me);
+            message_vision("\nåŸä¸Šçš„åœŸåŠ¨äº†åŠ¨ï¼Œ$Né¡¶ç€æ»¡å¤´çš„æ‚è‰é’»äº†å‡ºæ¥ã€‚\n",me);
           } else {
-            message_vision("$N·ÉÆğÒ»½Å³¯¹×¸ÇÌßÈ¥£®£®£®\n\n",me);
+            message_vision("$Né£èµ·ä¸€è„šæœæ£ºç›–è¸¢å»ï¼ï¼ï¼\n\n",me);
 	    me->receive_damage("sen",damage);
 	  }
         }
@@ -65,8 +65,8 @@ int heal_up(object who)
         who->set("eff_kee", (int)who->query("max_kee"));
         who->set("eff_sen", (int)who->query("max_sen"));
 
-	message_vision("ºöÈ»Ò»¹ÉÇàÆøÁı×¡ÁË$N¡£\n", who);
-	write("Äã¾õµÃ×Ô¼ºµÄ¾«ÉñÆøÑªÒ»ÏÂ×Ó¶¼»Ö¸´ÁË¡£\n");
+	message_vision("å¿½ç„¶ä¸€è‚¡é’æ°”ç¬¼ä½äº†$Nã€‚\n", who);
+	write("ä½ è§‰å¾—è‡ªå·±çš„ç²¾ç¥æ°”è¡€ä¸€ä¸‹å­éƒ½æ¢å¤äº†ã€‚\n");
 
 	return 1;
 }

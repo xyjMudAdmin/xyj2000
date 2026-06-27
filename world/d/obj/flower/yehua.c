@@ -6,11 +6,11 @@ inherit COMBINED_ITEM;
 
 void create()
 {
-  set_name("Ò°»¨", ({ "flower","yehua","hua" }) );
-  set("unit","Êø");
+  set_name("é‡èŠ±", ({ "flower","yehua","hua" }) );
+  set("unit","æŸ");
   set("base_weight",10);
-  set("long","Ò»Êø½¿ÃÀ¿ÉÈËµÄĞ¡Ò°»¨£¬É¢·¢×ÅÒ»Ë¿µ­µ­µÄÓÄÏã¡£\n");
-  set("base_unit","¶ä");
+  set("long","ä¸€æŸå¨‡ç¾å¯äººçš„å°é‡èŠ±ï¼Œæ•£å‘ç€ä¸€ä¸æ·¡æ·¡çš„å¹½é¦™ã€‚\n");
+  set("base_unit","æœµ");
   set("material", "flower");
   set_amount(1+random(3));
   setup();

@@ -6,13 +6,13 @@ inherit WRISTS;
 
 void create()
 {
-	set_name( "²®¾ô±í", ({ "piaget", "watch" }) );
+	set_name( "ä¼¯çˆµè¡¨", ({ "piaget", "watch" }) );
 	set_weight(500);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¿é");
-		set("long", "ÈğÊ¿Ãû±í £­ ²®¾ô±í£¬±íµÄÊ½Ñù²¢²»»¨ÉÚ£¬µ«È´¸ß¹óµÃÌå¡£\n");
+		set("unit", "å—");
+		set("long", "ç‘å£«åè¡¨ ï¼ ä¼¯çˆµè¡¨ï¼Œè¡¨çš„å¼æ ·å¹¶ä¸èŠ±å“¨ï¼Œä½†å´é«˜è´µå¾—ä½“ã€‚\n");
 		set("value", 600);
 		set("material", "wrists");
 		set("armor_prop/armor", 5);

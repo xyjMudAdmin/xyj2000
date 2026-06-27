@@ -11,7 +11,7 @@ int do_drop(object me, object obj);
 void create() 
 {
 	seteuid(getuid());
-	set("name", "����ָ��");
+	set("name", "离线指令");
 	set("id", "quit");
 }
 
@@ -27,16 +27,16 @@ int main(object me, string arg, int force_quit)
 
 	if(!force_quit) {
 	if ( me->query_temp("no_move") )
-		return notify_fail("�㱻��ס�ˣ������˵ó���Ϸ��\n");
+		return notify_fail("你被定住了，哪里退得出游戏！\n");
 
         if(!me->query_temp("suicide_countdown")) {
 	  if( me->is_busy() )
-		return notify_fail("( ����һ��������û����ɣ������˳���)\n");
+		return notify_fail("( 你上一个动作还没有完成，不能退出。)\n");
         } //to allow halt suicide :D by mon 9/9/97
 
         if( !wizardp(me) && environment(me) && 
 	  environment(me)->query("no_quit") && link_ob )
-                        return notify_fail("���ﲻ׼�˳���Ϸ��\n");
+                        return notify_fail("这里不准退出游戏。\n");
 	}
 
 	if( !wizardp(me) && (!link_ob || (
@@ -54,7 +54,7 @@ int main(object me, string arg, int force_quit)
 
 		// Are we possessing in others body ?
 		if( link_ob->is_character() ) {
-			write("��Ļ��ǻص�" + link_ob->name(1) + "�����ϡ�\n");
+			write("你的魂魄回到" + link_ob->name(1) + "的身上。\n");
 			exec(link_ob, me);
 			link_ob->setup();
 			return 1;
@@ -66,12 +66,12 @@ int main(object me, string arg, int force_quit)
 		destruct(link_ob);
 	}
 
-	write("��ӭ�´�������\n");
+	write("欢迎下次再来！\n");
 	if(!wizardp(me) || !me->query("env/invisibility"))
-	message("system", me->name() + "�뿪��Ϸ��\n", environment(me), me);
+	message("system", me->name() + "离开游戏。\n", environment(me), me);
 
 	CHANNEL_D->do_channel(this_object(), "sys",
-		me->name() + "(" + capitalize(me->query("id")) + ")" + "�뿪��Ϸ�ˡ�");
+		me->name() + "(" + capitalize(me->query("id")) + ")" + "离开游戏了。");
 
 	me->save();
 	destruct(me);
@@ -90,11 +90,11 @@ int do_drop(object me, object obj)
         }
         if (obj->move(environment(me))) {
                 if( obj->is_character() )
-                        message_vision("$N��$n�ӱ��Ϸ������������ڵ��ϡ�\n", me, obj);
+                        message_vision("$N将$n从背上放了下来，躺在地上。\n", me, obj);
                 else {
-                        message_vision( sprintf("$N����һ%s$n��\n",     obj->query("unit")), me, obj );
+                        message_vision( sprintf("$N丢下一%s$n。\n",     obj->query("unit")), me, obj );
                         if( !obj->query("value") && !obj->value() ) {
-                                tell_object(me,"��Ϊ������������ֵǮ���������ǲ�����ע�⵽���Ĵ��ڡ�\n");
+                                tell_object(me,"因为这样东西并不值钱，所以人们并不会注意到它的存在。\n");
                                 destruct(obj);
                         }
                 }
@@ -106,9 +106,9 @@ int do_drop(object me, object obj)
 int help(object me)
 {
 	write(@HELP
-ָ���ʽ : quit
+指令格式 : quit
 
-��������ʱ�뿪ʱ, �����ô�һָ�
+当你想暂时离开时, 可利用此一指令。
 HELP
     );
     return 1;

@@ -8,9 +8,9 @@ int do_quit();
 
 void create()
 {
-	set("short", "��������");
+	set("short", "花轿里面");
 	set("long", @LONG
-���ǻ������棬�������ӳ��޵�ʱ�����ģ���ϲ��ϲ��ף���»���֣�^_^
+这是花轿里面，是新娘子出嫁的时候坐的，恭喜恭喜！祝您新婚快乐！^_^
 LONG
 	);
 
@@ -24,6 +24,6 @@ void init()
 
 int do_quit()
 {
-	tell_object(this_player(), "ʲô�����ѵ�����ӻ鲻�ɣ���");
+	tell_object(this_player(), "什么？！难道你敢逃婚不成？！");
 	return 1;
 }

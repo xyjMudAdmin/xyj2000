@@ -1,5 +1,5 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// ·ï»ËÇÙ  
+// å‡¤å‡°ç´  
 
 #include <weapon.h>
 #include <ansi.h>
@@ -13,19 +13,19 @@ int do_uninstall(string);
 
 void create()
 {
-   set_name("·ï»ËÇÙ", ({"fenghuang qin","qin","sword"}));
+   set_name("å‡¤å‡°ç´", ({"fenghuang qin","qin","sword"}));
    set_weight(4000);
    if( clonep() ) 
           set_default_object(__FILE__);
    else 
      {
-      set("long", "Ò»ÕÅÑÕÉ«°µ¾ÉµÄ¹ÅÇÙ£¬¿Ì×ÅÁ½Ö»·ÉÎèµÄ·ï»Ë£¬¿´ÉÏÈ¥ÉÙËµÒ²ÊÇÉÏ°ÙÄêµÄ±¦±´ÁË¡£\n");
-      set("orilong", "Ò»ÕÅÑÕÉ«°µ¾ÉµÄ¹ÅÇÙ£¬¿Ì×ÅÁ½Ö»·ÉÎèµÄ·ï»Ë£¬¿´ÉÏÈ¥ÉÙËµÒ²ÊÇÉÏ°ÙÄêµÄ±¦±´ÁË¡£\n");
-      set("unit", "ÕÅ");
+      set("long", "ä¸€å¼ é¢œè‰²æš—æ—§çš„å¤ç´ï¼Œåˆ»ç€ä¸¤åªé£èˆçš„å‡¤å‡°ï¼Œçœ‹ä¸Šå»å°‘è¯´ä¹Ÿæ˜¯ä¸Šç™¾å¹´çš„å®è´äº†ã€‚\n");
+      set("orilong", "ä¸€å¼ é¢œè‰²æš—æ—§çš„å¤ç´ï¼Œåˆ»ç€ä¸¤åªé£èˆçš„å‡¤å‡°ï¼Œçœ‹ä¸Šå»å°‘è¯´ä¹Ÿæ˜¯ä¸Šç™¾å¹´çš„å®è´äº†ã€‚\n");
+      set("unit", "å¼ ");
       set("value", 3000);
       set("material", "leather");
-      set("wield_msg", "$N´Ó±³ºóÕªÏÂÒ»ÕÅ$n£¬ÅõÔÚÊÖÖĞ¡£\n");
-      set("unwield_msg", "$NÊÕÆğÊÖÖĞµÄ$n£¬Ğ¡ĞÄÒíÒíµÄ±³»Ø±³ºó¡£\n");
+      set("wield_msg", "$Nä»èƒŒåæ‘˜ä¸‹ä¸€å¼ $nï¼Œæ§åœ¨æ‰‹ä¸­ã€‚\n");
+      set("unwield_msg", "$Næ”¶èµ·æ‰‹ä¸­çš„$nï¼Œå°å¿ƒç¿¼ç¿¼çš„èƒŒå›èƒŒåã€‚\n");
       set("anqi/allow", 1);
       set("anqi/max", 20);
       set("anqi/now", 0);
@@ -47,24 +47,24 @@ int do_install(string arg)
    object aq;
    int remain;
 
-   if( !arg)  return notify_fail("ÄãÏë×°Ê²Ã´£¿\n");
+   if( !arg)  return notify_fail("ä½ æƒ³è£…ä»€ä¹ˆï¼Ÿ\n");
 
    aq=present(arg, who);
    if (! present(arg, who)) 
-		return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâ¶«Î÷¡£\n");
+		return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™ä¸œè¥¿ã€‚\n");
    if (aq->query("name") == me->query("name") ) 
-                return notify_fail("×°×Ô¼º£¿\n");
+                return notify_fail("è£…è‡ªå·±ï¼Ÿ\n");
    if (! aq->query("can_install")) 
-        	return notify_fail("ÕâÍæÒÕÌ«´óÁË£¬×°²»½øÈ¥¡£\n");
-   if (who->is_busy()) return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+        	return notify_fail("è¿™ç©è‰ºå¤ªå¤§äº†ï¼Œè£…ä¸è¿›å»ã€‚\n");
+   if (who->is_busy()) return notify_fail("ä½ æ­£å¿™ç€å‘¢ã€‚\n");
    if (me->query("anqi/now") == me->query("anqi/max"))
-        	return notify_fail(me->query("name")+"ÒÑ¾­×°Âú°µÆ÷ÁË¡£\n");
+        	return notify_fail(me->query("name")+"å·²ç»è£…æ»¡æš—å™¨äº†ã€‚\n");
    if (me->query("anqi/now") >0 && me->query("anqi/type") != aq->query("name") )
-        	return notify_fail(me->query("name")+"²»ÄÜ×°²»Í¬ÖÖÀàµÄ°µÆ÷¡£\n");
+        	return notify_fail(me->query("name")+"ä¸èƒ½è£…ä¸åŒç§ç±»çš„æš—å™¨ã€‚\n");
    else  
      {
-     message_vision( "$N´ò¿ª"+me->query("name")+"µÄ»ú¹Ø£¬½«Ò»"
-		+aq->query("unit")+aq->query("name")+"×°ÁË½øÈ¥¡£\n",who);
+     message_vision( "$Næ‰“å¼€"+me->query("name")+"çš„æœºå…³ï¼Œå°†ä¸€"
+		+aq->query("unit")+aq->query("name")+"è£…äº†è¿›å»ã€‚\n",who);
      me->set("anqi/location",base_name(aq));
      who->start_busy(3);
      if (me->query("anqi/now") ==0) me->set("anqi/type",aq->query("name"));
@@ -73,17 +73,17 @@ int do_install(string arg)
        {
         remain=me->query("anqi/now") + aq->query_amount() - me->query("anqi/max");
         me->set("anqi/now",me->query("anqi/max"));
-        me->set("long",me->query("orilong")+"ÀïÃæÒÑ¾­×°ÁË" 
+        me->set("long",me->query("orilong")+"é‡Œé¢å·²ç»è£…äº†" 
 		+chinese_number(me->query("anqi/now"))
-		+aq->query("base_unit")+aq->query("name")+"£¬Ïë²ğµôÓÃuninstall¡£\n");
+		+aq->query("base_unit")+aq->query("name")+"ï¼Œæƒ³æ‹†æ‰ç”¨uninstallã€‚\n");
         aq->set_amount(remain);
          }
      else 
        {
         me->set("anqi/now",me->query("anqi/now") + aq->query_amount());
-        me->set("long",me->query("orilong")+"ÀïÃæÒÑ¾­×°ÁË"
+        me->set("long",me->query("orilong")+"é‡Œé¢å·²ç»è£…äº†"
 		+chinese_number(me->query("anqi/now"))
-		+aq->query("base_unit")+aq->query("name")+"£¬Ïë²ğµôÓÃuninstall¡£\n");
+		+aq->query("base_unit")+aq->query("name")+"ï¼Œæƒ³æ‹†æ‰ç”¨uninstallã€‚\n");
         destruct(aq);
         }
      return 1;
@@ -96,22 +96,22 @@ int do_uninstall(string arg)
    object me=this_object();
    object who=this_player();
 
-   if( !this_object()->id(arg) ) return notify_fail("ÄãÏë²ğÊ²Ã´£¿\n");
+   if( !this_object()->id(arg) ) return notify_fail("ä½ æƒ³æ‹†ä»€ä¹ˆï¼Ÿ\n");
    else if (me->query("anqi/now") ==0) 
-		return notify_fail(me->query("name")+"ÀïÃæÊ²Ã´Ò²Ã»ÓĞ¡£\n");
+		return notify_fail(me->query("name")+"é‡Œé¢ä»€ä¹ˆä¹Ÿæ²¡æœ‰ã€‚\n");
    else 
      {
 
       ob = new(me->query("anqi/location"));
-   if (who->is_busy()) return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+   if (who->is_busy()) return notify_fail("ä½ æ­£å¿™ç€å‘¢ã€‚\n");
       ob->set_amount(me->query("anqi/now"));
       ob->move(who);
       me->set("long",me->query("orilong"));
       me->set("anqi/now", 0);
       me->delete("anqi/location");
       me->delete("anqi/type");
-      message_vision("$N´Ó"+me->query("name")+"ÀïÃæ²ğ³öÒ»"
-		+ob->query("unit")+ob->query("name")+"¡£\n", who);
+      message_vision("$Nä»"+me->query("name")+"é‡Œé¢æ‹†å‡ºä¸€"
+		+ob->query("unit")+ob->query("name")+"ã€‚\n", who);
       who->start_busy(3);
       return 1;               
      }

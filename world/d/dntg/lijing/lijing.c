@@ -27,11 +27,11 @@ void retreat();
 void create()
 {
     
-        set_name("Àî¾¸", ({ "li jing","li", "jing" }) );
-        set("gender", "ÄÐÐÔ" );
-        set("long", "ÍÐËþÀîÌìÍõÄËÊÇÌì½çÔªË§£¬÷âÏÂÊ®ÍòÌì±øÌì½«£¬·¨Á¦ÎÞ±ß¡£\n");
+        set_name("æŽé–", ({ "li jing","li", "jing" }) );
+        set("gender", "ç”·æ€§" );
+        set("long", "æ‰˜å¡”æŽå¤©çŽ‹ä¹ƒæ˜¯å¤©ç•Œå…ƒå¸…ï¼Œéº¾ä¸‹åä¸‡å¤©å…µå¤©å°†ï¼Œæ³•åŠ›æ— è¾¹ã€‚\n");
         set("age",40);
-        set("title", "ÍÐËþÌìÍõ");
+        set("title", "æ‰˜å¡”å¤©çŽ‹");
         set("str", 40);
         set("int", 20);
         set("con", 30);
@@ -83,8 +83,8 @@ void create()
  
 void time_up() {
    if (target()) {
-     command("say "+target()->name()+"¹ûÈ»ÓÐÐ©ÉñÍ¨£¡");
-     command("say ½ñÈÕ²»·ÖÊ¤¸º£¬Ã÷ÈÕÔÙÕ½£¡");
+     command("say "+target()->name()+"æžœç„¶æœ‰äº›ç¥žé€šï¼");
+     command("say ä»Šæ—¥ä¸åˆ†èƒœè´Ÿï¼Œæ˜Žæ—¥å†æˆ˜ï¼");
      target()->delete_temp("lijing");
    }
    go_home();
@@ -101,13 +101,13 @@ void heart_beat() {
    set("mana",4000);
    
    if (target && target->is_ghost()) {
-      message_vision(HIY"$N¹þ¹þ´óÐ¦£º¡°Èç´ËÊÖ¶Î£¬Ò²¸ÒÍý³Æ´óÊ¥£¿¡±\n"NOR,this_object());
+      message_vision(HIY"$Nå“ˆå“ˆå¤§ç¬‘ï¼šâ€œå¦‚æ­¤æ‰‹æ®µï¼Œä¹Ÿæ•¢å¦„ç§°å¤§åœ£ï¼Ÿâ€\n"NOR,this_object());
       command("kick corpse");
       go_home();
       return;
    }
    if (!target || environment(this_object())!=environment(target)) {
-       message_vision(HIY"$N¹þ¹þ´óÐ¦£º¡°ÎÞµ¨·ËÀà£¬ÌÓÖ®Ø²Ø²ÁË¡£¡±\n"NOR,this_object());
+       message_vision(HIY"$Nå“ˆå“ˆå¤§ç¬‘ï¼šâ€œæ— èƒ†åŒªç±»ï¼Œé€ƒä¹‹å¤­å¤­äº†ã€‚â€\n"NOR,this_object());
        go_home();
        return;
    }
@@ -120,8 +120,8 @@ int valid_killer(object killer) {
 
    if (target!=killer && environment(me)==environment(target)) {
      command("sneer");
-     command("say ÒÐ¶àÈ¡Ê¤£¿"+target->query("name")+
-        "ºÃ´óµÄÃûÍ·£¬Ô­À´²»¹ýÈç´Ë£¡»¹ºÃÒâË¼½ÐÊ²Ã´ÆëÌì´óÊ¥£¿£¡");
+     command("say å€šå¤šå–èƒœï¼Ÿ"+target->query("name")+
+        "å¥½å¤§çš„åå¤´ï¼ŒåŽŸæ¥ä¸è¿‡å¦‚æ­¤ï¼è¿˜å¥½æ„æ€å«ä»€ä¹ˆé½å¤©å¤§åœ£ï¼Ÿï¼");
      command("bye");
      target->delete_temp("lijing");
      go_home();
@@ -141,7 +141,7 @@ void kill_ob(object ob) {
 void go_home() {
    object me=this_object();
 
-   message_vision(HIY"$NÊÖÒ»»Ó£¬´ø×ÅÊÖÏÂÇÃÂà´ò¹Ä°àÊ¦»Ø³¯¡£\n"NOR,me);          
+   message_vision(HIY"$Næ‰‹ä¸€æŒ¥ï¼Œå¸¦ç€æ‰‹ä¸‹æ•²é”£æ‰“é¼“ç­å¸ˆå›žæœã€‚\n"NOR,me);          
    if (environment())  environment()->delete("host");
    remove_call_out("call_juling");
    remove_call_out("call_nezha");
@@ -173,10 +173,10 @@ void start() {
   nezha->move(environment(me));
   juling->move(environment(me));
 
-  message_vision(HIY"Í»È»¼ä¿ñ·ç´ó×ö£¬·ÉÉ³×ßÊ¯£¬´µµÃÄã¼¸ºõÕö²»¿ªÑÛ¡£\n"NOR,me);
-  message_vision(HIY"Ö»¼ûÔ¶´¦Æ®À´Ò»´óÍÅÎÚÔÆ£¬ÕÚÌì±ÎÈÕ£¬´óÓÐÉ½ÓêÓûÀ´·çÂúÂ¥Ö®ÊÆ¡£\n"NOR,me);
-  message_vision(HIY"Ðëô§£¬¹ÄÉùÕðÌì£¬ÎÚÔÆÖÐÏÖ³öÌì±øÌì½«£¬ÎªÊ×Ö®ÈËÕýÊÇÍÐËþÌìÍõÀî¾¸£¡\n"NOR,me);
-  message_vision(HIY"ÀîÌìÍõ×óÓÐÏÈ·æ¾ÞÁéÉñ£¬ÓÒÓÐÄÄß¸ÈýÌ«×Ó£¬Íþ·çÁÝÁÝ£¬²»¿ÉÒ»ÊÀ¡£\n"NOR,me);
+  message_vision(HIY"çªç„¶é—´ç‹‚é£Žå¤§åšï¼Œé£žæ²™èµ°çŸ³ï¼Œå¹å¾—ä½ å‡ ä¹Žçä¸å¼€çœ¼ã€‚\n"NOR,me);
+  message_vision(HIY"åªè§è¿œå¤„é£˜æ¥ä¸€å¤§å›¢ä¹Œäº‘ï¼Œé®å¤©è”½æ—¥ï¼Œå¤§æœ‰å±±é›¨æ¬²æ¥é£Žæ»¡æ¥¼ä¹‹åŠ¿ã€‚\n"NOR,me);
+  message_vision(HIY"é¡»è‡¾ï¼Œé¼“å£°éœ‡å¤©ï¼Œä¹Œäº‘ä¸­çŽ°å‡ºå¤©å…µå¤©å°†ï¼Œä¸ºé¦–ä¹‹äººæ­£æ˜¯æ‰˜å¡”å¤©çŽ‹æŽé–ï¼\n"NOR,me);
+  message_vision(HIY"æŽå¤©çŽ‹å·¦æœ‰å…ˆé”‹å·¨çµç¥žï¼Œå³æœ‰å“ªå’ä¸‰å¤ªå­ï¼Œå¨é£Žå‡›å‡›ï¼Œä¸å¯ä¸€ä¸–ã€‚\n"NOR,me);
   call_out("call_juling",5);
   
 }
@@ -188,12 +188,12 @@ void call_juling() {
 
   if (!target || !juling) return;
   
-  tell_object(target,"Àî¾¸Õý¶¢×ÅÄã¿´£¬²»ÖªµÀ´òÐ©Ê²Ã´Ö÷Òâ¡£\n\n");
-  message_vision(HIY"$NÀÊÉùµÀ£º¡°·îÖ¼×½ÄÃ·´Ôô¡£"+target->query("name")+
-         "£¬»¹²»ËÙ½µ£¬ÃâÉËÐÔÃü£¡\n"NOR,me);
-  message_vision(HIY"$NÊÖÒ»»Ó£¬ÏÈ·æ¹Ù¾ÞÁéÉñÂÊ±øÏò$nÉ±À´¡£\n\n"NOR,me,target);
-  message_vision(HIY"$NÀäÐ¦ÈýÉùµÀ£º¡°"+RANK_D->query_rude(target)+
-    "£¬ÕâµÈ²»ÖªÈËÊÂ£¬éü¸ÒÎÞ×´£¬Äã¾ÍÒª×öÆëÌì´óÊ¥£¡ºÃºÃµÄ³ÔÎáÒ»¸«£¡¡±\n"NOR,juling());
+  tell_object(target,"æŽé–æ­£ç›¯ç€ä½ çœ‹ï¼Œä¸çŸ¥é“æ‰“äº›ä»€ä¹ˆä¸»æ„ã€‚\n\n");
+  message_vision(HIY"$Næœ—å£°é“ï¼šâ€œå¥‰æ—¨æ‰æ‹¿åè´¼ã€‚"+target->query("name")+
+         "ï¼Œè¿˜ä¸é€Ÿé™ï¼Œå…ä¼¤æ€§å‘½ï¼\n"NOR,me);
+  message_vision(HIY"$Næ‰‹ä¸€æŒ¥ï¼Œå…ˆé”‹å®˜å·¨çµç¥žçŽ‡å…µå‘$næ€æ¥ã€‚\n\n"NOR,me,target);
+  message_vision(HIY"$Nå†·ç¬‘ä¸‰å£°é“ï¼šâ€œ"+RANK_D->query_rude(target)+
+    "ï¼Œè¿™ç­‰ä¸çŸ¥äººäº‹ï¼Œè¾„æ•¢æ— çŠ¶ï¼Œä½ å°±è¦åšé½å¤©å¤§åœ£ï¼å¥½å¥½çš„åƒå¾ä¸€æ–§ï¼â€\n"NOR,juling());
 
   juling->kill_ob(target);
   juling->set("on_job",1);
@@ -211,7 +211,7 @@ void lose(object loser) {
 
 void call_nezha() {
 
-  message_vision(HIY"$NÁîÆìÒ»»Ó£¬ÉíºóÉ±³öÄÄß¸ÈýÌ«×Ó£¬ÊÖÖ´»ð¼âÇ¹£¬É±ÆøÌÚÌÚµØÏò$n³åÀ´¡£\n"NOR,this_object(),target());
+  message_vision(HIY"$Nä»¤æ——ä¸€æŒ¥ï¼Œèº«åŽæ€å‡ºå“ªå’ä¸‰å¤ªå­ï¼Œæ‰‹æ‰§ç«å°–æžªï¼Œæ€æ°”è…¾è…¾åœ°å‘$nå†²æ¥ã€‚\n"NOR,this_object(),target());
   nezha()->kill_ob(target());
   nezha()->set("on_job",1);
 
@@ -221,7 +221,7 @@ void retreat() {
   object announcer=new(__DIR__"announcer");
   command("hmm");
   command("sigh");
-  command("say ¼ÈÈ»Èç´Ë£¬²»±ØÓëËûÏà³Ö£¬ÇÒÈ¥ÉÏ½ç£¬¶àÇ²Ìì±ø£¬Î§×½ÕâØË£¬Î´Îª³ÙÒ²¡£");
+  command("say æ—¢ç„¶å¦‚æ­¤ï¼Œä¸å¿…ä¸Žä»–ç›¸æŒï¼Œä¸”åŽ»ä¸Šç•Œï¼Œå¤šé£å¤©å…µï¼Œå›´æ‰è¿™åŽ®ï¼Œæœªä¸ºè¿Ÿä¹Ÿã€‚");
 
 
   announcer->announce(target(),environment());

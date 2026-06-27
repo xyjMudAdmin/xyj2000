@@ -4,8 +4,8 @@
 inherit WRISTS;
 
 string *names = ({
-  "Ìú»¤Íó",
-  "Í­»¤Íó",
+  "é“æŠ¤è…•",
+  "é“œæŠ¤è…•",
 });
 
 string *ids = ({
@@ -21,7 +21,7 @@ void create()
   if ( clonep() )
      set_default_object(__FILE__);
   else {
-   set("unit", "¼ş");
+   set("unit", "ä»¶");
    set("value", 200);
    set("material", "metal");
 //   set("armor_prop/armor", 9);

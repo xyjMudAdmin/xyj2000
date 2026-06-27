@@ -48,7 +48,7 @@ void create()
 	load_sites3();
 	load_sites4();
 	load_sites5();
-		            set("channel_id", "BAN¾«Áé");
+		            set("channel_id", "BANç²¾çµ");
 			            set("id", "band");
 }
 
@@ -328,7 +328,7 @@ void add4(string site)
 
 void remove(string site)
 {
-	write("ÇëĞŞ¸Ä " + BANNED_SITES + " ½â½û¡£\n");
+	write("è¯·ä¿®æ”¹ " + BANNED_SITES + " è§£ç¦ã€‚\n");
 }
 
 //by mon 9/22/97
@@ -336,7 +336,7 @@ void remove(string site)
 int check_ip_(string my_ip)
 {
 //2002-2-9 10:11	
-//annotated by Ò»Ò¶ÖªÇï(vikee).skip the IP check.
+//annotated by ä¸€å¶çŸ¥ç§‹(vikee).skip the IP check.
 //xyj2000 use IP check to persuade other to span the MudLIB.
 	
   /*	

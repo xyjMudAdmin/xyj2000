@@ -6,15 +6,15 @@
 int exert(object me, object target)
 {
         if( me->is_fighting() )
-                return notify_fail("Õ½¶·ÖÐÁÆÉË£¿ÕÒËÀÂð£¿\n");
+                return notify_fail("æˆ˜æ–—ä¸­ç–—ä¼¤ï¼Ÿæ‰¾æ­»å—ï¼Ÿ\n");
 
         if( (int)me->query("force") < 50 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿã€‚\n");
 
         if( (int)me->query("eff_kee") < (int)me->query("max_kee") / 2 )
 
-                return notify_fail("ÄãÒÑ¾­ÊÜÉË¹ýÖØ£¬Ö»ÅÂÒ»ÔËÕæÆø±ãÓÐÉúÃüÎ£ÏÕ£¡\n");
-	message_vision("$NÅÌÍÈ¶ø×ø£¬È«ÉíÁýÆðÒ»²ã»ðÑæ£¬ÉË¿ÚÒ²½¥½¥ÓúºÏÁË¡£\n", me);
+                return notify_fail("ä½ å·²ç»å—ä¼¤è¿‡é‡ï¼Œåªæ€•ä¸€è¿çœŸæ°”ä¾¿æœ‰ç”Ÿå‘½å±é™©ï¼\n");
+	message_vision("$Nç›˜è…¿è€Œåï¼Œå…¨èº«ç¬¼èµ·ä¸€å±‚ç«ç„°ï¼Œä¼¤å£ä¹Ÿæ¸æ¸æ„ˆåˆäº†ã€‚\n", me);
 
         me->receive_curing("kee", 20 + (int)me->query_skill("force")/5 );
         me->add("force", -40);

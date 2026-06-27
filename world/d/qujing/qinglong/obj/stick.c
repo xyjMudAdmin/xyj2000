@@ -6,16 +6,16 @@ inherit STICK;
 
 void create()
 {
-	set_name("´ó¹÷", ({"da gun", "gun", "stick"}) );
+	set_name("å¤§æ£", ({"da gun", "gun", "stick"}) );
 	set_weight(8000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¸ù");
+		set("unit", "æ ¹");
 		set("value", 2500);
 		set("material", "iron");
-		set("long", "ÕâÊÇÒ»¸ù³ÁÖØµÄ´ó¹÷¡£\n");
-		set("wield_msg", "$NÄÃÆğÒ»¸ù$n£¬à²µØÒ»Îè¡£\n");
+		set("long", "è¿™æ˜¯ä¸€æ ¹æ²‰é‡çš„å¤§æ£ã€‚\n");
+		set("wield_msg", "$Næ‹¿èµ·ä¸€æ ¹$nï¼Œå—–åœ°ä¸€èˆã€‚\n");
 	}
 	init_stick(55);
 	setup();

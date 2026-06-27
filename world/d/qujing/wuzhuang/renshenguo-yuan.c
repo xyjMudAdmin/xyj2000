@@ -5,12 +5,12 @@ inherit ROOM;
 
 void create ()
 {
-	set ("short", "ÈË²Î¹ûÔ°");
+	set ("short", "äººå‚æœå›­");
 	set ("long", @LONG
 
-ºÃ´óµÄÒ»±éÈË²Î¹ûÔ°£¡¾Ş´óµÄ¹ûÊ÷ÉÏµõ×ÅÒ»Ã¶Ã¶ÁîÈË´¹ÏÑÓûµÎµÄ
-ÈË²Î¹û¡£Ö»ÊÇ²»ÖªµÀÔõÑù²ÅÄÜÅª½«ÏÂÀ´¡£¾İËµÕâÈË²Î¹û½¿¹óÎŞ±È£¬
-ÒªÊÇÂÒÕªÒ»ÆøÊ²Ã´¶¼³Ô²»ÉÏ¡£
+å¥½å¤§çš„ä¸€éäººå‚æœå›­ï¼å·¨å¤§çš„æœæ ‘ä¸ŠåŠç€ä¸€æšæšä»¤äººå‚æ¶æ¬²æ»´çš„
+äººå‚æœã€‚åªæ˜¯ä¸çŸ¥é“æ€æ ·æ‰èƒ½å¼„å°†ä¸‹æ¥ã€‚æ®è¯´è¿™äººå‚æœå¨‡è´µæ— æ¯”ï¼Œ
+è¦æ˜¯ä¹±æ‘˜ä¸€æ°”ä»€ä¹ˆéƒ½åƒä¸ä¸Šã€‚
 LONG);
 
 	set("exits", 
@@ -36,8 +36,8 @@ void init()
 	{
 		me->delete_temp("used_huangtong_key");
 		
-		message_vision("Ö»Ìı¼¸Éù¹ş¹ş´óĞ¦£¬ÕòÔª´óÏÉ×ßÁË³öÀ´¡£\n", me);
-		message_vision("ÕòÔª´óÏÉËµµÀ£º¾ÓÈ»±»Äã·¢ÏÖÁË¡£ÄÇÎÒÃÇ¾Í¿ª¸öÈË²Î¹û´ó»á°É£¡\n\n\n", me);
+		message_vision("åªå¬å‡ å£°å“ˆå“ˆå¤§ç¬‘ï¼Œé•‡å…ƒå¤§ä»™èµ°äº†å‡ºæ¥ã€‚\n", me);
+		message_vision("é•‡å…ƒå¤§ä»™è¯´é“ï¼šå±…ç„¶è¢«ä½ å‘ç°äº†ã€‚é‚£æˆ‘ä»¬å°±å¼€ä¸ªäººå‚æœå¤§ä¼šå§ï¼\n\n\n", me);
 
    add_action("do_clear","clear");
 		if( !objectp(zhenyuan=present("zhenyuan daxian", environment(me))) )
@@ -54,10 +54,10 @@ int do_clear() {
   object *env=all_inventory(this_object());
   object zhenyuan=present("zhenyuan daxian",this_object());
 
-  if (!zhenyuan) return notify_fail("ÕòÔª´óÏÉ²»ÔÚ¡£\n");
+  if (!zhenyuan) return notify_fail("é•‡å…ƒå¤§ä»™ä¸åœ¨ã€‚\n");
   if (!env) return 0;
-  message_vision("$N³å×Å$nĞ¡ÉùàÖ¹¾£º¡°ÕâÃ´¶àÈË£¬ÈË²Î¹ûÔ°±ä²ËÊĞ³¡ÁË¡£¡£¡£¡±\n",me,zhenyuan);
-  message_vision("$NÖåÁËÖåÃ¼£¬Í»È»ÀÊÉùµÀ£º¡°ÎÒÎå×¯¹ÛÄËµÀ¼ÒĞŞÉíÁ·µÀÖ®Çå¾»ËùÔÚ£¬ÏĞÔÓÈËµÈÒ»ÂÉÇë»Ø¡£¡±\n",zhenyuan);
+  message_vision("$Nå†²ç€$nå°å£°å˜€å’•ï¼šâ€œè¿™ä¹ˆå¤šäººï¼Œäººå‚æœå›­å˜èœå¸‚åœºäº†ã€‚ã€‚ã€‚â€\n",me,zhenyuan);
+  message_vision("$Nçš±äº†çš±çœ‰ï¼Œçªç„¶æœ—å£°é“ï¼šâ€œæˆ‘äº”åº„è§‚ä¹ƒé“å®¶ä¿®èº«ç»ƒé“ä¹‹æ¸…å‡€æ‰€åœ¨ï¼Œé—²æ‚äººç­‰ä¸€å¾‹è¯·å›ã€‚â€\n",zhenyuan);
 
   for (int i=0;i<sizeof(env);i++)
    if (env[i]!=me && userp(env[i]) && env[i]->query("daoxing")<10000) zhenyuan->send_back(zhenyuan,env[i]);

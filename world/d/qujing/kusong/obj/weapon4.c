@@ -5,16 +5,16 @@ inherit FORK;
 
 void create()
 {
-        set_name("¸ÖÍ·²æ", ({ "iron fork", "cha","fork" }) );
+        set_name("é’¢å¤´å‰", ({ "iron fork", "cha","fork" }) );
         set_weight(8000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
+                set("unit", "æŸ„");
                 set("value", 500);
                 set("material", "iron");
-                set("long", "Ò»±ú·æÀûµÄ¸Ö²æ¡£\n");
-                set("wield_msg", "$N³­ÆğÒ»±ú$n£¬»¹ÄÃÒÂ·ş²ÁÁË²Á²æ¼â¡£\n");
+                set("long", "ä¸€æŸ„é”‹åˆ©çš„é’¢å‰ã€‚\n");
+                set("wield_msg", "$NæŠ„èµ·ä¸€æŸ„$nï¼Œè¿˜æ‹¿è¡£æœæ“¦äº†æ“¦å‰å°–ã€‚\n");
         }
         init_fork(30);
         setup();

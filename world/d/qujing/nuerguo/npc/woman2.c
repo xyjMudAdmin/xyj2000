@@ -7,9 +7,9 @@ int is_busy;
 
 void create()
 {
-  set_name("ÀÏ¸¾ÈË", ({"old woman", "woman"}));
+  set_name("è€å¦‡äºº", ({"old woman", "woman"}));
   set("age",51);
-  set("gender", "Å®ÐÔ");
+  set("gender", "å¥³æ€§");
   set("combat_exp", 5000);
   set_skill("unarmed", 15);
   set_skill("dodge", 15);
@@ -50,8 +50,8 @@ void persuade_princess (object me)
   if (! present ("xiliang princess",environment(me)))
     return;
 
-  message_vision ("Ð¡¹«Ö÷¼ûµ½$N£¬ÕúÁËÒ»ÏÂ£ºÄúÔõÃ´ÓÖ¡­¡­\n", me);
-  message_vision ("$NÔÚÐ¡¹«Ö÷µÄ¶ú±ßÇÄÉùËµÁË¼¸¾ä»°£¬î©ÁË$nÒ»ÑÛ¡£\n", me,who);
+  message_vision ("å°å…¬ä¸»è§åˆ°$Nï¼Œæ€”äº†ä¸€ä¸‹ï¼šæ‚¨æ€Žä¹ˆåˆâ€¦â€¦\n", me);
+  message_vision ("$Nåœ¨å°å…¬ä¸»çš„è€³è¾¹æ‚„å£°è¯´äº†å‡ å¥è¯ï¼ŒçžŸäº†$nä¸€çœ¼ã€‚\n", me,who);
   command("follow none");
   call_out("check_result",3,me,who);
 }
@@ -71,8 +71,8 @@ void check_result (object me, object who)
 
   if (random(5) == 0)
   {
-    message_vision ("Ö»¼ûÓ«¹âÒ»ÉÁ£¬Ð¡¹«Ö÷´Ó±¦×ùºóÄÃ³öÒ»¶«Î÷¸ø$N¡£\n", me);
-    message_vision ("$N¸Ï½ôµÍÍ·µÀÁË¸öÍò¸£¡£\n", me);
+    message_vision ("åªè§è§å…‰ä¸€é—ªï¼Œå°å…¬ä¸»ä»Žå®åº§åŽæ‹¿å‡ºä¸€ä¸œè¥¿ç»™$Nã€‚\n", me);
+    message_vision ("$Nèµ¶ç´§ä½Žå¤´é“äº†ä¸ªä¸‡ç¦ã€‚\n", me);
 /*
     dir = __DIR__;
     dir[strlen(dir)-4] = 0;
@@ -80,12 +80,12 @@ void check_result (object me, object who)
     dir = "/d/qujing/nuerguo/";
     icedew = new (dir+"obj/icedew");
     icedew->move(who);
-    message_vision ("$N½«ÊÖÉÏµÄ¶«Î÷Ñ¸ËÙµØÈû¸ø$n£¬ÏòÍâ×ßÈ¥¡£\n", me, who);
+    message_vision ("$Nå°†æ‰‹ä¸Šçš„ä¸œè¥¿è¿…é€Ÿåœ°å¡žç»™$nï¼Œå‘å¤–èµ°åŽ»ã€‚\n", me, who);
   }
   else
   {
-    message_vision ("Ð¡¹«Ö÷ºßºßÁË¼¸Éù£¬ÎÞ¶¯ÓÚÖÔ¡£\n", me);
-    message_vision ("$N¸Ï½ôµÍÍ·Ð»×ï£¬¾²ÇÄÇÄµØÏòÍâ×ßÈ¥¡£\n", me);
+    message_vision ("å°å…¬ä¸»å“¼å“¼äº†å‡ å£°ï¼Œæ— åŠ¨äºŽè¡·ã€‚\n", me);
+    message_vision ("$Nèµ¶ç´§ä½Žå¤´è°¢ç½ªï¼Œé™æ‚„æ‚„åœ°å‘å¤–èµ°åŽ»ã€‚\n", me);
   }
 /*
   dir = __DIR__;
@@ -93,7 +93,7 @@ void check_result (object me, object who)
 */
   dir = "/d/qujing/nuerguo/";
   me->move(dir+"townb2.c");
-  message_vision ("$N×ßÁË¹ýÀ´¡£\n", me);
+  message_vision ("$Nèµ°äº†è¿‡æ¥ã€‚\n", me);
 }
 
 int accept_object (object who, object ob)
@@ -106,62 +106,62 @@ int accept_object (object who, object ob)
   id = ob->query("money_id");
   if (! id)
   {
-    message_vision ("$NÉñÃØµØÒ»Ð¦£¬Ò¡ÁËÒ»ÏÂÍ·¡£\n", me);
+    message_vision ("$Nç¥žç§˜åœ°ä¸€ç¬‘ï¼Œæ‘‡äº†ä¸€ä¸‹å¤´ã€‚\n", me);
     return 1;
   }
 
   if (who->query("combat_exp")<2000)
   {
-    message_vision ("$NÉñÃØµØÒ»Ð¦£¬Ò¡ÁËÒ»ÏÂÍ·¡£\n", me);
+    message_vision ("$Nç¥žç§˜åœ°ä¸€ç¬‘ï¼Œæ‘‡äº†ä¸€ä¸‹å¤´ã€‚\n", me);
     return 1;
   }
 
   if (who->query("obstacle/number") == "done")
   {
-    message_vision ("$NÉñÃØµØÒ»Ð¦£¬Ò¡ÁËÒ»ÏÂÍ·¡£\n", me);
+    message_vision ("$Nç¥žç§˜åœ°ä¸€ç¬‘ï¼Œæ‘‡äº†ä¸€ä¸‹å¤´ã€‚\n", me);
     return 1;
   }
 
 /*
   if (who->query("obstacle/nuerguo") == "marriage")
   {
-    message_vision ("$NÉñÃØµØÒ»Ð¦£¬Ò¡ÁËÒ»ÏÂÍ·¡£\n", me);
+    message_vision ("$Nç¥žç§˜åœ°ä¸€ç¬‘ï¼Œæ‘‡äº†ä¸€ä¸‹å¤´ã€‚\n", me);
     return 1;
   }
 
   if (who->query("obstacle/nuerguo") == "company")
   {
-    message_vision ("$NÉñÃØµØÒ»Ð¦£¬Ò¡ÁËÒ»ÏÂÍ·¡£\n", me);
+    message_vision ("$Nç¥žç§˜åœ°ä¸€ç¬‘ï¼Œæ‘‡äº†ä¸€ä¸‹å¤´ã€‚\n", me);
     return 1;
   }
 */
 
   if (who->query("obstacle/nuerguo") == "stomachache")
   {
-    message_vision ("$NÉñÃØµØÒ»Ð¦£¬Ò¡ÁËÒ»ÏÂÍ·¡£\n", me);
+    message_vision ("$Nç¥žç§˜åœ°ä¸€ç¬‘ï¼Œæ‘‡äº†ä¸€ä¸‹å¤´ã€‚\n", me);
     return 1;
   }
   
   if ( ob->value() < (2000+random(1000))) 
   {
-    message_vision ("$NÉÔÎ¢ÓÌÔ¥ÁËÒ»ÏÂ£¬ÓÖÏÔ³öÒ»¸±ÎÞ¶¯ÓÚÖÔµÄÑù×Ó¡£\n",me);
+    message_vision ("$Nç¨å¾®çŠ¹è±«äº†ä¸€ä¸‹ï¼Œåˆæ˜¾å‡ºä¸€å‰¯æ— åŠ¨äºŽè¡·çš„æ ·å­ã€‚\n",me);
     return 1;
   }  
 
   if (is_busy)
   {
-    message_vision ("$NÁ½ÑÛÓÐµã·¢Ö±£¬ºÃÏóÊ²Ã´¶¼Ã»¿´¼û¡£\n",me);
+    message_vision ("$Nä¸¤çœ¼æœ‰ç‚¹å‘ç›´ï¼Œå¥½è±¡ä»€ä¹ˆéƒ½æ²¡çœ‹è§ã€‚\n",me);
     return 1;
   }  
 
   if (random(2) == 0)
   {
-    message_vision ("$NÏò$nµãÁËÒ»ÏÂÍ·£¬ÏëÁËÒ»Ïë£¬ÓÖÍ»È»Ò¡Ò¡Í·¡£\n", me, who);
+    message_vision ("$Nå‘$nç‚¹äº†ä¸€ä¸‹å¤´ï¼Œæƒ³äº†ä¸€æƒ³ï¼Œåˆçªç„¶æ‘‡æ‘‡å¤´ã€‚\n", me, who);
     return 1;
   }  
   is_busy = 1;
   call_out("reset_busy",60);
-  message_vision ("$NÏòËÄÖÜ×ÐÏ¸µØ¿´ÁË¿´¡£\n", me);
+  message_vision ("$Nå‘å››å‘¨ä»”ç»†åœ°çœ‹äº†çœ‹ã€‚\n", me);
   me->set_temp ("help_who",who);
   command("follow " + who->query("id"));
   return 1;

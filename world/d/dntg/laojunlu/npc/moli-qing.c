@@ -7,15 +7,15 @@ void create()
 {
         object ob;
 
-        set_name("Ä§ÀñÇà", ({ "tian wang", "zengzhang tianwang", "qing", "tianwang" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("é­”ç¤¼é’", ({ "tian wang", "zengzhang tianwang", "qing", "tianwang" }) );
+        set("gender", "ç”·æ€§" );
 	set("long",
-		"Ôö³¤ÌìÍõÎªËÄ´óÌìÍõÖ®Ê×, Éí¸ß¶şÕÉËÄ³ß, ÉÆÓÃÒ»¸Ë³¤Ç¹, \n"
-		"Ç¹·¨µÇ·åÔì¼«, ¸üÓĞÃÜ´«¡¸ÇàÔÆ±¦½£¡¹, ¡¸µØ£¬Ë®£¬»ğ£¬·ç¡¹\n"
-		"ËÄÊ½Ò»³ö, ´óÂŞ½ğÏÉÒ²ÄÑÌÓ¡£\n"
+		"å¢é•¿å¤©ç‹ä¸ºå››å¤§å¤©ç‹ä¹‹é¦–, èº«é«˜äºŒä¸ˆå››å°º, å–„ç”¨ä¸€æ†é•¿æª, \n"
+		"æªæ³•ç™»å³°é€ æ, æ›´æœ‰å¯†ä¼ ã€Œé’äº‘å®å‰‘ã€, ã€Œåœ°ï¼Œæ°´ï¼Œç«ï¼Œé£ã€\n"
+		"å››å¼ä¸€å‡º, å¤§ç½—é‡‘ä»™ä¹Ÿéš¾é€ƒã€‚\n"
 	);
 	set("age",50);
-	set("title", "Ôö³¤ÌìÍõ");
+	set("title", "å¢é•¿å¤©ç‹");
 	set("attitude", "heroism");
 	set("str",40);
 	set("int",30);
@@ -62,7 +62,7 @@ void create()
 
         ob=carry_object("/d/obj/weapon/sword/qingfeng");
         ob->wield();
-        ob->set_name("ÇàÔÆ±¦½£", ({ "sword", "bao jian" }) );
+        ob->set_name("é’äº‘å®å‰‘", ({ "sword", "bao jian" }) );
 
 	carry_object("/d/obj/armor/jinjia")->wear();
 }
@@ -73,7 +73,7 @@ void create()
 void die ()
 {
   object me = this_object();
-  message_vision (HIY"$NÏÅµÃÈöÍÈ¾ÍÅÜ¡£\n"NOR,me);
+  message_vision (HIY"$Nå“å¾—æ’’è…¿å°±è·‘ã€‚\n"NOR,me);
   destruct (this_object());
   return ;
 }

@@ -5,12 +5,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "¾²ÐÄ¹¬");
+  set ("short", "é™å¿ƒå®«");
   set ("long", @LONG
 
-¾²ÐÄ¹¬ÈðÆøëüëÊ£¬Ç½½Ç·Å×Å¼¸ÎÚÌú¼Ü£¬ÉÏÃæÓÐ´ÉÅèÖ¥À¼»¨²ÝÏãÞ¥Ö®Àà
-µÄÖ²Îï¡£¹¬¶¥ÉÏÐü¹Ò×Å´óÐ¡Í­ÖÓ£¬ÎÆË¿²»¶¯¡£±±±ßÇ½ÉÏÕýÖÐÐ´×ÅÒ»¸ö
-½ðÉ«´ó×Ö¡°¾²¡±¡£
+é™å¿ƒå®«ç‘žæ°”æœ¦èƒ§ï¼Œå¢™è§’æ”¾ç€å‡ ä¹Œé“æž¶ï¼Œä¸Šé¢æœ‰ç“·ç›†èŠå…°èŠ±è‰é¦™è•™ä¹‹ç±»
+çš„æ¤ç‰©ã€‚å®«é¡¶ä¸Šæ‚¬æŒ‚ç€å¤§å°é“œé’Ÿï¼Œçº¹ä¸ä¸åŠ¨ã€‚åŒ—è¾¹å¢™ä¸Šæ­£ä¸­å†™ç€ä¸€ä¸ª
+é‡‘è‰²å¤§å­—â€œé™â€ã€‚
 
 LONG);
 
@@ -37,9 +37,9 @@ int do_jing ()
   if (i<2) i=2;
 
   if (who->is_busy())
-    return notify_fail("ÄãµÄ¶¯×÷»¹Ã»ÓÐÍê³É£¬²»ÄÜ¶¯¡£\n");
+    return notify_fail("ä½ çš„åŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆï¼Œä¸èƒ½åŠ¨ã€‚\n");
 
-  message_vision ("$N»º»ºµØµÀ³öÒ»¸ö¡°¾²¡±×Ö£¬¸©Ê×ÅÌÍÈ×øÏÂ¡£\n",who);
+  message_vision ("$Nç¼“ç¼“åœ°é“å‡ºä¸€ä¸ªâ€œé™â€å­—ï¼Œä¿¯é¦–ç›˜è…¿åä¸‹ã€‚\n",who);
   who->start_busy (i,i);
 
   call_out ("finishing",i,who);
@@ -50,6 +50,6 @@ void finishing (object who)
 {
   who->interrupt_me();
   who->set_temp("kaifeng_jingxin",1);
-  message_vision ("$NÉîÉîµØÍÂ³öÒ»¿ÚÆø£¬ÐìÐìÕ¾ÁËÆðÀ´¡£\n",who);
+  message_vision ("$Næ·±æ·±åœ°åå‡ºä¸€å£æ°”ï¼Œå¾å¾ç«™äº†èµ·æ¥ã€‚\n",who);
 }
 

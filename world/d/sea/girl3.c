@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "�巿");
+  set ("short", "绣房");
   set ("long", @LONG
 
-������Ů��ס��������ڲ��õļ�����š���һ��������һ��
-��ʹ�����Ե��������ʡ������ͼ���С��Ů��֪��Ц��ʲô��
+公主龙女就住在这里。房内布置的极其典雅。左一道屏，右一挂
+帘使屋里显得朦朦胧胧。公主和几个小宫女不知在笑着什么。
 LONG);
 
   set("exits", ([ /* sizeof() == 1 */

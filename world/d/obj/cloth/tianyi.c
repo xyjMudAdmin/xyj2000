@@ -16,13 +16,13 @@ void init()
 
 void create()
 {
-	set_name(HIY"Îå²ÊÌìÒÂ"NOR, ({"tian yi", "color cloth", "tianyi" }) );
-	set("long", "´ËÄËÍõÄ¸ÊÙ³½,Ö¯Å®ÓÃÆß²ÊÔÆÏ¼ÌØ±ğÖ¯¾ÍµÄÌìÒÂ£¬´¥ÊÖÇáËÆÎŞÎï¡£\n");
+	set_name(HIY"äº”å½©å¤©è¡£"NOR, ({"tian yi", "color cloth", "tianyi" }) );
+	set("long", "æ­¤ä¹ƒç‹æ¯å¯¿è¾°,ç»‡å¥³ç”¨ä¸ƒå½©äº‘éœç‰¹åˆ«ç»‡å°±çš„å¤©è¡£ï¼Œè§¦æ‰‹è½»ä¼¼æ— ç‰©ã€‚\n");
 	set_weight(0);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¼ş");
+		set("unit", "ä»¶");
 		set("material", "cloth");
 		set("armor_prop/armor", 40);
 		set("armor_prop/dodge", 50);

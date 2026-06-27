@@ -9,26 +9,26 @@ int cast(object me, object target)
         object soldier;
 
         if( !me->is_fighting() )
-                return notify_fail("只有战斗中才能召唤天将！\n");
+                return notify_fail("鍙湁鎴樻枟涓墠鑳藉彫鍞ゅぉ灏嗭紒\n");
 	
         invocation_time=60+(200-(int)me->query_skill("spells"));
         if(invocation_time<30) invocation_time=30;
         if((time()-me->query("last_invocation"))<invocation_time)
-	    return notify_fail("你刚叫过天将，他们都被你叫烦了！\n");
+	    return notify_fail("浣犲垰鍙繃澶╁皢锛屼粬浠兘琚綘鍙儲浜嗭紒\n");
 
         if( (int)me->query("mana") < 150 )
-                return notify_fail("你的法力不够了！\n");
+                return notify_fail("浣犵殑娉曞姏涓嶅浜嗭紒\n");
 
         if( (int)me->query("sen") < 80 )
-                return notify_fail("你的精神无法集中！\n");
+                return notify_fail("浣犵殑绮剧鏃犳硶闆嗕腑锛乗n");
 
-        message_vision("$N喃喃地念了几句咒语。\n", me);
+        message_vision("$N鍠冨杻鍦板康浜嗗嚑鍙ュ拻璇�俓n", me);
 
         me->add("mana", -150);
         me->receive_damage("sen", 80);
 
         if( random(me->query("max_mana")) < 250 ) {
-                message("vision", "但是什么也没有发生。\n",
+                message("vision", "浣嗘槸浠�涔堜篃娌℃湁鍙戠敓銆俓n",
 environment(me));
                 return 1;
         }

@@ -8,17 +8,17 @@ int valid_enable(string usage) { return usage=="force"; }
 int valid_learn(object me)
 {
         if( (int)me->query("bellicosity") < (int)me->query_skill("tonsillit",1) * 10 )
-                return notify_fail("ÄãµÄÉ±Æø²»¹»£¬ÎÞ·¨ÁìÎò¸ü¸ßÉîµÄÉãÆø¾÷¡£\n");
+                return notify_fail("ä½ çš„æ€æ°”ä¸å¤Ÿï¼Œæ— æ³•é¢†æ‚Ÿæ›´é«˜æ·±çš„æ‘„æ°”è¯€ã€‚\n");
 
 /*	if( (int)me->query_skill("tonsillit", 1) >= 250 )
-		return notify_fail("ÄãµÄÆøÁ¿ÓÐÏÞ£¬¶ÔÉãÆø¾÷ÒÑÁìÎòµ½ÁË¼«ÏÞ¡£\n");
+		return notify_fail("ä½ çš„æ°”é‡æœ‰é™ï¼Œå¯¹æ‘„æ°”è¯€å·²é¢†æ‚Ÿåˆ°äº†æžé™ã€‚\n");
 */
         return 1;
 }
 
 int practice_skill(object me)
 {
-        return notify_fail("ÉãÆø¾÷Ö»ÄÜÓÃÑ§Ï°»òÓ¦ÓÃÖÐÌá¸ß£¡\n");
+        return notify_fail("æ‘„æ°”è¯€åªèƒ½ç”¨å­¦ä¹ æˆ–åº”ç”¨ä¸­æé«˜ï¼\n");
 }
 
 string exert_function_file(string func)

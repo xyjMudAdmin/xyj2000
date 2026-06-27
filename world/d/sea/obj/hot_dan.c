@@ -6,13 +6,13 @@ inherit F_LIQUID;
 
 void create()
 {
-        set_name(HIR"ºìµ¤Æ¿"NOR, ({"hongdan ping", "ping", "skin"}));
+        set_name(HIR"çº¢ä¸¹ç“¶"NOR, ({"hongdan ping", "ping", "skin"}));
         set_weight(5000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¸öºìÉ«µÄĞ¡µ¤Æ¿£¬µàÔÚÊÖÀïÖØÖØµÄ¡£\n");
-                set("unit", "¸ö");
+                set("long", "ä¸€ä¸ªçº¢è‰²çš„å°ä¸¹ç“¶ï¼Œæ‚åœ¨æ‰‹é‡Œé‡é‡çš„ã€‚\n");
+                set("unit", "ä¸ª");
 		set("no_sell",1);
                 set("value", 10000);
                 set("max_liquid", 10);
@@ -22,7 +22,7 @@ void create()
         // we set it to contain wine at the beginning
         set("liquid", ([
                 "type": "longgong_hot",
-                "name": "Ğş»ğ¾Æ",
+                "name": "ç„ç«é…’",
                 "remaining": 10,
                 "drunk_apply": 5,
         ]));

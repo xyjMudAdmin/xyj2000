@@ -9,7 +9,7 @@
 // Changed by vikee  ;)
 // 
 #define INTERMUD_MUD_NAME		"HUNDUN"
-#define INTERMUD_NAME                   "Î÷ÓÎ¼Ç»ìãçÕ¾"
+#define INTERMUD_NAME                   "è¥¿æ¸¸è®°æ··æ²Œç«™"
 
 #endif
 

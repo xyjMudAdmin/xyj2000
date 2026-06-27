@@ -1,18 +1,18 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// carrot.c ºúÂÜ²·
+// carrot.c èƒ¡èåœ
 
 inherit ITEM;
 inherit F_FOOD;
 
 void create()
 {
-        set_name("ºúÂÜ²·", ({"carrot", "huluobo"}));
+        set_name("èƒ¡èåœ", ({"carrot", "huluobo"}));
 	set_weight(40);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-                set("long", "Ò»¿ÅĞÂÏÊ¿ÉÈËµÄºúÂÜ²·¡£\n");
-                set("unit", "¿Å");
+                set("long", "ä¸€é¢—æ–°é²œå¯äººçš„èƒ¡èåœã€‚\n");
+                set("unit", "é¢—");
 		set("value", 80);
 		set("food_remaining", 4);
 		set("food_supply", 30);

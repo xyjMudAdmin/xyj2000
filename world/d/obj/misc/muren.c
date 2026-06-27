@@ -1,15 +1,15 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// muren.c Ä¾ÈË
+// muren.c æœ¨äºº
 
 inherit NPC;
 inherit F_CLEAN_UP;
 
 void create()
 {
-	set_name("Ä¾ÈË", ({ "mu ren", "mu", "wood man", "wood" }) );
-	set("gender", "ÄÐÐÔ" );
+	set_name("æœ¨äºº", ({ "mu ren", "mu", "wood man", "wood" }) );
+	set("gender", "ç”·æ€§" );
 	set("age", 30);
-	set("long", "Ò»¸öÁ·¹¦ÓÃµÄ±ÈÎäÄ¾ÈË£¬ÖÆ×÷¾«ÇÉ£¬ÈçÍ¬ÕæÈËÒ»°ã¡£\n");
+	set("long", "ä¸€ä¸ªç»ƒåŠŸç”¨çš„æ¯”æ­¦æœ¨äººï¼Œåˆ¶ä½œç²¾å·§ï¼Œå¦‚åŒçœŸäººä¸€èˆ¬ã€‚\n");
 	set("attitude", "heroism");
 
 	set("str", 25);
@@ -47,15 +47,15 @@ int accept_fight(object ob)
 	if (is_fighting()) return 0;
 
 	if (me->query("damaged"))
-		return notify_fail("Õâ¸öÄ¾ÈËÒÑ¾­±»´ò»µÁË£¡\n");	
+		return notify_fail("è¿™ä¸ªæœ¨äººå·²ç»è¢«æ‰“åäº†ï¼\n");	
 
 	if (random(me->query("fight_times")) >= 10) {
 		me->set("damaged", 1);
-		return notify_fail("Õâ¸öÄ¾ÈËÒÑ¾­±»´ò»µÁË£¡\n");	
+		return notify_fail("è¿™ä¸ªæœ¨äººå·²ç»è¢«æ‰“åäº†ï¼\n");	
 	}
 
 	if (me->query("last_fighter") == ob->query("id"))
-		return notify_fail("Äã¸Õ¸úÕâ¸öÄ¾ÈËÁ·¹ý¹¦£¡\n");		
+		return notify_fail("ä½ åˆšè·Ÿè¿™ä¸ªæœ¨äººç»ƒè¿‡åŠŸï¼\n");		
 
 	me->set("last_fighter", ob->query("id"));
 	me->add("fight_times", 1);

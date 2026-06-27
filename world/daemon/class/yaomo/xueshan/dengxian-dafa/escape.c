@@ -1,5 +1,5 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-//cast function: escape.c ¿ÉÓÃÓÚ¸÷ÖÖÌÓ¶Ý¡£
+//cast function: escape.c å¯ç”¨äºŽå„ç§é€ƒéã€‚
 //this one is for xueshan...weiqi, 
 //useful only when fighting, other cases only waste fali.
 
@@ -13,36 +13,36 @@ int cast(object me, object target)
 	//always use the one who is fighting me as target.
 
 	if( (int)me->query("mana") < 100 )
-		return notify_fail("ÄãµÄ·¨Á¦²»¹»ÁË£¡\n");
+		return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿäº†ï¼\n");
 
 	if( (int)me->query("sen") < (int)me->query("max_sen")/2 )
-		return notify_fail("ÄãÏÖÔÚÍ·ÄÔ²»ÇåÐÑ£¬Ã»Í·²ÔÓ¬ËÆµÄ¿ÉÌÓ²»µô£¡\n");
+		return notify_fail("ä½ çŽ°åœ¨å¤´è„‘ä¸æ¸…é†’ï¼Œæ²¡å¤´è‹è‡ä¼¼çš„å¯é€ƒä¸æŽ‰ï¼\n");
 
-	if( (string)me->query("family/family_name") != "´óÑ©É½" )
-		return notify_fail("Äã²¢·ÇÑ©É½µÜ×Ó£¬´óÅôÃ÷Íõ²»»áÀ´¾ÈÄã¡£\n");
+	if( (string)me->query("family/family_name") != "å¤§é›ªå±±" )
+		return notify_fail("ä½ å¹¶éžé›ªå±±å¼Ÿå­ï¼Œå¤§é¹æ˜ŽçŽ‹ä¸ä¼šæ¥æ•‘ä½ ã€‚\n");
 
-	message_vision(HIC "$Nà«à«µØÄîÁË¼¸¾äÖäÓï£¬Í»È»ÑöÌì´ó½Ð£ºÃ÷Íõ¾ÈÎÒ£¡\n" NOR, me);
-	message_vision(HIC "Ö»¼ûÒ»Ö»½ð³á´óÅôÄñ´ÓÔÆ¶ËÀï³å³ö£¡\n\n" NOR, me);
+	message_vision(HIC "$Nå–ƒå–ƒåœ°å¿µäº†å‡ å¥å’’è¯­ï¼Œçªç„¶ä»°å¤©å¤§å«ï¼šæ˜ŽçŽ‹æ•‘æˆ‘ï¼\n" NOR, me);
+	message_vision(HIC "åªè§ä¸€åªé‡‘ç¿…å¤§é¹é¸Ÿä»Žäº‘ç«¯é‡Œå†²å‡ºï¼\n\n" NOR, me);
 
 	if(me->is_fighting() ) {
 		if(random((int)me->query("max_mana")) > (int)target->query("max_mana")/2 && random((int)me->query("mana")) > (int)target->query("mana")/2 ) {
-			message_vision(HIC "´óÅôÄñÍùÏÂÒ»ÆË×¥×¡$N£¬Ë«³áÒ»Õñ£¬¶ÙÊ±³åÉÏÔÆÏö£¬ÎÞÓ°ÎÞ×ÙÁË£¡\n" NOR, me);
+			message_vision(HIC "å¤§é¹é¸Ÿå¾€ä¸‹ä¸€æ‰‘æŠ“ä½$Nï¼ŒåŒç¿…ä¸€æŒ¯ï¼Œé¡¿æ—¶å†²ä¸Šäº‘éœ„ï¼Œæ— å½±æ— è¸ªäº†ï¼\n" NOR, me);
 			me->receive_damage("sen", 50);
 			me->add("mana", -100);
 			if(random(3)==0) me->move("/d/xueshan/binggu");
 			else if(random(3)==1) me->move("/d/xueshan/wuchang-c");
 			else me->move("/d/xueshan/restroom");
-			message_vision(HIC "Ö»ÌýÅ¿£¡µØÒ»Éù£¬$N´Ó°ë¿ÕÖÐµôÏÂÀ´£¬µøÁË¸öÆ¨¹É¿ª»¨£¡\n" NOR, me);
+			message_vision(HIC "åªå¬è¶´ï¼åœ°ä¸€å£°ï¼Œ$Nä»ŽåŠç©ºä¸­æŽ‰ä¸‹æ¥ï¼Œè·Œäº†ä¸ªå±è‚¡å¼€èŠ±ï¼\n" NOR, me);
 		}
 		else{
-			message_vision(HIC "´óÅôÄñÍùÏÂÒ»ÆË£¬È´±»$n·¨Á¦±Æ×¡£¬³å²»ÈëÕ½ÍÅ¡£Ö»ºÃ¶Ô×Å$N³¤à¦Ò»Éù£¬ÕÛÁË»ØÈ¥£¡\n" NOR, me, target);
+			message_vision(HIC "å¤§é¹é¸Ÿå¾€ä¸‹ä¸€æ‰‘ï¼Œå´è¢«$næ³•åŠ›é€¼ä½ï¼Œå†²ä¸å…¥æˆ˜å›¢ã€‚åªå¥½å¯¹ç€$Né•¿å”³ä¸€å£°ï¼ŒæŠ˜äº†å›žåŽ»ï¼\n" NOR, me, target);
 			me->receive_damage("sen", 50);
 			me->add("mana", -100);
 		}
 	}
 
 	else{
-		message_vision(HIC "Ö»ÌýÅ¿£¡µØÒ»Éù£¬´óÅôÄñÆËÏÂÀ´Ò»³á´òÔÚ$NµÄÆ¨¹ÉÉÏ£¬$NµøÁË¸öÆß»ç°ËËØ£¡\n" NOR, me);
+		message_vision(HIC "åªå¬è¶´ï¼åœ°ä¸€å£°ï¼Œå¤§é¹é¸Ÿæ‰‘ä¸‹æ¥ä¸€ç¿…æ‰“åœ¨$Nçš„å±è‚¡ä¸Šï¼Œ$Nè·Œäº†ä¸ªä¸ƒè¤å…«ç´ ï¼\n" NOR, me);
 		me->add("mana", -100);
 	}
 

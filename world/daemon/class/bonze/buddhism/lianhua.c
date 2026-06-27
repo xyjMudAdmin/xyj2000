@@ -13,15 +13,15 @@ int cast(object me)
 
 
 	if( (int)me->query_skill("buddhism", 1) < 50 )
-		return notify_fail("你的大乘佛法等级不够。\n");
+		return notify_fail("浣犵殑澶т箻浣涙硶绛夌骇涓嶅銆俓n");
         if( (int)me->query("mana") < 300 )     
-                return notify_fail("你的法力不够。\n");
+                return notify_fail("浣犵殑娉曞姏涓嶅銆俓n");
 	if( (int)me->query("kee") < 300 )
-		return notify_fail("你的气血不足。\n");
+		return notify_fail("浣犵殑姘旇涓嶈冻銆俓n");
 	if( (int)me->query("sen") < 300 )
-		return notify_fail("你的精神不足。\n");
+		return notify_fail("浣犵殑绮剧涓嶈冻銆俓n");
         if( (int)me->query_temp("anti_magic") ) 
-                return notify_fail("你已经在运功中了。\n");
+                return notify_fail("浣犲凡缁忓湪杩愬姛涓簡銆俓n");
 
         skill = me->query_skill("spells");
 
@@ -30,7 +30,7 @@ int cast(object me)
 	me->receive_damage("sen", 30);
 
         message_vision(
-                HIC"$N微一凝神，背后幻出一朵白莲，五色毫光闪现。\n" NOR, me);
+                HIC"$N寰竴鍑濈锛岃儗鍚庡够鍑轰竴鏈电櫧鑾诧紝浜旇壊姣厜闂幇銆俓n" NOR, me);
 
         me->set_temp("anti_magic", skill);
 
@@ -44,7 +44,7 @@ int cast(object me)
 void remove_effect(object me, int amount)
 {
         me->delete_temp("anti_magic");
-        tell_object(me, "你身后的白莲渐渐隐去了。\n");
+        tell_object(me, "浣犺韩鍚庣殑鐧借幉娓愭笎闅愬幓浜嗐�俓n");
 	return;
 }
 

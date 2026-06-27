@@ -28,9 +28,9 @@ int query_id_rank(string id);
 void create()
 {
         reload("city_pig_counter");
-	set_name("¹°ÖíÍõ", ({"pig king","king","pig"}));
+	set_name("æ‹±çŒªç‹", ({"pig king","king","pig"}));
 	set("shop_id",({"king","pig"}));
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
 	set("vendor_goods", ([
 		"cake": "/d/obj/food/cake",
 		"pig": "/d/obj/food/pig",
@@ -45,8 +45,8 @@ void create()
 	set("inquiry", ([
 		"pig": (:ask_pig:),
 		"rank": (:ask_pig:),
-		"ÅÅÃû": (:ask_pig:),
-		"µÈ¼¶·Ö": (:ask_pig:),
+		"æ’å": (:ask_pig:),
+		"ç­‰çº§åˆ†": (:ask_pig:),
 		]));
         setup();
 	
@@ -104,19 +104,19 @@ string pig_bang()
     string msg;
     int i, j;
     
-    msg= "¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¹°ÖíÅÅĞĞ°ñ\n";
-    msg+="¡¡¡¡¡¡¡¡©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n";
+    msg= "ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€æ‹±çŒªæ’è¡Œæ¦œ\n";
+    msg+="ã€€ã€€ã€€ã€€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n";
     
     j=sizeof(pig_id);
     if(j>TOP) j=TOP;
     if(j>0)
       for(i=0;i<j;i++) {
-	    msg+=sprintf("¡¡¡¡¡¡¡¡¡¡¡¡%-24s¡¡%6dµã\n",
+	    msg+=sprintf("ã€€ã€€ã€€ã€€ã€€ã€€%-24sã€€%6dç‚¹\n",
 		    pig_name[i]+"("+capitalize(pig_id[i])+")",
 		    pig_rank[i]);
     }
     
-    msg+="¡¡¡¡¡¡¡¡©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n\n";
+    msg+="ã€€ã€€ã€€ã€€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n\n";
     
     return msg;
 }
@@ -149,9 +149,9 @@ void init()
     } else if(rank>rank1 && rank1>=100) {
 // won't lose point for no-show    xlb 2.4.99 -- commented out by mon 6/25/99
 //    } else if(rank>rank1 && rank1>=100 && rank1<100) {
-	message_vision("$NÔÚ$n¶ú±ßÇÄÉùËµµÀ£º"+
-		"ÒòÎªÄã×î½üÃ»À´¹°Öí£¬µÈ¼¶·Ö¼õÉÙÁË"+
-		chinese_number(rank-rank1)+"µã£º£¨\n",
+	message_vision("$Nåœ¨$nè€³è¾¹æ‚„å£°è¯´é“ï¼š"+
+		"å› ä¸ºä½ æœ€è¿‘æ²¡æ¥æ‹±çŒªï¼Œç­‰çº§åˆ†å‡å°‘äº†"+
+		chinese_number(rank-rank1)+"ç‚¹ï¼šï¼ˆ\n",
 		this_object(), ob);
 	log_file("pig_log",ctime(time())+id+" lost "+(rank-rank1)+" points.\n");
 	ob->set("piggy/rank",rank1);
@@ -213,7 +213,7 @@ void greeting(object ob)
 
     if( !ob || !visible(ob) || environment(ob) != environment() ) return;
     if(random(3)==0)
-	message_vision("$N¶Ô$nßººÈµÀ£ºÉÏºÃµÄÖíÍ·Èâ£¡¸Õ¹°µÃ£¡\n",
+	message_vision("$Nå¯¹$nå†å–é“ï¼šä¸Šå¥½çš„çŒªå¤´è‚‰ï¼åˆšæ‹±å¾—ï¼\n",
 	    this_object(), ob);
 }
 
@@ -227,8 +227,8 @@ int do_bid(string str)
 	if(i<TOP)
 	    return ::do_bid(str);
     
-    message_vision("$N¶Ô$nËµ£ºÏëµ±"+query("name")+
-	    "Äã»¹ÒªÔÚÅÆ×ÀÉÏ¶àÁ·Á·£¡\n",this_object(), who);
+    message_vision("$Nå¯¹$nè¯´ï¼šæƒ³å½“"+query("name")+
+	    "ä½ è¿˜è¦åœ¨ç‰Œæ¡Œä¸Šå¤šç»ƒç»ƒï¼\n",this_object(), who);
     return 1;
 }
 
@@ -241,7 +241,7 @@ int ask_pig()
     i=(int)who->query("piggy/rank");
     
     if(i<1) {
-	message_vision("$N¶Ô$nËµ£ºÄã»¹Ã»ÓĞ²Î¼ÓÅÅÃû¡£\n",this_object(), who);
+	message_vision("$Nå¯¹$nè¯´ï¼šä½ è¿˜æ²¡æœ‰å‚åŠ æ’åã€‚\n",this_object(), who);
 	return 1;
     }
 
@@ -255,20 +255,20 @@ int ask_pig()
 	
 	j++; // to compensate for the j--
 
-	message_vision("$N×ĞÏ¸¿´ÁË¿´¹°Öí°ñ£¬Ëµ£º$nÏÖÓĞµÈ¼¶·Ö"+
-		chinese_number(i)+"µã£¬Î»ÓÚÅÅĞĞ°ñ"+
-		(tie?"²¢ÁĞ":"")+"µÚ"+
-		 chinese_number(j+1)+"Ãû£¡\n",this_object(), who);
+	message_vision("$Nä»”ç»†çœ‹äº†çœ‹æ‹±çŒªæ¦œï¼Œè¯´ï¼š$nç°æœ‰ç­‰çº§åˆ†"+
+		chinese_number(i)+"ç‚¹ï¼Œä½äºæ’è¡Œæ¦œ"+
+		(tie?"å¹¶åˆ—":"")+"ç¬¬"+
+		 chinese_number(j+1)+"åï¼\n",this_object(), who);
 	return 1;
     } else if(sizeof(pig_id)<MAXSIZE) {
-	message_vision("$N×ĞÏ¸¿´ÁË¿´¹°Öí°ñ£¬Ëµ£º$nÏÖÓĞµÈ¼¶·Ö"+
-		chinese_number(i)+"µã£¬µ«ĞèÒª²Î¼Ó¹°Öí²ÅÄÜ½øÈëÅÅĞĞ°ñ¡£\n",
+	message_vision("$Nä»”ç»†çœ‹äº†çœ‹æ‹±çŒªæ¦œï¼Œè¯´ï¼š$nç°æœ‰ç­‰çº§åˆ†"+
+		chinese_number(i)+"ç‚¹ï¼Œä½†éœ€è¦å‚åŠ æ‹±çŒªæ‰èƒ½è¿›å…¥æ’è¡Œæ¦œã€‚\n",
 		this_object(), who);
 	return 1;
     } else {
-	message_vision("$N×ĞÏ¸¿´ÁË¿´¹°Öí°ñ£¬Ëµ£º$nÏÖÓĞµÈ¼¶·Ö"+
-		chinese_number(i)+"µã£¬»¹Ã»ÓĞ½øÈëÇ°"+
-		chinese_number(MAXSIZE)+"Ãû¡£\n",
+	message_vision("$Nä»”ç»†çœ‹äº†çœ‹æ‹±çŒªæ¦œï¼Œè¯´ï¼š$nç°æœ‰ç­‰çº§åˆ†"+
+		chinese_number(i)+"ç‚¹ï¼Œè¿˜æ²¡æœ‰è¿›å…¥å‰"+
+		chinese_number(MAXSIZE)+"åã€‚\n",
 		this_object(), who);
 	return 1;
     }

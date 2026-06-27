@@ -8,14 +8,14 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "����");
+  set ("short", "瑶池");
   set ("long", @LONG
 
-                       �����ء�
+                       ◇瑶池◇
 
-�������ƣ������ͷף���̨�̲ʽᣬ����ɢ�뵡����������
-��翣�������Ӱ����������������ǧ�������衣��������
-�η��裬�����ɴ������ʰ�ζ��������������ɫɫ�¡�
+琼香缭绕，瑞霭缤纷，瑶台铺彩结，宝阁散氤氲。凤翥鸾腾形
+缥缈，金花玉萼影浮沉。五彩描金桌，千花碧玉盆。桌上有龙
+肝凤髓，熊掌猩唇。珍馐百味般般美，异果嘉肴色色新。
 
 LONG);
 
@@ -37,7 +37,7 @@ void init()
 }
 
 int valid_leave(object me,string dir) {
-  if(dir=="east" && !wizardp(me)) return notify_fail("��һ̧ͷ����һ�顰�رܡ��ƣ��Ȼ������ס�˽Ų���\n");
+  if(dir=="east" && !wizardp(me)) return notify_fail("你一抬头看见一块“回避”牌，憬然有悟，收住了脚步。\n");
 
   return ::valid_leave(me, dir);
 }

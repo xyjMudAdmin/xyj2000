@@ -4,7 +4,7 @@
 #include <login.h>
 
 #define NL "/log/NAMELIST"
-#define GROUP_NAME "±¾°ï"
+#define GROUP_NAME "æœ¬å¸®"
 
 string get_status(mixed ob);
 int get_member_level(object ob);

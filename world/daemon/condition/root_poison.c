@@ -7,9 +7,9 @@ int update_condition(object me, int duration)
 {
 	me->receive_wound("sen", 10);
 	me->receive_damage("kee", 10);
-	me->set_temp("death_msg","ó¨Â«²İ¶¾·¢×÷ËÀÁË¡£\n");
+	me->set_temp("death_msg","èŸ¥èŠ¦è‰æ¯’å‘ä½œæ­»äº†ã€‚\n");
 	me->apply_condition("root_poison", duration - 1);
-	tell_object(me, HIG "ÄãÖĞµÄ" HIR "ó¨Â«²İ¶¾" HIG "·¢×÷ÁË£¡\n" NOR );
+	tell_object(me, HIG "ä½ ä¸­çš„" HIR "èŸ¥èŠ¦è‰æ¯’" HIG "å‘ä½œäº†ï¼\n" NOR );
 	if( duration < 1 ) return 0;
 	return 1;
 }

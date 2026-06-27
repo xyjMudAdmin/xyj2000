@@ -5,12 +5,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "Ò»¶´ÃÅ");
+  set ("short", "ä¸€æ´žé—¨");
   set ("long", @LONG
 
-Ò»¸öÌìÈ»ÐÎ³ÉµÄÊ¯Í·ÃÅ£¬ÃÅÉÏµÄÊ¯ÇÅÉÏÓÐÌÙÂû¹ÒÏÂÀ´£¬ÃÅµÄÁ½
-±ß³¤×ÅÆæËÉ¹Ö°Ø£¬´ÓÀïÃæÂþ³öÒ»¹É¹ÉÅ¨ÁÒµÄÊÞÑýÆø£¬Ê¹ÈËÓÐµã
-Í·»èÄ¿Ñ£¡£
+ä¸€ä¸ªå¤©ç„¶å½¢æˆçš„çŸ³å¤´é—¨ï¼Œé—¨ä¸Šçš„çŸ³æ¡¥ä¸Šæœ‰è—¤è”“æŒ‚ä¸‹æ¥ï¼Œé—¨çš„ä¸¤
+è¾¹é•¿ç€å¥‡æ¾æ€ªæŸï¼Œä»Žé‡Œé¢æ¼«å‡ºä¸€è‚¡è‚¡æµ“çƒˆçš„å…½å¦–æ°”ï¼Œä½¿äººæœ‰ç‚¹
+å¤´æ˜ç›®çœ©ã€‚
 
 LONG);
 
@@ -32,7 +32,7 @@ int valid_leave (object who, string dir)
   if (yao && 
       living (yao) &&
       dir == "southwest")
-    return notify_fail (yao->query("name")+"À­À­³¶³¶¾¾×¡Äã²»·Å¡£\n");
+    return notify_fail (yao->query("name")+"æ‹‰æ‹‰æ‰¯æ‰¯æªä½ä½ ä¸æ”¾ã€‚\n");
   return ::valid_leave(who, dir);
 }
 
@@ -49,17 +49,17 @@ int do_break ()
 
   if (! weapon)
   {
-    message_vision ("$N³à²²ÉÏÕóÄó×ÅÈ­Í·ÍùÊ¯ÃÅÉÏÒ»ÔÒ£¡\n",who);
-    message_vision ("ÅÒµØÒ»Éù$NÖ»¾õµÃ¹ÇÍ·¶¼ÕðËéÁË£¡\n",who);
+    message_vision ("$Nèµ¤è†Šä¸Šé˜µæç€æ‹³å¤´å¾€çŸ³é—¨ä¸Šä¸€ç ¸ï¼\n",who);
+    message_vision ("ä¹“åœ°ä¸€å£°$Nåªè§‰å¾—éª¨å¤´éƒ½éœ‡ç¢Žäº†ï¼\n",who);
     who->unconcious();
   }
   else
   {
-    message_vision ("$NÔËÆø×Ôµ¤Ìï£¬¸ß¾Ù$nÍùÃÅÉÏÒ»ÔÒ£¡\n",who,weapon);
+    message_vision ("$Nè¿æ°”è‡ªä¸¹ç”°ï¼Œé«˜ä¸¾$nå¾€é—¨ä¸Šä¸€ç ¸ï¼\n",who,weapon);
     if (! this_object()->query("exits/southwest"))
-      message_vision ("ÅÒµØÒ»ÉùÃÅ¿ªÁË£¡\n",who);
+      message_vision ("ä¹“åœ°ä¸€å£°é—¨å¼€äº†ï¼\n",who);
     else
-      message_vision ("ÅÒµØÒ»ÉùÔÒÔÚÒÑ¾­´ò¿ªµÄÃÅÉÏ£¡\n",who);
+      message_vision ("ä¹“åœ°ä¸€å£°ç ¸åœ¨å·²ç»æ‰“å¼€çš„é—¨ä¸Šï¼\n",who);
     if (who->query("force") <= 200 ||
         who->query("mana") <= 200)        
       who->unconcious();
@@ -78,6 +78,6 @@ int do_break ()
 void close ()
 {
   if (this_object()->query("exits/southwest"))
-    tell_room (this_object(),"ÅÒµØÒ»ÉùÃÅÓÖ¹ØËÀÁË£¡\n");
+    tell_room (this_object(),"ä¹“åœ°ä¸€å£°é—¨åˆå…³æ­»äº†ï¼\n");
   this_object()->delete("exits/southwest");
 }

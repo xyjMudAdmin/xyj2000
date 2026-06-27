@@ -4,10 +4,10 @@ inherit NPC;
 
 void create()
 {
-       set_name("ÖìÈð", ({"zhu rui", "zhu"}));
-	set("title", "Ì«Î¾");
-       set("gender", "ÄÐÐÔ");
-	set("long", "ÖìÌ«Î¾ÊÇË¾·¿µÄ×Ü¹Ü£¬¸ºÔð¹ÜÀíÎÄ¼þ£®\n");
+       set_name("æœ±ç‘ž", ({"zhu rui", "zhu"}));
+	set("title", "å¤ªå°‰");
+       set("gender", "ç”·æ€§");
+	set("long", "æœ±å¤ªå°‰æ˜¯å¸æˆ¿çš„æ€»ç®¡ï¼Œè´Ÿè´£ç®¡ç†æ–‡ä»¶ï¼Ž\n");
        set("age", 20);
        set("attitude", "friendly");
        set("shen_type", 1);
@@ -40,4 +40,3 @@ setup();
         carry_object("/d/obj/weapon/stick/zhaohun")->wield();
 }
 
-ÿ

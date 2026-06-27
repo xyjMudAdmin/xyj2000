@@ -5,9 +5,9 @@ inherit WHIP;
 
 void create()
 {
-  set_name("Â¹Æ¤±Ş", ({ "lupi bian", "bian", "whip" }) );
+  set_name("é¹¿çš®é­", ({ "lupi bian", "bian", "whip" }) );
   init_whip(20);
-  set("unit", "¸ù");
+  set("unit", "æ ¹");
   set_weight(1000);
   if( clonep() )
     set_default_object(__FILE__);
@@ -15,7 +15,7 @@ void create()
     set("value", 280);
     set("material", "skin");
   }
-  set("wield_msg","$N²ÙÆğ$nÎÕÔÚÊÖÀï¡£\n");
+  set("wield_msg","$Næ“èµ·$næ¡åœ¨æ‰‹é‡Œã€‚\n");
   setup();
 }
 

@@ -5,13 +5,13 @@ inherit THROWING;
 
 void create()
 {
-        set_name("¶¾İğÀè", ({"poison dart", "dart"}));
+        set_name("æ¯’è’ºé»", ({"poison dart", "dart"}));
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("base_unit", "Ö¦");
-		set("long", "Ìú´òµÄİğÀè·æÀûÎŞ±È£¬ÈĞÉÏÉÁÏÖÂÌÉ«£¬ÏÔÊÇÎ¹ÁË¶¾Ò©¡£\n");
+                set("unit", "æŠŠ");
+                set("base_unit", "æ");
+		set("long", "é“æ‰“çš„è’ºé»é”‹åˆ©æ— æ¯”ï¼Œåˆƒä¸Šé—ªç°ç»¿è‰²ï¼Œæ˜¾æ˜¯å–‚äº†æ¯’è¯ã€‚\n");
                 set("base_weight", 40);
 		set("value", 20);
                 set("base_value", 1);
@@ -24,6 +24,6 @@ mixed hit_ob(object me, object victim, int damage_bonus)
 {
         if( damage_bonus < 0 ) return 0;
 	victim->apply_condition("root_poison", 3);
-	message_vision("$NÖĞÁË¶¾İğÀèÉÏµÄó¨Â«²İ¶¾£¡\n", victim);
+	message_vision("$Nä¸­äº†æ¯’è’ºé»ä¸Šçš„èŸ¥èŠ¦è‰æ¯’ï¼\n", victim);
 }
 

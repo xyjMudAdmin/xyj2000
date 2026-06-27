@@ -5,9 +5,9 @@ inherit FORK;
 
 void create()
 {
-  set_name("Ğ·òüÇ¯", ({ "xieao qian", "qian", "fork" }) );
+  set_name("èŸ¹è¯é’³", ({ "xieao qian", "qian", "fork" }) );
   init_fork(30);
-  set("unit", "°Ñ");
+  set("unit", "æŠŠ");
   set_weight(500);
   if( clonep() )
      set_default_object(__FILE__);

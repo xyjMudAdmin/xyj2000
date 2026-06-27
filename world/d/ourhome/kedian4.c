@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "·�ľ�ͷ");
+  set ("short", "路的尽头");
   set ("long", @LONG
-�������Կ������Ѿ�����·�ľ�ͷ������ֻ��һ��Сͤ��
-ͤ�����Ҵ��飺���ۼ�ͤ����
+地势稍显开阔，已经到了路的尽头。这里只有一座小亭，
+亭上牌匾大书：“聚见亭”。
 LONG);
 
   set("exits", ([ /* sizeof() == 2 */

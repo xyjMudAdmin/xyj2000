@@ -10,25 +10,25 @@ int exert(object me, object target)
       ||      !userp(target)
       ||      target->is_corpse()
       ||      target==me)
-		return notify_fail("ÄãÏëÌæË­½â³ıÊ´ÔÂÖä£¿\n");
+		return notify_fail("ä½ æƒ³æ›¿è°è§£é™¤èš€æœˆå’’ï¼Ÿ\n");
 	if (!target->query_condition("moon_poison"))
-        return notify_fail("Ã»ÖĞÊ´ÔÂÖäÏ¹½ÁºÍÊ²Ã´£¡\n");
+        return notify_fail("æ²¡ä¸­èš€æœˆå’’çæ…å’Œä»€ä¹ˆï¼\n");
 	if( me->is_fighting() || target->is_fighting())
-		return notify_fail("Õ½¶·ÖĞÎŞ·¨ÔË¹¦ÁÆÉË£¡\n");
+		return notify_fail("æˆ˜æ–—ä¸­æ— æ³•è¿åŠŸç–—ä¼¤ï¼\n");
 
 	if( (int)me->query("force") - (int)me->query("max_force") <  600 )
-		return notify_fail("ÄãµÄÕæÆø²»¹»¡£\n");
+		return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿã€‚\n");
 
     if ( (int)me->query_skill("force") < 100 || (int)me->query_skill("moonforce",1)<80)
-		return notify_fail("ÄãµÄÄÚ¹¦ĞŞÎª²»×ãÒÔÌæÈË½â³ıÊ´ÔÂÖä¡£\n");
+		return notify_fail("ä½ çš„å†…åŠŸä¿®ä¸ºä¸è¶³ä»¥æ›¿äººè§£é™¤èš€æœˆå’’ã€‚\n");
 	
 	message_vision(
-		HIY "$N×øÁËÏÂÀ´Ä¬Ä¬µÄÄîÆğ¾­À´£¬$nÌı$NÓïÒôÇå´à£¬Ô½ÄîÔ½ÊÇ³åºÍ°²¾²£¬È«ÉíÒşÒş·¢³öÊ¥½àµÄ¹â»Ô¡£\n\n"NOR,
+		HIY "$Nåäº†ä¸‹æ¥é»˜é»˜çš„å¿µèµ·ç»æ¥ï¼Œ$nå¬$Nè¯­éŸ³æ¸…è„†ï¼Œè¶Šå¿µè¶Šæ˜¯å†²å’Œå®‰é™ï¼Œå…¨èº«éšéšå‘å‡ºåœ£æ´çš„å…‰è¾‰ã€‚\n\n"NOR,
 		me, target );
     if (random(me->query_skill("moonforce", 1)-60)>10){
 		target->apply_condition("moon_poison",0);
 		message_vision(
-		HIY "$NËĞ¾­µÄÉùÒôÔ½À´Ô½ÈáºÍ£¬$nĞÄÖĞ¼È¸Ğ¼¤£¬ÓÖ°²Î¿£¬ÔÚÄÇÎÂÈáò¯³ÏµÄÄî¾­ÉùÖĞÈëÁËË¯Ïç¡£\n"NOR,
+		HIY "$Nè¯µç»çš„å£°éŸ³è¶Šæ¥è¶ŠæŸ”å’Œï¼Œ$nå¿ƒä¸­æ—¢æ„Ÿæ¿€ï¼Œåˆå®‰æ…°ï¼Œåœ¨é‚£æ¸©æŸ”è™”è¯šçš„å¿µç»å£°ä¸­å…¥äº†ç¡ä¹¡ã€‚\n"NOR,
 		me, target );
 		target->set_temp("force_sleep",1);
 		target->command_function("sleep");
@@ -36,7 +36,7 @@ int exert(object me, object target)
 		target->delete_temp("force_sleep");	}
 	else {
 		message_vision(
-		HIY "$NÍ»È»Á³É«²Ô°×£¬ËÆºõÌåÁ¦²»Ö§£¬¾¹Å»³öÒ»¿ÚÑªÀ´¡­¡­\n"NOR,
+		HIY "$Nçªç„¶è„¸è‰²è‹ç™½ï¼Œä¼¼ä¹ä½“åŠ›ä¸æ”¯ï¼Œç«Ÿå‘•å‡ºä¸€å£è¡€æ¥â€¦â€¦\n"NOR,
 		 me, target );
 	}	
  

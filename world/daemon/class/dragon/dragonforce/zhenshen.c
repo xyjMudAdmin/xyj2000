@@ -11,18 +11,18 @@ int exert(object me, object target)
         int skill;
 
         if( target != me ) 
-                return notify_fail("ÄãÖ»ÄÜÏÖ³ö×Ô¼ºµÄÕæÉí¡£\n");
+                return notify_fail("ä½ åªèƒ½çŽ°å‡ºè‡ªå·±çš„çœŸèº«ã€‚\n");
 
         if( (int)me->query("force") < 300 )     
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 	if( (int)me->query("kee") < 150 )
-		return notify_fail("ÄãµÄÆøÑª²»×ã¡£\n");
+		return notify_fail("ä½ çš„æ°”è¡€ä¸è¶³ã€‚\n");
 	if( (int)me->query("sen") < 150 )
-		return notify_fail("ÄãµÄ¾«Éñ²»×ã¡£\n");
+		return notify_fail("ä½ çš„ç²¾ç¥žä¸è¶³ã€‚\n");
         if( (int)me->query_temp("powerup") ) 
-                return notify_fail("ÄãÒÑ¾­ÔÚÔË¹¦ÖÐÁË¡£\n");
+                return notify_fail("ä½ å·²ç»åœ¨è¿åŠŸä¸­äº†ã€‚\n");
 	if( me->query_temp("weapon") )
-		return notify_fail("ÄãÖ»ÓÐ·ÅÏÂÎäÆ÷²ÅÄÜÏÖ³öÕæÉí¡£\n");
+		return notify_fail("ä½ åªæœ‰æ”¾ä¸‹æ­¦å™¨æ‰èƒ½çŽ°å‡ºçœŸèº«ã€‚\n");
 
 
         skill = me->query_skill("dragonforce",1);
@@ -34,7 +34,7 @@ int exert(object me, object target)
 	me->receive_damage("sen", 130);
 
         message_vision(
-HIC"$NÄýÉñÔËÆø£¬´óºÈÒ»Éù£¬ÑªÈâÖ®Çû¾¹»¯ÎªÒ»ÌõÕÅÑÀÎè×¦µÄ²ÔÁú£¬¶ËµØÉ±Æø±ÆÈË¡£\n"NOR, me);
+HIC"$Nå‡ç¥žè¿æ°”ï¼Œå¤§å–ä¸€å£°ï¼Œè¡€è‚‰ä¹‹èº¯ç«ŸåŒ–ä¸ºä¸€æ¡å¼ ç‰™èˆžçˆªçš„è‹é¾™ï¼Œç«¯åœ°æ€æ°”é€¼äººã€‚\n"NOR, me);
 
 	me->set_temp("No_Wield", 1);
 
@@ -60,7 +60,7 @@ void remove_effect(object me, int amount)
 	me->add_temp("apply/strength", -amount);
 	me->delete_temp("No_Wield");
         me->delete_temp("powerup");
-        tell_object(me, "ÄãµÄÁúÉñÐÄ·¨ÔËÐÐÒ»ÖÜÌìÍê±Ï£¬ÉíÌåÒ²½¥½¥¸´Ô­ÁË¡£\n");
+        tell_object(me, "ä½ çš„é¾™ç¥žå¿ƒæ³•è¿è¡Œä¸€å‘¨å¤©å®Œæ¯•ï¼Œèº«ä½“ä¹Ÿæ¸æ¸å¤åŽŸäº†ã€‚\n");
 	return;
 }
 

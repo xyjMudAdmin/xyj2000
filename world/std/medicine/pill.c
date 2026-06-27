@@ -14,7 +14,7 @@ void init()
 
 int do_eat(string arg)
 {
-	if( !id(arg) ) return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	if( !id(arg) ) return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 	
 }
 

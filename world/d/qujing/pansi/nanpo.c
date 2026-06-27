@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "����");
+  set ("short", "南坡");
   set ("long", @LONG
 
-���б�գ�������Ұ�ݴ�����ʯ�����������������ѬѬȻȻ
-����ͷ��Ŀѣ���紵���������е�����Ҳҡ�
+天光斜照，南坡下野草丛生乱石奇畸，坡上雾气如蒸熏熏然然
+令人头晕目眩。风吹过，声音有点凄凄惨惨。
 
 LONG);
 

@@ -5,11 +5,11 @@ inherit NPC;
 inherit F_VENDOR;
 void create()
 {
-       set_name("ÅÖÉ©", ({"pang sao", "pang", "sao"}));
+       set_name("èƒ–å«‚", ({"pang sao", "pang", "sao"}));
        set("long",
-"ÅÖÉ©Ô­ÊÇ²Ã·ì£¬ºóÔÚ³¤°²µÄ¶ù×Ó·¢ÁË²Æ£¬±ã×Ô¼Ò¿ªÁË²¼µê£®\n");
-       set("gender", "Å®ÐÔ");
-	set("title", "ÀÏ°åÄï");
+"èƒ–å«‚åŽŸæ˜¯è£ç¼ï¼ŒåŽåœ¨é•¿å®‰çš„å„¿å­å‘äº†è´¢ï¼Œä¾¿è‡ªå®¶å¼€äº†å¸ƒåº—ï¼Ž\n");
+       set("gender", "å¥³æ€§");
+	set("title", "è€æ¿å¨˜");
 	set("combat_exp", 1100);
        set("age", 46);
 	set("per", 12);
@@ -44,9 +44,9 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         switch( random(1) ) {
                 case 0:
-                        say( "ÅÖÉ©Ð¦ÃÐÃÐµÄÓ­ÉÏÀ´£ºÕâÎ»" +
+                        say( "èƒ–å«‚ç¬‘çœ¯çœ¯çš„è¿Žä¸Šæ¥ï¼šè¿™ä½" +
 RANK_D->query_respect(ob)
-                                + "£¬Ëæ±ã¿´¿´£®\n");
+                                + "ï¼Œéšä¾¿çœ‹çœ‹ï¼Ž\n");
                         break;
         }
 }
@@ -63,7 +63,7 @@ void accept_kill(object me)
 		ob=new("/d/ourhome/npc/bigeye");
 		ob->move(environment());
 	}
-        tell_room(environment(), "Ç§ÀïÑÛ¿´µ½ÒªÉ±ÈË£¬ÐË³å³åµÄÅÜÁË¹ýÀ´¡£\n");
+        tell_room(environment(), "åƒé‡Œçœ¼çœ‹åˆ°è¦æ€äººï¼Œå…´å†²å†²çš„è·‘äº†è¿‡æ¥ã€‚\n");
 	ob->kill_ob(me);
 	me->fight_ob(ob);
 }

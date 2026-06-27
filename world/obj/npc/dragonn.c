@@ -5,8 +5,8 @@
 #include <ansi.h>
 
 inherit NPC;
-string *first_name = ({ "»¨Æ¤", "±³²Ô", "°Ë×¦½ð½Ç", "½ðÎ²ò°÷×"});
-string *name_words = ({ "Áú"});
+string *first_name = ({ "èŠ±çš®", "èƒŒè‹", "å…«çˆªé‡‘è§’", "é‡‘å°¾è™¬é«¯"});
+string *name_words = ({ "é¾™"});
 
 void create()
 {
@@ -16,9 +16,9 @@ void create()
 
 
         set_name(name,({"dragon"}));
-        set("race", "Ò°ÊÞ");
+        set("race", "é‡Žå…½");
         set("age", 20);
-        set("long", "Ò»Ö»Ä£Ñù¸ß´ó£¬¼«ÓÐÆøÊÆµÄÁú¡£\n");
+        set("long", "ä¸€åªæ¨¡æ ·é«˜å¤§ï¼Œæžæœ‰æ°”åŠ¿çš„é¾™ã€‚\n");
         set("str", 40);
         set("cor", 30);
 	set("con", 30);
@@ -44,7 +44,7 @@ void create()
 	map_skill("dodge", "dragonstep");
 	set("combat_exp", 100000);
 	set("daoxing", 100000);
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Ç°×¦", "Î²°Í", "¶ÇÆ¤", "ºó×¦"}) );
+        set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å‰çˆª", "å°¾å·´", "è‚šçš®", "åŽçˆª"}) );
         set("verbs", ({ "bite", "claw"}) );
 	set_weight(500000);
 
@@ -78,7 +78,7 @@ int heal_up()
 void leave()
 {
         message("vision",
-                HIB + name() +"Ò»¸ö×ªÉí£¬·ÉÏò¶«·½£¬ÉíÓ°½¥½¥µ­È¥ÁË¡£\n"
+                HIB + name() +"ä¸€ä¸ªè½¬èº«ï¼Œé£žå‘ä¸œæ–¹ï¼Œèº«å½±æ¸æ¸æ·¡åŽ»äº†ã€‚\n"
 NOR,environment(),  this_object() );
         destruct(this_object());
 }
@@ -89,8 +89,8 @@ void invocation(object who)
 
 	object me=this_object();
         copy_status(me,who);
-        message("vision", HIB"ºöÈ»¿ñ·ç´ó×ö£¬°ë¿ÕÏÖ³öÒ»Ìõ"+ name() +
-"À´£¡\n\n"NOR,environment(), this_object() );
+        message("vision", HIB"å¿½ç„¶ç‹‚é£Žå¤§åšï¼ŒåŠç©ºçŽ°å‡ºä¸€æ¡"+ name() +
+"æ¥ï¼\n\n"NOR,environment(), this_object() );
         enemy = who->query_enemy();
         i = sizeof(enemy);
         while(i--) {

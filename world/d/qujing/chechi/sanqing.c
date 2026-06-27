@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ÈýÇåµî");
+  set ("short", "ä¸‰æ¸…æ®¿");
   set ("long", @LONG
 
-µîÄÚ×óÓÐ´ó¹ÄÓÒÓÐÍ­ÖÓ£¬ÖÐ¼äÊÇÒ»Ê¯°¸£¬ÉÏÃæÊÇÎåÉ«»¨Æ¿ºÍÇà
-Ê¯ÖòÌ¨£¬¹©ÓÐ²»ÉÙ·áÊ¢Õ«Ñç¡£ËÄ±Ú¹¦µÂÐü¹Ò£¬µîÐÄ·Ö±ðÊÇÔªÊ¼
-Ìì×ð£¬Áé±¦µÀ¾ýºÍÌ«ÉÏÀÏ¾ý¡£
+æ®¿å†…å·¦æœ‰å¤§é¼“å³æœ‰é“œé’Ÿï¼Œä¸­é—´æ˜¯ä¸€çŸ³æ¡ˆï¼Œä¸Šé¢æ˜¯äº”è‰²èŠ±ç“¶å’Œé’
+çŸ³çƒ›å°ï¼Œä¾›æœ‰ä¸å°‘ä¸°ç››æ–‹å®´ã€‚å››å£åŠŸå¾·æ‚¬æŒ‚ï¼Œæ®¿å¿ƒåˆ†åˆ«æ˜¯å…ƒå§‹
+å¤©å°Šï¼Œçµå®é“å›å’Œå¤ªä¸Šè€å›ã€‚
 
 LONG);
 
@@ -43,9 +43,9 @@ void daoshi_appearing(object who)
   if (where != environment(who))
     return;
 
-  message_vision ("\nµÀÊ¿×ßÁË¹ýÀ´¡£\n",who);
-  message_vision ("µÀÊ¿¼û×´£¬ºÈµÀ£º¡°ÄÄÀïÀ´µÄ²ÝÔô£¬¾¹¸ÒÍµ³Ô¹©Æ·£¡¡±\n",who);
-  message_vision ("µÀÊ¿½ô½ôµØ¸úÉÏ$N£¬´ó½ÐÒ»ÉùÍùËÀÀï´ò½«ÆðÀ´£¡\n",who);
+  message_vision ("\né“å£«èµ°äº†è¿‡æ¥ã€‚\n",who);
+  message_vision ("é“å£«è§çŠ¶ï¼Œå–é“ï¼šâ€œå“ªé‡Œæ¥çš„è‰è´¼ï¼Œç«Ÿæ•¢å·åƒä¾›å“ï¼â€\n",who);
+  message_vision ("é“å£«ç´§ç´§åœ°è·Ÿä¸Š$Nï¼Œå¤§å«ä¸€å£°å¾€æ­»é‡Œæ‰“å°†èµ·æ¥ï¼\n",who);
   shi = new("/d/qujing/chechi/npc/daoshi");
   shi->move(where);
   shi->set_leader(who);
@@ -65,9 +65,9 @@ void daotong_appearing(object who)
   if (where != environment(who))
     return;
 
-  message_vision ("\nµÀÍ¯×ßÁË¹ýÀ´¡£\n",who);
-  message_vision ("µÀÍ¯¼û×´£¬»£µÃ»ÅÂÒ´óÉùÒ»µÀ£º¡°Ê¦¸¸£¡Ê¥ÏóÏÔÁéÁË£¡¡±\n",who);
-  message_vision ("Ö»¼ûµÀÍ¯Ò»²½Ò»µø£¬Ïòºóµî±¼È¥¡£\n\n",who);
+  message_vision ("\né“ç«¥èµ°äº†è¿‡æ¥ã€‚\n",who);
+  message_vision ("é“ç«¥è§çŠ¶ï¼Œå”¬å¾—æ…Œä¹±å¤§å£°ä¸€é“ï¼šâ€œå¸ˆçˆ¶ï¼åœ£è±¡æ˜¾çµäº†ï¼â€\n",who);
+  message_vision ("åªè§é“ç«¥ä¸€æ­¥ä¸€è·Œï¼Œå‘åŽæ®¿å¥”åŽ»ã€‚\n\n",who);
   remove_call_out ("three_appearing");
   call_out ("three_appearing",3,who);
 }
@@ -82,9 +82,9 @@ void three_appearing(object who)
   if (where != environment(who))
     return;
 
-  message_vision ("»¢Á¦´óÏÉÑï³¾³öÏÖ¡£\n",who);
-  message_vision ("Â¹Á¦´óÏÉÎÅÉù¶øÀ´¡£\n",who);
-  message_vision ("ÑòÁ¦´óÏÉÅû×Å·¨ÒÂ¸ÏÀ´¡£\n",who);
+  message_vision ("è™ŽåŠ›å¤§ä»™æ‰¬å°˜å‡ºçŽ°ã€‚\n",who);
+  message_vision ("é¹¿åŠ›å¤§ä»™é—»å£°è€Œæ¥ã€‚\n",who);
+  message_vision ("ç¾ŠåŠ›å¤§ä»™æŠ«ç€æ³•è¡£èµ¶æ¥ã€‚\n",who);
   yangli->move(where);
   huli->move(where);
   luli->move(where);

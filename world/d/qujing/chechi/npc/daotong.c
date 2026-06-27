@@ -5,8 +5,8 @@ inherit NPC;
 
 void create()
 {
-  set_name("µÀÍ¯", ({"dao tong", "dao", "tong"}));
-  set("gender", "ÄĞĞÔ");
+  set_name("é“ç«¥", ({"dao tong", "dao", "tong"}));
+  set("gender", "ç”·æ€§");
   set("combat_exp", 10000);
   set("daoxing", 10000);
 
@@ -30,4 +30,3 @@ void create()
 }
 
 
-ÿ

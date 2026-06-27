@@ -3,8 +3,8 @@ inherit NPC;
 
 void create()
 {
-       	set_name("±ç²ÅÌìÅ®", ({"biancai tiannu", "tiannu", "nu"}));
-       	set("gender", "Å®ĞÔ");
+       	set_name("è¾©æ‰å¤©å¥³", ({"biancai tiannu", "tiannu", "nu"}));
+       	set("gender", "å¥³æ€§");
        	set("age", 20);
         set("class", "xian");
        	set("attitude", "friendly");

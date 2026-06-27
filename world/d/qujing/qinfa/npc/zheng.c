@@ -7,9 +7,9 @@ inherit F_VENDOR_SALE;
 void create()
 {
   reload("qinfa_zheng_guafu");
-  set_name("Ö£¹Ñ¸¾", ({"zheng guafu", "zheng", "guafu", "fu"}));
+  set_name("éƒ‘å¯¡å¦‡", ({"zheng guafu", "zheng", "guafu", "fu"}));
   set("shop_id", ({"guafu", "fu"}));
-  set("gender", "Å®ÐÔ");
+  set("gender", "å¥³æ€§");
   set("combat_exp", 50000);
   set("max_kee", 1000);
   set("kee", 1000);
@@ -49,7 +49,7 @@ int buy_object (object who, string item)
 
   if (me->query_temp("no_guo"))
   {
-    message_vision ("$N¶Ô$nËµ£º¡°¶Ô²»Æð£¬ÐÂÒ°²Î¹û´ýÒ»»á²ÅÄÜËÍÀ´¡£¡±\n",me,who);
+    message_vision ("$Nå¯¹$nè¯´ï¼šâ€œå¯¹ä¸èµ·ï¼Œæ–°é‡Žå‚æžœå¾…ä¸€ä¼šæ‰èƒ½é€æ¥ã€‚â€\n",me,who);
     return -1;
   }
   me->set_temp("no_guo",1);

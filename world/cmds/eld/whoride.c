@@ -25,14 +25,14 @@ mixed main(object me, string arg, int remote)
 			continue;
 		}	
 str=str+
-sprintf("  %12s %-8s  (%2d)%s��%s(%s)�ϡ�\n",
+sprintf("  %12s %-8s  (%2d)%s在%s(%s)上。\n",
 who->query("name"), who->query("id"), 
 ridee->query("ride/dodge"), ridee->query("ride/msg"), 
 ridee->query("name"), ridee->query("id"));
 /*
 
 		write (who->query("name")+"("+who->query("id")+")");
-		write (ridee->query("ride/msg")+"��");
+		write (ridee->query("ride/msg")+"在");
 		write (ridee->query("name")+"("+ridee->query("id")+")");
 */
 	}
@@ -44,9 +44,9 @@ ridee->query("name"), ridee->query("id"));
 int help (object me)
 {
         write(@HELP
-ָ���ʽ : whoride 
+指令格式 : whoride 
  
-���г�Ŀǰ�����������ҡ�
+可列出目前骑有坐骑的玩家。
  
  
 HELP

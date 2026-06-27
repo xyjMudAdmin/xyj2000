@@ -1,5 +1,5 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// ningxie-force.c  ¡¾±ù¹ÈÄıÑª¹¦¡¿
+// ningxie-force.c  ã€å†°è°·å‡è¡€åŠŸã€‘
 
 #include <ansi.h>
 
@@ -11,7 +11,7 @@ int valid_learn(object me) { return 1; }
 
 int practice_skill(object me)
 {
-        return notify_fail("±ù¹ÈÄıÑª¹¦Ö»ÄÜÏòÊ¦¸¸Ñ§£¬»òÊÇ´ÓÔËÓÃ(exert)ÖĞÔö¼ÓÊìÁ·¶È¡£\n");
+        return notify_fail("å†°è°·å‡è¡€åŠŸåªèƒ½å‘å¸ˆçˆ¶å­¦ï¼Œæˆ–æ˜¯ä»è¿ç”¨(exert)ä¸­å¢åŠ ç†Ÿç»ƒåº¦ã€‚\n");
 }
 string exert_function_file(string func)
 {
@@ -34,15 +34,15 @@ int stage(int level)
 string level_description(int level)
 {
 	if ( stage(level) < 3 )
-		return BLU "µÚ"+chinese_number( stage(level) )+"ÖØ¡¡" NOR;
+		return BLU "ç¬¬"+chinese_number( stage(level) )+"é‡ã€€" NOR;
 	else if ( stage(level) < 5 )
-		return HIB "µÚ"+chinese_number( stage(level) )+"ÖØ¡¡" NOR;
+		return HIB "ç¬¬"+chinese_number( stage(level) )+"é‡ã€€" NOR;
 	else if ( stage(level) < 7 )
-		return YEL "µÚ"+chinese_number( stage(level) )+"ÖØ¡¡" NOR;
+		return YEL "ç¬¬"+chinese_number( stage(level) )+"é‡ã€€" NOR;
 	else if ( stage(level) < 9 )
-		return CYN "µÚ"+chinese_number( stage(level) )+"ÖØ¡¡" NOR;
+		return CYN "ç¬¬"+chinese_number( stage(level) )+"é‡ã€€" NOR;
 	else 
-		return HIW "µÚ"+chinese_number( stage(level) )+"ÖØ¡¡" NOR;
+		return HIW "ç¬¬"+chinese_number( stage(level) )+"é‡ã€€" NOR;
 }
 
 void skill_improved(object me)
@@ -64,7 +64,7 @@ void skill_improved(object me)
 			log_file("ningxie-force-bonus", ctime( time() )+": "
 				+me->query("name")+"("+me->query("id")+")"
 				+" got neili "+(stage(level)*50)+".\n");
-			message_vision(HIW "$NÍ»È»¾õµÃÕæÆø³å¶¥£¬Æ®È»Óû·É¡£Ô­À´ÊÇ$NµÄ±ù¹ÈÄıÑª¹¦½øÈëÁËµÚ"+chinese_number(stage(level))+"ÖØ¾³½ç£¡\n" NOR, me);
+			message_vision(HIW "$Nçªç„¶è§‰å¾—çœŸæ°”å†²é¡¶ï¼Œé£˜ç„¶æ¬²é£ã€‚åŸæ¥æ˜¯$Nçš„å†°è°·å‡è¡€åŠŸè¿›å…¥äº†ç¬¬"+chinese_number(stage(level))+"é‡å¢ƒç•Œï¼\n" NOR, me);
 
 		}
 	}

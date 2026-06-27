@@ -10,10 +10,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "±ê×¼ĞÂ·¿");
+        set("short", "æ ‡å‡†æ–°æˆ¿");
         set("long", @LONG
 
-Ò»ÇĞ¶¼ÉèÖÃºÃÁË£¬Ö»µÈÒ»Ğ©ÊÒÄÚ×°ĞŞ¡£ 
+ä¸€åˆ‡éƒ½è®¾ç½®å¥½äº†ï¼Œåªç­‰ä¸€äº›å®¤å†…è£…ä¿®ã€‚ 
 LONG
         );
 
@@ -35,11 +35,11 @@ void init()
 
 if (getuid(this_player()) != "dream"
 && getuid(this_player()) != "tingting") {
-		tell_object(me, "°¡¹ş£¡ ´³½øÀ´ÁË£¡\n");
-                tell_object(me, "Ä³Ä³·ÉÆğÒ»½Å£¬ÕıºÃÌßÖĞÄãµÄÆ¨¹É ¡£  \n");
-                tell_object(me, "Ä³Ä³·ÉÆğÒ»½Å£¬ÕıºÃÌßÖĞÄãµÄÆ¨¹É ¡£  \n");
+		tell_object(me, "å•Šå“ˆï¼ é—¯è¿›æ¥äº†ï¼\n");
+                tell_object(me, "æŸæŸé£èµ·ä¸€è„šï¼Œæ­£å¥½è¸¢ä¸­ä½ çš„å±è‚¡ ã€‚  \n");
+                tell_object(me, "æŸæŸé£èµ·ä¸€è„šï¼Œæ­£å¥½è¸¢ä¸­ä½ çš„å±è‚¡ ã€‚  \n");
                 me->move("/d/changan/phomes");
-                message_vision("$NËÆºõ±»ÈËÒ»½ÅÌßÁË³öÀ´£¬ÉñÉ«ÓĞµãÀÇ±·¡£\n", me);
+                message_vision("$Nä¼¼ä¹è¢«äººä¸€è„šè¸¢äº†å‡ºæ¥ï¼Œç¥è‰²æœ‰ç‚¹ç‹¼ç‹ˆã€‚\n", me);
 	}
 	add_action("do_bed", "gosleep");
 	add_action("do_bed", "gobed" );
@@ -49,8 +49,8 @@ if (getuid(this_player()) != "dream"
 int do_bed()
 {       object me;
         me=this_player();
-      	message_vision(HIY "$NÏÆ¿ªÉ´ÕÊ£¬×¼±¸ÉÏ´²ÁË¡£\n\n" NOR, me);
+      	message_vision(HIY "$Næ€å¼€çº±å¸ï¼Œå‡†å¤‡ä¸ŠåºŠäº†ã€‚\n\n" NOR, me);
   	me->move("/d/changan/playerhomes/bed_tingting");
-            message_vision(HIY "\nÉ³ÕÊÇáÇáÒ»¶¯£¬$N×êÁË½øÀ´¡£\n" NOR, me);
+            message_vision(HIY "\næ²™å¸è½»è½»ä¸€åŠ¨ï¼Œ$Né’»äº†è¿›æ¥ã€‚\n" NOR, me);
          	return 1;
 }

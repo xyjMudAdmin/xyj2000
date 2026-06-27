@@ -6,12 +6,12 @@ inherit F_VENDOR_SALE;
 void create()
 {
   reload("zhuzi_liu_guangtou");
-  set_name("Áø¹âÍ·", ({"liu guangtou", "liu", "boss"}));
+  set_name("æŸ³å…‰å¤´", ({"liu guangtou", "liu", "boss"}));
   
-  set("shop_title","¹âÍ·Áø");
+  set("shop_title","å…‰å¤´æŸ³");
   set("shop_id", ({"guangtou", "liu"}));
-  set("gender", "ÄĞĞÔ");
-  set("long", "Ò»Î»´óÄÔ´üÃæÊ¦¸µ£¬Õı¶¥×ÅÒ»´óÃæÍÅ·É¿ìµØÍù¹ö¹øÀïÏ÷Ãæ¡£\n");
+  set("gender", "ç”·æ€§");
+  set("long", "ä¸€ä½å¤§è„‘è¢‹é¢å¸ˆå‚…ï¼Œæ­£é¡¶ç€ä¸€å¤§é¢å›¢é£å¿«åœ°å¾€æ»šé”…é‡Œå‰Šé¢ã€‚\n");
   set("combat_exp", 5000);
   set("age", 40);
   set("per", 34);

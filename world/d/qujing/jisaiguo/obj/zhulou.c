@@ -5,19 +5,19 @@ inherit SURCOAT;
 
 void create()
 {
-        set_name("ÖñÂ¨", ({ "zhu lou", "lou" }) );
+        set_name("ç«¹ç¯“", ({ "zhu lou", "lou" }) );
         set_weight(1000);
         set_max_encumbrance(12000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
+                set("unit", "ä¸ª");
                 set("material", "bamboo");
 		set("value", 50);
 		set_max_items(5);
                 set("armor_prop/armor", 1);
-		set("wear_msg", "$N½«$n±³µ½ÁË±³ºó¡£\n");
-                set("long", "Ò»¸öÂÌÖñÂ¨£¬¿ÉÒÔ±³ÔÚ¼çÉÏ¡£\n");
+		set("wear_msg", "$Nå°†$nèƒŒåˆ°äº†èƒŒåã€‚\n");
+                set("long", "ä¸€ä¸ªç»¿ç«¹ç¯“ï¼Œå¯ä»¥èƒŒåœ¨è‚©ä¸Šã€‚\n");
         }
         setup();
 }

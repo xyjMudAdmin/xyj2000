@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-  set ("short", "街道");
+  set ("short", "琛楅亾");
   set ("long", @LONG
 
-进到镇中人似乎多了些，也有些做小买卖的．青青的石板铺在路
-上，延续到镇的另一端．
+杩涘埌闀囦腑浜轰技涔庡浜嗕簺锛屼篃鏈変簺鍋氬皬涔板崠鐨勶紟闈掗潚鐨勭煶鏉块摵鍦ㄨ矾
+涓婏紝寤剁画鍒伴晣鐨勫彟涓�绔紟
 LONG);
 set("exits", ([ /* sizeof() == 4 */
 //"north" : __DIR__"zhyuan",

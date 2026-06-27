@@ -10,13 +10,13 @@ inherit CLOTH;
 
 void create()
 {
-  set_name("çúÉ«ºÁÃ«", ({ "amber hair", "amberhair", "hair" }) );
+  set_name("ç¥è‰²æ¯«æ¯›", ({ "amber hair", "amberhair", "hair" }) );
   set_weight(100);
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("long", "Ò»°ÑçúçêÉ«µÄºÁÃ«£¬¿ÉÒÔÓÃÀ´±ä³ÉÒÂ·þ£¨transform£©¡£\n");
-    set("unit", "°Ñ");
+    set("long", "ä¸€æŠŠç¥ç€è‰²çš„æ¯«æ¯›ï¼Œå¯ä»¥ç”¨æ¥å˜æˆè¡£æœï¼ˆtransformï¼‰ã€‚\n");
+    set("unit", "æŠŠ");
     set("value",10000);
     set("material","hair");
     set("armor_prop/armor",1);
@@ -29,12 +29,12 @@ void create()
 
 string name_suffix()
 {
-  return "ÒÂ";
+  return "è¡£";
 }
 
 string new_unit()
 {
-  return "¼þ";
+  return "ä»¶";
 }
 
 int init ()  
@@ -52,10 +52,10 @@ int do_wear (string arg)
   if (!arg || present (arg,environment(ob))!=ob)
     return 0; // to invoke standard function
   if (!ob->query("has_transformed")) {
-    tell_object (me,"ÇëÏÈ½«Ëü±ä³ÉÄãËùÐèÒªµÄÒÂ·þ¡£\n");
+    tell_object (me,"è¯·å…ˆå°†å®ƒå˜æˆä½ æ‰€éœ€è¦çš„è¡£æœã€‚\n");
     return 1;
   }
-  ob->set("unit", "¼þ");
+  ob->set("unit", "ä»¶");
   return 0; // to invoke standard function
 }
 

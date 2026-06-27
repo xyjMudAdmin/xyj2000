@@ -6,10 +6,10 @@ inherit ROOM;
  
 void create()
 {
-        set("short", "±±ÃÅÌü");
+        set("short", "åŒ—é—¨å…");
         set("long", @LONG
  
-ÏÖÔÚÕûĞŞÖĞ¡£
+ç°åœ¨æ•´ä¿®ä¸­ã€‚
 LONG
         );
  
@@ -17,7 +17,7 @@ LONG
                 "north" : __DIR__"beitian",
         ]));
  
-        create_door("north", "±±ÌìÃÅ", "south", DOOR_CLOSED);
+        create_door("north", "åŒ—å¤©é—¨", "south", DOOR_CLOSED);
  
         set("objects", ([
                 __DIR__"npc/tong-nan" : 2,

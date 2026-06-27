@@ -6,24 +6,24 @@
 inherit ITEM;
 
 string *prefixs = ({
-  "½õÃæ",
-  "¶ĞÃæ",
-  "¶ìÈŞ",
-  "Ë¿Ğå",
+  "é”¦é¢",
+  "ç¼é¢",
+  "é¹…ç»’",
+  "ä¸ç»£",
 });
 
 string *names = ({
   "",
-  "´ó",
-  "·öÊÖ",
-  "¿¿±³",
-  "ÕÛµş",
-  "°²ÀÖ",
+  "å¤§",
+  "æ‰¶æ‰‹",
+  "é èƒŒ",
+  "æŠ˜å ",
+  "å®‰ä¹",
 });
 
 string *suffixs = ({
-  "³¤ÒÎ",
-  "ÌÉÒÎ",
+  "é•¿æ¤…",
+  "èººæ¤…",
 });
 
 void create()
@@ -31,11 +31,11 @@ void create()
   set_name(prefixs[random(sizeof(prefixs))]+names[random(sizeof(names))]+
            suffixs[random(sizeof(suffixs))], ({ "chair" }));
   set_weight(28000);
-  set("long", "ÕâÊÇÒ»°ÑÒÎ×Ó¡£\n" );
+  set("long", "è¿™æ˜¯ä¸€æŠŠæ¤…å­ã€‚\n" );
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("unit", "°Ñ");
+    set("unit", "æŠŠ");
     set("material", "stone");
     set("value", 2000);
     set("no_sell", 1);

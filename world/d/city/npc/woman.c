@@ -5,10 +5,10 @@ void wield_knife();
 
 void create()
 {
-        set_name("¸¾ÈË", ({ "woman" }) );
-        set("gender", "Å®ĞÔ" );
+        set_name("å¦‡äºº", ({ "woman" }) );
+        set("gender", "å¥³æ€§" );
         set("age", 30);
-        set("long", "Ò»¸öÑ°³£µÄ´åÀï¸¾ÈË.");
+        set("long", "ä¸€ä¸ªå¯»å¸¸çš„æ‘é‡Œå¦‡äºº.");
         set("combat_exp", 4000);
         set("attitude", "friendly");
         set_skill("dodge", 10);
@@ -18,9 +18,9 @@ void create()
 
         set("chat_chance",3);
         set("chat_msg", ({
-                "¸¾ÈË´ò¿ª¹ø¸ÇÎÅÁËÒ»ÏÂ.\n",
-                "¸¾ÈËà«à«ËµµÀ: ÔõÃ´»¹²»»ØÀ´? \n",
-                "¸¾ÈËÓÖÌ§Í·ÍûÏòÃÅÍâ. \n",
+                "å¦‡äººæ‰“å¼€é”…ç›–é—»äº†ä¸€ä¸‹.\n",
+                "å¦‡äººå–ƒå–ƒè¯´é“: æ€ä¹ˆè¿˜ä¸å›æ¥? \n",
+                "å¦‡äººåˆæŠ¬å¤´æœ›å‘é—¨å¤–. \n",
         }));
         set("chat_chance_combat",100);
         set("chat_msg_combat", ({
@@ -41,7 +41,7 @@ void wield_knife()
     if(knife->query("weapon_prop") == 0) return;
 
     knife->move(this_object());
-    say("¸¾ÈË×¥ÆğÒ»°Ñ²Ëµ¶º°µ½£ºÄãÕâ°¤Ç§µ¶µÄ£¡\n");
+    say("å¦‡äººæŠ“èµ·ä¸€æŠŠèœåˆ€å–Šåˆ°ï¼šä½ è¿™æŒ¨åƒåˆ€çš„ï¼\n");
     command("wield knife");
 }
 

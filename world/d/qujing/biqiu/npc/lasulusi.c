@@ -6,9 +6,9 @@ inherit F_VENDOR_SALE;
 void create()
 {
   reload("biqiu_lasu_lusi");
-  set_name("À­ËÕÂÉË¾", ({"lasu lusi", "lusi", "boss"}));
+  set_name("æ‹‰è‹å¾‹å¸", ({"lasu lusi", "lusi", "boss"}));
   set("shop_id", ({"lusi"}));
-  set("gender", "ÄĞĞÔ");
+  set("gender", "ç”·æ€§");
   set("combat_exp", 5000);
   set("age", 40);
   set("per", 44);

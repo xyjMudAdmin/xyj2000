@@ -4,6 +4,6 @@ inherit "/d/dntg/pantao/obj/pantao.c";
 
 void create() {
    ::create();
-   set("long","һöȭͷ��С����ң���ǧ��һ�죬�˳���ϼ�ٷ������������ϡ�\n");
+   set("long","一枚拳头大小的蟠桃，六千年一熟，人吃了霞举飞升，长生不老。\n");
    set("reward_value",2);
 }

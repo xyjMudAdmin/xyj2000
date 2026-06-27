@@ -5,10 +5,10 @@ inherit "/d/wiz/no_get";
 
 void create ()
 {
-  set ("short", "Ë¯·¿");
+  set ("short", "ç¡æˆ¿");
   set ("long", @LONG
 
-ÕâÀïÊÇÁú¹¬ÖĞµÄË¯·¿¡£
+è¿™é‡Œæ˜¯é¾™å®«ä¸­çš„ç¡æˆ¿ã€‚
 
 LONG);
 

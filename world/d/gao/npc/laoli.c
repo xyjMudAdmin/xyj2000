@@ -5,10 +5,10 @@ inherit F_VENDOR_SALE;
 void create()
 {
     reload("lao_li");
-       set_name("ÀÏÀîÍ·", ({"lao li", "li"}));
-       set("long", "ÌúÆÌµÄÖ÷ÈË£®\n");
-       set("gender", "ÄĞĞÔ");
-	set("title", "Ìú½³");
+       set_name("è€æå¤´", ({"lao li", "li"}));
+       set("long", "é“é“ºçš„ä¸»äººï¼\n");
+       set("gender", "ç”·æ€§");
+	set("title", "é“åŒ ");
 	set("per", 15);
 	set("combat_exp", 6800);
        set("age", 56);
@@ -17,8 +17,8 @@ void create()
        set_skill("unarmed", 15);
 set("chat_chance", 5);
 set("chat_msg", ({
-name()+"Ò»½ÅÌßÔÚĞ¡Ñ§Í½µÄÆ¨¹ÉÉÏ£¬ÈÂµÀ£º²»ĞíÍµÀÁ£¡\n",
-name()+"¶ÔĞ¡Ñ§Í½ÈÂµÀ£º½ÌÄã¶àÉÙ´ÎÁË£¡ÄãÔõÃ´ÕâÃ´±¿£¡\n",
+name()+"ä¸€è„šè¸¢åœ¨å°å­¦å¾’çš„å±è‚¡ä¸Šï¼Œåš·é“ï¼šä¸è®¸å·æ‡’ï¼\n",
+name()+"å¯¹å°å­¦å¾’åš·é“ï¼šæ•™ä½ å¤šå°‘æ¬¡äº†ï¼ä½ æ€ä¹ˆè¿™ä¹ˆç¬¨ï¼\n",
 }) );
         set("vendor_goods", ([
                 "blade": "/d/gao/obj/blade",
@@ -48,9 +48,9 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         switch( random(1) ) {
                 case 0:
-                        say( name()+"´óÉùËµµÀ£ºÕâÎ»" +
+                        say( name()+"å¤§å£°è¯´é“ï¼šè¿™ä½" +
 RANK_D->query_respect(ob)
-                                + "£¬ÒªÂòÌúÆ÷Âğ£¿\n");
+                                + "ï¼Œè¦ä¹°é“å™¨å—ï¼Ÿ\n");
                         break;
         }
 }

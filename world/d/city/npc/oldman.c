@@ -3,11 +3,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("°×ÊÀÇä", ({"bai shiqin", "bai", "shiqin"}));
-        set("gender", "ÄĞĞÔ");
+        set_name("ç™½ä¸–å¿", ({"bai shiqin", "bai", "shiqin"}));
+        set("gender", "ç”·æ€§");
         set("age", 65);
         set("long",
-"Ò»¸öÎÄÎÄ¾»¾»µÄÀÏÈË£¬ºÃÏóºÜÓĞÑ§ÎÊµÄÑù×Ó¡£\n");
+"ä¸€ä¸ªæ–‡æ–‡å‡€å‡€çš„è€äººï¼Œå¥½è±¡å¾ˆæœ‰å­¦é—®çš„æ ·å­ã€‚\n");
 	set("attitude", "friendly");
         set("combat_exp", 1000);
 	set("per", 25);
@@ -21,7 +21,7 @@ void create()
 }
 int accept_fight(object me)
 {
-        command("say ¶Ô²»×¡£¬Ğ¡ÀÏ¶şÀÏ¹ÇÍ·²»½û´òÑ½£¡");
+        command("say å¯¹ä¸ä½ï¼Œå°è€äºŒè€éª¨å¤´ä¸ç¦æ‰“å‘€ï¼");
         return 0;
 }
 void init()
@@ -39,9 +39,9 @@ void greeting(object ob)
         if( !ob || !visible(ob) || environment(ob) != environment() ) return;
         switch( random(1) ) {
                 case 0:
-                        say( "ÀÏ°×Í·Ğ¦ßäßäµØËµµÀ£ºÕâÎ»" +
+                        say( "è€ç™½å¤´ç¬‘å’ªå’ªåœ°è¯´é“ï¼šè¿™ä½" +
 RANK_D->query_respect(ob)
-                                + "£¬ÊÇĞ´ĞÅ»¹ÊÇĞ´×´×ÓÑ½£¿\n");
+                                + "ï¼Œæ˜¯å†™ä¿¡è¿˜æ˜¯å†™çŠ¶å­å‘€ï¼Ÿ\n");
                         break;
         }
 }

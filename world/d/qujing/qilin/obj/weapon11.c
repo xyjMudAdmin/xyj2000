@@ -5,9 +5,9 @@ inherit BLADE;
 
 void create()
 {
-  set_name("»¢Í·µ¶", ({ "hutou dao", "dao", "blade" }) );
+  set_name("è™å¤´åˆ€", ({ "hutou dao", "dao", "blade" }) );
   init_blade(38);
-  set("unit", "°Ñ");
+  set("unit", "æŠŠ");
   set_weight(800);
   if( clonep() )
      set_default_object(__FILE__);
@@ -15,7 +15,7 @@ void create()
     set("value", 390);
     set("material", "bone");
   }
-  set("wield_msg","$N²ÙÆğ$nÎÕÔÚÊÖÀï¡£\n");
+  set("wield_msg","$Næ“èµ·$næ¡åœ¨æ‰‹é‡Œã€‚\n");
   setup();
 }
 

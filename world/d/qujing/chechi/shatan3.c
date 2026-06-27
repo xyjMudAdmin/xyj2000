@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ɳ̲");
+  set ("short", "沙滩");
   set ("long", @LONG
 
-�������������ع��ѡ��м���һƬɳ̲�����˲ȳ�һ����·��·��ѹ
-�м�����������������ۼ���·������ɢ��һЩ���Ƶ�שʯľ�ϡ���
-�����������ع��ѡ�
+这里气候干燥，土地龟裂。中间是一片沙滩，被人踩出一条大路，路上压
+有几条大车轱辘碾出的深深痕迹，路边零星散有一些残破的砖石木料。这
+里气候干燥，土地龟裂。
 LONG);
 
   set("outdoors", "/d/qujing/chechi");

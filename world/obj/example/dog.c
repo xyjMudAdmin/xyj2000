@@ -5,15 +5,15 @@ inherit NPC;
 
 void create()
 {
-	set_name("野狗", ({ "dog" }) );
-	set("race", "野兽");
+	set_name("閲庣嫍", ({ "dog" }) );
+	set("race", "閲庡吔");
 	set("age", 3);
-	set("long", "一只浑身脏兮兮的野狗。\n");
+	set("long", "涓�鍙祽韬剰鍏叜鐨勯噹鐙椼�俓n");
 	
 	set("str", 24);
 	set("cor", 26);
 
-	set("limbs", ({ "头部", "身体", "前脚", "后脚", "尾巴" }) );
+	set("limbs", ({ "澶撮儴", "韬綋", "鍓嶈剼", "鍚庤剼", "灏惧反" }) );
 	set("verbs", ({ "bite", "claw" }) );
 	
 	set_temp("apply/attack", 10);

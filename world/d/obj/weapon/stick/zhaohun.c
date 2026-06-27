@@ -7,12 +7,12 @@ inherit STICK;
 
 void create()
 {
-        set_name("ÕĞ»êğ«", ({"zhaohun", "stick"}));
+        set_name("æ‹›é­‚çš¤", ({"zhaohun", "stick"}));
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸Ë");
+                set("unit", "æ†");
                 set("value", 300);
         }
         init_stick(15);

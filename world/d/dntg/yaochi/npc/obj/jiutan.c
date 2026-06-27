@@ -8,20 +8,20 @@ int effect();
 
 void create()
 {
-        set_name("¾ÆÌ³", ({"jiu tan", "jiutan", "tan"}));
+        set_name("é…’å›", ({"jiu tan", "jiutan", "tan"}));
         set_weight(50000);
-        set("no_get","¾ÆÌ³¶ÔÄã¶øÑÔÌ«ÖØÁË¡£\n");
+        set("no_get","é…’å›å¯¹ä½ è€Œè¨€å¤ªé‡äº†ã€‚\n");
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
+                set("unit", "ä¸ª");
                 set("value", 2000);
                 set("max_liquid", 500);
         }
 
         set("liquid", ([
                 "type": "alcohol",
-                "name": YEL"ÏÉ¾Æ"NOR,
+                "name": YEL"ä»™é…’"NOR,
                 "remaining": 50,
                 "drunk_apply": 5,
                 "drink_func":(:effect:),
@@ -32,7 +32,7 @@ int effect() {
   int max=(int)me->query("max_force")*2;
   this_player()->apply_condition("drunk",
      (int)this_player()->query_condition("drunk")+5);
-  message_vision(HIG"$N¸Ðµ½ÌåÄÚÉú³öÂÆÂÆÄÚÁ¦£¬Ô´Ô´²»¾ø¡£\n"NOR,me);
+  message_vision(HIG"$Næ„Ÿåˆ°ä½“å†…ç”Ÿå‡ºç¼•ç¼•å†…åŠ›ï¼Œæºæºä¸ç»ã€‚\n"NOR,me);
   
   me->add("force",100+random(100));
   if (me->query("force")>max) me->set("force",max);

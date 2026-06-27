@@ -6,6 +6,6 @@ inherit "/d/dntg/laojunlu/laojunlu.c";
 void create()
 {
   ::create();
-  set("short", "ΥπΉ¬");
+  set("short", "ι‡ε®«");
 }
 

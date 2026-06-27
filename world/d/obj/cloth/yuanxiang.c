@@ -1,5 +1,5 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// yuanxiang.c ÈíÏãĞ¬
+// yuanxiang.c è½¯é¦™é‹
 
 #include <armor.h>
 #include <ansi.h>
@@ -9,14 +9,14 @@ inherit BOOTS;
 
 void create()
 {
-	set_name(RED "ÈíÏãĞ¬" NOR, ({ "shoes","yuanxiang","xie","yuanxiangxie" }) );
+	set_name(RED "è½¯é¦™é‹" NOR, ({ "shoes","yuanxiang","xie","yuanxiangxie" }) );
 	set_weight(900);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-                set("long", "Ò»Ë«Ğ¡ÇÉÎÂÈíµÄĞå»¨Ğ¬¡£  \n");
+                set("long", "ä¸€åŒå°å·§æ¸©è½¯çš„ç»£èŠ±é‹ã€‚  \n");
 		set("material", "cloth");
-		set("unit", "Ë«");
+		set("unit", "åŒ");
 		set("value", 2000);
 		set("armor_prop/armor", 1 );
 		set("armor_prop/personality", 3);

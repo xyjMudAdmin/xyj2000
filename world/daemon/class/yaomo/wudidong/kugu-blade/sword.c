@@ -1,6 +1,6 @@
 // cracked by vikee 2/09/2002   vikee@263.net
 
-//µ¶¹â½£Ó°
+//åˆ€å…‰å‰‘å½±
 
 #include <ansi.h>
 #include <combat.h>
@@ -15,26 +15,26 @@ int perform(object me, object target)
       if (!weapon) return 0;
       if( !target ) target = offensive_target(me);
       if( !target || !target->is_character()||target->is_corpse()||target==me)
-          return notify_fail("ÄãÒª¹¥»÷Ë­£¿\n");
+          return notify_fail("ä½ è¦æ”»å‡»è°ï¼Ÿ\n");
       if (!target->is_fighting(me))
-             return notify_fail("ÄãÃÇÃ»ÓÐÔÚ´ò¼Ü£¡\n");
+             return notify_fail("ä½ ä»¬æ²¡æœ‰åœ¨æ‰“æž¶ï¼\n");
       if (target->is_busy())
-            return notify_fail("¶Ô·½Ôç¾ÍÊÖÃ¦½ÅÂÒÁË£¬·Åµ¨¹¥»÷°É£¡\n");
+            return notify_fail("å¯¹æ–¹æ—©å°±æ‰‹å¿™è„šä¹±äº†ï¼Œæ”¾èƒ†æ”»å‡»å§ï¼\n");
       if (me->query_skill("huntian-qigong",1)<50)
-          return notify_fail("ÄãµÄÄÚ¹¦Ì«²î£¬»¹²»»áÒÔ½£·¨Óùµ¶¡£\n");
+          return notify_fail("ä½ çš„å†…åŠŸå¤ªå·®ï¼Œè¿˜ä¸ä¼šä»¥å‰‘æ³•å¾¡åˆ€ã€‚\n");
       if (me->query_skill("kugu-blade",1)<60) 
-          return notify_fail("Äã»¹ÊÇÏÈ°Ñ¾«Á¦¼¯ÖÐÔÚ¿Ý¹Çµ¶·¨ÉÏ°É¡£\n");
+          return notify_fail("ä½ è¿˜æ˜¯å…ˆæŠŠç²¾åŠ›é›†ä¸­åœ¨æž¯éª¨åˆ€æ³•ä¸Šå§ã€‚\n");
     if (me->query_skill("qixiu-jian",1)<60)
-        return notify_fail("ÄãµÄÆßÐÞ½£·¨ÄÇÃ´ÀÃ£¬»¹ºÃÒâË¼¼ÐÔÚµ¶·¨ÖÐÏÖÑÛ£¿\n");
+        return notify_fail("ä½ çš„ä¸ƒä¿®å‰‘æ³•é‚£ä¹ˆçƒ‚ï¼Œè¿˜å¥½æ„æ€å¤¹åœ¨åˆ€æ³•ä¸­çŽ°çœ¼ï¼Ÿ\n");
       if (me->query("force")<100)
-           return notify_fail("ÄãÄÚÁ¦²»¼Ì£¬ÄÑÒÔ³öÕÐ¡£\n");
+           return notify_fail("ä½ å†…åŠ›ä¸ç»§ï¼Œéš¾ä»¥å‡ºæ‹›ã€‚\n");
      
     me->add("force", -100);
   seteuid(getuid());
     me->set("actions", (: call_other, SKILL_D("qixiu-jian"), "query_action" :) );
    
-    message_vision(HIB"$NÍ»È»¼ä½«ÊÖÖÐ"+weapon->name()+
-       HIB"µ±×ö½£ÓÃ£¬Ê¹³öÆßÐÞ½£·¨£¬¶ÙÊ±¹¥ÁË$n¸ö´ëÊÖ²»¼°£¡\n"NOR,me,target);
+    message_vision(HIB"$Nçªç„¶é—´å°†æ‰‹ä¸­"+weapon->name()+
+       HIB"å½“åšå‰‘ç”¨ï¼Œä½¿å‡ºä¸ƒä¿®å‰‘æ³•ï¼Œé¡¿æ—¶æ”»äº†$nä¸ªæŽªæ‰‹ä¸åŠï¼\n"NOR,me,target);
     weapon->set_temp("original/use_apply_skill",weapon->query("use_apply_skill"));
     weapon->set_temp("original/skill_type",weapon->query("apply/skill_type"));
     weapon->set("use_apply_skill",1);

@@ -10,13 +10,13 @@ inherit SWORD;
 
 void create()
 {
-  set_name("×ØÉ«ºÁÃ«", ({ "brown hair", "brownhair", "hair" }) );
+  set_name("æ£•è‰²æ¯«æ¯›", ({ "brown hair", "brownhair", "hair" }) );
   set_weight(100);
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("long", "Ò»°ÑÉî×ØÉ«µÄºÁÃ«£¬¿ÉÒÔÓÃÀ´±ä³É½£ÀàÎäÆ÷£¨transform£©¡£\n");
-    set("unit", "°Ñ");
+    set("long", "ä¸€æŠŠæ·±æ£•è‰²çš„æ¯«æ¯›ï¼Œå¯ä»¥ç”¨æ¥å˜æˆå‰‘ç±»æ­¦å™¨ï¼ˆtransformï¼‰ã€‚\n");
+    set("unit", "æŠŠ");
     set("value",10000);
   }
   set("no_drop",1);
@@ -28,12 +28,12 @@ void create()
 
 string name_suffix()
 {
-  return "½£";
+  return "å‰‘";
 }
 
 string new_unit()
 {
-  return "±ú";
+  return "æŸ„";
 }
 
 int init ()  
@@ -52,7 +52,7 @@ int do_wield (string arg)
 
     return 0; // to invoke standard function
   if (!ob->query("has_transformed")) {
-    tell_object (me,"ÇëÏÈ½«Ëü±ä³ÉÄãËùĞèÒªµÄÎäÆ÷¡£\n");
+    tell_object (me,"è¯·å…ˆå°†å®ƒå˜æˆä½ æ‰€éœ€è¦çš„æ­¦å™¨ã€‚\n");
     return 1;
   }
   return 0; 

@@ -8,12 +8,12 @@ int check_move(object me, string arg);
 
 void create ()
 {
-  set ("short", "É½ÍâÐ¡Â·");
+  set ("short", "å±±å¤–å°è·¯");
   set ("long", @LONG
 
-ÄãÍ»È»µ½ÁË»ðÑæÉ½µÄÎ÷±±Ãæ£¬¶«ÄÏÃæÊÇºìÍ¨Í¨µÄ»ðÑæÉ½¶¥¡£¿ÕÆøÖÐ
-ÓÐÒ»ÖÖÇ¿ÁÒµÄºýÎ¶£¬ÈÈµÃÈÃÈËÄÑÒÔÈÌÊÜ¡£±±·½ÓÐÒ»ÌõÐ¡¾¶£¬Í¨ÏòÉ½
-ÏÂÒõÁ¹´¦¡£
+ä½ çªç„¶åˆ°äº†ç«ç„°å±±çš„è¥¿åŒ—é¢ï¼Œä¸œå—é¢æ˜¯çº¢é€šé€šçš„ç«ç„°å±±é¡¶ã€‚ç©ºæ°”ä¸­
+æœ‰ä¸€ç§å¼ºçƒˆçš„ç³Šå‘³ï¼Œçƒ­å¾—è®©äººéš¾ä»¥å¿å—ã€‚åŒ—æ–¹æœ‰ä¸€æ¡å°å¾„ï¼Œé€šå‘å±±
+ä¸‹é˜´å‡‰å¤„ã€‚
 
 LONG);
 
@@ -66,23 +66,23 @@ int check_move(object me, string arg)
 	object env, obj;
 	mapping exit;
 
-	if( !arg ) return notify_fail("ÄãÒªÍùÄÄ¸ö·½Ïò×ß£¿\n");
+	if( !arg ) return notify_fail("ä½ è¦å¾€å“ªä¸ªæ–¹å‘èµ°ï¼Ÿ\n");
 
 	if( me->over_encumbranced() )
-		return notify_fail("ÄãµÄ¸ººÉ¹ýÖØ£¬¶¯µ¯²»µÃ¡£\n");
+		return notify_fail("ä½ çš„è´Ÿè·è¿‡é‡ï¼ŒåŠ¨å¼¹ä¸å¾—ã€‚\n");
 
 	if( me->is_busy() )
-		return notify_fail("ÄãµÄ¶¯×÷»¹Ã»ÓÐÍê³É£¬²»ÄÜÒÆ¶¯¡£\n");
+		return notify_fail("ä½ çš„åŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆï¼Œä¸èƒ½ç§»åŠ¨ã€‚\n");
 
 	if( me->query_temp("no_move") )
-		return notify_fail("Äã±»¶¨×¡ÁË£¬ÄÄÀï¶¯µÃÁË£¡\n");
+		return notify_fail("ä½ è¢«å®šä½äº†ï¼Œå“ªé‡ŒåŠ¨å¾—äº†ï¼\n");
 
 	env = environment(me);
-	if(!env) return notify_fail("ÄãÄÄÀïÒ²È¥²»ÁË¡£\n");
+	if(!env) return notify_fail("ä½ å“ªé‡Œä¹ŸåŽ»ä¸äº†ã€‚\n");
 
 	if( !mapp(exit = env->query("exits")) || undefinedp(exit[arg]) ) {
 		if( query_verb()=="go")
-			return notify_fail("Õâ¸ö·½ÏòÃ»ÓÐ³öÂ·¡£\n");
+			return notify_fail("è¿™ä¸ªæ–¹å‘æ²¡æœ‰å‡ºè·¯ã€‚\n");
 		else
 			return 0;
 	}
@@ -91,16 +91,16 @@ int check_move(object me, string arg)
 	if( !(obj = find_object(dest)) )
 		call_other(dest, "???");
 	if( !(obj = find_object(dest)) )
-		return notify_fail("ÎÞ·¨ÒÆ¶¯¡£\n");
+		return notify_fail("æ— æ³•ç§»åŠ¨ã€‚\n");
 
 	dir = cdir(arg);
 
 	if( me->is_fighting() ) {
-		mout = "Íù" + dir + "Âä»Ä¶øÌÓÁË¡£\n";
-		min = "µøµø×²×²µØÅÜÁË¹ýÀ´£¬Ä£ÑùÓÐÐ©ÀÇ±·¡£\n";
+		mout = "å¾€" + dir + "è½è’è€Œé€ƒäº†ã€‚\n";
+		min = "è·Œè·Œæ’žæ’žåœ°è·‘äº†è¿‡æ¥ï¼Œæ¨¡æ ·æœ‰äº›ç‹¼ç‹ˆã€‚\n";
 	} else {
-		mout = "Íù" + dir + "Àë¿ª¡£\n";
-		min = "×ßÁË¹ýÀ´¡£\n";
+		mout = "å¾€" + dir + "ç¦»å¼€ã€‚\n";
+		min = "èµ°äº†è¿‡æ¥ã€‚\n";
 	}
 
 	if( !wizardp(me) || !me->query("env/invisibility") )

@@ -5,12 +5,12 @@ inherit "/d/dntg/lijing/troops.c";
 void create()
 {
  
-        set_name("¾ŞÁéÉñ", ({ "juling shen", "shen", "juling" }) );
-        set("gender", "ÄĞĞÔ" );
-        set("long","ÍĞËşÀîÌìÍõÕÊÏÂÏÈ·æ´ó½«£¬°òÀ«ÑüÔ²£¬Á¦´óÎŞÇî¡£\n");
+        set_name("å·¨çµç¥", ({ "juling shen", "shen", "juling" }) );
+        set("gender", "ç”·æ€§" );
+        set("long","æ‰˜å¡”æå¤©ç‹å¸ä¸‹å…ˆé”‹å¤§å°†ï¼Œè†€é˜”è…°åœ†ï¼ŒåŠ›å¤§æ— ç©·ã€‚\n");
         set("age",40);
-        set("title", "ÏÈ·æ´ó½«");
-        set("info_rank/rude","Ã«Éñ");
+        set("title", "å…ˆé”‹å¤§å°†");
+        set("info_rank/rude","æ¯›ç¥");
         set("str", 400);
         set("int", 20);
         set("con", 30);

@@ -5,9 +5,9 @@ inherit MACE;
 
 void create()
 {
-  set_name("ţβ�", ({ "niuwei jian", "jian", "mace" }) );
+  set_name("牛尾锏", ({ "niuwei jian", "jian", "mace" }) );
   init_mace(75);
-  set("unit", "��");
+  set("unit", "根");
   set_weight(800);
   if( clonep() )
      set_default_object(__FILE__);

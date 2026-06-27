@@ -5,7 +5,7 @@ void create()
 {
     ::create();
 
-    set ("short", "¹°Öí±±·¿");
+    set ("short", "æ‹±çŒªåŒ—æˆ¿");
     set("exits", ([
         "south": __DIR__"club3",
     ]) );

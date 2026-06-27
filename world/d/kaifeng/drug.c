@@ -5,16 +5,16 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ÓùÒ©¿â");
+  set ("short", "å¾¡è¯åº“");
   set ("long", @LONG
 
-ÓùÒ©¿âÀïÓÐÒ»ºº°×Óñ°¸Ì¨£¬ÉÏÓÐ¸÷ÀàÃû¹óÒ©ÍèÒ©µ¤Ò©·Û£¬±ÈÎä
-µÄÈËÀ´ÕâÀïÏòÎ×Ê¦ÁìÈ¡ÖÎÉËµÄÒ©Îï¡£Î×Ê¦¿É´ÓÌ¨ÉÏÄÃ(take)Ò©
-·Ö·¢¸ø²Î¼Ó´ó»áµÄÈüÊÖ¡£Ì¨×ÓÉÏ·ÅÓÐ£º
-  ½ð´´Ò©£º          jinchuang
-  »ìÔªµ¤£º          hunyuan
-  ¾Å×ª»¹»êµ¤£º      dan
-  »¹Ñôµ¤£º          huanyang
+å¾¡è¯åº“é‡Œæœ‰ä¸€æ±‰ç™½çŽ‰æ¡ˆå°ï¼Œä¸Šæœ‰å„ç±»åè´µè¯ä¸¸è¯ä¸¹è¯ç²‰ï¼Œæ¯”æ­¦
+çš„äººæ¥è¿™é‡Œå‘å·«å¸ˆé¢†å–æ²»ä¼¤çš„è¯ç‰©ã€‚å·«å¸ˆå¯ä»Žå°ä¸Šæ‹¿(take)è¯
+åˆ†å‘ç»™å‚åŠ å¤§ä¼šçš„èµ›æ‰‹ã€‚å°å­ä¸Šæ”¾æœ‰ï¼š
+  é‡‘åˆ›è¯ï¼š          jinchuang
+  æ··å…ƒä¸¹ï¼š          hunyuan
+  ä¹è½¬è¿˜é­‚ä¸¹ï¼š      dan
+  è¿˜é˜³ä¸¹ï¼š          huanyang
 
 LONG);
 
@@ -37,10 +37,10 @@ int do_take (string arg)
   object ob;
 
   if (! wizardp(who))
-    return notify_fail ("¶Ô²»Æð£¬ÇëÈÃÎ×Ê¦ÌæÄúÀ´ÄÃ¶«Î÷¡£\n");
+    return notify_fail ("å¯¹ä¸èµ·ï¼Œè¯·è®©å·«å¸ˆæ›¿æ‚¨æ¥æ‹¿ä¸œè¥¿ã€‚\n");
 
   if (! arg)
-    return notify_fail ("ÄúÒªÄÃÊ²Ã´£¿\n");
+    return notify_fail ("æ‚¨è¦æ‹¿ä»€ä¹ˆï¼Ÿ\n");
   if (arg == "jinchuang")
     ob = new ("/d/obj/drug/jinchuang");    
   else if (arg == "hunyuan")
@@ -50,8 +50,8 @@ int do_take (string arg)
   else if (arg == "huanyang")
     ob = new ("/d/obj/drug/huanyang");    
   else
-    return notify_fail ("ÄúÒªÄÃÊ²Ã´£¿\n");
-  message_vision ("$N´ÓÌ¨ÉÏÄÃÆð$n¡£\n",who,ob);
+    return notify_fail ("æ‚¨è¦æ‹¿ä»€ä¹ˆï¼Ÿ\n");
+  message_vision ("$Nä»Žå°ä¸Šæ‹¿èµ·$nã€‚\n",who,ob);
   ob->move(who);
   return 1;
 }

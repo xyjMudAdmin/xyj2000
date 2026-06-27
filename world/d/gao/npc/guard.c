@@ -4,9 +4,9 @@
 inherit NPC;
 void create()
 {
-       set_name("ÍÁ·ËÍ·Ä¿", ({"bandit leader", "bandit", "leader"}));
-       set("long","Çå·çÕ¯µÄĞ¡Í·Ä¿£®\n");
-       set("gender", "ÄĞĞÔ");
+       set_name("åœŸåŒªå¤´ç›®", ({"bandit leader", "bandit", "leader"}));
+       set("long","æ¸…é£å¯¨çš„å°å¤´ç›®ï¼\n");
+       set("gender", "ç”·æ€§");
        set("age", 28);
        set("attitude", "aggressive");
 	set("per", 25);
@@ -20,7 +20,7 @@ void create()
 	set_skill("dodge", 40);
         set("chat_chance", 2);
         set("chat_msg", ({
-		"Ğ¡Í·Ä¿´óº°£ºÌ«ËêÍ·ÉÏ¶¯ÍÁ£¬²»Ïë»îÁË£¡\n",
+		"å°å¤´ç›®å¤§å–Šï¼šå¤ªå²å¤´ä¸ŠåŠ¨åœŸï¼Œä¸æƒ³æ´»äº†ï¼\n",
 }) );
 
 	setup();

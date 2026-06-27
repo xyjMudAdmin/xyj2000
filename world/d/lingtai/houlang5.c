@@ -1,17 +1,17 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// Room: some place in Î÷Å£ºØÖŞ
+// Room: some place in è¥¿ç‰›è´ºæ´²
 // inside2.c
 
 inherit ROOM;
 
 void create ()
 {
-  set ("short", "ÁÖÖĞÄ¾Îİ");
+  set ("short", "æ—ä¸­æœ¨å±‹");
   set ("long", @LONG
 
-³¤ÀÈµÄ¾¡Í·ÏÖ³öÒ»¸öĞ¡Ä¾Îİ£¬Ä¾Îİ´ÓÍâ±ß¿´ÆğÀ´²»´ó£¬ÖÜÎ§Ò²ºÜ
-°²¾²£¬Ìı²»µ½Ò»Ë¿ÉùÏì¡£Ææ¹ÖµØÊÇ´ÓÄ¾°åµÄ·ìÏ¶ÖĞÍ¸³ö¼¸Ğíºì¹â¡£
-ÕıÃæÒ»ÉÈÄ¾ÃÅ½ô±Õ¡£
+é•¿å»Šçš„å°½å¤´ç°å‡ºä¸€ä¸ªå°æœ¨å±‹ï¼Œæœ¨å±‹ä»å¤–è¾¹çœ‹èµ·æ¥ä¸å¤§ï¼Œå‘¨å›´ä¹Ÿå¾ˆ
+å®‰é™ï¼Œå¬ä¸åˆ°ä¸€ä¸å£°å“ã€‚å¥‡æ€ªåœ°æ˜¯ä»æœ¨æ¿çš„ç¼éš™ä¸­é€å‡ºå‡ è®¸çº¢å…‰ã€‚
+æ­£é¢ä¸€æ‰‡æœ¨é—¨ç´§é—­ã€‚
 LONG);
 
   set("exits", ([ /* sizeof() == 2 */
@@ -33,30 +33,30 @@ int do_knock(string arg)
         me=this_player();
 
         if ( !arg || ((arg != "door") ))
-                return notify_fail("ÄãÒªÇÃÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦æ•²ä»€ä¹ˆï¼Ÿ\n");
 
-	message_vision("$NÇáÇáµÄÀ­ÆğÃÅÉÏµÄÍ­»·£¬£¢Å¾£¬Å¾£¢µØ¿ÛÁËÁ½ÏÂ¡£\n",me); 
-	message_vision("ÃÅ±»ÇáÇáÀ­¿ª£¬×ß³öÎ»ÖĞÄêµÀÈË£¬ÉÏÏÂ´òÁ¿ÁË$NÒ»·¬¡£\n",me);
-	if((string)me->query("family/family_name")=="·½´çÉ½ÈıĞÇ¶´") {
+	message_vision("$Nè½»è½»çš„æ‹‰èµ·é—¨ä¸Šçš„é“œç¯ï¼Œï¼‚å•ªï¼Œå•ªï¼‚åœ°æ‰£äº†ä¸¤ä¸‹ã€‚\n",me); 
+	message_vision("é—¨è¢«è½»è½»æ‹‰å¼€ï¼Œèµ°å‡ºä½ä¸­å¹´é“äººï¼Œä¸Šä¸‹æ‰“é‡äº†$Nä¸€ç•ªã€‚\n",me);
+	if((string)me->query("family/family_name")=="æ–¹å¯¸å±±ä¸‰æ˜Ÿæ´") {
 			if(((int)me->query("combat_exp") < 100000)) {
-			message_vision("ÖĞÄêµÀÈË¶Ô$NĞ¦µÀ£ºµÀĞÖÒ²À´°İ¼û×æÊ¦Âğ£¿\n",me);
-			message_vision("$NËæ×ÅÖĞÄêµÀÈË×ßÁË½øÈ¥¡£\n",me);
-	                tell_room( environment(me), "ÃÅÓÖÇáÇáµÄ¹ØÉÏÁË¡£\n",({me}));
+			message_vision("ä¸­å¹´é“äººå¯¹$Nç¬‘é“ï¼šé“å…„ä¹Ÿæ¥æ‹œè§ç¥–å¸ˆå—ï¼Ÿ\n",me);
+			message_vision("$Néšç€ä¸­å¹´é“äººèµ°äº†è¿›å»ã€‚\n",me);
+	                tell_room( environment(me), "é—¨åˆè½»è½»çš„å…³ä¸Šäº†ã€‚\n",({me}));
         	        me->move("/d/lingtai/room");
-                	tell_room( environment(me), me->name() + "×ßÁË½øÀ´¡£\n",({me}));
+                	tell_room( environment(me), me->name() + "èµ°äº†è¿›æ¥ã€‚\n",({me}));
 			return 1;
 			}
-		message_vision("$NËæ×ÅÖĞÄêµÀÈË×ßÁË½øÈ¥¡£\n",me);
-		tell_room( environment(me), "ÃÅÓÖÇáÇáµÄ¹ØÉÏÁË¡£\n",({me}));
+		message_vision("$Néšç€ä¸­å¹´é“äººèµ°äº†è¿›å»ã€‚\n",me);
+		tell_room( environment(me), "é—¨åˆè½»è½»çš„å…³ä¸Šäº†ã€‚\n",({me}));
                 me->move("/d/lingtai/room");
-		tell_room( environment(me), me->name() + "×ßÁË½øÀ´¡£\n",({me}));
+		tell_room( environment(me), me->name() + "èµ°äº†è¿›æ¥ã€‚\n",({me}));
                 return 1;
 		}
-        message_vision("ÖĞÄêµÀÈËÖåÁËÖåÃ¼Í·£ºÇĞÄª¾ÃÁô£¬ÈÅÎÒ×æÊ¦ÇåĞŞ£¡\n", me);
-	message_vision("$NËæ×ÅÖĞÄêµÀÈË×ßÁË½øÈ¥¡£\n",me);
-        tell_room( environment(me), "ÃÅÓÖÇáÇáµÄ¹ØÉÏÁË¡£\n",({me}));
+        message_vision("ä¸­å¹´é“äººçš±äº†çš±çœ‰å¤´ï¼šåˆ‡è«ä¹…ç•™ï¼Œæ‰°æˆ‘ç¥–å¸ˆæ¸…ä¿®ï¼\n", me);
+	message_vision("$Néšç€ä¸­å¹´é“äººèµ°äº†è¿›å»ã€‚\n",me);
+        tell_room( environment(me), "é—¨åˆè½»è½»çš„å…³ä¸Šäº†ã€‚\n",({me}));
         me->move("/d/lingtai/room");
-        tell_room( environment(me), me->name() + "×ßÁË½øÀ´¡£\n",({me}));
+        tell_room( environment(me), me->name() + "èµ°äº†è¿›æ¥ã€‚\n",({me}));
 
 
 	return 1;

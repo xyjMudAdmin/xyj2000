@@ -1,5 +1,5 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// zhenyuan-force.c  ¡¾ÕòÔªÉñ¹¦¡¿
+// zhenyuan-force.c  ã€é•‡å…ƒç¥åŠŸã€‘
 inherit FORCE;
 
 int valid_enable(string usage) { return usage=="force"; }
@@ -8,13 +8,13 @@ int valid_learn(object me)
 {
 	if( (int)me->query_skill("force", 1) < 10 )
 //		|| (int)me->query_skill("force", 1) <= (int)me->query_skill("zhenyuan-force", 1) )
-		return notify_fail("ÄãµÄÄÚ¹¦ĞŞÎª»¹²»¹»¸ßÉî£¬ÎŞ·¨Ñ§Ï°ÕòÔªÉñ¹¦¡£\n");
+		return notify_fail("ä½ çš„å†…åŠŸä¿®ä¸ºè¿˜ä¸å¤Ÿé«˜æ·±ï¼Œæ— æ³•å­¦ä¹ é•‡å…ƒç¥åŠŸã€‚\n");
 	return 1;
 }
 
 int practice_skill(object me)
 {
-        return notify_fail("ÕòÔªÉñ¹¦Ö»ÄÜÏòÊ¦¸¸Ñ§£¬»òÊÇ´ÓÔËÓÃ(exert)ÖĞÔö¼ÓÊìÁ·¶È¡£\n");
+        return notify_fail("é•‡å…ƒç¥åŠŸåªèƒ½å‘å¸ˆçˆ¶å­¦ï¼Œæˆ–æ˜¯ä»è¿ç”¨(exert)ä¸­å¢åŠ ç†Ÿç»ƒåº¦ã€‚\n");
 }
 string exert_function_file(string func)
 {

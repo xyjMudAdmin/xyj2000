@@ -4,15 +4,15 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "Ê¯Îİ");
+  set ("short", "çŸ³å±‹");
   set ("long", @LONG
 
-»¨Ô°¾¡Í·³öÏÖÒ»×ùÊ¯Îİ£¬ÎİÄË¾ŞÊ¯Æö³É£¬°µµ­¹âÏÂ¿´ÆğÀ´Ïàµ±µÄ
-ÆÓÊµ¼°ºñÊµ¡£ÃÅÍâ×óÓÒÓĞ¹êĞÎÊ¯ÊŞ(statue)»¤ÎÀ£¬Ë«ÑÛÖĞËÆºõÓĞ
-¹â²ÊÁ÷¶¯²»Ö¹¡£
+èŠ±å›­å°½å¤´å‡ºç°ä¸€åº§çŸ³å±‹ï¼Œå±‹ä¹ƒå·¨çŸ³ç Œæˆï¼Œæš—æ·¡å…‰ä¸‹çœ‹èµ·æ¥ç›¸å½“çš„
+æœ´å®åŠåšå®ã€‚é—¨å¤–å·¦å³æœ‰é¾Ÿå½¢çŸ³å…½(statue)æŠ¤å«ï¼ŒåŒçœ¼ä¸­ä¼¼ä¹æœ‰
+å…‰å½©æµåŠ¨ä¸æ­¢ã€‚
 LONG);
   set("item_desc", ([ /* sizeof() == 1 */
-  "status" : "Ê¯ÊŞµÄÍ·²¿ºÃÏó¿ÉÒÔÅ¤¶¯(turn)¡£\n",
+  "status" : "çŸ³å…½çš„å¤´éƒ¨å¥½è±¡å¯ä»¥æ‰­åŠ¨(turn)ã€‚\n",
 ]));
 
   set("exits", ([ /* sizeof() == 3 */
@@ -37,8 +37,8 @@ int do_turn(string arg)
 	me=this_player();
 
         if ( !arg || ((arg != "statue") ))
-                return notify_fail("ÄãÒªÅ¤¶¯Ê²Ã´£¿\n");
-	message_vision("$NÇáÇáÅ¤¶¯Ê¯ÊŞµÄÍ·²¿£¬Ö»Ìı¡¸ßÇßÇ¡¹¼¸ÉùÏì¡­¡­\n", me);
+                return notify_fail("ä½ è¦æ‰­åŠ¨ä»€ä¹ˆï¼Ÿ\n");
+	message_vision("$Nè½»è½»æ‰­åŠ¨çŸ³å…½çš„å¤´éƒ¨ï¼Œåªå¬ã€Œå’”å’”ã€å‡ å£°å“â€¦â€¦\n", me);
 
 
 	if( !(inside=find_object(__DIR__"wunei")))
@@ -48,15 +48,15 @@ int do_turn(string arg)
 		if( this_object()->query("close")) {
 			set("exits/enter",__DIR__"wunei");
 			inside->set("exits/out",__DIR__"shiwu");
-			message("vision", "Ê¯ÎİµÄÃÅÇáÇáµÄ¿ªÁË¡£\n", this_object());
-			message("vision", "Ê¯ÎİµÄÃÅÇáÇáµÄ¿ªÁË¡£\n", inside);
+			message("vision", "çŸ³å±‹çš„é—¨è½»è½»çš„å¼€äº†ã€‚\n", this_object());
+			message("vision", "çŸ³å±‹çš„é—¨è½»è½»çš„å¼€äº†ã€‚\n", inside);
 			set("close",0);
 			return 1;
 		}
                 delete("exits/enter");
                 inside->delete("exits/out");
-                message("vision", "Ê¯ÎİµÄÃÅÇáÇáµÄ¹ØÉÏÁË¡£\n", this_object());
-                message("vision", "Ê¯ÎİµÄÃÅÇáÇáµÄ¹ØÉÏÁË¡£\n", inside);
+                message("vision", "çŸ³å±‹çš„é—¨è½»è½»çš„å…³ä¸Šäº†ã€‚\n", this_object());
+                message("vision", "çŸ³å±‹çš„é—¨è½»è½»çš„å…³ä¸Šäº†ã€‚\n", inside);
                 set("close",1);
                 return 1;
 	}

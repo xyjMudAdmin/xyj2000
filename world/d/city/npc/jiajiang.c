@@ -4,9 +4,9 @@ void greeting(object ob);
 inherit NPC;
 void create()
 {
-       set_name("Ğ£Î¾", ({"xiao wei", "wei", "xiao"}));
-       set("long","½«¾ü¸®µÄ¼Ò½«£¬¿´ÆğÀ´ÉñÆøÁİÈ»£®\n");
-       set("gender", "ÄĞĞÔ");
+       set_name("æ ¡å°‰", ({"xiao wei", "wei", "xiao"}));
+       set("long","å°†å†›åºœçš„å®¶å°†ï¼Œçœ‹èµ·æ¥ç¥æ°”å‡›ç„¶ï¼\n");
+       set("gender", "ç”·æ€§");
        set("age", 28);
        set("attitude", "aggressive");
         set("per", 25);
@@ -46,7 +46,7 @@ void greeting(object ob)
         if( !ob || !visible(ob) || environment(ob) != environment() ) return;
         switch( random(1) ) {
                 case 0:
-                        say( "Ğ£Î¾´óº°£º¾¹¸ÒË½´³½ûµØ£¬É±ÎŞÉâ£¡\n");
+                        say( "æ ¡å°‰å¤§å–Šï¼šç«Ÿæ•¢ç§é—¯ç¦åœ°ï¼Œæ€æ— èµ¦ï¼\n");
                         break;
         }
 }

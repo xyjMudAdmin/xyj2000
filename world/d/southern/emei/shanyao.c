@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-set("short", "ɽ��");
+set("short", "山腰");
 set("long", @LONG
     
-���������ҳ�Ϊ�����߶��졹�Ķ���ɽ�������Ÿ��������Ĵ�˵��
-������ȥ����Ϳ����ҵ���˵�еľ��϶��ˡ�
+　　被道家称为「第七洞天」的峨嵋山，满载着各种美丽的传说，
+向南走去，你就可以找到传说中的九老洞了。
 LONG );
 
 

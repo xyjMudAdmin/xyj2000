@@ -5,22 +5,22 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "¿ø¼×¿â");
+  set ("short", "ç›”ç”²åº“");
   set ("long", @LONG
 
-¿ø¼×¿âÀïÒ»ÅÅÏâÒøÌ´Ä¾¼ÜÉÏ·Å×Å´ó´óÐ¡Ð¡µÄ±ê×¼¿ø¼×»¤¾ß£¬±È
-ÎäµÄÈËÀ´ÕâÀïÏòÎ×Ê¦ÁìÈ¡ºÏÊÊµÄ¿ø¼×»¤¾ß¡£Î×Ê¦¿É´ÓÌ´Ä¾¼Ü×Ó
-ÉÏÄÃ(take)»¤¾ß·Ö·¢¸ø²Î¼Ó´ó»áµÄÈüÊÖ¡£¼Ü×ÓÉÏ·ÅÓÐ£º
-  îø¼×£º      armor
-  ¶ÜÅÆ£º      shield
-  Ñ¥×Ó£º      boots
-  Ö¸Ì×£º      finger
-  ÊÖÌ×£º      hands
-  Í·¿ø£º      head
-  Î§²±£º      neck
-  Åû·ç£º      surcoat
-  Ñü´ø£º      waist
-  »¤Íó£º      wrists
+ç›”ç”²åº“é‡Œä¸€æŽ’é•¶é“¶æª€æœ¨æž¶ä¸Šæ”¾ç€å¤§å¤§å°å°çš„æ ‡å‡†ç›”ç”²æŠ¤å…·ï¼Œæ¯”
+æ­¦çš„äººæ¥è¿™é‡Œå‘å·«å¸ˆé¢†å–åˆé€‚çš„ç›”ç”²æŠ¤å…·ã€‚å·«å¸ˆå¯ä»Žæª€æœ¨æž¶å­
+ä¸Šæ‹¿(take)æŠ¤å…·åˆ†å‘ç»™å‚åŠ å¤§ä¼šçš„èµ›æ‰‹ã€‚æž¶å­ä¸Šæ”¾æœ‰ï¼š
+  é“ ç”²ï¼š      armor
+  ç›¾ç‰Œï¼š      shield
+  é´å­ï¼š      boots
+  æŒ‡å¥—ï¼š      finger
+  æ‰‹å¥—ï¼š      hands
+  å¤´ç›”ï¼š      head
+  å›´è„–ï¼š      neck
+  æŠ«é£Žï¼š      surcoat
+  è…°å¸¦ï¼š      waist
+  æŠ¤è…•ï¼š      wrists
 
 LONG);
 
@@ -43,10 +43,10 @@ int do_take (string arg)
   object ob;
 
   if (! wizardp(who))
-    return notify_fail ("¶Ô²»Æð£¬ÇëÈÃÎ×Ê¦ÌæÄúÀ´ÄÃ¶«Î÷¡£\n");
+    return notify_fail ("å¯¹ä¸èµ·ï¼Œè¯·è®©å·«å¸ˆæ›¿æ‚¨æ¥æ‹¿ä¸œè¥¿ã€‚\n");
 
   if (! arg)
-    return notify_fail ("ÄúÒªÄÃÊ²Ã´£¿\n");
+    return notify_fail ("æ‚¨è¦æ‹¿ä»€ä¹ˆï¼Ÿ\n");
   if (arg == "armor")
     ob = new ("/d/obj/armor/standard/armor");    
   else if (arg == "shield")
@@ -68,8 +68,8 @@ int do_take (string arg)
   else if (arg == "wrists")
     ob = new ("/d/obj/armor/standard/wrists");    
   else
-    return notify_fail ("ÄúÒªÄÃÊ²Ã´£¿\n");
-  message_vision ("$N´Ó¼Ü×ÓÉÏÄÃÆð$n¡£\n",who,ob);
+    return notify_fail ("æ‚¨è¦æ‹¿ä»€ä¹ˆï¼Ÿ\n");
+  message_vision ("$Nä»Žæž¶å­ä¸Šæ‹¿èµ·$nã€‚\n",who,ob);
   ob->move(who);
   return 1;
 }

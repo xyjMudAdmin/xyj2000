@@ -7,17 +7,17 @@ inherit ROOM;
 
 void create ()
 {
-	set ("short", "É½ÆÂºó");
+	set ("short", "å±±å¡å");
 	set ("long", @LONG
 
-´óÑ©É½Çá¹¦¹Ú¾øÌìÏÂ¡£¸÷´úÊ¦¸µÎªÁËÈÃµÜ×Ó¿Ì¿àÁ·Ï°
-Çá¹¦£¬½«±ù¹ÈËÄÖÜµÄÃÅ¾¡Êı¹Ø±Õ£¬µÜ×ÓĞëÆ¾·Ç·²Çá¹¦
-²Å¿É·ÉÔ¾³ö¹È£¬È´²»ÖªÄÄ¸ö°®ÍµÀÁµÄÍ½µÜÔÚÕâË©ÁËÌõ
-Éş×Ó(rope)£¬ºÙºÙ£¬¿´À´ÓĞ½İ¾¶ÁË¡£
+å¤§é›ªå±±è½»åŠŸå† ç»å¤©ä¸‹ã€‚å„ä»£å¸ˆå‚…ä¸ºäº†è®©å¼Ÿå­åˆ»è‹¦ç»ƒä¹ 
+è½»åŠŸï¼Œå°†å†°è°·å››å‘¨çš„é—¨å°½æ•°å…³é—­ï¼Œå¼Ÿå­é¡»å‡­éå‡¡è½»åŠŸ
+æ‰å¯é£è·ƒå‡ºè°·ï¼Œå´ä¸çŸ¥å“ªä¸ªçˆ±å·æ‡’çš„å¾’å¼Ÿåœ¨è¿™æ‹´äº†æ¡
+ç»³å­(rope)ï¼Œå˜¿å˜¿ï¼Œçœ‹æ¥æœ‰æ·å¾„äº†ã€‚
 LONG);
 
 	set("item_desc", (["rope" : 
-"Ò»Ìõ³¤³¤µÄÉş×Ó²»ÖªÍ¨ÏòÄÄÀï£¬²»·ÁÅÀÅÀ(climb)ÊÔÊÔ¡£\n", 
+"ä¸€æ¡é•¿é•¿çš„ç»³å­ä¸çŸ¥é€šå‘å“ªé‡Œï¼Œä¸å¦¨çˆ¬çˆ¬(climb)è¯•è¯•ã€‚\n", 
                          ]));
 
 	set("exits", 
@@ -46,20 +46,20 @@ void init()
 int do_bed()
 {       object me;
         me=this_player();
-        message_vision(HIY "$NÏÆ¿ªÉ´ÕÊ£¬×¼±¸ÉÏ´²ÁË¡£\n\n" NOR, me);
+        message_vision(HIY "$Næ€å¼€çº±å¸ï¼Œå‡†å¤‡ä¸ŠåºŠäº†ã€‚\n\n" NOR, me);
         me->move("/d/gao/bed_yashi");
-            message_vision(HIY "\nÉ³ÕÊÇáÇáÒ»¶¯£¬$N×êÁË½øÀ´¡£\n" NOR, me);
+            message_vision(HIY "\næ²™å¸è½»è½»ä¸€åŠ¨ï¼Œ$Né’»äº†è¿›æ¥ã€‚\n" NOR, me);
                 return 1;
 }
 
 int do_climb(string arg)
 {
    object me=this_player();
-   if(!arg || arg != "rope") return notify_fail("ÅÀÊ²Ã´£¿\n");
+   if(!arg || arg != "rope") return notify_fail("çˆ¬ä»€ä¹ˆï¼Ÿ\n");
 
-   message_vision(HIY "$N³ÃÖÜÎ§Ã»ÈË×¢Òâ£¬Ë³×ÅÉş×ÓÅÀÁËÏÂÈ¥¡£\n\n" NOR, me);
+   message_vision(HIY "$Nè¶å‘¨å›´æ²¡äººæ³¨æ„ï¼Œé¡ºç€ç»³å­çˆ¬äº†ä¸‹å»ã€‚\n\n" NOR, me);
    me->move(__DIR__"xueshan2");
-   message_vision(HIY "\nÖ»¼û$N²»Öª´ÓÄÄ»¬ÁËÏÂÀ´¡£\n" NOR, me);
+   message_vision(HIY "\nåªè§$Nä¸çŸ¥ä»å“ªæ»‘äº†ä¸‹æ¥ã€‚\n" NOR, me);
 
    return 1;
 

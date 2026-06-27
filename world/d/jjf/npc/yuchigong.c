@@ -6,15 +6,15 @@ inherit F_MASTER;
 
 void create()
 {
-  set_name("Î¾³Ù¹§", ({"yuchi gong", "yuchi", "gong", "yuchigong", "jingde", "yuchi jingde", "yuchijingde", "master", "shifu"}));
+  set_name("å°‰è¿Ÿæ­", ({"yuchi gong", "yuchi", "gong", "yuchigong", "jingde", "yuchi jingde", "yuchijingde", "master", "shifu"}));
   set ("long", @LONG
-Î¾³Ù¹§£¬×Ö¾´µÂ£¬ÄËÊÇÌÆÌ«×ÚÊÖÏÂÃÍ½«¡£ÅÅÎªËåÌÆÊ±µÚ
-Ê®¶şÌõºÃºº¡£Æğ³õËûÊÇ·´ÍõÁõÎäÖİµîÇ°ÔªË§£¬ºóÒò±ø°Ü
-½µÌÆ¡£Ëû¹ßÊ¹Ò»Ìõµã¸ÖÇ¹£¬ÇÒÏ²Ê¹Ò»¶Ô´ÆĞÛÖñ½Ú¸Ö±Ş¡£
+å°‰è¿Ÿæ­ï¼Œå­—æ•¬å¾·ï¼Œä¹ƒæ˜¯å”å¤ªå®—æ‰‹ä¸‹çŒ›å°†ã€‚æ’ä¸ºéš‹å”æ—¶ç¬¬
+åäºŒæ¡å¥½æ±‰ã€‚èµ·åˆä»–æ˜¯åç‹åˆ˜æ­¦å·æ®¿å‰å…ƒå¸…ï¼Œåå› å…µè´¥
+é™å”ã€‚ä»–æƒ¯ä½¿ä¸€æ¡ç‚¹é’¢æªï¼Œä¸”å–œä½¿ä¸€å¯¹é›Œé›„ç«¹èŠ‚é’¢é­ã€‚
 LONG);
  
-  set("title", "¿ª¹úÔªÑ«");
-  set("gender", "ÄĞĞÔ");
+  set("title", "å¼€å›½å…ƒå‹‹");
+  set("gender", "ç”·æ€§");
   set("age", 43);
   set("str", 45);
   set("per", 15);
@@ -45,7 +45,7 @@ LONG);
   set("max_force", 2500);
   set("force_factor", 100);
  
-  create_family("½«¾ü¸®", 2, "À¶");
+  create_family("å°†å†›åºœ", 2, "è“");
   setup();
  
   carry_object("/d/obj/weapon/spear/gangqiang");
@@ -55,7 +55,7 @@ LONG);
  
 int accept_fight(object me)
 {
-  command("say ÀÏ·òÊÖÖØ£¬ÈôÊÇÉËÈË·´¶ø²»ÃÀÁË¡£\n");
+  command("say è€å¤«æ‰‹é‡ï¼Œè‹¥æ˜¯ä¼¤äººåè€Œä¸ç¾äº†ã€‚\n");
   return 0;
 }
 int attempt_apprentice(object me)
@@ -66,16 +66,16 @@ int attempt_apprentice(object me)
 
   if ((effstr< 20) || (int)me->query_con()<25)
     {
-      command("say Õâ"+myname+"ÊÖÎŞ¸¿¼¦Ö®Á¦£¬²»Åä×÷ÎÒÍ½µÜ£¡");
+      command("say è¿™"+myname+"æ‰‹æ— ç¼šé¸¡ä¹‹åŠ›ï¼Œä¸é…ä½œæˆ‘å¾’å¼Ÿï¼");
       return 0;
     }
   if ((int)me->query("cps") < 20 && (int)me->query_cor()<20)
     {
-      command("say Õâ"+myname+"µ¨×Ó»¹²»ÈçÖ»ÀÏÊó£¡");
+      command("say è¿™"+myname+"èƒ†å­è¿˜ä¸å¦‚åªè€é¼ ï¼");
       return 0;
     }
-  command("say ÒªÏë°İÎÒÎªÊ¦£¬µ¹Ò²²»ÄÑ¡£Ö»Ğè½«ÄÇ×íĞÇÂ¥²ğÁË¾ÍĞĞ£¡\n");
-  me->set("pending/jjfbaiÎ¾³Ù¹§", 1);
+  command("say è¦æƒ³æ‹œæˆ‘ä¸ºå¸ˆï¼Œå€’ä¹Ÿä¸éš¾ã€‚åªéœ€å°†é‚£é†‰æ˜Ÿæ¥¼æ‹†äº†å°±è¡Œï¼\n");
+  me->set("pending/jjfbaiå°‰è¿Ÿæ­", 1);
   return 1;
 }
 int accept_object(object me, object ob)
@@ -84,17 +84,17 @@ int accept_object(object me, object ob)
   object book, npc=this_object();
   int kar=me->query_kar(), diff;
  
-  if ((string)ob->query("name_recognized")!="×íĞÇÂ¥Öù×Ó")
+  if ((string)ob->query("name_recognized")!="é†‰æ˜Ÿæ¥¼æŸ±å­")
     {
-      command ("say ÕâÊÇÊ²Ã´ÆÆÀÃ£¿");
+      command ("say è¿™æ˜¯ä»€ä¹ˆç ´çƒ‚ï¼Ÿ");
       call_out("dropthing", 1, thing);
       return 1;
     }
-  if (me->query("pending/jjfbaiÎ¾³Ù¹§"))
+  if (me->query("pending/jjfbaiå°‰è¿Ÿæ­"))
     {
       command ("nod");
-      command ("say "+myname+"¹ûÈ»ÓĞÁ½ÏÂ×Ó£¬ÀÏ·ò¾ÍÊÕÏÂÄã°É£¡");
-      me->delete("pending/jjfbaiÎ¾³Ù¹§");
+      command ("say "+myname+"æœç„¶æœ‰ä¸¤ä¸‹å­ï¼Œè€å¤«å°±æ”¶ä¸‹ä½ å§ï¼");
+      me->delete("pending/jjfbaiå°‰è¿Ÿæ­");
       command ("recruit " + me->query("id") );
       call_out("destroy", 1, ob);
       return 1;
@@ -102,22 +102,22 @@ int accept_object(object me, object ob)
   else
     {
       call_out("destroy", 1, ob);
-      if (!me->query("mark/jjf°İÎºáçÎŞÍû"))
+      if (!me->query("mark/jjfæ‹œé­å¾µæ— æœ›"))
 	  {
 	    command("hehe");
-	    command("say Õâ½ØÖù×Ó¿ÖÅÂÊÇÄã¼ñÀ´µÄ°É£¿");
-	    command("say ¾ÍÆ¾ÄãÕâµã±¾ÊÂ£¬Ò²ÔÒµÄÁË×íĞÇÂ¥£¿");
+	    command("say è¿™æˆªæŸ±å­ææ€•æ˜¯ä½ æ¡æ¥çš„å§ï¼Ÿ");
+	    command("say å°±å‡­ä½ è¿™ç‚¹æœ¬äº‹ï¼Œä¹Ÿç ¸çš„äº†é†‰æ˜Ÿæ¥¼ï¼Ÿ");
 	    return 1;
 	  }
       command ("thumb" +me->query("id"));
-      command ("say "+myname+"¹ûÈ»ÓĞÁ½ÏÂ×Ó£¡");
+      command ("say "+myname+"æœç„¶æœ‰ä¸¤ä¸‹å­ï¼");
       diff=35-kar;
       if(random(diff*diff)>4)
 	return 1;
-      command("say ¿´À´"+myname+"¸úÀÏ·òÓĞÔµ£¬¶øÇÒÓÖ°ïÎÒ³öÁËÒ»¿Ú¶ñÆø¡£");
-      command("say Õâ±¾¸úËæÀÏ·ò¶àÄêµÄ²ğÕĞÃØ¾÷¾ÍËÍ¸øÄã°É£¡");
+      command("say çœ‹æ¥"+myname+"è·Ÿè€å¤«æœ‰ç¼˜ï¼Œè€Œä¸”åˆå¸®æˆ‘å‡ºäº†ä¸€å£æ¶æ°”ã€‚");
+      command("say è¿™æœ¬è·Ÿéšè€å¤«å¤šå¹´çš„æ‹†æ‹›ç§˜è¯€å°±é€ç»™ä½ å§ï¼");
       book=new("/d/obj/book/parrybook2");
-      message_vision(npc->query("name") + "¸ø$NÒ»±¾"+book->query("name"), me);
+      message_vision(npc->query("name") + "ç»™$Nä¸€æœ¬"+book->query("name"), me);
       book->move(me);
       return 1;
     }

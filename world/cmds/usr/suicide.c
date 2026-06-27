@@ -8,22 +8,22 @@ inherit F_CLEAN_UP;
 int main(object me, string arg)
 {
 	if( me->is_busy() )
-		return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»Íê³É¡£\n");
+		return notify_fail("ä½ ä¸Šä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡å®Œæˆã€‚\n");
 
 	if( !arg ) {
-		write("ÄãÖØĞÂÍ¶Ì¥¡£\n");
+		write("ä½ é‡æ–°æŠ•èƒã€‚\n");
 		return 1;
 	}
 
 	if( arg!="-f" ) 
-		return notify_fail("×ÔÉ±ÓĞÁ½ÖÖ£¬ÄúÊÇÒªÓÀÔ¶ËÀµô»¹ÊÇÖØĞÂÍ¶Ì¥£¿\n");
+		return notify_fail("è‡ªæ€æœ‰ä¸¤ç§ï¼Œæ‚¨æ˜¯è¦æ°¸è¿œæ­»æ‰è¿˜æ˜¯é‡æ–°æŠ•èƒï¼Ÿ\n");
 
 	if(wizardp(me))
-	    return notify_fail("Çë²»Òª×ÔÉ±µôÎ×Ê¦ÕÊºÅ£¬Ğ»Ğ»£¡\n");
+	    return notify_fail("è¯·ä¸è¦è‡ªæ€æ‰å·«å¸ˆå¸å·ï¼Œè°¢è°¢ï¼\n");
 
 	write(
-		"Èç¹ûÄúÑ¡ÔñÓÀÔ¶ËÀµôµÄ×ÔÉ±·½Ê½£¬Õâ¸öÈËÎïµÄ×ÊÁÏ¾ÍÓÀÔ¶É¾³ıÁË£¬ÇëÎñ±Ø\n"
-		"¿¼ÂÇÇå³ş£¬È·¶¨µÄ»°ÇëÊäÈëÄúµÄÃÜÂë£º");
+		"å¦‚æœæ‚¨é€‰æ‹©æ°¸è¿œæ­»æ‰çš„è‡ªæ€æ–¹å¼ï¼Œè¿™ä¸ªäººç‰©çš„èµ„æ–™å°±æ°¸è¿œåˆ é™¤äº†ï¼Œè¯·åŠ¡å¿…\n"
+		"è€ƒè™‘æ¸…æ¥šï¼Œç¡®å®šçš„è¯è¯·è¾“å…¥æ‚¨çš„å¯†ç ï¼š");
 	input_to("check_password", 1, me, 1);
 	return 1;
 }
@@ -36,13 +36,13 @@ private void check_password(string passwd, object me, int forever)
 	link_ob = me->query_temp("link_ob");
 	old_pass = link_ob->query("password");
 	if( crypt(passwd, old_pass)!=old_pass ) {
-		write("ÃÜÂë´íÎó£¡\n");
+		write("å¯†ç é”™è¯¯ï¼\n");
 		return;
 	}
 
 	if (forever) {
 		tell_object( me,
-			HIR "\n\nÄã¾ö¶¨Òª×ÔÉ±ÁË£¬Èç¹ûÈıÊ®ÃëÖÓÄÚ²»ºó»Ú£¬¾ÍÕæµÄÓÀ±ğÁË¡£\n\n\n" NOR);
+			HIR "\n\nä½ å†³å®šè¦è‡ªæ€äº†ï¼Œå¦‚æœä¸‰åç§’é’Ÿå†…ä¸åæ‚”ï¼Œå°±çœŸçš„æ°¸åˆ«äº†ã€‚\n\n\n" NOR);
 		me->set_temp("suicide_countdown", 30);
 		me->start_busy( (: call_other, this_object(), "slow_suicide" :) );
 	}
@@ -59,8 +59,8 @@ private int slow_suicide(object me)
 	if( stage > 1 ) {
 		if( stage%5 == 0 )
 		  tell_object(me, 
-			HIR "Äã»¹ÓĞ " + stage + " ÃëµÄÊ±¼ä¿ÉÒÔºó»Ú¡£"+
-			"(ÓÃquitÃüÁîÀ´ºó»Ú)\n" NOR);
+			HIR "ä½ è¿˜æœ‰ " + stage + " ç§’çš„æ—¶é—´å¯ä»¥åæ‚”ã€‚"+
+			"(ç”¨quitå‘½ä»¤æ¥åæ‚”)\n" NOR);
 		return 1;
 	}
 
@@ -88,10 +88,10 @@ private int slow_suicide(object me)
 	  rm("/data/mail/"+couple[0..0]+"/"+couple+__SAVE_EXTENSION__);
 
 
-	write("ºÃ°É£¬ÓÀ±ğÁË:(\n");
+	write("å¥½å§ï¼Œæ°¸åˆ«äº†:(\n");
 	tell_room(environment(me), me->name() +
-		"×ÔÉ±ÁË£¬ÒÔºóÄãÔÙÒ²¿´²»µ½Õâ¸öÈËÁË¡£\n", ({me}));
-	CHANNEL_D->do_channel(this_object(),"rumor",me->name()+"×ÔÉ±ÁË¡£");
+		"è‡ªæ€äº†ï¼Œä»¥åä½ å†ä¹Ÿçœ‹ä¸åˆ°è¿™ä¸ªäººäº†ã€‚\n", ({me}));
+	CHANNEL_D->do_channel(this_object(),"rumor",me->name()+"è‡ªæ€äº†ã€‚");
 	destruct(me);
 	return 0;
 }
@@ -99,16 +99,16 @@ private int slow_suicide(object me)
 int help (object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½: suicide [-f]
+æŒ‡ä»¤æ ¼å¼: suicide [-f]
  
-Èç¹ûÒòÎªÄ³ÖÖÔ­ÒòÄã²»Ïë»îÁË, Äã¿ÉÒÔÑ¡Ôñ×ÔÉ±.
-×ÔÉ±·ÖÁ½ÖÖ:
+å¦‚æœå› ä¸ºæŸç§åŸå› ä½ ä¸æƒ³æ´»äº†, ä½ å¯ä»¥é€‰æ‹©è‡ªæ€.
+è‡ªæ€åˆ†ä¸¤ç§:
  
-suicide    : ÖØĞÂÍ¶Ì¥
-suicide -f : ÓÀÔ¶µÄ³ıÈ¥Íæ¼Ò×ÊÁÏ, ÏµÍ³»áÒªÇóÄã
-             ÊäÈëÃÜÂëÒÔÈ·ÈÏÉí·İ.
+suicide    : é‡æ–°æŠ•èƒ
+suicide -f : æ°¸è¿œçš„é™¤å»ç©å®¶èµ„æ–™, ç³»ç»Ÿä¼šè¦æ±‚ä½ 
+             è¾“å…¥å¯†ç ä»¥ç¡®è®¤èº«ä»½.
  
-ÇëÉ÷ÖØÑ¡Ôñ :)
+è¯·æ…é‡é€‰æ‹© :)
  
 HELP
 );

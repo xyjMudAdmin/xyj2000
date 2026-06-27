@@ -4,12 +4,12 @@ inherit ROOM;
 
 void create()
 {
-  set ("short", "ÓñÌ¨");
+  set ("short", "çŽ‰å°");
   set ("long", @LONG
 
-É½»·Â·µÄ¿ªÀ«µØ´ø´¦£¬Á¢ÓÐÒ»¿éÍ¹³öÓÚÉ½ÍâµÄ´óÊ¯£¬½à°×¾»¹âÎÞ²Ý
-ÎÞÞºÑù×ÓÆæÌØ¡£´óÊ¯Æ½»¬¿É²¢ÅÅ×øÏÂ¶þÈË£¬Ê¯Í·µÄÏÂ²à¿ÌÓÐÁ½¸ö´ó
-×Ö£º¡°ÓñÊ¯¡±¡£
+å±±çŽ¯è·¯çš„å¼€é˜”åœ°å¸¦å¤„ï¼Œç«‹æœ‰ä¸€å—å‡¸å‡ºäºŽå±±å¤–çš„å¤§çŸ³ï¼Œæ´ç™½å‡€å…‰æ— è‰
+æ— è—“æ ·å­å¥‡ç‰¹ã€‚å¤§çŸ³å¹³æ»‘å¯å¹¶æŽ’åä¸‹äºŒäººï¼ŒçŸ³å¤´çš„ä¸‹ä¾§åˆ»æœ‰ä¸¤ä¸ªå¤§
+å­—ï¼šâ€œçŽ‰çŸ³â€ã€‚
 
 LONG);
 
@@ -31,8 +31,8 @@ int do_climb (string arg)
 {
   object who = this_player();
 
-  message_vision ("$N·ÜÁ¦ÏòÉÏÅÀÈ¥¡£\n",who);
-  message_vision ("$NÊÖÒ»ËÉÁ¬ÈË´øÊ¯»©À²Ò»Éù»¬ÁËÏÂÀ´¡£\n",who);
+  message_vision ("$Nå¥‹åŠ›å‘ä¸Šçˆ¬åŽ»ã€‚\n",who);
+  message_vision ("$Næ‰‹ä¸€æ¾è¿žäººå¸¦çŸ³å“—å•¦ä¸€å£°æ»‘äº†ä¸‹æ¥ã€‚\n",who);
   who->unconcious();
   return 1;
 }
@@ -41,8 +41,8 @@ int do_jump (string arg)
 {
   object who = this_player();
 
-  message_vision ("$N¹Ä×ãÓÂÆøÍùÏÂÌøÈ¥¡£\n",who);
-  message_vision ("$NÅéµØÖØÖØË¤ÔÚÌ¨ÏÂ¡£\n",who);
+  message_vision ("$Né¼“è¶³å‹‡æ°”å¾€ä¸‹è·³åŽ»ã€‚\n",who);
+  message_vision ("$Nç °åœ°é‡é‡æ‘”åœ¨å°ä¸‹ã€‚\n",who);
   who->unconcious();
   return 1;
 }

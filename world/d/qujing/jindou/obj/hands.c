@@ -4,8 +4,8 @@
 inherit HANDS;
 
 string *names = ({
-  "ÌúÊÖÌ×",
-  "Í­ÊÖÌ×",
+  "é“æ‰‹å¥—",
+  "é“œæ‰‹å¥—",
 });
 
 string *ids = ({
@@ -21,7 +21,7 @@ void create()
   if ( clonep() )
      set_default_object(__FILE__);
   else {
-   set("unit", "¸±");
+   set("unit", "å‰¯");
    set("value", 200);
    set("material", "metal");
 //   set("armor_prop/armor", 10);

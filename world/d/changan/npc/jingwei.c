@@ -41,9 +41,9 @@ int get_current_day_phase() {
 
 */
 void create() {
-  set_name("¾«ÎÀ",({"jing wei","wei","bird"}));
-  set("long","Ò»Ö»¿É°®µÄĞ¡Ğ¡Äñ£¬°×à¹³à×ã£¬É«²Ê°ßìµ£¬Ïà´«ÊÇÑ×µÛµÄĞ¡Å®¶ù¡£\n");
-  set("gender","Å®ĞÔ");
+  set_name("ç²¾å«",({"jing wei","wei","bird"}));
+  set("long","ä¸€åªå¯çˆ±çš„å°å°é¸Ÿï¼Œç™½å–™èµ¤è¶³ï¼Œè‰²å½©æ–‘æ–“ï¼Œç›¸ä¼ æ˜¯ç‚å¸çš„å°å¥³å„¿ã€‚\n");
+  set("gender","å¥³æ€§");
   set("age",5);
   set("per",999);
   set("str",30+random(10));
@@ -62,8 +62,8 @@ void create() {
   set_skill("dodge", 20);
   
   set("limbs", ({
-               "Í·²¿", "¾±²¿", "ĞØ¿Ú", "ºóĞÄ", "Î²°Í","à¹²¿",
-               "×ó½Å", "ÓÒ½Å", "×ó³á", "ÓÒ³á",}) );
+               "å¤´éƒ¨", "é¢ˆéƒ¨", "èƒ¸å£", "åå¿ƒ", "å°¾å·´","å–™éƒ¨",
+               "å·¦è„š", "å³è„š", "å·¦ç¿…", "å³ç¿…",}) );
 
   setup();
 /*
@@ -74,9 +74,9 @@ void create() {
   set("chat_chance",30);
 */
   set("inquiry", ([
-     "name" : "ÎÒÊÇÑ×µÛµÄÅ®¶ù£¬½ĞÅ®ÍŞ£¬ÔÚ¶«º£ÓÎÓ¾Ê±ÑÍËÀÁË£¬¾Í»¯³ÉÏÖÔÚµÄÑù×Ó¡£",
-     "here" :"ÕâÀï¾ÍÊÇÑÍËÀÎÒµÄ¶«º£(sea)£¬ÎÒÒ»¶¨Òª°ÑËüÌî(fill)Æ½£¡",
-     "Ìîº£" : "Ìîº£ÊÇ¼şºÜÎ£ÏÕµÄÊÂ£¬ÄãÒªÊÇ¾õµÃ±¾Áì¹»ÁË£¬¿ÉÒÔËæ(sui)ÎÒÒ»ÆğÈ¥¡£",
+     "name" : "æˆ‘æ˜¯ç‚å¸çš„å¥³å„¿ï¼Œå«å¥³å¨ƒï¼Œåœ¨ä¸œæµ·æ¸¸æ³³æ—¶æ·¹æ­»äº†ï¼Œå°±åŒ–æˆç°åœ¨çš„æ ·å­ã€‚",
+     "here" :"è¿™é‡Œå°±æ˜¯æ·¹æ­»æˆ‘çš„ä¸œæµ·(sea)ï¼Œæˆ‘ä¸€å®šè¦æŠŠå®ƒå¡«(fill)å¹³ï¼",
+     "å¡«æµ·" : "å¡«æµ·æ˜¯ä»¶å¾ˆå±é™©çš„äº‹ï¼Œä½ è¦æ˜¯è§‰å¾—æœ¬é¢†å¤Ÿäº†ï¼Œå¯ä»¥éš(sui)æˆ‘ä¸€èµ·å»ã€‚",
   ]) );
   call_out("flyaway",10+random(10));
 
@@ -93,15 +93,15 @@ void flyaway() {
   if (!living(me)) return;
   if (!environment()) return;
   all=all_inventory(environment(me));
-   if (environment()->query("short")=="¶«º£Ö®±õ") {
+   if (environment()->query("short")=="ä¸œæµ·ä¹‹æ»¨") {
      if (random(2)) {
-         message_vision("$N´ÓµØÉÏµğÆğÒ»Ğ©Ê¯¿é¡£\n",me);
+         message_vision("$Nä»åœ°ä¸Šå¼èµ·ä¸€äº›çŸ³å—ã€‚\n",me);
          return;
      }
      dest=beach;
-   } else if (environment()->query("short")=="¶«º£º£Ì²") {
+   } else if (environment()->query("short")=="ä¸œæµ·æµ·æ»©") {
        if (random(2)) {
-          message_vision("$N½«×ìÀïÏÎ×ÅµÄÊ¯¿éÍ¶Èëº£ÖĞ¡£\n",me);
+          message_vision("$Nå°†å˜´é‡Œè¡”ç€çš„çŸ³å—æŠ•å…¥æµ·ä¸­ã€‚\n",me);
           return;
        }
        dest=seashore;
@@ -109,9 +109,9 @@ void flyaway() {
 //     command("say where am i?");
      return;
    }
-   message_vision("$NÅÄ×Å³á°ò·É×ßÁË¡£\n",me);
+   message_vision("$Næ‹ç€ç¿…è†€é£èµ°äº†ã€‚\n",me);
    me->move(dest);
-   message_vision("$N·ÉÁË¹ıÀ´¡£\n",me);
+   message_vision("$Né£äº†è¿‡æ¥ã€‚\n",me);
    if (!all) return;
    if (phase<6) return;
    for (int i=0;i<sizeof(all);i++)
@@ -131,13 +131,13 @@ int do_gen(string arg) {
    object jignwei=this_object();
 
   if (!arg && arg!="jing wei" && arg!="bird" && arg!="wei")
-    return notify_fail("ÄãÒª¸úË­£¿\n");
+    return notify_fail("ä½ è¦è·Ÿè°ï¼Ÿ\n");
   if (me->query_temp("follow_jingwei"))
-    return notify_fail("ÄãÒÑ¾­ÔÚ¸ú×Å¾«ÎÀÁË¡£\n"); 
+    return notify_fail("ä½ å·²ç»åœ¨è·Ÿç€ç²¾å«äº†ã€‚\n"); 
   if (phase<6) 
-    return notify_fail("¾«ÎÀ¶ÔÄãËµ£º¡°°×ÌìÌìÆøÌ«ÈÈÁË£¬ÍíÉÏÎÒÔÙ´øÄãÈ¥°É¡£¡±\n");
+    return notify_fail("ç²¾å«å¯¹ä½ è¯´ï¼šâ€œç™½å¤©å¤©æ°”å¤ªçƒ­äº†ï¼Œæ™šä¸Šæˆ‘å†å¸¦ä½ å»å§ã€‚â€\n");
 
   me->set_temp("follow_jingwei",1);
-  message_vision("$N¾ö¶¨¸úËæ¾«ÎÀÒ»ÆğÈ¥Ìîº££¡\n",me);
+  message_vision("$Nå†³å®šè·Ÿéšç²¾å«ä¸€èµ·å»å¡«æµ·ï¼\n",me);
   return 1;
 }

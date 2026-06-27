@@ -1,5 +1,5 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// ·ï»ËÇÙ  
+// å‡¤å‡°ç´  
 
 
 #include <weapon.h>
@@ -8,19 +8,19 @@ inherit "/d/obj/weapon/sword/anqi_container.c";
 
 void create()
 {
-   set_name("·ï»ËÇÙ", ({"fenghuang qin","qin","sword"}));
+   set_name("å‡¤å‡°ç´", ({"fenghuang qin","qin","sword"}));
    set_weight(4000);
    if( clonep() ) 
           set_default_object(__FILE__);
    else 
      {
-      set("long", "Ò»ÕÅÑÕÉ«°µ¾ÉµÄ¹ÅÇÙ£¬¿Ì×ÅÁ½Ö»·ÉÎèµÄ·ï»Ë£¬¿´ÉÏÈ¥ÉÙËµÒ²ÊÇÉÏ°ÙÄêµÄ±¦±´ÁË¡£\n");
-      set("orilong", "Ò»ÕÅÑÕÉ«°µ¾ÉµÄ¹ÅÇÙ£¬¿Ì×ÅÁ½Ö»·ÉÎèµÄ·ï»Ë£¬¿´ÉÏÈ¥ÉÙËµÒ²ÊÇÉÏ°ÙÄêµÄ±¦±´ÁË¡£\n");
-      set("unit", "ÕÅ");
+      set("long", "ä¸€å¼ é¢œè‰²æš—æ—§çš„å¤ç´ï¼Œåˆ»ç€ä¸¤åªé£èˆçš„å‡¤å‡°ï¼Œçœ‹ä¸Šå»å°‘è¯´ä¹Ÿæ˜¯ä¸Šç™¾å¹´çš„å®è´äº†ã€‚\n");
+      set("orilong", "ä¸€å¼ é¢œè‰²æš—æ—§çš„å¤ç´ï¼Œåˆ»ç€ä¸¤åªé£èˆçš„å‡¤å‡°ï¼Œçœ‹ä¸Šå»å°‘è¯´ä¹Ÿæ˜¯ä¸Šç™¾å¹´çš„å®è´äº†ã€‚\n");
+      set("unit", "å¼ ");
       set("value", 20000);
       set("material", "leather");
-      set("wield_msg", "$N´Ó±³ºóÕªÏÂÒ»ÕÅ$n£¬ÅõÔÚÊÖÖĞ¡£\n");
-      set("unwield_msg", "$NÊÕÆğÊÖÖĞµÄ$n£¬Ğ¡ĞÄÒíÒíµÄ±³»Ø±³ºó¡£\n");
+      set("wield_msg", "$Nä»èƒŒåæ‘˜ä¸‹ä¸€å¼ $nï¼Œæ§åœ¨æ‰‹ä¸­ã€‚\n");
+      set("unwield_msg", "$Næ”¶èµ·æ‰‹ä¸­çš„$nï¼Œå°å¿ƒç¿¼ç¿¼çš„èƒŒå›èƒŒåã€‚\n");
       set("anqi/allow", 1);
       set("anqi/max", 40);
       set("anqi/now", 0);

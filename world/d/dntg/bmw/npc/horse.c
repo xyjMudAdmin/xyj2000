@@ -2,31 +2,31 @@
 inherit NPC;
 
 string *names = ({
-  "æèæêÂí",
-  "æëæ÷Âí",
-  "×ÏÑàÂí",
-  "³¬¹âÂí",
-  "³àÍÃÂí",
-  "×··çÂí",
-  "±¼ÏöÂí",
-  "¾ø³¾Âí",
+  "éª…éªŠé©¬",
+  "éªéª¥é©¬",
+  "ç´«ç‡•é©¬",
+  "è¶…å…‰é©¬",
+  "èµ¤å…”é©¬",
+  "è¿½é£é©¬",
+  "å¥”éœ„é©¬",
+  "ç»å°˜é©¬",
 });
 
 void create()
 {
   set_name(names[random(sizeof(names))], ({"horse", "ma"}));
-  set("race", "Ò°ÊŞ");
+  set("race", "é‡å…½");
   set("age", 20);
-  set("long", "Ò»Æ¥ÄÜÌÚÔÆ¼İÎíµÄÌìÂí¡£\n");
+  set("long", "ä¸€åŒ¹èƒ½è…¾äº‘é©¾é›¾çš„å¤©é©¬ã€‚\n");
   set("combat_exp", 50000);
-  set("limbs", ({ "Í·²¿", "ÉíÌå", "Ç°½Å", "áá½Å", "Î²°Í" }) );
+  set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å‰è„š", "å¾Œè„š", "å°¾å·´" }) );
   set("verbs", ({ "bite"}));
 
   set("chat_chance", 1);
   set_skill("dodge", 100);
   set_skill("parry", 100);
   set_skill("unarmed", 100);
-  set("ride/msg", "Æï");
+  set("ride/msg", "éª‘");
   set("ride/dodge", 20+random(6));
   set_temp("apply/dodge", 40);
   set_temp("apply/attack", 40);

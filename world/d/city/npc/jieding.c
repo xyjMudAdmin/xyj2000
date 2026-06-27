@@ -5,10 +5,10 @@ int give_book ();
 
 int create()
 {
-  set_name("½ê¶¥Ð¡É®", ({"jieding xiaoseng","xiaoseng", "seng"}));
-  set("long", "Ò»Î»Ð¡ºÍÉÐ£¬Í·ÉÏÈ«ÊÇ½ê°Ì¡£\n");
+  set_name("ç–¥é¡¶å°åƒ§", ({"jieding xiaoseng","xiaoseng", "seng"}));
+  set("long", "ä¸€ä½å°å’Œå°šï¼Œå¤´ä¸Šå…¨æ˜¯ç–¥ç–¤ã€‚\n");
 
-  set("gender", "ÄÐÐÔ");
+  set("gender", "ç”·æ€§");
   set("attitude", "peaceful");
   set("class", "bonze");
   set("age", 15);
@@ -30,12 +30,12 @@ int create()
 
   set("chat_chance", 5);
   set("chat_msg", ({
-    "½ê¶¥Ð¡É®Ì¾µÀ£º³¤°²ËäºÃÈ´ÊÇ·²³¾£¬ÈôÓûÇóÕý¹û½ðÉíÐëÈ¥Î÷ÌìÈ¡¾­Ò²£¡\n",
+    "ç–¥é¡¶å°åƒ§å¹é“ï¼šé•¿å®‰è™½å¥½å´æ˜¯å‡¡å°˜ï¼Œè‹¥æ¬²æ±‚æ­£æžœé‡‘èº«é¡»åŽ»è¥¿å¤©å–ç»ä¹Ÿï¼\n",
     (: random_move :)
   }));
   set("inquiry", ([
-    "Î÷Ìì" : (: give_book :),
-    "È¡¾­" : (: give_book :),
+    "è¥¿å¤©" : (: give_book :),
+    "å–ç»" : (: give_book :),
   ]) );
 
   set_skill("force", 50);
@@ -74,8 +74,7 @@ int give_book ()
   
   book = new ("/d/obj/books-nonskill/book-qujing");
   add("books",-1);
-  message_vision ("½ê¶¥Ð¡É®¸ø$NÒ»±¾$n¡£\n",who,book);
+  message_vision ("ç–¥é¡¶å°åƒ§ç»™$Nä¸€æœ¬$nã€‚\n",who,book);
   book->move(who);
   return 1; 
 }
-ÿ

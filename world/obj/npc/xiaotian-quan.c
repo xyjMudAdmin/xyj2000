@@ -4,8 +4,8 @@
 inherit NPC;
 void create()
 {
-        set_name("ÏøÌìÈ®", ({ "xiaotian quan", "quan", "dog"}) );
-        set("race", "Ò°ÊŞ");
+        set_name("å“®å¤©çŠ¬", ({ "xiaotian quan", "quan", "dog"}) );
+        set("race", "é‡å…½");
         set("age",10);
         set("str", 30);
         set("attitude", "heroism");
@@ -34,7 +34,7 @@ void invocation(object who)
 {
         object me=this_object();
         COMBAT_D->do_attack(me, who, query_temp("weapon"));
-	message_vision("$NÓÖ»¯ÎªÒ»µÀºÚÆø»Øµ½±ªÆ¤½õÄÒÖĞ¡£\n", me);
+	message_vision("$NåˆåŒ–ä¸ºä¸€é“é»‘æ°”å›åˆ°è±¹çš®é”¦å›Šä¸­ã€‚\n", me);
         destruct(me);
 }
 

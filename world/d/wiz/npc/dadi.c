@@ -5,9 +5,9 @@ inherit NPC;
 
 void create()
 {
-        set_name("Óñ»Ê´óµÛ", ({ "yuhuang dadi" }));
-        set("long", "Óñ»Ê´óµÛ¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("ç‰çš‡å¤§å¸", ({ "yuhuang dadi" }));
+        set("long", "ç‰çš‡å¤§å¸ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 50);
         set("attitude", "friendly");
         set("str", 30);

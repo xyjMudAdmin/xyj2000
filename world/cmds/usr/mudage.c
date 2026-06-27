@@ -9,7 +9,7 @@ int main(object me, string arg)
 	string out_str;
 	
 	if( me->query("sen") < 10 )
-		return notify_fail("ÄãµÄ¾«Éñ²»ÄÜ¼¯ÖĞÀ´Ëã×Ô¼ºµÄÄêËê¡£\n");
+		return notify_fail("ä½ çš„ç²¾ç¥ä¸èƒ½é›†ä¸­æ¥ç®—è‡ªå·±çš„å¹´å²ã€‚\n");
 		
 	age = (int)me->query("mud_age");		
 	sec = age % 60;
@@ -21,11 +21,11 @@ int main(object me, string arg)
 	day = age % 30;
 	mon = age / 30;
 	
-	out_str = (mon? chinese_number(mon)+"ÔÂ":"")
-		+ (day? chinese_number(day)+"Ìì":"")
-		+ (hrs? chinese_number(hrs)+"Ğ¡Ê±":"");
+	out_str = (mon? chinese_number(mon)+"æœˆ":"")
+		+ (day? chinese_number(day)+"å¤©":"")
+		+ (hrs? chinese_number(hrs)+"å°æ—¶":"");
 	
 	me->add("sen", -5);
-	write("ÄãÒÑ¾­ÎªÎ÷ÓÎÕı¹û·Ü¶·" + out_str + "ÁË¡£\n");
+	write("ä½ å·²ç»ä¸ºè¥¿æ¸¸æ­£æœå¥‹æ–—" + out_str + "äº†ã€‚\n");
 	return 1;
 }

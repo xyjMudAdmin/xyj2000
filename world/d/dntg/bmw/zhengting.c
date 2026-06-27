@@ -5,14 +5,14 @@ inherit ROOM;
  
 void create()
 {
-   set("short", "ÕıÌü");
+   set("short", "æ­£å…");
    set("long", @LONG
 
-Ğ¡Ğ¡µÄÕıÌüÖĞ´ó´óĞ¡Ğ¡µÄ¹ÙÔ±¶¼ÔÚ·±Ã¦µÄ¹¤×÷×Å£¬
-ÖĞ¼äÒ»ÕÅ´ó´óµÄ¹«°¸¡£
+å°å°çš„æ­£å…ä¸­å¤§å¤§å°å°çš„å®˜å‘˜éƒ½åœ¨ç¹å¿™çš„å·¥ä½œç€ï¼Œ
+ä¸­é—´ä¸€å¼ å¤§å¤§çš„å…¬æ¡ˆã€‚
 LONG );
 set("item_desc",(["book":"
-ÓùÂí¼à¹²ÉÏµÈ³ÉÄêÕ½ÂíÇ§Æ¥£¬ËæÊ±Ìıºòµ÷ÓÃ¡£\n"
+å¾¡é©¬ç›‘å…±ä¸Šç­‰æˆå¹´æˆ˜é©¬åƒåŒ¹ï¼Œéšæ—¶å¬å€™è°ƒç”¨ã€‚\n"
 ]));
  
    set("exits", ([
@@ -39,7 +39,7 @@ int valid_leave(object me, string dir)
   if (dir == "north" && objectp(present("jian cheng", environment(me)))) 
     {
     if ( me->query("dntg/bmw") !="allow" ) 
-         return notify_fail("¼àØ©ÉìÊÖÀ¹×¡ÄãµÀ£ººóÃæÊÇÓùÂí¼àÖØµØ£¬"+ RANK_D->query_respect(me) +"Ã»ÊÂ»¹ÊÇ²»Òª½øÈ¥ÁË°É¡£\n");
+         return notify_fail("ç›‘ä¸ä¼¸æ‰‹æ‹¦ä½ä½ é“ï¼šåé¢æ˜¯å¾¡é©¬ç›‘é‡åœ°ï¼Œ"+ RANK_D->query_respect(me) +"æ²¡äº‹è¿˜æ˜¯ä¸è¦è¿›å»äº†å§ã€‚\n");
     else  return  ::valid_leave(me, dir); 
     }
   return 1;

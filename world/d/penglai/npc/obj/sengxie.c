@@ -4,14 +4,14 @@
 inherit BOOTS;
 void create()
 {
-        set_name( "É®Ğ¬", ({ "seng xie", "xie" }) );
+        set_name( "åƒ§é‹", ({ "seng xie", "xie" }) );
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ë«");
+                set("unit", "åŒ");
 		set("no_sell", 1);
-                set("long", "Ò»Ë«Ô²¿ÚÇà²¼É®Ğ¬£¬µ«¿´ÆğÀ´Ğ¬µ×±ÈÒ»°ãÉ®Ğ¬ºñÁËĞí¶à£¬»¹ÓĞĞ©ÕëÏß·ì²¹µÄºÛ¼£¡£");
+                set("long", "ä¸€åŒåœ†å£é’å¸ƒåƒ§é‹ï¼Œä½†çœ‹èµ·æ¥é‹åº•æ¯”ä¸€èˆ¬åƒ§é‹åšäº†è®¸å¤šï¼Œè¿˜æœ‰äº›é’ˆçº¿ç¼è¡¥çš„ç—•è¿¹ã€‚");
                 set("value", 100);
                 set("material", "boots");
                 set("armor_prop/armor", 3);
@@ -31,7 +31,7 @@ int do_tear(string arg){
         if( !this_object()->id(arg) ) return 0;
         ob=new("/d/penglai/npc/obj/ditu");
         ob->move(me);
-	message_vision("$NÄÃÆğÉ®Ğ¬Ê¹¾¢Ò»³¶£¬¡¸Å¾¡¹µÄÒ»Éù´ÓĞ¬µ×¼Ğ²ãÖĞµô³öÕÅĞ¡Ö½Æ¬¡£\n", me);
+	message_vision("$Næ‹¿èµ·åƒ§é‹ä½¿åŠ²ä¸€æ‰¯ï¼Œã€Œå•ªã€çš„ä¸€å£°ä»é‹åº•å¤¹å±‚ä¸­æ‰å‡ºå¼ å°çº¸ç‰‡ã€‚\n", me);
         destruct(this_object());
         return 1;
 }

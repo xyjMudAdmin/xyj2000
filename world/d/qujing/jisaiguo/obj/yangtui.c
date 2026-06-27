@@ -6,17 +6,17 @@ inherit F_FOOD;
 
 void create()
 {
-        set_name("¿¾ÑòÍÈ", ({ "yangtui", "tui" }) );
+        set_name("çƒ¤ç¾Šè…¿", ({ "yangtui", "tui" }) );
         set_weight(850);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»Ö»¿¾µÃÏãÅçÅçµÄÑòÍÈ¡£\n");
-                set("unit", "Ö»");
+                set("long", "ä¸€åªçƒ¤å¾—é¦™å–·å–·çš„ç¾Šè…¿ã€‚\n");
+                set("unit", "åª");
                 set("value", 100);
                 set("food_remaining", 8);
                 set("food_supply", 40);
-                set("wield_msg", "$N×¥ÆğÒ»¸ù$n£¬ÎÕÔÚÊÖÖĞµ±ÎäÆ÷¡£\n");
+                set("wield_msg", "$NæŠ“èµ·ä¸€æ ¹$nï¼Œæ¡åœ¨æ‰‹ä¸­å½“æ­¦å™¨ã€‚\n");
                 set("material", "bone");
         }
         init_hammer(3);
@@ -26,9 +26,9 @@ void create()
 int finish_eat()
 {
         if( !query("weapon_prop") ) return 0;
-        set_name("ÑòÍÈ¹ÇÍ·", ({ "bone" }) );
+        set_name("ç¾Šè…¿éª¨å¤´", ({ "bone" }) );
         set_weight(150);
-        set("long", "Ò»¸ù¿ĞµÃ¾«¹âµÄÑòÍÈ¹ÇÍ·¡£\n");
+        set("long", "ä¸€æ ¹å•ƒå¾—ç²¾å…‰çš„ç¾Šè…¿éª¨å¤´ã€‚\n");
         return 1;
 }
 

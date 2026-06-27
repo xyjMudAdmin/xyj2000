@@ -5,12 +5,12 @@ inherit COMBINED_ITEM;
 
 void create()
 {
-	set_name("»¯Ê¬·Û", ({"dust"}));
+	set_name("åŒ–å°¸ç²‰", ({"dust"}));
 	set("long",
-		"ÕâÊÇÒ»°üÓÃ»ÙÊ¬Ãğ¼£µÄ»¯Ê¬·Û£¬Ö»ÒªÒ»¶¡µã¾Í¿ÉÒÔ\n"
-		"»¯È¥(dissolve)Ò»¾ßÊ¬Ìå£¡\n");
-	set("unit", "°ü");
-	set("base_unit", "·İ");
+		"è¿™æ˜¯ä¸€åŒ…ç”¨æ¯å°¸ç­è¿¹çš„åŒ–å°¸ç²‰ï¼Œåªè¦ä¸€ä¸ç‚¹å°±å¯ä»¥\n"
+		"åŒ–å»(dissolve)ä¸€å…·å°¸ä½“ï¼\n");
+	set("unit", "åŒ…");
+	set("base_unit", "ä»½");
 	set("base_weight", 1);
 	set_amount(1);
 }
@@ -25,14 +25,14 @@ int do_dissolve(string arg)
 {
 	object ob;
 
-	if( !arg ) return notify_fail("ÄãÒªÓÃ»¯Ê¬·ÛÈÜ½âÊ²Ã´¶«Î÷£¿\n");
+	if( !arg ) return notify_fail("ä½ è¦ç”¨åŒ–å°¸ç²‰æº¶è§£ä»€ä¹ˆä¸œè¥¿ï¼Ÿ\n");
 	if( !objectp(ob = present(arg, environment(this_player()))) )
-		return notify_fail("ÕâÀïÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+		return notify_fail("è¿™é‡Œæ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
 	if( living(ob) || !ob->id("corpse") )
-		return notify_fail("»¯Ê¬·ÛÖ»ÄÜÓÃÀ´ÈÜ½âÊ¬Ìå¡£\n");
+		return notify_fail("åŒ–å°¸ç²‰åªèƒ½ç”¨æ¥æº¶è§£å°¸ä½“ã€‚\n");
 	message_vision(
-		"$NÓÃÖ¸¼×ÌôÁËÒ»µã»¯Ê¬·ÛÔÚ$nÉÏ£¬Ö»Ìı¼ûÒ»Õó¡¸àÍàÍ¡¹ÉùÏì´ø×Å\n"
-		"Ò»¹É¿ÉÅÂµÄ¶ñ³ô£¬$nÖ»Ê£ÏÂÒ»Ì²»ÆË®¡£\n", this_player(), ob);
+		"$Nç”¨æŒ‡ç”²æŒ‘äº†ä¸€ç‚¹åŒ–å°¸ç²‰åœ¨$nä¸Šï¼Œåªå¬è§ä¸€é˜µã€Œå—¤å—¤ã€å£°å“å¸¦ç€\n"
+		"ä¸€è‚¡å¯æ€•çš„æ¶è‡­ï¼Œ$nåªå‰©ä¸‹ä¸€æ»©é»„æ°´ã€‚\n", this_player(), ob);
 	destruct(ob);
 	add_amount(-1);
 	return 1;

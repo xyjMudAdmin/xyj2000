@@ -5,7 +5,7 @@ inherit "/d/wiz/no_get.c";
 
 void create()
 {
-        set("short", "¥≤…œ");
+        set("short", "Â∫ä‰∏ä");
         set("long", @LONG
 
 LONG

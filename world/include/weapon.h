@@ -3,7 +3,7 @@
 #ifndef __WEAPON__
 #define __WEAPON__
 
-#define DEFAULT_WEAPON_LIMB "”“ ÷"
+#define DEFAULT_WEAPON_LIMB "Âè≥Êâã"
 
 #define TWO_HANDED	1
 #define SECONDARY	2

@@ -2,12 +2,12 @@
 
 inherit ITEM;
 void create() {
-        set_name("ÌúºĞ", ({ "deposit box","box" }) );
+        set_name("é“ç›’", ({ "deposit box","box" }) );
         set_weight(100);
         set_max_encumbrance(10000);
         if( clonep() )                 set_default_object(__FILE__);
         else {
-                set("unit", "Ö»");
+                set("unit", "åª");
                 set("value", 500);
         }
       set("max_items",1);
@@ -23,15 +23,15 @@ int do_mark(string arg) {
     
 
    if (!arg) {
-     if (!query("mark"))  write("ºĞ×ÓÉÏ»¹Ã»ÓĞÈÎºÎ¼ÇºÅ¡£\n");
-       else write("ºĞ×ÓÉÏ¿Ì×Å£º "+query("mark")+"\n");
+     if (!query("mark"))  write("ç›’å­ä¸Šè¿˜æ²¡æœ‰ä»»ä½•è®°å·ã€‚\n");
+       else write("ç›’å­ä¸Šåˆ»ç€ï¼š "+query("mark")+"\n");
      return 1;
    }
 
-   if (query("owner")) return notify_fail("±ğÂÒ¶¯£¡\n");
+   if (query("owner")) return notify_fail("åˆ«ä¹±åŠ¨ï¼\n");
 
-   if (query("mark")) write("Äã½«ºĞ×ÓÉÏÔ­À´µÄ¼ÇºÅÍ¿µô¡£\n");
-   write("ÄãÔÚºĞ×ÓÉÏ¿ÌÉÏ¡°"+arg+"¡±µÄ×ÖÑù¡£\n");
+   if (query("mark")) write("ä½ å°†ç›’å­ä¸ŠåŸæ¥çš„è®°å·æ¶‚æ‰ã€‚\n");
+   write("ä½ åœ¨ç›’å­ä¸Šåˆ»ä¸Šâ€œ"+arg+"â€çš„å­—æ ·ã€‚\n");
    set("mark",arg);
 
    return 1;
@@ -55,7 +55,7 @@ int do_put(string arg)
 
     inv = all_inventory(dest);
     if (inv && sizeof(inv)) {
-       write("ÌúºĞÀïÒÑ¾­ÓĞ¶«Î÷ÁË¡£\n");
+       write("é“ç›’é‡Œå·²ç»æœ‰ä¸œè¥¿äº†ã€‚\n");
        return 1;
     }
     return 0;

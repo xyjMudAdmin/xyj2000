@@ -5,10 +5,10 @@ inherit BBS_BOARD;
 
 void create()
 {
-        set_name("Î÷ÓÎ"+HIG+" BBS "+NOR+"ĞÂÎÅÊÔÓÃ°å", ({ "board" }) );
+        set_name("è¥¿æ¸¸"+HIG+" BBS "+NOR+"æ–°é—»è¯•ç”¨æ¿", ({ "board" }) );
         set("location", "/d/wiz/jobroom");
         set("board_id", "xyj_b");
-        set("long", "ÕâÊÇÒ»¸ö¹©¸÷Î»½»Á÷ÌÖÂÛµÄ"+HIG+" BBS "+NOR+"°å¡£\n" );
+        set("long", "è¿™æ˜¯ä¸€ä¸ªä¾›å„ä½äº¤æµè®¨è®ºçš„"+HIG+" BBS "+NOR+"æ¿ã€‚\n" );
         setup();
         set("capacity", 500);
         replace_program(BBS_BOARD);

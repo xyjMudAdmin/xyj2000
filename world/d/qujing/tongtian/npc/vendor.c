@@ -7,9 +7,9 @@ inherit F_VENDOR_SALE;
 void create()
 {
   reload("tongtian_chen_sanxian");
-  set_name("³ÂÈıÏÊ", ({"chen sanxian","chen"}));
-  set("title", "Ë®ÏÊ··×Ó");
-  set("gender", "ÄĞĞÔ");
+  set_name("é™ˆä¸‰é²œ", ({"chen sanxian","chen"}));
+  set("title", "æ°´é²œè´©å­");
+  set("gender", "ç”·æ€§");
   set("combat_exp", 500);
   set("age", 30);
   set("per", 34);

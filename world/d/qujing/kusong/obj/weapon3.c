@@ -5,13 +5,13 @@ inherit WHIP;
 
 void create()
 {
-        set_name("ÌúË÷Á´", ({"iron whip", "lian", "whip"}));
+        set_name("é“ç´¢é“¾", ({"iron whip", "lian", "whip"}));
         set_weight(2000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long","Ò»Ìõ³¤³¤µÄÌúÁ´£¬ÉÏÃæÕ´ÂúÁËÑª£®\n");
-                set("unit", "Ìõ");
+                set("long","ä¸€æ¡é•¿é•¿çš„é“é“¾ï¼Œä¸Šé¢æ²¾æ»¡äº†è¡€ï¼\n");
+                set("unit", "æ¡");
                 set("value", 500);
         }
         init_whip(30);

@@ -12,11 +12,11 @@ int work_me();
 void create()
 {
  
-	set_name("Àî¾¸", ({ "li jing", "jing", "li" }) );
-	set("gender", "ÄĞĞÔ" );
-	set("long", "ÍĞËşÀîÌìÍõÄËÊÇÌì½çÔªË§£¬÷âÏÂÊ®ÍòÌì±øÌì½«£¬·¨Á¦ÎŞ±ß¡£\n");
+	set_name("æé–", ({ "li jing", "jing", "li" }) );
+	set("gender", "ç”·æ€§" );
+	set("long", "æ‰˜å¡”æå¤©ç‹ä¹ƒæ˜¯å¤©ç•Œå…ƒå¸…ï¼Œéº¾ä¸‹åä¸‡å¤©å…µå¤©å°†ï¼Œæ³•åŠ›æ— è¾¹ã€‚\n");
 	set("age",40);
-	set("title", "ÍĞËşÌìÍõ");
+	set("title", "æ‰˜å¡”å¤©ç‹");
 	set("str", 40);
 	set("int", 30);
 	set("con", 30);
@@ -58,7 +58,7 @@ void create()
 	
 	set("chat_chance",1);
 	set("chat_msg", ({
-		    name()+"ËµµÀ£ºÄÄÎ»´óÏÉ¿ÉÔ¸È¥ÏÂ½çÃğÑı£¿\n",
+		    name()+"è¯´é“ï¼šå“ªä½å¤§ä»™å¯æ„¿å»ä¸‹ç•Œç­å¦–ï¼Ÿ\n",
 		    }));
 
         seteuid(getuid());
@@ -66,7 +66,7 @@ void create()
 set("inquiry", ([
 "mieyao": (: work_me :),
 "kill": (: work_me :),
-"ÃğÑı": (: work_me :),
+"ç­å¦–": (: work_me :),
 ]));
 
 	setup();
@@ -92,8 +92,8 @@ int work_me()
 		    time()<t+1800) {
 		command("heng");
 		command(
- 		  "say ÀÏ·ò²»ÊÇÅÉÄãÈ¥½µ·ş"+me->query("mieyao/name")
-		  +"Âğ£¿\n");
+ 		  "say è€å¤«ä¸æ˜¯æ´¾ä½ å»é™æœ"+me->query("mieyao/name")
+		  +"å—ï¼Ÿ\n");
 		return 1;
 	    }
 	    // failed, decrease lvl.
@@ -107,9 +107,9 @@ int work_me()
 	} else { // job done
 	    if(t<=time() &&
 		    time()<t+10) {
-		message_vision("$N¶ÔÊÖÖĞÕÕÑı¾µÒ»¿´£¬Ëµ"+
-			"£ºÕâÎ»"+RANK_D->query_respect(me)
-			+",ÑıÄ§ÒÑ³ı¾¡,²»·ÁÏÈÈ¥ĞªÏ¢¡£\n",
+		message_vision("$Nå¯¹æ‰‹ä¸­ç…§å¦–é•œä¸€çœ‹ï¼Œè¯´"+
+			"ï¼šè¿™ä½"+RANK_D->query_respect(me)
+			+",å¦–é­”å·²é™¤å°½,ä¸å¦¨å…ˆå»æ­‡æ¯ã€‚\n",
 			this_object(), me);
 		return 1;
 	    }
@@ -144,9 +144,9 @@ int start_job(object me)
         ghost = new(__DIR__+list[random(sizeof(list))]);
         where=ghost->invocation(me, lvl);
 	
-	message_vision("$N½«ÊÖÖĞÕÕÑı¾µ³¯ÏÂ½çÒ»»Î£¡\n",this_object());
-	message_vision("$N¶Ô$nËµµÀ£º½üÓĞ"+where+"Îª·Ç×÷´õ£¬"
-		+"ÇëËÙÈ¥½µ·ş£¡\n"
+	message_vision("$Nå°†æ‰‹ä¸­ç…§å¦–é•œæœä¸‹ç•Œä¸€æ™ƒï¼\n",this_object());
+	message_vision("$Nå¯¹$nè¯´é“ï¼šè¿‘æœ‰"+where+"ä¸ºéä½œæ­¹ï¼Œ"
+		+"è¯·é€Ÿå»é™æœï¼\n"
 		,this_object(),me);
 	me->set("mieyao/time_start", time());
 	me->set("mieyao/name",ghost->query("name"));

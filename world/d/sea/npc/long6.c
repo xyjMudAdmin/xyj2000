@@ -9,11 +9,11 @@ inherit NPC;
 
 void create()
 {
-  set_name("÷Ò÷Ñ",({"tao tie","tao","tie","long","taotie","dragon"}));
-  set("long","ÁúÉú¾Å×Ó²»³ÉÁú£¬¸÷ÓĞËùºÃ£º÷Ò÷ÑÄËµÚÁù×Ó£¬Æ½ÉúºÃÊ³¡£\n");
-  set("gender", "ÄĞĞÔ");
+  set_name("é¥•é¤®",({"tao tie","tao","tie","long","taotie","dragon"}));
+  set("long","é¾™ç”Ÿä¹å­ä¸æˆé¾™ï¼Œå„æœ‰æ‰€å¥½ï¼šé¥•é¤®ä¹ƒç¬¬å…­å­ï¼Œå¹³ç”Ÿå¥½é£Ÿã€‚\n");
+  set("gender", "ç”·æ€§");
   set("age", 28);
-  set("title", "ÁúÍõ¾Å×ÓÖ®");
+  set("title", "é¾™ç‹ä¹å­ä¹‹");
   set("class","dragon");
   set("attitude", "peaceful");
   set("max_kee", 1000);
@@ -55,7 +55,7 @@ void create()
   set("chat_chance_combat", 20);
   set("chat_msg_combat", ({
     (: cast_spell, "hufa" :),
-    "÷Ò÷Ñà«à«µÀ£º¶öÁË£¬¶öÁË£¬¸ÃÕÒµã¶«Î÷³ÔÁË¡£\n",
+    "é¥•é¤®å–ƒå–ƒé“ï¼šé¥¿äº†ï¼Œé¥¿äº†ï¼Œè¯¥æ‰¾ç‚¹ä¸œè¥¿åƒäº†ã€‚\n",
   }) );
 
   setup();  
@@ -70,7 +70,7 @@ int accept_fight(object me)
   command("consider "+me->query("id"));
   command("jealous");
   command("grin");
-  command("say ÕıºÃÎÒ¶öÁË£¬³ÔµÄ¾ÍËÍÉÏÃÅÀ´ÁË£¡");
+  command("say æ­£å¥½æˆ‘é¥¿äº†ï¼Œåƒçš„å°±é€ä¸Šé—¨æ¥äº†ï¼");
   command("kill "+me->query("id"));
   return 1;
 }

@@ -1,5 +1,5 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// jia-shen.c ¼ÙÉí
+// jia-shen.c å‡èº«
 #include <ansi.h>
 
 inherit NPC;
@@ -8,8 +8,8 @@ void create()
 {
 	object ob1, ob2;
 	
-	set_name("¼ÙÉí",({"jiashen"}));
-	set("gender","ÄĞĞÔ");
+	set_name("å‡èº«",({"jiashen"}));
+	set("gender","ç”·æ€§");
 	set("age",30);
 	set("str",30);
 	set("per",20);
@@ -23,10 +23,10 @@ void create()
 	setup();
 	ob1=carry_object("/d/obj/weapon/stick/bintiegun");
 	ob1->wield();
-	ob1->set("no_sell", "ÕÆ¹ñµÄî©ÁËÒ»ÑÛµÀ£ºÕâ¶«Î÷Ò»¿´¾ÍÊÇÁÓµÈÆ·£¬²»Òª£¡²»Òª£¡\n");
+	ob1->set("no_sell", "æŒæŸœçš„çŸäº†ä¸€çœ¼é“ï¼šè¿™ä¸œè¥¿ä¸€çœ‹å°±æ˜¯åŠ£ç­‰å“ï¼Œä¸è¦ï¼ä¸è¦ï¼\n");
 	ob2=carry_object("/d/obj/armor/shoupi");
 	ob2->wear();
-	ob2->set("no_sell", "ÕÆ¹ñµÄî©ÁËÒ»ÑÛµÀ£ºÕâ¶«Î÷Ò»¿´¾ÍÊÇÁÓµÈÆ·£¬²»Òª£¡²»Òª£¡\n");
+	ob2->set("no_sell", "æŒæŸœçš„çŸäº†ä¸€çœ¼é“ï¼šè¿™ä¸œè¥¿ä¸€çœ‹å°±æ˜¯åŠ£ç­‰å“ï¼Œä¸è¦ï¼ä¸è¦ï¼\n");
 }
 
 void copy_status(object me,object ob)
@@ -127,7 +127,7 @@ void copy_status(object me,object ob)
 void die()
 {
         message("vision",
-                HIB + name() + "Éí×ÓÒ»»Î£¬±ä³ÉÒ»¹ÉÇàÑÌÉ¢È¥ÁË¡£\n" NOR,environment(),
+                HIB + name() + "èº«å­ä¸€æ™ƒï¼Œå˜æˆä¸€è‚¡é’çƒŸæ•£å»äº†ã€‚\n" NOR,environment(),
                 this_object() );
         destruct(this_object());
 }
@@ -155,8 +155,8 @@ void invocation(object who)
 
 	me=this_object();
 	message("vision",
-		HIB "Ö»¼û"+who->query("name")+
-		"½«ÉíÒ»»Î£¬¶ÙÊ±ÑÛÇ°ÓÖ³öÏÖÒ»¸ö"+who->query("name")+"£¡\n" NOR,
+		HIB "åªè§"+who->query("name")+
+		"å°†èº«ä¸€æ™ƒï¼Œé¡¿æ—¶çœ¼å‰åˆå‡ºç°ä¸€ä¸ª"+who->query("name")+"ï¼\n" NOR,
 		environment(),this_object());
 	copy_status(me,who);
 	enemy=who->query_enemy();

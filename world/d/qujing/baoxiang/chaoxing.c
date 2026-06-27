@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "³±ÐÇ¹È");
+  set ("short", "æ½®æ˜Ÿè°·");
   set ("long", @LONG
 
-ÖÜÎ§ÊÇÂÔÂ¡ÆðµÄÉ½ÆÂ£¬ÖÐÐÄÏÂ°¼µØÃæÈáÈí£¬ÐÐÈç¹È×´¡£´óÐ¡ÑÒÊ¯
-³Ê°µºìÉ«£¬³¤ÂúÂÌÉ«Ì¦Þº¡£¶«±ßÓÐÒ»Ð©°ëÈË¸ßµÄ¹àÄ¾£¬ÅÀÓÐ´Ö´Ö
-µÄÌÙ×´Ö²Îï¡£
+å‘¨å›´æ˜¯ç•¥éš†èµ·çš„å±±å¡ï¼Œä¸­å¿ƒä¸‹å‡¹åœ°é¢æŸ”è½¯ï¼Œè¡Œå¦‚è°·çŠ¶ã€‚å¤§å°å²©çŸ³
+å‘ˆæš—çº¢è‰²ï¼Œé•¿æ»¡ç»¿è‰²è‹”è—“ã€‚ä¸œè¾¹æœ‰ä¸€äº›åŠäººé«˜çš„çŒæœ¨ï¼Œçˆ¬æœ‰ç²—ç²—
+çš„è—¤çŠ¶æ¤ç‰©ã€‚
 
 LONG);
 
@@ -39,7 +39,7 @@ int do_sink(string arg)
 
   if (arg)
     return 0;
-  message_vision("$N½ÅÏÂÒ»Èí£¡\n",who);
+  message_vision("$Nè„šä¸‹ä¸€è½¯ï¼\n",who);
 
   who->move(__DIR__"shanc");
   return 1;
@@ -52,7 +52,7 @@ int do_down(string arg)
   if (arg)
     return 0;
 
-  message_vision("$N½ÅÏÂÒ»Èí£¡\n",who);
+  message_vision("$Nè„šä¸‹ä¸€è½¯ï¼\n",who);
   if (random(2))
     who->move(__DIR__"shana");
   else  

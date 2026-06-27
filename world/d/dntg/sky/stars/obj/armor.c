@@ -1,5 +1,5 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// jinjia.c ½ð¼×
+// jinjia.c é‡‘ç”²
 #include <armor.h>
 #include "self_destruct.c"
 
@@ -7,13 +7,13 @@ inherit ARMOR;
 
 void create()
 {
-        set_name("Õ½¼×", ({"armor"}));
+        set_name("æˆ˜ç”²", ({"armor"}));
         set_weight(30000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼þ");
-		set("long", "Ò»¼þÕ½¼×£®\n");
+                set("unit", "ä»¶");
+		set("long", "ä¸€ä»¶æˆ˜ç”²ï¼Ž\n");
                 set("material", "steel");
                 set("value", 200);
                 set("armor_prop/armor", 55);

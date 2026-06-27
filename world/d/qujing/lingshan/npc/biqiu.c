@@ -7,15 +7,15 @@ void create()
 {
   if (random(2))
   {
-    set_name("±ÈÇðÉ®", ({ "biqiu seng", "biqiu", "seng" }));
-    set("gender", "ÄÐÐÔ");
+    set_name("æ¯”ä¸˜åƒ§", ({ "biqiu seng", "biqiu", "seng" }));
+    set("gender", "ç”·æ€§");
   }
   else
   {
-    set_name("±ÈÇðÄá", ({ "biqiu ni", "biqiu", "ni" }));
-    set("gender", "Å®ÐÔ");
+    set_name("æ¯”ä¸˜å°¼", ({ "biqiu ni", "biqiu", "ni" }));
+    set("gender", "å¥³æ€§");
   }
-  set("title", "ÁéÉ½");
+  set("title", "çµå±±");
   set("age", 80);
   set("attitude", "peaceful");
   set("str",40);
@@ -58,4 +58,3 @@ void create()
   carry_object("/d/obj/cloth/jia_sha")->wear();
 }
 
-ÿ

@@ -4,9 +4,9 @@ string try_me();
 
 void create()
 {
-        set_name("ÇØ°²", ({"qin an", "qin"}));
-        set("title", "½«¾ü¸®×Ü¹Ü");
-        set("gender", "ÄĞĞÔ");
+        set_name("ç§¦å®‰", ({"qin an", "qin"}));
+        set("title", "å°†å†›åºœæ€»ç®¡");
+        set("gender", "ç”·æ€§");
         set("age", 45);
 
         set("combat_exp", 35000);
@@ -17,7 +17,7 @@ void create()
 	set_skill("parry", 70);
         setup();
         set("inquiry", ([
-"ÙºÒø": (: try_me :),
+"ä¿¸é“¶": (: try_me :),
 ]) );
 
         carry_object("/d/gao/obj/magua")->wear();
@@ -31,15 +31,15 @@ void init()
 
 int do_answer(string arg)
 {	
-        if( !arg ) return notify_fail("ÄãËµÊ²Ã´£¿\n");
+        if( !arg ) return notify_fail("ä½ è¯´ä»€ä¹ˆï¼Ÿ\n");
         this_player()->set_temp("pending/jiangjun_answer", 0);
-        message_vision("$N´ğµÀ£º" + arg + "\n", this_player());
-        if( strsrch(arg, "°İÊ¦") >=0  ) {
+        message_vision("$Nç­”é“ï¼š" + arg + "\n", this_player());
+        if( strsrch(arg, "æ‹œå¸ˆ") >=0  ) {
                 command("haha");
-                command("say ²»ÊÇÎÒ´µ£¬ÎÒ¼Ò½«¾üÎä¹¦Ã»ÈËÄÜ±È£¡\n");
+                command("say ä¸æ˜¯æˆ‘å¹ï¼Œæˆ‘å®¶å°†å†›æ­¦åŠŸæ²¡äººèƒ½æ¯”ï¼\n");
                 this_player()->set_temp("pending/jiangjun_answer", 1);
         } else {
-                command("say ÄãºúËµÊ²Ã´Ñ½£¿Ò»±ßÍæÈ¥£¡\n");
+                command("say ä½ èƒ¡è¯´ä»€ä¹ˆå‘€ï¼Ÿä¸€è¾¹ç©å»ï¼\n");
         }
         return 1;
 }
@@ -48,8 +48,8 @@ string try_me()
 { 	
 	object me;
 	me = this_player();
-        if((string)me->query("family/family_name")!="½«¾ü¸®"){
-        return ("Äã·Ç¹Ù¼Ò£¬ºÎÀ´ÙºÒø£¡£¡£¡\n");
+        if((string)me->query("family/family_name")!="å°†å†›åºœ"){
+        return ("ä½ éå®˜å®¶ï¼Œä½•æ¥ä¿¸é“¶ï¼ï¼ï¼\n");
 	}
 	else
         if(!(int)me->query("money_get")){
@@ -59,10 +59,10 @@ string try_me()
                 add_money("gold", 1);
                 command("give 1 gold to " + me->query("id"));
                 me->add("money_get", 500);
-		return ("ÊÇÊ±ºòÁË£¬ÕâÊÇ±¾ÔÂÙºÒø£®\n");
+		return ("æ˜¯æ—¶å€™äº†ï¼Œè¿™æ˜¯æœ¬æœˆä¿¸é“¶ï¼\n");
         }
 	else
                 me->add("money_get", 100);
-		return ("ÔÂÇ®¸ÕËÍ¹ı£¬ÔõÃ´ÓÖÀ´ÒªÁË£¿\n");
+		return ("æœˆé’±åˆšé€è¿‡ï¼Œæ€ä¹ˆåˆæ¥è¦äº†ï¼Ÿ\n");
 }
 

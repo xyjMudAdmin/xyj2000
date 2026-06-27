@@ -8,28 +8,28 @@ void create()
 	switch (random(8))
   {
 	case 0:{
-	set_name("ÎåÈÊÔÂ±ı", ({"moon cake", "mooncake", "yue bing", "yuebing"}));
+	set_name("äº”ä»æœˆé¥¼", ({"moon cake", "mooncake", "yue bing", "yuebing"}));
 	break;}
 	case 1:{
-	 set_name("¶¹É³ÔÂ±ı", ({"moon cake", "mooncake", "yue bing", "yuebing"}));
+	 set_name("è±†æ²™æœˆé¥¼", ({"moon cake", "mooncake", "yue bing", "yuebing"}));
        break;}
 	case 2: {
-	set_name("Ë«»ÆÔÂ±ı", ({"moon cake", "mooncake", "yue bing", "yuebing"}));
+	set_name("åŒé»„æœˆé¥¼", ({"moon cake", "mooncake", "yue bing", "yuebing"}));
        break;}
 	case 3: {
-	  set_name("½ğÍÈÔÂ±ı", ({"moon cake", "mooncake", "yue bing", "yuebing"}));
+	  set_name("é‡‘è…¿æœˆé¥¼", ({"moon cake", "mooncake", "yue bing", "yuebing"}));
        break;}
 	case 4: {
-	  set_name("Á«ÈØÔÂ±ı", ({"moon cake", "mooncake", "yue bing", "yuebing"}));
+	  set_name("è²è“‰æœˆé¥¼", ({"moon cake", "mooncake", "yue bing", "yuebing"}));
 	break;}
         case 5: {
-          set_name("Ò¬ÈØÔÂ±ı", ({"moon cake", "mooncake", "yue bing", "yuebing"}));
+          set_name("æ¤°è“‰æœˆé¥¼", ({"moon cake", "mooncake", "yue bing", "yuebing"}));
         break;}
         case 6: {
-          set_name("ÔæÄàÔÂ±ı", ({"moon cake", "mooncake", "yue bing", "yuebing"}));
+          set_name("æ£æ³¥æœˆé¥¼", ({"moon cake", "mooncake", "yue bing", "yuebing"}));
         break;}
         case 7: {
-          set_name("ÆßĞÇ°éÔÂ", ({"moon cake", "mooncake", "yue bing", "yuebing"}));
+          set_name("ä¸ƒæ˜Ÿä¼´æœˆ", ({"moon cake", "mooncake", "yue bing", "yuebing"}));
         break;}
 
 	}
@@ -37,12 +37,12 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿é");
-                set("long", "Ò»¿é¾«ÃÀµÄÔÂ±ı£¬ÉÏÃæÓ¡×Å¡°ÖĞÇï¿ìÀÖ¡±µÄÍ¼°¸¡£\n");
+                set("unit", "å—");
+                set("long", "ä¸€å—ç²¾ç¾çš„æœˆé¥¼ï¼Œä¸Šé¢å°ç€â€œä¸­ç§‹å¿«ä¹â€çš„å›¾æ¡ˆã€‚\n");
                 set("food_remaining", 4);
                 set("food_supply", 50);
 		set("value", 1000);
-		set("no_sell","ÄÃÈ¥Óë´ó¼Ò·ÖÏí²»ºÃÂğ£¿£º£©\n");
+		set("no_sell","æ‹¿å»ä¸å¤§å®¶åˆ†äº«ä¸å¥½å—ï¼Ÿï¼šï¼‰\n");
         }
 }
 

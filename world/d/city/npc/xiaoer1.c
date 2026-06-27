@@ -4,8 +4,8 @@ inherit NPC;
 
 void create()
 {
-       set_name("��С��", ({"xiao er","xiaoer","xiao","waiter","er"}));
-       set("gender", "����");
+       set_name("店小二", ({"xiao er","xiaoer","xiao","waiter","er"}));
+       set("gender", "男性");
         set("combat_exp", 1000);
        set("age", 26);
        set("per", 14);
@@ -33,9 +33,9 @@ void greeting(object ob)
         if( !ob || !visible(ob) || environment(ob) != environment() ) return;
         switch( random(3) ) {  // 1/3 chance to greet.
                 case 0:
-                        say( "��С��Ц�����˵������λ" +
+                        say( "店小二笑咪咪地说道：这位" +
 RANK_D->query_respect(ob)
-                                + "������ЪЪ�ţ������Ѱɡ�\n");
+                                + "，进来歇歇脚，喝两盅吧。\n");
                         break;
         }
 }

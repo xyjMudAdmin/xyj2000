@@ -5,9 +5,9 @@ inherit BLADE;
 
 void create()
 {
-  set_name("Ê¯²ùµ¶", ({ "shichan dao", "dao", "blade" }) );
+  set_name("çŸ³é“²åˆ€", ({ "shichan dao", "dao", "blade" }) );
   init_blade(30);
-  set("unit", "°Ñ");
+  set("unit", "æŠŠ");
   set_weight(800);
   if( clonep() )
      set_default_object(__FILE__);

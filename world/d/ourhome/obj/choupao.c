@@ -5,12 +5,12 @@ inherit EQUIP;
 
 void create()
 {
-        set_name("≥Ò≈€", ({"choupao","cloth", "pao"}));
+        set_name("Áª∏Ë¢ç", ({"choupao","cloth", "pao"}));
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "º˛");
+                set("unit", "‰ª∂");
                 set("value", 500);
                 set("material", "cloth");
                 set("armor_type", "cloth");

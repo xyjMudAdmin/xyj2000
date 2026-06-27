@@ -6,9 +6,9 @@ inherit F_VENDOR_SALE;
 void create()
 {
   reload("baoxiang_xi_jiang");
-  set_name("Îý½³", ({"xi jiang","jiang"}));
+  set_name("é”¡åŒ ", ({"xi jiang","jiang"}));
   set("shop_id", ({"xijiang"}));
-  set("gender", "ÄÐÐÔ");
+  set("gender", "ç”·æ€§");
   set("combat_exp", 1000);
   set("age", 35);
   set("per", 34);

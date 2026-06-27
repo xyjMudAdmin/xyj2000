@@ -9,21 +9,21 @@ inherit SWORD;
 
 void create()
 {
-	set_name("×Ï½ğóï", ({ "zijin xiao","xiao","zijinxiao"}) );
+	set_name("ç´«é‡‘ç®«", ({ "zijin xiao","xiao","zijinxiao"}) );
 	set_weight(1000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¸ù");
+		set("unit", "æ ¹");
 		set("material", "wood");
-		set("long", "º«Ïæ×ÓµÄ×Ï½ğóï£¬ÌıËµÊÇÓÃÄÏº£×ÏÖñÁÖÀïµÄÒ»ÖêÉñÖñ×öµÄ¡£¡£\n");
+		set("long", "éŸ©æ¹˜å­çš„ç´«é‡‘ç®«ï¼Œå¬è¯´æ˜¯ç”¨å—æµ·ç´«ç«¹æ—é‡Œçš„ä¸€æ ªç¥ç«¹åšçš„ã€‚ã€‚\n");
                 set("no_sell", 1);
                 set("no_drop", 1);
                 set("no_put", 1);
                 set("value", 30000);
                 set("replace_file", "/d/obj/weapon/sword/yudi");
-		set("wield_msg", "$NÄÃÆğ$n£¬²»½ûÏëÆğÁËÎªÕâóï¶ø±»À§ÄÏº£µÄÀöÈË¡£\n");
-		set("unwield_msg", "$NÉñÇéÎ®ÃÒ£¬ÎŞ¾«´ò²ÉµÄ½«$n²å»ØÑü¼ä¡£\n");
+		set("wield_msg", "$Næ‹¿èµ·$nï¼Œä¸ç¦æƒ³èµ·äº†ä¸ºè¿™ç®«è€Œè¢«å›°å—æµ·çš„ä¸½äººã€‚\n");
+		set("unwield_msg", "$Nç¥æƒ…èé¡ï¼Œæ— ç²¾æ‰“é‡‡çš„å°†$næ’å›è…°é—´ã€‚\n");
        	        set("weapon_prop/int", 2);
                 set("music/type", "xiao");
 	}

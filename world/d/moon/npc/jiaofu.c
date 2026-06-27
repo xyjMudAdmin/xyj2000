@@ -1,5 +1,5 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// jiaofu.c ½Î·ò
+// jiaofu.c è½¿å¤«
 
 inherit NPC;
 
@@ -7,10 +7,10 @@ int do_kill(string);
 
 void create()
 {
-	set_name("½Î·ò", ({ "jiaofu" }));
-	set("long", "Ëû¾ÍÊÇ×¨ÃÅ¸ºÔğÌ§»¨½ÎµÄ½Î·ò¡£\n"
-		"Ëû¿´ÆğÀ´Îå´óÈı´Ö£¬ÓĞ°Ñ×ÓÁ¦Æø£¬Ì§ÄÇ»¨½Î×ß×ÅÒ»¶¨ºÜÎÈµ±¡£\n");
-	set("gender", "ÄĞĞÔ");
+	set_name("è½¿å¤«", ({ "jiaofu" }));
+	set("long", "ä»–å°±æ˜¯ä¸“é—¨è´Ÿè´£æŠ¬èŠ±è½¿çš„è½¿å¤«ã€‚\n"
+		"ä»–çœ‹èµ·æ¥äº”å¤§ä¸‰ç²—ï¼Œæœ‰æŠŠå­åŠ›æ°”ï¼ŒæŠ¬é‚£èŠ±è½¿èµ°ç€ä¸€å®šå¾ˆç¨³å½“ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 25);
 	set("attitude", "peaceful");
 	set("str", 80);
@@ -33,7 +33,7 @@ void init()
 int do_kill(string arg)
 {
 	if (arg=="jiaofu" && environment()!=find_object("/d/moon/yltw")) {
-		write("ÄãÏë»µÈËºÃÊÂ£¬Ì«²»µÀµÂÁË°É¡£\n");
+		write("ä½ æƒ³åäººå¥½äº‹ï¼Œå¤ªä¸é“å¾·äº†å§ã€‚\n");
 		return 1;
 	 }
 	return 0;

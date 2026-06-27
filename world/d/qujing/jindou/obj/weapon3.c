@@ -5,9 +5,9 @@ inherit RAKE;
 
 void create()
 {
-  set_name("³¤Ìú×¦", ({ "tie zhua", "zhua", "rake" }) );
+  set_name("é•¿é“çˆª", ({ "tie zhua", "zhua", "rake" }) );
   init_rake(40);
-  set("unit", "±ú");
+  set("unit", "æŸ„");
   set_weight(900);
   if( clonep() )
      set_default_object(__FILE__);
@@ -15,7 +15,7 @@ void create()
     set("value", 450);
     set("material", "iron");
   }
-  set("wield_msg","$NÄÃÆğ$nÎÕÔÚÊÖÀï¡£\n");
+  set("wield_msg","$Næ‹¿èµ·$næ¡åœ¨æ‰‹é‡Œã€‚\n");
   setup();
 }
 

@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "С·");
+  set ("short", "小路");
   set ("long", @LONG
 
-���߷�¥��գ���������������ɽ������֮�䡣������֮������Ϫкѩ
-��ʯ�㴩�ƣ���ʯΪ�����������ӡ�
+两边飞楼插空，雕甍绣槛，皆隐於山坳树杪之间。俯而视之，则青溪泻雪
+，石磴穿云，白石为栏，环抱池沼。
 LONG);
 
   set("outdoors", 1);

@@ -5,12 +5,12 @@ inherit NPC;
 
 void create()
 {
-  set_name("»¤¹¬ÎÀÊ¿", ({"wei shi", "shi"}));
-  set("gender", "ÄÐÐÔ");
+  set_name("æŠ¤å®«å«å£«", ({"wei shi", "shi"}));
+  set("gender", "ç”·æ€§");
   set("combat_exp", 200000);
   set("age", 30);
   set("weight",1000000000);
-  set("no_get","»¤¹¬ÎÀÊ¿¶ÔÄã¶øÑÔÌ«ÖØÁË¡£\n");
+  set("no_get","æŠ¤å®«å«å£«å¯¹ä½ è€Œè¨€å¤ªé‡äº†ã€‚\n");
   set("per", 25);
   set("attitude", "friendly");
   set("shen_type", 1);
@@ -47,7 +47,7 @@ void greeting(object ob)
   if (ob && interactive(ob))
   {
     if (! ob->query_temp("weishi_kill"))
-      message_vision ("$NºÈµÀ£º¼úÃñÎÞ·¨ÎÞÌì£¬ÉÃ´³½ûµØ£¡\n",this_object());
+      message_vision ("$Nå–é“ï¼šè´±æ°‘æ— æ³•æ— å¤©ï¼Œæ“…é—¯ç¦åœ°ï¼\n",this_object());
     this_object()->kill_ob(ob);
     ob->set_temp("weishi_kill",1);
   }

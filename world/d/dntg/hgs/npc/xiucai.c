@@ -3,20 +3,20 @@ inherit NPC;
 
 void create()
 {
-        set_name("À¶Í¼Óô", ({"lan tuyu","lan","xiansheng"}));
-        set("gender", "ÄĞĞÔ");
+        set_name("è“å›¾éƒ", ({"lan tuyu","lan","xiansheng"}));
+        set("gender", "ç”·æ€§");
         set("age", 55);
-        set("title", "½ÌÊéÏÈÉú");
+        set("title", "æ•™ä¹¦å…ˆç”Ÿ");
         set("str", 25);
         set("int", 30);
-	set("long", "À¶Í¼ÓôÔ­ÊÇ´óÌÆÒ»¸öĞã²Å£¬ÒòÂÅÊÔ²»ÖĞ£¬±ãÆ¯Á÷º£Íâµ½°ÁÀ´¹ú¡£\n");
+	set("long", "è“å›¾éƒåŸæ˜¯å¤§å”ä¸€ä¸ªç§€æ‰ï¼Œå› å±¡è¯•ä¸ä¸­ï¼Œä¾¿æ¼‚æµæµ·å¤–åˆ°å‚²æ¥å›½ã€‚\n");
         set("combat_exp", 30000);
         set("attitude", "friendly");
         set_skill("literate", 40);
         set("force", 500); 
         set("max_force", 500);
         set("inquiry", ([
-                "¶ÁÊéÊ¶×Ö": "¶ÔÁË£¬ÄãÊÇÀ´¶ÔµØ·½ÁË£¡\n",
+                "è¯»ä¹¦è¯†å­—": "å¯¹äº†ï¼Œä½ æ˜¯æ¥å¯¹åœ°æ–¹äº†ï¼\n",
         ]) );
         setup();
         carry_object("/d/obj/cloth/changpao")->wear();

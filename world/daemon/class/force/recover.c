@@ -7,17 +7,17 @@ int exert(object me, object target)
 {
 	int diff, neilineed;
 
-	if( target != me ) return notify_fail("你只能用内功调匀自己的气息。\n");
+	if( target != me ) return notify_fail("浣犲彧鑳界敤鍐呭姛璋冨寑鑷繁鐨勬皵鎭�俓n");
 
 	if( (int)me->query("force") < 20 )
-		return notify_fail("你的内力不够。\n");
+		return notify_fail("浣犵殑鍐呭姏涓嶅銆俓n");
     if( (int)me->query_skill("force") < 10 )
-		return notify_fail("你的内功修为不够。\n"); 
+		return notify_fail("浣犵殑鍐呭姛淇负涓嶅銆俓n"); 
 
 	diff = me->query("eff_kee") - me->query("kee");
 	neilineed = diff * 50 / (int)me->query_skill("force");
     if(neilineed < 1)
-	   return notify_fail("你现在气力充沛，不需吸气。\n");
+	   return notify_fail("浣犵幇鍦ㄦ皵鍔涘厖娌涳紝涓嶉渶鍚告皵銆俓n");
     
 	if(neilineed > me->query("force")) neilineed = me->query("force");
     diff = neilineed * (int)me->query_skill("force") / 50;
@@ -25,7 +25,7 @@ int exert(object me, object target)
 	me->receive_heal("kee", diff );
 	me->add("force", -neilineed);
 
-	message_vision("$N深深吸了几口气，脸色看起来好多了。\n", me);
+	message_vision("$N娣辨繁鍚镐簡鍑犲彛姘旓紝鑴歌壊鐪嬭捣鏉ュソ澶氫簡銆俓n", me);
 
 	if( me->is_fighting() ) me->start_busy(1);
 

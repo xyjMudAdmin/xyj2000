@@ -9,7 +9,7 @@ int main(object me, string arg)
  
 	seteuid(geteuid(me));
 	if (!arg || sscanf(arg, "%s %s", src, dst)!=2 ) return
-		notify_fail("Ö¸Áî¸ñÊ½: cp <Ô­µµÃû> <Ä¿±êµµÃû> \n");
+		notify_fail("æŒ‡ä»¤æ ¼å¼: cp <åŸæ¡£å> <ç›®æ ‡æ¡£å> \n");
 
 	src = resolve_path(me->query("cwd"), src);
 	dst = resolve_path(me->query("cwd"), dst);
@@ -22,16 +22,16 @@ int main(object me, string arg)
 	if( cp(src, dst) )
 		write("Ok.\n");
 	else
-		write("ÄãÃ»ÓĞ×ã¹»µÄ¶ÁĞ´È¨Àû¡£\n");
+		write("ä½ æ²¡æœ‰è¶³å¤Ÿçš„è¯»å†™æƒåˆ©ã€‚\n");
 	return 1;
 }
  
 int help(object me)
 {
   write(@HELP
-Ö¸Áî¸ñÊ½ : cp <Ô­µµÃû> <Ä¿±êµµÃû>
+æŒ‡ä»¤æ ¼å¼ : cp <åŸæ¡£å> <ç›®æ ‡æ¡£å>
  
-´ËÖ¸Áî¿ÉÈÃÄã¿½±´µµ°¸¡£
+æ­¤æŒ‡ä»¤å¯è®©ä½ æ‹·è´æ¡£æ¡ˆã€‚
 HELP
     );
     return 1;

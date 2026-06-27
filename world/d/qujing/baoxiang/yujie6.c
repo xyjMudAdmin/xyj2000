@@ -5,12 +5,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "�����");
+  set ("short", "白玉阶");
   set ("long", @LONG
 
-�ɰ����̳ɵ�̨�ף���������������ȥ��ÿһ��̨�׶�����ϸ��
-���ɣ���Ƕ�н�˿���ߡ����߸�ͨ��һ��һ���Ϊ����������
-Ϊ̫���
+由白玉铺成的台阶，级级缓缓向上铺去。每一级台阶都精工细雕
+而成，镶嵌有金丝银线。两边各通向一宫一殿，左为大明宫，右
+为太极殿。
 
 LONG);
 
@@ -34,13 +34,13 @@ int valid_leave (object who, string dir)
 {
   if (dir == "west")
   {
-    message_vision ("$N��ͷ������һ̽��������������Ļ������ͽ�$N�ܳ���\n",
+    message_vision ("$N将头往宫里一探，里面两个威武的护宫武弁将$N架出。\n",
                     who);
     return notify_fail("");
   }
   if (dir == "east")
   {
-    message_vision ("$N��ͷ������һ̽��������������Ļ������ͽ�$N�ܳ���\n",
+    message_vision ("$N将头往殿里一探，里面两个威武的护殿武弁将$N架出。\n",
                     who);
     return notify_fail("");
   }

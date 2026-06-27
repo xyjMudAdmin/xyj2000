@@ -11,7 +11,7 @@ int main(object me, string arg)
   object obj;
 
   if (!arg)
-    return notify_fail("ÄãÒª½ÓÊÜË­µÄ¹«¿ªÑûÇë£¿\n");
+    return notify_fail("ä½ è¦æ¥å—è°çš„å…¬å¼€é‚€è¯·ï¼Ÿ\n");
 
   obj = find_player(arg);
   if (!obj)
@@ -19,13 +19,13 @@ int main(object me, string arg)
   if (!obj)
     obj = LOGIN_D->find_body(arg);
   if (!obj)
-    return notify_fail("Ã»ÓĞÕâ¸öÈË¡£\n");
+    return notify_fail("æ²¡æœ‰è¿™ä¸ªäººã€‚\n");
 
   if (obj->query_temp("invite") != "public")
-    return notify_fail(obj->query("name")+"ÏÖÔÚ²¢Ã»ÓĞ¹«¿ªÑûÇë±ğÈË¡£\n");
+    return notify_fail(obj->query("name")+"ç°åœ¨å¹¶æ²¡æœ‰å…¬å¼€é‚€è¯·åˆ«äººã€‚\n");
 
-  tell_object (me,"Äã½ÓÊÜ"+obj->query("name")+"µÄ¹«¿ªÑûÇë¡£\n");
-  tell_object (obj, me->query("name")+"ÏÖÔÚ½ÓÊÜÄãµÄ¹«¿ªÑûÇë¡£\n");
+  tell_object (me,"ä½ æ¥å—"+obj->query("name")+"çš„å…¬å¼€é‚€è¯·ã€‚\n");
+  tell_object (obj, me->query("name")+"ç°åœ¨æ¥å—ä½ çš„å…¬å¼€é‚€è¯·ã€‚\n");
   me->set_temp("accept",obj->query("id"));
   return 1;
 }
@@ -33,9 +33,9 @@ int main(object me, string arg)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : accept <Ä³ÈË>
+æŒ‡ä»¤æ ¼å¼ : accept <æŸäºº>
 
-Õâ¸öÖ¸Áî¸æËß±ğÈËÄã½ÓÊÜËû/ËıµÄ¹«¿ªÑûÇë.
+è¿™ä¸ªæŒ‡ä»¤å‘Šè¯‰åˆ«äººä½ æ¥å—ä»–/å¥¹çš„å…¬å¼€é‚€è¯·.
 
 HELP
     );

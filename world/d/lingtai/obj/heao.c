@@ -5,13 +5,13 @@ inherit EQUIP;
 
 void create()
 {
-        set_name("»ÒÓğº×ë©", ({"leather coat", "coat"}));
+        set_name("ç°ç¾½é¹¤æ°…", ({"leather coat", "coat"}));
         set_weight(3000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼ş");
-		set("long", "Ò»¼şº×ÓğÖ¯¾ÍµÄ´óë©¡£\n");
+                set("unit", "ä»¶");
+		set("long", "ä¸€ä»¶é¹¤ç¾½ç»‡å°±çš„å¤§æ°…ã€‚\n");
                 set("value", 500);
 		set("no_sell", 1);
                 set("armor_type", "cloth");

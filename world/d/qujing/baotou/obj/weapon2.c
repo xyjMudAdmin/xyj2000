@@ -5,9 +5,9 @@ inherit AXE;
 
 void create()
 {
-  set_name("Ó¥×ì¸«", ({ "yingzui fu", "fu", "axe" }) );
+  set_name("é¹°å˜´æ–§", ({ "yingzui fu", "fu", "axe" }) );
   init_axe(28);
-  set("unit", "±ú");
+  set("unit", "æŸ„");
   set_weight(1100);
   if( clonep() )
      set_default_object(__FILE__);
@@ -15,7 +15,7 @@ void create()
     set("value", 130);
     set("material", "metal");
   }
-  set("wield_msg","$N²ÙÆğ$nÎÕÔÚÊÖÀï¡£\n");
+  set("wield_msg","$Næ“èµ·$næ¡åœ¨æ‰‹é‡Œã€‚\n");
   setup();
 }
 

@@ -7,10 +7,10 @@ int test_player (object who);
 
 void create()
 {
-  set_name("ÉÏ¹Ù¿¤Ö÷", ({"shangguan junzhu", "junzhu", "zhu"}));
-  set("title", "·ïÏÉ¿¤");
-  set("long", "ÌìóÃ¹ú·ïÏÉ¿¤µÄÒ»¿¤Ö®ºî¡£\n");
-  set("gender", "ÄĞĞÔ");
+  set_name("ä¸Šå®˜éƒ¡ä¸»", ({"shangguan junzhu", "junzhu", "zhu"}));
+  set("title", "å‡¤ä»™éƒ¡");
+  set("long", "å¤©ç«ºå›½å‡¤ä»™éƒ¡çš„ä¸€éƒ¡ä¹‹ä¾¯ã€‚\n");
+  set("gender", "ç”·æ€§");
   set("age", 50);
   set("per", 25);
   set("attitude", "peaceful");
@@ -28,14 +28,14 @@ void create()
   set("eff_dx",15000);
   set("nkgain",90);
   set("inquiry", ([
-    "name" : "ÀÏ·òÄË·ïÏÉ¿¤ºî£¬ÉÏ¹ÙÄË±¾¿¤Ö®¹ÙĞÕ¡£",
-    "ÉÏ¹Ù" : "ÀÏ·òÄË·ïÏÉ¿¤ºî£¬ÉÏ¹ÙÄË±¾¿¤Ö®¹ÙĞÕ¡£",
-    "here" : "´ËÄËÌìóÃ¹ú·ïÏÉ¿¤£¬Òò¾ÃºµÎŞÓê¼±Ñ°·¨Ê¦ÒÔ¼ÀÓêÇóÓêÆíÓê¾ÈÎá¾üÃñÒ²¡£",
+    "name" : "è€å¤«ä¹ƒå‡¤ä»™éƒ¡ä¾¯ï¼Œä¸Šå®˜ä¹ƒæœ¬éƒ¡ä¹‹å®˜å§“ã€‚",
+    "ä¸Šå®˜" : "è€å¤«ä¹ƒå‡¤ä»™éƒ¡ä¾¯ï¼Œä¸Šå®˜ä¹ƒæœ¬éƒ¡ä¹‹å®˜å§“ã€‚",
+    "here" : "æ­¤ä¹ƒå¤©ç«ºå›½å‡¤ä»™éƒ¡ï¼Œå› ä¹…æ—±æ— é›¨æ€¥å¯»æ³•å¸ˆä»¥ç¥­é›¨æ±‚é›¨ç¥ˆé›¨æ•‘å¾å†›æ°‘ä¹Ÿã€‚",
     "rain" : (: test_player :),
-    "Óê" : (: test_player :),
-    "¼ÀÓê"   : (: test_player :),
-    "ÇóÓê" : (: test_player :),
-    "ÆíÓê" : (: test_player :),
+    "é›¨" : (: test_player :),
+    "ç¥­é›¨"   : (: test_player :),
+    "æ±‚é›¨" : (: test_player :),
+    "ç¥ˆé›¨" : (: test_player :),
   ]));
   setup();
   carry_object("/d/obj/cloth/choupao")->wear();
@@ -49,13 +49,13 @@ int test_player (object who)
 
   if (who->query("obstacle/fengxian")=="done")
   {
-    message_vision ("$NÁ¬Ã¦¶Ô$n·­ÉíÒ»°İ£º¶àĞ»£¡\n",me,who);  
+    message_vision ("$Nè¿å¿™å¯¹$nç¿»èº«ä¸€æ‹œï¼šå¤šè°¢ï¼\n",me,who);  
     return 1;
   }
 
-  message_vision ("$NËµµÀ£º¶àÉÙ´óÊ¦Ç°À´·ïÏÉ¿¤¾È¼ÃÔÖÃñ£¬"+
-                  "È¥¸÷¸öÃíÓîµÀ³¡¼ÀÌ³£¬¶¼ÉĞÎ´ÓĞ¹û¡£\n",me);
-  message_vision ("$NÇáÌ¾ÁËÒ»¿ÚÆø¡£\n",me);
+  message_vision ("$Nè¯´é“ï¼šå¤šå°‘å¤§å¸ˆå‰æ¥å‡¤ä»™éƒ¡æ•‘æµç¾æ°‘ï¼Œ"+
+                  "å»å„ä¸ªåº™å®‡é“åœºç¥­å›ï¼Œéƒ½å°šæœªæœ‰æœã€‚\n",me);
+  message_vision ("$Nè½»å¹äº†ä¸€å£æ°”ã€‚\n",me);
   return 1;
 }
 
@@ -85,10 +85,10 @@ void check_player (object who)
     return;
   if (environment(who) != environment(this_object()))
     return;
-  message_vision ("ÃÅÍâ×ßÀ´Ò»¹ÙÈË£¬¿´ÁË$NÒ»ÑÛ¡£\n",who);
-  message_vision ("¹ÙÈË¶Ô$NÒ»°İËµµÀ£º·½²ÅÌìÉÏ¿ñ·ç´ó×÷£¬µçÉÁÀ×Ãù£¬"+
-                  "¹ûÈ»Ò»³¡ºÃÓê¡£\n",me);
-  message_vision ("\n¹ÙÈËÍËÏÂ¡£\n",me);
+  message_vision ("é—¨å¤–èµ°æ¥ä¸€å®˜äººï¼Œçœ‹äº†$Nä¸€çœ¼ã€‚\n",who);
+  message_vision ("å®˜äººå¯¹$Nä¸€æ‹œè¯´é“ï¼šæ–¹æ‰å¤©ä¸Šç‹‚é£å¤§ä½œï¼Œç”µé—ªé›·é¸£ï¼Œ"+
+                  "æœç„¶ä¸€åœºå¥½é›¨ã€‚\n",me);
+  message_vision ("\nå®˜äººé€€ä¸‹ã€‚\n",me);
   command ("ah");
   command ("thank "+who->query("id"));
   call_out ("announce_success",3,who);
@@ -106,10 +106,10 @@ void announce_success (object who)
   who->add("obstacle/number",1);
   who->set("obstacle/fengxian","done");
   //who->add("daoxing",i+3000);
-  //command("chat "+who->query("name")+"·ïÏÉ¿¤È°ÉÆÊ©ÁØ£¬¾ÈµÃ¼¢ÃñÇ§Ç§ÍòÍò£¡");
-  //command("chat "+who->query("name")+"Ë³Àû´³¹ıÎ÷ĞĞÓÖÒ»¹Ø£¡");
-  //tell_object (who,"ÄãÓ®µÃÁË"+chinese_number(3)+"Äê"+
-  //             chinese_number(i/4)+"Ìì"+
-  //             chinese_number((i-(i/4)*4)*3)+"Ê±³½µÄµÀĞĞ£¡\n");
+  //command("chat "+who->query("name")+"å‡¤ä»™éƒ¡åŠå–„æ–½éœ–ï¼Œæ•‘å¾—é¥¥æ°‘åƒåƒä¸‡ä¸‡ï¼");
+  //command("chat "+who->query("name")+"é¡ºåˆ©é—¯è¿‡è¥¿è¡Œåˆä¸€å…³ï¼");
+  //tell_object (who,"ä½ èµ¢å¾—äº†"+chinese_number(3)+"å¹´"+
+  //             chinese_number(i/4)+"å¤©"+
+  //             chinese_number((i-(i/4)*4)*3)+"æ—¶è¾°çš„é“è¡Œï¼\n");
   who->save();
 }

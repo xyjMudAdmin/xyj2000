@@ -1,45 +1,45 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-//¡¾ÔÂÑÀ²ù¡¿yueya-chan.c 
+//ã€æœˆç‰™é“²ã€‘yueya-chan.c 
 inherit SKILL;
 
 /*
-ÔÂÑÀ²ù·¨    dodge  5    parry  -10    damage  25
-ÔÂÑÀ²ù·¨Ê¹¶¯¿ªÀ´ÉõÎªĞ×ÏÕ£¬ÒàÉÆÓÚ»÷ÆÆµĞÊÖ·ÀÎÀ¡£È±µãÊÇ
-±¿ÖØÒì³£¡£
+æœˆç‰™é“²æ³•    dodge  5    parry  -10    damage  25
+æœˆç‰™é“²æ³•ä½¿åŠ¨å¼€æ¥ç”šä¸ºå‡¶é™©ï¼Œäº¦å–„äºå‡»ç ´æ•Œæ‰‹é˜²å«ã€‚ç¼ºç‚¹æ˜¯
+ç¬¨é‡å¼‚å¸¸ã€‚
 */
 
 mapping *action = ({
         ([      "name":                 "",
                 "action":
-"$NĞ±²½·ÉÉíÏòÉÏ£¬ÊÖÖĞ$wÓ­·çÒ»»Î£¬ÉÁµç°ãÅüÏò$nµÄºóÄÔ",
+"$Næ–œæ­¥é£èº«å‘ä¸Šï¼Œæ‰‹ä¸­$wè¿é£ä¸€æ™ƒï¼Œé—ªç”µèˆ¬åŠˆå‘$nçš„åè„‘",
                 "dodge":                0,
 		"parry":		-20,
                 "damage":               25,
-                "damage_type":  "ÅüÉË"
+                "damage_type":  "åŠˆä¼¤"
         ]),
         ([      "name":                 "",
                 "action":
-"$NËõÉíÒ»¸ö¹ö·­£¬$wËæÉí¶ø×ß£¬ÇÄÎŞÉùÏ¢µØÅüÏò$nµÄË«½Å",
+"$Nç¼©èº«ä¸€ä¸ªæ»šç¿»ï¼Œ$wéšèº«è€Œèµ°ï¼Œæ‚„æ— å£°æ¯åœ°åŠˆå‘$nçš„åŒè„š",
                 "dodge":                -10,
 		"parry":		0,
                 "damage":               25,
-                "damage_type":  "¸îÉË"
+                "damage_type":  "å‰²ä¼¤"
         ]),
         ([      "name":                 "",
                 "action":
-"$NË«ÊÖÒ»Õñ£¬$wÍ»·¢Ñª¹â£¬¡¸»©£¬»©£¬»©¡¹Ò»Á¬Èıµ¶Ïò$n´ÌÈ¥",
+"$NåŒæ‰‹ä¸€æŒ¯ï¼Œ$wçªå‘è¡€å…‰ï¼Œã€Œå“—ï¼Œå“—ï¼Œå“—ã€ä¸€è¿ä¸‰åˆ€å‘$nåˆºå»",
                 "dodge":                5,
 		"parry":		-15,
                 "damage":               25,
-                "damage_type":  "´ÌÉË"
+                "damage_type":  "åˆºä¼¤"
         ]),
         ([      "name":                 "",
                 "action":
-"$NÁ³ÉÏÍ»È»×ÏÆø´ó×ö£¬ÊÖÖĞ$wĞ®×ÅÒ»¹ÉÑªĞÈÅüÏò$nµÄ$l",
+"$Nè„¸ä¸Šçªç„¶ç´«æ°”å¤§åšï¼Œæ‰‹ä¸­$wæŒŸç€ä¸€è‚¡è¡€è…¥åŠˆå‘$nçš„$l",
                 "dodge":                5,
 		"parry":	-5,
                 "damage":               30,
-                "damage_type":  "ÅüÉË"
+                "damage_type":  "åŠˆä¼¤"
         ]),   
 });
 
@@ -52,11 +52,11 @@ int valid_learn(object me)
 	b=(int)me->query_skill("huaxue-blade", 1);
 
 	if( a < b )
-		return notify_fail("ÄãµÄ»¯ÑªÉñ¹¦²»¹»£¬µÈÌá¸ßÁËÔÙÀ´°É¡£\n");
+		return notify_fail("ä½ çš„åŒ–è¡€ç¥åŠŸä¸å¤Ÿï¼Œç­‰æé«˜äº†å†æ¥å§ã€‚\n");
 
         if(  !(ob = me->query_temp("weapon"))
         ||     (string)ob->query("skill_type") != "blade" )
-                return notify_fail("Äã±ØĞëÏÈÕÒÒ»°Ñµ¶²ÅÄÜÑ§»¯Ñªµ¶·¨¡£\n");
+                return notify_fail("ä½ å¿…é¡»å…ˆæ‰¾ä¸€æŠŠåˆ€æ‰èƒ½å­¦åŒ–è¡€åˆ€æ³•ã€‚\n");
 
         return 1;
 }
@@ -77,18 +77,18 @@ int practice_skill(object me)
 	a=(int)me->query_skill("huaxue-force",1);
 	b=(int)me->query_skill("huaxue-blade",1);
 	if( a < b )
-		return notify_fail("ÄãµÄ»¯ÑªÉñ¹¦²»¹»£¬µÈÌá¸ßÁËÔÙÀ´Á·°É¡£\n");
+		return notify_fail("ä½ çš„åŒ–è¡€ç¥åŠŸä¸å¤Ÿï¼Œç­‰æé«˜äº†å†æ¥ç»ƒå§ã€‚\n");
 
         if( (int)me->query("kee") < 50
         ||      (int)me->query("force") < 10 )
-                return notify_fail("ÄãµÄÄÚÁ¦»òÆø²»¹»£¬Ã»ÓĞ°ì·¨Á·Ï°»¯Ñªµ¶·¨¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›æˆ–æ°”ä¸å¤Ÿï¼Œæ²¡æœ‰åŠæ³•ç»ƒä¹ åŒ–è¡€åˆ€æ³•ã€‚\n");
 
 	if(!environment(me)->query("cold"))
-		return notify_fail("´ËµØ²»¹»ÒõÀä£¬ÔÙÁ·ÓĞº¦ÎŞÒæ¡£\n");
+		return notify_fail("æ­¤åœ°ä¸å¤Ÿé˜´å†·ï¼Œå†ç»ƒæœ‰å®³æ— ç›Šã€‚\n");
 
         me->receive_damage("kee", 30);
         me->add("force", -5);
-        write("Äã°´×ÅËùÑ§Á·ÁËÒ»±é»¯Ñªµ¶·¨¡£\n");
+        write("ä½ æŒ‰ç€æ‰€å­¦ç»ƒäº†ä¸€éåŒ–è¡€åˆ€æ³•ã€‚\n");
         return 1;
 }
 

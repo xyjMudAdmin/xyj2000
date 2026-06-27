@@ -17,19 +17,19 @@ int cast(object me, object target)
         ||      !target->is_character()
         ||      target->is_corpse()
         ||      target==me)
-                return notify_fail("ÄãÒª¹´×Ô¼ºµÄ»ê£¿\n");
+                return notify_fail("ä½ è¦å‹¾è‡ªå·±çš„é­‚ï¼Ÿ\n");
 
         if((int)me->query("mana") < 25+2*(int)me->query("mana_factor") )
-                return notify_fail("ÄãµÄ·¨Á¦²»¹»ÁË£¡\n");
+                return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿäº†ï¼\n");
 
         if((int)me->query("sen") < 50 )
-                return notify_fail("ÏÖÔÚÄã×Ô¼º¾Í»ê²»ÊØÉá£¡\n");
+                return notify_fail("çŽ°åœ¨ä½ è‡ªå·±å°±é­‚ä¸å®ˆèˆï¼\n");
 
         me->add("mana", -25-2*(int)me->query("mana_factor"));
         me->receive_damage("sen", 50);
 
         if( random(me->query("max_mana")) < 50 ) {
-                write("Õâ´ÎÊÇ¹í¼û¹íÁË£¡\n");
+                write("è¿™æ¬¡æ˜¯é¬¼è§é¬¼äº†ï¼\n");
                 return 1;
         }
 
@@ -44,15 +44,15 @@ int cast(object me, object target)
 			//damage adjustment
 		"shen", 		
 			//damage type: could be "qi"/"kee", "shen"/"sen", ...default "both"
-		HIC "$N¶Ô$nÒõÒõµØÐ¦×Å£ºÑÖÍõ½ÐÄãÈý¸üËÀ£¬²»¸ÒÁôÄãµ½Îå¸ü¡£¡£¡£\n" NOR,
+		HIC "$Nå¯¹$né˜´é˜´åœ°ç¬‘ç€ï¼šé˜ŽçŽ‹å«ä½ ä¸‰æ›´æ­»ï¼Œä¸æ•¢ç•™ä½ åˆ°äº”æ›´ã€‚ã€‚ã€‚\n" NOR,
 			//initial message
-		HIC "$nÊÜµ½$NÓ°Ïì£¬ÏÔÈ»ÓÐµã»ê²»ÊØÉáÁË£¡\n" NOR, 
+		HIC "$nå—åˆ°$Nå½±å“ï¼Œæ˜¾ç„¶æœ‰ç‚¹é­‚ä¸å®ˆèˆäº†ï¼\n" NOR, 
 			//success message
-		HIC "µ«ÊÇ$nÉñÇé×¨×¢£¬¶Ô$NÀí¶¼²»Àí¡£\n" NOR, 
+		HIC "ä½†æ˜¯$nç¥žæƒ…ä¸“æ³¨ï¼Œå¯¹$Nç†éƒ½ä¸ç†ã€‚\n" NOR, 
 			//fail message
-		HIC "µ«ÊÇ$nÑÛÒ»µÉ£º¹âÌì»¯ÈÕÖ®ÏÂ£¬ÆñÓÉ¶ñ¹íºáÐÐ£¡\n" NOR, 
+		HIC "ä½†æ˜¯$nçœ¼ä¸€çžªï¼šå…‰å¤©åŒ–æ—¥ä¹‹ä¸‹ï¼Œå²‚ç”±æ¶é¬¼æ¨ªè¡Œï¼\n" NOR, 
 			//backfire initial message
-		HIC "½á¹û$n·´¶øÓÐµã»ê²»ÊØÉáÁË£¡\n" NOR
+		HIC "ç»“æžœ$nåè€Œæœ‰ç‚¹é­‚ä¸å®ˆèˆäº†ï¼\n" NOR
 			//backfire hit message. note here $N and $n!!!
 	);
 

@@ -11,10 +11,10 @@ void greeting(object me);
 void create()
 {
     reload("leitaiscore");
-        set_name("³¡¼à", ({"chang jian","bookkeeper","jian"}));
-        set("long","Ò»ÃûÍş·çÁİÁİµÄÎä½«£¬×¨ÃÅ¸ºÔğÎ¬³Ö»á³¡ÖÈĞò¡£\n");
+        set_name("åœºç›‘", ({"chang jian","bookkeeper","jian"}));
+        set("long","ä¸€åå¨é£å‡›å‡›çš„æ­¦å°†ï¼Œä¸“é—¨è´Ÿè´£ç»´æŒä¼šåœºç§©åºã€‚\n");
 
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", 44);
         set("per",30);
         set("kee", 800); 

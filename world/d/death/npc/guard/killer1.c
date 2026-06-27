@@ -7,11 +7,11 @@ inherit NPC;
 
 void create()
 {
-        string *order = ({"×Ó", "³ó", "Òú", "Ã®", "³½", "ËÈ", "Îç", "Î´", "Éê", "ÓÏ", "Ğç", "º¥"});
+        string *order = ({"å­", "ä¸‘", "å¯…", "å¯", "è¾°", "å·³", "åˆ", "æœª", "ç”³", "é…‰", "æˆŒ", "äº¥"});
 
-        set_name( (order[random(12)]) + "Òõ¹í×ä", ({ "hell guard", "guard" }) );
+        set_name( (order[random(12)]) + "é˜´é¬¼å’", ({ "hell guard", "guard" }) );
 
-	set("long", "ÕâÊÇÒ»Î»À´×ÔÒõ½çµÄÊØ»¤Éñ£¬×¨ÃÅµ£ÈÎ»¤·¨Ö®Ôğ¡£\n");
+	set("long", "è¿™æ˜¯ä¸€ä½æ¥è‡ªé˜´ç•Œçš„å®ˆæŠ¤ç¥ï¼Œä¸“é—¨æ‹…ä»»æŠ¤æ³•ä¹‹è´£ã€‚\n");
 	set("attitude", "friendly");
 	set("per", 10);
 	set("class", "youling");
@@ -36,7 +36,7 @@ void create()
 
 	set("chat_chance", 15);
 	set("chat_msg_combat", ({
-		name() + "ºÈµÀ£ºÄõÕÏ£¡ËæÎÒ¸°ÒõË¾ÊÜÉó°É¡£\n"
+		name() + "å–é“ï¼šå­½éšœï¼éšæˆ‘èµ´é˜´å¸å—å®¡å§ã€‚\n"
 	}) );
 
 	set_skill("fork", 40);
@@ -65,8 +65,8 @@ int heal_up()
 void leave()
 {
 	message("vision","\n" +
-		HIB + name() + "ËµµÀ£ºË­ÓëÎÒÃÇÒõ¸®×÷¶Ô£¬ÄÇ²»ÊÇ×ÔÌÖ¿à³ÔÂğ£¡\n\n"
-		+ name() + "µÄÉíĞÎ·¢³öÓÄ°µµÄÀ¶¹â£¬³ÁÈëµØÏÂ²»¼ûÁË¡£\n\n" NOR, environment(),
+		HIB + name() + "è¯´é“ï¼šè°ä¸æˆ‘ä»¬é˜´åºœä½œå¯¹ï¼Œé‚£ä¸æ˜¯è‡ªè®¨è‹¦åƒå—ï¼\n\n"
+		+ name() + "çš„èº«å½¢å‘å‡ºå¹½æš—çš„è“å…‰ï¼Œæ²‰å…¥åœ°ä¸‹ä¸è§äº†ã€‚\n\n" NOR, environment(),
 		this_object() );
 	destruct(this_object());
 }

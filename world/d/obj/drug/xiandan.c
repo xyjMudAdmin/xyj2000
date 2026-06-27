@@ -1,5 +1,5 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-//ÕæµÄÏÉµ¤
+//çœŸçš„ä»™ä¸¹
 
 
 #include <ansi.h>
@@ -12,23 +12,23 @@ void init();
 void init()
 {
   if (!wizardp(this_player())) {
-    set("no_give","ÕâÃ´Õä¹óµÄÒ©£¬ÄÄÄÜËæ±ã¸øÈË£¿\n");
-    set("no_drop","ÕâÃ´±¦¹óµÄµ¤Ò©£¬ÈÓÁË¶à¿ÉÏ§Ñ½£¡\n");
-    set("no_sell","·²ÈËÄÄÀïÖªµÀ"+this_object()->query("name")+"µÄ¼ÛÖµ£¿»¹ÊÇ×Ô¼ºÁô×Å°É¡£\n");
+    set("no_give","è¿™ä¹ˆçè´µçš„è¯ï¼Œå“ªèƒ½éšä¾¿ç»™äººï¼Ÿ\n");
+    set("no_drop","è¿™ä¹ˆå®è´µçš„ä¸¹è¯ï¼Œæ‰”äº†å¤šå¯æƒœå‘€ï¼\n");
+    set("no_sell","å‡¡äººå“ªé‡ŒçŸ¥é“"+this_object()->query("name")+"çš„ä»·å€¼ï¼Ÿè¿˜æ˜¯è‡ªå·±ç•™ç€å§ã€‚\n");
   }                                    
     add_action("do_eat", "eat");
 }
 
 void create()
 {
-  set_name(HIW "ÏÉµ¤" NOR, ({"xian dan","dan"}));
+  set_name(HIW "ä»™ä¸¹" NOR, ({"xian dan","dan"}));
   set_weight(200);
   if (clonep())
     set_default_object(__FILE__);
   else {
-    set("unit", "Ã¶");
-    set("long", "Ò»Ã¶Çà»ÆÉ«µÄµ¤Ò©£¬·¢³öµ­µ­µÄµÄ»Æ¹â¡£\n");
-    set("drug_type","²¹Æ·");
+    set("unit", "æš");
+    set("long", "ä¸€æšé’é»„è‰²çš„ä¸¹è¯ï¼Œå‘å‡ºæ·¡æ·¡çš„çš„é»„å…‰ã€‚\n");
+    set("drug_type","è¡¥å“");
   }
   
   // the following line is added by snowcat
@@ -42,12 +42,12 @@ int do_eat(string arg)
   int howold;
   howold = (int)me->query("mud_age") + (int)me->query("age_modify");
   if (!id(arg))
-    return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+    return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
   
   me->add("eat_xiandan", 1);
-    message_vision(HIG "$N½«ÏÉµ¤½ÀËéÁËÑÊµ½¶ÇÖĞ£¬Á³É«Í»È»×ªÂÌ£¬Ò»ÏÂµøµ¹ÔÚµØ£¡\n" NOR, me);
-    tell_object(me,BLK "Äã¸¹ÖĞÈçÍ¬µ¶½ÁÒ»°ãÄÑÊÜ£¬Í´µÄÄãÔÚµØÏÂÖ±´ò¹ö£¡\n\n" NOR);
-    message_vision(HIG "¹ıÁËÒ»Õó£¬$NÍ·ÉÏÃ°³öµ­µ­µÄ×ÏÆø£¬ÓÖÉñ²ÉŞÈŞÈµÄÕ¾ÁËÆğÀ´¡£\n" NOR, me);
+    message_vision(HIG "$Nå°†ä»™ä¸¹åš¼ç¢äº†å’½åˆ°è‚šä¸­ï¼Œè„¸è‰²çªç„¶è½¬ç»¿ï¼Œä¸€ä¸‹è·Œå€’åœ¨åœ°ï¼\n" NOR, me);
+    tell_object(me,BLK "ä½ è…¹ä¸­å¦‚åŒåˆ€æ…ä¸€èˆ¬éš¾å—ï¼Œç—›çš„ä½ åœ¨åœ°ä¸‹ç›´æ‰“æ»šï¼\n\n" NOR);
+    message_vision(HIG "è¿‡äº†ä¸€é˜µï¼Œ$Nå¤´ä¸Šå†’å‡ºæ·¡æ·¡çš„ç´«æ°”ï¼Œåˆç¥é‡‡å¥•å¥•çš„ç«™äº†èµ·æ¥ã€‚\n" NOR, me);
   if( howold > 1382400 ) {
     me->add("age_modify", -1200);
     me->add("age_modify_time", 1);

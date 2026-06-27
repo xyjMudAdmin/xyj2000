@@ -3,15 +3,15 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÀÏÄ¸¼¦", ({ "old hen", "hen" }) );
-        set("race", "Ò°ÊŞ");
-	set("gender", "´ÆĞÔ");
+        set_name("è€æ¯é¸¡", ({ "old hen", "hen" }) );
+        set("race", "é‡å…½");
+	set("gender", "é›Œæ€§");
         set("age", 5);
-	set("long", "Ò»Ö»·ÊÅÖµÄÀÏÄ¸¼¦¡£\n");
+	set("long", "ä¸€åªè‚¥èƒ–çš„è€æ¯é¸¡ã€‚\n");
         set("attitude", "friendly");
 	set("str", 5);
 	set("con", 20);
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Î²°Í" }) );
+        set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å°¾å·´" }) );
         set("verbs", ({ "bite"}) );
 
 	set_skill("dodge", 20);

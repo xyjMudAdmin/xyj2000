@@ -18,27 +18,27 @@ int do_train(string arg)
 	where=environment(me);
 /*
 	if( where->query("no_fight") )
-		return notify_fail("°²È«ÇøÄÚ²»ÄÜÑµÊŞ£¡\n");
+		return notify_fail("å®‰å…¨åŒºå†…ä¸èƒ½è®­å…½ï¼\n");
 */
 	if( !arg )
-		return notify_fail("ÄãÒªÑ±·şÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦é©¯æœä»€ä¹ˆï¼Ÿ\n");
 	if( arg != (string)this_object()->query("id") )
-		return notify_fail("ÄãÒªÑ±·şÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦é©¯æœä»€ä¹ˆï¼Ÿ\n");
 	if( this_object()->query_temp("rider") )
-		return notify_fail("ÕâÆ¥×øÆïÉÏÒÑ¾­ÓĞÈËÁË¡£\n");
+		return notify_fail("è¿™åŒ¹åéª‘ä¸Šå·²ç»æœ‰äººäº†ã€‚\n");
 	if( (string)this_object()->query("owner")==(string)me->query("id") )
-		return notify_fail("ÕâÆ¥×øÆïÒÑ¾­ÊÇÄãµÄÁË¡£\n");
+		return notify_fail("è¿™åŒ¹åéª‘å·²ç»æ˜¯ä½ çš„äº†ã€‚\n");
 	if( this_object()->is_fighting() )
-		return notify_fail("ÕâÆ¥×øÆïÒÑ¾­·ÖÉí²»Ï¾ÁË¡£\n");
+		return notify_fail("è¿™åŒ¹åéª‘å·²ç»åˆ†èº«ä¸æš‡äº†ã€‚\n");
 	if( !living(this_object()) )
-		return notify_fail("ÏÖÔÚË£Ê²Ã´Íş·ç£¿\n");
+		return notify_fail("ç°åœ¨è€ä»€ä¹ˆå¨é£ï¼Ÿ\n");
 	if( where->query("no_fight") ) {
 		random_move();
 		return 1;
 	}
 
 
-	message_vision(HIM"$N³åÉÏÇ°È¥ºÍ$nÅ¤´ò³ÉÒ»ÍÅ¡£\n"NOR, me, this_object());
+	message_vision(HIM"$Nå†²ä¸Šå‰å»å’Œ$næ‰­æ‰“æˆä¸€å›¢ã€‚\n"NOR, me, this_object());
 
        	this_object()->set_temp("owner",me->query("id"));
 	reset_status();
@@ -64,7 +64,7 @@ void unconcious()
 			reset_status();
 			this_object()->remove_all_killer();
 			this_object()->set("attitude", "heroism");
-			message_vision(HIY"\n$NµÍÍ·ËõÎ²£¬ÒÔÊ¾½µ·ş¡£\n"NOR, this_object());
+			message_vision(HIY"\n$Nä½å¤´ç¼©å°¾ï¼Œä»¥ç¤ºé™æœã€‚\n"NOR, this_object());
 			return;
         	}
 	}

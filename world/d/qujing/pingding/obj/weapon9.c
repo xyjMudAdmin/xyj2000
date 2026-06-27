@@ -5,9 +5,9 @@ inherit DAGGER;
 
 void create()
 {
-  set_name("Å£½ÇÈÐ", ({ "niujiao ren", "ren", "dagger" }) );
+  set_name("ç‰›è§’åˆƒ", ({ "niujiao ren", "ren", "dagger" }) );
   init_dagger(20);
-  set("unit", "°Ñ");
+  set("unit", "æŠŠ");
   set_weight(500);
   if( clonep() )
      set_default_object(__FILE__);

@@ -8,10 +8,10 @@ object room;
 
 void create() {
 
-  set_name("Ë®¾§Çò", ({"shuijing qiu","crystal","ball","qiu"}));
+  set_name("æ°´æ™¶çƒ", ({"shuijing qiu","crystal","ball","qiu"}));
   set_weight(200);
-  set("unit", "Ö»");
-  set("long", "Ò»Ö»öÌ¹âËÄÒçµÄË®¾§Çò£¬ËäÈ»²»ÄÜÎ´²·ÏÈÖª£¬ºó¼ûÖ®Ã÷(detect)µ¹Ò²ÂíÂí»¢»¢¡£\n");
+  set("unit", "åª");
+  set("long", "ä¸€åªéå…‰å››æº¢çš„æ°´æ™¶çƒï¼Œè™½ç„¶ä¸èƒ½æœªåœå…ˆçŸ¥ï¼Œåè§ä¹‹æ˜(detect)å€’ä¹Ÿé©¬é©¬è™è™ã€‚\n");
   set("value", 1000);
   setup();
 //  room=find_object(RUMORCENTER);
@@ -30,35 +30,35 @@ int do_detect(string arg) {
   object ob=this_object();
 
   if (! arg || sscanf(arg, "%d", number)!=1) 
-    return notify_fail("ÓÃ·¨£º £ä£å£ô£å£ã£ô £¨£±£­£±£°£© \n");
-  if (number<1 || number>10) return notify_fail("ÓÃ·¨´íÎó£¡\n");
+    return notify_fail("ç”¨æ³•ï¼š ï½„ï½…ï½”ï½…ï½ƒï½” ï¼ˆï¼‘ï¼ï¼‘ï¼ï¼‰ \n");
+  if (number<1 || number>10) return notify_fail("ç”¨æ³•é”™è¯¯ï¼\n");
   
   if (!room) {
     set("value",0);
-    write("ÕâÖ»Ë®¾§ÇòÒÑ¾­Ê§È¥ÉñÁ¦ÁË¡£\n");    
-    write("Ë®¾§Çò»¯³ÉÒ»Ì²ÇåË®Á÷ÁËÒ»µØ¡£\n");
+    write("è¿™åªæ°´æ™¶çƒå·²ç»å¤±å»ç¥åŠ›äº†ã€‚\n");    
+    write("æ°´æ™¶çƒåŒ–æˆä¸€æ»©æ¸…æ°´æµäº†ä¸€åœ°ã€‚\n");
     destruct(this_object());
     return 1;
   }
 
-  if (me->query("mana")<100) return notify_fail("ÄãµÄ·¨Á¦²»¹»£¬ÎŞ·¨ÓëË®¾§Çò¹µÍ¨¡£\n");
+  if (me->query("mana")<100) return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿï¼Œæ— æ³•ä¸æ°´æ™¶çƒæ²Ÿé€šã€‚\n");
 
   rumor=room->reveal(number);
   set("rumor",rumor);
 
   me->add("mana",-10);
-  message_vision(HIG"$NÅõ×ÅË®¾§Çò£¬¿ÚÖĞà«à«×ÔÓï¡£\n"NOR,me);
+  message_vision(HIG"$Næ§ç€æ°´æ™¶çƒï¼Œå£ä¸­å–ƒå–ƒè‡ªè¯­ã€‚\n"NOR,me);
   if (!rumor) {
-    tell_object(me,"¿ÉÊÇÊ²Ã´Ò²Ã»ÓĞ·¢Éú¡£\n");
+    tell_object(me,"å¯æ˜¯ä»€ä¹ˆä¹Ÿæ²¡æœ‰å‘ç”Ÿã€‚\n");
     return 1;
   }
-  tell_object(me,CYN"ÄãÇë½ÌË®¾§Çò£º¸Õ²Å¡¸"+rumor["body"]+"¡¹ÊÇË­ËµµÄ£¿\n"NOR);
+  tell_object(me,CYN"ä½ è¯·æ•™æ°´æ™¶çƒï¼šåˆšæ‰ã€Œ"+rumor["body"]+"ã€æ˜¯è°è¯´çš„ï¼Ÿ\n"NOR);
   if (!rumor["disclose"])
-     tell_object(me,HIB"Ë®¾§Çò»Ø´ğÄã£ºÌì»ú²»¿ÉĞ¹Â¶¡£\n"NOR);
+     tell_object(me,HIB"æ°´æ™¶çƒå›ç­”ä½ ï¼šå¤©æœºä¸å¯æ³„éœ²ã€‚\n"NOR);
   else {
-    tell_object(me,MAG"Ë®¾§Çò»º»ºµÄ×ª¶¯×Å£¬Äã·Â·ğ´ÓÖĞ¿´µ½ÁËÒ»¸öÉíÓ°¡£\n"); 
-    tell_object(me,HIR"ÈËÓ°Ô½À´Ô½ÇåÎú£¬Äã×ĞÏ¸Ò»¿´£¬Ô­À´ÊÇ"HIW
-               +rumor["name"]+HIR"("+rumor["id"]+")£¡\n"NOR);
+    tell_object(me,MAG"æ°´æ™¶çƒç¼“ç¼“çš„è½¬åŠ¨ç€ï¼Œä½ ä»¿ä½›ä»ä¸­çœ‹åˆ°äº†ä¸€ä¸ªèº«å½±ã€‚\n"); 
+    tell_object(me,HIR"äººå½±è¶Šæ¥è¶Šæ¸…æ™°ï¼Œä½ ä»”ç»†ä¸€çœ‹ï¼ŒåŸæ¥æ˜¯"HIW
+               +rumor["name"]+HIR"("+rumor["id"]+")ï¼\n"NOR);
   }
 
   return 1;

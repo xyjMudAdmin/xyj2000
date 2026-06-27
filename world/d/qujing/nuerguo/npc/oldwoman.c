@@ -8,11 +8,11 @@ void create()
 {
   string dir;
   reload("nuerguo_old_woman");
-  set_name("ÀÏÆÅÆÅ", ({"old woman", "woman"}));
+  set_name("è€å©†å©†", ({"old woman", "woman"}));
   set("shop_id", ({"popo", "woman"}));
-  set("gender", "Å®ĞÔ" );
+  set("gender", "å¥³æ€§" );
   set("age", 65);
-  set("long", "Ò»Î»°×·¢²Ô²Ô£¬ÂúÃæ·çËªµÄÀÏÆÅÆÅ¡£\n");
+  set("long", "ä¸€ä½ç™½å‘è‹è‹ï¼Œæ»¡é¢é£éœœçš„è€å©†å©†ã€‚\n");
   set("combat_exp", 100);
   set("attitude", "peaceful");
   set("per", 15);

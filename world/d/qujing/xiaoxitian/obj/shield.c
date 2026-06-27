@@ -4,10 +4,10 @@
 inherit SHIELD;
 
 string *names = ({
-  "Ï¬Å£Æ¤¶Ü",
-  "ÐÜÆ¤¶Ü",
-  "ÏóÆ¤¶Ü",
-  "»¢Æ¤¶Ü",
+  "çŠ€ç‰›çš®ç›¾",
+  "ç†Šçš®ç›¾",
+  "è±¡çš®ç›¾",
+  "è™Žçš®ç›¾",
 });
 
 string *ids = ({
@@ -25,7 +25,7 @@ void create()
   if ( clonep() )
      set_default_object(__FILE__);
   else {
-   set("unit", "¼þ");
+   set("unit", "ä»¶");
    set("value", 500);
    set("material", "skin");
    set("armor_prop/armor", 20);

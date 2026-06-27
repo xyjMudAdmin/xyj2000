@@ -5,8 +5,8 @@ inherit NPC;
 
 void create()
 {
-  set_name("ÉÏ¹ÙÇú°¶", ({"shangguan quan", "quan"}));
-  set("gender", "ÄÐÐÔ");
+  set_name("ä¸Šå®˜æ›²å²¸", ({"shangguan quan", "quan"}));
+  set("gender", "ç”·æ€§");
   set("age", 30);
   set("per", 25);
   set("attitude", "peaceful");

@@ -28,10 +28,10 @@ string give_reward(object me) {
   if(inc==1) {
     string announce=to_chinese(selected);
     me->set_skill(selected,level+1);
-    tell_object(me,"ÄãµÃµ½ÁËÒ»¼¶"+announce+"¡£\n");
+    tell_object(me,"ä½ å¾—åˆ°äº†ä¸€çº§"+announce+"ã€‚\n");
     command_function("rumor "+ 
-	    "ÌıËµ"+me->query("name")+"µÄ"+announce+
-	    "ÓÖÓĞËù½ø¾³ÁË£¡");
+	    "å¬è¯´"+me->query("name")+"çš„"+announce+
+	    "åˆæœ‰æ‰€è¿›å¢ƒäº†ï¼");
     return selected;
   }
 

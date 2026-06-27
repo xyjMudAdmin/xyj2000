@@ -38,7 +38,7 @@ mixed main(object me, string arg, int remote)
 	int i;
 
 	if (! arg)
-		return notify_fail ("Ö¸Áî¸ñÊ½ whohave <id>\n");
+		return notify_fail ("æŒ‡ä»¤æ ¼å¼ whohave <id>\n");
 
 	ulist = users();
 	i = sizeof(ulist);
@@ -51,9 +51,9 @@ mixed main(object me, string arg, int remote)
 int help (object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : whohave <id>
+æŒ‡ä»¤æ ¼å¼ : whohave <id>
  
-¿ÉÁĞ³öÄ¿Ç°Ğ¯´øÄ³¸öÎïÆ·µÄÍæ¼Ò¡£
+å¯åˆ—å‡ºç›®å‰æºå¸¦æŸä¸ªç‰©å“çš„ç©å®¶ã€‚
  
  
 HELP

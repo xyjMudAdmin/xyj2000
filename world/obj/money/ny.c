@@ -3,22 +3,22 @@
 
 inherit ITEM;
 string *names = ({
-	"×´Ôª¼°µÚ",
-	"±Ê¶§ÈçÒâ",
-	"°Ë±¦Áª´º",
+	"çŠ¶å…ƒåŠç¬¬",
+	"ç¬”é”­å¦‚æ„",
+	"å…«å®è”æ˜¥",
 });
 void create()
 {
 	set_name(names[random(sizeof(names))], ({"happy_new_year"}));
-//	set_name("»Æ½ğ", ({"gold", "ingot", "gold_money"}));
+//	set_name("é»„é‡‘", ({"gold", "ingot", "gold_money"}));
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»¸ö×ã³àµÄĞ¡½ğï¾×Ó,Ö»ÓĞ¹ıÄêÊ±²ÅÄÜ¼ûµ½¡£\n");
-		set("unit", "¸ö");
+		set("long", "ä¸€ä¸ªè¶³èµ¤çš„å°é‡‘é”å­,åªæœ‰è¿‡å¹´æ—¶æ‰èƒ½è§åˆ°ã€‚\n");
+		set("unit", "ä¸ª");
 		set("value", 8888);
 //		set("base_value", 9999);
-//		set("base_unit", "Á½");
+//		set("base_unit", "ä¸¤");
 //		set("base_weight", 37);
 	}
 	setup();

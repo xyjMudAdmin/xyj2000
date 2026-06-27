@@ -8,13 +8,13 @@ inherit STAFF;
 
 void create()
 {
-	set_name( RED "* ö± Ñª Ìì Ä§ èÆ *" NOR, ({ "demon staff", "staff" }) );
+	set_name( RED "* éœ° è¡€ å¤© é­” æµ *" NOR, ({ "demon staff", "staff" }) );
 	set_weight(400000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "°Ñ");
-		set("long", "Ò»°Ñ°µºìÉ«¡¢Á½ÕÉ¶à³¤µÄ¾ŞèÆ¡£\n");
+		set("unit", "æŠŠ");
+		set("long", "ä¸€æŠŠæš—çº¢è‰²ã€ä¸¤ä¸ˆå¤šé•¿çš„å·¨æµã€‚\n");
 		set("material", "crimson gold");
 	}
 	init_staff(100);

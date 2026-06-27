@@ -9,10 +9,10 @@ void create()
 {
 	object ob1, ob2;
 	
-	string *order = ({"�÷�", "ʤ��", "����", "��ס"});
+	string *order = ({"泼法", "胜至", "大力", "永住"});
 
-	set_name((order[random(4)]) + "���", ({ "jingang"}) );
-	set("long", "����һλ������ɽ���ػ���ר�ŵ��λ���֮��\n");
+	set_name((order[random(4)]) + "金刚", ({ "jingang"}) );
+	set("long", "这是一位来自灵山的守护神，专门担任护法之责。\n");
 	set("attitude", "friendly");
 
 	set("max_gin", 500);
@@ -35,10 +35,10 @@ void create()
 
 	ob1=carry_object("/d/city/obj/jiasha");
 	ob1->wear();
-	ob1->set("no_sell", "�ƹ�����һ�۵����ⶫ��һ�������ӵ�Ʒ����Ҫ����Ҫ��\n");
+	ob1->set("no_sell", "掌柜的瞟了一眼道：这东西一看就是劣等品，不要！不要！\n");
 	ob2=carry_object("/d/obj/weapon/staff/budd_staff");
 	ob2->wield();
-	ob2->set("no_sell", "�ƹ�����һ�۵����ⶫ��һ�������ӵ�Ʒ����Ҫ����Ҫ��\n");
+	ob2->set("no_sell", "掌柜的瞟了一眼道：这东西一看就是劣等品，不要！不要！\n");
 }
 
 int heal_up()
@@ -53,8 +53,8 @@ int heal_up()
 void leave()
 {
 	message("vision",
-		RED + name() + "˵����ĩ������ٻ��������Ѿ���ɻ������񣬾ʹ˸�ǣ�\n\n"
-		+ name() + "����һ����⣬���������ʧ�����ˡ�\n" NOR, environment(),
+		RED + name() + "说道：末将奉法主召唤，现在已经完成护法任务，就此告辞！\n\n"
+		+ name() + "化成一道红光，冲上天际消失不见了。\n" NOR, environment(),
 		this_object() );
 	destruct(this_object());
 }
@@ -65,8 +65,8 @@ void invocation(object who)
 	object *enemy;
 
 	message("vision",
-		RED "ֻ��ž����һ����һ�ź�ⱬ�����ֳ�һ�����������ִ���ȵĽ�ա�\n\n"
-		+ name() + "˵����ĩ������ٻ�������������\n" NOR,
+		RED "只听啪！的一声，一团红光爆开，现出一个身穿金甲手执禅杖的金刚。\n\n"
+		+ name() + "说道：末将奉法主召唤，特来护法！\n" NOR,
 		environment(), this_object() );
 	enemy = who->query_enemy();
 	i = sizeof(enemy);

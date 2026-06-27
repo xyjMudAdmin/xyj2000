@@ -5,10 +5,10 @@ inherit ITEM;
 
 void create()
 {
-        set_name("ÃèÁúÓñÅå", ({"yu pei", "pei"}));
+        set_name("æé¾™çŽ‰ä½©", ({"yu pei", "pei"}));
         set_weight(100);
-           set("unit", "Ã¶");
-           set("long", "Ò»Ã¶ÓñÅå£¬ÉÏÃæ»¹µñ×Å»¨£¬Ð´×Å×Ö¡£\n");
+           set("unit", "æžš");
+           set("long", "ä¸€æžšçŽ‰ä½©ï¼Œä¸Šé¢è¿˜é›•ç€èŠ±ï¼Œå†™ç€å­—ã€‚\n");
           set("no_sell", 1);
 	  set("jiebai", 0);
 	  set("value", 5000);
@@ -24,60 +24,60 @@ int do_jiebai(string arg)
 {
 	object ob, obj, me=this_player();
 
-	if (!arg) return notify_fail("ÄãÒªºÍË­½á°Ý£¿\n");
+	if (!arg) return notify_fail("ä½ è¦å’Œè°ç»“æ‹œï¼Ÿ\n");
 
 	obj = present(arg, environment(me));
 	if (!objectp(obj)) return notify_fail("\n");
 
 	if( !obj->is_character() )
-		return notify_fail("¿´Çå³þÒ»µã£¬ÄÇ²¢²»ÊÇ»îÎï¡£\n");
+		return notify_fail("çœ‹æ¸…æ¥šä¸€ç‚¹ï¼Œé‚£å¹¶ä¸æ˜¯æ´»ç‰©ã€‚\n");
 
-	if (me->is_busy()) return notify_fail("ÄãÏÖÔÚÕýÃ¦×ÅÄØ¡£\n");
+	if (me->is_busy()) return notify_fail("ä½ çŽ°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
 
 	if( obj->query_temp("pending/jiebai") != me) {
-		message_vision("\n$N¶Ô×Å$nËµµÀ£º"
+		message_vision("\n$Nå¯¹ç€$nè¯´é“ï¼š"
 			+ RANK_D->query_self(me)+ me->name() 
-			+ "£¬ÓûÓë"
+			+ "ï¼Œæ¬²ä¸Ž"
 			+ RANK_D->query_respect(obj) 
-			+ "½áÎªÒìÐÕ" 
-			+ (obj->query("gender")=="ÄÐÐÔ" ? "ÐÖ":"½ã" )
-			+ (me->query("gender")=="ÄÐÐÔ"? "µÜ" : "ÃÃ")
-			+ "£¬²»Öª" + RANK_D->query_respect(obj)
-			+ "ÒâÏÂÈçºÎ£¿\n\n", me, obj);
+			+ "ç»“ä¸ºå¼‚å§“" 
+			+ (obj->query("gender")=="ç”·æ€§" ? "å…„":"å§" )
+			+ (me->query("gender")=="ç”·æ€§"? "å¼Ÿ" : "å¦¹")
+			+ "ï¼Œä¸çŸ¥" + RANK_D->query_respect(obj)
+			+ "æ„ä¸‹å¦‚ä½•ï¼Ÿ\n\n", me, obj);
 		me->set_temp("pending/jiebai", obj);
 		return 1;
 		}
 
 	obj->delete_temp("pending/jiebai");
-	message_vision("$N¶Ô×Å$nËµµÀ£º"
+	message_vision("$Nå¯¹ç€$nè¯´é“ï¼š"
 		+ RANK_D->query_self(me)+ me->name()
-		+ "£¬Ô¸Óë"
+		+ "ï¼Œæ„¿ä¸Ž"
 		+ RANK_D->query_respect(obj)
-		+ "½áÎªÒìÐÕ" 
-                + (obj->query("gender")=="ÄÐÐÔ" ? "ÐÖ":"½ã")
-                + (me->query("gender")=="ÄÐÐÔ"? "µÜ" : "ÃÃ")
-		+ "£¡\n\n", me, obj);
+		+ "ç»“ä¸ºå¼‚å§“" 
+                + (obj->query("gender")=="ç”·æ€§" ? "å…„":"å§")
+                + (me->query("gender")=="ç”·æ€§"? "å¼Ÿ" : "å¦¹")
+		+ "ï¼\n\n", me, obj);
 
-	message_vision("$NºÍ$n¹òÏÂÀ´£¬³¯×ÅÌìµØßµÁË¾Åßµ£¬·ÙÏãÃËÊÄÔ»£º\n¡°Äî"
-		+ obj->query("name") + "¡¢" + me->query("name")
-		+ "£¬Ëä·Ç¹ÇÈâ£¬¼È½áÎª"
-		+ (obj->query("gender")=="ÄÐÐÔ" ? "ÐÖ":"½ã")
-                + (me->query("gender")=="ÄÐÐÔ"? "µÜ" : "ÃÃ")
-		+ "£¬ÔòÍ¬ÐÄÐ­Á¦£¬¾ÈÀ§·öÎ££»\n"
-		+ "ÉÏ±¨¹ú¼Ò£¬ÏÂ°²ÀèÊü£»²»ÇóÍ¬ÄêÍ¬ÔÂÍ¬ÈÕÉú£¬Ö»Ô¸Í¬ÄêÍ¬ÔÂÍ¬ÈÕËÀ¡£\n"
-		+ "»ÊÌìºóÍÁ£¬Êµ¼ø´ËÐÄ¡£±³ÒåÍü¶÷£¬ÌìÈË¹²Â¾£¡¡±\n\n", me, obj);
+	message_vision("$Nå’Œ$nè·ªä¸‹æ¥ï¼Œæœç€å¤©åœ°å©äº†ä¹å©ï¼Œç„šé¦™ç›Ÿèª“æ›°ï¼š\nâ€œå¿µ"
+		+ obj->query("name") + "ã€" + me->query("name")
+		+ "ï¼Œè™½éžéª¨è‚‰ï¼Œæ—¢ç»“ä¸º"
+		+ (obj->query("gender")=="ç”·æ€§" ? "å…„":"å§")
+                + (me->query("gender")=="ç”·æ€§"? "å¼Ÿ" : "å¦¹")
+		+ "ï¼Œåˆ™åŒå¿ƒååŠ›ï¼Œæ•‘å›°æ‰¶å±ï¼›\n"
+		+ "ä¸ŠæŠ¥å›½å®¶ï¼Œä¸‹å®‰é»Žåº¶ï¼›ä¸æ±‚åŒå¹´åŒæœˆåŒæ—¥ç”Ÿï¼Œåªæ„¿åŒå¹´åŒæœˆåŒæ—¥æ­»ã€‚\n"
+		+ "çš‡å¤©åŽåœŸï¼Œå®žé‰´æ­¤å¿ƒã€‚èƒŒä¹‰å¿˜æ©ï¼Œå¤©äººå…±æˆ®ï¼â€\n\n", me, obj);
 
 	if (query("jiebai")) return 1;
 	set("jiebai", 1);
-	set("long", "\nÒ»Ã¶Í­ÅÆ£¬ÉÏÊé£º\n" + "¾ý×ÓÖ®½»µ­ÈçË®\n\t" +
-		obj->query("name") + "¡¢" + me->query("name") + "¹²Ê¶\n");
+	set("long", "\nä¸€æžšé“œç‰Œï¼Œä¸Šä¹¦ï¼š\n" + "å›å­ä¹‹äº¤æ·¡å¦‚æ°´\n\t" +
+		obj->query("name") + "ã€" + me->query("name") + "å…±è¯†\n");
 
 	ob=present("yu pei", obj);
 	if (!ob) return 1;
 	if (ob->query("jiebai")) return 1;
 	ob->set("jiebai", 1);
-	ob->set("long", "\nÒ»Ã¶ÃèÁúÓñÅå£¬ÉÏÊé£º\n" + "¾ý×ÓÖ®½»µ­ÈçË®\n\t" +
-		me->query("name") + "¡¢" + obj->query("name") + "¹²Ê¶\n");
+	ob->set("long", "\nä¸€æžšæé¾™çŽ‰ä½©ï¼Œä¸Šä¹¦ï¼š\n" + "å›å­ä¹‹äº¤æ·¡å¦‚æ°´\n\t" +
+		me->query("name") + "ã€" + obj->query("name") + "å…±è¯†\n");
 
 	return 1;
 

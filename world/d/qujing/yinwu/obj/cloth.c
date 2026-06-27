@@ -4,11 +4,11 @@
 inherit CLOTH;
 
 string *names = ({
-  "Ï¬Æ¤±³ĞÄ",
-  "Å£Æ¤ÒÂ",
-  "ĞÜÆ¤¶ÌÅÛ",
-  "»¢Æ¤È¹",
-  "ÀÇÆ¤¿ã",
+  "çŠ€çš®èƒŒå¿ƒ",
+  "ç‰›çš®è¡£",
+  "ç†Šçš®çŸ­è¢",
+  "è™çš®è£™",
+  "ç‹¼çš®è£¤",
 });
 
 string *ids = ({
@@ -27,7 +27,7 @@ void create()
   if ( clonep() )
      set_default_object(__FILE__);
   else {
-   set("unit", "¼ş");
+   set("unit", "ä»¶");
    set("value", 500);
    set("material", "leather");
    set("armor_prop/armor", 15);

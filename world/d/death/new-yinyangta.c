@@ -5,12 +5,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ÒõÑôËþ");
+  set ("short", "é˜´é˜³å¡”");
   set ("long", @LONG
 
-ÒõÑôËþÄÚ³É¹°ÐÎ£¬ÉÏ·½Ò»Æ¬¹âÃ÷¡£ÒþÔ¼¿´µ½ÓÐÒõÑô¶þÆøÂÖ»ØÏà×ª²»
-¾ø¡£ÖÜÎ§Ç½ÉÏ°´°Ë·½»­ÁË°ËØÔÖ®Ïó¡£¿ÕÖÐÅ¼ÓÐÁ×»ðÆ®Æ®£¬ÓÖºÃÏóÒþ
-Òþ´«À´ºÍÉÐµÀÊ¿×ö·¨ÊÂÊ±µÄÁåÏì¡£
+é˜´é˜³å¡”å†…æˆæ‹±å½¢ï¼Œä¸Šæ–¹ä¸€ç‰‡å…‰æ˜Žã€‚éšçº¦çœ‹åˆ°æœ‰é˜´é˜³äºŒæ°”è½®å›žç›¸è½¬ä¸
+ç»ã€‚å‘¨å›´å¢™ä¸ŠæŒ‰å…«æ–¹ç”»äº†å…«å¦ä¹‹è±¡ã€‚ç©ºä¸­å¶æœ‰ç£·ç«é£˜é£˜ï¼Œåˆå¥½è±¡éš
+éšä¼ æ¥å’Œå°šé“å£«åšæ³•äº‹æ—¶çš„é“ƒå“ã€‚
 LONG);
 
   set("exits", ([ /* sizeof() == 4 */
@@ -24,7 +24,7 @@ LONG);
 void init()
 {
         object who=this_player();
-        if( (string)who->query("family/family_name")=="ÑÖÂÞµØ¸®" ) {
+        if( (string)who->query("family/family_name")=="é˜Žç½—åœ°åºœ" ) {
                 call_out("heal_up", 9, who);
         }
 	remove_call_out("sounding");
@@ -33,10 +33,10 @@ void init()
 int sounding(object where)
 {
 	string *msgs=({
-    "¡¸îõ£¬îõ¡¹´«À´¼¸ÉùÁåÏì¡£\n",
-    "¡¸Å¾¡¹µØÒ»µÀ»ð»¨ÉÁ¹ý¡£\n",
-    "¡°ßËßËßË¡±Ò»Õó¹ÄÉù´«À´¡£\n",
-    "¡¸ºô¡¹µØÒ»ÕóÀä·ç´µ¹ý¡£\n",
+    "ã€Œé“›ï¼Œé“›ã€ä¼ æ¥å‡ å£°é“ƒå“ã€‚\n",
+    "ã€Œå•ªã€åœ°ä¸€é“ç«èŠ±é—ªè¿‡ã€‚\n",
+    "â€œå’šå’šå’šâ€ä¸€é˜µé¼“å£°ä¼ æ¥ã€‚\n",
+    "ã€Œå‘¼ã€åœ°ä¸€é˜µå†·é£Žå¹è¿‡ã€‚\n",
   });
   tell_room (where,msgs[random(sizeof(msgs))]);
 }
@@ -57,8 +57,8 @@ int heal_up(object who)
         who->set("eff_kee", (int)who->query("max_kee"));
         who->set("eff_sen", (int)who->query("max_sen"));
 
-        message_vision("ºöÈ»Ò»¹ÉÇàÆøÁý×¡ÁË$N¡£\n", who);
-        write("Äã¾õµÃ×Ô¼ºµÄ¾«ÉñÆøÑªÒ»ÏÂ×Ó¶¼»Ö¸´ÁË¡£\n");
+        message_vision("å¿½ç„¶ä¸€è‚¡é’æ°”ç¬¼ä½äº†$Nã€‚\n", who);
+        write("ä½ è§‰å¾—è‡ªå·±çš„ç²¾ç¥žæ°”è¡€ä¸€ä¸‹å­éƒ½æ¢å¤äº†ã€‚\n");
 
 	if( (int)who->query("food") < (int)who->max_food_capacity() )
 		who->set("food", (int)who->max_food_capacity());

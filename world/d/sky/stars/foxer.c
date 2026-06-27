@@ -6,11 +6,11 @@ inherit NPC;
 
 void create()
 {
-	set_name("°¢Ğå", ({"foxer"}));
+	set_name("é˜¿ç»£", ({"foxer"}));
 	set("long",
-"Î÷ÍõÄ¸×ùÏÂ½Ü³öµÜ×Ó¡£ÓĞ¹¦·ò£¬ÓĞ²ÅÆø£¬ÈËÓÖ³¤µÃÆ¯ÁÁ£¬ÌìÉÏµØÏÂ¶¼³ÔµÃ¿ª¡£\n");
-	set("title", "ĞÄÔÂĞÇ¹Ù");
-	set("gender", "Å®ĞÔ");
+"è¥¿ç‹æ¯åº§ä¸‹æ°å‡ºå¼Ÿå­ã€‚æœ‰åŠŸå¤«ï¼Œæœ‰æ‰æ°”ï¼Œäººåˆé•¿å¾—æ¼‚äº®ï¼Œå¤©ä¸Šåœ°ä¸‹éƒ½åƒå¾—å¼€ã€‚\n");
+	set("title", "å¿ƒæœˆæ˜Ÿå®˜");
+	set("gender", "å¥³æ€§");
 	set("age", 20);
 	set("class", "xian");
 	set("attitude", "friendly");
@@ -64,7 +64,7 @@ void create()
 	map_skill("dodge", "moondance");
 //	map_skill("blade", "xuanhu-blade");
 
-	create_family("ÔÂ¹¬", 2, "µÜ×Ó");
+	create_family("æœˆå®«", 2, "å¼Ÿå­");
 	setup();
 
 	carry_object("/d/obj/cloth/shoes")->wear();
@@ -74,11 +74,11 @@ void create()
 
 void attempt_apprentice(object ob)
 {
-	if ( !((string)ob->query("gender")=="Å®ĞÔ"))
+	if ( !((string)ob->query("gender")=="å¥³æ€§"))
 	{	
 		if( (string)ob->query("id") != "ppl" )
 		{
-			command("say ºß£¡\n");
+			command("say å“¼ï¼\n");
 			return;
 		}
 		else //note here, "ppl" is "foxer"'s husband.
@@ -89,7 +89,7 @@ void attempt_apprentice(object ob)
 	}
 
 	command("pat "+ob->query("id"));
-	command("say ÎÒ»¹Ã»×¼±¸ÊÕÍ½ÄØ¡£\n");
+	command("say æˆ‘è¿˜æ²¡å‡†å¤‡æ”¶å¾’å‘¢ã€‚\n");
 	return;
 }
 

@@ -4,15 +4,15 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ÍÁµØÃí");
+  set ("short", "åœŸåœ°åº™");
   set ("long", @LONG
 
-Ò»×ùÐ¡Ð¡µÄÍÁµØÃí£¬ÃíÀï¹©×ÅÍÁµØ¹«¹«ºÍÍÁµØÆÅÆÅ(statue)¡£¹©
-Ì¨ÉÏ°Ú×ÅÐ©¹©Æ·ÏãÖò£¬»¹ÓÐÐ©Çó¸æÆ½°²µÄÎÄÊé¡£ÃíÀïºÜ¾²£¬Ìý²»
-µ½Ê²Ã´Ïì¶¯£¬¹©Ì¨ÉÏÁ½Ö§³¤Öò·¢³öµ­µ­µÄ¹âÏß¡£
+ä¸€åº§å°å°çš„åœŸåœ°åº™ï¼Œåº™é‡Œä¾›ç€åœŸåœ°å…¬å…¬å’ŒåœŸåœ°å©†å©†(statue)ã€‚ä¾›
+å°ä¸Šæ‘†ç€äº›ä¾›å“é¦™çƒ›ï¼Œè¿˜æœ‰äº›æ±‚å‘Šå¹³å®‰çš„æ–‡ä¹¦ã€‚åº™é‡Œå¾ˆé™ï¼Œå¬ä¸
+åˆ°ä»€ä¹ˆå“åŠ¨ï¼Œä¾›å°ä¸Šä¸¤æ”¯é•¿çƒ›å‘å‡ºæ·¡æ·¡çš„å…‰çº¿ã€‚
 LONG);
   set("item_desc", ([ /* sizeof() == 1 */
-  "statue" : "ÄàÏñºÃÏóÄÜ¹»ÍÆ¶¯(push)¡£\n",
+  "statue" : "æ³¥åƒå¥½è±¡èƒ½å¤ŸæŽ¨åŠ¨(push)ã€‚\n",
 ]));
 
 
@@ -32,20 +32,20 @@ int do_push(string arg)
         object me,m;
         me=this_player();
 
-        if ( !arg || ((arg != "ÍÁµØ¹«¹«")
-		&&(arg != "ÍÁµØÆÅÆÅ") && (arg!="statue")) )
-                return notify_fail("ÄãÒªÍÆÊ²Ã´£¿\n");
+        if ( !arg || ((arg != "åœŸåœ°å…¬å…¬")
+		&&(arg != "åœŸåœ°å©†å©†") && (arg!="statue")) )
+                return notify_fail("ä½ è¦æŽ¨ä»€ä¹ˆï¼Ÿ\n");
 
 	if (objectp(present("mud baby", environment(me)))) {
-		write("ÄàÍÞÍÞÏòÄãÐ¦ÎûÎûµØËµ£ºÎÒÔÚÕâÄØ£¬ÍÆÊ²Ã´ÍÆ£¿\n");
+		write("æ³¥å¨ƒå¨ƒå‘ä½ ç¬‘å˜»å˜»åœ°è¯´ï¼šæˆ‘åœ¨è¿™å‘¢ï¼ŒæŽ¨ä»€ä¹ˆæŽ¨ï¼Ÿ\n");
 		return 1;
 	}
 
-		message_vision("$NÊ¹¾¢µØÍÆÁËÍÆÍÁµØ¹«¹«ºÍÍÁµØÆÅÆÅµÄÄàÏñ¡£\n",me);
+		message_vision("$Nä½¿åŠ²åœ°æŽ¨äº†æŽ¨åœŸåœ°å…¬å…¬å’ŒåœŸåœ°å©†å©†çš„æ³¥åƒã€‚\n",me);
 
 	        m=new(__DIR__"npc/niwawa");
 		m->move(environment(me));
-		write("¡¸ÊþàÂ¡¹¼¸ÉùÖ®ºó£¬ÄàÏñºó±Ä³ö¸öÄàÍÞÍÞÀ´£¡\n");
+		write("ã€Œæ¼±å—¦ã€å‡ å£°ä¹‹åŽï¼Œæ³¥åƒåŽè¹¦å‡ºä¸ªæ³¥å¨ƒå¨ƒæ¥ï¼\n");
                 return 1;
 }
 

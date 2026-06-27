@@ -5,8 +5,8 @@ inherit NPC;
 
 void create()
 {
-  set_name("Ğ¡¹Ü¼Ò", ({"guan jia", "jia"}) );
-  set("gender", "ÄĞĞÔ" );
+  set_name("å°ç®¡å®¶", ({"guan jia", "jia"}) );
+  set("gender", "ç”·æ€§" );
   set("age", 35);
 
   set("combat_exp", 9500);

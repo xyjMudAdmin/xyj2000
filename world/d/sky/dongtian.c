@@ -10,12 +10,12 @@ int valid_leave();
 
 void create ()
 {
-  set ("short", "¶«ÌìÃÅ");
+  set ("short", "ä¸œå¤©é—¨");
   set ("long", @LONG
 
-   ¶«ÃÅ¾ÍÔÚÂí¾ÇÖ®²à£¬ÓùÂí×İÉù³¤Ë»£¬Éù´«ÊıÀï¡£ÕâĞ©Ç§ÀïÁ¼¾Ô³É
-ÌìÑø×ğ´¦ÓÅ£¬ÒûÊ³²»³î£¬ÎªºÎ»¹Òª³¤ÃùÄØ£¿ÊÇ²»ÊÇÒòÎª²»ÄÜÒ»Õ¹¿¥×ã
-¶øÑöÌì³¤Ì¾£¿
+   ä¸œé—¨å°±åœ¨é©¬å©ä¹‹ä¾§ï¼Œå¾¡é©¬çºµå£°é•¿å˜¶ï¼Œå£°ä¼ æ•°é‡Œã€‚è¿™äº›åƒé‡Œè‰¯é©¹æˆ
+å¤©å…»å°Šå¤„ä¼˜ï¼Œé¥®é£Ÿä¸æ„ï¼Œä¸ºä½•è¿˜è¦é•¿é¸£å‘¢ï¼Ÿæ˜¯ä¸æ˜¯å› ä¸ºä¸èƒ½ä¸€å±•éªè¶³
+è€Œä»°å¤©é•¿å¹ï¼Ÿ
 
 LONG);
 
@@ -35,7 +35,7 @@ LONG);
   "east": __DIR__"yun1",
 ]));
 
-create_door("west", "¶«ÌìÃÅ", "east", DOOR_CLOSED);
+create_door("west", "ä¸œå¤©é—¨", "east", DOOR_CLOSED);
   setup();
 }
 
@@ -46,7 +46,7 @@ int valid_leave(object me, string dir)
 		if(member_array("zengzhang tianwang", me->parse_command_id_list())==-1
 		&& member_array("huguo tianwang", me->parse_command_id_list())==-1 ){
 			if(present("tian ding", environment(me) ))
-				return notify_fail("´óÁ¦Ìì¶¡¶ÔÄãÒ»»ÓÊÖ£¬ÈÂµÀ£ºÏĞÈËÃâ½ø£¡\n");
+				return notify_fail("å¤§åŠ›å¤©ä¸å¯¹ä½ ä¸€æŒ¥æ‰‹ï¼Œåš·é“ï¼šé—²äººå…è¿›ï¼\n");
 		}
 
 

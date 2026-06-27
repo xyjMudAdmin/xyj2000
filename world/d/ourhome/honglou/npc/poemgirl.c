@@ -9,8 +9,8 @@ int send_back(object me);
 
 void create()
 {
-	set_name("Ì½´º", ({ "tan chun", "chun", "girl" }) );
-	set("gender", "Å®ĞÔ" );
+	set_name("æ¢æ˜¥", ({ "tan chun", "chun", "girl" }) );
+	set("gender", "å¥³æ€§" );
 	set("age", 16);
 	set("combat_exp", 200000);
 	set("attitude", "friendly");

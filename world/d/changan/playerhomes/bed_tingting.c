@@ -9,7 +9,7 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "床上");
+        set("short", "搴婁笂");
         set("long", @LONG
 
 LONG
@@ -31,7 +31,7 @@ string id;
 if (getuid(this_player()) != "dream"
 && getuid(this_player()) != "tingting") {
 me->move("/d/changan/phomes");
-message_vision("$N似乎被人一脚踢了出来，神色有点狼狈。\n", me);
+message_vision("$N浼间箮琚汉涓�鑴氳涪浜嗗嚭鏉ワ紝绁炶壊鏈夌偣鐙肩媹銆俓n", me);
 }
 }
 

@@ -1,5 +1,5 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-//zhenhuo.c ¡¾Ì«ÒÒÕæ»ğ¡¿weiqi...980305
+//zhenhuo.c ã€å¤ªä¹™çœŸç«ã€‘weiqi...980305
 
 #include <ansi.h>
 
@@ -18,19 +18,19 @@ int cast(object me, object target)
 	||   !target->is_character()
 	||   target->is_corpse()
 	||   target==me)
-		return notify_fail("ÄãÒª¶ÔË­ÅçÌ«ÒÒÕæ»ğ£¿\n");
+		return notify_fail("ä½ è¦å¯¹è°å–·å¤ªä¹™çœŸç«ï¼Ÿ\n");
 
 	if((int)me->query_skill("taiyi", 1) < 50 )
-		return notify_fail("ÄãµÄÌ«ÒÒÏÉ·¨»ğºò²»¹»£¬ÄÄÀïÅçµÃ³öÕæ»ğ£¡\n");
+		return notify_fail("ä½ çš„å¤ªä¹™ä»™æ³•ç«å€™ä¸å¤Ÿï¼Œå“ªé‡Œå–·å¾—å‡ºçœŸç«ï¼\n");
 
 	if((int)me->query("mana") < 25+2*(int)me->query("mana_factor") )
-		return notify_fail("ÄãµÄ·¨Á¦²»¹»£¬Åç³öµÄÕæ»ğ¿ÖÅÂÃ»ÓĞÊ²Ã´ÓÃ£¡\n");
+		return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿï¼Œå–·å‡ºçš„çœŸç«ææ€•æ²¡æœ‰ä»€ä¹ˆç”¨ï¼\n");
 
 	if((int)me->query("force") < 100 )
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬ÎŞ·¨½«Õæ»ğÅç³ö¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼Œæ— æ³•å°†çœŸç«å–·å‡ºã€‚\n");
 
 	if((int)me->query("sen") < 10 )
-		return notify_fail("ÄãÏÖÔÚÉñÖÇ²»Çå£¬±ğ°Ñ×Ô¼ºÉÕÉËÁË£¡\n");
+		return notify_fail("ä½ ç°åœ¨ç¥æ™ºä¸æ¸…ï¼Œåˆ«æŠŠè‡ªå·±çƒ§ä¼¤äº†ï¼\n");
 
 	me->add("mana", -25-2*(int)me->query("mana_factor"));
 	me->add("force", -100);
@@ -38,7 +38,7 @@ int cast(object me, object target)
 
 	if( random(me->query("max_mana")) < 50 ) 
 	{
-		write("ÕâÒ»´ÎºÃÏñ²»Áé¡£\n");
+		write("è¿™ä¸€æ¬¡å¥½åƒä¸çµã€‚\n");
 		return 1;
 	}
 
@@ -53,15 +53,15 @@ int cast(object me, object target)
 			//damage adjustment
 		"both", 		
 			//damage type: could be "qi"/"kee", "shen"/"sen", ...default "both"
-		HIC "$N¼¸¸öÖ¸Í·Ñ¸ËÙÄí¶¯£¬Í»È»ÕÅ×ìÒ»Åç£¡ºì³È»ÆÈıµÀ»ğÑæºô£¡µØÒ»ÉùÏò$n¾íÈ¥£¡\n" NOR,
+		HIC "$Nå‡ ä¸ªæŒ‡å¤´è¿…é€Ÿæ»åŠ¨ï¼Œçªç„¶å¼ å˜´ä¸€å–·ï¼çº¢æ©™é»„ä¸‰é“ç«ç„°å‘¼ï¼åœ°ä¸€å£°å‘$nå·å»ï¼\n" NOR,
 			//initial message
-		HIC "½á¹û$n±»ÉÕµÃ½¹Í·ÀÃ¶î£¡\n" NOR, 
+		HIC "ç»“æœ$nè¢«çƒ§å¾—ç„¦å¤´çƒ‚é¢ï¼\n" NOR, 
 			//success message
-		HIC "µ«ÊÇ$nÇáÇáÒ»Ìø¾Í¶ãÁË¿ªÀ´¡£\n" NOR, 
+		HIC "ä½†æ˜¯$nè½»è½»ä¸€è·³å°±èº²äº†å¼€æ¥ã€‚\n" NOR, 
 			//fail message
-		HIC "µ«ÊÇ»ğÑæ±»$nÒÔ·¨Á¦Ò»±Æ£¬·´Ïò$N»Ø¾í¶øÈ¥£¡\n" NOR, 
+		HIC "ä½†æ˜¯ç«ç„°è¢«$nä»¥æ³•åŠ›ä¸€é€¼ï¼Œåå‘$Nå›å·è€Œå»ï¼\n" NOR, 
 			//backfire initial message
-		HIC "½á¹ûÌ«ÒÒÕæ»ğ·´ÊÉ£¬$n±»ÉÕµÃ½¹Í·ÀÃ¶î£¡\n" NOR
+		HIC "ç»“æœå¤ªä¹™çœŸç«åå™¬ï¼Œ$nè¢«çƒ§å¾—ç„¦å¤´çƒ‚é¢ï¼\n" NOR
 			//backfire hit message. note here $N and $n!!!
 	);
 

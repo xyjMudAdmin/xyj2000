@@ -6,19 +6,19 @@ inherit F_LIQUID;
 
 void create()
 {
-  set_name("ÓÍºùÂ«", ({"you hulu", "hulu", "hu", "lu"}));
+  set_name("æ²¹è‘«èŠ¦", ({"you hulu", "hulu", "hu", "lu"}));
   set_weight(700);
   if (clonep())
     set_default_object(__FILE__);
   else {
-    set("long", "Ò»¸öÓÃºùÂ«ÖÆ³ÉµÄÓÍºø£¬ÉÏÃæ»æ×Å×íóÏ»¨¡£\n");
-    set("unit", "¸ö");
+    set("long", "ä¸€ä¸ªç”¨è‘«èŠ¦åˆ¶æˆçš„æ²¹å£¶ï¼Œä¸Šé¢ç»˜ç€é†‰ç¬™èŠ±ã€‚\n");
+    set("unit", "ä¸ª");
     set("value", 1000);
     set("max_liquid", 10);
   }
   set("liquid", ([
     "type": "oil",
-    "name": "ËÖºÏÏãÓÍ",
+    "name": "é…¥åˆé¦™æ²¹",
     "remaining": 0,
   ]));
   set("no_get",1);
@@ -28,7 +28,7 @@ void create()
 
 void destruct_me(object where, object me)
 {
-  message_vision("$n¡°°È¡±µØÒ»ÉùË¤ÔÚµØÉÏ£¬ÔÒÁË¸ö·ÛËé£¡\n",where,me);
+  message_vision("$nâ€œå­â€åœ°ä¸€å£°æ‘”åœ¨åœ°ä¸Šï¼Œç ¸äº†ä¸ªç²‰ç¢ï¼\n",where,me);
   destruct (me);
 }
 
@@ -66,30 +66,30 @@ int do_fill (string arg)
   object ob;
 
   if (! arg)
-    return notify_fail ("ÄãÒª¹àÊ²Ã´£¿\n");    
+    return notify_fail ("ä½ è¦çŒä»€ä¹ˆï¼Ÿ\n");    
   ob = present (arg,who);
   if (! ob)
-    return notify_fail ("ÄãÏëÒª¹àÊ²Ã´£¿\n");    
+    return notify_fail ("ä½ æƒ³è¦çŒä»€ä¹ˆï¼Ÿ\n");    
 
   if (! where->query("has_oil"))
   {
     if (where->query("has_oil_pot"))
-      return notify_fail ("¹Ş×ÓÀïÒÑÃ»ÓĞËÖºÏÏãÓÍÁË¡£\n");    
+      return notify_fail ("ç½å­é‡Œå·²æ²¡æœ‰é…¥åˆé¦™æ²¹äº†ã€‚\n");    
     else
-      return notify_fail ("ÕâÀïÃ»ÓĞËÖºÏÏãÓÍ¿É¹à¡£\n");    
+      return notify_fail ("è¿™é‡Œæ²¡æœ‰é…¥åˆé¦™æ²¹å¯çŒã€‚\n");    
   }
  
   if (query("liquid/remaining") > 0)
   {
-    //message_vision ("$N½«$nÀïÊ£ÏÂµÄ"+query("liquid/name")+"µ¹µô¡£\n",who,me);
-    return notify_fail ("ºùÂ«ÀïÒÑ×°ÓĞËÖºÏÏãÓÍÁË¡£\n");
+    //message_vision ("$Nå°†$né‡Œå‰©ä¸‹çš„"+query("liquid/name")+"å€’æ‰ã€‚\n",who,me);
+    return notify_fail ("è‘«èŠ¦é‡Œå·²è£…æœ‰é…¥åˆé¦™æ²¹äº†ã€‚\n");
   }
-  message_vision ("$N½«$n¹àÂúËÖºÏÏãÓÍ¡£\n",who,me);
+  message_vision ("$Nå°†$nçŒæ»¡é…¥åˆé¦™æ²¹ã€‚\n",who,me);
   where->set("has_oil",0);
   where->regenerate_oil();
   set("liquid", ([
     "type": "oil",
-    "name": "ËÖºÏÏãÓÍ",
+    "name": "é…¥åˆé¦™æ²¹",
     "remaining": 10,
   ]));
   return 1;
@@ -104,21 +104,21 @@ int do_pour (string arg)
   object ob;
 
   if (! arg)
-    return notify_fail ("ÄãÏëµ¹Ê²Ã´£¿\n");
+    return notify_fail ("ä½ æƒ³å€’ä»€ä¹ˆï¼Ÿ\n");
   ob = present (arg,where);
   if (! ob)
-    return notify_fail ("ÄãÏë°ÑËÖÓÍÍùÄÄÀïµ¹£¿\n");
-  if (ob->query("name")!="½ğµÆ¸×")
-    return notify_fail ("ÄãÏë°ÑËÖÓÍÍùÄÄÀïµ¹£¿\n");
+    return notify_fail ("ä½ æƒ³æŠŠé…¥æ²¹å¾€å“ªé‡Œå€’ï¼Ÿ\n");
+  if (ob->query("name")!="é‡‘ç¯ç¼¸")
+    return notify_fail ("ä½ æƒ³æŠŠé…¥æ²¹å¾€å“ªé‡Œå€’ï¼Ÿ\n");
   if (! query("liquid/remaining"))
-    return notify_fail ("ÓÍºùÂ«ÀïÃ»ÓĞÓÍ¡£\n");
-  if (query("liquid/name") != "ËÖºÏÏãÓÍ")
-    return notify_fail ("ÓÍºùÂ«Àï×°µÄ²»ÊÇËÖºÏÏãÓÍ¡£\n");
+    return notify_fail ("æ²¹è‘«èŠ¦é‡Œæ²¡æœ‰æ²¹ã€‚\n");
+  if (query("liquid/name") != "é…¥åˆé¦™æ²¹")
+    return notify_fail ("æ²¹è‘«èŠ¦é‡Œè£…çš„ä¸æ˜¯é…¥åˆé¦™æ²¹ã€‚\n");
 
-  message_vision ("$N½«$nÀïµÄ"+query("liquid/name")+"µ¹½ø½ğµÆ¸×¡£\n",who,me);
+  message_vision ("$Nå°†$né‡Œçš„"+query("liquid/name")+"å€’è¿›é‡‘ç¯ç¼¸ã€‚\n",who,me);
   set("liquid", ([
     "type": "oil",
-    "name": "ËÖºÏÏãÓÍ",
+    "name": "é…¥åˆé¦™æ²¹",
     "remaining": 0,
   ]));
 
@@ -132,11 +132,11 @@ int do_pour (string arg)
     i -= who->query_temp("obstacle/jinping_oil");
     
     if (i > 0)
-      message_vision ("$N¸æËß$n£ºÔÙµ¹"+chinese_number(i)+"´Î±ã¿É¡£\n",
+      message_vision ("$Nå‘Šè¯‰$nï¼šå†å€’"+chinese_number(i)+"æ¬¡ä¾¿å¯ã€‚\n",
                       guan,who);
     else     
     {
-      message_vision ("$N¸æËß$n£º·ğÒ¯ÒªÀ´ÁË£¡\n",guan,who);
+      message_vision ("$Nå‘Šè¯‰$nï¼šä½›çˆ·è¦æ¥äº†ï¼\n",guan,who);
       call_out ("coming",random(3)+3,who);
     }
   }  
@@ -149,7 +149,7 @@ void coming (object who)
   object *obs = all_inventory (who);
   int i = sizeof(obs);
 
-  message_vision ("Ò»Õó¿ñ·ç´µÀ´£¬·ğÒ¯³öÏÖ£¡\n",who);
+  message_vision ("ä¸€é˜µç‹‚é£å¹æ¥ï¼Œä½›çˆ·å‡ºç°ï¼\n",who);
   while (i--)
   {
     object ob = obs[i];
@@ -161,30 +161,30 @@ void coming (object who)
     if (ob->query("no_drop"))
       continue;
 
-    message_vision ("·ğÒ¯´Ó$NÉíÉÏËÑ³ö$n£¡\n",who,ob);
+    message_vision ("ä½›çˆ·ä»$Nèº«ä¸Šæœå‡º$nï¼\n",who,ob);
     if (! interactive(ob))
       destruct (ob);
     else
       ob->move(environment(who));
   }  
-  message_vision ("\n·ğÒ¯Ğ¯×Å$N·ÉÉÏÌì¿Õ£¡\n",who);
+  message_vision ("\nä½›çˆ·æºç€$Né£ä¸Šå¤©ç©ºï¼\n",who);
   who->move("/d/qujing/qinglong/shantou");
-  message_vision ("\n·ğÒ¯Í»È»Í£ÏÂÀ´£¬Ë³±ã½«$NÍùµØÉÏÒ»ÈÓ£¡\n",who);
+  message_vision ("\nä½›çˆ·çªç„¶åœä¸‹æ¥ï¼Œé¡ºä¾¿å°†$Nå¾€åœ°ä¸Šä¸€æ‰”ï¼\n",who);
   who->unconcious();
 }
 
 int do_drink (string arg)
 {
   object me = this_player();
-  if (! arg) return notify_fail ("ÄãÒªºÈÊ²Ã´£¿\n");    
-  if(arg!="hulu"&&arg!="you hulu") return notify_fail ("ÄãÒªºÈÊ²Ã´£¿\n");
-  if (query("liquid/name") != "ËÖºÏÏãÓÍ")
-    return notify_fail ("ÓÍºùÂ«Àï×°µÄ²»ÊÇËÖºÏÏãÓÍ¡£\n");
+  if (! arg) return notify_fail ("ä½ è¦å–ä»€ä¹ˆï¼Ÿ\n");    
+  if(arg!="hulu"&&arg!="you hulu") return notify_fail ("ä½ è¦å–ä»€ä¹ˆï¼Ÿ\n");
+  if (query("liquid/name") != "é…¥åˆé¦™æ²¹")
+    return notify_fail ("æ²¹è‘«èŠ¦é‡Œè£…çš„ä¸æ˜¯é…¥åˆé¦™æ²¹ã€‚\n");
   if (!query("liquid/remaining"))
-    return notify_fail ("ÓÍºùÂ«ÀïÃ»ÓĞÓÍ¡£\n");
+    return notify_fail ("æ²¹è‘«èŠ¦é‡Œæ²¡æœ‰æ²¹ã€‚\n");
   add("liquid/remaining",-1);
-  tell_object(me, "Äã¹í¹íËîËî´ÓÓÍºùÂ«ÀïµÄÍµºÈÁËµãÓÍ£¡\n");
-  message("vision", "Äã¿´µ½" + me->name() + "¹í¹íËîËîµØ´ÓÓÍºùÂ«ÀïµÄÍµºÈÁËµãÊ²Ã´£¡\n", environment(me),({ me}));
+  tell_object(me, "ä½ é¬¼é¬¼ç¥Ÿç¥Ÿä»æ²¹è‘«èŠ¦é‡Œçš„å·å–äº†ç‚¹æ²¹ï¼\n");
+  message("vision", "ä½ çœ‹åˆ°" + me->name() + "é¬¼é¬¼ç¥Ÿç¥Ÿåœ°ä»æ²¹è‘«èŠ¦é‡Œçš„å·å–äº†ç‚¹ä»€ä¹ˆï¼\n", environment(me),({ me}));
   me->set_temp("wdd_drink_hulu",1);
 return 1;
 }  

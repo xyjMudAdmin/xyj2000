@@ -5,13 +5,13 @@ inherit F_LIQUID;
 
 void create()
 {
-  set_name("ÏÉ²è", ({"xian cha", "cha", "tea"}));
+  set_name("ä»™èŒ¶", ({"xian cha", "cha", "tea"}));
   set_weight(2000);
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("long", "Ò»¸öµñ»¨Óñ²èºø¡£\n");
-    set("unit", "¸ö");
+    set("long", "ä¸€ä¸ªé›•èŠ±ç‰èŒ¶å£¶ã€‚\n");
+    set("unit", "ä¸ª");
     set("value", 2000);
     set("max_liquid", 20);
     set("material", "jade");
@@ -19,10 +19,10 @@ void create()
   
   set("liquid", ([
     "type": "water",
-    "name": "ÁéÉ½ÏÉÈª²è",
+    "name": "çµå±±ä»™æ³‰èŒ¶",
     "remaining": 20,
    ]) );
-  set("no_get", "ÏÉ²èÄËÁéÉ½Ö®·ğÎï£¬²»ÄÜÄÃ×ß£¡\n");
+  set("no_get", "ä»™èŒ¶ä¹ƒçµå±±ä¹‹ä½›ç‰©ï¼Œä¸èƒ½æ‹¿èµ°ï¼\n");
   setup();
 
 }

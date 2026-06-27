@@ -12,11 +12,11 @@ mapping *query_day_phase() { return day_phase; }
 int query_current_day_phase() { return current_day_phase; }
 
 string *weather_msg = ({
-	"Ìì¿ÕÖÐÍòÀïÎÞÔÆ",
-	"¼¸¶äµ­µ­µÄÔÆ²Ê×±µã×ÅÇåÀÊµÄÌì¿Õ",
-	"°×ÔÆÔÚÌì¿ÕÖÐÆ®À´Æ®È¥",
-	"ºñºñµÄÔÆ²ã¶Ñ»ýÔÚÌì±ß",
-	"Ìì¿ÕÖÐÎÚÔÆÃÜ²¼",
+	"å¤©ç©ºä¸­ä¸‡é‡Œæ— äº‘",
+	"å‡ æœµæ·¡æ·¡çš„äº‘å½©å¦†ç‚¹ç€æ¸…æœ—çš„å¤©ç©º",
+	"ç™½äº‘åœ¨å¤©ç©ºä¸­é£˜æ¥é£˜åŽ»",
+	"åŽšåŽšçš„äº‘å±‚å †ç§¯åœ¨å¤©è¾¹",
+	"å¤©ç©ºä¸­ä¹Œäº‘å¯†å¸ƒ",
 });
 
 mapping *read_table(string file);
@@ -100,7 +100,7 @@ void auto_save(object *user, int size, int i)
 	if(!user[j]) continue;
 	if(!environment(user[j])) continue; // skip those still in login.
 	if(user[j]->save())
-	    tell_object(user[j], "×Ô¶¯´æ´¢Íê±Ï¡£\n");
+	    tell_object(user[j], "è‡ªåŠ¨å­˜å‚¨å®Œæ¯•ã€‚\n");
     }
     
     call_out("auto_save", 10, user, size, i+5);
@@ -119,11 +119,11 @@ void event_noon()
 		if( !environment(ob[i])->query("outdoors") ) continue;
 		if( !ob[i]->query("mana") ) continue;
 		if( !(skill = ob[i]->query_skill("spells", 1) )) {
-			tell_object(ob[i], "Äã¾õµÃÒ»ÕóÔÎÑ££¬ºÃÏñÓÐÒ»¹ÉÄÜÁ¿´ÓÉíÉÏ±»ÈËÎü×ßÁË¡£\n");
+			tell_object(ob[i], "ä½ è§‰å¾—ä¸€é˜µæ™•çœ©ï¼Œå¥½åƒæœ‰ä¸€è‚¡èƒ½é‡ä»Žèº«ä¸Šè¢«äººå¸èµ°äº†ã€‚\n");
 			ob[i]->set("mana", 0);
 			ob[i]->receive_damage("sen", 0);
 		} else if( skill < 25 ) {
-			tell_object(ob[i], "Ëæ×ÅÌ«ÑôÉýµ½Ìì¿ÕµÄÕýÖÐÑë£¬Äã¾õµÃÄãµÄ·¨Á¦¿ªÊ¼ÏûÊ§ÁË¡£\n");
+			tell_object(ob[i], "éšç€å¤ªé˜³å‡åˆ°å¤©ç©ºçš„æ­£ä¸­å¤®ï¼Œä½ è§‰å¾—ä½ çš„æ³•åŠ›å¼€å§‹æ¶ˆå¤±äº†ã€‚\n");
 			ob[i]->set("mana", (int)ob[i]->query("mana") * skill / 25 );
 		}
 	}
@@ -131,7 +131,7 @@ void event_noon()
 
 string outdoor_room_description()
 {
-	return "    " + day_phase[current_day_phase]["desc_msg"] + "¡£\n";
+	return "    " + day_phase[current_day_phase]["desc_msg"] + "ã€‚\n";
 }
 
 string game_time()

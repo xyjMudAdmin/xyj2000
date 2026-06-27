@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ɽ����");
+  set ("short", "山洞内");
   set ("long", @LONG
 
-ɽ����ں����ġ��ϱߵĶ��ſڶ��ź�Щ�Ӳݣ���Ŵ������
-�������ġ�����ɽ�������ͨ�����
+山洞里黑乎乎的。南边的洞门口堆着好些杂草，大概从外边是
+看不来的。北边山洞弯弯地通向深处。
 LONG);
 
   set("exits", ([

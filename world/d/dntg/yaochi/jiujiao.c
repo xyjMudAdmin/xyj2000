@@ -7,12 +7,12 @@ void drunk();
 int effect();
 void create ()
 {
-  set ("short", "¾Æ½Ñ");
+  set ("short", "é…’çª–");
   set ("long", @LONG
 
-Ò»¼äÃÜ²»Í¸·çµÄµØ½Ñ£¬·Å×ÅÁËÒ»ÅÅÅÅ¾ÆÌ³£¬ÀïÃæ×°µÄ¾ÍÊÇ
-ÁîÌìÉÏÖîÉñË¼Ö®´¹ÏÑ²»ÒÑµÄÍõÄ¸ÏÉ¾ÆÁË¡£ÄãÒ»×ß½øÀ´£¬¾Í
-¾õµÃ¾ÆÏãÆË±Ç£¬¹ûÈ»ÊÇºÃ¾Æ¡£
+ä¸€é—´å¯†ä¸é€é£Žçš„åœ°çª–ï¼Œæ”¾ç€äº†ä¸€æŽ’æŽ’é…’å›ï¼Œé‡Œé¢è£…çš„å°±æ˜¯
+ä»¤å¤©ä¸Šè¯¸ç¥žæ€ä¹‹åž‚æ¶Žä¸å·²çš„çŽ‹æ¯ä»™é…’äº†ã€‚ä½ ä¸€èµ°è¿›æ¥ï¼Œå°±
+è§‰å¾—é…’é¦™æ‰‘é¼»ï¼Œæžœç„¶æ˜¯å¥½é…’ã€‚
 LONG);
 
   set("exits", ([
@@ -36,7 +36,7 @@ void drunk() {
     if(living(user[i])) {
        user[i]->apply_condition("drunk",
             (int)user[i]->query_condition("drunk")+50); 
-       tell_object(user[i],"¾ÆÏã´¼ºñ£¬Äã²»½ûÆ®È»Óû×í¡£\n");
+       tell_object(user[i],"é…’é¦™é†‡åŽšï¼Œä½ ä¸ç¦é£˜ç„¶æ¬²é†‰ã€‚\n");
      }
   remove_call_out("drunk");
   if (sizeof(user))  call_out("drunk",60);
@@ -55,9 +55,9 @@ void init() {
 void announce(object me) {
   
   if (me->query("dntg/yaochi")=="done") return;
-  tell_object(me,HIC"ÄãÎÅµ½ÏÉ¾ÆµÄÏãÎ¶£¬È«ÉíÉÏÏÂËµ²»³öµÄÊæÌ©£¬¾õµÃ¸ù¹ÇÓÐËù½ø²½£¡\n"NOR);
-  message("channel:rumor", HIM + "¡¾Ò¥ÑÔ¡¿Ä³ÈË£ºÌýËµ"+
-     me->query("name")+"Áï½øÑþ³Ø£¬ÍµºÈÁËÍõÄ¸ÄïÄïµÄÏÉ¾Æ¡£\n"NOR,users());
+  tell_object(me,HIC"ä½ é—»åˆ°ä»™é…’çš„é¦™å‘³ï¼Œå…¨èº«ä¸Šä¸‹è¯´ä¸å‡ºçš„èˆ’æ³°ï¼Œè§‰å¾—æ ¹éª¨æœ‰æ‰€è¿›æ­¥ï¼\n"NOR);
+  message("channel:rumor", HIM + "ã€è°£è¨€ã€‘æŸäººï¼šå¬è¯´"+
+     me->query("name")+"æºœè¿›ç‘¶æ± ï¼Œå·å–äº†çŽ‹æ¯å¨˜å¨˜çš„ä»™é…’ã€‚\n"NOR,users());
 //  me->add("gift_modify/con",2);
 
   me->set("dntg/yaochi","done");
@@ -71,22 +71,22 @@ int do_fill(string arg)
    object jiudai;
 
    if( !living(this_player()))  return 1;
-   if (!arg || !jiudai=present(arg,me)) return notify_fail("×°ÂúÊ²Ã´£¿\n");
+   if (!arg || !jiudai=present(arg,me)) return notify_fail("è£…æ»¡ä»€ä¹ˆï¼Ÿ\n");
 
    if( this_player()->is_busy() )
-         return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓÐÍê³É¡£\n");
-  if (!inherits(F_LIQUID,jiudai)) return notify_fail(jiudai->query("name")+"²»ÄÜÓÃÀ´×°¾Æ£¡\n");
+         return notify_fail("ä½ ä¸Šä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆã€‚\n");
+  if (!inherits(F_LIQUID,jiudai)) return notify_fail(jiudai->query("name")+"ä¸èƒ½ç”¨æ¥è£…é…’ï¼\n");
    if(me->query_temp("yaochi_fill")) 
-      return notify_fail("ÈËÐÄ²»×ãÉßÍÌÏó£¬»¹ÊÇ¼ûºÃ¾ÍÊÕ°É¡£\n");
+      return notify_fail("äººå¿ƒä¸è¶³è›‡åžè±¡ï¼Œè¿˜æ˜¯è§å¥½å°±æ”¶å§ã€‚\n");
    me->set_temp("yaochi_fill",1);
 
-   liquid_name = YEL"ÏÉ¾Æ"NOR;
+   liquid_name = YEL"ä»™é…’"NOR;
    liquid_type = "alcohol";
 
    if(jiudai->query("liquid/remaining") )
-      message_vision("$N½«"+jiudai->name()+"ÀïÊ£ÏÂµÄ"+
-        jiudai->query("liquid/name")+"µ¹µô¡£",me);
-   message_vision("$N½«"+jiudai->name()+"×°Âú"+liquid_name+"¡£\n",me);
+      message_vision("$Nå°†"+jiudai->name()+"é‡Œå‰©ä¸‹çš„"+
+        jiudai->query("liquid/name")+"å€’æŽ‰ã€‚",me);
+   message_vision("$Nå°†"+jiudai->name()+"è£…æ»¡"+liquid_name+"ã€‚\n",me);
 
    if( this_player()->is_fighting() ) this_player()->start_busy(2);
 
@@ -103,7 +103,7 @@ int effect() {
   int max=(int)me->query("max_force")*2;
   this_player()->apply_condition("drunk",
      (int)this_player()->query_condition("drunk")+5);
-  message_vision(HIG"$N¸Ðµ½ÌåÄÚÉú³öÂÆÂÆÄÚÁ¦£¬Ô´Ô´²»¾ø¡£\n"NOR,me);
+  message_vision(HIG"$Næ„Ÿåˆ°ä½“å†…ç”Ÿå‡ºç¼•ç¼•å†…åŠ›ï¼Œæºæºä¸ç»ã€‚\n"NOR,me);
   
   me->add("force",200+random(100));
   if (me->query("force")>max) me->set("force",max);

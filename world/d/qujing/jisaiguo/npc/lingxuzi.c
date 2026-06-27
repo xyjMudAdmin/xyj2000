@@ -3,16 +3,16 @@ inherit NPC;
 
 void create()
 {
-       	set_name("ÁèĞé×Ó", ({"lingxu zi", "zi"}));
-       	set("gender", "ÄĞĞÔ");
+       	set_name("å‡Œè™šå­", ({"lingxu zi", "zi"}));
+       	set("gender", "ç”·æ€§");
        	set("age", 30);
-        set("long", "Ò»¸öÉí¸ß±Û³¤µÄµÀÊ¿£¬ÈİÃ²»¹¿´µÄ¹ıÈ¥¡£
-¿É×ĞÏ¸Ò»ÇÆ£¬¾±ÖĞ¾¹³¤×ÅÃÜÃÜÂéÂéµÄ³¤Ã«¡£\n");
+        set("long", "ä¸€ä¸ªèº«é«˜è‡‚é•¿çš„é“å£«ï¼Œå®¹è²Œè¿˜çœ‹çš„è¿‡å»ã€‚
+å¯ä»”ç»†ä¸€ç§ï¼Œé¢ˆä¸­ç«Ÿé•¿ç€å¯†å¯†éº»éº»çš„é•¿æ¯›ã€‚\n");
        	set("attitude", "heroism");
 	set("class", "yaomo");
 	set("bellicosity", 800);
        	set("per", 18);
-	set("looking", "ÏàÃ²Ğ×¶ñ£¬ÂúÁ³ºáÈâ¡£");
+	set("looking", "ç›¸è²Œå‡¶æ¶ï¼Œæ»¡è„¸æ¨ªè‚‰ã€‚");
 	set("str", 25);
        	set("combat_exp", 120000);
   set("daoxing", 120000);
@@ -45,4 +45,3 @@ void create()
 }
 
 
-ÿ

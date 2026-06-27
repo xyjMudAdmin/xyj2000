@@ -34,364 +34,364 @@ inherit ROOM;
 
 mapping *CARDS=({
 ([]),
-([ "name": SPADE "ºÚÌÒ£Á" NOR,
+([ "name": SPADE "é»‘æ¡ƒï¼¡" NOR,
 	"suit": "spade",
 	"rank": 14,
 	"status": "undealt",
 	"worth": 0,
 	"misc": "",
 	]),
-([ "name": SPADE "ºÚÌÒ£Ë" NOR,
+([ "name": SPADE "é»‘æ¡ƒï¼«" NOR,
 	"suit": "spade",
 	"rank": 13,
 	"status": "undealt",
 	"worth": 0,
 	"misc": "",
 	]),
-([ "name": SPADE "ºÚÌÒ£Ñ" NOR,
+([ "name": SPADE "é»‘æ¡ƒï¼±" NOR,
 	"suit": "spade",
 	"rank": 12,
 	"status": "undealt",
 	"worth": -10000,
 	"misc": "pig",
 	]),
-([ "name": SPADE "ºÚÌÒ£Ê" NOR,
+([ "name": SPADE "é»‘æ¡ƒï¼ª" NOR,
 	"suit": "spade",
 	"rank": 11,
 	"status": "undealt",
 	"worth": 0,
 	"misc": "",
 	]),
-([ "name": SPADE "ºÚÌÒ£Ô" NOR,
+([ "name": SPADE "é»‘æ¡ƒï¼´" NOR,
 	"suit": "spade",
 	"rank": 10,
 	"status": "undealt",
 	"worth": 0,
 	"misc": "",
 	]),
-([ "name": SPADE "ºÚÌÒ£¹" NOR,
+([ "name": SPADE "é»‘æ¡ƒï¼™" NOR,
 	"suit": "spade",
 	"rank": 9,
 	"status": "undealt",
 	"worth": 0,
 	"misc": "",
 	]),
-([ "name": SPADE "ºÚÌÒ£¸" NOR,
+([ "name": SPADE "é»‘æ¡ƒï¼˜" NOR,
 	"suit": "spade",
 	"rank": 8,
 	"status": "undealt",
 	"worth": 0,
 	"misc": "",
 	]),
-([ "name": SPADE "ºÚÌÒ£·" NOR,
+([ "name": SPADE "é»‘æ¡ƒï¼—" NOR,
 	"suit": "spade",
 	"rank": 7,
 	"status": "undealt",
 	"worth": 0,
 	"misc": "",
 	]),
-([ "name": SPADE "ºÚÌÒ£¶" NOR,
+([ "name": SPADE "é»‘æ¡ƒï¼–" NOR,
 	"suit": "spade",
 	"rank": 6,
 	"status": "undealt",
 	"worth": 0,
 	"misc": "",
 	]),
-([ "name": SPADE "ºÚÌÒ£µ" NOR,
+([ "name": SPADE "é»‘æ¡ƒï¼•" NOR,
 	"suit": "spade",
 	"rank": 5,
 	"status": "undealt",
 	"worth": 0,
 	"misc": "",
 	]),
-([ "name": SPADE "ºÚÌÒ£´" NOR,
+([ "name": SPADE "é»‘æ¡ƒï¼”" NOR,
 	"suit": "spade",
 	"rank": 4,
 	"status": "undealt",
 	"worth": 0,
 	"misc": "",
 	]),
-([ "name": SPADE "ºÚÌÒ£³" NOR,
+([ "name": SPADE "é»‘æ¡ƒï¼“" NOR,
 	"suit": "spade",
 	"rank": 3,
 	"status": "undealt",
 	"worth": 0,
 	"misc": "",
 	]),
-([ "name": SPADE "ºÚÌÒ£²" NOR,
+([ "name": SPADE "é»‘æ¡ƒï¼’" NOR,
 	"suit": "spade",
 	"rank": 2,
 	"status": "undealt",
 	"worth": 0,
 	"misc": "",
 	]),
-([ "name": HEART "ºìÌÒ£Á" NOR,
+([ "name": HEART "çº¢æ¡ƒï¼¡" NOR,
 	"suit": "heart",
 	"rank": 14,
 	"status": "undealt",
 	"worth": -5000,
 	"misc": "blood",
 	]),
-([ "name": HEART "ºìÌÒ£Ë" NOR,
+([ "name": HEART "çº¢æ¡ƒï¼«" NOR,
 	"suit": "heart",
 	"rank": 13,
 	"status": "undealt",
 	"worth": -4000,
 	"misc": "",
 	]),
-([ "name": HEART "ºìÌÒ£Ñ" NOR,
+([ "name": HEART "çº¢æ¡ƒï¼±" NOR,
 	"suit": "heart",
 	"rank": 12,
 	"status": "undealt",
 	"worth": -3000,
 	"misc": "",
 	]),
-([ "name": HEART "ºìÌÒ£Ê" NOR,
+([ "name": HEART "çº¢æ¡ƒï¼ª" NOR,
 	"suit": "heart",
 	"rank": 11,
 	"status": "undealt",
 	"worth": -2000,
 	"misc": "",
 	]),
-([ "name": HEART "ºìÌÒ£Ô" NOR,
+([ "name": HEART "çº¢æ¡ƒï¼´" NOR,
 	"suit": "heart",
 	"rank": 10,
 	"status": "undealt",
 	"worth": -1000,
 	"misc": "",
 	]),
-([ "name": HEART "ºìÌÒ£¹" NOR,
+([ "name": HEART "çº¢æ¡ƒï¼™" NOR,
 	"suit": "heart",
 	"rank": 9,
 	"status": "undealt",
 	"worth": -1000,
 	"misc": "",
 	]),
-([ "name": HEART "ºìÌÒ£¸" NOR,
+([ "name": HEART "çº¢æ¡ƒï¼˜" NOR,
 	"suit": "heart",
 	"rank": 8,
 	"status": "undealt",
 	"worth": -1000,
 	"misc": "",
 	]),
-([ "name": HEART "ºìÌÒ£·" NOR,
+([ "name": HEART "çº¢æ¡ƒï¼—" NOR,
 	"suit": "heart",
 	"rank": 7,
 	"status": "undealt",
 	"worth": -1000,
 	"misc": "",
 	]),
-([ "name": HEART "ºìÌÒ£¶" NOR,
+([ "name": HEART "çº¢æ¡ƒï¼–" NOR,
 	"suit": "heart",
 	"rank": 6,
 	"status": "undealt",
 	"worth": -1000,
 	"misc": "",
 	]),
-([ "name": HEART "ºìÌÒ£µ" NOR,
+([ "name": HEART "çº¢æ¡ƒï¼•" NOR,
 	"suit": "heart",
 	"rank": 5,
 	"status": "undealt",
 	"worth": -1000,
 	"misc": "",
 	]),
-([ "name": HEART "ºìÌÒ£´" NOR,
+([ "name": HEART "çº¢æ¡ƒï¼”" NOR,
 	"suit": "heart",
 	"rank": 4,
 	"status": "undealt",
 	"worth": -1,
 	"misc": "",
 	]),
-([ "name": HEART "ºìÌÒ£³" NOR,
+([ "name": HEART "çº¢æ¡ƒï¼“" NOR,
 	"suit": "heart",
 	"rank": 3,
 	"status": "undealt",
 	"worth": -1,
 	"misc": "",
 	]),
-([ "name": HEART "ºìÌÒ£²" NOR,
+([ "name": HEART "çº¢æ¡ƒï¼’" NOR,
 	"suit": "heart",
 	"rank": 2,
 	"status": "undealt",
 	"worth": -1,
 	"misc": "",
 	]),
-([ "name": DIAMOND "·½Æ¬£Á" NOR,
+([ "name": DIAMOND "æ–¹ç‰‡ï¼¡" NOR,
 	"suit": "diamond",
 	"rank": 14,
 	"status": "undealt",
 	"worth": 0,
 	"misc": "",
 	]),
-([ "name": DIAMOND "·½Æ¬£Ë" NOR,
+([ "name": DIAMOND "æ–¹ç‰‡ï¼«" NOR,
 	"suit": "diamond",
 	"rank": 13,
 	"status": "undealt",
 	"worth": 0,
 	"misc": "",
 	]),
-([ "name": DIAMOND "·½Æ¬£Ñ" NOR,
+([ "name": DIAMOND "æ–¹ç‰‡ï¼±" NOR,
 	"suit": "diamond",
 	"rank": 12,
 	"status": "undealt",
 	"worth": 0,
 	"misc": "",
 	]),
-([ "name": DIAMOND "·½Æ¬£Ê" NOR,
+([ "name": DIAMOND "æ–¹ç‰‡ï¼ª" NOR,
 	"suit": "diamond",
 	"rank": 11,
 	"status": "undealt",
 	"worth": 10000,
 	"misc": "sheep",
 	]),
-([ "name": DIAMOND "·½Æ¬£Ô" NOR,
+([ "name": DIAMOND "æ–¹ç‰‡ï¼´" NOR,
 	"suit": "diamond",
 	"rank": 10,
 	"status": "undealt",
 	"worth": 0,
 	"misc": "",
 	]),
-([ "name": DIAMOND "·½Æ¬£¹" NOR,
+([ "name": DIAMOND "æ–¹ç‰‡ï¼™" NOR,
 	"suit": "diamond",
 	"rank": 9,
 	"status": "undealt",
 	"worth": 0,
 	"misc": "",
 	]),
-([ "name": DIAMOND "·½Æ¬£¸" NOR,
+([ "name": DIAMOND "æ–¹ç‰‡ï¼˜" NOR,
 	"suit": "diamond",
 	"rank": 8,
 	"status": "undealt",
 	"worth": 0,
 	"misc": "",
 	]),
-([ "name": DIAMOND "·½Æ¬£·" NOR,
+([ "name": DIAMOND "æ–¹ç‰‡ï¼—" NOR,
 	"suit": "diamond",
 	"rank": 7,
 	"status": "undealt",
 	"worth": 0,
 	"misc": "",
 	]),
-([ "name": DIAMOND "·½Æ¬£¶" NOR,
+([ "name": DIAMOND "æ–¹ç‰‡ï¼–" NOR,
 	"suit": "diamond",
 	"rank": 6,
 	"status": "undealt",
 	"worth": 0,
 	"misc": "",
 	]),
-([ "name": DIAMOND "·½Æ¬£µ" NOR,
+([ "name": DIAMOND "æ–¹ç‰‡ï¼•" NOR,
 	"suit": "diamond",
 	"rank": 5,
 	"status": "undealt",
 	"worth": 0,
 	"misc": "",
 	]),
-([ "name": DIAMOND "·½Æ¬£´" NOR,
+([ "name": DIAMOND "æ–¹ç‰‡ï¼”" NOR,
 	"suit": "diamond",
 	"rank": 4,
 	"status": "undealt",
 	"worth": 0,
 	"misc": "",
 	]),
-([ "name": DIAMOND "·½Æ¬£³" NOR,
+([ "name": DIAMOND "æ–¹ç‰‡ï¼“" NOR,
 	"suit": "diamond",
 	"rank": 3,
 	"status": "undealt",
 	"worth": 0,
 	"misc": "",
 	]),
-([ "name": DIAMOND "·½Æ¬£²" NOR,
+([ "name": DIAMOND "æ–¹ç‰‡ï¼’" NOR,
 	"suit": "diamond",
 	"rank": 2,
 	"status": "undealt",
 	"worth": 0,
 	"misc": "",
 	]),
-([ "name": CLUB "²İ»¨£Á" NOR,
+([ "name": CLUB "è‰èŠ±ï¼¡" NOR,
 	"suit": "club",
 	"rank": 14,
 	"status": "undealt",
 	"worth": 0,
 	"misc": "",
 	]),
-([ "name": CLUB "²İ»¨£Ë" NOR,
+([ "name": CLUB "è‰èŠ±ï¼«" NOR,
 	"suit": "club",
 	"rank": 13,
 	"status": "undealt",
 	"worth": 0,
 	"misc": "",
 	]),
-([ "name": CLUB "²İ»¨£Ñ" NOR,
+([ "name": CLUB "è‰èŠ±ï¼±" NOR,
 	"suit": "club",
 	"rank": 12,
 	"status": "undealt",
 	"worth": 0,
 	"misc": "",
 	]),
-([ "name": CLUB "²İ»¨£Ê" NOR,
+([ "name": CLUB "è‰èŠ±ï¼ª" NOR,
 	"suit": "club",
 	"rank": 11,
 	"status": "undealt",
 	"worth": 0,
 	"misc": "",
 	]),
-([ "name": CLUB "²İ»¨£Ô" NOR,
+([ "name": CLUB "è‰èŠ±ï¼´" NOR,
 	"suit": "club",
 	"rank": 10,
 	"status": "undealt",
 	"worth": 5000,
 	"misc": "doubler",
 	]),
-([ "name": CLUB "²İ»¨£¹" NOR,
+([ "name": CLUB "è‰èŠ±ï¼™" NOR,
 	"suit": "club",
 	"rank": 9,
 	"status": "undealt",
 	"worth": 0,
 	"misc": "",
 	]),
-([ "name": CLUB "²İ»¨£¸" NOR,
+([ "name": CLUB "è‰èŠ±ï¼˜" NOR,
 	"suit": "club",
 	"rank": 8,
 	"status": "undealt",
 	"worth": 0,
 	"misc": "",
 	]),
-([ "name": CLUB "²İ»¨£·" NOR,
+([ "name": CLUB "è‰èŠ±ï¼—" NOR,
 	"suit": "club",
 	"rank": 7,
 	"status": "undealt",
 	"worth": 0,
 	"misc": "",
 	]),
-([ "name": CLUB "²İ»¨£¶" NOR,
+([ "name": CLUB "è‰èŠ±ï¼–" NOR,
 	"suit": "club",
 	"rank": 6,
 	"status": "undealt",
 	"worth": 0,
 	"misc": "",
 	]),
-([ "name": CLUB "²İ»¨£µ" NOR,
+([ "name": CLUB "è‰èŠ±ï¼•" NOR,
 	"suit": "club",
 	"rank": 5,
 	"status": "undealt",
 	"worth": 0,
 	"misc": "",
 	]),
-([ "name": CLUB "²İ»¨£´" NOR,
+([ "name": CLUB "è‰èŠ±ï¼”" NOR,
 	"suit": "club",
 	"rank": 4,
 	"status": "undealt",
 	"worth": 0,
 	"misc": "",
 	]),
-([ "name": CLUB "²İ»¨£³" NOR,
+([ "name": CLUB "è‰èŠ±ï¼“" NOR,
 	"suit": "club",
 	"rank": 3,
 	"status": "undealt",
 	"worth": 0,
 	"misc": "",
 	]),
-([ "name": CLUB "²İ»¨£²" NOR,
+([ "name": CLUB "è‰èŠ±ï¼’" NOR,
 	"suit": "club",
 	"rank": 2,
 	"status": "undealt",
@@ -410,72 +410,72 @@ int CARDNO=sizeof(CARDS)-1;
 string COLLECT_STATE = "
 %s
 
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡"+HIC+"%|12s"+NOR+"
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡©°©¤©¤©¤©¤©¤©¤©¤©¤©´
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡©¦¡¡¡¡¡¡¡¡¡¡©¦
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡©¦¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡©¦
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡©¦¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡©¦
-¡¡"+HIC+"%+12s"+NOR+"©¦¡¡¡¡©¦"+HIC+"%-12s"+NOR+"
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡©¦¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡©¦
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡©¦¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡©¦
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡©¦¡¡¡¡¡¡¡¡¡¡©¦
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡©¸©¤©¤©¤©¤©¤©¤©¤©¤©¼
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡"+HIC+"%|12s"+NOR+"
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€"+HIC+"%|12s"+NOR+"
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€â”‚ã€€ã€€ã€€ã€€ã€€â”‚
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€â”‚ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â”‚
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€â”‚ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â”‚
+ã€€"+HIC+"%+12s"+NOR+"â”‚ã€€ã€€â”‚"+HIC+"%-12s"+NOR+"
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€â”‚ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â”‚
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€â”‚ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â”‚
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€â”‚ã€€ã€€ã€€ã€€ã€€â”‚
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€â””â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€"+HIC+"%|12s"+NOR+"
 
 ";
 
 string PIGSTATE_FULL = "
 %s
 
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡"+HIC+"%|12s"+NOR+"
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡©°©¤©¤©¤©¤©¤©¤©¤©¤©´
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡©¦%s©¦
-¡¡¡¡¡¡¡¡¡¡¡¡©°©¤©à©¤©¤©¤©¤©¤©¤©¤©¤©à©¤©´
-¡¡¡¡¡¡¡¡¡¡¡¡©¦%2s©¦¡¡¡¡ %6s ¡¡¡¡©¦%2s©¦
-¡¡¡¡¡¡¡¡¡¡¡¡©¦¡¡©¦¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡©¦¡¡©¦
-¡¡¡¡¡¡¡¡¡¡¡¡©¦%2s©¦¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡©¦%2s©¦
-"+HIC+"%+12s"+NOR+"©¦¡¡©¦%6s¡¡¡¡%6s©¦¡¡©¦"+HIC+"%-12s"+NOR+"
-¡¡¡¡¡¡¡¡¡¡¡¡©¦%2s©¦¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡©¦%2s©¦
-¡¡¡¡¡¡¡¡¡¡¡¡©¦¡¡©¦¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡©¦¡¡©¦
-¡¡¡¡¡¡¡¡¡¡¡¡©¦%2s©¦¡¡¡¡ %6s ¡¡¡¡©¦%2s©¦
-¡¡¡¡¡¡¡¡¡¡¡¡©¸©¤©à©¤©¤©¤©¤©¤©¤©¤©¤©à©¤©¼
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡©¦%s©¦
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡©¸©¤©¤©¤©¤©¤©¤©¤©¤©¼
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡"+HIC+"%|12s"+NOR+"
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€"+HIC+"%|12s"+NOR+"
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â”‚%sâ”‚
+ã€€ã€€ã€€ã€€ã€€ã€€â”Œâ”€â”¼â”€â”€â”€â”€â”€â”€â”€â”€â”¼â”€â”
+ã€€ã€€ã€€ã€€ã€€ã€€â”‚%2sâ”‚ã€€ã€€ %6s ã€€ã€€â”‚%2sâ”‚
+ã€€ã€€ã€€ã€€ã€€ã€€â”‚ã€€â”‚ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â”‚ã€€â”‚
+ã€€ã€€ã€€ã€€ã€€ã€€â”‚%2sâ”‚ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â”‚%2sâ”‚
+"+HIC+"%+12s"+NOR+"â”‚ã€€â”‚%6sã€€ã€€%6sâ”‚ã€€â”‚"+HIC+"%-12s"+NOR+"
+ã€€ã€€ã€€ã€€ã€€ã€€â”‚%2sâ”‚ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â”‚%2sâ”‚
+ã€€ã€€ã€€ã€€ã€€ã€€â”‚ã€€â”‚ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â”‚ã€€â”‚
+ã€€ã€€ã€€ã€€ã€€ã€€â”‚%2sâ”‚ã€€ã€€ %6s ã€€ã€€â”‚%2sâ”‚
+ã€€ã€€ã€€ã€€ã€€ã€€â””â”€â”¼â”€â”€â”€â”€â”€â”€â”€â”€â”¼â”€â”˜
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â”‚%sâ”‚
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â””â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€"+HIC+"%|12s"+NOR+"
 
 ";
 
 string PIGSTATE_SHORT = "
 %s
 
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡"+HIC+"%|12s"+NOR+"
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡©°©¤©¤©¤©¤©¤©¤©¤©¤©´
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡©¦¡¡¡¡ %6s ¡¡¡¡©¦
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡©¦¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡©¦
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡©¦¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡©¦
-¡¡"+HIC+"%+12s"+NOR+"©¦%6s¡¡¡¡%6s©¦"+HIC+"%-12s"+NOR+"
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡©¦¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡©¦
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡©¦¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡©¦
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡©¦¡¡¡¡ %6s ¡¡¡¡©¦
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡©¸©¤©¤©¤©¤©¤©¤©¤©¤©¼
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡"+HIC+"%|12s"+NOR+"
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€"+HIC+"%|12s"+NOR+"
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€â”‚ã€€ã€€ %6s ã€€ã€€â”‚
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€â”‚ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â”‚
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€â”‚ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â”‚
+ã€€"+HIC+"%+12s"+NOR+"â”‚%6sã€€ã€€%6sâ”‚"+HIC+"%-12s"+NOR+"
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€â”‚ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â”‚
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€â”‚ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â”‚
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€â”‚ã€€ã€€ %6s ã€€ã€€â”‚
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€â””â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€"+HIC+"%|12s"+NOR+"
 
 ";
 
 string* DIR=({ "east", "north", "west", "south",});
 string* SUIT=({"spade", "heart", "diamond", "club",});
 mapping CSUIT=([
-"spade": SPADE"ºÚÌÒ"NOR,
-"heart": HEART"ºìÌÒ"NOR,
-"diamond": DIAMOND"·½Æ¬"NOR,
-"club": CLUB"²İ»¨"NOR,
+"spade": SPADE"é»‘æ¡ƒ"NOR,
+"heart": HEART"çº¢æ¡ƒ"NOR,
+"diamond": DIAMOND"æ–¹ç‰‡"NOR,
+"club": CLUB"è‰èŠ±"NOR,
 ]);
 
 mapping CDIR = ([
-"east" : "¶«",
-"north": "±±",
-"west" : "Î÷",
-"south": "ÄÏ",
+"east" : "ä¸œ",
+"north": "åŒ—",
+"west" : "è¥¿",
+"south": "å—",
 ]);
 
 mapping SCARD=([
@@ -491,14 +491,14 @@ mapping NCARD=([
 "doubler": 44,
 ]);
 mapping CCARD=([
-"pig": "Öí£¨"+HIC+"ºÚÌÒ£Ñ"+NOR+"£©",
-"sheep": "Ñò£¨"+HIR+"·½Æ¬£Ê"+NOR+"£©",
-"doubler": "±äÑ¹Æ÷£¨"+HIC+"²İ»¨£Ô"+NOR+"£©", 
-"blood": "Ñª£¨"+HIR+"ºìÌÒ£Á"+NOR+"£©",
+"pig": "çŒªï¼ˆ"+HIC+"é»‘æ¡ƒï¼±"+NOR+"ï¼‰",
+"sheep": "ç¾Šï¼ˆ"+HIR+"æ–¹ç‰‡ï¼ª"+NOR+"ï¼‰",
+"doubler": "å˜å‹å™¨ï¼ˆ"+HIC+"è‰èŠ±ï¼´"+NOR+"ï¼‰", 
+"blood": "è¡€ï¼ˆ"+HIR+"çº¢æ¡ƒï¼¡"+NOR+"ï¼‰",
 ]);
 
-string *CNUM = ({"£¿", "£±", "£²", "£³", "£´", "£µ", "£¶",
-"£·", "£¸", "£¹", "£Ô", "£Ê", "£Ñ", "£Ë", "£Á", });
+string *CNUM = ({"ï¼Ÿ", "ï¼‘", "ï¼’", "ï¼“", "ï¼”", "ï¼•", "ï¼–",
+"ï¼—", "ï¼˜", "ï¼™", "ï¼´", "ï¼ª", "ï¼±", "ï¼«", "ï¼¡", });
 
 int NUM = 4;
 /******************************************************************************/
@@ -547,29 +547,29 @@ mapping CLAIM=([
 "south": "no",
 ]);
 
-// possible states: "µÈÈË", "µÈ·¢ÅÆ", "µÈÂôÅÆ", "³öÅÆ", "Ëã·Ö", 
+// possible states: "ç­‰äºº", "ç­‰å‘ç‰Œ", "ç­‰å–ç‰Œ", "å‡ºç‰Œ", "ç®—åˆ†", 
 
 mapping TABLE=([
-"cond": "µÈÈË",
-"east":([ "player_name": "¡¸¿Õ¡¹",
+"cond": "ç­‰äºº",
+"east":([ "player_name": "ã€Œç©ºã€",
 	  "player_id": "no one",
 	  "status": "empty",
 	  "collected": ({}),
 	  "sold": ({}),
 	  "card": 0, ]),
-"north":([ "player_name": "¡¸¿Õ¡¹",
+"north":([ "player_name": "ã€Œç©ºã€",
 	  "player_id": "no one",
 	  "status": "empty",
 	  "collected": ({}),
 	  "sold": ({}),
 	  "card": 0, ]),
-"west":([ "player_name": "¡¸¿Õ¡¹",
+"west":([ "player_name": "ã€Œç©ºã€",
 	  "player_id": "no one",
 	  "status": "empty",
 	  "collected": ({}),
 	  "sold": ({}),
 	  "card": 0, ]),
-"south":([ "player_name": "¡¸¿Õ¡¹",
+"south":([ "player_name": "ã€Œç©ºã€",
 	  "player_id": "no one",
 	  "status": "empty",
 	  "collected": ({}),
@@ -637,14 +637,14 @@ int deal_cards(string dir);
 /******************************************************************************/
 void create ()
 {
-  set ("short", "¹°Öí·¿");
+  set ("short", "æ‹±çŒªæˆ¿");
   set ("long", @LONG
 
-Õâ¼ä·¿×ÓÊÇ×¨ÃÅÎªÁË¹°ÖíÓÃ¶øÉèµÄ£¬Õû¼äÎİ×Ó¶¼ÊÇÓÃ²»È¥Æ¤µÄËÉÊ÷´î³É¡£
-Ò»ÕÅÊ¯×À (table)ÖÜÎ§°Ú×ÅËÄ¸öÊ¯íâ£¬×ÀÃæÏâÁËÒ»¿é´óÀíÊ¯£¬ÃşÉÏÈ¥¼«Îª
-¹â»¬¡£ËÄ±Ú¹Ò×Å³¤Ã÷µÆ£¬°ÑÎİ×ÓÕÕµÃÓĞÈç°×Öç¡£Ç½½ÇÀïÉÕÁËÒ»Â¯²»ÖªÃûµÄ
-Ïã£¬ËÆºõÆÄÓĞÌáÉñÖ®Ğ§¡£ÏãÂ¯ÅÔ±ß¹Ò×ÅÕÅ¸æÊ¾(gaoshi)£¬ÉÏÃæĞ´×ÅÕâÀïµÄ
-¹æ¾Ø£»×ÀÉÏÓĞÕÅĞ¡Ö½Ìõ(note)£¬ÉÏÃæ²İ²İµÄ¼Ç×Å¹°Öí³É¼¨¡£
+è¿™é—´æˆ¿å­æ˜¯ä¸“é—¨ä¸ºäº†æ‹±çŒªç”¨è€Œè®¾çš„ï¼Œæ•´é—´å±‹å­éƒ½æ˜¯ç”¨ä¸å»çš®çš„æ¾æ ‘æ­æˆã€‚
+ä¸€å¼ çŸ³æ¡Œ (table)å‘¨å›´æ‘†ç€å››ä¸ªçŸ³ç¤…ï¼Œæ¡Œé¢é•¶äº†ä¸€å—å¤§ç†çŸ³ï¼Œæ‘¸ä¸Šå»æä¸º
+å…‰æ»‘ã€‚å››å£æŒ‚ç€é•¿æ˜ç¯ï¼ŒæŠŠå±‹å­ç…§å¾—æœ‰å¦‚ç™½æ˜¼ã€‚å¢™è§’é‡Œçƒ§äº†ä¸€ç‚‰ä¸çŸ¥åçš„
+é¦™ï¼Œä¼¼ä¹é¢‡æœ‰æç¥ä¹‹æ•ˆã€‚é¦™ç‚‰æ—è¾¹æŒ‚ç€å¼ å‘Šç¤º(gaoshi)ï¼Œä¸Šé¢å†™ç€è¿™é‡Œçš„
+è§„çŸ©ï¼›æ¡Œä¸Šæœ‰å¼ å°çº¸æ¡(note)ï¼Œä¸Šé¢è‰è‰çš„è®°ç€æ‹±çŒªæˆç»©ã€‚
 LONG);
 
   set("exits", ([
@@ -687,22 +687,22 @@ void init()
 {
     add_action("do_leave", "leave");
     add_action("do_leave", "likai");
-    add_action("do_leave", "Àë¿ª");
+    add_action("do_leave", "ç¦»å¼€");
     add_action("do_sit", "sit");
     add_action("do_sit", "zuo");
-    add_action("do_sit", "×ø");
+    add_action("do_sit", "å");
     add_action("do_deal", "deal");
     add_action("do_deal", "fapai");
-    add_action("do_deal", "·¢ÅÆ");
+    add_action("do_deal", "å‘ç‰Œ");
     add_action("do_sell", "sell");
     add_action("do_sell", "liang");
-    add_action("do_sell", "ÁÁ");
+    add_action("do_sell", "äº®");
     add_action("do_pass", "pass");
     add_action("do_pass", "tingmai");
-    add_action("do_pass", "Í£Âô");
+    add_action("do_pass", "åœå–");
     add_action("do_play", "play");
     add_action("do_play", "da");
-    add_action("do_play", "´ò");
+    add_action("do_play", "æ‰“");
     add_action("do_claim", "claim");
     add_action("do_cast", "cast");
     add_action("do_exert", "exert");
@@ -731,7 +731,7 @@ void init()
 int valid_leave(object me, string dir)
 {
     if (in_table(me))
-	return notify_fail("¶Ô²»Æğ£¬ÄãÏÖÔÚÔÚ¹°Öí£¬¾ÍÕâÃ´×ßµô²»Ì«ºÃ°É£¿\n");
+	return notify_fail("å¯¹ä¸èµ·ï¼Œä½ ç°åœ¨åœ¨æ‹±çŒªï¼Œå°±è¿™ä¹ˆèµ°æ‰ä¸å¤ªå¥½å§ï¼Ÿ\n");
     return ::valid_leave(me, dir);
 }
 int do_abort(string arg)
@@ -740,8 +740,8 @@ int do_abort(string arg)
     int count=0, i;
     string dir;
 
-    if(in_table(me) && TABLE["cond"]!="µÈÈË"
-	    && TABLE["cond"]!="µÈ·¢ÅÆ") {
+    if(in_table(me) && TABLE["cond"]!="ç­‰äºº"
+	    && TABLE["cond"]!="ç­‰å‘ç‰Œ") {
       me->set_temp("piggy_quit",1);
 	for(i=0; i<NUM; i++) {
 	    obj=find_me(DIR[i]);
@@ -751,10 +751,10 @@ int do_abort(string arg)
 	     query_idle(obj) > 240 ) count++;
 	}
       if(count<NUM)
-        message_vision("$N¾ö¶¨ÖĞÍ¾½áÊøÕâÅÌ¹°Öí£¬»¹ĞèÒª"
-	      +chinese_number(NUM-count)+"ÈËÍ¬Òâ(abort)¡£\n",me);
+        message_vision("$Nå†³å®šä¸­é€”ç»“æŸè¿™ç›˜æ‹±çŒªï¼Œè¿˜éœ€è¦"
+	      +chinese_number(NUM-count)+"äººåŒæ„(abort)ã€‚\n",me);
       else {
-	  message_vision("$N¾ö¶¨ÖĞÍ¾½áÊøÕâÅÌ¹°Öí£¬È«²¿Í¬Òâ¡£\n\n",me);
+	  message_vision("$Nå†³å®šä¸­é€”ç»“æŸè¿™ç›˜æ‹±çŒªï¼Œå…¨éƒ¨åŒæ„ã€‚\n\n",me);
 
 	  while(remove_call_out("check_wait")!=-1);
 
@@ -764,23 +764,23 @@ int do_abort(string arg)
 	    if(!obj) continue;
             obj->delete_temp("piggy/seating", dir);
             TABLE[dir]["status"]="empty";
-            TABLE[dir]["player_name"]="¡¸¿Õ¡¹";
+            TABLE[dir]["player_name"]="ã€Œç©ºã€";
             TABLE[dir]["player_id"]="no one";
-            TABLE["cond"]="µÈÈË";
-            message_vision("$NÈÃ³öÁË"+
-		    CDIR[dir]+"±ßµÄÎ»ÖÃ£¬²»´òËã¹°ÏÂÈ¥ÁË¡£\n", obj);
+            TABLE["cond"]="ç­‰äºº";
+            message_vision("$Nè®©å‡ºäº†"+
+		    CDIR[dir]+"è¾¹çš„ä½ç½®ï¼Œä¸æ‰“ç®—æ‹±ä¸‹å»äº†ã€‚\n", obj);
 	  }
 	  renew("all");
       }
       return 1;
     }
-    tell_object(this_player(), "Äã²¢Ã»ÓĞ²Î¼Ó¹°Öí»òÕß¹°Öí»¹Ã»ÓĞ¿ªÊ¼¡£\n");
+    tell_object(this_player(), "ä½ å¹¶æ²¡æœ‰å‚åŠ æ‹±çŒªæˆ–è€…æ‹±çŒªè¿˜æ²¡æœ‰å¼€å§‹ã€‚\n");
     return 1;
 }
 
 int do_suicide(string arg)
 {
-    tell_object(this_player(), "Çë²»ÒªÔÚ¹°Öí·¿Àï×ÔÉ±£¬Ğ»Ğ»¡£\n");
+    tell_object(this_player(), "è¯·ä¸è¦åœ¨æ‹±çŒªæˆ¿é‡Œè‡ªæ€ï¼Œè°¢è°¢ã€‚\n");
     return 1;
 }
 
@@ -789,33 +789,33 @@ int do_quit(string arg)
     if(this_player()->query_temp("netdead") ||
 	    query_idle( this_player()) >600 ) return 0; // mon 6/15/98
 
-    tell_object(this_player(), "Çë²»ÒªÔÚ¹°Öí·¿ÀïÀë¿ªÓÎÏ·£¬Ğ»Ğ»¡£\n");
+    tell_object(this_player(), "è¯·ä¸è¦åœ¨æ‹±çŒªæˆ¿é‡Œç¦»å¼€æ¸¸æˆï¼Œè°¢è°¢ã€‚\n");
     return 1;
 }
 
 int do_steal(string arg)
 {
-    tell_object(this_player(), "Çë²»ÒªÔÚ¹°Öí·¿ÀïÍµ¶«Î÷£¬Ğ»Ğ»¡£\n");
+    tell_object(this_player(), "è¯·ä¸è¦åœ¨æ‹±çŒªæˆ¿é‡Œå·ä¸œè¥¿ï¼Œè°¢è°¢ã€‚\n");
     return 1;
 }
 int do_fight(string arg)
 {
-    tell_object(this_player(), "Çë²»ÒªÔÚ¹°Öí·¿Àï´ò¼Ü£¬Ğ»Ğ»¡£\n");
+    tell_object(this_player(), "è¯·ä¸è¦åœ¨æ‹±çŒªæˆ¿é‡Œæ‰“æ¶ï¼Œè°¢è°¢ã€‚\n");
     return 1;
 }
 int do_kill(string arg)
 {
-    tell_object(this_player(), "Çë²»ÒªÔÚ¹°Öí·¿ÀïÉ±Â¾£¬Ğ»Ğ»¡£\n");
+    tell_object(this_player(), "è¯·ä¸è¦åœ¨æ‹±çŒªæˆ¿é‡Œæ€æˆ®ï¼Œè°¢è°¢ã€‚\n");
     return 1;
 }
 int do_exercise(string arg)
 {
-    tell_object(this_player(), "Çë²»ÒªÔÚ¹°Öí·¿ÀïÁ·¹¦£¬Ğ»Ğ»¡£\n");
+    tell_object(this_player(), "è¯·ä¸è¦åœ¨æ‹±çŒªæˆ¿é‡Œç»ƒåŠŸï¼Œè°¢è°¢ã€‚\n");
     return 1;
 }
 int do_meditate(string arg)
 {
-    tell_object(this_player(), "Çë²»ÒªÔÚ¹°Öí·¿ÀïĞŞÁ¶£¬Ğ»Ğ»¡£\n");
+    tell_object(this_player(), "è¯·ä¸è¦åœ¨æ‹±çŒªæˆ¿é‡Œä¿®ç‚¼ï¼Œè°¢è°¢ã€‚\n");
     return 1;
 }
 int do_get(string arg)
@@ -829,64 +829,64 @@ int do_get(string arg)
     if (ob=present(person, this_object()))
 	if(userp(ob))
 	{
-	    tell_object(this_player(), "Çë²»ÒªÕ¼±ğÈËµÄ±ãÒË£¬Ğ»Ğ»¡£\n");
+	    tell_object(this_player(), "è¯·ä¸è¦å åˆ«äººçš„ä¾¿å®œï¼Œè°¢è°¢ã€‚\n");
 	    return 1;
 	}
     return 0;
 }
 int do_cast(string arg)
 {
-    tell_object(this_player(), "Çë²»ÒªÔÚ¹°Öí·¿ÀïÊ©ÓÃ·¨Êõ£¬Ğ»Ğ»¡£\n");
+    tell_object(this_player(), "è¯·ä¸è¦åœ¨æ‹±çŒªæˆ¿é‡Œæ–½ç”¨æ³•æœ¯ï¼Œè°¢è°¢ã€‚\n");
     return 1;
 }
 int do_exert(string arg)
 {
-    tell_object(this_player(), "Çë²»ÒªÔÚ¹°Öí·¿ÀïÊ©ÓÃÄÚ¹¦£¬Ğ»Ğ»¡£\n");
+    tell_object(this_player(), "è¯·ä¸è¦åœ¨æ‹±çŒªæˆ¿é‡Œæ–½ç”¨å†…åŠŸï¼Œè°¢è°¢ã€‚\n");
     return 1;
 }
 int do_perform(string arg)
 {
-    tell_object(this_player(), "Çë²»ÒªÔÚ¹°Öí·¿ÀïÊ©ÓÃÍâ¹¦£¬Ğ»Ğ»¡£\n");
+    tell_object(this_player(), "è¯·ä¸è¦åœ¨æ‹±çŒªæˆ¿é‡Œæ–½ç”¨å¤–åŠŸï¼Œè°¢è°¢ã€‚\n");
     return 1;
 }
 int do_xiudao(string arg)
 {
-    tell_object(this_player(), "Çë²»ÒªÔÚ¹°Öí·¿ÀïĞŞµÀ£¬Ğ»Ğ»¡£\n");
+    tell_object(this_player(), "è¯·ä¸è¦åœ¨æ‹±çŒªæˆ¿é‡Œä¿®é“ï¼Œè°¢è°¢ã€‚\n");
     return 1;
 }
 int do_check(string arg)
 {
-    tell_object(this_player(), "Çë²»ÒªÔÚ¹°Öí·¿Àï²é±ğÈËµÄ¹¦·ò£¬Ğ»Ğ»¡£\n");
+    tell_object(this_player(), "è¯·ä¸è¦åœ¨æ‹±çŒªæˆ¿é‡ŒæŸ¥åˆ«äººçš„åŠŸå¤«ï¼Œè°¢è°¢ã€‚\n");
     return 1;
 }
 int do_find(string arg)
 {
-    tell_object(this_player(), "Çë²»ÒªÔÚ¹°Öí·¿Àï²é±ğÈËµÄ×Ù¼££¬Ğ»Ğ»¡£\n");
+    tell_object(this_player(), "è¯·ä¸è¦åœ¨æ‹±çŒªæˆ¿é‡ŒæŸ¥åˆ«äººçš„è¸ªè¿¹ï¼Œè°¢è°¢ã€‚\n");
     return 1;
 }
 int do_bian(string arg)
 {
-    tell_object(this_player(), "Çë²»ÒªÔÚ¹°Öí·¿Àï±äÀ´±äÈ¥£¬Ğ»Ğ»¡£\n");
+    tell_object(this_player(), "è¯·ä¸è¦åœ¨æ‹±çŒªæˆ¿é‡Œå˜æ¥å˜å»ï¼Œè°¢è°¢ã€‚\n");
     return 1;
 }
 int do_practice(string arg)
 {
-    tell_object(this_player(), "Çë²»ÒªÔÚ¹°Öí·¿ÀïÁ·¹¦£¬Ğ»Ğ»¡£\n");
+    tell_object(this_player(), "è¯·ä¸è¦åœ¨æ‹±çŒªæˆ¿é‡Œç»ƒåŠŸï¼Œè°¢è°¢ã€‚\n");
     return 1;
 }
 int do_read(string arg)
 {
-    tell_object(this_player(), "Çë²»ÒªÔÚ¹°Öí·¿Àï¶ÁÊé£¬Ğ»Ğ»¡£\n");
+    tell_object(this_player(), "è¯·ä¸è¦åœ¨æ‹±çŒªæˆ¿é‡Œè¯»ä¹¦ï¼Œè°¢è°¢ã€‚\n");
     return 1;
 }
 int do_study(string arg)
 {
-    tell_object(this_player(), "Çë²»ÒªÔÚ¹°Öí·¿Àï¶ÁÊé£¬Ğ»Ğ»¡£\n");
+    tell_object(this_player(), "è¯·ä¸è¦åœ¨æ‹±çŒªæˆ¿é‡Œè¯»ä¹¦ï¼Œè°¢è°¢ã€‚\n");
     return 1;
 }
 int do_learn(string arg)
 {
-    tell_object(this_player(), "Çë²»ÒªÔÚ¹°Öí·¿ÀïÑ§Ï°£¬Ğ»Ğ»¡£\n");
+    tell_object(this_player(), "è¯·ä¸è¦åœ¨æ‹±çŒªæˆ¿é‡Œå­¦ä¹ ï¼Œè°¢è°¢ã€‚\n");
     return 1;
 }
 /******************************************************************************/
@@ -940,7 +940,7 @@ string card_suit(string arg)
 	case "C":
 	    return "club";
 	default:
-	    return "»¨É«´íÎó£ºcard_suit¡£\n";
+	    return "èŠ±è‰²é”™è¯¯ï¼šcard_suitã€‚\n";
     }
 }
 int card_rank(string card)
@@ -981,7 +981,7 @@ int card_rank(string card)
 	case "a":
 	    return 14;
 	default:
-	    return notify_fail("ÎŞ·¨Àí½âÊäÈëµÄÅÆ£¬"+card+"¡£ÇëÖØĞÂÊäÈë¡£\n");
+	    return notify_fail("æ— æ³•ç†è§£è¾“å…¥çš„ç‰Œï¼Œ"+card+"ã€‚è¯·é‡æ–°è¾“å…¥ã€‚\n");
     }
 }
 int card_numb(string card)
@@ -989,7 +989,7 @@ int card_numb(string card)
     int base, rank;
     string suit;
     if (!(suit=card_suit(card)) || !(rank=card_rank(card)))
-	return notify_fail("º¯Êı´íÎó£ºcard_numb¡£\n");
+	return notify_fail("å‡½æ•°é”™è¯¯ï¼šcard_numbã€‚\n");
     switch (suit)
     {
 	case "spade":
@@ -1005,7 +1005,7 @@ int card_numb(string card)
 	    base=40;
 	    break;
 	default:
-	    return notify_fail("º¯Êı´íÎó£ºcard_numb¡£\n");
+	    return notify_fail("å‡½æ•°é”™è¯¯ï¼šcard_numbã€‚\n");
     }
     return (base+15-rank);
 }
@@ -1030,7 +1030,7 @@ int is_playable(object me, int cardno)
 
     if (!is_my_card(me, cardno))
     {
-	tell_object(me, "¶Ô²»Æğ£¬"+CARDS[cardno]["name"]+"²»ÔÚÄãÊÖÀï¡£\n");
+	tell_object(me, "å¯¹ä¸èµ·ï¼Œ"+CARDS[cardno]["name"]+"ä¸åœ¨ä½ æ‰‹é‡Œã€‚\n");
 	return 0;
     }
     if (dir==GAMEINFO["rlead"])
@@ -1040,7 +1040,7 @@ int is_playable(object me, int cardno)
     if (suit != GAMEINFO["suit"]
      && search_suit(me, GAMEINFO["suit"]))
     {
-	tell_object(me, "¶Ô²»Æğ£¬ÄãÊÖÖĞ»¹ÓĞ"+CSUIT[GAMEINFO["suit"]]+"£¬²»ÄÜ³ö"+CARDS[cardno]["name"]+"¡£\n");
+	tell_object(me, "å¯¹ä¸èµ·ï¼Œä½ æ‰‹ä¸­è¿˜æœ‰"+CSUIT[GAMEINFO["suit"]]+"ï¼Œä¸èƒ½å‡º"+CARDS[cardno]["name"]+"ã€‚\n");
 	return 0;
     }
     if (!GAMEINFO[CARDS[cardno]["suit"]]
@@ -1049,7 +1049,7 @@ int is_playable(object me, int cardno)
 	if (SOLD[CARDS[cardno]["misc"]][0] == "m"
          && search_suit(me, (GAMEINFO["suit"] == ""?CARDS[cardno]["suit"]:GAMEINFO["suit"])) > 1)
 	{
-	    tell_object(me,"¶Ô²»Æğ£¬Ã÷ÂôÁËµÄÅÆ²»ÄÜÔÚ±¾»¨É«µÚÒ»ÂÖ³ö¡£\n");
+	    tell_object(me,"å¯¹ä¸èµ·ï¼Œæ˜å–äº†çš„ç‰Œä¸èƒ½åœ¨æœ¬èŠ±è‰²ç¬¬ä¸€è½®å‡ºã€‚\n");
 	    return 0;
 	}
     }
@@ -1094,20 +1094,20 @@ int do_sit(string dir)
     int rank;
 
     if(!is_dir(dir))
-	return notify_fail("ÇëÑ¡Ôñ¡¸east¡¢north¡¢south »ò west¡¹¡£\n");
+	return notify_fail("è¯·é€‰æ‹©ã€Œeastã€northã€south æˆ– westã€ã€‚\n");
     if(in_table(me))
-	return notify_fail("ÄãÒÑ¾­ÔÚ×ùÁË¡£ÇëÓÃ¡¸leave¡¹Õ¾ÆğÀ´¡£\n");
+	return notify_fail("ä½ å·²ç»åœ¨åº§äº†ã€‚è¯·ç”¨ã€Œleaveã€ç«™èµ·æ¥ã€‚\n");
     if (!is_empty(dir))
-	return notify_fail(search_dir(dir)->query("name")+"ÕıÔÚ"+CDIR[dir]+"±ß×ø×ÅÄØ£¬Äã»¹ÊÇµÈ¿ÕÎ»°É¡£\n");
+	return notify_fail(search_dir(dir)->query("name")+"æ­£åœ¨"+CDIR[dir]+"è¾¹åç€å‘¢ï¼Œä½ è¿˜æ˜¯ç­‰ç©ºä½å§ã€‚\n");
     
     // mon 6/14/98
     rank=(int)me->query("piggy/rank");
     if(rank==0) { // new player
-	write("»¶Ó­²Î¼Ó¹°Öí´óÅÅÃû£¬ÄãÏÖÓĞ»ı·Ö"+
-		chinese_number(100)+"µã¡£\n");
+	write("æ¬¢è¿å‚åŠ æ‹±çŒªå¤§æ’åï¼Œä½ ç°æœ‰ç§¯åˆ†"+
+		chinese_number(100)+"ç‚¹ã€‚\n");
 	me->set("piggy/rank",100);
 //    } else if(rank<20) {
-//	return notify_fail("ÄãµÄ»ı·Ö¹ıµÍ²»ÄÜ²Î¼Ó±ÈÈü¡£\n");
+//	return notify_fail("ä½ çš„ç§¯åˆ†è¿‡ä½ä¸èƒ½å‚åŠ æ¯”èµ›ã€‚\n");
     }
 
 
@@ -1116,8 +1116,8 @@ int do_sit(string dir)
     TABLE[dir]["player_name"]=me->query("name");
     TABLE[dir]["status"]="filled";
     if (all_have("players"))
-	TABLE["cond"]="µÈ·¢ÅÆ";
-    message_vision("$N×øÈëÁË"+CDIR[dir]+"±ßµÄ¿ÕÎ»¡£\n", me);
+	TABLE["cond"]="ç­‰å‘ç‰Œ";
+    message_vision("$Nåå…¥äº†"+CDIR[dir]+"è¾¹çš„ç©ºä½ã€‚\n", me);
     return 1;
 }
 /******************************************************************************/
@@ -1130,15 +1130,15 @@ int do_leave(string arg)
     int lowest, allow, i, score;
 
     if (!in_table(me))
-	return notify_fail("¶Ô²»Æğ£¬Äã²¢Ã»ÔÚ¹°Öí×À±ß×ø×Å¡£\n");
+	return notify_fail("å¯¹ä¸èµ·ï¼Œä½ å¹¶æ²¡åœ¨æ‹±çŒªæ¡Œè¾¹åç€ã€‚\n");
 
     // mon 6/14/98
-    if(TABLE["cond"]!="µÈ·¢ÅÆ" && TABLE["cond"]!="µÈÈË")
-	return notify_fail("¹°Öí½øĞĞÖĞ£¬²»ÄÜÍË³öÅÆ¾Ö¡£\n");
+    if(TABLE["cond"]!="ç­‰å‘ç‰Œ" && TABLE["cond"]!="ç­‰äºº")
+	return notify_fail("æ‹±çŒªè¿›è¡Œä¸­ï¼Œä¸èƒ½é€€å‡ºç‰Œå±€ã€‚\n");
 
     dir = search_my_dir(me);
     if (is_empty(dir) || search_dir(dir) != me)
-	return notify_fail("º¯Êı´íÎó£ºdo_leave¡£Çë¸æËßËá»Æ¹Ï¡£\n");
+	return notify_fail("å‡½æ•°é”™è¯¯ï¼šdo_leaveã€‚è¯·å‘Šè¯‰é…¸é»„ç“œã€‚\n");
     
     // mon 7/31/98
     score=SCORING["sitting"][dir];
@@ -1157,8 +1157,8 @@ int do_leave(string arg)
 
     if(allow>0) {
 	if(arg!="yes") {
-	    write("ÄãÏÖÔÚ×Ü·Ö¹ıµÍ£¬ÈçÖĞÍ¾ÍË³ö½«×Ô¶¯µÃµ½ÖíÍ·Ò»¸ö£º£¨\n");
-	    write("Èç¹ûÄãÈ·¶¨£¬ÇëÓÃ leave yes À´ÍË³ö¡£\n");
+	    write("ä½ ç°åœ¨æ€»åˆ†è¿‡ä½ï¼Œå¦‚ä¸­é€”é€€å‡ºå°†è‡ªåŠ¨å¾—åˆ°çŒªå¤´ä¸€ä¸ªï¼šï¼ˆ\n");
+	    write("å¦‚æœä½ ç¡®å®šï¼Œè¯·ç”¨ leave yes æ¥é€€å‡ºã€‚\n");
 	    return 1;
 	}
 	update_one_rank(me, -PIG_PENALTY);
@@ -1166,11 +1166,11 @@ int do_leave(string arg)
 
     me->delete_temp("piggy/seating", dir);
     TABLE[dir]["status"]="empty";
-    TABLE[dir]["player_name"]="¡¸¿Õ¡¹";
+    TABLE[dir]["player_name"]="ã€Œç©ºã€";
     TABLE[dir]["player_id"]="no one";
-    TABLE["cond"]="µÈÈË";
+    TABLE["cond"]="ç­‰äºº";
     renew("all");
-    message_vision("$NÈÃ³öÁË"+CDIR[dir]+"±ßµÄÎ»ÖÃ£¬²»´òËã¹°ÏÂÈ¥ÁË¡£\n", me);
+    message_vision("$Nè®©å‡ºäº†"+CDIR[dir]+"è¾¹çš„ä½ç½®ï¼Œä¸æ‰“ç®—æ‹±ä¸‹å»äº†ã€‚\n", me);
     return 1;
 }
 /******************************************************************************/
@@ -1186,11 +1186,11 @@ int do_deal(string arg)
     if (dir == "none")
     {
 	me->delete_temp("piggy/seating");
-	return notify_fail("¶Ô²»Æğ£¬ÄãÃ»ÓĞÈë×ù£¬ÎŞ·¨ÒªÇó·¢ÅÆ¡£\n");
+	return notify_fail("å¯¹ä¸èµ·ï¼Œä½ æ²¡æœ‰å…¥åº§ï¼Œæ— æ³•è¦æ±‚å‘ç‰Œã€‚\n");
     }
     if (!all_have("players"))
-	return notify_fail("»¹Ã»´ÕÆëËÄ¸öÈË£¬Ã»·¨¿ªÅÆ¾Ö¡£\n");
-    if (TABLE[dir]["status"] == "asked_for_deal" && TABLE["cond"] == "µÈÈË")
+	return notify_fail("è¿˜æ²¡å‡‘é½å››ä¸ªäººï¼Œæ²¡æ³•å¼€ç‰Œå±€ã€‚\n");
+    if (TABLE[dir]["status"] == "asked_for_deal" && TABLE["cond"] == "ç­‰äºº")
     {
 	while(i--)
 	{
@@ -1203,16 +1203,16 @@ int do_deal(string arg)
 	switch (j)
 	{
 	    case 1: str = name[0]; break;
-	    case 2: str = name[0]+"ºÍ"+name[1];break;
-	    case 3: str = name[0]+"¡¢"+name[1]+"ºÍ"+name[2]; break;
-	    default: tell_room(HERE, "º¯Êı´íÎó£º·¢ÅÆ¡£Çë¸æËßËá»Æ¹Ï¡£\n"); break;
+	    case 2: str = name[0]+"å’Œ"+name[1];break;
+	    case 3: str = name[0]+"ã€"+name[1]+"å’Œ"+name[2]; break;
+	    default: tell_room(HERE, "å‡½æ•°é”™è¯¯ï¼šå‘ç‰Œã€‚è¯·å‘Šè¯‰é…¸é»„ç“œã€‚\n"); break;
 	}
-	return notify_fail("¶Ô²»Æğ£¬"+str+"»¹Ã»×¼±¸ºÃÄØ¡£\n");
+	return notify_fail("å¯¹ä¸èµ·ï¼Œ"+str+"è¿˜æ²¡å‡†å¤‡å¥½å‘¢ã€‚\n");
     }
-    if (TABLE[dir]["status"] != "filled" || TABLE["cond"] != "µÈ·¢ÅÆ")
-	return notify_fail("¶Ô²»Æğ£¬ÏÖÔÚ²»ÊÇ·¢ÅÆµÄÊ±ºò¡£\n");
+    if (TABLE[dir]["status"] != "filled" || TABLE["cond"] != "ç­‰å‘ç‰Œ")
+	return notify_fail("å¯¹ä¸èµ·ï¼Œç°åœ¨ä¸æ˜¯å‘ç‰Œçš„æ—¶å€™ã€‚\n");
     TABLE[dir]["status"]="asked_for_deal";
-    message_vision("$NËµµÀ£ºÎÒ×¼±¸ºÃÁË£¬·¢ÅÆ°É¡£\n", me);
+    message_vision("$Nè¯´é“ï¼šæˆ‘å‡†å¤‡å¥½äº†ï¼Œå‘ç‰Œå§ã€‚\n", me);
     
     me->delete_temp("piggy_quit");
 
@@ -1238,9 +1238,9 @@ int do_deal(string arg)
 		    if(score[i]>score[j]*2 ||
 			    score[j]>score[i]*2) {
 			tell_room(this_object(),
-			  player[i]->name()+"ºÍ"+
-		          player[j]->name()+"µÈ¼¶·Ö²î±ğ³¬¹ıÒ»°ë£¬"+
-		          "½á¹û½«²»¼ÆÈëÅÅĞĞ°ñ¡£\n");
+			  player[i]->name()+"å’Œ"+
+		          player[j]->name()+"ç­‰çº§åˆ†å·®åˆ«è¶…è¿‡ä¸€åŠï¼Œ"+
+		          "ç»“æœå°†ä¸è®¡å…¥æ’è¡Œæ¦œã€‚\n");
 			allow_ranking=0;
 			break;
 		    }
@@ -1263,8 +1263,8 @@ int do_deal(string arg)
 
 	    if(site[ip]>max_player) {
 		tell_room(this_object(), 
-			"ÏÖÓĞ¶àÓÚ"+chinese_number(max_player)+
-			"Î»Íæ¼Ò´ÓÍ¬Ò»£É£Ğ²Î¼Ó¹°Öí£¬½á¹û½«²»¼ÆÈëÅÅĞĞ°ñ¡£\n");
+			"ç°æœ‰å¤šäº"+chinese_number(max_player)+
+			"ä½ç©å®¶ä»åŒä¸€ï¼©ï¼°å‚åŠ æ‹±çŒªï¼Œç»“æœå°†ä¸è®¡å…¥æ’è¡Œæ¦œã€‚\n");
 		allow_ranking=0;
 		break;
 	    }
@@ -1277,15 +1277,15 @@ int do_deal(string arg)
 	// random assign the first player to play.
 	GAMEINFO["rlead"]=DIR[random(4)];
 
-	message_vision("\n´ó¼Ò¶¼×¼±¸ºÃÁË£¬ÓÉ$N¸ºÔğ·¢ÅÆ¡£\n", 
+	message_vision("\nå¤§å®¶éƒ½å‡†å¤‡å¥½äº†ï¼Œç”±$Nè´Ÿè´£å‘ç‰Œã€‚\n", 
 		find_me(GAMEINFO["rlead"]));
-	TABLE["cond"]="µÈÂôÅÆ";
+	TABLE["cond"]="ç­‰å–ç‰Œ";
 	deal_cards("east");
 	deal_cards("north");
 	deal_cards("west");
 	deal_cards("south");
 
-	tell_room(HERE, "ÇëÓÃ¡¸sell¡¹ÂôÅÆ£¬¡¸pass¡¹Í£Âô¡£\n");
+	tell_room(HERE, "è¯·ç”¨ã€Œsellã€å–ç‰Œï¼Œã€Œpassã€åœå–ã€‚\n");
 	
 	check_wait(find_me("east"),0);
 	check_wait(find_me("west"),0);
@@ -1305,30 +1305,30 @@ int do_sell(string arg)
     int rank, index;
 
     if(!in_table(me))
-	return notify_fail("¶Ô²»Æğ£¬Äã²¢²»ÔÚ¹°Öí¡£\n");
-    if(TABLE["cond"] != "µÈÂôÅÆ")
-	return notify_fail("¶Ô²»Æğ£¬ÏÖÔÚ²»ÄÜÂôÅÆ¡£\n");
+	return notify_fail("å¯¹ä¸èµ·ï¼Œä½ å¹¶ä¸åœ¨æ‹±çŒªã€‚\n");
+    if(TABLE["cond"] != "ç­‰å–ç‰Œ")
+	return notify_fail("å¯¹ä¸èµ·ï¼Œç°åœ¨ä¸èƒ½å–ç‰Œã€‚\n");
     dir=search_my_dir(me);
     if(TABLE[dir]["status"] == "passed")
-	return notify_fail("¶Ô²»Æğ£¬ÄãÒÑ¾­¾ö¶¨Í£ÂôÁË¡£\n");
+	return notify_fail("å¯¹ä¸èµ·ï¼Œä½ å·²ç»å†³å®šåœå–äº†ã€‚\n");
     if(!arg)
-	return notify_fail("ÇëÓÃ sell [-m] <card> À´ÂôÅÆ¡£\n");
+	return notify_fail("è¯·ç”¨ sell [-m] <card> æ¥å–ç‰Œã€‚\n");
     if (sscanf(arg, "-%s %s", flag, card) != 2)
 	card=arg;
     else if (flag != "m")
-	return notify_fail("¶Ô²»Æğ£¬Ö»ÄÜÑ¡Ôñ [-m]¡£\n");
+	return notify_fail("å¯¹ä¸èµ·ï¼Œåªèƒ½é€‰æ‹© [-m]ã€‚\n");
     if (!(index=card_numb(card)))
-	return notify_fail("¶Ô²»Æğ£¬¡¸"+card+"¡¹²¢²»ÊÇÒ»ÕÅÅÆ¡£\n");
+	return notify_fail("å¯¹ä¸èµ·ï¼Œã€Œ"+card+"ã€å¹¶ä¸æ˜¯ä¸€å¼ ç‰Œã€‚\n");
     index--;
     if (!is_my_card(me, index))
-	return notify_fail("¶Ô²»Æğ£¬"+CARDS[index]["name"]+"²»ÔÚÄãÊÖÀï¡£\n");
+	return notify_fail("å¯¹ä¸èµ·ï¼Œ"+CARDS[index]["name"]+"ä¸åœ¨ä½ æ‰‹é‡Œã€‚\n");
     if(!is_sellable(index))
-	return notify_fail("¶Ô²»Æğ£¬Ö»ÄÜÂôÖí£¨ºÚÌÒ£Ñ£©¡¢Ñò£¨·½Æ¬£Ê£©¡¢±äÑ¹Æ÷£¨²İ»¨£Ô£©»òÑª£¨ºìÌÒ£Á£©¡£\n");
+	return notify_fail("å¯¹ä¸èµ·ï¼Œåªèƒ½å–çŒªï¼ˆé»‘æ¡ƒï¼±ï¼‰ã€ç¾Šï¼ˆæ–¹ç‰‡ï¼ªï¼‰ã€å˜å‹å™¨ï¼ˆè‰èŠ±ï¼´ï¼‰æˆ–è¡€ï¼ˆçº¢æ¡ƒï¼¡ï¼‰ã€‚\n");
     card=CARDS[index]["misc"];
     SOLD[card]=({flag, (dir=search_my_dir(me))});
     if (member_array(card, TABLE[dir]["sold"]) == -1)
 	TABLE[dir]["sold"]+=({card});
-    tell_object(me, "Äã¾ö¶¨"+(flag=="a"?"°µ":"Ã÷")+"Âô"+CCARD[card]+"¡£\n");
+    tell_object(me, "ä½ å†³å®š"+(flag=="a"?"æš—":"æ˜")+"å–"+CCARD[card]+"ã€‚\n");
     return 1;
 }
 
@@ -1339,29 +1339,29 @@ int do_claim(string arg)
     int i=NUM,j=CARDNO+1;
 
     if (!in_table(me))
-	return notify_fail("¶Ô²»Æğ£¬Äã²¢²»ÔÚ¹°Öí¡£\n");
-    if (TABLE["cond"] != "³öÅÆ")
-	return notify_fail("¶Ô²»Æğ£¬ÏÖÔÚ²¢²»ÔÚ³öÅÆ¡£\n");
+	return notify_fail("å¯¹ä¸èµ·ï¼Œä½ å¹¶ä¸åœ¨æ‹±çŒªã€‚\n");
+    if (TABLE["cond"] != "å‡ºç‰Œ")
+	return notify_fail("å¯¹ä¸èµ·ï¼Œç°åœ¨å¹¶ä¸åœ¨å‡ºç‰Œã€‚\n");
     
     // mon
     if (GAMEINFO["round"]<=8)
-	return notify_fail("¶Ô²»Æğ£¬Ç°°ËÂÖ²»ÄÜ¡¸claim¡¹¡£\n");
+	return notify_fail("å¯¹ä¸èµ·ï¼Œå‰å…«è½®ä¸èƒ½ã€Œclaimã€ã€‚\n");
 
     switch(arg)
     {
 	case "all":
 	    if (dir == CLAIM["claimer"])
-		return notify_fail("ÄãÒÑ¾­·¢³öÒªÇó£¬ÇëµÈ±ğÈËµÄ»ØÒô¡£\n");
+		return notify_fail("ä½ å·²ç»å‘å‡ºè¦æ±‚ï¼Œè¯·ç­‰åˆ«äººçš„å›éŸ³ã€‚\n");
 	    if (CLAIM["claimer"] != "")
-		return notify_fail("ÒÑ¾­ÓĞÈË·¢³öÒªÇóÁË£¬ÇëÏÈ·ñ¾ö¡£\n");
+		return notify_fail("å·²ç»æœ‰äººå‘å‡ºè¦æ±‚äº†ï¼Œè¯·å…ˆå¦å†³ã€‚\n");
 	    CLAIM[dir]="yes";
 	    CLAIM["claimer"] = dir;
-	    str = "$NÈÏÎª×Ô¼ºÊÖÖĞµÄÅÆ¶¼´óÁË£º";
+	    str = "$Nè®¤ä¸ºè‡ªå·±æ‰‹ä¸­çš„ç‰Œéƒ½å¤§äº†ï¼š";
 	    str += display_suit(dir, "spade");
 	    str += display_suit(dir, "heart");
 	    str += display_suit(dir, "diamond");
 	    str += display_suit(dir, "club");
-	    str += "\nÇëÓÃ¡¸claim yes¡¹±íÊ¾Í¬Òâ£¬¡¸claim no¡¹±íÊ¾·´¶Ô¡£\n";
+	    str += "\nè¯·ç”¨ã€Œclaim yesã€è¡¨ç¤ºåŒæ„ï¼Œã€Œclaim noã€è¡¨ç¤ºåå¯¹ã€‚\n";
 	    message_vision(str, me);
 
 	    while(remove_call_out("check_wait")!=-1);
@@ -1381,11 +1381,11 @@ int do_claim(string arg)
 
 	    //mon
 	    if (CLAIM[dir] == "yes")
-		return notify_fail("ÄãÒÑ¾­Í¬ÒâÁË¡£\n");
+		return notify_fail("ä½ å·²ç»åŒæ„äº†ã€‚\n");
 	    if (!is_dir(CLAIM["claimer"]))
-		return notify_fail("¶Ô²»Æğ£¬Ã»ÈËÒªÇóÌ¯ÅÆ¡£\n");
+		return notify_fail("å¯¹ä¸èµ·ï¼Œæ²¡äººè¦æ±‚æ‘Šç‰Œã€‚\n");
 	    CLAIM[dir]="yes";
-	    message_vision("$NÌ¯ÅÆµÀ£ºÎÒÍ¬Òâ¡£\n", me);
+	    message_vision("$Næ‘Šç‰Œé“ï¼šæˆ‘åŒæ„ã€‚\n", me);
 	    if (all_have("agreed_claim"))
 	    {
 		while (i--)
@@ -1408,7 +1408,7 @@ int do_claim(string arg)
 			CARDS[j]["status"] = "played";
 			if (j==3)
 			{
-			    tell_room(HERE,HIC+TABLE[CLAIM["claimer"]]["player_name"]+"³ÔÁËÖíÍ·£¡\n"+NOR);
+			    tell_room(HERE,HIC+TABLE[CLAIM["claimer"]]["player_name"]+"åƒäº†çŒªå¤´ï¼\n"+NOR);
 			    PIG_OWNER=CLAIM["claimer"];
 			}
 		    }
@@ -1420,8 +1420,8 @@ int do_claim(string arg)
 	    break;
 	case "no":
 	    if (!is_dir(CLAIM["claimer"]))
-		return notify_fail("¶Ô²»Æğ£¬Ã»ÓĞÈËÒªÇóÌ¯ÅÆ¡£\n");
-	    message_vision("$N²»Í¬Òâ£¬Çë¼ÌĞø´òÏÂÈ¥¡£\n", me);
+		return notify_fail("å¯¹ä¸èµ·ï¼Œæ²¡æœ‰äººè¦æ±‚æ‘Šç‰Œã€‚\n");
+	    message_vision("$Nä¸åŒæ„ï¼Œè¯·ç»§ç»­æ‰“ä¸‹å»ã€‚\n", me);
 	    while (i--)
 		CLAIM[DIR[i]] = "no";
 	    CLAIM["claimer"] = "";
@@ -1432,7 +1432,7 @@ int do_claim(string arg)
 
 	    break;
 	default:
-	    return notify_fail("ÇëÓÃ¡¸all¡¹±íÊ¾ÄãÏëÈ«ÊÕ£¬¡¸yes¡¹±íÊ¾Í¬Òâ£¬¡¸no¡¹±íÊ¾·´¶Ô¡£\n");
+	    return notify_fail("è¯·ç”¨ã€Œallã€è¡¨ç¤ºä½ æƒ³å…¨æ”¶ï¼Œã€Œyesã€è¡¨ç¤ºåŒæ„ï¼Œã€Œnoã€è¡¨ç¤ºåå¯¹ã€‚\n");
 	    break;
     }
     return 1;
@@ -1444,24 +1444,24 @@ int do_pass(string arg)
     string dir=search_my_dir(me), str;
 
     if (!in_table(me))
-	return notify_fail("¶Ô²»Æğ£¬Äã²¢²»ÔÚ¹°Öí¡£\n");
-    if (TABLE["cond"] != "µÈÂôÅÆ")
-	return notify_fail("¶Ô²»Æğ£¬ÏÖÔÚ²»ÄÜÂôÅÆ»òÍ£Âô¡£\n");
+	return notify_fail("å¯¹ä¸èµ·ï¼Œä½ å¹¶ä¸åœ¨æ‹±çŒªã€‚\n");
+    if (TABLE["cond"] != "ç­‰å–ç‰Œ")
+	return notify_fail("å¯¹ä¸èµ·ï¼Œç°åœ¨ä¸èƒ½å–ç‰Œæˆ–åœå–ã€‚\n");
     if (TABLE[dir]["status"]=="passed")
-	return notify_fail("ÄãÒÑ¾­¾ö¶¨Í£ÂôÁË¡£\n");
+	return notify_fail("ä½ å·²ç»å†³å®šåœå–äº†ã€‚\n");
     TABLE[dir]["status"]="passed";
-    message_vision("$NËµµÀ£ºÎÒÍ£Âô¡£\n", me);
+    message_vision("$Nè¯´é“ï¼šæˆ‘åœå–ã€‚\n", me);
     if (all_have("pass"))
     {
 	object obj;
 
-	TABLE["cond"]="³öÅÆ";
+	TABLE["cond"]="å‡ºç‰Œ";
 	GAMEINFO["round"]=1;
-	str = "\n´ó¼Ò¶¼Í£ÂôÁË£¬";
+	str = "\nå¤§å®¶éƒ½åœå–äº†ï¼Œ";
 	str += display_sell();
-	str += "\nÒ»ÇĞ¾ÍĞ÷£¬¿ª¹°£¡";
-//	str += "Õâ°ÑÓÉ"+TABLE[GAMEINFO["rlead"]]["player_name"]+"ÏÈ³ö£¡\n\n";
-	str += "Õâ°ÑÓÉ$NÏÈ³ö£¡\n\n";
+	str += "\nä¸€åˆ‡å°±ç»ªï¼Œå¼€æ‹±ï¼";
+//	str += "è¿™æŠŠç”±"+TABLE[GAMEINFO["rlead"]]["player_name"]+"å…ˆå‡ºï¼\n\n";
+	str += "è¿™æŠŠç”±$Nå…ˆå‡ºï¼\n\n";
 	GAMEINFO["next"]=GAMEINFO["rlead"];
 //	tell_room(HERE, str);
 	obj=find_me(GAMEINFO["next"]);
@@ -1481,17 +1481,17 @@ int do_play(string card)
     int numb;
 
     if (!in_table(me))
-	return notify_fail("¶Ô²»Æğ£¬Äã²¢²»ÔÚ¹°Öí¡£\n");
+	return notify_fail("å¯¹ä¸èµ·ï¼Œä½ å¹¶ä¸åœ¨æ‹±çŒªã€‚\n");
     if (!card)
-	return notify_fail("ÇëÓÃ play <card> ³öÅÆ¡£\n");
-    if (TABLE["cond"] != "³öÅÆ")
-	return notify_fail("¶Ô²»Æğ£¬ÏÖÔÚ²»ÄÜ³öÅÆ¡£\n");
+	return notify_fail("è¯·ç”¨ play <card> å‡ºç‰Œã€‚\n");
+    if (TABLE["cond"] != "å‡ºç‰Œ")
+	return notify_fail("å¯¹ä¸èµ·ï¼Œç°åœ¨ä¸èƒ½å‡ºç‰Œã€‚\n");
     if (GAMEINFO["next"] != search_my_dir(me))
-	return notify_fail("¶Ô²»Æğ£¬ÏÖÔÚ²»¸ÃÄã³öÅÆ¡£\n");
+	return notify_fail("å¯¹ä¸èµ·ï¼Œç°åœ¨ä¸è¯¥ä½ å‡ºç‰Œã€‚\n");
     if (is_dir(CLAIM["claimer"]))
-	return notify_fail("¶Ô²»Æğ£¬ÇëµÈµ½"+TABLE[CLAIM["claimer"]]["player_name"]+"µÄÈ«ÊÕÒªÇóÓĞ½á¹ûºóÔÙ³öÅÆ¡£\n");
+	return notify_fail("å¯¹ä¸èµ·ï¼Œè¯·ç­‰åˆ°"+TABLE[CLAIM["claimer"]]["player_name"]+"çš„å…¨æ”¶è¦æ±‚æœ‰ç»“æœåå†å‡ºç‰Œã€‚\n");
     if (!(numb=card_numb(card)))
-	return notify_fail("¶Ô²»Æğ£¬ÎŞ·¨·Ö±æ "+card+"¡£\n");
+	return notify_fail("å¯¹ä¸èµ·ï¼Œæ— æ³•åˆ†è¾¨ "+card+"ã€‚\n");
     numb--;
     if (!is_playable(me, numb))
 	return 1;
@@ -1501,15 +1501,15 @@ int do_play(string card)
     if (GAMEINFO["next"] == GAMEINFO["rlead"])
 	GAMEINFO["suit"]=CARDS[numb]["suit"];
     if (!is_sellable(numb))
-	message_vision("$N"+(CARDS[numb]["suit"] == GAMEINFO["suit"]?"³ö":"µæ")
-		+"ÁËÒ»ÕÅ"+CARDS[numb]["name"]+"¡£\n", me);
+	message_vision("$N"+(CARDS[numb]["suit"] == GAMEINFO["suit"]?"å‡º":"å«")
+		+"äº†ä¸€å¼ "+CARDS[numb]["name"]+"ã€‚\n", me);
     else if(SOLD[CARDS[numb]["misc"]][0] != "not")
-	message_vision( "$N³ö" + (SOLD[CARDS[numb]["misc"]][0]=="m" ?
-		"Ã÷" : "°µ") + "ÂôµÄ"+CARDS[numb]["name"]+"£¡\n", me);
+	message_vision( "$Nå‡º" + (SOLD[CARDS[numb]["misc"]][0]=="m" ?
+		"æ˜" : "æš—") + "å–çš„"+CARDS[numb]["name"]+"ï¼\n", me);
 	else message_vision("$N"+(CARDS[numb]["suit"] == GAMEINFO["suit"]?
-		"³ö":"µæ") +"ÁËÒ»ÕÅ"+CARDS[numb]["name"]+"¡£\n", me);
+		"å‡º":"å«") +"äº†ä¸€å¼ "+CARDS[numb]["name"]+"ã€‚\n", me);
 
-    played_cards+=CARDS[numb]["name"]+"¡¡";
+    played_cards+=CARDS[numb]["name"]+"ã€€";
     // mon
 	
     if(all_have("cards"))
@@ -1517,11 +1517,11 @@ int do_play(string card)
     else GAMEINFO["next"]=next_player(GAMEINFO["next"]);
 
     if (is_dir(GAMEINFO["next"])) {
-//	tell_room(HERE, "ÏÂÃæ¸ÃÓÉ"+TABLE[GAMEINFO["next"]]["player_name"]+"³öÅÆ¡£\n");
+//	tell_room(HERE, "ä¸‹é¢è¯¥ç”±"+TABLE[GAMEINFO["next"]]["player_name"]+"å‡ºç‰Œã€‚\n");
 	// mon
 	object obj=find_me(GAMEINFO["next"]);
 
-	message_vision("ÏÂÃæ¸ÃÓÉ$N³öÅÆ¡£\n", obj);
+	message_vision("ä¸‹é¢è¯¥ç”±$Nå‡ºç‰Œã€‚\n", obj);
 	tell_object(obj,look_hand(obj));
 
 	while(remove_call_out("check_wait")!=-1);
@@ -1538,10 +1538,10 @@ object find_me(string dir)
 
     if (!(player=present(id, HERE)))
     {
-	tell_room(HERE, TABLE[dir]["player_name"]+"²»ÔÚ·¿¼äÀï£¡\n");
-	tell_room(HERE, "ÇåÀí·¿¼äÖĞ¡­¡­\n");
+	tell_room(HERE, TABLE[dir]["player_name"]+"ä¸åœ¨æˆ¿é—´é‡Œï¼\n");
+	tell_room(HERE, "æ¸…ç†æˆ¿é—´ä¸­â€¦â€¦\n");
 	renew("all");
-	tell_room(HERE, "ÇëÖØĞÂ´ÕÈË£¡\n");
+	tell_room(HERE, "è¯·é‡æ–°å‡‘äººï¼\n");
     }
 
     return player;
@@ -1571,10 +1571,10 @@ int score_player(string dir)
     }
 //    else score = (score / 10) * 10;
 //    tell_room(HERE, "so far after hearts score is "+score+"\n");
-    if (SOLD["blood"][0] == "m") score = score * 4;		// Ã÷Âô
-    else if (SOLD["blood"][0] == "a") score = score * 2;	// °µÂô
+    if (SOLD["blood"][0] == "m") score = score * 4;		// æ˜å–
+    else if (SOLD["blood"][0] == "a") score = score * 2;	// æš—å–
 
-// then pig. the rules i go by are that if ÊÕÈ«ºì£¬Öí±äÕı¡£
+// then pig. the rules i go by are that if æ”¶å…¨çº¢ï¼ŒçŒªå˜æ­£ã€‚
 
     if (member_array(3, collected) != -1)
     {
@@ -1656,7 +1656,7 @@ string find_large()
     if (mark)
     {
 	PIG_OWNER=dir;
-	tell_room(HERE, HIC+TABLE[dir]["player_name"]+"³ÔÁËÖíÍ·£¡\n"NOR);
+	tell_room(HERE, HIC+TABLE[dir]["player_name"]+"åƒäº†çŒªå¤´ï¼\n"NOR);
     }
     return dir;
 }
@@ -1675,11 +1675,11 @@ void finish_round()
 
     if (GAMEINFO["round"] == 13)
     {
-	TABLE["cond"] = "Ëã·Ö";
+	TABLE["cond"] = "ç®—åˆ†";
 	while(j--)
 	{
 	    if (CARDS[j+1]["status"] != "played")
-		tell_room(HERE,"º¯Êı´íÎó£ºfinish_round¡£"+CARDS[j+1]["name"]+"»¹Ã»´ò¹ı¡£\n");
+		tell_room(HERE,"å‡½æ•°é”™è¯¯ï¼šfinish_roundã€‚"+CARDS[j+1]["name"]+"è¿˜æ²¡æ‰“è¿‡ã€‚\n");
 	    continue;
 	}
 	
@@ -1766,7 +1766,7 @@ string next_player(string dir)
 	case "south":
 	    return "east";
 	default:
-	    return "º¯Êı´íÎó£ºnext_player¡£\n";
+	    return "å‡½æ•°é”™è¯¯ï¼šnext_playerã€‚\n";
     }
 }
 int deal_cards(string dir)
@@ -1798,7 +1798,7 @@ int display_cards(object player)
 {
     string str, dir=search_my_dir(player);
 
-    str = "ÄãÊÖÖĞµÄÅÆÈçÏÂ£º\n";
+    str = "ä½ æ‰‹ä¸­çš„ç‰Œå¦‚ä¸‹ï¼š\n";
     str += display_suit(dir, "spade");
     str += display_suit(dir, "heart");
     str += display_suit(dir, "diamond");
@@ -1818,23 +1818,23 @@ string check_collected(string dir, string suit)
     switch (suit)
     {
 	case "spade":
-	    str += "\n¡¡¡¡"+SPADE"ºÚÌÒ£º"NOR;
+	    str += "\nã€€ã€€"+SPADE"é»‘æ¡ƒï¼š"NOR;
 	    base=1;
 	    break;
 	case "heart":
-	    str += "\n¡¡¡¡"+HEART"ºìÌÒ£º"NOR;
+	    str += "\nã€€ã€€"+HEART"çº¢æ¡ƒï¼š"NOR;
 	    base=14;
 	    break;
 	case "diamond":
-	    str += "\n¡¡¡¡"+DIAMOND"·½Æ¬£º"NOR;
+	    str += "\nã€€ã€€"+DIAMOND"æ–¹ç‰‡ï¼š"NOR;
 	    base=27;
 	    break;
 	case "club":
-	    str += "\n¡¡¡¡"+CLUB"²İ»¨£º"NOR;
+	    str += "\nã€€ã€€"+CLUB"è‰èŠ±ï¼š"NOR;
 	    base=40;
 	    break;
 	default:
-	    return "º¯Êı´íÎó£ºcheck_collected¡£\n";
+	    return "å‡½æ•°é”™è¯¯ï¼šcheck_collectedã€‚\n";
     }
     while (i--)
     {
@@ -1842,7 +1842,7 @@ string check_collected(string dir, string suit)
 	 && CARDS[i+base]["worth"] != 0)
 	{
 	    count++;
-	    str += CNUM[CARDS[i+base]["rank"]]+"£¬";
+	    str += CNUM[CARDS[i+base]["rank"]]+"ï¼Œ";
 	}
 	continue;
     }
@@ -1860,23 +1860,23 @@ string display_suit(string dir, string suit)
     switch (suit)
     {
 	case "spade":
-	    str += "\n¡¡¡¡"+SPADE"ºÚÌÒ"NOR"£¨£ó£©£º";
+	    str += "\nã€€ã€€"+SPADE"é»‘æ¡ƒ"NOR"ï¼ˆï½“ï¼‰ï¼š";
 	    base=1;
 	    break;
 	case "heart":
-	    str += "\n¡¡¡¡"+HEART"ºìÌÒ"NOR"£¨£è£©£º";
+	    str += "\nã€€ã€€"+HEART"çº¢æ¡ƒ"NOR"ï¼ˆï½ˆï¼‰ï¼š";
 	    base=14;
 	    break;
 	case "diamond":
-	    str += "\n¡¡¡¡"+DIAMOND"·½Æ¬"NOR"£¨£ä£©£º";
+	    str += "\nã€€ã€€"+DIAMOND"æ–¹ç‰‡"NOR"ï¼ˆï½„ï¼‰ï¼š";
 	    base=27;
 	    break;
 	case "club":
-	    str += "\n¡¡¡¡"+CLUB"²İ»¨"NOR"£¨£ã£©£º";
+	    str += "\nã€€ã€€"+CLUB"è‰èŠ±"NOR"ï¼ˆï½ƒï¼‰ï¼š";
 	    base=40;
 	    break;
 	default:
-	    return "º¯Êı´íÎó£ºdisplay_suit¡£\n";
+	    return "å‡½æ•°é”™è¯¯ï¼šdisplay_suitã€‚\n";
     }
     while (i--)
     {
@@ -1884,7 +1884,7 @@ string display_suit(string dir, string suit)
 	if (dir == card["status"])
 	{
 	    count++;
-	    str += CNUM[card["rank"]]+"£¬";
+	    str += CNUM[card["rank"]]+"ï¼Œ";
 	}
 	continue;
     }
@@ -1913,7 +1913,7 @@ int search_suit(object me, string suit)
 	    base=40;
 	    break;
 	default:
-	    return notify_fail("º¯Êı´íÎó£ºsearch_suit¡£\n");
+	    return notify_fail("å‡½æ•°é”™è¯¯ï¼šsearch_suitã€‚\n");
     }
     while(i--)
     {
@@ -1942,7 +1942,7 @@ void renew(string type)
 	    played_cards="";
 	    break;
 	case "hand":
-	    TABLE["cond"]="µÈ·¢ÅÆ";
+	    TABLE["cond"]="ç­‰å‘ç‰Œ";
 	    GAMEINFO["round"]=0;
 	    GAMEINFO["suit"] = "";
 	    GAMEINFO["rlead"] = PIG_OWNER;
@@ -1980,11 +1980,11 @@ void renew(string type)
 	    while(i--)
 		if (TABLE[DIR[i]]["player_id"] == "no one")
 		    TABLE[DIR[i]]["status"] = "empty";
-	    TABLE["cond"] = "µÈÈË";
+	    TABLE["cond"] = "ç­‰äºº";
 	    GAMEINFO["rlead"] = "";
 	    break;
 	default:
-	    tell_room(HERE,"º¯ÊıÓÃ·¨´íÎó£ºrenew¡£\n");
+	    tell_room(HERE,"å‡½æ•°ç”¨æ³•é”™è¯¯ï¼šrenewã€‚\n");
 	    break;
     }
     return;
@@ -2000,7 +2000,7 @@ int all_have(string arg)
 	case "players":
 	    while(i--)
 	    {
-		if (TABLE[DIR[i]]["player_name"] == "¡¸¿Õ¡¹"
+		if (TABLE[DIR[i]]["player_name"] == "ã€Œç©ºã€"
 		 || !present(TABLE[DIR[i]]["player_id"], HERE))
 		    value = 0;
 	 	continue;
@@ -2056,7 +2056,7 @@ int all_have(string arg)
 	    break;
 	    
 	default:
-	    tell_room(HERE,"º¯ÊıÓÃ·¨´íÎó£ºall_have¡£\n");
+	    tell_room(HERE,"å‡½æ•°ç”¨æ³•é”™è¯¯ï¼šall_haveã€‚\n");
 	    value = 0;
 	    break;
     }
@@ -2080,12 +2080,12 @@ string look_collected()
     string str;
     int i=NUM;
 
-    if (TABLE["cond"] != "³öÅÆ" && TABLE["cond"] != "Ëã·Ö")
-	return "ÏÖÔÚÃ»ÔÚ´òÅÆ£¬×À×ÓÉÏ¿Õ×Å¡£\n";
+    if (TABLE["cond"] != "å‡ºç‰Œ" && TABLE["cond"] != "ç®—åˆ†")
+	return "ç°åœ¨æ²¡åœ¨æ‰“ç‰Œï¼Œæ¡Œå­ä¸Šç©ºç€ã€‚\n";
     str = display_sell();
     while (i--)
     {
-	str += "\n"+CDIR[DIR[i]]+"¼Ò"+TABLE[DIR[i]]["player_name"]+"ÊÕÁËÈçÏÂµÄÅÆ£º";
+	str += "\n"+CDIR[DIR[i]]+"å®¶"+TABLE[DIR[i]]["player_name"]+"æ”¶äº†å¦‚ä¸‹çš„ç‰Œï¼š";
 	str += check_collected(DIR[i], "spade");
 	str += check_collected(DIR[i], "heart");
 	str += check_collected(DIR[i], "diamond");
@@ -2104,19 +2104,19 @@ string look_hand(object obj)
 	me=obj;
 
     if (!in_table(me))
-	return "¶Ô²»Æğ£¬Äã²¢²»ÔÚ¹°Öí¡£\n";
-    if (TABLE["cond"] == "Ëã·Ö")
-	return "Õâ°ÑÒÑ¾­´òÍêÁË¡£\n";
-    if (TABLE["cond"] == "µÈÈË" || TABLE["cond"] == "µÈ·¢ÅÆ")
-	return "ÄãÊÖÖĞ»¹Ã»ÓĞÅÆ¡£\n";
+	return "å¯¹ä¸èµ·ï¼Œä½ å¹¶ä¸åœ¨æ‹±çŒªã€‚\n";
+    if (TABLE["cond"] == "ç®—åˆ†")
+	return "è¿™æŠŠå·²ç»æ‰“å®Œäº†ã€‚\n";
+    if (TABLE["cond"] == "ç­‰äºº" || TABLE["cond"] == "ç­‰å‘ç‰Œ")
+	return "ä½ æ‰‹ä¸­è¿˜æ²¡æœ‰ç‰Œã€‚\n";
     dir=search_my_dir(me);
     
     if(sizeof(played_cards)>1)
-	str+="ÕâÒ»ÂÖÒÑ¾­³öµÄÅÆÓĞ£º"+played_cards+"\n";
+	str+="è¿™ä¸€è½®å·²ç»å‡ºçš„ç‰Œæœ‰ï¼š"+played_cards+"\n";
     if(!undefinedp(CSUIT[GAMEINFO["suit"]]))
-	    str+="ÏÖÔÚ³öµÄ»¨É«ÊÇ"+CSUIT[GAMEINFO["suit"]]+
-	    "£¬";
-    str += "ÄãÊÖÖĞµÄÅÆÈçÏÂ£º";
+	    str+="ç°åœ¨å‡ºçš„èŠ±è‰²æ˜¯"+CSUIT[GAMEINFO["suit"]]+
+	    "ï¼Œ";
+    str += "ä½ æ‰‹ä¸­çš„ç‰Œå¦‚ä¸‹ï¼š";
     str += display_suit(dir, "spade");
     str += display_suit(dir, "heart");
     str += display_suit(dir, "diamond");
@@ -2129,18 +2129,18 @@ string look_note()
     string str;
     object me=this_player();
 
-    if (TABLE["cond"] == "µÈÈË")
-	return "Ö½ÉÏ»­×ÅÒ»¸öÖíÍ·£¬ÅÔ±ßµÄÃû×Ö±»ÈË²ÁÈ¥ÁË¡£ÏÂÃæÊÇ¸ö±í¸ñ£¬»­µÃÍáÆßÅ¤°ËµÄ¡£\n";
+    if (TABLE["cond"] == "ç­‰äºº")
+	return "çº¸ä¸Šç”»ç€ä¸€ä¸ªçŒªå¤´ï¼Œæ—è¾¹çš„åå­—è¢«äººæ“¦å»äº†ã€‚ä¸‹é¢æ˜¯ä¸ªè¡¨æ ¼ï¼Œç”»å¾—æ­ªä¸ƒæ‰­å…«çš„ã€‚\n";
     return display_score();
 }
 string display_score()
 {
     int i = NUM;
-    string format = "©¦%2s¼Ò£º%-12s¡¡¡¡¡¡%6d¡¡¡¡%6d¡¡¡¡¡¡%2s¡¡¡¡%6d©¦\n";
+    string format = "â”‚%2så®¶ï¼š%-12sã€€ã€€ã€€%6dã€€ã€€%6dã€€ã€€ã€€%2sã€€ã€€%6dâ”‚\n";
     string str = 
-	"\n©°©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©´\n"
-       +  "©¦·½Ïò¡¡Íæ¼Ò¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ÅÌ·Ö¡¡¡¡¡¡×Ü·Ö¡¡¡¡¡¡Öí¡¡¡¡µÈ¼¶·Ö©¦\n"
-       +  "©À©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©È\n";
+	"\nâ”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\n"
+       +  "â”‚æ–¹å‘ã€€ç©å®¶ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ç›˜åˆ†ã€€ã€€ã€€æ€»åˆ†ã€€ã€€ã€€çŒªã€€ã€€ç­‰çº§åˆ†â”‚\n"
+       +  "â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\n";
 
 
     while (i--)
@@ -2149,10 +2149,10 @@ string display_score()
 
 	str += sprintf(format, CDIR[DIR[i]], TABLE[DIR[i]]["player_name"],
 			SCORING["hand"][DIR[i]], SCORING["sitting"][DIR[i]],
-			(member_array(DIR[i], PIGHEAD) == -1 ? "¡¡": "¡Ì"),
+			(member_array(DIR[i], PIGHEAD) == -1 ? "ã€€": "âˆš"),
 			(int)find_me(DIR[i])->query("piggy/rank"));
     }
-    str += "©¸©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¼\n";
+    str += "â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜\n";
     return str;
 }
 
@@ -2177,25 +2177,25 @@ string display_sell()
         counta++;
     else if (SOLD["doubler"][0] == "m")
         countm++;
-    if (!(countm+counta)) str += "Õâ°ÑÃ»ÈËÂôÅÆ¡£\n";
+    if (!(countm+counta)) str += "è¿™æŠŠæ²¡äººå–ç‰Œã€‚\n";
     else
     {
-        str += "ÂôÅÆÇé¿öÈçÏÂ£º\n";
+        str += "å–ç‰Œæƒ…å†µå¦‚ä¸‹ï¼š\n";
         while(i--)
         {
     	    dir=DIR[i];
     	    if (!(j=sizeof(TABLE[dir]["sold"])))
     		continue;
-    	    str += "¡¡¡¡"+CDIR[dir]+"¼Ò"+HIC+TABLE[dir]["player_name"]+NOR;
+    	    str += "ã€€ã€€"+CDIR[dir]+"å®¶"+HIC+TABLE[dir]["player_name"]+NOR;
     	    count=0;
     	    while (j--)
     	    {
     		card=TABLE[dir]["sold"][j];
     		if (SOLD[card][0]=="a") count++;
-    		else str += "Ã÷Âô"+CCARD[card]+"£¬";
+    		else str += "æ˜å–"+CCARD[card]+"ï¼Œ";
     	    }
-    	    if (!count) str = str[0..(strlen(str)-3)]+"¡£";
-    	    else str += "°µÂô"+chinese_number(count)+"ÕÅ¡£";
+    	    if (!count) str = str[0..(strlen(str)-3)]+"ã€‚";
+    	    else str += "æš—å–"+chinese_number(count)+"å¼ ã€‚";
     	    str += "\n";
         }
     }
@@ -2209,20 +2209,20 @@ string display_table(string cond)
     mapping sell=allocate_mapping(4);
 
     sell=([
-	"east": ({"¡¡","¡¡", "¡¡", "¡¡",}),
+	"east": ({"ã€€","ã€€", "ã€€", "ã€€",}),
 	"north": "",
-	"west": ({"¡¡","¡¡", "¡¡", "¡¡",}),
+	"west": ({"ã€€","ã€€", "ã€€", "ã€€",}),
 	"south": "",
 ]);
     status=([
-	"east": ([ "card": "¡¡¡¡¡¡",
-		   "player": "¡¸¿Õ¡¹", ]),
-	"north": ([ "card": "¡¡¡¡¡¡",
-		   "player": "¡¸¿Õ¡¹", ]),
-	"west": ([ "card": "¡¡¡¡¡¡",
-		   "player": "¡¸¿Õ¡¹", ]),
-	"south": ([ "card": "¡¡¡¡¡¡",
-		   "player": "¡¸¿Õ¡¹", ]),
+	"east": ([ "card": "ã€€ã€€ã€€",
+		   "player": "ã€Œç©ºã€", ]),
+	"north": ([ "card": "ã€€ã€€ã€€",
+		   "player": "ã€Œç©ºã€", ]),
+	"west": ([ "card": "ã€€ã€€ã€€",
+		   "player": "ã€Œç©ºã€", ]),
+	"south": ([ "card": "ã€€ã€€ã€€",
+		   "player": "ã€Œç©ºã€", ]),
 ]);
 
     i = NUM;
@@ -2236,12 +2236,12 @@ string display_table(string cond)
 	continue;
     }
     if(is_dir(cond))
-	state="µÚ"+chinese_number(GAMEINFO["round"])+"ÂÖ½áÊø£¬"+TABLE[cond]["player_name"]+"µÄÅÆ×î´ó¡£";
+	state="ç¬¬"+chinese_number(GAMEINFO["round"])+"è½®ç»“æŸï¼Œ"+TABLE[cond]["player_name"]+"çš„ç‰Œæœ€å¤§ã€‚";
     else
-	state = (TABLE["cond"] == "³öÅÆ" ?
-	    "ÏÖÔÚÊÇµÚ"+chinese_number(GAMEINFO["round"])+"ÂÖ£¬¸Ã"
-		+TABLE[GAMEINFO["next"]]["player_name"]+"³öÅÆ£º" : "");
-    if ((cond || TABLE["cond"] != "³öÅÆ") && !is_dir(cond))
+	state = (TABLE["cond"] == "å‡ºç‰Œ" ?
+	    "ç°åœ¨æ˜¯ç¬¬"+chinese_number(GAMEINFO["round"])+"è½®ï¼Œè¯¥"
+		+TABLE[GAMEINFO["next"]]["player_name"]+"å‡ºç‰Œï¼š" : "");
+    if ((cond || TABLE["cond"] != "å‡ºç‰Œ") && !is_dir(cond))
 	str = sprintf(PIGSTATE_SHORT, state,
 	    status["north"]["player"], status["north"]["card"],
 	    status["west"]["player"], status["west"]["card"],
@@ -2258,7 +2258,7 @@ string display_table(string cond)
 	    sell["north"] = treat_sold(sell["north"], size);
 //	    sell["north"] = sell["north"][0..(strlen(sell["north"])-3)];
 	}
-	else sell["north"]="¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡";
+	else sell["north"]="ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€";
 	if (cnt < 4 && j=sizeof(TABLE["south"]["sold"]))
 	{
 	    cnt+=j;
@@ -2268,7 +2268,7 @@ string display_table(string cond)
 	    sell["south"] = treat_sold(sell["south"], size);
 //	    sell["south"] = sell["south"][0..(strlen(sell["south"])-3)];
 	}
-	else sell["south"]="¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡";
+	else sell["south"]="ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€";
 	if (cnt < 4 && j=sizeof(TABLE["east"]["sold"]))
 	{
 	    cnt += j;
@@ -2348,9 +2348,9 @@ string treat_sold(string sold, int cnt)
     switch (cnt)
     {
 	case 4: str = sold;break;
-	case 3: str = "¡¡"+sold+"¡¡";break;
-	case 2: str = "¡¡¡¡"+sold+"¡¡¡¡";break;
-	case 1: str = "¡¡¡¡¡¡"+sold+"¡¡¡¡¡¡";break;
+	case 3: str = "ã€€"+sold+"ã€€";break;
+	case 2: str = "ã€€ã€€"+sold+"ã€€ã€€";break;
+	case 1: str = "ã€€ã€€ã€€"+sold+"ã€€ã€€ã€€";break;
     }
 
     return str;
@@ -2362,10 +2362,10 @@ string sold_display(string dir, int index, int flag)
     str += (SOLD[TABLE[dir]["sold"][index]][0] == "m" ?
 	(CARDS[NCARD[TABLE[dir]["sold"][index]]]["status"] != "played"?
 	SCARD[TABLE[dir]["sold"][index]]
-	    +(CCARD[TABLE[dir]["sold"][index]][0..1]) : "¡ğ")+NOR :
+	    +(CCARD[TABLE[dir]["sold"][index]][0..1]) : "â—‹")+NOR :
 	(CARDS[NCARD[TABLE[dir]["sold"][index]]]["status"] == "played"?
-		GRN"¡õ"NOR:GRN"¡ö"NOR));
-    if (flag) str += "¡¡";
+		GRN"â–¡"NOR:GRN"â– "NOR));
+    if (flag) str += "ã€€";
     return str;
 }
 string read_rules()
@@ -2373,8 +2373,8 @@ string read_rules()
 
     string str="";
 
-    str += "Èç¹ûÄú²»»á´ò¹°Öí£¬ÇëÓÃ help pigrules À´²é¿´¡£\n\n";
-    str += "¾ßÌå´òÅÆ·½·¨ÇëÓÃ help pigcmds À´²é¿´¡£\n\n";
+    str += "å¦‚æœæ‚¨ä¸ä¼šæ‰“æ‹±çŒªï¼Œè¯·ç”¨ help pigrules æ¥æŸ¥çœ‹ã€‚\n\n";
+    str += "å…·ä½“æ‰“ç‰Œæ–¹æ³•è¯·ç”¨ help pigcmds æ¥æŸ¥çœ‹ã€‚\n\n";
 
     return str;
 }
@@ -2457,7 +2457,7 @@ void update_ranking(object *obj, int *score)
 	            // thus giving bonus to people who play.
 	    k=sum*k+m*2/3; // 2/3 chance increase one point.
 	else 
-	    k=sum*k-m/2; // ËÄÉáÎåÈë
+	    k=sum*k-m/2; // å››èˆäº”å…¥
 	k=(k/m);
 //	k=sum*(score[i]/10-j)/m;
 	
@@ -2489,19 +2489,19 @@ void update_one_rank(object obj, int k)
 
 	if(k>0)
 	  message_vision(
-	    "$NµÄ¹°ÖíµÈ¼¶·ÖÔö¼ÓÁË"+chinese_number(k)+
-	    "µã¡£\n",obj);
+	    "$Nçš„æ‹±çŒªç­‰çº§åˆ†å¢åŠ äº†"+chinese_number(k)+
+	    "ç‚¹ã€‚\n",obj);
 	else if(k<0)  {  
 	  message_vision(
-	    "$NµÄ¹°ÖíµÈ¼¶·Ö¼õÉÙÁË"+chinese_number(-k)+
-	    "µã¡£"+
-	    "$NµÃµ½ÁËÒ»ÅÌÖíÍ·Èâ¡£\n",obj);
+	    "$Nçš„æ‹±çŒªç­‰çº§åˆ†å‡å°‘äº†"+chinese_number(-k)+
+	    "ç‚¹ã€‚"+
+	    "$Nå¾—åˆ°äº†ä¸€ç›˜çŒªå¤´è‚‰ã€‚\n",obj);
 	  tmp=new("/d/obj/food/pighead");
 	  if(!tmp->move(obj))
 	      tmp->move(this_object());
 	} else    
 	  message_vision(
-	    "$NµÄ¹°ÖíµÈ¼¶·Ö²»±ä¡£\n",obj);
+	    "$Nçš„æ‹±çŒªç­‰çº§åˆ†ä¸å˜ã€‚\n",obj);
 	    
 	obj->set("piggy/rank",new_rank);
 	pig->update_rank(obj->query("id"),
@@ -2518,17 +2518,17 @@ void check_wait(object who, int time)
     
     dir=search_my_dir(who);
 
-    if(TABLE["cond"] == "µÈÂôÅÆ" &&
+    if(TABLE["cond"] == "ç­‰å–ç‰Œ" &&
 	    TABLE[dir]["status"]=="passed")
 	return;
 	    
-    if(TABLE["cond"] == "³öÅÆ" &&
+    if(TABLE["cond"] == "å‡ºç‰Œ" &&
 	    is_dir(CLAIM["claimer"]) && 
 	    CLAIM[search_my_dir(who)] == "yes")
 	return; // claimed yes after a claim request.
 
-    if(TABLE["cond"] != "µÈÂôÅÆ" &&
-	    TABLE["cond"] != "³öÅÆ")
+    if(TABLE["cond"] != "ç­‰å–ç‰Œ" &&
+	    TABLE["cond"] != "å‡ºç‰Œ")
 	return;
 
     if(time>=total_time || !who) { // time up
@@ -2547,7 +2547,7 @@ void check_wait(object who, int time)
 	    else
 		result_sc[i]=0;
 	}
-	message_vision("\n$NÔÚÏŞ¶¨Ê±¼äÄÚÃ»ÓĞ³öÅÆ£¬ÕâÒ»¾Ö½áÊø¡£\n\n",who);
+	message_vision("\n$Nåœ¨é™å®šæ—¶é—´å†…æ²¡æœ‰å‡ºç‰Œï¼Œè¿™ä¸€å±€ç»“æŸã€‚\n\n",who);
         
 	while(remove_call_out("check_wait")!=-1);  // remove all pending 
 	                                           // call_outs
@@ -2560,17 +2560,17 @@ void check_wait(object who, int time)
 
     who->delete_temp("piggy/seating", dir);
     TABLE[dir]["status"]="empty";
-    TABLE[dir]["player_name"]="¡¸¿Õ¡¹";
+    TABLE[dir]["player_name"]="ã€Œç©ºã€";
     TABLE[dir]["player_id"]="no one";
-    TABLE["cond"]="µÈÈË";
-    message_vision("$NÈÃ³öÁË"+CDIR[dir]+"±ßµÄÎ»ÖÃ£¬²»´òËã¹°ÏÂÈ¥ÁË¡£\n", who);
+    TABLE["cond"]="ç­‰äºº";
+    message_vision("$Nè®©å‡ºäº†"+CDIR[dir]+"è¾¹çš„ä½ç½®ï¼Œä¸æ‰“ç®—æ‹±ä¸‹å»äº†ã€‚\n", who);
 
 	renew("all");
-	tell_room(HERE, "ÇëÖØĞÂ´ÕÈË£¡\n");
+	tell_room(HERE, "è¯·é‡æ–°å‡‘äººï¼\n");
     } else {
 	if(time!=0)
-	  message_vision("$N»¹ÓĞ"+chinese_number(
-		interval*(total_time-time))+"ÃëÀ´³öÏÂÒ»ÕÅÅÆ¡£\n",who);
+	  message_vision("$Nè¿˜æœ‰"+chinese_number(
+		interval*(total_time-time))+"ç§’æ¥å‡ºä¸‹ä¸€å¼ ç‰Œã€‚\n",who);
 	time++;
 	call_out("check_wait",interval, who, time);
     }

@@ -24,24 +24,24 @@ void show_clouds(object me)
     key=keys(colors);
     
     if(i==1) {
-	msg="¬˝¬˝µÿ“ª–°Õ≈"+key[0]
-	    +"…´œÈ‘∆‘⁄$Nµƒ…Ì±ﬂ…˝∆°£\n";
+	msg="ÊÖ¢ÊÖ¢Âú∞‰∏ÄÂ∞èÂõ¢"+key[0]
+	    +"Ëâ≤Á••‰∫ëÂú®$NÁöÑË∫´ËæπÂçáËµ∑„ÄÇ\n";
     } else {
 	j=i;
-	msg="$Nµƒ…Ì…œ–Ï–Ï∆Æ∏°∆“ª–°Õ≈";
+	msg="$NÁöÑË∫´‰∏äÂæêÂæêÈ£òÊµÆËµ∑‰∏ÄÂ∞èÂõ¢";
 	while(j--) {
 	    msg+=key[j];
 	}
 	if(i==2)
-	    msg+="¡Ω…´œÈ‘∆°£\n";
+	    msg+="‰∏§Ëâ≤Á••‰∫ë„ÄÇ\n";
 	else 
-	    msg+=chinese_number(i)+"≤ œÈ‘∆°£\n";
+	    msg+=chinese_number(i)+"ÂΩ©Á••‰∫ë„ÄÇ\n";
     }
     
     if(random(10)==0)
 	message_vision(msg,me);
     else {
-	msg=replace_string(msg,"$N","ƒ„");
+	msg=replace_string(msg,"$N","‰Ω†");
 	tell_object(me,msg);
     }
 }
@@ -54,7 +54,7 @@ int main(object me, string arg)
 	short=1;
         if( !arg || arg=="-all") {
                 ob = me;
-                name = "ƒ„";
+                name = "‰Ω†";
 		if(arg=="-all") short=0;
         } else if (wizardp (me)) {
                 ob = find_player(arg);
@@ -62,7 +62,7 @@ int main(object me, string arg)
         
                 if(!ob) ob = LOGIN_D->find_body(arg);
 
-                if(!ob || !me->visible(ob)) return notify_fail("√ª”–’‚∏ˆ»À°£\n");
+                if(!ob || !me->visible(ob)) return notify_fail("Ê≤°ÊúâËøô‰∏™‰∫∫„ÄÇ\n");
                 name = ob->query("name");
 		short=0;
         } else return 0;
@@ -78,13 +78,13 @@ int main(object me, string arg)
 int help()
 {
         write(@TEXT
-÷∏¡Ó∏Ò Ω£∫quests <ƒ≥»À>
+Êåá‰ª§Ê†ºÂºèÔºöquests <Êüê‰∫∫>
           quests
 	  quests -all
 
-œ‘ æƒ≥»ÀΩ‚√’µƒ◊ ¡œ°£ 
+ÊòæÁ§∫Êüê‰∫∫Ëß£Ë∞úÁöÑËµÑÊñô„ÄÇ 
 
-«Îº˚£∫help jiemi
+ËØ∑ËßÅÔºöhelp jiemi
 TEXT
         );
         return 1;
@@ -95,42 +95,42 @@ int telling (object me, object who, int short)
   mapping mapp;
   if (who->query("quest") == 0)
   {
-    write (name+"√ª”–Ω‚»Œ∫Œ√‘°£\n");
+    write (name+"Ê≤°ÊúâËß£‰ªª‰ΩïËø∑„ÄÇ\n");
     return 1;
   }
 
-  write (name+"“—æ≠Ω‚¡À"+to_chinese(who->query("quest/number"))+"∏ˆ√‘°£\n");
+  write (name+"Â∑≤ÁªèËß£‰∫Ü"+to_chinese(who->query("quest/number"))+"‰∏™Ëø∑„ÄÇ\n");
   
   if(!short) {
 
-  write ("     ≥ŒÔ£∫"+"Ω‚¡À"+to_chinese(who->query("quest/food/times"))+"¥Œ£¨"+
-         "ªÒµ√"+to_chinese(who->query("quest/food/reward"))+"µ„∆∑µ¬°£\n");
-  write ("    ÀÕŒÔ£∫"+"Ω‚¡À"+to_chinese(who->query("quest/give/times"))+"¥Œ£¨"+
-         "ªÒµ√"+to_chinese(who->query("quest/give/reward"))+"µ„∆∑µ¬°£\n");
-  write ("    ∞›œÕ£∫"+"Ω‚¡À"+to_chinese(who->query("quest/ask/times"))+"¥Œ£¨"+
-         "ªÒµ√"+to_chinese(who->query("quest/ask/reward"))+"µ„∆∑µ¬°£\n");
-  write ("    √—˝£∫"+"Ω‚¡À"+to_chinese(who->query("quest/kill/times"))+"¥Œ£¨"+
-         "ªÒµ√"+to_chinese(who->query("quest/kill/reward"))+"µ„∆∑µ¬°£\n");
-  write ("    Œ‰∆˜£∫"+"Ω‚¡À"+to_chinese(who->query("quest/weapon/times"))+"¥Œ£¨"+
-         "ªÒµ√"+to_chinese(who->query("quest/weapon/reward"))+"µ„∆∑µ¬°£\n");
-  write ("    ø¯º◊£∫"+"Ω‚¡À"+to_chinese(who->query("quest/armor/times"))+"¥Œ£¨"+
-         "ªÒµ√"+to_chinese(who->query("quest/armor/reward"))+"µ„∆∑µ¬°£\n");
-  write ("    ƒºæË£∫"+"Ω‚¡À"+to_chinese(who->query("quest/cloth/times"))+"¥Œ£¨"+
-         "ªÒµ√"+to_chinese(who->query("quest/cloth/reward"))+"µ„∆∑µ¬°£\n");
+  write ("    È£üÁâ©Ôºö"+"Ëß£‰∫Ü"+to_chinese(who->query("quest/food/times"))+"Ê¨°Ôºå"+
+         "Ëé∑Âæó"+to_chinese(who->query("quest/food/reward"))+"ÁÇπÂìÅÂæ∑„ÄÇ\n");
+  write ("    ÈÄÅÁâ©Ôºö"+"Ëß£‰∫Ü"+to_chinese(who->query("quest/give/times"))+"Ê¨°Ôºå"+
+         "Ëé∑Âæó"+to_chinese(who->query("quest/give/reward"))+"ÁÇπÂìÅÂæ∑„ÄÇ\n");
+  write ("    ÊãúË¥§Ôºö"+"Ëß£‰∫Ü"+to_chinese(who->query("quest/ask/times"))+"Ê¨°Ôºå"+
+         "Ëé∑Âæó"+to_chinese(who->query("quest/ask/reward"))+"ÁÇπÂìÅÂæ∑„ÄÇ\n");
+  write ("    ÁÅ≠Â¶ñÔºö"+"Ëß£‰∫Ü"+to_chinese(who->query("quest/kill/times"))+"Ê¨°Ôºå"+
+         "Ëé∑Âæó"+to_chinese(who->query("quest/kill/reward"))+"ÁÇπÂìÅÂæ∑„ÄÇ\n");
+  write ("    Ê≠¶Âô®Ôºö"+"Ëß£‰∫Ü"+to_chinese(who->query("quest/weapon/times"))+"Ê¨°Ôºå"+
+         "Ëé∑Âæó"+to_chinese(who->query("quest/weapon/reward"))+"ÁÇπÂìÅÂæ∑„ÄÇ\n");
+  write ("    ÁõîÁî≤Ôºö"+"Ëß£‰∫Ü"+to_chinese(who->query("quest/armor/times"))+"Ê¨°Ôºå"+
+         "Ëé∑Âæó"+to_chinese(who->query("quest/armor/reward"))+"ÁÇπÂìÅÂæ∑„ÄÇ\n");
+  write ("    ÂãüÊçêÔºö"+"Ëß£‰∫Ü"+to_chinese(who->query("quest/cloth/times"))+"Ê¨°Ôºå"+
+         "Ëé∑Âæó"+to_chinese(who->query("quest/cloth/reward"))+"ÁÇπÂìÅÂæ∑„ÄÇ\n");
 /*
-  write ("     ◊ Œ£∫"+"Ω‚¡À"+to_chinese(who->query("quest/wearing/times"))+"¥Œ£¨"+
-         "ªÒµ√"+to_chinese(who->query("quest/wearing/reward"))+"µ„∆∑µ¬°£\n");
-  write ("    º“ ≤£∫"+"Ω‚¡À"+to_chinese(who->query("quest/furniture/times"))+"¥Œ£¨"+
-         "ªÒµ√"+to_chinese(who->query("quest/furniture/reward"))+"µ„∆∑µ¬°£\n");
+  write ("    È¶ñÈ•∞Ôºö"+"Ëß£‰∫Ü"+to_chinese(who->query("quest/wearing/times"))+"Ê¨°Ôºå"+
+         "Ëé∑Âæó"+to_chinese(who->query("quest/wearing/reward"))+"ÁÇπÂìÅÂæ∑„ÄÇ\n");
+  write ("    ÂÆ∂‰ªÄÔºö"+"Ëß£‰∫Ü"+to_chinese(who->query("quest/furniture/times"))+"Ê¨°Ôºå"+
+         "Ëé∑Âæó"+to_chinese(who->query("quest/furniture/reward"))+"ÁÇπÂìÅÂæ∑„ÄÇ\n");
 */
   write ("\n");
   }
 
   if(!short) {
-  write (name+"π≤ªÒµ√£∫\n");
-  write ("    «±ƒ‹£∫"+to_chinese(who->query("quest/gain/potential"))+"µ„°£\n");
-  write ("    µ¿––£∫"+COMBAT_D->chinese_daoxing(who->query("quest/gain/daoxing"))+"µ¿––°£\n");
-  write ("    ººƒ‹£∫\n");
+  write (name+"ÂÖ±Ëé∑ÂæóÔºö\n");
+  write ("    ÊΩúËÉΩÔºö"+to_chinese(who->query("quest/gain/potential"))+"ÁÇπ„ÄÇ\n");
+  write ("    ÈÅìË°åÔºö"+COMBAT_D->chinese_daoxing(who->query("quest/gain/daoxing"))+"ÈÅìË°å„ÄÇ\n");
+  write ("    ÊäÄËÉΩÔºö\n");
   mapp = who->query("quest/gain/skills");
   if (mapp)
   {
@@ -140,10 +140,10 @@ int telling (object me, object who, int short)
     while (i--)
     {
        write ("      "+to_chinese(my_keys[i])+to_chinese(mapp[my_keys[i]])
-              +"µ„°£\n");
+              +"ÁÇπ„ÄÇ\n");
     }
   }
-  write ("     Ù–‘£®¡Ÿ ±∏ƒ…∆£©£∫\n");
+  write ("    Â±ûÊÄßÔºà‰∏¥Êó∂ÊîπÂñÑÔºâÔºö\n");
   mapp = who->query("quest/gain/apply");
   if (mapp)
   {
@@ -153,99 +153,99 @@ int telling (object me, object who, int short)
     while (i--)
     {
        write ("      "+to_chinese(my_keys[i])+to_chinese(mapp[my_keys[i]])
-              +"µ„°£\n");
+              +"ÁÇπ„ÄÇ\n");
     }
   }
-  write ("    “¯◊”£∫"+to_chinese(who->query("quest/gain/silver"))+"¡Ω°£\n");
+  write ("    Èì∂Â≠êÔºö"+to_chinese(who->query("quest/gain/silver"))+"‰∏§„ÄÇ\n");
   write ("\n");
   }
 
-  write (name+"∏’∏’ÕÍ≥…µƒ√‘ «£∫\n");
+  write (name+"ÂàöÂàöÂÆåÊàêÁöÑËø∑ÊòØÔºö\n");
   if (who->query("quest/reason"))
   {
-    write ("  °∞"+who->query("quest/reason")+"°≠°≠°±");
+    write ("  ‚Äú"+who->query("quest/reason")+"‚Ä¶‚Ä¶‚Äù");
     if (who->query("quest/reward")) {
       if (wizardp(me)) 
-        write ("  º¥Ω´”–"+to_chinese(who->query("quest/reward"))+"µ„Ω±¿¯°£\n");
+        write ("  Âç≥Â∞ÜÊúâ"+to_chinese(who->query("quest/reward"))+"ÁÇπÂ•ñÂä±„ÄÇ\n");
       else  
-        write ("  º¥Ω´”–Ω±¿¯°£\n");
+        write ("  Âç≥Â∞ÜÊúâÂ•ñÂä±„ÄÇ\n");
     }  
     else
       write ("\n");
   }    
   write ("\n");
 
-  write (name+"ªπ”–»Áœ¬º∏∏ˆ’˝‘⁄Ω‚µƒ√‘£∫\n");
+  write (name+"ËøòÊúâÂ¶Ç‰∏ãÂá†‰∏™Ê≠£Âú®Ëß£ÁöÑËø∑Ôºö\n");
   if (mapp = who->query("quest/pending/food"))
   {
-    write ("   ≥ŒÔ£∫"+mapp["name"]);
+    write ("  È£üÁâ©Ôºö"+mapp["name"]);
     if (wizardp(me))
-      write (" ≤Œøºœµ ˝£∫"+mapp["index"]+"/"+mapp["daoxing"]+"°£\n");
+      write (" ÂèÇËÄÉÁ≥ªÊï∞Ôºö"+mapp["index"]+"/"+mapp["daoxing"]+"„ÄÇ\n");
     else 
       write ("\n");
   }
   if (mapp = who->query("quest/pending/give"))
   {
-    write ("  ÀÕŒÔ£∫"+mapp["name"] + " " + mapp["objectname"]);
+    write ("  ÈÄÅÁâ©Ôºö"+mapp["name"] + " " + mapp["objectname"]);
     if (wizardp(me))
-      write (" ≤Œøºœµ ˝£∫"+mapp["index"]+"/"+mapp["daoxing"]+"°£\n");
+      write (" ÂèÇËÄÉÁ≥ªÊï∞Ôºö"+mapp["index"]+"/"+mapp["daoxing"]+"„ÄÇ\n");
     else 
       write ("\n");
   }
   if (mapp = who->query("quest/pending/ask"))
   {
-    write ("  ∞›œÕ£∫"+mapp["name"]);
+    write ("  ÊãúË¥§Ôºö"+mapp["name"]);
     if (wizardp(me))
-      write (" ≤Œøºœµ ˝£∫"+mapp["index"]+"/"+mapp["daoxing"]+"°£\n");
+      write (" ÂèÇËÄÉÁ≥ªÊï∞Ôºö"+mapp["index"]+"/"+mapp["daoxing"]+"„ÄÇ\n");
     else 
       write ("\n");
   }
   if (mapp = who->query("quest/pending/kill"))
   {
-    write ("  √—˝£∫"+mapp["name"]);
+    write ("  ÁÅ≠Â¶ñÔºö"+mapp["name"]);
     if (wizardp(me))
-      write (" ≤Œøºœµ ˝£∫"+mapp["index"]+"/"+mapp["daoxing"]+"°£\n");
+      write (" ÂèÇËÄÉÁ≥ªÊï∞Ôºö"+mapp["index"]+"/"+mapp["daoxing"]+"„ÄÇ\n");
     else 
       write ("\n");
   }
   if (mapp = who->query("quest/pending/weapon"))
   {
-    write ("  Œ‰∆˜£∫"+mapp["name"]);
+    write ("  Ê≠¶Âô®Ôºö"+mapp["name"]);
     if (wizardp(me))
-      write (" ≤Œøºœµ ˝£∫"+mapp["index"]+"/"+mapp["daoxing"]+"°£\n");
+      write (" ÂèÇËÄÉÁ≥ªÊï∞Ôºö"+mapp["index"]+"/"+mapp["daoxing"]+"„ÄÇ\n");
     else 
       write ("\n");
   }
   if (mapp = who->query("quest/pending/armor"))
   {
-    write ("  ø¯º◊£∫"+mapp["name"]);
+    write ("  ÁõîÁî≤Ôºö"+mapp["name"]);
     if (wizardp(me))
-      write (" ≤Œøºœµ ˝£∫"+mapp["index"]+"/"+mapp["daoxing"]+"°£\n");
+      write (" ÂèÇËÄÉÁ≥ªÊï∞Ôºö"+mapp["index"]+"/"+mapp["daoxing"]+"„ÄÇ\n");
     else 
       write ("\n");
   }
   if (mapp = who->query("quest/pending/cloth"))
   {
-    write ("  ƒºæË£∫"+mapp["name"]);
+    write ("  ÂãüÊçêÔºö"+mapp["name"]);
     if (wizardp(me))
-      write (" ≤Œøºœµ ˝£∫"+mapp["index"]+"/"+mapp["daoxing"]+"°£\n");
+      write (" ÂèÇËÄÉÁ≥ªÊï∞Ôºö"+mapp["index"]+"/"+mapp["daoxing"]+"„ÄÇ\n");
     else 
       write ("\n");
   }
 /*
   if (mapp = who->query("quest/pending/wearing"))
   {
-    write ("   ◊ Œ£∫"+mapp["name"]);
+    write ("  È¶ñÈ•∞Ôºö"+mapp["name"]);
     if (wizardp(me))
-      write (" ≤Œøºœµ ˝£∫"+mapp["index"]+"/"+mapp["daoxing"]+"°£\n");
+      write (" ÂèÇËÄÉÁ≥ªÊï∞Ôºö"+mapp["index"]+"/"+mapp["daoxing"]+"„ÄÇ\n");
     else 
       write ("\n");
   }
   if (mapp = who->query("quest/pending/furniture"))
   {
-    write ("  º“ ≤£∫"+mapp["name"]);
+    write ("  ÂÆ∂‰ªÄÔºö"+mapp["name"]);
     if (wizardp(me))
-      write (" ≤Œøºœµ ˝£∫"+mapp["index"]+"/"+mapp["daoxing"]+"°£\n");
+      write (" ÂèÇËÄÉÁ≥ªÊï∞Ôºö"+mapp["index"]+"/"+mapp["daoxing"]+"„ÄÇ\n");
     else 
       write ("\n");
   }
@@ -255,43 +255,43 @@ int telling (object me, object who, int short)
   if (!wizardp(me))
     return 1;
     
-  write (name+"Ω‚√‘‘›¥Ê π”√Õ≥º∆£∫\n");
+  write (name+"Ëß£Ëø∑ÊöÇÂ≠ò‰ΩøÁî®ÁªüËÆ°Ôºö\n");
   if (mapp = who->query("quest/cache/food"))
   {
-    write ("   ≥ŒÔ£∫"+to_chinese(sizeof(mapp))+"°£\n");
+    write ("  È£üÁâ©Ôºö"+to_chinese(sizeof(mapp))+"„ÄÇ\n");
   }
   if (mapp = who->query("quest/cache/give"))
   {
-    write ("  ÀÕŒÔ£∫"+to_chinese(sizeof(mapp))+"°£\n");
+    write ("  ÈÄÅÁâ©Ôºö"+to_chinese(sizeof(mapp))+"„ÄÇ\n");
   }
   if (mapp = who->query("quest/cache/ask"))
   {
-    write ("  ∞›œÕ£∫"+to_chinese(sizeof(mapp))+"°£\n");
+    write ("  ÊãúË¥§Ôºö"+to_chinese(sizeof(mapp))+"„ÄÇ\n");
   }
   if (mapp = who->query("quest/cache/kill"))
   {
-    write ("  √—˝£∫"+to_chinese(sizeof(mapp))+"°£\n");
+    write ("  ÁÅ≠Â¶ñÔºö"+to_chinese(sizeof(mapp))+"„ÄÇ\n");
   }
   if (mapp = who->query("quest/cache/weapon"))
   {
-    write ("  Œ‰∆˜£∫"+to_chinese(sizeof(mapp))+"°£\n");
+    write ("  Ê≠¶Âô®Ôºö"+to_chinese(sizeof(mapp))+"„ÄÇ\n");
   }
   if (mapp = who->query("quest/cache/armor"))
   {
-    write ("  ø¯º◊£∫"+to_chinese(sizeof(mapp))+"°£\n");
+    write ("  ÁõîÁî≤Ôºö"+to_chinese(sizeof(mapp))+"„ÄÇ\n");
   }
   if (mapp = who->query("quest/cache/cloth"))
   {
-    write ("  ƒºæË£∫"+to_chinese(sizeof(mapp))+"°£\n");
+    write ("  ÂãüÊçêÔºö"+to_chinese(sizeof(mapp))+"„ÄÇ\n");
   }
 /*
   if (mapp = who->query("quest/cache/wearing"))
   {
-    write ("   ◊ Œ£∫"+to_chinese(sizeof(mapp))+"°£\n");
+    write ("  È¶ñÈ•∞Ôºö"+to_chinese(sizeof(mapp))+"„ÄÇ\n");
   }
   if (mapp = who->query("quest/cache/furniture"))
   {
-    write ("  º“ ≤£∫"+to_chinese(sizeof(mapp))+"°£\n");
+    write ("  ÂÆ∂‰ªÄÔºö"+to_chinese(sizeof(mapp))+"„ÄÇ\n");
   }
 */
   write ("\n");

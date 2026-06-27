@@ -3,9 +3,9 @@ inherit NPC;
 
 void create()
 {
-  set_name("ÓíÍõ×ä", ({ "yuwang zu", "zu" }));
+  set_name("ç¦¹ç‹å’", ({ "yuwang zu", "zu" }));
   set("age", 18+random(10));
-  set("gender", "ÄĞĞÔ");
+  set("gender", "ç”·æ€§");
   set("attitude", "peaceful");
   set("str", 20);
   set("combat_exp", 20000);
@@ -29,4 +29,3 @@ void create()
 
 
 
-ÿ

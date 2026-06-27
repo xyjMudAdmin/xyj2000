@@ -1,5 +1,5 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// guanyin.c »İ°¶ĞĞÕß
+// guanyin.c æƒ å²¸è¡Œè€…
 // By Dream Dec. 20, 1996
 
 inherit NPC;
@@ -9,15 +9,15 @@ string ask_for_partner();
 
 void create()
 {
-	set_name("»İ°¶ĞĞÕß", ({ "huian xingzhe", "huian", "xingzhe" }));
-	set("title", "¹ÛÒôÊ×Í½");   
+	set_name("æƒ å²¸è¡Œè€…", ({ "huian xingzhe", "huian", "xingzhe" }));
+	set("title", "è§‚éŸ³é¦–å¾’");   
 	set("long", @LONG
-ÀîÌìÍõ¶şÌ«×ÓÄ¾²æ£¬ÄÏº£¹ÛÒô´óÍ½µÜ»İ°¶ĞĞÕß¡£
+æå¤©ç‹äºŒå¤ªå­æœ¨å‰ï¼Œå—æµ·è§‚éŸ³å¤§å¾’å¼Ÿæƒ å²¸è¡Œè€…ã€‚
 LONG);
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("age", 25);
 	set("attitude", "peaceful");
-	set("rank_info/self", "Æ¶É®");
+	set("rank_info/self", "è´«åƒ§");
 	set("class", "bonze");
 	set("max_kee", 1000);
 	set("max_gin", 600);
@@ -66,10 +66,10 @@ LONG);
 	set("inquiry", ([
 		"dadang" : (: ask_for_partner :),
 		"partner" : (: ask_for_partner :),
-		"´îµµ": (: ask_for_partner :),
+		"æ­æ¡£": (: ask_for_partner :),
 		]) );
 */
-	create_family("ÄÏº£ÆÕÍÓÉ½", 2, "µÜ×Ó");
+	create_family("å—æµ·æ™®é™€å±±", 2, "å¼Ÿå­");
 
 	setup();
 // 	carry_object("/obj/money/thousand-cash");
@@ -81,15 +81,15 @@ LONG);
 void attempt_apprentice(object ob)
 {
 	if (!((string)ob->query("bonze/class") =="bonze" )) {
-		command("say " + RANK_D->query_respect(ob) + "Î´Èë·ğÃÅ£¬Ë¡Æ¶É®²»ÄÜ½ÓÄÉ¡£\n");
+		command("say " + RANK_D->query_respect(ob) + "æœªå…¥ä½›é—¨ï¼Œæ•è´«åƒ§ä¸èƒ½æ¥çº³ã€‚\n");
 		return;
 	}	
 	if (((int)ob->query_skill("buddhism", 1) < 60 )) {
-		command("say " + RANK_D->query_respect(ob) + "ÈôÓûÉîĞŞ£¬ĞèµÃÊì¶Á·ğ·¨¡£\n");
+		command("say " + RANK_D->query_respect(ob) + "è‹¥æ¬²æ·±ä¿®ï¼Œéœ€å¾—ç†Ÿè¯»ä½›æ³•ã€‚\n");
 		return;
 	}
 	command("nod");
-	command("say ºÜºÃ£¬Æ¶É®¾ÍÊÕÏÂÄã£¬Ï£ÍûÄã¶à¼ÓÅ¬Á¦£¬Ôç³ÉÕı¹û¡£\n");
+	command("say å¾ˆå¥½ï¼Œè´«åƒ§å°±æ”¶ä¸‹ä½ ï¼Œå¸Œæœ›ä½ å¤šåŠ åŠªåŠ›ï¼Œæ—©æˆæ­£æœã€‚\n");
 
 	command("recruit " + ob->query("id") );
 	return;	
@@ -101,16 +101,16 @@ string ask_for_partner()
 	object me = this_player();
 	string dadang;
 
-	if ( (string)me->query("family/family_name")!="ÄÏº£ÆÕÍÓÉ½")
-		return "Ö»ÓĞÄÏº£ÆÕÍÓÉ½µÜ×Ó²ÅÄÜÑ°ÕÒ´îµµ¡£\n";
+	if ( (string)me->query("family/family_name")!="å—æµ·æ™®é™€å±±")
+		return "åªæœ‰å—æµ·æ™®é™€å±±å¼Ÿå­æ‰èƒ½å¯»æ‰¾æ­æ¡£ã€‚\n";
 	if( (string)me->query("bonze/class")!="bonze" )
-		return "Ê©Ö÷¼È·Ç·ğÃÅÖĞÈË£¬ºÎ±Ø¶àÎÊ£¿\n";
+		return "æ–½ä¸»æ—¢éä½›é—¨ä¸­äººï¼Œä½•å¿…å¤šé—®ï¼Ÿ\n";
 	if( (dadang=(string)me->query("bonze/dadang")) !=0 )
-		return "ÄãµÄ´îµµÊÇ"+dadang+"¡£\n";
+		return "ä½ çš„æ­æ¡£æ˜¯"+dadang+"ã€‚\n";
 
 	me -> set_temp("pending/dadang_inquiry", 1);
 
-	return RANK_D->query_respect(me)+"ÇëÓÃ \"dadang <id>\" À´Ñ¡ÔñÄãµÄ´îµµ¡£\n";
+	return RANK_D->query_respect(me)+"è¯·ç”¨ \"dadang <id>\" æ¥é€‰æ‹©ä½ çš„æ­æ¡£ã€‚\n";
 }
 
 int do_dadang(string arg)
@@ -118,42 +118,42 @@ int do_dadang(string arg)
 object obj, me=this_player();
 string dadang;
 
-	if ( (string)me->query("family/family_name")!="ÄÏº£ÆÕÍÓÉ½")
-		return notify_fail("Ö»ÓĞÄÏº£ÆÕÍÓÉ½µÜ×Ó²ÅÄÜÑ°ÕÒ´îµµ¡£\n");
+	if ( (string)me->query("family/family_name")!="å—æµ·æ™®é™€å±±")
+		return notify_fail("åªæœ‰å—æµ·æ™®é™€å±±å¼Ÿå­æ‰èƒ½å¯»æ‰¾æ­æ¡£ã€‚\n");
 	if( (string)me->query("bonze/class")!="bonze" )
-		return notify_fail("Ê©Ö÷¼È·Ç·ğÃÅÖĞÈË£¬ºÎ±Ø¶àÎÊ£¿\n");
+		return notify_fail("æ–½ä¸»æ—¢éä½›é—¨ä¸­äººï¼Œä½•å¿…å¤šé—®ï¼Ÿ\n");
 	if( (dadang=(string)me->query("bonze/dadang")) !=0 )
-		return notify_fail("ÄãµÄ´îµµÊÇ"+dadang+"¡£\n");
+		return notify_fail("ä½ çš„æ­æ¡£æ˜¯"+dadang+"ã€‚\n");
 	if( !me->query_temp("pending/dadang_inquiry") ) 
-		return notify_fail("Äã»¹Ã»ÎÊ¹ı"+this_object()->query("name")+"ÄØ£¡\n");
+		return notify_fail("ä½ è¿˜æ²¡é—®è¿‡"+this_object()->query("name")+"å‘¢ï¼\n");
 	me->delete("pending/dadang_inquiry");
 
 	if (!arg) 
-		return notify_fail("ÄãÒªºÍË­×ö´îµµ£¿\n");
+		return notify_fail("ä½ è¦å’Œè°åšæ­æ¡£ï¼Ÿ\n");
 
 	obj = present(arg, environment(me));
 	if (!obj || !userp(obj)) return notify_fail("\n");
 
 	if (me->query("gender") == obj->query("gender") )
-		return notify_fail("ÄãÖ»ÄÜÓëÒìĞÔÍ¬ÃÅ×ö´îµµ¡£\n");
+		return notify_fail("ä½ åªèƒ½ä¸å¼‚æ€§åŒé—¨åšæ­æ¡£ã€‚\n");
 
-	if (me->is_busy()) return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+	if (me->is_busy()) return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
 
 	if( obj->query_temp("pending/dadang") != me) {
-		message_vision("\n$Nµ±×Å"+this_object()->query("name")+"µÄÃæ£¬¶Ô$nËµµÀ£º"
+		message_vision("\n$Nå½“ç€"+this_object()->query("name")+"çš„é¢ï¼Œå¯¹$nè¯´é“ï¼š"
 			+ RANK_D->query_self(me)+ me->name() 
-			+ "£¬ÓûÓë" + RANK_D->query_respect(obj)
-			+ "×öÒ»¶Ô´îµµ£¬ÈÕºóÒ»ÆğĞĞ×ß½­ºş£¬Í¬ÉúËÀ£¬¹²»¼ÄÑ£¬"
-			+ RANK_D->query_respect(obj) + "ÒâÏÂÈçºÎ£¿\n\n", me, obj);
+			+ "ï¼Œæ¬²ä¸" + RANK_D->query_respect(obj)
+			+ "åšä¸€å¯¹æ­æ¡£ï¼Œæ—¥åä¸€èµ·è¡Œèµ°æ±Ÿæ¹–ï¼ŒåŒç”Ÿæ­»ï¼Œå…±æ‚£éš¾ï¼Œ"
+			+ RANK_D->query_respect(obj) + "æ„ä¸‹å¦‚ä½•ï¼Ÿ\n\n", me, obj);
 		me->set_temp("pending/dadang", obj);
 		return 1;
 	}
 
 	obj->delete_temp("pending/jiebai");
-	message_vision("\n$Nµ±×Å"+this_object()->query("name")+"µÄÃæ£¬¶Ô$nËµµÀ£º"
+	message_vision("\n$Nå½“ç€"+this_object()->query("name")+"çš„é¢ï¼Œå¯¹$nè¯´é“ï¼š"
 		+ RANK_D->query_self(me)+ me->name() 
-		+ "£¬Ô¸Óë" + RANK_D->query_respect(obj)
-		+ "×öÒ»¶Ô´îµµ£¡\n\n", me, obj);
+		+ "ï¼Œæ„¿ä¸" + RANK_D->query_respect(obj)
+		+ "åšä¸€å¯¹æ­æ¡£ï¼\n\n", me, obj);
 
 	obj->set("bonze/dadang", me->query("name"));
 	obj->set("bonze/dadangid", me->query("id"));

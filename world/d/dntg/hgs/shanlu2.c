@@ -8,16 +8,16 @@ int grass_number;
 
 void create()
 {
-set("short", "É½Â·");
+set("short", "å±±è·¯");
 set("long", @LONG
     
-Ò»Ìõ²»Éõ¿í¹ãµÄÉ½Â·£¬ËÄ´¦·¼²İÏÊÃÀ£¬ÂäÓ¢çÍ·×¡£ÖÜÎ§µÄÊ÷´Ô
-ÖĞÅ¼¶ûß¥³ö¼¸Ö»ºï×Ó£¬ÔÚÕâÀïÌøÀ´ÌøÈ¥£¬Â·±ßµÄĞ¡²İ(grass)
-Ëæ·çÆ®Îè¡£
+ä¸€æ¡ä¸ç”šå®½å¹¿çš„å±±è·¯ï¼Œå››å¤„èŠ³è‰é²œç¾ï¼Œè½è‹±ç¼¤çº·ã€‚å‘¨å›´çš„æ ‘ä¸›
+ä¸­å¶å°”æ’ºå‡ºå‡ åªçŒ´å­ï¼Œåœ¨è¿™é‡Œè·³æ¥è·³å»ï¼Œè·¯è¾¹çš„å°è‰(grass)
+éšé£é£˜èˆã€‚
 LONG );
 
 set("item_desc",(["grass":"
-Ò»Ğ©ÂÌÓÍÓÍµÄĞ¡²İ£¬°Î(ba)³öÀ´¿´¿´£¿\n"
+ä¸€äº›ç»¿æ²¹æ²¹çš„å°è‰ï¼Œæ‹”(ba)å‡ºæ¥çœ‹çœ‹ï¼Ÿ\n"
 ]));
 
 set("exits", ([
@@ -53,9 +53,9 @@ int do_ba(string arg)
    object cao;
 
    if ( !arg || ( arg != "grass" ) ) 
-     return notify_fail("ÄãÒª°ÎÊ²Ã´£¿\n");
+     return notify_fail("ä½ è¦æ‹”ä»€ä¹ˆï¼Ÿ\n");
    else if(grass_number==0)  
-     return notify_fail("²İÒÑ¾­±»°Î¹âÁË£¬±ğ·Ñ¾¢ÁË¡£\n");
+     return notify_fail("è‰å·²ç»è¢«æ‹”å…‰äº†ï¼Œåˆ«è´¹åŠ²äº†ã€‚\n");
    else if(me->query("kee")<10) 
      {
      me->unconcious();
@@ -66,7 +66,7 @@ int do_ba(string arg)
      me->add("kee",-10);
      cao = new (__DIR__"obj/grass");
      cao->move(me);
-     message_vision("$N°ÎÁËÒ»¿ÅĞ¡²İ¡£\n", me);
+     message_vision("$Næ‹”äº†ä¸€é¢—å°è‰ã€‚\n", me);
      grass_number--;
      }
      return 1;

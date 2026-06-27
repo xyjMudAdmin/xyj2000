@@ -18,19 +18,19 @@ int cast(object me, object target)
 	||      !target->is_character()
 	||      target->is_corpse()
 	||      target==me)
-		return notify_fail("��Ҫ��˭ʩչħ�����죿\n");
+		return notify_fail("你要对谁施展魔兽吞天？\n");
 
 	if((int)me->query("mana") < 100+2*(int)me->query("mana_factor") )
-		return notify_fail("��ķ���������\n");
+		return notify_fail("你的法力不够！\n");
 
 	if((int)me->query("sen") < 100 )
-		return notify_fail("���޷����о�����\n");
+		return notify_fail("你无法集中精力！\n");
 
 	me->add("mana", -25-2*(int)me->query("mana_factor"));
 	me->receive_damage("sen", 50);
 
 	if( random(me->query("max_mana")) < 50 ) {
-		write("���ˣ�����ʨ�Ӳ�֪����ȥ�ˣ�\n");
+		write("坏了，青面狮子不知跑哪去了！\n");
 		return 1;
 	}
 
@@ -45,15 +45,15 @@ int cast(object me, object target)
 			//damage adjustment
 		"qi", 		
 			//damage type: could be "qi"/"kee", "shen"/"sen", ...default "both"
-		HIC "\n$N�������˾����ģ��������һֻ���������ʨ�ӣ��ſ�Ѫ������$nҧȥ��\n" NOR,
+		HIC "\n$N口中念了句咒文，半空闪出一只青面獠牙的狮子，张开血盆大口向$n咬去！\n" NOR,
 			//initial message
-		HIR "\n���$n��ҧ�˸����ţ�\n" NOR, 
+		HIR "\n结果$n被咬了个正着！\n" NOR, 
 			//success message
-		HIC "\n$n��æһ��������һ�ԡ�\n" NOR, 
+		HIC "\n$n连忙一侧身闪在一旁。\n" NOR, 
 			//fail message
-		HIC "ֻ��$nһ��ŭ������ʨ���ŵñ治�෽�򣬷���ҧ����$N��\n" NOR, 
+		HIC "只见$n一声怒吼，青面狮子吓得辨不青方向，反而咬中了$N！\n" NOR, 
 			//backfire initial message
-		HIC "���$n��ҧ�˸����ţ�\n" NOR
+		HIC "结果$n被咬了个正着！\n" NOR
 			//backfire hit message. note here $N and $n!!!
 	);
 

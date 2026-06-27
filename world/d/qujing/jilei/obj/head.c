@@ -5,13 +5,13 @@ inherit ITEM;
 
 void create()
 {
-  set_name("ţͷ", ({"niu tou", "tou"}));
+  set_name("牛头", ({"niu tou", "tou"}));
   set_weight(1000);
   if (clonep())
     set_default_object(__FILE__);
   else {
-    set("long", "һֻ�ϵ���ţͷ��\n");
-    set("unit", "ֻ");
+    set("long", "一只断掉的牛头。\n");
+    set("unit", "只");
     set("material", "bone");
   }
   setup();

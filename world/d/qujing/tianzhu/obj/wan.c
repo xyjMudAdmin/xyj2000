@@ -12,15 +12,15 @@ void init()
 
 void create()
 {
-  set_name("¼ÃÉñÍè", ({"jishen wan", "wan"}));
+  set_name("æµç¥ä¸¸", ({"jishen wan", "wan"}));
   if (clonep())
     set_default_object(__FILE__);
   else {
-    set("base_unit", "¿Å");
-    set("unit", "Ğ©");
-    set("long", "Ò»¿ÅÇåÁ¹ÂÔ¿àµÄÒ©Íè£®\n");
+    set("base_unit", "é¢—");
+    set("unit", "äº›");
+    set("long", "ä¸€é¢—æ¸…å‡‰ç•¥è‹¦çš„è¯ä¸¸ï¼\n");
     set("value", 3000);
-    set("drug_type", "Á¼Ò©");
+    set("drug_type", "è‰¯è¯");
   }
   set_amount(1);
 
@@ -34,10 +34,10 @@ int do_eat(string arg)
 
 //  if ((int)this_player()->query("eff_sen") == 
 //    (int)this_player()->query("max_sen"))
-//    return notify_fail("ÄãÏÖÔÚ²»ĞèÒªÓÃ¼ÃÉñÍè¡£\n")
+//    return notify_fail("ä½ ç°åœ¨ä¸éœ€è¦ç”¨æµç¥ä¸¸ã€‚\n")
   else {
     this_player()->receive_curing("sen", 40+random(10));
-    message_vision("$NÑÊÏÂÒ»¿Å¼ÃÉñÍè£¬¾«Éñ»À·¢¡£\n",this_player());
+    message_vision("$Nå’½ä¸‹ä¸€é¢—æµç¥ä¸¸ï¼Œç²¾ç¥ç„•å‘ã€‚\n",this_player());
    add_amount(-1);
     return 1;
   }

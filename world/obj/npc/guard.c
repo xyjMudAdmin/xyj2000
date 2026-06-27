@@ -9,8 +9,8 @@ void create()
 {
     	object ob1, ob2;
 	
-        set_name("����ҹ��", ({"yecha"}));
-        set("long", "����һλ���Ժ��׵��ػ���ר�ŵ��λ���֮��\n");
+        set_name("护法夜叉", ({"yecha"}));
+        set("long", "这是一位来自海底的守护神，专门担任护法之责。\n");
         set("attitude", "friendly");
 
         set("max_gin", 800);
@@ -40,10 +40,10 @@ void create()
 
         ob1=carry_object("/d/obj/armor/tiejia");
 	ob1->wear();
-	ob1->set("no_sell", "�ƹ�����һ�۵����ⶫ��һ�������ӵ�Ʒ����Ҫ����Ҫ��\n");
+	ob1->set("no_sell", "掌柜的瞟了一眼道：这东西一看就是劣等品，不要！不要！\n");
         ob2=carry_object(__DIR__"obj/steel_fork");
 	ob2->wield();
-	ob2->set("no_sell", "�ƹ�����һ�۵����ⶫ��һ�������ӵ�Ʒ����Ҫ����Ҫ��\n");
+	ob2->set("no_sell", "掌柜的瞟了一眼道：这东西一看就是劣等品，不要！不要！\n");
 }
 
 int heal_up()
@@ -59,8 +59,8 @@ void leave()
 {
         message("vision",
                 HIB + name() +
-"˵����ĩ������ٻ��������Ѿ���ɻ������񣬾ʹ˸�ǣ�\n\n"
-                + name() + "������ӿ��һ����Ȫ����Ӱ��ʱ��ʧ�ˣ�\n" NOR,
+"说道：末将奉法主召唤，现在已经完成护法任务，就此告辞！\n\n"
+                + name() + "的身下涌出一股清泉，身影立时消失了．\n" NOR,
 environment(),
                 this_object() );
         destruct(this_object());
@@ -73,8 +73,8 @@ void invocation(object who)
 
         message("vision",
                 HIB
-"һ��ˮ���ӵص����𣬲��г���һ����ִ�ֲ桢��Ŀ������ҹ�档\n\n"
-                + name() + "˵����ĩ������ٻ�������������\n" NOR,
+"一道水波从地底升起，波中出现一个手执钢叉、面目狰狞的夜叉。\n\n"
+                + name() + "说道：末将奉法主召唤，特来护法！\n" NOR,
                 environment(), this_object() );
         enemy = who->query_enemy();
         i = sizeof(enemy);

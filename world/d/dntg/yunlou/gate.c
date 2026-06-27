@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create()
 {
-set("short", "ÔÆÂ¥¹¬ÃÅ");
+set("short", "äº‘æ¥¼å®«é—¨");
 set("long", @LONG
     
-ÔÆÂ¥¹¬ÄËÊÇÍÐËþÀîÌìÍõµÄ×¡Õ¬£¬Î´½ü¹¬ÃÅÒÑ¾õ±øÆøÉ­É­¡£ÃÅÂ¥ÉÏ
-¸ßÐüÒ»ÁúÍÌÆá½ðØÒ£¬ÉÏÊé¡°ÍÐËþÌìÍõ¸®¡±Îå¸ö´ó×Ö¡£ÃÅÅÔ±ø½«¿ø
-Ã÷îøÁÁ£¬¾¯ÌèÓÐÉñµÄ»¤ÎÀ×Å¸®ÃÅ¡£
+äº‘æ¥¼å®«ä¹ƒæ˜¯æ‰˜å¡”æŽå¤©çŽ‹çš„ä½å®…ï¼Œæœªè¿‘å®«é—¨å·²è§‰å…µæ°”æ£®æ£®ã€‚é—¨æ¥¼ä¸Š
+é«˜æ‚¬ä¸€é¾™åžæ¼†é‡‘åŒ¾ï¼Œä¸Šä¹¦â€œæ‰˜å¡”å¤©çŽ‹åºœâ€äº”ä¸ªå¤§å­—ã€‚é—¨æ—å…µå°†ç›”
+æ˜Žé“ äº®ï¼Œè­¦æƒ•æœ‰ç¥žçš„æŠ¤å«ç€åºœé—¨ã€‚
 LONG );
 
 
@@ -26,7 +26,7 @@ set("objects", ([
     __DIR__"npc/yaocha" : 1,
 ]));
 
-  create_door("east", "ÔÆÂ¥¹¬ÃÅ", "west", DOOR_CLOSED);
+  create_door("east", "äº‘æ¥¼å®«é—¨", "west", DOOR_CLOSED);
 
 
 set("outdoors", 1);

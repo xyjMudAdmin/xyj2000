@@ -21,21 +21,21 @@ int complete_trade(object me, string what)
 	if( stringp(ob_file = query("vendor_goods/" + what)) ) {
 		ob = new(ob_file);
 		if(!ob->move(me)) return 0;
-		message_vision("$NÏò$nÂòÏÂÒ»" + 
-			ob->query("unit") + ob->query("name") + "¡£\n",
+		message_vision("$Nå‘$nä¹°ä¸‹ä¸€" + 
+			ob->query("unit") + ob->query("name") + "ã€‚\n",
 			me, this_object() );
 		return 1;
 	}
-	return notify_fail("Ã»ÓĞÕâÑù¶«Î÷Âô¡£\n");
+	return notify_fail("æ²¡æœ‰è¿™æ ·ä¸œè¥¿å–ã€‚\n");
 }
 
 string price_string(int v)
 {
 	if( v%10000 == 0 )
-		return (v/10000) + "Á½»Æ½ğ";
+		return (v/10000) + "ä¸¤é»„é‡‘";
 	if( v%100 == 0 )
-		return (v/100) + "Á½Òø×Ó";
-	return v + "ÎÄÇ®";
+		return (v/100) + "ä¸¤é“¶å­";
+	return v + "æ–‡é’±";
 }
 
 int do_vendor_list(string arg)
@@ -48,10 +48,10 @@ int do_vendor_list(string arg)
 	if( !mapp(goods = query("vendor_goods")) ) return 0;
 	if( arg && !this_object()->id(arg) ) return 0;
 	name = keys(goods);
-	list = "Äã¿ÉÒÔ¹ºÂòÏÂÁĞÕâĞ©¶«Î÷£º\n";
+	list = "ä½ å¯ä»¥è´­ä¹°ä¸‹åˆ—è¿™äº›ä¸œè¥¿ï¼š\n";
 	for(i=0; i<sizeof(name); i++)  {
 		tlist = sprintf("%s(%s)", goods[name[i]]->query("name"), name[i]);
-		list += sprintf("%-30s£º%s\n", tlist,
+		list += sprintf("%-30sï¼š%s\n", tlist,
 			price_string(goods[name[i]]->query("value")) );
         }
 	write(list);

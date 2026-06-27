@@ -3,9 +3,9 @@ inherit NPC;
 
 void create()
 {
-        set_name("Ð¡±ø", ({ "xiao bing", "bing" }));
+        set_name("å°å…µ", ({ "xiao bing", "bing" }));
         set("age", 18+random(10));
-        set("gender", "ÄÐÐÔ");
+        set("gender", "ç”·æ€§");
         set("attitude", "peaceful");
 	set("str", 20);
         set("combat_exp", 20000);
@@ -38,7 +38,7 @@ void init()
 
 int accept_fight(object me)
 {
-        message_vision("Ð¡±ø¶Ô$NºÈµÀ£º´óµ¨µóÃñ£¬»îµÃ²»ÄÍ·³ÁË£¿\n", me);
+        message_vision("å°å…µå¯¹$Nå–é“ï¼šå¤§èƒ†åˆæ°‘ï¼Œæ´»å¾—ä¸è€çƒ¦äº†ï¼Ÿ\n", me);
         me->apply_condition("killer", 100);
         kill_ob(me);
         return 1;

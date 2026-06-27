@@ -23,14 +23,14 @@ int set_exits(string s) {
 }
 void create()
 {
-     set_name("ÆæÃÅ",({"in qimen","qimen"}));     
-     set("short","ÆæÃÅ¶İ¼×Õó");
+     set_name("å¥‡é—¨",({"in qimen","qimen"}));     
+     set("short","å¥‡é—¨éç”²é˜µ");
      set("long", @LONG
 
-ÄãÍ»È»¾õµÃÌìĞıµØ×ª£¬ÈÕÔÂĞÇ³½È«²¿ÏûÊ§£¬ÔÙÒ²·Ö²»Çå¶«Î÷ÄÏ±±¡£
-ÑÛÇ°ºö¶øÆáºÚÒ»Æ¬£¬ºö¶øÁÁ¹âËÄÉä£¬ºö¶ø½ğĞÇÉÁË¸£¬¶ú±ßÒ»Ê±Íòô¥
-¾ã¼Å£¬Ò»Ê±Âà¹ÄĞúÌì£¬Ò»¹É¾åÒâÓÉÄàÍèÉıÆğ£¬Ö±³åÌìÁé£¬Éí²»ÓÉ¼º
-µØ»ëÉíÖ±´ò²ü¡£
+ä½ çªç„¶è§‰å¾—å¤©æ—‹åœ°è½¬ï¼Œæ—¥æœˆæ˜Ÿè¾°å…¨éƒ¨æ¶ˆå¤±ï¼Œå†ä¹Ÿåˆ†ä¸æ¸…ä¸œè¥¿å—åŒ—ã€‚
+çœ¼å‰å¿½è€Œæ¼†é»‘ä¸€ç‰‡ï¼Œå¿½è€Œäº®å…‰å››å°„ï¼Œå¿½è€Œé‡‘æ˜Ÿé—ªçƒï¼Œè€³è¾¹ä¸€æ—¶ä¸‡ç±
+ä¿±å¯‚ï¼Œä¸€æ—¶é”£é¼“å–§å¤©ï¼Œä¸€è‚¡æƒ§æ„ç”±æ³¥ä¸¸å‡èµ·ï¼Œç›´å†²å¤©çµï¼Œèº«ä¸ç”±å·±
+åœ°æµ‘èº«ç›´æ‰“é¢¤ã€‚
 
 LONG
      );
@@ -67,13 +67,13 @@ void init() {
 }
 
 int block() {
-   write("ÄãÉíÏİÆæÃÅ¶İ¼×Õó£¬ÔçÒÑ¼±µÃÊÖ×ãÎŞ´ë£¬ÄÄÓĞĞÄË¼¸ÉÕâ¸ö¡£\n");
+   write("ä½ èº«é™·å¥‡é—¨éç”²é˜µï¼Œæ—©å·²æ€¥å¾—æ‰‹è¶³æ— æªï¼Œå“ªæœ‰å¿ƒæ€å¹²è¿™ä¸ªã€‚\n");
    return 1;
 }
 
 int no_halt() {
    if (this_player()==query("host") && this_player()->is_fighting()) {
-      write("Í¶½µ£¿Ã»ÃÅ¶ù£¡ÄşËÀ²»Çü£¡\n");
+      write("æŠ•é™ï¼Ÿæ²¡é—¨å„¿ï¼å®æ­»ä¸å±ˆï¼\n");
       return 1;
    }
    return 0;
@@ -92,7 +92,7 @@ void self_destruct() {
   
   for (int i=0;i<sizeof(inv);i++) {
      if (userp(inv[i])) 
-        tell_object(inv[i],"ÄãÍ»È»¾õµÃÑÛÇ°½ğ¹âÒ»ÉÁ£¬¶úÅÔÒ»ÕóºäÃù£®£®£®\n");
+        tell_object(inv[i],"ä½ çªç„¶è§‰å¾—çœ¼å‰é‡‘å…‰ä¸€é—ªï¼Œè€³æ—ä¸€é˜µè½°é¸£ï¼ï¼ï¼\n");
      else inv[i]->set("chat_chance_combat", 
                inv[i]->query("chat_chance_combat_bk"));
      inv[i]->move(old_room);
@@ -102,7 +102,7 @@ void self_destruct() {
 }
 
 int do_quit() {      
-     write("ÄãĞÄ·³ÒâÂÒ£¬²»ÖªµÀÈçºÎ²ÅÄÜÍË³ö¡£\n");
+     write("ä½ å¿ƒçƒ¦æ„ä¹±ï¼Œä¸çŸ¥é“å¦‚ä½•æ‰èƒ½é€€å‡ºã€‚\n");
      return 1;
  }
 int do_finish() {
@@ -111,10 +111,10 @@ int do_finish() {
   if (host!=me) return 0;
  
   if (me->is_fighting()) {
-    write("ÄãÕıÃ¦×Å´ò¼Ü£¬Ã»ÓĞÏĞ¹¦·ò¡£\n");
+    write("ä½ æ­£å¿™ç€æ‰“æ¶ï¼Œæ²¡æœ‰é—²åŠŸå¤«ã€‚\n");
     return 1;
   }
-  message_vision(HIB"$NÊÖÒ»»Ó£¬ÊÕÆğÁËÆæÃÅ¶İ¼×Êõ¡£\n"NOR,me);
+  message_vision(HIB"$Næ‰‹ä¸€æŒ¥ï¼Œæ”¶èµ·äº†å¥‡é—¨éç”²æœ¯ã€‚\n"NOR,me);
   call_out("self_destruct",1);
   return 1;
 }
@@ -127,7 +127,7 @@ int valid_leave(object me,string dir) {
   if (!host) return 1;
   if (me==host) 
     if (me->is_fighting()) {
-       return notify_fail("ÁÙÕóÍÑÌÓ£¿²»ºÏÊÊ°É£¿\n");
+       return notify_fail("ä¸´é˜µè„±é€ƒï¼Ÿä¸åˆé€‚å§ï¼Ÿ\n");
     } else return 1;
 
   spells=host->query_skill("spells");
@@ -147,7 +147,7 @@ int valid_leave(object me,string dir) {
   spells=me->query_skill("spells");
   dp=me->query("daoxing")+spells*spells*spells/10;
   if (random(ap)<random(dp)) return 1;
-  message_vision(HIR"$NÏóÖ»Ã»Í·²ÔÓ¬°ã×²À´×²È¥£¬¿É¾ÍÊÇÕÒ²»×Å±±¡£\n"NOR,me);
+  message_vision(HIR"$Nè±¡åªæ²¡å¤´è‹è‡èˆ¬æ’æ¥æ’å»ï¼Œå¯å°±æ˜¯æ‰¾ä¸ç€åŒ—ã€‚\n"NOR,me);
   if (userp(me)) me->start_busy(3+random(5));
     else me->start_busy(2);
   return 0;

@@ -6,11 +6,11 @@ inherit NPC;
 
 void create()
 {
-  set_name("ÌìÅîÔªË§",({"tianpeng yuanshuai","yuanshuai","tianpeng"}));
-  set("gender", "ÄÐÐÔ");
-  set("title", "ÌìºÓ");
+  set_name("å¤©è“¬å…ƒå¸…",({"tianpeng yuanshuai","yuanshuai","tianpeng"}));
+  set("gender", "ç”·æ€§");
+  set("title", "å¤©æ²³");
   set("age", 35);
-  set("long", "    \nÒ»Î»Íþ·çÁÝÁÝµÄ´óË§£¬¸ºÔðÑ²²éÌìºÓ¡£\n");
+  set("long", "    \nä¸€ä½å¨é£Žå‡›å‡›çš„å¤§å¸…ï¼Œè´Ÿè´£å·¡æŸ¥å¤©æ²³ã€‚\n");
 
   set("attitude", "heroism");
   set("class", "xian");
@@ -50,8 +50,8 @@ map_skill("parry", "skyriver-rake");
 map_skill("dodge", "yanxing-steps");
 map_skill("unarmed", "wuxing-quan");
   set("inquiry", ([
-  "name"   : "ÌìÅîÔªË§",
-  "here"   : "ÌìºÓ",
+  "name"   : "å¤©è“¬å…ƒå¸…",
+  "here"   : "å¤©æ²³",
 ]));
 
 
@@ -64,7 +64,7 @@ carry_object("/d/obj/armor/tongjia")->wear();
 
 int accept_fight(object me)
 {
-  message_vision("ÌìÅîÔªË§¶Ô$N°ÑÑÛÒ»µÉ£¬ºÈµÀ£ºß¾£¬´óµ¨£¬»¹²»ÍËÏÂ£¡\n", me);
+  message_vision("å¤©è“¬å…ƒå¸…å¯¹$NæŠŠçœ¼ä¸€çžªï¼Œå–é“ï¼šå‘”ï¼Œå¤§èƒ†ï¼Œè¿˜ä¸é€€ä¸‹ï¼\n", me);
   return 0;
 }
 
@@ -92,8 +92,8 @@ void leave()
 
         this_object()->add("time", 1);
         if( (int)this_object()->query("time") >= 3 ) {
-        message("vision",name() + "ÍÂÁË¿ÚÍÙÄ­£¬ÂîµÀ£ºÏÂ´Î±ð½ÐÀÏ×ÓÅöµ½£¡
-ÌìÅîÔªË§×ßÁË³öÈ¥¡£\n", environment(),this_object() );
+        message("vision",name() + "åäº†å£å”¾æ²«ï¼Œéª‚é“ï¼šä¸‹æ¬¡åˆ«å«è€å­ç¢°åˆ°ï¼
+å¤©è“¬å…ƒå¸…èµ°äº†å‡ºåŽ»ã€‚\n", environment(),this_object() );
         destruct(this_object());
 
         }
@@ -111,7 +111,7 @@ void unconcious()
     temp_man = new ("/d/dntg/sky/npc/announcer");
     temp_man->announce_success (ob);
   }
-  message_vision ("\n$NÀäºßÒ»Éù»¯×÷Ò»¹É¿ñ·ç²»¼ûÁË¡£\n",me);
+  message_vision ("\n$Nå†·å“¼ä¸€å£°åŒ–ä½œä¸€è‚¡ç‹‚é£Žä¸è§äº†ã€‚\n",me);
   load_object("/obj/empty");
   me->move("/obj/empty");
   call_out ("destruct_me",3,me);

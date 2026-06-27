@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-set("short", "�ٵ�");
+set("short", "官道");
 set("long", @LONG
     
 
-����һ����᫵Ķ�����С·��ͨ�����С�
+　　一条崎岖的东西向小路，通入蜀中。
 
 LONG );
 

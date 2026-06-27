@@ -5,9 +5,9 @@ inherit HAMMER;
 
 void create()
 {
-  set_name("ÌúÇò", ({ "tie qiu", "qiu", "hammer" }) );
+  set_name("é“çƒ", ({ "tie qiu", "qiu", "hammer" }) );
   init_hammer(38);
-  set("unit", "±ú");
+  set("unit", "æŸ„");
   set_weight(1300);
   if( clonep() )
      set_default_object(__FILE__);
@@ -15,7 +15,7 @@ void create()
     set("value", 380);
     set("material", "iron");
   }
-  set("wield_msg","$NÄÃÆğ$nÎÕÔÚÊÖÀï¡£\n");
+  set("wield_msg","$Næ‹¿èµ·$næ¡åœ¨æ‰‹é‡Œã€‚\n");
   setup();
 }
 

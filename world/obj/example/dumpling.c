@@ -6,13 +6,13 @@ inherit F_FOOD;
 
 void create()
 {
-	set_name("°ü×Ó", ({ "dumpling" }) );
+	set_name("åŒ…å­", ({ "dumpling" }) );
 	set_weight(80);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»¸öÏãÅçÅç¡¢ÈÈÌÚÌÚµÄ´ó°ü×Ó¡£\n");
-		set("unit", "¸ö");
+		set("long", "ä¸€ä¸ªé¦™å–·å–·ã€çƒ­è…¾è…¾çš„å¤§åŒ…å­ã€‚\n");
+		set("unit", "ä¸ª");
 		set("value", 15);
 		set("food_remaining", 3);
 		set("food_supply", 60);

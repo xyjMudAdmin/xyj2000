@@ -4,14 +4,14 @@
 inherit NPC;
 void create()
 {
-        set_name("Ä§Àñº£", ({ "moli hai", "duowen tianwang", "hai", "tianwang" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("é­”ç¤¼æµ·", ({ "moli hai", "duowen tianwang", "hai", "tianwang" }) );
+        set("gender", "ç”·æ€§" );
 	set("long",
-		"Ä§¼ÒËÄ½«Ö®Ò»£¬Ê¹Ò»¸ùÅÌÁú¹÷£¬±³ÉÏÒ»ÃæÅıÅÃ£¬ÉÏÓĞËÄÌõÏÒ£»Ò²°´\n"
-                "µØ¡¢Ë®¡¢»ğ¡¢·ç£¬²¦¶¯ÏÒÉù£¬·ç»ğÆëÖÁ£¬ÈçÇàÔÆ½£Ò»°ã¡£\n"
+		"é­”å®¶å››å°†ä¹‹ä¸€ï¼Œä½¿ä¸€æ ¹ç›˜é¾™æ£ï¼ŒèƒŒä¸Šä¸€é¢çµç¶ï¼Œä¸Šæœ‰å››æ¡å¼¦ï¼›ä¹ŸæŒ‰\n"
+                "åœ°ã€æ°´ã€ç«ã€é£ï¼Œæ‹¨åŠ¨å¼¦å£°ï¼Œé£ç«é½è‡³ï¼Œå¦‚é’äº‘å‰‘ä¸€èˆ¬ã€‚\n"
 	);
 	set("age",50);
-	set("title", "¶àÎÅÌìÍõ");
+	set("title", "å¤šé—»å¤©ç‹");
 	set("attitude", "heroism");
 	set("str",40);
 	set("int",30);
@@ -45,8 +45,8 @@ void create()
 	map_skill("stick", "kusang-bang");
 	map_skill("unarmed", "yingzhaogong");
 	set("inquiry", ([
-		"name" : "ÔÚÏÂ¶àÎÅÌìÍõÄ§Àñº££¬·îÊ¥ÚÍ°ÑÊØ±±ÌìÃÅ¡£",
-		"here" : "ÕâÀï¾ÍÊÇ±±ÌìÃÅ, ÈëÄÚ¾ÍÊÇÌì½çÁË¡£",
+		"name" : "åœ¨ä¸‹å¤šé—»å¤©ç‹é­”ç¤¼æµ·ï¼Œå¥‰åœ£è°•æŠŠå®ˆåŒ—å¤©é—¨ã€‚",
+		"here" : "è¿™é‡Œå°±æ˜¯åŒ—å¤©é—¨, å…¥å†…å°±æ˜¯å¤©ç•Œäº†ã€‚",
 	]) );
 
 	setup();
@@ -69,7 +69,7 @@ int accept_fight(object me)
         ob->set("force",2500);
         ob->set("mana",2500);
 */
-        message_vision("$NËµµ½£ºÒ²ÒªÄãÖªµÀ±¾ÌìÍõµÄÀ÷º¦£¡\n", ob);
+        message_vision("$Nè¯´åˆ°ï¼šä¹Ÿè¦ä½ çŸ¥é“æœ¬å¤©ç‹çš„å‰å®³ï¼\n", ob);
       }
         return 1;
 }
@@ -88,7 +88,7 @@ void kill_ob (object me)
         ob->set("force",2500);
         ob->set("mana",2500);
 */
-        message_vision("$NËµµ½£ºËÍÄãÉÏÎ÷Ìì£¡\n", ob);
+        message_vision("$Nè¯´åˆ°ï¼šé€ä½ ä¸Šè¥¿å¤©ï¼\n", ob);
       }
 
         ::kill_ob(me);

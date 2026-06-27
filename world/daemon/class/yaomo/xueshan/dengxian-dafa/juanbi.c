@@ -1,5 +1,5 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-//Å¤×ªÇ¬À¤
+//æ‰­è½¬ä¹¾å¤
 
 #include <ansi.h>
 
@@ -19,25 +19,25 @@ int cast(object me, object target)
 	||   !target->is_character()
 	||   target->is_corpse()
 	||   target==me)
-		return notify_fail("ÄãÒª¶ÔË­ÓÃÅ¤×ªÇ¬À¤£¿\n");
+		return notify_fail("ä½ è¦å¯¹è°ç”¨æ‰­è½¬ä¹¾å¤ï¼Ÿ\n");
 
         if (!target->is_fighting(me))
-               return notify_fail("Ö»ÓĞÔÚÕ½¶·ÖĞ²ÅÄÜÊ¹ÓÃÅ¤×ªÇ¬À¤£¡\n");
+               return notify_fail("åªæœ‰åœ¨æˆ˜æ–—ä¸­æ‰èƒ½ä½¿ç”¨æ‰­è½¬ä¹¾å¤ï¼\n");
 
         if((int)me->query("kee") < 100 )
-                return notify_fail("ÄãÌåÁ¦²»×ã£¬ÓÃ²»ÁËÅ¤×ªÇ¬À¤£¡\n");
+                return notify_fail("ä½ ä½“åŠ›ä¸è¶³ï¼Œç”¨ä¸äº†æ‰­è½¬ä¹¾å¤ï¼\n");
 
         if((int)me->query("force") < 100 )
-                return notify_fail("ÄãĞëÔË×ãÄÚÁ¦²ÅÄÜÊ¹ÓÃÅ¤×ªÇ¬À¤£¡\n");
+                return notify_fail("ä½ é¡»è¿è¶³å†…åŠ›æ‰èƒ½ä½¿ç”¨æ‰­è½¬ä¹¾å¤ï¼\n");
 
 	if((int)me->query_skill("dengxian-dafa", 1) < 40 )
-		return notify_fail("ÄãµÄµÇÏÉ´ó·¨»¹²»¹»´¿Êì¡£\n");
+		return notify_fail("ä½ çš„ç™»ä»™å¤§æ³•è¿˜ä¸å¤Ÿçº¯ç†Ÿã€‚\n");
 
 	if((int)me->query("mana") < 300 )
-		return notify_fail("ÄãµÄ·¨Á¦²»×ãÒÔ±ä×÷ÉñÏóÉËµĞ£¡\n");
+		return notify_fail("ä½ çš„æ³•åŠ›ä¸è¶³ä»¥å˜ä½œç¥è±¡ä¼¤æ•Œï¼\n");
 
-        msg = HIW"\n$N³Ã$n²»±¸£¬Å­ºğÒ»Éù£¬×ªË²¼ä»¯×÷Ò»Ö»»ÆÑÀÀÏÏó£¬"
-                 +"Éì³öòÔÁú°ãµÄ±Ç×ÓÏò$n¾íÈ¥£¡\n" NOR;
+        msg = HIW"\n$Nè¶$nä¸å¤‡ï¼Œæ€’å¼ä¸€å£°ï¼Œè½¬ç¬é—´åŒ–ä½œä¸€åªé»„ç‰™è€è±¡ï¼Œ"
+                 +"ä¼¸å‡ºè›Ÿé¾™èˆ¬çš„é¼»å­å‘$nå·å»ï¼\n" NOR;
 
         ap=(int)me->query_skill("dengxian-dafa", 1)
               +(int)me->query_skill("spells", 1)/2;
@@ -58,29 +58,29 @@ int cast(object me, object target)
         damage=(me->query("mana_factor")+me->query("str")+random(damage))*2;
         if (dp<30)
           {           
-          msg += HIW "²»ÁÏ$nÔçÓĞ×¼±¸£¬Å¤×ªÉíĞÎÇáÊæÔ³±ÛÒ»°Ñ×¥×¡ÁË$NµÄ±Ç×Ó£¡\n"
-              +"$NÌÛµÃÒ»ÉùÃÆºß£¬Éí²»ÓÉ¼ºµÄ±»$nÍÏÁË¹ıÈ¥£¡\n"NOR;
+          msg += HIW "ä¸æ–™$næ—©æœ‰å‡†å¤‡ï¼Œæ‰­è½¬èº«å½¢è½»èˆ’çŒ¿è‡‚ä¸€æŠŠæŠ“ä½äº†$Nçš„é¼»å­ï¼\n"
+              +"$Nç–¼å¾—ä¸€å£°é—·å“¼ï¼Œèº«ä¸ç”±å·±çš„è¢«$næ‹–äº†è¿‡å»ï¼\n"NOR;
           message_vision(msg, me, target);
           me->add("kee", -(int)me->query("str")*2);
           me->start_busy(30-dp+random(10));
           }
         else if (dp<60 && dp>30)
           {           
-          msg += HIW "$nÁ¬Ã¦Å¤×ªÉíĞÎÔË×ªÉñ¹¦½«$NµÄ³¤±Çµ´¿ª¡£\n"NOR;
+          msg += HIW "$nè¿å¿™æ‰­è½¬èº«å½¢è¿è½¬ç¥åŠŸå°†$Nçš„é•¿é¼»è¡å¼€ã€‚\n"NOR;
           message_vision(msg, me, target);
           me->start_busy(1+random(2));
           }
         else if (dg<50)
           {           
-          msg += HIW "$n×İÉíÏòºóÒ»Ô¾£¬ÉÁ¹ıÁËÕâÒ»»÷¡£\n"NOR;
+          msg += HIW "$nçºµèº«å‘åä¸€è·ƒï¼Œé—ªè¿‡äº†è¿™ä¸€å‡»ã€‚\n"NOR;
           message_vision(msg, me, target);
           me->start_busy(1+random(2));
           target->start_busy(random(3));
           }
         else 
           {           
-          msg += HIW "$n´Ù²»»÷·À£¬±»$NµÄ³¤±Ç¸ß¸ß¾íÆğ£¬$NÓÃÁ¦Ò»Ë¦£¬"
-              +"$nÈç¶ÏÁËÏßµÄ·çóİ°ã·ÉÁË³öÈ¥£¡\n"NOR;
+          msg += HIW "$nä¿ƒä¸å‡»é˜²ï¼Œè¢«$Nçš„é•¿é¼»é«˜é«˜å·èµ·ï¼Œ$Nç”¨åŠ›ä¸€ç”©ï¼Œ"
+              +"$nå¦‚æ–­äº†çº¿çš„é£ç­èˆ¬é£äº†å‡ºå»ï¼\n"NOR;
           message_vision(msg, me, target);
           target->receive_damage("kee",damage,me);
           me->start_busy(random(2));

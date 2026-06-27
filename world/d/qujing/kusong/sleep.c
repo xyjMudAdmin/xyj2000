@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "����");
+  set ("short", "卧室");
   set ("long", @LONG
 
-������һ��ԲԲ��ʯ�ң�������һ��̿�𣬰����ں��ůů�ġ�
-���ܺ������˵�����ʮ������Ƥ��ʱ��ʱ��С������˯����
+这里是一间圆圆的石室，室中有一堆炭火，把屋内烘的暖暖的。
+四周横七竖八的铺着十来张兽皮，时不时有小妖跑来睡觉。
 LONG);
   set("exits", ([ /* sizeof() == 4 */
   "east" : __DIR__"zhongdong",

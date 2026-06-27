@@ -4,10 +4,10 @@ inherit NPC;
 void create()
 {
 
-  set_name("Ò¦¹«÷ë", ({ "yao gonglin", "yao", "taiwei" }) );
-  set("gender", "ÄÐÐÔ" );
-  set("long", "Ò¦¹«÷ëÊÇÃ·É½ÆßÐÖµÜÖÐµÄÀÏÁù¡£\n");
-  set("title", "Ã·É½Ì«Î¾");
+  set_name("å§šå…¬éºŸ", ({ "yao gonglin", "yao", "taiwei" }) );
+  set("gender", "ç”·æ€§" );
+  set("long", "å§šå…¬éºŸæ˜¯æ¢…å±±ä¸ƒå…„å¼Ÿä¸­çš„è€å…­ã€‚\n");
+  set("title", "æ¢…å±±å¤ªå°‰");
   set("age", 35);
   set("attitude", "peaceful");
   set("str", 25);
@@ -31,4 +31,4 @@ void create()
   carry_object("/d/obj/weapon/mace/copperjian")->wield();
 }
 
-ÿ
+

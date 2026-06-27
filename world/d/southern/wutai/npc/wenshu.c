@@ -7,21 +7,21 @@ inherit NPC;
 void create()
 {
 
-  set_name("ÎÄÊâÆÐÈø", ({ "wenshu pusa", "pusa", "pu sa", "wenshu" }) );
-  set("gender", "ÄÐÐÔ" );
+  set_name("æ–‡æ®Šè©è¨", ({ "wenshu pusa", "pusa", "pu sa", "wenshu" }) );
+  set("gender", "ç”·æ€§" );
   set("long", @LONG
     
-¡¡¡¡ÎÄÊâÆÐÈøÄË·ðÍÓ£¨±¾Ê¦ÊÍåÈÄ²Äá£©Ö®ÉÏÊ×ÆÐÈøµÜ×Ó¡£´«Ëµ
-ÎåÌ¨É½²¢·ÇÏÖÔÚÕâ°ãÄ£Ñù£¬Ò²²»½ÐÎåÌ¨É½£¬¶øÊÇ½ÐÎå·åÉ½£¬Æø
-ºòÒì³£¶ñÁÓ £¬¶¬ÌìµÎË®³É±ù£¬´ºÌì·ÉÉ°×ßÊ¯£¬ÏÄÌìÊîÈÈÄÑµ±£¬
-Å©ÃñÃÇÎÞ·¨ÖÖ×¯¼Ú¡£ÔÚ´Ë´«½ÌµÄÎÄÊâÆÐÈø£¬´Ó¶«º£ÁúÍõÄÇÀïµÃ
-µ½ÁËÒ»¿éÇåÁ¹Ê¯£¬·ÅÔÚÒ»ÌõÉ½¹Èºó£¬Îå·åÉ½Á¢¿Ì±äÖ¾Ò»¸öÇåÁ¹
-ÎÞ±ÈµÄµØ·½¡£´Ó´ËÎÄÊâÆÐÈøÒ²±ãÔÚ´ËÂä½Å¡£
+ã€€ã€€æ–‡æ®Šè©è¨ä¹ƒä½›é™€ï¼ˆæœ¬å¸ˆé‡Šè¿¦ç‰Ÿå°¼ï¼‰ä¹‹ä¸Šé¦–è©è¨å¼Ÿå­ã€‚ä¼ è¯´
+äº”å°å±±å¹¶éžçŽ°åœ¨è¿™èˆ¬æ¨¡æ ·ï¼Œä¹Ÿä¸å«äº”å°å±±ï¼Œè€Œæ˜¯å«äº”å³°å±±ï¼Œæ°”
+å€™å¼‚å¸¸æ¶åŠ£ ï¼Œå†¬å¤©æ»´æ°´æˆå†°ï¼Œæ˜¥å¤©é£žç ‚èµ°çŸ³ï¼Œå¤å¤©æš‘çƒ­éš¾å½“ï¼Œ
+å†œæ°‘ä»¬æ— æ³•ç§åº„ç¨¼ã€‚åœ¨æ­¤ä¼ æ•™çš„æ–‡æ®Šè©è¨ï¼Œä»Žä¸œæµ·é¾™çŽ‹é‚£é‡Œå¾—
+åˆ°äº†ä¸€å—æ¸…å‡‰çŸ³ï¼Œæ”¾åœ¨ä¸€æ¡å±±è°·åŽï¼Œäº”å³°å±±ç«‹åˆ»å˜å¿—ä¸€ä¸ªæ¸…å‡‰
+æ— æ¯”çš„åœ°æ–¹ã€‚ä»Žæ­¤æ–‡æ®Šè©è¨ä¹Ÿä¾¿åœ¨æ­¤è½è„šã€‚
 LONG );
   set("age",55);
-  set("title", "·ð½Ì´ó³ËÆÐÈø");
+  set("title", "ä½›æ•™å¤§ä¹˜è©è¨");
   set("attitude", "peaceful");
-  set("rank_info/self", "Æ¶É®");
+  set("rank_info/self", "è´«åƒ§");
   set("class", "bonze");
   set("max_kee", 5000);
   set("max_gin", 5000);

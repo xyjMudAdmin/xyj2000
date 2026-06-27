@@ -6,10 +6,10 @@ inherit F_VENDOR_SALE;
 void create()
 {
   reload("wuji_ye_dasao");
-  set_name("Ò¶´óÉ©", ({"ye dasao", "ye", "dasao", "fruit vendor"}));
+  set_name("å¶å¤§å«‚", ({"ye dasao", "ye", "dasao", "fruit vendor"}));
   set("shop_id", ({"dasao"}));
-  set("shop_title", "Ë®¹ûµê´óÉ©");
-  set("gender", "Å®ĞÔ");
+  set("shop_title", "æ°´æœåº—å¤§å«‚");
+  set("gender", "å¥³æ€§");
   set("combat_exp", 1000);
   set("age", 26);
   set("per", 20);
@@ -46,8 +46,8 @@ void greeting(object ob)
   if( !ob || !visible(ob) || environment(ob) != environment() ) return;
   switch( random(3) ) {  // 1/3 chance to greet.
     case 0:
-      say ("Ò¶´óÉ©Ğ¦ßäßäµØËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-           + "£¬»¶Ó­»İ¹ËËÄ¼¾¹Ï¹ûµê£¡\n");
+      say ("å¶å¤§å«‚ç¬‘å’ªå’ªåœ°è¯´é“ï¼šè¿™ä½" + RANK_D->query_respect(ob)
+           + "ï¼Œæ¬¢è¿æƒ é¡¾å››å­£ç“œæœåº—ï¼\n");
       break;
   }
 }

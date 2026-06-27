@@ -4,10 +4,10 @@ inherit NPC;
 
 void create()
 {
-  set_name("µÀÊ¿",({"dao shi","dao","shi"}));
-  set("gender", "ÄĞĞÔ");
+  set_name("é“å£«",({"dao shi","dao","shi"}));
+  set("gender", "ç”·æ€§");
   set("age", 55);
-  set("long", "    \n¶µÂÊ¹¬Àï¿´ÊØ°ËØÔÂ¯µÄµÀÊ¿¡£\n");
+  set("long", "    \nå…œç‡å®«é‡Œçœ‹å®ˆå…«å¦ç‚‰çš„é“å£«ã€‚\n");
 
   set("attitude", "peaceful");
   set("class", "taoist");
@@ -33,7 +33,7 @@ void create()
 
 
   set("inquiry", ([
-  "here"   : "ÕâÀï¾ÍÊÇ¶µÂÊ¹¬£¬ÄãÀ´ÕâÀï¸ÉÊ²Ã´£¿",
+  "here"   : "è¿™é‡Œå°±æ˜¯å…œç‡å®«ï¼Œä½ æ¥è¿™é‡Œå¹²ä»€ä¹ˆï¼Ÿ",
 ]));
 
 

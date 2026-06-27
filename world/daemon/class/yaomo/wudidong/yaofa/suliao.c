@@ -1,5 +1,5 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// Ñı·¨£­£­ËÙÁÆ
+// å¦–æ³•ï¼ï¼é€Ÿç–—
 
 #include <ansi.h>
 
@@ -9,13 +9,13 @@ int cast(object me, object target)
 	string msg;
 
 	if(me->is_busy())
-		return notify_fail("ÄãÕıÃ¦×ÅÄØ£¬¹ı»á¶ùÔÙÄîÖä°É£¡\n");
-	if(me->query("family/family_name") != "Ïİ¿ÕÉ½ÎŞµ×¶´"
+		return notify_fail("ä½ æ­£å¿™ç€å‘¢ï¼Œè¿‡ä¼šå„¿å†å¿µå’’å§ï¼\n");
+	if(me->query("family/family_name") != "é™·ç©ºå±±æ— åº•æ´"
 	|| me->query_skill("yaofa", 1) < 70)
-		return notify_fail("Äã·ÇÊóÀà£¬Ìå¸ñÎŞ·¨³ĞÊÜËÙÁÆ¡£\n");
+		return notify_fail("ä½ éé¼ ç±»ï¼Œä½“æ ¼æ— æ³•æ‰¿å—é€Ÿç–—ã€‚\n");
 
         if( mymana < cost*2 )
-                return notify_fail("ÄãµÄ·¨Á¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿã€‚\n");
 
 	if (cost<mymana/2) cost=mymana/2-1;
 
@@ -28,14 +28,14 @@ int cast(object me, object target)
 	if(!me->is_fighting())
 	{
 		cost=cost/2;
-		msg=HIY"$NË«ÊÖ¾ÙÔÚĞØÇ°£¬×ö¸ö»ğÑæ×´£¬ÄîÁË¼¸¾äÖä¡£\n"NOR,
-		msg+=HIY"Ëæ¼´£¬$N½«Ë«ÊÖÔÚÈ«ÉíÉÏÏÂ²ÁÁËÒ»±é£¬Ë«ÊÖµ½´¦£¬ÉË¿Ú¾ÓÈ»ºÃÁË´ó°ë£¡\n"NOR;
+		msg=HIY"$NåŒæ‰‹ä¸¾åœ¨èƒ¸å‰ï¼Œåšä¸ªç«ç„°çŠ¶ï¼Œå¿µäº†å‡ å¥å’’ã€‚\n"NOR,
+		msg+=HIY"éšå³ï¼Œ$Nå°†åŒæ‰‹åœ¨å…¨èº«ä¸Šä¸‹æ“¦äº†ä¸€éï¼ŒåŒæ‰‹åˆ°å¤„ï¼Œä¼¤å£å±…ç„¶å¥½äº†å¤§åŠï¼\n"NOR;
 		me->start_busy(random(8-me->query_kar()/5));
 	}
 	else
 	{
-		msg=HIY"°ÙÃ¦Ö®ÖĞ£¬$NÍ»È»Ô½³öÕ½È¦£¬ÆşÖ¸ÄîÁË¶ÎÖä¡£\n"NOR;
-		msg+=HIY"Ò»Ë²¼ä£¬$NÃæ²¿»ÆÆø´óÊ¢¡£´ı»ÆÆøÏÂÈ¥Ê±£¬$NÉíÉÏ´ó°ëÉË¿Ú¾ÓÈ»ÒÑ¾­ÊÕ¿ÚÁË£¡\n"NOR;
+		msg=HIY"ç™¾å¿™ä¹‹ä¸­ï¼Œ$Nçªç„¶è¶Šå‡ºæˆ˜åœˆï¼ŒææŒ‡å¿µäº†æ®µå’’ã€‚\n"NOR;
+		msg+=HIY"ä¸€ç¬é—´ï¼Œ$Né¢éƒ¨é»„æ°”å¤§ç››ã€‚å¾…é»„æ°”ä¸‹å»æ—¶ï¼Œ$Nèº«ä¸Šå¤§åŠä¼¤å£å±…ç„¶å·²ç»æ”¶å£äº†ï¼\n"NOR;
 		me->start_busy(1);
 	}
         me->receive_curing("kee", cure);

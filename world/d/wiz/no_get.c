@@ -9,17 +9,17 @@ int do_get(string arg) {
   string from;
   if (!arg) return 0;
  if( sscanf(arg, "%s from %s", arg, from)==2 ) {
-   write("不许在这里拿人东西！\n");
+   write("涓嶈鍦ㄨ繖閲屾嬁浜轰笢瑗匡紒\n");
   return 1;
   }
   if (!whom=present(arg,this_object())) return 0;
   if (userp(whom)  &&  (!living(whom)))  {
-    write(whom->name()+"对你而言太重了。\n");
+    write(whom->name()+"瀵逛綘鑰岃█澶噸浜嗐�俓n");
     return 1;
   }
   return 0;
 }
 int do_drop() {
-  write("爱护环境，人人有责，别乱扔垃圾。\n");
+  write("鐖辨姢鐜锛屼汉浜烘湁璐ｏ紝鍒贡鎵斿瀮鍦俱�俓n");
   return 1;
 }

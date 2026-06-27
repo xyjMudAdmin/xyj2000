@@ -6,8 +6,8 @@ inherit NPC;
 void create()
 {
 
-string* name=({"Ğ¡Ã¨×Ğ","Ğ¡¹·×Ğ","Ğ¡Ñı¹Ö","Ğ¡Áú","ÍÃ±¦±¦","Ğ¡°×Êó","Ğ¡ÅÖÖí","Ğ¡âµ","Ğ¡ÂìòÆ",
-               "Ğ¡ºüÀê",});
+string* name=({"å°çŒ«ä»”","å°ç‹—ä»”","å°å¦–æ€ª","å°é¾™","å…”å®å®","å°ç™½é¼ ","å°èƒ–çŒª","å°ç¾","å°èš‚èš±",
+               "å°ç‹ç‹¸",});
 int r=random(sizeof(name));
   set_name(name[r],({"little elf","goodkid","baobao"}));
   set("age", random(9)+10);
@@ -17,7 +17,7 @@ int r=random(sizeof(name));
   set("attitude", "friendly");
   set_weight(1000000000);
   set("per",30);
-  if (random(2)) set("gender","Å®ĞÔ");
+  if (random(2)) set("gender","å¥³æ€§");
   set("max_kee", 1000);
   set("kee",1000);
   set("sen",2000);
@@ -57,8 +57,8 @@ varargs int receive_wound(string type,int damage,object who) {
 int accept_object(object me, object ob)
 {
     string unit=ob->query("unit");
-    if (!unit) unit="¸ö";
-    message_vision("$N¸ø$nÒ»"+unit+ob->name()+"¡£\n",me,this_object());
+    if (!unit) unit="ä¸ª";
+    message_vision("$Nç»™$nä¸€"+unit+ob->name()+"ã€‚\n",me,this_object());
     if (ob->move(this_object()))
       call_out("post_accept",1,me,ob);
     return 2;
@@ -71,16 +71,16 @@ void post_accept(object me,object ob) {
   if (!ob) return;
   if (!me) return;
   if( !ob->query("food_remaining") ) {
-     message_vision("$NÓÃÃ«È×È×µÄ×¦×ÓÄÃÆğ$n¿´ÁË¿´£¬±Ç×Ó´ÕÉÏÈ¥ĞáÁËĞá¡£\n",who,ob);
-     message_vision("$NÀÁÑóÑóµØ´òÁË¸ö¹şÇ·£¬ËæÊÖ°Ñ$nÈÓÔÚÁËµØÉÏ¡£\n\n",who,ob);
+     message_vision("$Nç”¨æ¯›èŒ¸èŒ¸çš„çˆªå­æ‹¿èµ·$nçœ‹äº†çœ‹ï¼Œé¼»å­å‡‘ä¸Šå»å—…äº†å—…ã€‚\n",who,ob);
+     message_vision("$Næ‡’æ´‹æ´‹åœ°æ‰“äº†ä¸ªå“ˆæ¬ ï¼Œéšæ‰‹æŠŠ$næ‰”åœ¨äº†åœ°ä¸Šã€‚\n\n",who,ob);
      ob->move(environment(me));
   } else {
-     message_vision("$N¸ßĞËµØÌø½øÁË$nµÄ»³Àï£¬Éì³öÉàÍ·ÌòÁËÌò$nµÄÁ³¡£\n\n",who,me);
+     message_vision("$Né«˜å…´åœ°è·³è¿›äº†$nçš„æ€€é‡Œï¼Œä¼¸å‡ºèˆŒå¤´èˆ”äº†èˆ”$nçš„è„¸ã€‚\n\n",who,me);
      while (ob && ob->query("food_remaining") && command("eat "+ob->query("id")));
      if (250<=who->query("food")) {
-        message_vision("$NĞÄÂúÒâ×ãµØÅÄÁËÅÄ¶ÇÆ¤£¬×ê½ø²İ´ÔÀïË¯¾õÈ¥ÁË¡£\n\n",who);
+        message_vision("$Nå¿ƒæ»¡æ„è¶³åœ°æ‹äº†æ‹è‚šçš®ï¼Œé’»è¿›è‰ä¸›é‡Œç¡è§‰å»äº†ã€‚\n\n",who);
         destruct(who);
-     } else message_vision("$NÒâÓÌÎ´¾¡µØÅÄÁËÅÄ¶Ç×Ó£¬¿´×Å$n²öµÃÖ±Á÷¿ÚË®¡£\n\n",who,me);
+     } else message_vision("$Næ„çŠ¹æœªå°½åœ°æ‹äº†æ‹è‚šå­ï¼Œçœ‹ç€$né¦‹å¾—ç›´æµå£æ°´ã€‚\n\n",who,me);
    }
    return;
 }

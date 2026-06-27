@@ -5,9 +5,9 @@ inherit NPC;
 void create()
 {
  
-        set_name("Éñ±ø", ({ "shen bing", "bing"}) );
-        set("gender", "ÄĞĞÔ" );
-        set("long","ÍĞËşÀîÌìÍõÕÊÏÂÉñ±ø£¬°òÀ«ÑüÔ²£¬Á¦´óÎŞÇî¡£\n");
+        set_name("ç¥å…µ", ({ "shen bing", "bing"}) );
+        set("gender", "ç”·æ€§" );
+        set("long","æ‰˜å¡”æå¤©ç‹å¸ä¸‹ç¥å…µï¼Œè†€é˜”è…°åœ†ï¼ŒåŠ›å¤§æ— ç©·ã€‚\n");
         set("age",40);
         set("str", 30);
         set("int", 20);
@@ -47,4 +47,3 @@ void create()
 }
  
 
-ÿ

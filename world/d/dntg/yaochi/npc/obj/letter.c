@@ -5,10 +5,10 @@ inherit ITEM;
 
 void create() {
 
-  set_name(HIR"Çë¼í"NOR,({"invitation letter","xin","letter",}));
-  set("long","Ò»ÕÅ´óºìÇë¼í£¬ÊÇÍõÄ¸ÄïÄïÑûÇëÖÚÏÉ²Î¼Óó´ÌÒ´ó»áµÄĞÅº¯¡£"+
-       "Ì§Í·Ğ´×Å£º³à½Å´óÏÉÏÉ³¤¾û¼ø¡£\n");
-  set("unit","ÕÅ");
+  set_name(HIR"è¯·æŸ¬"NOR,({"invitation letter","xin","letter",}));
+  set("long","ä¸€å¼ å¤§çº¢è¯·æŸ¬ï¼Œæ˜¯ç‹æ¯å¨˜å¨˜é‚€è¯·ä¼—ä»™å‚åŠ èŸ æ¡ƒå¤§ä¼šçš„ä¿¡å‡½ã€‚"+
+       "æŠ¬å¤´å†™ç€ï¼šèµ¤è„šå¤§ä»™ä»™é•¿é’§é‰´ã€‚\n");
+  set("unit","å¼ ");
 
   set("weight",20);
   setup();

@@ -12,7 +12,7 @@ int main(object me, string str)
 
 	if (!str)
 		return where_all();
-        notify_fail("Ö¸Áî¸ñÊ½£ºwhere <ÈËÎï»òµµÃû>\n"); 
+        notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šwhere <äººç‰©æˆ–æ¡£å>\n"); 
 	ob = find_player(str);
 	if( !ob ) ob = find_living(str);
 
@@ -34,12 +34,12 @@ int main(object me, string str)
 		return 1;
 	}
 
-//	if (!ob) return notify_fail("ÏÖÔÚÃ»Õâ¸öÈË¡£\n");
+//	if (!ob) return notify_fail("ç°åœ¨æ²¡è¿™ä¸ªäººã€‚\n");
 
 	where = environment(ob);
-	if (!where) return notify_fail("Õâ¸öÈË("+file_name(ob)+
-	   ")²»ÖªµÀÔÚÄÇÀïÒ®¡£¡£¡£\n");
-	printf("%s(%s)ÏÖÔÚÔÚ%s(%s).\n",
+	if (!where) return notify_fail("è¿™ä¸ªäºº("+file_name(ob)+
+	   ")ä¸çŸ¥é“åœ¨é‚£é‡Œè€¶ã€‚ã€‚ã€‚\n");
+	printf("%s(%s)ç°åœ¨åœ¨%s(%s).\n",
 		(string)ob->name(),
 		(string)ob->query("id"),
 		undefinedp(where->query("short"))?
@@ -56,10 +56,10 @@ int where_all()
     int i, j, ppl_cnt;
     object me, where;
         me = this_player();
-        str = "¡ö " + MUD_NAME + "\n";
-        str += "¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª\n";
-        str += "Ê¹ÓÃ´úºÅ      ÖĞÎÄĞÕÃû          Ä¿Ç°Î»ÖÃ      \n";
-        str += "¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª\n";
+        str = "â–  " + MUD_NAME + "\n";
+        str += "â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”\n";
+        str += "ä½¿ç”¨ä»£å·      ä¸­æ–‡å§“å          ç›®å‰ä½ç½®      \n";
+        str += "â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”\n";
         list = users();
     j = sizeof(list);
     while( j-- ) {
@@ -74,7 +74,7 @@ int where_all()
             file_name(where)
                         );
                 }
-        str += "¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª\n";
+        str += "â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”\n";
     me->start_more(str);
     return 1;
 }
@@ -83,9 +83,9 @@ int where_all()
 int help(object me)
 {
 	write(@HELP
-Ö¸Áî¸ñÊ½: where <Íæ¼ÒµÄ ID>
+æŒ‡ä»¤æ ¼å¼: where <ç©å®¶çš„ ID>
 
-Õâ¸öÖ¸ÁîÊÇÓÃÀ´µÃÖªÍæ¼ÒÄ¿Ç°ËùÔÚµÄÎ»ÖÃ.
+è¿™ä¸ªæŒ‡ä»¤æ˜¯ç”¨æ¥å¾—çŸ¥ç©å®¶ç›®å‰æ‰€åœ¨çš„ä½ç½®.
 
 HELP
 	);

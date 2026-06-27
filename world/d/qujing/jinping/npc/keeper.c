@@ -3,10 +3,10 @@ inherit NPC;
 
 void create()
 {
-  set_name("Ãí×£", ({ "keeper" }) );
-  set("gender", "ÄĞĞÔ" );
+  set_name("åº™ç¥", ({ "keeper" }) );
+  set("gender", "ç”·æ€§" );
   set("age", 74);
-  set("long", "Õâ¸öÀÏÈË¿´ÆğÀ´ÆßÊ®¶àËêÁË£¬¾«ÉñÈ´ºÜºÃ¡£\n");
+  set("long", "è¿™ä¸ªè€äººçœ‹èµ·æ¥ä¸ƒåå¤šå²äº†ï¼Œç²¾ç¥å´å¾ˆå¥½ã€‚\n");
   set("combat_exp", 1);
   set("attitude", "friendly");
   setup();
@@ -25,7 +25,7 @@ void init()
 void greeting(object ob)
 {
   if( !ob || !present(ob, environment(this_object())) ) return;
-  say( "Ãí×£ËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob) + "£¬¾èµãÏã»ğÇ®°É¡£\n");
+  say( "åº™ç¥è¯´é“ï¼šè¿™ä½" + RANK_D->query_respect(ob) + "ï¼Œæç‚¹é¦™ç«é’±å§ã€‚\n");
 }
 
 int accept_object(object who, object ob)
@@ -34,7 +34,7 @@ int accept_object(object who, object ob)
 
   val = ob->value();
   if( !val )
-    return notify_fail("Ãí×£²»ÊÕÎïÆ·µÄ¾èÏ×¡£\n");
+    return notify_fail("åº™ç¥ä¸æ”¶ç‰©å“çš„æçŒ®ã€‚\n");
   else if( val > 100 ) {
     who->add("donation", val);
     if( (who->query("bellicosity") > 0)
@@ -43,8 +43,8 @@ int accept_object(object who, object ob)
        if(who->query("bellicosity")<0)
          who->set("bellicosity",0);
    }
-   say(name()+ "ËµµÀ£º¶àĞ»ÕâÎ»" + RANK_D->query_respect(who)
-     + "£¬ÉñÃ÷Ò»¶¨»á±£ÓÓÄãµÄ¡£\n");
+   say(name()+ "è¯´é“ï¼šå¤šè°¢è¿™ä½" + RANK_D->query_respect(who)
+     + "ï¼Œç¥æ˜ä¸€å®šä¼šä¿ä½‘ä½ çš„ã€‚\n");
   return 1;
 }
 

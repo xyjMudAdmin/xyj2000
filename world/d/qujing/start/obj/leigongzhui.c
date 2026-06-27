@@ -5,18 +5,18 @@ inherit STAFF;
 
 void create()
 {
-        set_name("À×¹«èÆ", ({"leigong chu", "chu"}));
+        set_name("é›·å…¬æµ", ({"leigong chu", "chu"}));
         set_weight(8000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
+                set("unit", "æŠŠ");
                 set("value", 10000);
 		set("no_sell", 1);
                 set("material", "wood");
-                set("long", "Ò»°Ñ¼âÍ·À×¹«èÆ¡£\n");
-                set("wield_msg", "$N³é³öÒ»°Ñ$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unequip_msg", "$N½«ÊÖÖĞµÄ$n²åÈëÑüºó¡£\n");
+                set("long", "ä¸€æŠŠå°–å¤´é›·å…¬æµã€‚\n");
+                set("wield_msg", "$NæŠ½å‡ºä¸€æŠŠ$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unequip_msg", "$Nå°†æ‰‹ä¸­çš„$næ’å…¥è…°åã€‚\n");
         }
         init_staff(60);
         setup();

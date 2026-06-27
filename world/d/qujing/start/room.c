@@ -5,12 +5,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ÖîÌìÊ¤¾³");
+  set ("short", "è¯¸å¤©èƒœå¢ƒ");
   set ("long", @LONG
 
-É½Èçµ­Ä«Æ®Ãì£¬Ë®ËÆÄıÖ¬ÎŞ²¨¡£ÁúÂí¼İÔ¯³µ³ËÀ´È¥£¬·ÉÌì°éÎè
-¹ÜÏÒ²»¾ø¡£Ç°ÓĞ¶şËÄ½ğ¹¬£¬·¢Ç§µÀÏ¼¹â£¬»·ÈÆÏéÔÆÍò¶ä£¬ÏÖÖî
-ÌìÊ¤¾³¡£
+å±±å¦‚æ·¡å¢¨é£˜æ¸ºï¼Œæ°´ä¼¼å‡è„‚æ— æ³¢ã€‚é¾™é©¬é©¾è¾•è½¦ä¹˜æ¥å»ï¼Œé£å¤©ä¼´èˆ
+ç®¡å¼¦ä¸ç»ã€‚å‰æœ‰äºŒå››é‡‘å®«ï¼Œå‘åƒé“éœå…‰ï¼Œç¯ç»•ç¥¥äº‘ä¸‡æœµï¼Œç°è¯¸
+å¤©èƒœå¢ƒã€‚
 
 LONG);
 
@@ -23,7 +23,7 @@ LONG);
 int alternative_die(object who)
 {
 
-	message_vision("$NËÀÁË£¬ÓÖ»îÁË¡£\n", who);
+	message_vision("$Næ­»äº†ï¼Œåˆæ´»äº†ã€‚\n", who);
 
 	who->remove_all_killer();
 	all_inventory(this_object())->remove_killer(who);
@@ -43,7 +43,7 @@ int alternative_die(object who)
 }
 void broadcast_room (object room, string str)
 {
-  string prefix = HIB"¡¾Ê¤¾³¡¿"NOR;
+  string prefix = HIB"ã€èƒœå¢ƒã€‘"NOR;
   string s1 = str, s2 = "", s3;
   int i;
 

@@ -4,7 +4,7 @@ inherit F_SAVE;
 
 void create()
 {
-        set_name("ÎÄµµ", ({ "doc" }));
+        set_name("æ–‡æ¡£", ({ "doc" }));
         if (clonep())
                 set_default_object(__FILE__);
         setup();

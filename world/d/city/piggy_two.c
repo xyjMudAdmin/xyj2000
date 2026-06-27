@@ -33,11 +33,11 @@ void finish_round()
 
     if (GAMEINFO["round"] == 13)
     {
-	TABLE["cond"] = "Ëã·Ö";
+	TABLE["cond"] = "ç®—åˆ†";
 	while(j--)
 	{
 	    if (CARDS[j+1]["status"] != "played")
-		tell_room(HERE,"º¯Êý´íÎó£ºfinish_round¡£"+CARDS[j+1]["name"]+"»¹Ã»´ò¹ý¡£\n");
+		tell_room(HERE,"å‡½æ•°é”™è¯¯ï¼šfinish_roundã€‚"+CARDS[j+1]["name"]+"è¿˜æ²¡æ‰“è¿‡ã€‚\n");
 	    continue;
 	}
 	

@@ -1,21 +1,21 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// beans.c ¶¹¶¹
+// beans.c è±†è±†
 
 inherit ITEM;
 inherit F_FOOD;
 
 void create()
 {
-  set_name("ÏÉ¹û", ({"xian guo", "guo", "fruit"}));
+  set_name("ä»™æœ", ({"xian guo", "guo", "fruit"}));
   set_weight(800);
   if (clonep())
     set_default_object(__FILE__);
   else {
-    set("long", "Ò»Ö»ºìµÃ·¢×ÏµÄÁéÉ½ÏÉ¹û¡£\n");
-    set("unit", "Ö»");
+    set("long", "ä¸€åªçº¢å¾—å‘ç´«çš„çµå±±ä»™æœã€‚\n");
+    set("unit", "åª");
     set("value", 2000);
     set("food_remaining", 20);
     set("food_supply", 40);
   }
-  set("no_get", "ÏÉ¹ûÄËÁéÉ½Ö®·ğÎï£¬²»ÄÜÄÃ×ß£¡\n");
+  set("no_get", "ä»™æœä¹ƒçµå±±ä¹‹ä½›ç‰©ï¼Œä¸èƒ½æ‹¿èµ°ï¼\n");
 }

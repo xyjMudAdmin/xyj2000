@@ -1,18 +1,18 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// xkg.c Ğ¡¿à¹Ï
+// xkg.c å°è‹¦ç“œ
 
 inherit ITEM;
 inherit F_FOOD;
 
 void create()
 {
-        set_name("Ğ¡¿à¹Ï", ({"xkg", "xiaokugua"}));
+        set_name("å°è‹¦ç“œ", ({"xkg", "xiaokugua"}));
 	set_weight(40);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-                set("long", "Ò»¿ÅĞÂÏÊÄÛÂÌµÄĞ¡¿à¹Ï¡£\n");
-                set("unit", "¿Å");
+                set("long", "ä¸€é¢—æ–°é²œå«©ç»¿çš„å°è‹¦ç“œã€‚\n");
+                set("unit", "é¢—");
 		set("value", 80);
 		set("food_remaining", 4);
 		set("food_supply", 30);

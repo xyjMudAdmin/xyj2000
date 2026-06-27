@@ -15,17 +15,17 @@ int do_eat(string arg)
 		return 1;
 	if( !this_object()->id(arg) ) return 0;
 	if( this_player()->is_busy() )
-		return notify_fail("����һ��������û����ɡ�\n");
+		return notify_fail("你上一个动作还没有完成。\n");
 	if( !query("food_remaining") )
-		return notify_fail( name() + "�Ѿ�ûʲô�óԵ��ˡ�\n");
+		return notify_fail( name() + "已经没什么好吃的了。\n");
 
 	if( (int)this_player()->query("food") >= 
 		(int)this_player()->max_food_capacity() ) {
-		write("���Ѿ���̫���ˣ���Ҳ�������κζ����ˡ�\n");
+		write("你已经吃太饱了，再也塞不下任何东西了。\n");
 		return 1;
 	}
 	// mon 6/12/98
-        //	return notify_fail("���Ѿ���̫���ˣ���Ҳ�������κζ����ˡ�\n");
+        //	return notify_fail("你已经吃太饱了，再也塞不下任何东西了。\n");
 
 	this_player()->add("food", query("food_supply"));
 	if( this_player()->is_fighting() ) this_player()->start_busy(2);
@@ -39,9 +39,9 @@ int do_eat(string arg)
 		string msg = query("eat_msg");
 		if (msg) {
 		  	message_vision(msg, this_player(), this_object());
-			message_vision(name() + "�����ˡ�\n", this_player());
+			message_vision(name() + "吃完了。\n", this_player());
 		} else
-			message_vision("$N��ʣ�µ�" + name() + "�Եøɸɾ�����\n", this_player());
+			message_vision("$N将剩下的" + name() + "吃得干干净净。\n", this_player());
 		if( !this_object()->finish_eat() )
 			destruct(this_object());
 	} else 
@@ -50,7 +50,7 @@ int do_eat(string arg)
 		if (msg)
 		  	message_vision(msg, this_player(), this_object());
 		else
-		  	message_vision("$N����" + name() + "���˼��ڡ�\n", this_player());
+		  	message_vision("$N拿起" + name() + "吃了几口。\n", this_player());
 	}
 	return 1;
 }

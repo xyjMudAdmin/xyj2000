@@ -3,11 +3,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÉÂ±±´óºº", ({"dahan"}));
+        set_name("é™•åŒ—å¤§æ±‰", ({"dahan"}));
         set("age", 25);
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("long",
-"Ò»¸öÌåĞÍ¿ıÎòµÄ´óºº£¬ÕıÔÚ³Ô°ü×Ó¡£\n");
+"ä¸€ä¸ªä½“å‹é­æ‚Ÿçš„å¤§æ±‰ï¼Œæ­£åœ¨åƒåŒ…å­ã€‚\n");
         set("attitude", "peaceful");
 	set("str", 30);
         set("combat_exp", 12000+random(3000));
@@ -22,7 +22,7 @@ void create()
 }
 int accept_fight(object me)
 {
-        command("say ´ò¼Ü£¿ÄÇÄúĞ¡ĞÄµã£¬Äª°ÑÀÏ°åµÄ×ÀÒÎÔÒÁË£¡");
+        command("say æ‰“æ¶ï¼Ÿé‚£æ‚¨å°å¿ƒç‚¹ï¼Œè«æŠŠè€æ¿çš„æ¡Œæ¤…ç ¸äº†ï¼");
         return 1;
 }
 

@@ -12,7 +12,7 @@ int main(object me, string arg)
 {
 	if( !arg ) {
 		if( (int)me->query("sen") < 50 )
-			return notify_fail("ÄãµÄ¾«ÉñÎŞ·¨¼¯ÖĞ¡£\n");
+			return notify_fail("ä½ çš„ç²¾ç¥æ— æ³•é›†ä¸­ã€‚\n");
 		if( !wizardp(me) )
 			me->receive_damage("sen", 50);
 		me->start_more( FINGER_D->finger_all() );
@@ -28,7 +28,7 @@ int main(object me, string arg)
 		arg=replace_string(arg,"_"," ");
 
 		if( (int)me->query("sen") < 15 )
-			return notify_fail("ÄãµÄ¾«ÉñÎŞ·¨¼¯ÖĞ¡£\n");
+			return notify_fail("ä½ çš„ç²¾ç¥æ— æ³•é›†ä¸­ã€‚\n");
 		if( !wizardp(me) )
 			me->receive_damage("sen", 15);
 		write( FINGER_D->finger_user(arg) );
@@ -39,12 +39,12 @@ int main(object me, string arg)
 int help(object me)
 {
   write(@HELP
-Ö¸Áî¸ñÊ½£º finger
-           finger [Ê¹ÓÃÕßÓ¢ÎÄ´úºÅ]
-           finger [Ê¹ÓÃÕßÓ¢ÎÄ´úºÅ]@Mudname
+æŒ‡ä»¤æ ¼å¼ï¼š finger
+           finger [ä½¿ç”¨è€…è‹±æ–‡ä»£å·]
+           finger [ä½¿ç”¨è€…è‹±æ–‡ä»£å·]@Mudname
  
-Õâ¸öÖ¸Áî£¬Èç¹ûÃ»ÓĞÖ¸¶¨Ê¹ÓÃÕßĞÕÃû£¬»áÏÔÊ¾³öËùÓĞÕıÔÚÏßÉÏÍæ¼Ò
-µÄÁ¬Ïß×ÊÁÏ¡£·´Ö®£¬Ôò¿ÉÏÔÊ¾ÓĞ¹ØÄ³¸öÍæ¼ÒµÄÁ¬Ïß£¬È¨ÏŞµÈ×ÊÁÏ¡£
+è¿™ä¸ªæŒ‡ä»¤ï¼Œå¦‚æœæ²¡æœ‰æŒ‡å®šä½¿ç”¨è€…å§“åï¼Œä¼šæ˜¾ç¤ºå‡ºæ‰€æœ‰æ­£åœ¨çº¿ä¸Šç©å®¶
+çš„è¿çº¿èµ„æ–™ã€‚åä¹‹ï¼Œåˆ™å¯æ˜¾ç¤ºæœ‰å…³æŸä¸ªç©å®¶çš„è¿çº¿ï¼Œæƒé™ç­‰èµ„æ–™ã€‚
  
 see also : who, mudlist
 HELP

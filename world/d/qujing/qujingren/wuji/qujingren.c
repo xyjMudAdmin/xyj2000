@@ -1,5 +1,5 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// È¡¾­ÈË-ÎÚ¼¦Ä£¿é
+// å–ç»äºº-ä¹Œé¸¡æ¨¡å—
 
 #include "/d/qujing/qujingren/qujingren.c"
 
@@ -75,9 +75,9 @@ int wakeup1 (object me,object where)
   while( environment(me)->is_character() )
 	me->move(environment(environment(me)));
   me->set_temp("block_msg/all", 0);
-  message_vision ("$N´ó½ÐÒ»Éù£¬ÐÑÁË¹ýÀ´¡£Á¬Ã¦½Ð£ºÍ½µÜ£¡Í½µÜ£¡\n",me);
+  message_vision ("$Nå¤§å«ä¸€å£°ï¼Œé†’äº†è¿‡æ¥ã€‚è¿žå¿™å«ï¼šå¾’å¼Ÿï¼å¾’å¼Ÿï¼\n",me);
   set("inquiry/meng" , (: to_meng :) );
-  set("inquiry/ÃÎ",  (: to_meng :) );
+  set("inquiry/æ¢¦",  (: to_meng :) );
   set_temp("have_dream",1)		;
   return 1; 
 }
@@ -87,11 +87,11 @@ int to_meng()
   object me=this_object();
   object where=environment(me);
 
-  message_vision("È¡¾­ÈËËµµÀ:¡°ÎÒÃÎ¼ûÎÚ¼¦¹úÍõÒªÎÒ¾ÈËû£¬»¹ÁôÏÂ¸ö"
- 		+"½ðÏá°×Óñ¹çÎªÖ¤¡±¡£\n",me);
-  if (where->query("short")!="Î÷Ïá·¿") return 1;
+  message_vision("å–ç»äººè¯´é“:â€œæˆ‘æ¢¦è§ä¹Œé¸¡å›½çŽ‹è¦æˆ‘æ•‘ä»–ï¼Œè¿˜ç•™ä¸‹ä¸ª"
+ 		+"é‡‘åŽ¢ç™½çŽ‰åœ­ä¸ºè¯â€ã€‚\n",me);
+  if (where->query("short")!="è¥¿åŽ¢æˆ¿") return 1;
 
-  set("inquiry/½ðÏá°×Óñ¹ç", "ÒÑ¾­ÁôÏÂÁË£¬ËÄ´¦ÕÒÕÒ°É" );
+  set("inquiry/é‡‘åŽ¢ç™½çŽ‰åœ­", "å·²ç»ç•™ä¸‹äº†ï¼Œå››å¤„æ‰¾æ‰¾å§" );
   where->set("leave_gui",1);
   return 1;
   }
@@ -102,7 +102,7 @@ int accept_object1(object who,object ob)
 
   if (who->query("obstacle/qujing")!="ren")return 0;
   if (ob->query("id")!="yu gui")return 0;
-  message_vision("$NµãÁËµãÍ·ËµµÀ£ºÄãÈ¥°ÑÌ«×ÓÒý¹ýÀ´°É¡£\n",me);
+  message_vision("$Nç‚¹äº†ç‚¹å¤´è¯´é“ï¼šä½ åŽ»æŠŠå¤ªå­å¼•è¿‡æ¥å§ã€‚\n",me);
   who->set_temp("obstacle/have_gui",1);
   return 1;
   }
@@ -120,9 +120,9 @@ void greeting(object ob)
      ob=taizi->query_leader();
      ob->delete_temp("have_gui");
      command_function("give yu gui to tai zi"); 
-     command_function("whisper zi Èç´Ë,Õâ°ã..");
-     message_vision("$NËµµÀ:¡°ÎÒ²»ÐÅ,ÇÒ´ýÎÒ»Ø¹¬ÎÊÎÒÄïÇ×È¥¡£¡±\n",taizi);
-     message_vision("Ëµ°ÕËìÍù¶«ÀëÈ¥\n",ob);
+     command_function("whisper zi å¦‚æ­¤,è¿™èˆ¬..");
+     message_vision("$Nè¯´é“:â€œæˆ‘ä¸ä¿¡,ä¸”å¾…æˆ‘å›žå®«é—®æˆ‘å¨˜äº²åŽ»ã€‚â€\n",taizi);
+     message_vision("è¯´ç½¢é‚å¾€ä¸œç¦»åŽ»\n",ob);
      room = load_object("/d/qujing/wuji2/zym");
      taizi->set_leader(0);
      taizi->move(room);

@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create ()
 {
-	set ("short", "Ñ©½×");
+	set ("short", "é›ªé˜¶");
 	set ("long", @LONG
 
-ÉÏÉ½µÄÂ·µ½ÕâÀï¶ÏÁË£¬Ç°ÃæÊÇÒ»×ùÊ¯±Ú(shi bi)£¬Ê¯±Ú²¢²»Éõ¸ß£¬
-¿´À´Ìø(jump)ÉÏÈ¥²¢²»À§ÄÑ¡£
+ä¸Šå±±çš„è·¯åˆ°è¿™é‡Œæ–­äº†ï¼Œå‰é¢æ˜¯ä¸€åº§çŸ³å£(shi bi)ï¼ŒçŸ³å£å¹¶ä¸ç”šé«˜ï¼Œ
+çœ‹æ¥è·³(jump)ä¸Šå»å¹¶ä¸å›°éš¾ã€‚
 LONG);
 
 
@@ -39,19 +39,19 @@ int do_jump(string arg)
         me=this_player();
 
         if ( !arg || ((arg != "shi bi") ))
-                return notify_fail("ÄãÒªÍùÄÄÌø£¿\n");
+                return notify_fail("ä½ è¦å¾€å“ªè·³ï¼Ÿ\n");
         else if(me->query("kee")<50)   
           {
            me->unconcious();
-           message_vision("$N½ÅÏÂÒ»»®£¬Éí²»ÓÉ×ÔÖ÷µÄÏòááË¤È¥¡£\n",me);
+           message_vision("$Nè„šä¸‹ä¸€åˆ’ï¼Œèº«ä¸ç”±è‡ªä¸»çš„å‘å¾Œæ‘”å»ã€‚\n",me);
           }
 	else
           {
            me->add("kee",-50); 
-           message_vision("$N×İÉíÒ»Ô¾£¬ÇáÇÉµÄÌøÉÏÊ¯±Ú¡£\n",me);
+           message_vision("$Nçºµèº«ä¸€è·ƒï¼Œè½»å·§çš„è·³ä¸ŠçŸ³å£ã€‚\n",me);
            me->move("/d/xueshan/wuchang-s");
-       //    tell_room( environment(me),"Ö»¼û$N·ÉÉíÔ¾ÁËÉÏÀ´¡£\n",me);
-           tell_room(environment(me),"Ö»¼û"+me->name()+"·ÉÉíÔ¾ÁËÉÏÀ´¡£\n", me);
+       //    tell_room( environment(me),"åªè§$Né£èº«è·ƒäº†ä¸Šæ¥ã€‚\n",me);
+           tell_room(environment(me),"åªè§"+me->name()+"é£èº«è·ƒäº†ä¸Šæ¥ã€‚\n", me);
            return 1;
            }
         return 1;

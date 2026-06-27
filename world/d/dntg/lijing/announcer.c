@@ -5,7 +5,7 @@ inherit NPC;
 
 void create() {
 
-  set_name("Ì«°×½ðÐÇ",({"taibai jinxing"}));
+  set_name("å¤ªç™½é‡‘æ˜Ÿ",({"taibai jinxing"}));
   setup();
 }
 
@@ -16,12 +16,12 @@ void announce(object winner,object env) {
 void announce1(object winner,object env) {
 
   if (winner->query("dntg/lijing")!="done") {
-    command("chat ·îÓñµÛÊ¥Ö¼£¬"+winner->query("name")+RANK_D->query_respect(winner)+
-                  "Îä¹¦¸ÇÊÀ£¬·¨Êõ³¬Èº£¬¼Ó·âÎªÆëÌì´óÊ¥£¡");
-//    command("rumor ³ÇÏÂÖ®ÃË£¬É¥È¨Èè¹ú£¬²Ò²Ò²Ò¡£¡£¡£")
+    command("chat å¥‰çŽ‰å¸åœ£æ—¨ï¼Œ"+winner->query("name")+RANK_D->query_respect(winner)+
+                  "æ­¦åŠŸç›–ä¸–ï¼Œæ³•æœ¯è¶…ç¾¤ï¼ŒåŠ å°ä¸ºé½å¤©å¤§åœ£ï¼");
+//    command("rumor åŸŽä¸‹ä¹‹ç›Ÿï¼Œä¸§æƒè¾±å›½ï¼Œæƒ¨æƒ¨æƒ¨ã€‚ã€‚ã€‚")
     winner->add("cor",2);
-    tell_object(winner,HIC"ÄãµÃµ½ÁËÁ½µãµ¨Ê¶£¡\n"NOR);
-    winner->set_temp("apply/title",({HIR"ÆëÌì´óÊ¥"NOR}));
+    tell_object(winner,HIC"ä½ å¾—åˆ°äº†ä¸¤ç‚¹èƒ†è¯†ï¼\n"NOR);
+    winner->set_temp("apply/title",({HIR"é½å¤©å¤§åœ£"NOR}));
    winner->set("dntg/lijing","done");
   env->set("host",winner);
   }

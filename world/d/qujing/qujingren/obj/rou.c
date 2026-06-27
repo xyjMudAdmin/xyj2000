@@ -1,5 +1,5 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// rou.c 	»°æ≠»À»‚
+// rou.c 	ÂèñÁªè‰∫∫ËÇâ
 
 #include <ansi.h>
 
@@ -11,22 +11,22 @@ void init();
 void init()
 {
   if (!wizardp(this_player())) {
-    set("no_sell","∑≤»Àƒƒ¿Ô÷™µ¿"+this_object()->query("name")+"µƒº€÷µ£øªπ «◊‘º∫¡Ù◊≈∞…°£\n");
+    set("no_sell","Âá°‰∫∫Âì™ÈáåÁü•ÈÅì"+this_object()->query("name")+"ÁöÑ‰ª∑ÂÄºÔºüËøòÊòØËá™Â∑±ÁïôÁùÄÂêß„ÄÇ\n");
   }                                    
   add_action("do_eat", "eat");
 }
 
 void create()
 {
-  set_name(YEL "»°æ≠»À»‚" NOR, ({"qujingren rou","renrou","rou"}));
+  set_name(YEL "ÂèñÁªè‰∫∫ËÇâ" NOR, ({"qujingren rou","renrou","rou"}));
   set_weight(50);
   if (clonep())
     set_default_object(__FILE__);
   else {
-    set("unit", "øÈ");
-    set("long", "ÃÏœ¬µƒ÷¡±¶,≥‘¡Àø…“‘≥§…˙≤ª¿œ,ªπø…“‘‘ˆº”∑® ı°£\n");
+    set("unit", "Âùó");
+    set("long", "Â§©‰∏ãÁöÑËá≥ÂÆù,ÂêÉ‰∫ÜÂèØ‰ª•ÈïøÁîü‰∏çËÄÅ,ËøòÂèØ‰ª•Â¢ûÂä†Ê≥ïÊúØ„ÄÇ\n");
     set("value", 5000);
-    set("drug_type", "≤π∆∑");
+    set("drug_type", "Ë°•ÂìÅ");
   }
 
   set("is_monitored",1);  
@@ -38,7 +38,7 @@ int do_eat(string arg)
   object who = this_player();
   
   if (!id(arg))
-    return notify_fail("ƒ„“™≥‘ ≤√¥£ø\n");
+    return notify_fail("‰Ω†Ë¶ÅÂêÉ‰ªÄ‰πàÔºü\n");
   
 //  me->set("food", (int)me->max_food_capacity());
   who->delete("no_qujing");

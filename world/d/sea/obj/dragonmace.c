@@ -5,17 +5,17 @@ inherit MACE;
 
 void create()
 {
-  set_name("ÎÚÁúïµ", ({"dragon mace", "mace", "ironmace"}));
+  set_name("ä¹Œé¾™é”", ({"dragon mace", "mace", "ironmace"}));
   set_weight(8000);
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("unit", "¸ù");
+    set("unit", "æ ¹");
     set("value", 5000);
     set("material", "iron");
-    set("long", "Ò»±úºÚÉ«ÁúÍÌ»¤ÊÖïµ¡£\n");
-    set("wield_msg", "$N²ÙÆğÒ»¸ù$n£¬°ÚÁË¸ö¼ÜÊ½¡£\n");
-    set("unwield_msg", "$N½«$n±ğ»ØÑü¼ä¡£\n");
+    set("long", "ä¸€æŸ„é»‘è‰²é¾™åæŠ¤æ‰‹é”ã€‚\n");
+    set("wield_msg", "$Næ“èµ·ä¸€æ ¹$nï¼Œæ‘†äº†ä¸ªæ¶å¼ã€‚\n");
+    set("unwield_msg", "$Nå°†$nåˆ«å›è…°é—´ã€‚\n");
   }
   init_mace(50);
   setup();

@@ -8,18 +8,18 @@ inherit SPEAR;
 
 void create()
 {
-        set_name(HIR "»ğ¼âÇ¹" NOR, ({ "huojianqiang", "spear" })
+        set_name(HIR "ç«å°–æª" NOR, ({ "huojianqiang", "spear" })
 );
         set_weight(10000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸Ë");
-                set("long", "Ò»¸Ë" HIR "»ğ¼âÇ¹" NOR "£¬ÄËÊÇÄÄß¸ÈıÌ«×Ó³ÆÊÖ±øÆ÷¡£\n");
+                set("unit", "æ†");
+                set("long", "ä¸€æ†" HIR "ç«å°–æª" NOR "ï¼Œä¹ƒæ˜¯å“ªå’ä¸‰å¤ªå­ç§°æ‰‹å…µå™¨ã€‚\n");
                 set("value", 10000);
                 set("material", "blacksteel");
-                set("wield_msg","$N½«»ğ¼âÇ¹ÌáÔÚÊÖÖĞ£¬ÖÜÎ§µÄÈË¶Ù¾õÒ»¹ÉÈÈÀËÆËÃæ¶øÀ´¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$nÏµµ½±³ºó£¬ËÄÖÜÒ²ÇåÁ¹ÁËĞí¶à¡£\n");
+                set("wield_msg","$Nå°†ç«å°–æªæåœ¨æ‰‹ä¸­ï¼Œå‘¨å›´çš„äººé¡¿è§‰ä¸€è‚¡çƒ­æµªæ‰‘é¢è€Œæ¥ã€‚\n");
+                set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$nç³»åˆ°èƒŒåï¼Œå››å‘¨ä¹Ÿæ¸…å‡‰äº†è®¸å¤šã€‚\n");
 		set("weapon_prop/courage", 4);
         }
         init_spear(50);

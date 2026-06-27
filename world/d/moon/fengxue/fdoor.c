@@ -5,17 +5,17 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "·ãÑ©¹¬´óÃÅ");
+  set ("short", "æž«é›ªå®«å¤§é—¨");
   set ("long", @LONG
 
-£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª
-   ·ã£¬ÊÇºìµÄ£¬
-                        Ìì£¬ÊÇÀ¶µÄ£¬
-                                          µØ£¬ÊÇ»ÆµÄ£¬
-             ÄÇ½à°×ÎÞè¦µÄÑ©£¬ÔÚ´°Íâ·ÉÎè¡­¡­
-£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª
+ï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Š
+   æž«ï¼Œæ˜¯çº¢çš„ï¼Œ
+                        å¤©ï¼Œæ˜¯è“çš„ï¼Œ
+                                          åœ°ï¼Œæ˜¯é»„çš„ï¼Œ
+             é‚£æ´ç™½æ— ç‘•çš„é›ªï¼Œåœ¨çª—å¤–é£žèˆžâ€¦â€¦
+ï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Š
 
-	·ãÑ©ÌìµØ»á¸æÊ¾(gaoshi)
+	æž«é›ªå¤©åœ°ä¼šå‘Šç¤º(gaoshi)
 
 LONG);
 
@@ -24,9 +24,9 @@ LONG);
   "enter" : __DIR__"living",
 ]));
   set("item_desc", ([ /* sizeof() == 1 */
-  "gaoshi" : "¡¶·ãÑ©ÌìµØ¡·£º
+  "gaoshi" : "ã€Šæž«é›ªå¤©åœ°ã€‹ï¼š
     http://www.ams.queensu.ca/lyh/fxtd/
-£ªÍ¶¸åÐëÖª£ª£º
+ï¼ŠæŠ•ç¨¿é¡»çŸ¥ï¼Šï¼š
     http://www.qucis.queensu.ca/home/guo/fxtd/submissions.html
 ",
 ]));

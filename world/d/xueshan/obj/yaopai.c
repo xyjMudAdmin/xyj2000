@@ -5,9 +5,9 @@ inherit ITEM;
 
 void create() 
   {
-   set_name("ÑüÅÆ",({"yao pai","pai"}));
+   set_name("è…°ç‰Œ",({"yao pai","pai"}));
    set_weight(10);
-   set("unit","¿é");
+   set("unit","å—");
    setup();
   }
 

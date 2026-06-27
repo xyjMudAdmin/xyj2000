@@ -5,13 +5,13 @@ inherit HEAD;
 
 void create()
 {
-  set_name("Ó²Ä¾¿ø", ({ "ying mukui", "mukui", "kui" }) );
+  set_name("ç¡¬æœ¨ç›”", ({ "ying mukui", "mukui", "kui" }) );
   set_weight(500);
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("unit", "¶¥");
-    set("long","Ò»¶¥½áÊµµÄÓ²Ä¾¿ø£¬ÉÏÃæ»æ×ÅÔÆÎÆ¡£\n");
+    set("unit", "é¡¶");
+    set("long","ä¸€é¡¶ç»“å®çš„ç¡¬æœ¨ç›”ï¼Œä¸Šé¢ç»˜ç€äº‘çº¹ã€‚\n");
     set("value", 600);
     set("material", "cloth");
     set("armor_prop/armor", 5);

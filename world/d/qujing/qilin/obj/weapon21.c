@@ -5,9 +5,9 @@ inherit WHIP;
 
 void create()
 {
-  set_name("·ïÎ²±Ş", ({ "fengwei bian", "bian", "whip" }) );
+  set_name("å‡¤å°¾é­", ({ "fengwei bian", "bian", "whip" }) );
   init_whip(35);
-  set("unit", "¸ù");
+  set("unit", "æ ¹");
   set_weight(700);
   if( clonep() )
      set_default_object(__FILE__);
@@ -15,7 +15,7 @@ void create()
     set("value", 410);
     set("material", "bone");
   }
-  set("wield_msg","$N²ÙÆğ$nÎÕÔÚÊÖÀï¡£\n");
+  set("wield_msg","$Næ“èµ·$næ¡åœ¨æ‰‹é‡Œã€‚\n");
   setup();
 }
 

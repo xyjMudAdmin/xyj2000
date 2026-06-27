@@ -5,19 +5,19 @@ inherit ITEM;
 
 void create()
 {
-        set_name("´óÆì", ({"flag","qi"}));
-        set("unit", "Ãæ" );
+        set_name("å¤§æ——", ({"flag","qi"}));
+        set("unit", "é¢" );
         set_weight(500);
         set("long", @LONG
        ***********************************************
-       **      µÃ´ËÆìÕß¿ÉÎªÏÉÁé¸£µØË®Á±¶´Ö®¶´Ö÷     **
+       **      å¾—æ­¤æ——è€…å¯ä¸ºä»™çµç¦åœ°æ°´å¸˜æ´ä¹‹æ´ä¸»     **
        ***********************************************
 LONG);
 }
 
 void destruct_me(object where, object me)
 {
-  message_vision("Ò»ÕóÇå·ç´µ¹ı£¬$n»¯×÷Ò»ÍÅ»Ò½ı¡£\n",where,me);
+  message_vision("ä¸€é˜µæ¸…é£å¹è¿‡ï¼Œ$nåŒ–ä½œä¸€å›¢ç°çƒ¬ã€‚\n",where,me);
   destruct (me);
 }
 

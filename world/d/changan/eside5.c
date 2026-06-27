@@ -4,12 +4,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ãşË®Ö®±õ");
+  set ("short", "æ³¾æ°´ä¹‹æ»¨");
   set ("long", @LONG
 
-¡¡¡¡ãşË®¶«È¥£¬ÂÌÑî³Ç¹ù¡£Âş²½ÓÚ´Ë£¬²»ÓÉµÃĞÄ¿õÉñâù¡£Ö»¼û
-ÕâãşË®Çå³º¼ûµ×£¬²»Ê±ÓĞÓã¶ùÔ½³öË®Ãæ£¬ÅÔ±ßÒ»Èºº¢×ÓÃÇÕıÔÚ
-ÍÚ(wa)òÇò¾(qiuyin)£¬¼¸Î»ÀÏÈËÕıÔÚ´¹µö(diao)¡£
+ã€€ã€€æ³¾æ°´ä¸œå»ï¼Œç»¿æ¨åŸéƒ­ã€‚æ¼«æ­¥äºæ­¤ï¼Œä¸ç”±å¾—å¿ƒæ—·ç¥æ€¡ã€‚åªè§
+è¿™æ³¾æ°´æ¸…æ¾ˆè§åº•ï¼Œä¸æ—¶æœ‰é±¼å„¿è¶Šå‡ºæ°´é¢ï¼Œæ—è¾¹ä¸€ç¾¤å­©å­ä»¬æ­£åœ¨
+æŒ–(wa)èš¯èš“(qiuyin)ï¼Œå‡ ä½è€äººæ­£åœ¨å‚é’“(diao)ã€‚
 LONG);
 
   set("exits", ([ /* sizeof() == 1 */
@@ -37,23 +37,23 @@ int do_dig(string arg)
    object who=this_player();
    object where=this_object();
 
-   if( (!arg) || (arg != "qiu yin" && arg != "qiuyin" && arg !="òÇò¾") )
-      return notify_fail("ÏëÍÚÊ²Ã´£¿\n");
+   if( (!arg) || (arg != "qiu yin" && arg != "qiuyin" && arg !="èš¯èš“") )
+      return notify_fail("æƒ³æŒ–ä»€ä¹ˆï¼Ÿ\n");
 
    if( !(ob = who->query_temp("weapon")) || ( (string)ob->query("skill_type")!="axe" && (string)ob->query("skill_type")!="blade" && (string)ob->query("skill_type")!="sword" ) ) 
-      return notify_fail("ÕÒ¸öºÃ·æÀûµÄ¼Ò»ïÀ´ÍÚ°É¡£\n");
+      return notify_fail("æ‰¾ä¸ªå¥½é”‹åˆ©çš„å®¶ä¼™æ¥æŒ–å§ã€‚\n");
 
    if( who->query("kee")<50 )
-      return notify_fail("ÄãÌ«ÀÛÁË£¬ÏÈĞª»á¶ùÔÙÍÚ°É¡£\n");
+      return notify_fail("ä½ å¤ªç´¯äº†ï¼Œå…ˆæ­‡ä¼šå„¿å†æŒ–å§ã€‚\n");
 
    who->add("kee",-50);
    if (random(10) > where->query("have_qiuyin"))
-      message_vision("$NÔÚÄà°ÍÖĞ·­À´·­È¥£¬½á¹ûÊ²Ã´Ò²Ã»ÕÒµ½¡£\n", who);
+      message_vision("$Nåœ¨æ³¥å·´ä¸­ç¿»æ¥ç¿»å»ï¼Œç»“æœä»€ä¹ˆä¹Ÿæ²¡æ‰¾åˆ°ã€‚\n", who);
    else  
      {
      qiuyin=new("/d/southern/jinghe/obj/qiuyin");
      qiuyin->move(who);
-        message_vision("$N´ÓÄà°ÍÀïÕÒµ½Ò»Ö»òÇò¾£¬°ÑËü×¥ÁË³öÀ´¡£\n", who);
+        message_vision("$Nä»æ³¥å·´é‡Œæ‰¾åˆ°ä¸€åªèš¯èš“ï¼ŒæŠŠå®ƒæŠ“äº†å‡ºæ¥ã€‚\n", who);
      where->add("have_qiuyin",-1);
      call_out("regenerate", 300);
      }

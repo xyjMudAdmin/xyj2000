@@ -5,12 +5,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "������");
+  set ("short", "朝云岭");
   set ("long", @LONG
 
-���Ϲ�ʯ��ᾣ���Ϊ���ߡ�ʯͷ��ɫ��ʣ�Զ�����糯�ƣ���
-���ڴˡ���ɽ��������ˮ����һ������������ȥ������ɽ��
-ӿ������һƬ��
+岭上怪石嶙峋，颇为难走。石头颜色多彩，远望有如朝云，得
+名于此。向山下望，江水有如一道白练，缓向东去，岸上山云
+涌起，嫩绿一片。
 LONG);
 
   set("objects", ([ /* sizeof() == 1*/ 

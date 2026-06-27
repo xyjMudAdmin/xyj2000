@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "���᷿");
+  set ("short", "东厢房");
   set ("long", @LONG
 
-���Ǳ����µ��������Թ��η�ɮ�˽���һ�ޣ����ڳ����ª����ǽ
-���м���ľ����
+这是宝林寺的禅房，以供游方僧人借宿一宿，房内陈设简陋，靠墙
+设有几张木床。
 
 LONG);
 

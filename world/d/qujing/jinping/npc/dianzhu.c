@@ -6,9 +6,9 @@ inherit F_VENDOR_SALE;
 void create()
 {
   reload("jinping_dian_zhu");
-  set_name("µêÖ÷", ({"dian zhu", "zhu"}));
+  set_name("åº—ä¸»", ({"dian zhu", "zhu"}));
   set("shop_id", ({"dianzhu", "zhu"}));
-  set("gender", "ÄÐÐÔ");
+  set("gender", "ç”·æ€§");
   set("combat_exp", 5000);
   set("age", 30);
   set("per", 21);

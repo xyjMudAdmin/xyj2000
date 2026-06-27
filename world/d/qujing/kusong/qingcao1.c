@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "Çà²İÆÂ");
+  set ("short", "é’è‰å¡");
   set ("long", @LONG
 
-ÕâÀïµÄÇà²İÔ½À´Ô½ÃÜ£¬ÑÛÇ°ÒÑÎŞµÀÂ·¿ÉÑ­¡£²İÖĞÅ¼ÓĞÒ°ÍÃÀàµÄ
-Ğ¡ÊŞÅÜ¹ı£¬·¢³öÏ¤Ï¤àÂàÂµÄÉùÒô¡£
+è¿™é‡Œçš„é’è‰è¶Šæ¥è¶Šå¯†ï¼Œçœ¼å‰å·²æ— é“è·¯å¯å¾ªã€‚è‰ä¸­å¶æœ‰é‡å…”ç±»çš„
+å°å…½è·‘è¿‡ï¼Œå‘å‡ºæ‚‰æ‚‰å—¦å—¦çš„å£°éŸ³ã€‚
 LONG);
   set("exits", ([ /* sizeof() == 4 */
   "north" : __DIR__"qingcao1",
@@ -34,14 +34,14 @@ int do_search()
 	me=this_player();
 
 	if(me->is_busy())
-		return notify_fail("ÄãÕıÃ¦×ÅÄØ£¡\n");
+		return notify_fail("ä½ æ­£å¿™ç€å‘¢ï¼\n");
 
 	if( !where->query("guo_called") ){
 		set("guo_called", 1);
 		call_out("guo_grow", 900);
 	}
 
-	message_vision("$NÔÚÇà²İÖĞÑ°Ñ°ÃÙÃÙ¡­¡­¡­\n", me);
+	message_vision("$Nåœ¨é’è‰ä¸­å¯»å¯»è§…è§…â€¦â€¦â€¦\n", me);
 	call_out("do_find", 3, me);
 	me->start_busy(3);
 	return 1;
@@ -58,7 +58,7 @@ int do_find(object me)
 	where=this_object();
 
 	if( where->query("no_guo")){
-		tell_object(me, "ÄãÊ²Ã´Ò²Ã»·¢ÏÖ¡£\n");
+		tell_object(me, "ä½ ä»€ä¹ˆä¹Ÿæ²¡å‘ç°ã€‚\n");
                 return 1;
         }
 
@@ -66,10 +66,10 @@ int do_find(object me)
 		guo=new("/d/qujing/kusong/obj/heshouwu");
 		guo->move(where);
 		set("no_guo", 1);
-		tell_object(me, "ÄãÍ»È»¿´¼ûÁËÒ»ÖêºÎÊ×ÎÚ¡£\n");
+		tell_object(me, "ä½ çªç„¶çœ‹è§äº†ä¸€æ ªä½•é¦–ä¹Œã€‚\n");
 		return 1;
 	}
 
-	tell_object(me, "ÄãÊ²Ã´Ò²Ã»·¢ÏÖ¡£\n");
+	tell_object(me, "ä½ ä»€ä¹ˆä¹Ÿæ²¡å‘ç°ã€‚\n");
 	return 1;
 }

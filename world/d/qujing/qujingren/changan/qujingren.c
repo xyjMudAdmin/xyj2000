@@ -1,5 +1,5 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// È¡¾­ÈË-³¤°²Ä£¿é
+// å–ç»äºº-é•¿å®‰æ¨¡å—
 
 #include "/d/qujing/qujingren/qujingren.c"
 

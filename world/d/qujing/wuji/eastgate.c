@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "¶«ÃÅ");
+  set ("short", "ä¸œé—¨");
   set ("long", @LONG
 
-ÕâÊÇÎÚ¼¦¹úµÄ¶«ÃÅ³ÇÂ¥£¬ÇàÊ¯Öþ³ÉÁ½²ãÂ¥Ì¨¼á¹ÌÒì³££¬Î¡¶ë
-¿íÀ«µÄ¹°ÐÐ³ÇÃÅÉÏ·½ïÎ×Å¡¸ÎÚ¼¦¹ú¡¹Èý¸öºìÆá´ó×Ö¡£ 
+è¿™æ˜¯ä¹Œé¸¡å›½çš„ä¸œé—¨åŸŽæ¥¼ï¼Œé’çŸ³ç­‘æˆä¸¤å±‚æ¥¼å°åšå›ºå¼‚å¸¸ï¼Œå·å³¨
+å®½é˜”çš„æ‹±è¡ŒåŸŽé—¨ä¸Šæ–¹é•‚ç€ã€Œä¹Œé¸¡å›½ã€ä¸‰ä¸ªçº¢æ¼†å¤§å­—ã€‚ 
 LONG);
 
   set("exits", ([ /* sizeof() == 2 */

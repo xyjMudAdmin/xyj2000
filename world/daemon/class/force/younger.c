@@ -10,16 +10,16 @@ int exert(object me, object target)
     
   makeuplev=me->query_skill("makeup",1);
   if (me->query("daoxing")<100000)
-    return notify_fail("你的道行不够。\n");
+    return notify_fail("浣犵殑閬撹涓嶅銆俓n");
   if (makeuplev<100) 
-    return notify_fail("你的养颜术还没有学到家。\n");
+    return notify_fail("浣犵殑鍏婚鏈繕娌℃湁瀛﹀埌瀹躲�俓n");
 
   mana=me->query("sen");
-  if(mana<50) return notify_fail("你的精力不够了。\n");
+  if(mana<50) return notify_fail("浣犵殑绮惧姏涓嶅浜嗐�俓n");
 
   me->add("sen", -50);
   age=me->query("age");
-  write(HIG"你闭目凝神，觉得似乎年轻了些。\n"NOR);
+  write(HIG"浣犻棴鐩嚌绁烇紝瑙夊緱浼间箮骞磋交浜嗕簺銆俓n"NOR);
   gain=(makeuplev-99)*10;
 
   if (age>20) gain*=10;

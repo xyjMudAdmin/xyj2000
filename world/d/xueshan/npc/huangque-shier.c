@@ -10,17 +10,17 @@ int do_yes(string arg);
 
 void create()
   {
-   set_name("»ÆÈ¸ÊÌ¶ù", ({"huangque shier", "shier", "huangque"}));
-   set("gender", "Å®ĞÔ" );
+   set_name("é»„é›€ä¾å„¿", ({"huangque shier", "shier", "huangque"}));
+   set("gender", "å¥³æ€§" );
    set("age", 22);
 
-   set("long", "¿×È¸¹«Ö÷µÄÌùÉíÊÌÎÀÍ·Áì¡£\n");
+   set("long", "å­”é›€å…¬ä¸»çš„è´´èº«ä¾å«å¤´é¢†ã€‚\n");
    set("class", "yaomo");
    set("combat_exp", 35000);
    set("daoxing", 35000);
 
    set("attitude", "heroism");
-   create_family("´óÑ©É½", 3, "µÜ×Ó");
+   create_family("å¤§é›ªå±±", 3, "å¼Ÿå­");
    set_skill("unarmed", 40);
    set_skill("yingzhaogong", 50);
    set_skill("cuixin-zhang", 50);
@@ -53,7 +53,7 @@ void create()
 
 
    set("inquiry", ([
-	"here" : "Õâ¾ÍÊÇ´óÑ©É½À²£¡\n",
+	"here" : "è¿™å°±æ˜¯å¤§é›ªå±±å•¦ï¼\n",
 	]) );
 
 
@@ -66,18 +66,18 @@ void create()
 
 void attempt_apprentice(object ob)
 {
-   if( (string)ob->query("family/family_name")=="´óÑ©É½" )
+   if( (string)ob->query("family/family_name")=="å¤§é›ªå±±" )
      {
        if( (int)ob->query("family/generation") < 3  )
-          command("say ²»¸Ò£¬²»¸Ò¡£ÎÒ¸Ã°İ" + RANK_D->query_respect(ob) + "ÄúÎªÊ¦²ÅÊÇ¡£\n");
+          command("say ä¸æ•¢ï¼Œä¸æ•¢ã€‚æˆ‘è¯¥æ‹œ" + RANK_D->query_respect(ob) + "æ‚¨ä¸ºå¸ˆæ‰æ˜¯ã€‚\n");
        else if( (int)ob->query("family/generation") ==3  )
-	  command("say ÄãÕâ¸ö" + RANK_D->query_rude(ob) + "±ğÀ´ÏûÇ²±¾¹ÃÄïÁË£¡\n");
+	  command("say ä½ è¿™ä¸ª" + RANK_D->query_rude(ob) + "åˆ«æ¥æ¶ˆé£æœ¬å§‘å¨˜äº†ï¼\n");
       else 
          {
 	  command("ok");
-	  command("say ºÃ£¡" + RANK_D->query_respect(ob) + "Í¶ÈëÎÒµÄÃÅÏÂ£¬¿ÉÒªÌı»°£¬²»ÌıÊ¦¸µµÄ»°£¬ÓĞÄãµÄºÃ¿´£¡\n");
+	  command("say å¥½ï¼" + RANK_D->query_respect(ob) + "æŠ•å…¥æˆ‘çš„é—¨ä¸‹ï¼Œå¯è¦å¬è¯ï¼Œä¸å¬å¸ˆå‚…çš„è¯ï¼Œæœ‰ä½ çš„å¥½çœ‹ï¼\n");
 	  command("recruit " + ob->query("id") );
-          ob->set("title", "´óÑ©É½¹«Ö÷ÊÌÎÀ");
+          ob->set("title", "å¤§é›ªå±±å…¬ä¸»ä¾å«");
           ob->set("class", "yaomo");
    if(! ob->query_temp("get_yaopai") )  give_yaopai(ob);
 	 }
@@ -86,9 +86,9 @@ void attempt_apprentice(object ob)
     else
       {
        command(":D ");
-       command("say ºÃ£¬"+ RANK_D->query_respect(ob) +"£¬Äãµ½ÎÒ´óÑ©É½£¬´ÓÑ²É½µÄ¿ªÊ¼µ±Æğ£¬ÔçÍí¶¨ÄÜ³öÈËÍ·µÚ£¡\n");
+       command("say å¥½ï¼Œ"+ RANK_D->query_respect(ob) +"ï¼Œä½ åˆ°æˆ‘å¤§é›ªå±±ï¼Œä»å·¡å±±çš„å¼€å§‹å½“èµ·ï¼Œæ—©æ™šå®šèƒ½å‡ºäººå¤´ç¬¬ï¼\n");
        command("recruit " + ob->query("id") );
-       ob->set("title", "´óÑ©É½¹«Ö÷ÊÌÎÀ");
+       ob->set("title", "å¤§é›ªå±±å…¬ä¸»ä¾å«");
        ob->set("class", "yaomo");
        if(! ob->query_temp("get_yaopai") )  give_yaopai(ob);
       }
@@ -100,7 +100,7 @@ int test_hispai(object ob)
 {
     object me=this_object();
     ob=this_player();
-    if( (! ob->query_temp("get_yaopai") ) && ob->query("family/master_name")=="ÉñÓ¥Ê¹Õß")   
+    if( (! ob->query_temp("get_yaopai") ) && ob->query("family/master_name")=="ç¥é¹°ä½¿è€…")   
       {
       give_yaopai(ob);
       return 1;
@@ -116,12 +116,12 @@ void give_yaopai(object ob)
     yaopai=new("/d/xueshan/obj/yaopai");
     yaopai->move(me);
     yaopai->set("long","\n  
-              £ª£ª£ª£ª£ª£ª£ª£ª£ª£ª
-              £ª¡¡¡¡ÍşÕòÈºÄ§¡¡¡¡£ª
-              £ª£ª£ª£ª£ª£ª£ª£ª£ª£ª
+              ï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Š
+              ï¼Šã€€ã€€å¨é•‡ç¾¤é­”ã€€ã€€ï¼Š
+              ï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Š
 
-¡¡              ´óÑ©É½¹«Ö÷ÊÌÎÀ£­"+ob->query("name")+"\n");
-    command("whisper " + ob->query("id") + " ÕâÊÇÄãµÄÊÌÎÀÑüÅÆ£¬ÊÕºÃÁË¡£");
+ã€€              å¤§é›ªå±±å…¬ä¸»ä¾å«ï¼"+ob->query("name")+"\n");
+    command("whisper " + ob->query("id") + " è¿™æ˜¯ä½ çš„ä¾å«è…°ç‰Œï¼Œæ”¶å¥½äº†ã€‚");
     command("give yao pai to " + ob->query("id"));
     ob->set_temp("get_yaopai", 1);
     return;

@@ -3,12 +3,12 @@ inherit NPC;
 
 void create()
 {
-       	set_name("ÆÅ½ßÁúÍõ", ({"pojie longwang", "longwang"}));
-       	set("gender", "ÄĞĞÔ");
+       	set_name("å©†ç«­é¾™ç‹", ({"pojie longwang", "longwang"}));
+       	set("gender", "ç”·æ€§");
        	set("age", 70);
         set("class", "dragon");
        	set("attitude", "friendly");
-       	set("rank_info/respect", "ÀÏÁúÍõ");
+       	set("rank_info/respect", "è€é¾™ç‹");
         set("per", 30);
         set("int", 30);
 	set("str", 30);

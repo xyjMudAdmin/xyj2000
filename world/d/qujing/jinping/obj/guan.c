@@ -5,13 +5,13 @@ inherit F_LIQUID;
 
 void create()
 {
-	set_name("Ë®¹Ş", ({"shui guan", "guan"}));
+	set_name("æ°´ç½", ({"shui guan", "guan"}));
 	set_weight(900);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»¸öºìÄàÌÕÆ÷Ë®¹Ş¡£\n");
-		set("unit", "¸ö");
+		set("long", "ä¸€ä¸ªçº¢æ³¥é™¶å™¨æ°´ç½ã€‚\n");
+		set("unit", "ä¸ª");
 		set("value", 100);
 		set("max_liquid", 10);
 	}
@@ -20,7 +20,7 @@ void create()
 	// we set it to contain water at the beginning
 	set("liquid", ([
 		"type": "water",
-		"name": "ÇåË®",
+		"name": "æ¸…æ°´",
 		"remaining": 10,
 		"drunk_supply": 10,
 	]));

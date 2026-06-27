@@ -8,9 +8,9 @@ string show_king (object who);
 
 void create()
 {
-  set_name("¾®ÁúÍõ", ({"jing longwang","longwang","wang"}));
-  set("long","¾®ÀïµÄÁúÍõ£¬ÕÆ¹Ü×Å¾®µ×µÄÊÀ½ç¡£\n");
-  set("gender", "ÄĞĞÔ");
+  set_name("äº•é¾™ç‹", ({"jing longwang","longwang","wang"}));
+  set("long","äº•é‡Œçš„é¾™ç‹ï¼ŒæŒç®¡ç€äº•åº•çš„ä¸–ç•Œã€‚\n");
+  set("gender", "ç”·æ€§");
   set("age", 55);
   set("class","dragon");
   set("attitude", "peaceful");
@@ -18,7 +18,7 @@ void create()
   set("combat_exp", 550000);
   set("daoxing", 300000);
 
-  set("rank_info/respect", "±İÏÂ");
+  set("rank_info/respect", "é™›ä¸‹");
   set("per", 24);
   set("str", 30);
   set("max_kee", 1000);
@@ -48,8 +48,8 @@ void create()
   map_skill("parry", "fengbo-cha");
   map_skill("dodge", "dragonstep");
 
-  set("inquiry", ([ "±¦±´": (: show_king :),
-                    "¹úÍõ": (: show_king :),
+  set("inquiry", ([ "å®è´": (: show_king :),
+                    "å›½ç‹": (: show_king :),
                     "king": (: show_king :),
                  ]) );
 
@@ -66,17 +66,17 @@ string show_king (object who)
 
   who = this_player();
   if (present ("guo wang",where))
-    return ("¹úÍõÔÚ´Ë£¡\n");
-  if (where->query("short") != "Ë®¾§¹¬")
-    return ("ÄªÌá£¬ÄªÌá£¡\n");
+    return ("å›½ç‹åœ¨æ­¤ï¼\n");
+  if (where->query("short") != "æ°´æ™¶å®«")
+    return ("è«æï¼Œè«æï¼\n");
   if (! present("wuji jing",who))
-    return ("¹úÍõÓëÄãºÎ¹ÊÒ²£¿\n");
+    return ("å›½ç‹ä¸ä½ ä½•æ•…ä¹Ÿï¼Ÿ\n");
   if (where->query("has_given"))
-    return ("¹úÍõ±»¾ÈÁËÒ²£¡\n");
+    return ("å›½ç‹è¢«æ•‘äº†ä¹Ÿï¼\n");
   where->set_given();
   command("sigh");
-  message_vision ("$NÒ»»ÓÊÖ£¬Ë®ÏÂ¸¡ÆğÁ½Ò¹²æ£¬½«Ê²Ã´¶«Î÷Ì§½«¹ıÀ´¡£\n\n",me);
+  message_vision ("$Nä¸€æŒ¥æ‰‹ï¼Œæ°´ä¸‹æµ®èµ·ä¸¤å¤œå‰ï¼Œå°†ä»€ä¹ˆä¸œè¥¿æŠ¬å°†è¿‡æ¥ã€‚\n\n",me);
   king = new ("/d/qujing/wuji/obj/kingbody");
   king->move(where);
-  return ("¿ÉÁ¯¿ÉÁ¯Ò²£¡\n");
+  return ("å¯æ€œå¯æ€œä¹Ÿï¼\n");
 }

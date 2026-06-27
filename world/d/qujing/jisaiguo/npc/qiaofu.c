@@ -2,11 +2,11 @@
 inherit NPC;
 void create()
 {
-        set_name("éÔ·ò", ({ "qiao fu" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("æ¨µå¤«", ({ "qiao fu" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 33);
         set("per", 30);
-        set("long", "Ò»¸öÂò²ñµÄéÔ·ò¡£\n");
+        set("long", "ä¸€ä¸ªä¹°æŸ´çš„æ¨µå¤«ã€‚\n");
         set("combat_exp", 6000);
         set("attitude", "friendly");
         set("env/wimpy", 60);
@@ -17,8 +17,8 @@ void create()
         }));
         set("chat_chance_combat", 50 );
         set("chat_msg_combat", ({
-                "éÔ·ò½ĞµÀ£ºÉ±ÈËÄÄ£¡É±ÈËÄÄ£¡\n",
-                "éÔ·ò½ĞµÀ£ºÓĞÍÁ·ËÄÄ£¡¹âÌì»¯ÈÕÏÂ´ò½ÙÄÄ£¡\n",
+                "æ¨µå¤«å«é“ï¼šæ€äººå“ªï¼æ€äººå“ªï¼\n",
+                "æ¨µå¤«å«é“ï¼šæœ‰åœŸåŒªå“ªï¼å…‰å¤©åŒ–æ—¥ä¸‹æ‰“åŠ«å“ªï¼\n",
                 (: command, "surrender" :),
         }) );
         setup();

@@ -4,12 +4,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "±¦ÁÖËÂ");
+  set ("short", "å®æ—å¯º");
   set ("long", @LONG
 
-Ö»¼û°Ë×Ö×©Ç½Äàºì·Û£¬Á½±ßÃÅÉÏ¶¤½ğ¶¤£¬µşµşÂ¥Ì¨²ØÁëÅÏ£¬³Ç³Ç¹¬ãÚ
-ÒşÉ½ÖĞ¡£¹ûÈ»ÊÇÒ»×ùºÃËÂÔº¡£ÕıÃÅÉÏºìµ×ÌÌ½ğµÄĞ´×ÅÈı¸ö×Ö£º£¢±¦ÁÖ
-ËÂ£¢¡£
+åªè§å…«å­—ç –å¢™æ³¥çº¢ç²‰ï¼Œä¸¤è¾¹é—¨ä¸Šé’‰é‡‘é’‰ï¼Œå å æ¥¼å°è—å²­ç•”ï¼ŒåŸåŸå®«é˜™
+éšå±±ä¸­ã€‚æœç„¶æ˜¯ä¸€åº§å¥½å¯ºé™¢ã€‚æ­£é—¨ä¸Šçº¢åº•çƒ«é‡‘çš„å†™ç€ä¸‰ä¸ªå­—ï¼šï¼‚å®æ—
+å¯ºï¼‚ã€‚
 LONG);
 
   set("exits", ([ /* sizeof() == 3 */
@@ -29,6 +29,6 @@ int valid_leave (object who, string dir)
 {
   object seng = present ("shousi seng", environment(who));
   if (dir == "enter" && seng && living (seng))
-    return notify_fail (seng->query("name")+"ËµµÀ£º¡°ËÂÔºË¡²»½Ó¿Í£¬Çë»Ø¡£¡±\n");
+    return notify_fail (seng->query("name")+"è¯´é“ï¼šâ€œå¯ºé™¢æ•ä¸æ¥å®¢ï¼Œè¯·å›ã€‚â€\n");
   return ::valid_leave(who, dir);
 }

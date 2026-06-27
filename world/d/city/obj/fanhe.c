@@ -6,13 +6,13 @@ inherit F_FOOD;
 
 void create()
 {
-        set_name("·¹ºĞ", ({"fan he", "fan"}));
+        set_name("é¥­ç›’", ({"fan he", "fan"}));
         set_weight(800);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¸öĞ¡ÇÉµÄ·¹ºĞ£¬Ãş×Å»¹ÈÈÌÚÌÚµÄ£®\n");
-                set("unit", "¸ö");
+                set("long", "ä¸€ä¸ªå°å·§çš„é¥­ç›’ï¼Œæ‘¸ç€è¿˜çƒ­è…¾è…¾çš„ï¼\n");
+                set("unit", "ä¸ª");
                 set("food_remaining", 1);
                 set("food_supply", 200);
         }
@@ -23,9 +23,9 @@ int do_eat(string arg)
 
         object me = this_player();
         if (!id(arg))
-                return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 
-	message_vision("$NÇÄÇÄ´ò¿ª·¹ºĞ°ÇÁË¼¸¿Ú·¹£¬²îµãÃ»Ò­ËÀ£¡\n", me);
+	message_vision("$Næ‚„æ‚„æ‰“å¼€é¥­ç›’æ‰’äº†å‡ å£é¥­ï¼Œå·®ç‚¹æ²¡å™æ­»ï¼\n", me);
 	destruct(this_object());
         return 1;
 }

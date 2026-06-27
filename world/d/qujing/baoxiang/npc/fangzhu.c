@@ -6,8 +6,8 @@ inherit F_VENDOR_SALE;
 void create()
 {
   reload("baoxiang_fang_zhu");
-  set_name("·»Ö÷", ({"fang zhu","zhu"}));
-  set("gender", "ÄĞĞÔ");
+  set_name("åŠä¸»", ({"fang zhu","zhu"}));
+  set("gender", "ç”·æ€§");
   set("combat_exp", 1000);
   set("age", 46);
   set("per", 14);

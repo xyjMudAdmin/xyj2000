@@ -6,14 +6,14 @@ inherit F_FOOD;
 
 void create()
 {
-  string name = "×ßÓÍ´à³¦";
+  string name = "èµ°æ²¹è„†è‚ ";
   set_name(name, ({"zouyou cuichang", "cuichang", "chang"}));
   set_weight(1000);
   if (clonep())
     set_default_object(__FILE__);
   else {
-    set("long", "Ò»ÅÌÁîÈË´¹ÏÑµÄ"+name+"¡£\n");
-    set("unit", "ÅÌ");
+    set("long", "ä¸€ç›˜ä»¤äººåž‚æ¶Žçš„"+name+"ã€‚\n");
+    set("unit", "ç›˜");
     set("value", 250);
     set("food_remaining", 5);
     set("food_supply", 25);

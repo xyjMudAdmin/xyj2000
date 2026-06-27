@@ -5,11 +5,11 @@ inherit NPC;
 void create()
 {
  
-        set_name("¾ŞÁéÉñ", ({ "juling shen", "shen", "juling" }) );
-        set("gender", "ÄĞĞÔ" );
-        set("long","ÍĞËşÀîÌìÍõÕÊÏÂÏÈ·æ´ó½«£¬°òÀ«ÑüÔ²£¬Á¦´óÎŞÇî¡£\n");
+        set_name("å·¨çµç¥", ({ "juling shen", "shen", "juling" }) );
+        set("gender", "ç”·æ€§" );
+        set("long","æ‰˜å¡”æå¤©ç‹å¸ä¸‹å…ˆé”‹å¤§å°†ï¼Œè†€é˜”è…°åœ†ï¼ŒåŠ›å¤§æ— ç©·ã€‚\n");
         set("age",40);
-	set("title", "ÏÈ·æ´ó½«");
+	set("title", "å…ˆé”‹å¤§å°†");
         set("str", 40);
         set("int", 20);
 	set("con", 30);
@@ -56,4 +56,3 @@ void create()
 }
  
 
-ÿ

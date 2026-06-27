@@ -8,15 +8,15 @@ inherit STICK;
 
 void create()
 {
-  set_name(HIB "ºµÑÌÇ¹" NOR, ({ "hanyan qiang","hanyan", "qiang"}));
+  set_name(HIB "æ—±çƒŸæª" NOR, ({ "hanyan qiang","hanyan", "qiang"}));
   set_weight(100);
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("long","Ò»¸ù³¤³¤µÄÀÏÊ½ºµÑÌÇ¹¡£\n");
-    set("unit", "¸ù");
-    set("wield_msg", "$NÄÃ³ö$nµğÔÚ×ìÉÏ£¬ÃĞÑÛ½«$nµã×Å¡£\n");
-    set("unwield_msg", "$N½«$n°ÈµØÒ»ÇÃ£¬²ØÈë»³Àï¡£\n");
+    set("long","ä¸€æ ¹é•¿é•¿çš„è€å¼æ—±çƒŸæªã€‚\n");
+    set("unit", "æ ¹");
+    set("wield_msg", "$Næ‹¿å‡º$nå¼åœ¨å˜´ä¸Šï¼Œçœ¯çœ¼å°†$nç‚¹ç€ã€‚\n");
+    set("unwield_msg", "$Nå°†$nå­åœ°ä¸€æ•²ï¼Œè—å…¥æ€€é‡Œã€‚\n");
   }
   init_stick(2);
   setup();
@@ -39,15 +39,15 @@ int do_smoke (string arg)
   switch (random(5))
   {
     case 0:
-      { msg = "$NÄÃÆğ$n£¬ÃĞÆğÑÛÎüÁËÒ»¿Ú¡£\n"; break; }
+      { msg = "$Næ‹¿èµ·$nï¼Œçœ¯èµ·çœ¼å¸äº†ä¸€å£ã€‚\n"; break; }
     case 1:
-      { msg = "$Nµğ×Å$nÎüÁËÒ»¿ÚÑÌ¡£\n"; break; }
+      { msg = "$Nå¼ç€$nå¸äº†ä¸€å£çƒŸã€‚\n"; break; }
     case 2:
-      { msg = "$NÖå×ÅÃ¼µÍÍ·ÔÚ$nÉÏÎüÁËÒ»¿ÚºµÑÌ¡£\n"; break; }
+      { msg = "$Nçš±ç€çœ‰ä½å¤´åœ¨$nä¸Šå¸äº†ä¸€å£æ—±çƒŸã€‚\n"; break; }
     case 3:
-      { msg = "$NÒ»±ß³ÁË¼Ò»±ßÄÃÆğ$nÎüÁË¿ÚÑÌ¡£\n"; break; }
+      { msg = "$Nä¸€è¾¹æ²‰æ€ä¸€è¾¹æ‹¿èµ·$nå¸äº†å£çƒŸã€‚\n"; break; }
     case 4:
-      { msg = "$NÂÔµãµãÍ·£¬ÔÚ$nÉÏÎüÁËÒ»Îü¡£\n"; break; }
+      { msg = "$Nç•¥ç‚¹ç‚¹å¤´ï¼Œåœ¨$nä¸Šå¸äº†ä¸€å¸ã€‚\n"; break; }
   }
   message_vision (msg,me,ob);
   remove_call_out ("smoke_spreads");
@@ -61,15 +61,15 @@ int smoke_spreads (object me, object ob)
   switch (random(5))
   {
     case 0:
-      { msg = "ÑÌ´Ó$NµÄ±Ç¿×ÀïÅç³öÀ´£¬ÔÚ¿ÕÖĞÉ¢¿ª¡£\n"; break; }
+      { msg = "çƒŸä»$Nçš„é¼»å­”é‡Œå–·å‡ºæ¥ï¼Œåœ¨ç©ºä¸­æ•£å¼€ã€‚\n"; break; }
     case 1:
-      { msg = "Ò»´®ÑÌÈ¦´Ó$NµÄ×ìÀïÍÂÁË³öÀ´¡£\n"; break; }
+      { msg = "ä¸€ä¸²çƒŸåœˆä»$Nçš„å˜´é‡Œåäº†å‡ºæ¥ã€‚\n"; break; }
     case 2:
-      { msg = "ÇàÑÌÂıÂıÔÚ¿ÕÆøÖĞÉ¢¿ª¡£\n"; break; }
+      { msg = "é’çƒŸæ…¢æ…¢åœ¨ç©ºæ°”ä¸­æ•£å¼€ã€‚\n"; break; }
     case 3:
-      { msg = "ÑÌÂıÂıÆ®¿ª¡£\n"; break; }
+      { msg = "çƒŸæ…¢æ…¢é£˜å¼€ã€‚\n"; break; }
     case 4:
-      { msg = "ÖÜÎ§É¢·¢×Åµ­µ­µÄÑÌÎ¶¡£\n"; break; }
+      { msg = "å‘¨å›´æ•£å‘ç€æ·¡æ·¡çš„çƒŸå‘³ã€‚\n"; break; }
   }
   message_vision (msg,me,ob);
   if (random(4) == 0)

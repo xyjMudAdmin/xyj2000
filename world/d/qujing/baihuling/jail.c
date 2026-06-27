@@ -15,12 +15,12 @@ void dest();
 
 void create()
 {
-  set ("short", "Çô¶´");
+  set ("short", "å›šæ´ž");
   set ("long", @LONG
 
-ÕâÀïÊÇ¿Ý¹Ç¶´µÄ´¢²ØÊÒ£¬ÀÏÑý×¥À´µÄÈË¶¼ÏÈ·ÅÔÚÕâ¶ù£¬µÈ×Å
-¿ª»ïÊ±ºÃÑ¡ÓÃ¡£Äã×¢Òâµ½ÉíºóµÄÊ¯±ÚËÆºõÓÐÐ©ËÉ¶¯£¬ÇáÇáÒ»
-°á£¬ÒþÒþÏÖ³öÒ»¸ö¶´¿Ú£¬Ò²Ðí¿ÉÒÔ×ê½øÈ¥£¿(zuan)
+è¿™é‡Œæ˜¯æž¯éª¨æ´žçš„å‚¨è—å®¤ï¼Œè€å¦–æŠ“æ¥çš„äººéƒ½å…ˆæ”¾åœ¨è¿™å„¿ï¼Œç­‰ç€
+å¼€ä¼™æ—¶å¥½é€‰ç”¨ã€‚ä½ æ³¨æ„åˆ°èº«åŽçš„çŸ³å£ä¼¼ä¹Žæœ‰äº›æ¾åŠ¨ï¼Œè½»è½»ä¸€
+æ¬ï¼ŒéšéšçŽ°å‡ºä¸€ä¸ªæ´žå£ï¼Œä¹Ÿè®¸å¯ä»¥é’»è¿›åŽ»ï¼Ÿ(zuan)
 
 LONG);
 
@@ -81,10 +81,10 @@ int do_test (string arg)
 	    }
     }
 
-    message_vision("$NÇáÊÖÇá½ÅµØ×ê½øÒ»¸öÐ¡¶´£¬²»¼ûÁË£®£®£®\n",this_player());
+    message_vision("$Nè½»æ‰‹è½»è„šåœ°é’»è¿›ä¸€ä¸ªå°æ´žï¼Œä¸è§äº†ï¼Žï¼Žï¼Ž\n",this_player());
     this_player()->move(rooms[0][0][0],1);
-    tell_object(this_player(),"Äã½ÅÏÂÒ»»¬£¬ÖØÖØµØË¤ÁËÏÂÈ¥£¡\n");
-    message_vision("\n$N´ó½ÐÒ»Éù£¬´ÓÌì¶ø½µ£¡\n",this_player());
+    tell_object(this_player(),"ä½ è„šä¸‹ä¸€æ»‘ï¼Œé‡é‡åœ°æ‘”äº†ä¸‹åŽ»ï¼\n");
+    message_vision("\n$Nå¤§å«ä¸€å£°ï¼Œä»Žå¤©è€Œé™ï¼\n",this_player());
 //    maze_g->do_show("1");
 //    maze_g->do_show("2");
     rooms[random(max_i)][1+random(max_j-1)][random(max_k)]

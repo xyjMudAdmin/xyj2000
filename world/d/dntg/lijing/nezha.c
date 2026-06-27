@@ -8,16 +8,16 @@ int do_jifabao();
     
 void create()
 {
-  set_name("ÄÄß¸", ({ "nezha santaizi", "nezha", "santaizi" }));
-  set("title", "ÈıÌ³º£»áÖ®Éñ");
-  create_family("Ïİ¿ÕÉ½ÎŞµ×¶´", 1, "µÜ×Ó");
+  set_name("å“ªå’", ({ "nezha santaizi", "nezha", "santaizi" }));
+  set("title", "ä¸‰å›æµ·ä¼šä¹‹ç¥");
+  create_family("é™·ç©ºå±±æ— åº•æ´", 1, "å¼Ÿå­");
   set("class", "xian");
-  set("long", "Ò»Î»´½ºì³İ°×µÄÃÀÉÙÄê¡£\n");
-  set("gender", "ÄĞĞÔ");
+  set("long", "ä¸€ä½å”‡çº¢é½¿ç™½çš„ç¾å°‘å¹´ã€‚\n");
+  set("gender", "ç”·æ€§");
   set("age", 16);
   set("attitude", "friendly");
-  set("rank_info/respect", "Ğ¡Ì«×Ó");
-  set("rank_info/rude", "Èé³ôÎ´¸ÉµÄĞ¡¶ù");
+  set("rank_info/respect", "å°å¤ªå­");
+  set("rank_info/rude", "ä¹³è‡­æœªå¹²çš„å°å„¿");
   set("per", 40);
   set("str", 30);
   set("cor", 40);
@@ -59,9 +59,9 @@ void create()
   map_skill("dodge", "lingfu-steps");
   map_skill("force", "huntian-qigong");
   set("inquiry", ([
-        "name": "ÎÒÄËÍĞËşÌìÍõÈıÌ«×ÓÀîÄÄß¸ÊÇÒ²¡£",
-        "rumors": "ÓñµÛë··â¼ÒÑÏÎª½µÄ§´óÔªË§£¬ÔÚÏÂÎªÈıÌ³º£»áÖ®Éñ£¬×¨¹Ü½µÑı³ıÄ§¡£",
-        "·ç»ğÂÖ": "ËÍÈËÁË£¡",
+        "name": "æˆ‘ä¹ƒæ‰˜å¡”å¤©ç‹ä¸‰å¤ªå­æå“ªå’æ˜¯ä¹Ÿã€‚",
+        "rumors": "ç‰å¸æ••å°å®¶ä¸¥ä¸ºé™é­”å¤§å…ƒå¸…ï¼Œåœ¨ä¸‹ä¸ºä¸‰å›æµ·ä¼šä¹‹ç¥ï¼Œä¸“ç®¡é™å¦–é™¤é­”ã€‚",
+        "é£ç«è½®": "é€äººäº†ï¼",
         ]));
   setup();
 

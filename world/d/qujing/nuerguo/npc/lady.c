@@ -5,11 +5,11 @@ inherit NPC;
 
 void create()
 {
-  set_name("Ã·Ô§Ñì", ({"mei yuanyan", "mei"}));
-  set("title", "»¤¹¬Å®Ê¹");
-  set("gender", "Å®ĞÔ");
+  set_name("æ¢…é¸³é¸¯", ({"mei yuanyan", "mei"}));
+  set("title", "æŠ¤å®«å¥³ä½¿");
+  set("gender", "å¥³æ€§");
   set("age", 42);
-  set("long", "Ò»Î»¿´»¤Î÷Áº¹¬µîµÄÅ®Ê¹³¼¡£\n");
+  set("long", "ä¸€ä½çœ‹æŠ¤è¥¿æ¢å®«æ®¿çš„å¥³ä½¿è‡£ã€‚\n");
   set("combat_exp", 30000);
   set_skill("snowsword", 40);
   set_skill("sword", 40);

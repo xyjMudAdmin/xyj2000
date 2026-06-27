@@ -5,13 +5,13 @@
 inherit ITEM;
 
 void create() {
-  set_name("»ÆÁ»Õí", ({"huangliang zhen","pillow","zhen"}));
-  set("long","Ò»Ö»Ðå»¨ÕíÍ·£¬Ïà´«µ±ÄêÂ¬ÉúÕíÆä¶øÃß£¬×öÁË¸öºÃÃÎ¡£\n");
+  set_name("é»„ç²±æž•", ({"huangliang zhen","pillow","zhen"}));
+  set("long","ä¸€åªç»£èŠ±æž•å¤´ï¼Œç›¸ä¼ å½“å¹´å¢ç”Ÿæž•å…¶è€Œçœ ï¼Œåšäº†ä¸ªå¥½æ¢¦ã€‚\n");
   set_weight(3000);
   if( clonep() )
           set_default_object(__FILE__);
   else {
-          set("unit", "Ö»");
+          set("unit", "åª");
           set("value", 1000);
           set("material", "cloth");
   }
@@ -25,8 +25,8 @@ int goto_dream(object me)
     if(!me) return 0;
     
     if(env=environment(me))
-      tell_object(env,"\n"+HIY+me->name()+"Óµ×Å"+name()+
-	      "£¬½øÈëÁËÃÎµÄÊÀ½ç£®£®£®\n\n"NOR);
+      tell_object(env,"\n"+HIY+me->name()+"æ‹¥ç€"+name()+
+	      "ï¼Œè¿›å…¥äº†æ¢¦çš„ä¸–ç•Œï¼Žï¼Žï¼Ž\n\n"NOR);
     return 1;
 }
 
@@ -49,14 +49,14 @@ int do_sleep(string arg)
   if (arg!="pillow" && arg!="zhen" && arg!="zhen tou") return 0;
   if( !env->query("sleep_room") &&
       !me->query_temp("force_sleep") )
-          return notify_fail("ÕâÀï²»ÊÇË¯¾õµÄµØ·½¡£\n");
+          return notify_fail("è¿™é‡Œä¸æ˜¯ç¡è§‰çš„åœ°æ–¹ã€‚\n");
   if (me->is_busy())
-          return notify_fail("ÄãÕýÃ¦×ÅÄØ£¡\n");
+          return notify_fail("ä½ æ­£å¿™ç€å‘¢ï¼\n");
   if( me->is_fighting() )
-          return notify_fail("Õ½¶·ÖÐ²»ÄÜË¯¾õ£¡\n");
+          return notify_fail("æˆ˜æ–—ä¸­ä¸èƒ½ç¡è§‰ï¼\n");
   if ((time()-me->query("last_sleep"))<90)
-          return notify_fail("Äã¸ÕË¯¹ýÒ»¾õ, ÏÈ»î¶¯»î¶¯°É¡£ \n");
-  message_vision(HIY"$NÓµ×ÅÕíÍ·£¬½øÈëÁËÃÎµÄÊÀ½ç£®£®£®\n"NOR,me);
+          return notify_fail("ä½ åˆšç¡è¿‡ä¸€è§‰, å…ˆæ´»åŠ¨æ´»åŠ¨å§ã€‚ \n");
+  message_vision(HIY"$Næ‹¥ç€æž•å¤´ï¼Œè¿›å…¥äº†æ¢¦çš„ä¸–ç•Œï¼Žï¼Žï¼Ž\n"NOR,me);
   me->move("/d/ourhome/honglou/kat");
   me->set("dream_place",(string)env);
   return 1;

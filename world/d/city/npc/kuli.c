@@ -3,10 +3,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("¿àÁ¦", ({"kuli"}));
+        set_name("è‹¦åŠ›", ({"kuli"}));
         set("age", 22);
-        set("gender", "ÄĞĞÔ");
-        set("long","Ò»¸öÒÂÉÀÆÆ¾ÉµÄ¿àÁ¦ÈË¡£\n");
+        set("gender", "ç”·æ€§");
+        set("long","ä¸€ä¸ªè¡£è¡«ç ´æ—§çš„è‹¦åŠ›äººã€‚\n");
         set("attitude", "heroism");
 
         set("combat_exp", 5000+random(1000));

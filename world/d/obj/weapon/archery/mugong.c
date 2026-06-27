@@ -5,15 +5,15 @@ inherit BOW;
 
 void create()
 {
-        set_name("Ä¾¹­", ({"mu gong", "bow", "gong"}));
+        set_name("æœ¨å¼“", ({"mu gong", "bow", "gong"}));
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-		set("long", "Ò»ÕÅÄ¾ÖÆµÄ¶Ì¹­¡£\n");
-                set("unit", "ÕÅ");
+		set("long", "ä¸€å¼ æœ¨åˆ¶çš„çŸ­å¼“ã€‚\n");
+                set("unit", "å¼ ");
 		set("value", 100);
-                set("wield_msg", "$N×¥ÆğÒ»ÕÅ$n£¬ÎÕÔÚÊÖÖĞµ±ÎäÆ÷¡£\n");
+                set("wield_msg", "$NæŠ“èµ·ä¸€å¼ $nï¼Œæ¡åœ¨æ‰‹ä¸­å½“æ­¦å™¨ã€‚\n");
                 set("material", "wood");
         }
 

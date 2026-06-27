@@ -5,10 +5,10 @@ void create()
 {
         int skill;
 
-set_name("Îä¹İµÜ×Ó", ({"wuguan dizi", "dizi", "trainee" }) );
-        set("gender", "ÄĞĞÔ" );
+set_name("æ­¦é¦†å¼Ÿå­", ({"wuguan dizi", "dizi", "trainee" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 18+random(10));
-        set("long", "Ò»Î»Éí²Ä¸ß´óµÄºº×Ó£¬ÕıÔÚĞÁ¿àµØ²ÙÁ·×Å¡£\n");
+        set("long", "ä¸€ä½èº«æé«˜å¤§çš„æ±‰å­ï¼Œæ­£åœ¨è¾›è‹¦åœ°æ“ç»ƒç€ã€‚\n");
 
         skill=random(30)+10;
         set("combat_exp", 600+skill*10);

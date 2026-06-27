@@ -1,17 +1,17 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// Room: some place in Î÷Å£ºØÖŞ
+// Room: some place in è¥¿ç‰›è´ºæ´²
 // gate1.c
 
 inherit ROOM;
 #include <room.h>
 void create()
 {
-  set ("short", "Ğ¡Ôº");
+  set ("short", "å°é™¢");
   set ("long", @LONG
 
-Ğ¡ÔºÕıÖĞ·ÅÁËÒ»¿Ú¼«´óµÄÏãÂ¯£¬ÏóÊÇ»ÆÍ­´òÔì£¬ÉÏÃæµñµÄÊÇÁú·ï
-³ÊÏé¡£Â¯ÉÏµÄĞ¡¿Ú·¢³öÒ»¹ÉÇàÑÌ£¬ÔºÖĞÏãÆøçÔÈÆ¡£×óÓÒÊÇÏá·¿£¬
-ÏòÇ°×ß¾Íµ½ÁËÕıÔº¡£
+å°é™¢æ­£ä¸­æ”¾äº†ä¸€å£æå¤§çš„é¦™ç‚‰ï¼Œè±¡æ˜¯é»„é“œæ‰“é€ ï¼Œä¸Šé¢é›•çš„æ˜¯é¾™å‡¤
+å‘ˆç¥¥ã€‚ç‚‰ä¸Šçš„å°å£å‘å‡ºä¸€è‚¡é’çƒŸï¼Œé™¢ä¸­é¦™æ°”ç¼­ç»•ã€‚å·¦å³æ˜¯å¢æˆ¿ï¼Œ
+å‘å‰èµ°å°±åˆ°äº†æ­£é™¢ã€‚
 LONG);
 set("exits", ([ /* sizeof() == 4 */
 "north" : __DIR__"inside1",
@@ -19,7 +19,7 @@ set("exits", ([ /* sizeof() == 4 */
 "east": __DIR__"inside2",
 "west": __DIR__"inside3",
 ]));
-create_door("south", "Ê¯ÃÅ", "north", DOOR_CLOSED);
+create_door("south", "çŸ³é—¨", "north", DOOR_CLOSED);
 set("outdoors", 1);
         set("no_clean_up", 0);
 

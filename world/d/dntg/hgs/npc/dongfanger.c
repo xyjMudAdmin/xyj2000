@@ -4,11 +4,11 @@ inherit NPC;
 void create()
 {
 
-        set_name("¶«·½Ð¡¶þ½ã", ({ "dongfang sister", "dongfang", "sister"}) );
-        set("gender", "Å®ÐÔ");
+        set_name("ä¸œæ–¹å°äºŒå§", ({ "dongfang sister", "dongfang", "sister"}) );
+        set("gender", "å¥³æ€§");
         set("age", 16);
 	set("per", 28);
-        set("long", "¶«·½Ð¡¶þ½ãÊÇ¹ÝÖ÷µÄÔ¶·¿Ö¶Å®£¬À´°ÁÀ´¼û¼ûÊÀÃæ¡£\n");
+        set("long", "ä¸œæ–¹å°äºŒå§æ˜¯é¦†ä¸»çš„è¿œæˆ¿ä¾„å¥³ï¼Œæ¥å‚²æ¥è§è§ä¸–é¢ã€‚\n");
         set("combat_exp", 5000);
 	set("max_kee", 300);
 	set_skill("sword", 10);
@@ -18,8 +18,8 @@ void create()
 	set_skill("force", 20);
 set("chat_chance", 3);
 set("chat_msg", ({
-"Ð¡¶þ½ãËµµÀ£ºÎÒºÃÏ²»¶»¨ßÏ£¡\n",
-"Ð¡¶þ½ãËµµÀ£ºÍâÃæµÄ»¨¶ùºÃÏãßÏ£¡\n",
+"å°äºŒå§è¯´é“ï¼šæˆ‘å¥½å–œæ¬¢èŠ±å‘¦ï¼\n",
+"å°äºŒå§è¯´é“ï¼šå¤–é¢çš„èŠ±å„¿å¥½é¦™å‘¦ï¼\n",
 }) );
 
         setup();
@@ -32,8 +32,8 @@ int accept_object(object who,object ob)
 {
         object m;
         if (ob->query("id")=="flower") {
-                say("Ð¡¶þ½ãÐ¦µÀ£º¶àÐ»"  + RANK_D->query_respect(who) + "£¬ÎÒÕæµÄºÃÏ²»¶ßÏ£¡\n");
-		command("whisper " + who->query("id") + " ÎÒÕâÀïÓÐ¾Ë¹«µÄÒ»±¾Êé£¬ÄãÄÃÈ¥¿´°É£¡\n");
+                say("å°äºŒå§ç¬‘é“ï¼šå¤šè°¢"  + RANK_D->query_respect(who) + "ï¼Œæˆ‘çœŸçš„å¥½å–œæ¬¢å‘¦ï¼\n");
+		command("whisper " + who->query("id") + " æˆ‘è¿™é‡Œæœ‰èˆ…å…¬çš„ä¸€æœ¬ä¹¦ï¼Œä½ æ‹¿åŽ»çœ‹å§ï¼\n");
         m=new("/d/obj/book/forcebook");
         m->move(who);
         call_out("destroy", 1, ob);

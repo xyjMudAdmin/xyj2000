@@ -8,10 +8,10 @@ inherit ROOM;
 
 void create()
 {
-set("short", "µ¤·¿");
+set("short", "ä¸¹æˆ¿");
 set("long", @LONG
     
-Õâ°ËØÔÂ¯ÖĞËÄ´¦¶¼ÊÇÎÄÎäÖ®»ğ£¬×øÔÚÆäÖĞ£¬Ö»¸Ğµ½»ëÉíÔïÈÈÄÑµ±¡£
+è¿™å…«å¦ç‚‰ä¸­å››å¤„éƒ½æ˜¯æ–‡æ­¦ä¹‹ç«ï¼Œååœ¨å…¶ä¸­ï¼Œåªæ„Ÿåˆ°æµ‘èº«ç‡¥çƒ­éš¾å½“ã€‚
 LONG );
 
      set("exits/east", __DIR__"laojunlu"+(string)random(8));
@@ -35,7 +35,7 @@ void init()
     {
      if (this_player()->query("dntg/laojunlu") != "allow")
        {
-        message_vision(HIY"Ö»ÌıÍâÃæÒşÒş´«À´Ì«ÉÏÀÏ¾ıµÄÉùÒô£ºÊ±³½ÒÑµ½£¬Í¯¶ù¿ªÂ¯°É¡£\n"NOR,this_player());
+        message_vision(HIY"åªå¬å¤–é¢éšéšä¼ æ¥å¤ªä¸Šè€å›çš„å£°éŸ³ï¼šæ—¶è¾°å·²åˆ°ï¼Œç«¥å„¿å¼€ç‚‰å§ã€‚\n"NOR,this_player());
         this_player()->set("dntg/laojunlu","allow");
        } 
      set("exits/out", __DIR__"luwai");
@@ -63,13 +63,13 @@ int check_hp(object who)
   if (random(4)==1 && who->query("kee") > 20  )
     {
     who->add("kee",-20);
-    message_vision(HIY"ËÄ±Ú¾íÆğÒ»ÍÅ»ğÑæ£¬ÉÕµÃ$N½¹Í·ÀÃ¶î£¡\n"NOR,who);
+    message_vision(HIY"å››å£å·èµ·ä¸€å›¢ç«ç„°ï¼Œçƒ§å¾—$Nç„¦å¤´çƒ‚é¢ï¼\n"NOR,who);
     }
   if ( (100*(who->query("kee")))/(who->query("max_kee")) <= 10)
     {
-     message_vision(HIY"$N±»ÉÕµÃÍ·ÔÎÑÛ»¨£¬ÔÙÒ²Ö§³Å²»×¡ÁË¡£\n"NOR,who);
+     message_vision(HIY"$Nè¢«çƒ§å¾—å¤´æ™•çœ¼èŠ±ï¼Œå†ä¹Ÿæ”¯æ’‘ä¸ä½äº†ã€‚\n"NOR,who);
      who->delete_temp("last_damage_from");
-     who->set_temp("death_msg", "ÔÚ°ËØÔÂ¯ÖĞ±»ĞÜĞÜÁÒ»ğÉÕ³ÉÁË»Ò½ı¡£\n");
+     who->set_temp("death_msg", "åœ¨å…«å¦ç‚‰ä¸­è¢«ç†Šç†Šçƒˆç«çƒ§æˆäº†ç°çƒ¬ã€‚\n");
      who->die();
      who->save();
      return 1;
@@ -99,7 +99,7 @@ int do_quit ()
     }
 
   this_object()->set("has_ppl","no");
-  tell_object(me,"ÔİÊ±Àë¿ªÀÏ¾ıÂ¯¡­¡­\n");
+  tell_object(me,"æš‚æ—¶ç¦»å¼€è€å›ç‚‰â€¦â€¦\n");
   return 0; 
 }
 
@@ -128,7 +128,7 @@ int do_cast (string arg)
   if (who->query("dntg/laojunlu")=="allow" && 
              (arg=="escape" || arg=="shuidun" || arg=="tudun"))
      {
-      tell_object(who,"ÄÄÀïÅÜ£¡\n");
+      tell_object(who,"å“ªé‡Œè·‘ï¼\n");
       return 1;
      }
   else return 0;

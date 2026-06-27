@@ -45,10 +45,10 @@ int accept_fight(object who)
 
 	if( is_fighting() )	switch(att) {
 		case "heroism":
-			command("say ºß£¡³öÕÐ°É£¡\n");
+			command("say å“¼ï¼å‡ºæ‹›å§ï¼\n");
 			break;
 		default:
-			command("say ÏëÒÐ¶àÎªÊ¤£¬Õâ²»ÊÇÆÛÈËÌ«ÉõÂð£¡\n");
+			command("say æƒ³å€šå¤šä¸ºèƒœï¼Œè¿™ä¸æ˜¯æ¬ºäººå¤ªç”šå—ï¼\n");
 			return 0;
 	}
 
@@ -58,18 +58,18 @@ int accept_fight(object who)
 		switch(att) {
 			case "friendly":
 				command("say " + RANK_D->query_self(this_object())
-					+ "ÔõÃ´¿ÉÄÜÊÇ" + RANK_D->query_respect(who)
-					+ "µÄ¶ÔÊÖ£¿\n");
+					+ "æ€Žä¹ˆå¯èƒ½æ˜¯" + RANK_D->query_respect(who)
+					+ "çš„å¯¹æ‰‹ï¼Ÿ\n");
 				return 0;
 			case "aggressive":
 			case "killer":
-				command("say ºß£¡³öÕÐ°É£¡\n");
+				command("say å“¼ï¼å‡ºæ‹›å§ï¼\n");
 				break;
 			default:
 				if( !is_fighting() )
-					command("say ¼ÈÈ»" + RANK_D->query_respect(who)
-						+ "´Í½Ì£¬" + RANK_D->query_self(this_object())
-						+ "Ö»ºÃ·îÅã¡£\n");
+					command("say æ—¢ç„¶" + RANK_D->query_respect(who)
+						+ "èµæ•™ï¼Œ" + RANK_D->query_self(this_object())
+						+ "åªå¥½å¥‰é™ªã€‚\n");
 		}
 		return 1;
 	} else
@@ -101,7 +101,7 @@ int return_home(object home)
 	       if(!enemy_list[i]) continue;
 	      if( sizeof(enemy_list[i]->query_enemy()) > MAX_OPPENENT )  {
              message("vision", "\n"+this_object()->name() +
-             "×ÝÉíÏòºóÒ»Ô¾£¬¹°ÊÖµÀ£º¸óÏÂÎäÒÕ²»·²£¬Åå·þ£¬Åå·þ£¡ÔÛÃÇºó»áÓÐÆÚ£¡\n\n",
+             "çºµèº«å‘åŽä¸€è·ƒï¼Œæ‹±æ‰‹é“ï¼šé˜ä¸‹æ­¦è‰ºä¸å‡¡ï¼Œä½©æœï¼Œä½©æœï¼å’±ä»¬åŽä¼šæœ‰æœŸï¼\n\n",
              environment(), this_object());
 		     enemy_list[i]->remove_killer( this_object() );
 			 remove_enemy( enemy_list[i] );
@@ -114,7 +114,7 @@ int return_home(object home)
 	}
 
 	// Leave for home now.
-	message("vision", this_object()->name() + "¼±¼±Ã¦Ã¦µØÀë¿ªÁË¡£\n",
+	message("vision", this_object()->name() + "æ€¥æ€¥å¿™å¿™åœ°ç¦»å¼€äº†ã€‚\n",
 		environment(), this_object());
 	return move(home);
 }

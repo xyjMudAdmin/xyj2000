@@ -7,21 +7,21 @@ inherit F_LIQUID;
 
 void create()
 {
-	set_name("Çà´É´óº£Íë", ({"hai wan", "wan", "bowl"}));
+	set_name("é’ç“·å¤§æµ·ç¢—", ({"hai wan", "wan", "bowl"}));
 	set_weight(700);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»¸öÊ¢Âú°×¿ªË®µÄÇà´É´óº£Íë¡£\n");
-		set("unit", "¸ö");
+		set("long", "ä¸€ä¸ªç››æ»¡ç™½å¼€æ°´çš„é’ç“·å¤§æµ·ç¢—ã€‚\n");
+		set("unit", "ä¸ª");
 		set("max_liquid", 20);
-		set("no_get","Áô¸ø´ó¼ÒºÈ²»ºÃÂğ£¿£º£©\n");
-		set("drink_msg", "$N¶ËÆğ$n¹¾à½¹¾à½µØ¹àÏÂ¼¸´ó¿Ú$l¡£\n");
+		set("no_get","ç•™ç»™å¤§å®¶å–ä¸å¥½å—ï¼Ÿï¼šï¼‰\n");
+		set("drink_msg", "$Nç«¯èµ·$nå’•å˜Ÿå’•å˜Ÿåœ°çŒä¸‹å‡ å¤§å£$lã€‚\n");
 	}
 
 	set("liquid", ([
 		"type": "water",
-		"name": "°×¿ªË®",
+		"name": "ç™½å¼€æ°´",
 		"remaining": 20,
 	]));
 }
@@ -33,15 +33,15 @@ int do_drink(string arg)
     if( !this_object()->id(arg) ) return 0;
 
     if(!environment(this_object())->in_table(this_player())) {
-	write("ÕâÊÇÁô¸ø¹°ÖíµÄÏÉ³¤ÃÇºÈµÄ£º£¨\n");
+	write("è¿™æ˜¯ç•™ç»™æ‹±çŒªçš„ä»™é•¿ä»¬å–çš„ï¼šï¼ˆ\n");
 	return 1;
     }
     
     table=environment(this_object())->query_TABLE();
     if(undefinedp(table["cond"]) ||
-	    table["cond"]=="µÈÈË" ||
-	    table["cond"]=="µÈ·¢ÅÆ") {
-	write("¹°Öí»¹Ã»¿ªÊ¼ÄØ£¬ÏÈ¹àË®£¿\n");
+	    table["cond"]=="ç­‰äºº" ||
+	    table["cond"]=="ç­‰å‘ç‰Œ") {
+	write("æ‹±çŒªè¿˜æ²¡å¼€å§‹å‘¢ï¼Œå…ˆçŒæ°´ï¼Ÿ\n");
 	return 1;
     }
 

@@ -6,15 +6,15 @@ inherit ITEM;
 int do_kan(string arg);
 void create()
 {
-  set_name("¡¶Î÷ÓÎ¼Ç¼òĞ´±¾¡·", ({"xyj story","xyj","book"}));
+  set_name("ã€Šè¥¿æ¸¸è®°ç®€å†™æœ¬ã€‹", ({"xyj story","xyj","book"}));
   set_weight(200);
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("unit", "±¾");
+    set("unit", "æœ¬");
     set("value", 100);
     set("no_sell", 1);
-    set("long", " ¡¶Î÷ÓÎ¼Ç¼òĞ´±¾¡· ÇëÓÃ kan ÔÄ¶Á(0-46)¡£\n");
+    set("long", " ã€Šè¥¿æ¸¸è®°ç®€å†™æœ¬ã€‹ è¯·ç”¨ kan é˜…è¯»(0-46)ã€‚\n");
     set("material", "paper");
   }
 }
@@ -40,12 +40,12 @@ int do_kan(string arg)
     write("\n");
     me->start_more(read_file("/d/obj/books-nonskill/sxyj/0"));
     write("\n");
-    write ("ÇëÓÃ kan <number> ²ÎÔÄÓĞ¹ØÕÂ½Ú(0-46)¡£\n");
+    write ("è¯·ç”¨ kan <number> å‚é˜…æœ‰å…³ç« èŠ‚(0-46)ã€‚\n");
     return 1;
   }
 
   if ( nb < 0 || nb > size)
-    return notify_fail ("ÄãÒª¶ÁÄÄÒ»ÕÂ£¿\n");
+    return notify_fail ("ä½ è¦è¯»å“ªä¸€ç« ï¼Ÿ\n");
 
   else 
   {  

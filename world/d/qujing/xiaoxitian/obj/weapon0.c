@@ -5,9 +5,9 @@ inherit RAKE;
 
 void create()
 {
-  set_name("Æß³Ý°Ò", ({ "qichi pa", "pa", "rake" }) );
+  set_name("ä¸ƒé½¿è€™", ({ "qichi pa", "pa", "rake" }) );
   init_rake(35);
-  set("unit", "¸ù");
+  set("unit", "æ ¹");
   set_weight(1000);
   if( clonep() )
      set_default_object(__FILE__);

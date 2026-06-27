@@ -16,14 +16,14 @@ int main(object me, string arg)
 
 	if( !arg ) {
 		ob = me;
-		name = "ƒ„";
+		name = "‰Ω†";
 	} else if (wizardp (me)) {
 		ob = find_player(arg);
 		if(!ob) ob = find_living(arg);
 	
 		if(!ob) ob = LOGIN_D->find_body(arg);
 
-		if(!ob || !me->visible(ob)) return notify_fail("√ª”–’‚∏ˆ»À°£\n");
+		if(!ob || !me->visible(ob)) return notify_fail("Ê≤°ÊúâËøô‰∏™‰∫∫„ÄÇ\n");
 
 		name = ob->query("name");
 	} else
@@ -38,11 +38,11 @@ int main(object me, string arg)
 int help()
 {
 	write(@TEXT
-÷∏¡Ó∏Ò Ω£∫obstacles <ƒ≥»À>
+Êåá‰ª§Ê†ºÂºèÔºöobstacles <Êüê‰∫∫>
 
-œ‘ æƒ≥»ÀŒ˜––«Û»°’Êæ≠µƒ◊ ¡œ°£ 
+ÊòæÁ§∫Êüê‰∫∫Ë•øË°åÊ±ÇÂèñÁúüÁªèÁöÑËµÑÊñô„ÄÇ 
 
-«Îº˚£∫help qujing
+ËØ∑ËßÅÔºöhelp qujing
 TEXT
 	);
 	return 1;
@@ -72,11 +72,11 @@ int telling1 (object who)
 
   if (nb == 0)
   {
-    write (name+"…–Œ¥Œ˜––«Û»°’Êæ≠°£\n");
+    write (name+"Â∞öÊú™Ë•øË°åÊ±ÇÂèñÁúüÁªè„ÄÇ\n");
   }
   else
   {
-    write (name+"Œ˜––«Û»°’Êæ≠“—π˝¡À"+chinese_number(nb)+"πÿ£∫\n");
+    write (name+"Ë•øË°åÊ±ÇÂèñÁúüÁªèÂ∑≤Ëøá‰∫Ü"+chinese_number(nb)+"ÂÖ≥Ôºö\n");
     who->set("qujing/number",nb);
     strs = (string *)sort_array (strs, 1);
     for (i = 0; i < nb; i++)
@@ -111,11 +111,11 @@ int telling2 (object who)
 
   if (nb == 0)
   {
-    write (name+"Œ˜––«Û»°’Êæ≠“—¿˙æ°¡ÀÀ˘”–µƒƒ—πÿ°£\n");
+    write (name+"Ë•øË°åÊ±ÇÂèñÁúüÁªèÂ∑≤ÂéÜÂ∞Ω‰∫ÜÊâÄÊúâÁöÑÈöæÂÖ≥„ÄÇ\n");
   }
   else
   {
-    write (name+"Œ˜––«Û»°’Êæ≠ªπ–Îπ˝"+chinese_number(nb)+"πÿ£∫\n");
+    write (name+"Ë•øË°åÊ±ÇÂèñÁúüÁªèËøòÈ°ªËøá"+chinese_number(nb)+"ÂÖ≥Ôºö\n");
     strs = (string *)sort_array (strs, 1);
     for (i = 0; i < nb; i++)
     {

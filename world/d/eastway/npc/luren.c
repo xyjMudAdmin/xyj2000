@@ -5,11 +5,11 @@ inherit NPC;
 
 void create()
 {
-	set_name("Â·ÈË", ({ "luren", "ren"}));
+	set_name("è·¯äºº", ({ "luren", "ren"}));
 	if(random(10)<6)
-	    set("gender", "ÄĞĞÔ" );
+	    set("gender", "ç”·æ€§" );
 	else
-	    set("gender", "Å®ĞÔ" );
+	    set("gender", "å¥³æ€§" );
 	set("age", 15+random(50));
 	set("chat_chance", 20);
         set("chat_msg", ({

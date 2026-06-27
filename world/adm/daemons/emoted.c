@@ -76,7 +76,7 @@ varargs mixed do_emote(object me, string verb, string arg, int channel_emote, in
 		if(!channel_emote)  return 0;
 		if(verb[0] < 0x80)  return 0;
 		if(rumor_emote)
-		   user_emote = "某人" + verb + "\n";
+		   user_emote = "鏌愪汉" + verb + "\n";
                 else {
                   if(!channel_emote || ! intermud)
 		     user_emote = me->name() + verb + "\n";
@@ -90,7 +90,7 @@ varargs mixed do_emote(object me, string verb, string arg, int channel_emote, in
 	if ( stringp(arg) && arg != "" ) {
 		target = present(arg, environment(me));
 
-		notify_fail("你要对谁做这个动作？\n"); 
+		notify_fail("浣犺瀵硅皝鍋氳繖涓姩浣滐紵\n"); 
 		
 		if(!objectp(target)) {
 			// If not channel emote, only search target in our environment.
@@ -128,7 +128,7 @@ varargs mixed do_emote(object me, string verb, string arg, int channel_emote, in
 	if( stringp(str = emote[verb]["myself" + msg_postfix]) ) {
 		if_execute = " ";
 		if(rumor_emote)
-		   str = replace_string(str, "$N", "某人");
+		   str = replace_string(str, "$N", "鏌愪汉");
         else
 		   str = replace_string(str, "$N", me->name());
 		str = replace_string(str, "$P", gender_self(my_gender));
@@ -149,7 +149,7 @@ varargs mixed do_emote(object me, string verb, string arg, int channel_emote, in
 	if( objectp(target) && stringp(str = emote[verb]["target"]) ) {
 		if_execute = " ";
 		if(rumor_emote)
-		   str = replace_string(str, "$N", "某人");
+		   str = replace_string(str, "$N", "鏌愪汉");
         else
 		   str = replace_string(str, "$N", me->name());
 		str = replace_string(str, "$P", gender_pronoun(my_gender));
@@ -168,7 +168,7 @@ varargs mixed do_emote(object me, string verb, string arg, int channel_emote, in
 	if( stringp(str = emote[verb]["others"+msg_postfix]) ) {
 		if_execute = " ";
 		if(rumor_emote)
-		   str = replace_string(str, "$N", "某人");
+		   str = replace_string(str, "$N", "鏌愪汉");
         else if(!channel_emote || !intermud)
 		   str = replace_string(str, "$N", me->name());
 		str = replace_string(str, "$P", gender_pronoun(my_gender));

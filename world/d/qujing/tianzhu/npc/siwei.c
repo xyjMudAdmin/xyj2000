@@ -6,10 +6,10 @@ inherit NPC;
 void create()
 {
   int i = random(3)+6;
-  set_name("»Ê¹¬ËÅÎÀ", ({"si wei", "wei"}));
-  set("gender", "ÄĞĞÔ");
+  set_name("çš‡å®«ä¼ºå«", ({"si wei", "wei"}));
+  set("gender", "ç”·æ€§");
   set("age", 40);
-  set("long","Ò»Î»ÊØÎÀ»Ê¹¬µÄËÅÎÀ¹Ù¡£\n");
+  set("long","ä¸€ä½å®ˆå«çš‡å®«çš„ä¼ºå«å®˜ã€‚\n");
   set("combat_exp", 20000*i);
   set("per", 15);
   set_skill("parry", 20*i);
@@ -74,8 +74,8 @@ void unconcious ()
   object where = environment (me);
   object siwei = present ("siwei 3",where);
 
-  message_vision ("\n$Nµøµø×²×²ÃãÇ¿ÅÀ»Ø¹¬ÃÅ¡£\n",me);
-  message_vision ("\n$N×ßÁË¹ıÀ´¡£\n",me);
+  message_vision ("\n$Nè·Œè·Œæ’æ’å‹‰å¼ºçˆ¬å›å®«é—¨ã€‚\n",me);
+  message_vision ("\n$Nèµ°äº†è¿‡æ¥ã€‚\n",me);
   if (! siwei)
   {
     object ob = new ("/d/qujing/tianzhu/npc/siwei");

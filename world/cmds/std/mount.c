@@ -18,7 +18,7 @@ int main(object who, string arg)
       ! where ||
       ! (me = present(arg,where)) ||
       ! me->query("ride/msg"))
-    return notify_fail ("ÄãÏëÆïÊ²Ã´£¿\n");
+    return notify_fail ("ä½ æƒ³éª‘ä»€ä¹ˆï¼Ÿ\n");
 
   ridee = who->query_temp("ridee");
   if (ridee &&
@@ -26,7 +26,7 @@ int main(object who, string arg)
    ridee = 0;
 
   if (ridee)
-    return notify_fail ("ÄãÒÑ¾­"+ridee->query("ride/msg")+"ÔÚ"+ridee->name()+"ÉÏÁË£¡\n");
+    return notify_fail ("ä½ å·²ç»"+ridee->query("ride/msg")+"åœ¨"+ridee->name()+"ä¸Šäº†ï¼\n");
 
   rider = me->query_temp("rider");
   if (rider &&
@@ -34,15 +34,15 @@ int main(object who, string arg)
    rider = 0;
 
   if (rider)
-    return notify_fail (me->name()+"ÉÏÒÑÓĞÈËÁË£¡\n");
+    return notify_fail (me->name()+"ä¸Šå·²æœ‰äººäº†ï¼\n");
 
   if( me->query("female_only") &&
-	(string)who->query("gender")=="ÄĞĞÔ" )
-    return notify_fail( me->name()+"ÊÇ¸øÅ®ĞÔÆïµÄ¡£\n");
+	(string)who->query("gender")=="ç”·æ€§" )
+    return notify_fail( me->name()+"æ˜¯ç»™å¥³æ€§éª‘çš„ã€‚\n");
 
   if(me->query("ride/need_train") &&
      me->query("owner") != who->query("id"))
-    return notify_fail("ÄãĞèÒªÏÈÑ±·ş"+me->name()+"²ÅÄÜÈ¥ÆïËü¡£ \n");
+    return notify_fail("ä½ éœ€è¦å…ˆé©¯æœ"+me->name()+"æ‰èƒ½å»éª‘å®ƒã€‚ \n");
 
   if( who->query_temp("ride/dodge") ) {
 	who->add_temp("apply/dodge", -who->query_temp("ride/dodge"));
@@ -50,7 +50,7 @@ int main(object who, string arg)
 	who->delete_temp("ridee");
   }
 
-  message_vision ("$NäìÈ÷µØÒ»¸ö×İÉí£¬ÎÈÎÈµØ"+me->query("ride/msg")+"ÔÚ$nÉÏ£¡\n",who,me);
+  message_vision ("$Næ½‡æ´’åœ°ä¸€ä¸ªçºµèº«ï¼Œç¨³ç¨³åœ°"+me->query("ride/msg")+"åœ¨$nä¸Šï¼\n",who,me);
   me->set_temp("no_return",1);
   me->set_temp("rider",who);
   who->set_temp("ridee",me);
@@ -63,9 +63,9 @@ int main(object who, string arg)
 int help(object me)
 {
     write(@HELP
-Ö¸Áî¸ñÊ½ : mount <×øÆïÃû³Æ>
+æŒ‡ä»¤æ ¼å¼ : mount <åéª‘åç§°>
 
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄãÆïµ½×øÆïÉíÉÏ¡£
+è¿™ä¸ªæŒ‡ä»¤å¯ä»¥è®©ä½ éª‘åˆ°åéª‘èº«ä¸Šã€‚
 
 HELP
 );

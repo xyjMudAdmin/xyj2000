@@ -6,17 +6,17 @@ inherit ROOM;
 
 void create()
 {
-set("short", "±øÆ÷¿â");
+set("short", "å…µå™¨åº“");
 set("long", @LONG
     
-ÕâÀïÊÇ°ÁÀ´¹úµÄ±øÆ÷¿â£¬ÀïÃæ¸÷ÖÖ±øÆ÷(bingqi)£ºµ¶¡¢Ç¹¡¢
-½£¡¢êª¡¢¸«¡¢îá¡¢Ã«¡¢Á­¡¢±Ş¡¢îÙ¡¢ÎÎ¡¢ïµ¡¢¹­¡¢åó¡¢²æ¡¢
-Ã¬£¬¼ş¼ş¾ã±¸¡£ÕûÕûÆëÆëµÄ¶Ñ·Å×Å£¬¼¸¸öÍşÎäµÄÎäÊ¿ÔÚÕâ
-Àï±£ÊØ×Å¡£
+è¿™é‡Œæ˜¯å‚²æ¥å›½çš„å…µå™¨åº“ï¼Œé‡Œé¢å„ç§å…µå™¨(bingqi)ï¼šåˆ€ã€æªã€
+å‰‘ã€æˆŸã€æ–§ã€é’ºã€æ¯›ã€é•°ã€é­ã€é’¯ã€æŒã€é”ã€å¼“ã€å¼©ã€å‰ã€
+çŸ›ï¼Œä»¶ä»¶ä¿±å¤‡ã€‚æ•´æ•´é½é½çš„å †æ”¾ç€ï¼Œå‡ ä¸ªå¨æ­¦çš„æ­¦å£«åœ¨è¿™
+é‡Œä¿å®ˆç€ã€‚
 LONG );
 
 set("item_desc",(["bingqi":"
-¸÷ÖÖ¸÷ÑùµÄ±øÆ÷£¬¿´À´ÏëÄÃ×ß²»·½±ã£¬µÃÀ¦(kun)Ò»ÏÂ²ÅºÃÄÃ¡£\n"
+å„ç§å„æ ·çš„å…µå™¨ï¼Œçœ‹æ¥æƒ³æ‹¿èµ°ä¸æ–¹ä¾¿ï¼Œå¾—æ†(kun)ä¸€ä¸‹æ‰å¥½æ‹¿ã€‚\n"
 ]));
 
 set("exits", ([
@@ -48,24 +48,24 @@ int do_kun(string arg)
   object bingq;
 
   if ( !arg || ( arg != "bingqi" ) ) 
-      return notify_fail("ÄãÒªÀ¦Ê²Ã´£¿\n");
+      return notify_fail("ä½ è¦æ†ä»€ä¹ˆï¼Ÿ\n");
 
   if(objectp(present("pian jiang", environment(me)))) 
      {
-     return notify_fail("Æ«½«´óºÈµÀ£º¸Ò¶¯ÎÒ¹ú±øÆ÷¿âÀïµÄ¶«Î÷£¬·´ÁË²»³É£¿\n",me);
+     return notify_fail("åå°†å¤§å–é“ï¼šæ•¢åŠ¨æˆ‘å›½å…µå™¨åº“é‡Œçš„ä¸œè¥¿ï¼Œåäº†ä¸æˆï¼Ÿ\n",me);
      }
 
   else
     {
     if (me->is_busy())
-      return notify_fail ("ÄãÕıÔÚÃ¦×ÅÄØ¡£\n");
+      return notify_fail ("ä½ æ­£åœ¨å¿™ç€å‘¢ã€‚\n");
 
     else if (me->query("kee")<50)  me->unconcious(); 
 
     else
       {
       me->add("kee",-50);
-      message_vision ("$N¼±¼±Ã¦Ã¦ÊÕÊ°ÆğÒ»¶Ñ±øÆ÷£¬À¦ÁËÀ¦£¬±³ÁËÆğÀ´£¬ÓÖÈöÁËÒ»Ğ©¡£\n",me);
+      message_vision ("$Næ€¥æ€¥å¿™å¿™æ”¶æ‹¾èµ·ä¸€å †å…µå™¨ï¼Œæ†äº†æ†ï¼ŒèƒŒäº†èµ·æ¥ï¼Œåˆæ’’äº†ä¸€äº›ã€‚\n",me);
       bingq = new ("/d/dntg/hgs/obj/bingqi");
       bingq->move(me);
       me->start_busy(5,5);
@@ -84,20 +84,20 @@ int do_ji(string arg)
         object hb = this_object();
         object me = this_player();
 
-        if ( !arg || ( arg != "feng ling fu" ) ) return  notify_fail("ÄãÏë¼ÀÊ²Ã´£¿\n");
+        if ( !arg || ( arg != "feng ling fu" ) ) return  notify_fail("ä½ æƒ³ç¥­ä»€ä¹ˆï¼Ÿ\n");
 
         else if (!(hb=present(arg, me)) || userp(hb))  // prevent using "bian"
-           return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâ¶«Î÷¡£\n");
+           return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™ä¸œè¥¿ã€‚\n");
     
         else if (me->query("mana")+random(500)<1000)
           {
-          message_vision("$NÄÃ³ö·çÁé·û£¬´óºÈÒ»Éù£º¡°·çÀ´£¡¡±\n", me);
-          message_vision("µ«Ê²Ã´Ò²Ã»ÓĞ·¢Éú¡£¡±\n", me);
+          message_vision("$Næ‹¿å‡ºé£çµç¬¦ï¼Œå¤§å–ä¸€å£°ï¼šâ€œé£æ¥ï¼â€\n", me);
+          message_vision("ä½†ä»€ä¹ˆä¹Ÿæ²¡æœ‰å‘ç”Ÿã€‚â€\n", me);
           destruct(hb);
           }
         else
           { 
-          message_vision("$NÄÃ³ö·çÁé·û£¬´óºÈÒ»Éù£º¡°·çÀ´£¡¡±\n", me);
+          message_vision("$Næ‹¿å‡ºé£çµç¬¦ï¼Œå¤§å–ä¸€å£°ï¼šâ€œé£æ¥ï¼â€\n", me);
           call_out("away",2,me);
           destruct(hb);
           call_out("go_back",60,me);
@@ -117,7 +117,7 @@ void away(object who)
   if(!userp(who1)) destruct(who1);
   if(who2 && !userp(who2)) destruct(who2);
   tell_object(where,
-	  "Ö»¼ûÒ»¹É¿ñ·ç¹Î¹ı£¬´µµÃÈËÃÇ¶¼Õõ²»¿ªÑÛ£¬¼¸¸öÆ«½«¿Şº¿×ÅÅÜÁË³öÈ¥¡£\n");
+	  "åªè§ä¸€è‚¡ç‹‚é£åˆ®è¿‡ï¼Œå¹å¾—äººä»¬éƒ½æŒ£ä¸å¼€çœ¼ï¼Œå‡ ä¸ªåå°†å“­åšç€è·‘äº†å‡ºå»ã€‚\n");
 }
 
 void go_back(object who)
@@ -134,7 +134,7 @@ void go_back(object who)
   who2 = new (__DIR__"npc/pianjiang");
   who1->move(where);
   who2->move(where);
-  tell_object(where,"Æ«½«ÃÇÈà×ÅÑÛ¾¦×ß»Ø±øÆ÷¿â¡£\n");
+  tell_object(where,"åå°†ä»¬æ‰ç€çœ¼ç›èµ°å›å…µå™¨åº“ã€‚\n");
 }
 
 

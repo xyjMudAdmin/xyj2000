@@ -1,5 +1,5 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-//ÎèÑ©
+//èˆé›ª
 //requirement:force,dodge,sword all over 100
 
 #include <ansi.h>
@@ -14,24 +14,24 @@ int perform(object me, object target)
         int skill_sword, skill_dodge, dodge_amount,attack_amount;
 
         if( me->query_skill_mapped("dodge") != "moondance" )
-                return notify_fail("Äã»¹Ã»ÓĞÊ©Õ¹ÀäÔÂÄıÏãÎèÄØ¡£\n");
+                return notify_fail("ä½ è¿˜æ²¡æœ‰æ–½å±•å†·æœˆå‡é¦™èˆå‘¢ã€‚\n");
         skill_dodge = me->query_skill("dodge");            
-        if (skill_dodge<100) return notify_fail("ÄãÎè¼¼»¹²»¹»¸ßÃ÷¡£\n");
+        if (skill_dodge<100) return notify_fail("ä½ èˆæŠ€è¿˜ä¸å¤Ÿé«˜æ˜ã€‚\n");
         if (me->query_skill_mapped("force")!="moonforce")
-                return notify_fail("ÎèÑ©±ØĞëÅäºÏÔ²ÔÂĞÄ·¨²ÅÄÜÊ¹ÓÃ¡£\n");
+                return notify_fail("èˆé›ªå¿…é¡»é…åˆåœ†æœˆå¿ƒæ³•æ‰èƒ½ä½¿ç”¨ã€‚\n");
         skill_sword=me->query_skill("force");        
-        if (skill_sword<100) return notify_fail("ÄãµÄÔ²ÔÂĞÄ·¨²»¹»´¿Êì¡£\n");
+        if (skill_sword<100) return notify_fail("ä½ çš„åœ†æœˆå¿ƒæ³•ä¸å¤Ÿçº¯ç†Ÿã€‚\n");
         skill_sword=me->query_skill("sword");
         if (skill_sword<100) 
-           return notify_fail("ÄãµÄ½£ÊõÌ«²î¾¢ÁË¡£\n"); 
+           return notify_fail("ä½ çš„å‰‘æœ¯å¤ªå·®åŠ²äº†ã€‚\n"); 
         if( (int)me->query("force") < 50 )      
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
         if( (int)me->query_temp("powerup") )
-                return notify_fail("ÄãÒÑ¾­ÔÚÔË¹¦ÖĞÁË¡£\n");
+                return notify_fail("ä½ å·²ç»åœ¨è¿åŠŸä¸­äº†ã€‚\n");
         
         me->add("force", -50);
         message_vision(
-                HIW"$NÂÔÒ»ÌáÆø£¬ÔËÆğÇá¹¦£¬°Î½£ÆğÎè¡£Ö»¼û$N×ã²»Õ´µØ£¬ÊÖÖĞ½£Ô½ÎèÔ½¿ì£¬Öğ½¥»Ã×öÒ»ÍÅ°×Îí£¬ÂúÌÃ¹ö¶¯¡£\n" NOR, me);
+                HIW"$Nç•¥ä¸€ææ°”ï¼Œè¿èµ·è½»åŠŸï¼Œæ‹”å‰‘èµ·èˆã€‚åªè§$Nè¶³ä¸æ²¾åœ°ï¼Œæ‰‹ä¸­å‰‘è¶Šèˆè¶Šå¿«ï¼Œé€æ¸å¹»åšä¸€å›¢ç™½é›¾ï¼Œæ»¡å ‚æ»šåŠ¨ã€‚\n" NOR, me);
  
         attack_amount=skill_sword*random(6)/10;
         dodge_amount=skill_dodge*(5+random(6))/10; 
@@ -49,5 +49,5 @@ void remove_effect(object me, int dodge_amount,int attack_amount)
         me->add_temp("apply/dodge", -dodge_amount);
         me->add_temp("apply/attack", attack_amount);
         me->delete_temp("powerup");
-    	message_vision(HIW"$N½¥¸ĞÆøÁ¦²»Ö§£¬²»µÃ²»·ÅÂı½Å²½£¬·Å»º½£ÕĞ¡£\n"NOR,me);
+    	message_vision(HIW"$Næ¸æ„Ÿæ°”åŠ›ä¸æ”¯ï¼Œä¸å¾—ä¸æ”¾æ…¢è„šæ­¥ï¼Œæ”¾ç¼“å‰‘æ‹›ã€‚\n"NOR,me);
 }

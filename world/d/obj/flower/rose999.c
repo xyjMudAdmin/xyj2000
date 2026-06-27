@@ -10,14 +10,14 @@ inherit NECK;
 
 void create ()
 {
-  set_name(HIB "¾Å°Ù¾ÅÊ®¾Å¶äÃµ¹å" NOR, ({ "flower"}));
+  set_name(HIB "ä¹ç™¾ä¹åä¹æœµç«ç‘°" NOR, ({ "flower"}));
   set_weight(100);
-  set("long","É«²ÊÑŞÀöµÄ"+query("name")+"¡£\n");
-  set("unit", "°Ñ");
+  set("long","è‰²å½©è‰³ä¸½çš„"+query("name")+"ã€‚\n");
+  set("unit", "æŠŠ");
   set("armor_prop/armor", 1);
   set("armor_prop/personality", 2);
-  set("unequip_msg","$N½«"+query("name")+"ÇáÇáµØÕªÏÂÀ´¡­¡­¡£\n");
-  set("wear_msg", "$N´÷ÉÏ"+query("name")+"£¬²»½ûÏëÆğÄêÉÙÊ±Ôø¾­µÄÃÎÖĞÈË¡£\n");
+  set("unequip_msg","$Nå°†"+query("name")+"è½»è½»åœ°æ‘˜ä¸‹æ¥â€¦â€¦ã€‚\n");
+  set("wear_msg", "$Næˆ´ä¸Š"+query("name")+"ï¼Œä¸ç¦æƒ³èµ·å¹´å°‘æ—¶æ›¾ç»çš„æ¢¦ä¸­äººã€‚\n");
   setup();
 }
 

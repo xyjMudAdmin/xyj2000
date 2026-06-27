@@ -1,5 +1,5 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// moonshentong.c ¡¾ÍíÔÂÉñÍ¨¡¿
+// moonshentong.c ã€æ™šæœˆç¥é€šã€‘
 inherit SKILL;
 
 int valid_enable(string usage) { return usage=="spells"; }
@@ -10,7 +10,7 @@ int valid_learn(object me)
         ||      (int)me->query_skill("spells", 1) <=
 (int)me->query_skill("moonshentong", 1) )
                 return
-notify_fail("ÄãµÄ·¨ÊõĞŞÎª»¹²»¹»¸ßÉî£¬ÎŞ·¨Ñ§Ï°ÔÂ¹¬ÏÉ·¨¡£\n");
+notify_fail("ä½ çš„æ³•æœ¯ä¿®ä¸ºè¿˜ä¸å¤Ÿé«˜æ·±ï¼Œæ— æ³•å­¦ä¹ æœˆå®«ä»™æ³•ã€‚\n");
         return 1;
 }
 

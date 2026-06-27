@@ -6,13 +6,13 @@ inherit ITEM;
 int do_eat(string);
 void create()
 {
-  set_name(HIC "±ÌË®µ¤" NOR, ({"bishui dan", "dan"}));
+  set_name(HIC "ç¢§æ°´ä¸¹" NOR, ({"bishui dan", "dan"}));
   set_weight(50);
   if (clonep())
     set_default_object(__FILE__);
   else {
-    set("unit", "¿Å");
-    set("long", "±ÌÓÍÓÍµÄÒ»¿Å±ÌË®µ¤¡£\n");
+    set("unit", "é¢—");
+    set("long", "ç¢§æ²¹æ²¹çš„ä¸€é¢—ç¢§æ°´ä¸¹ã€‚\n");
     set("value", 5000);
     set("no_sell", 1);
   }
@@ -30,9 +30,9 @@ int do_eat(string arg)
   object me = this_player();
     
   if (!id(arg))
-    return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+    return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 
-	message_vision(HIC"$N³ÔÏÂÒ»¿Å±ÌË®µ¤£¬Á³É«±äµÄÒ»Æ¬²Ò°×¡£\n"NOR, me);  
+	message_vision(HIC"$Nåƒä¸‹ä¸€é¢—ç¢§æ°´ä¸¹ï¼Œè„¸è‰²å˜çš„ä¸€ç‰‡æƒ¨ç™½ã€‚\n"NOR, me);  
   
 	me->add("bellicosity", -random( (int)me->query_kar() * 10));
 	if ((int)me->query("bellicosity") < 0 ) me->set("bellicosity", 0);

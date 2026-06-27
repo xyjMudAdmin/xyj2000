@@ -7,27 +7,27 @@
 inherit NPC;
 inherit F_MASTER;
 string *death_msg = ({
-        HIB "ºÚÎŞ³£ËµµÀ£ºÎ¹£¡ĞÂÀ´µÄ£¬Äã½ĞÊ²Ã´Ãû×Ö£¿\n\n" NOR,
-        HIB "ºÚÎŞ³£ÓÃÆæÒìµÄÑÛ¹â¶¢×ÅÄã£¬ºÃÏñÒª¿´´©ÄãµÄÒ»ÇĞËÆµÄ¡£\n\n" NOR,
-        HIB "ºÚÎŞ³£¡¸ºß¡¹µÄÒ»Éù£¬´ÓĞäÖĞÌÍ³öÒ»±¾ÏñÕÊ²áµÄ¶«Î÷·­¿´Öø¡£\n\n" NOR,
-        HIB "ºÚÎŞ³£ºÏÉÏ²á×Ó£¬ËµµÀ£ºß×£¿ÑôÊÙÎ´¾¡£¿ÔõÃ´¿ÉÄÜ£¿\n\n" NOR,
-        HIB "ºÚÎŞ³£É¦ÁËÉ¦Í·£¬Ì¾µÀ£º°ÕÁË°ÕÁË£¬Äã×ß°É¡£\n\n"
-                "Ò»¹ÉÒõÀäµÄÅ¨ÎíÍ»È»³öÏÖ£¬ºÜ¿ìµØ°üÎ§ÁËÄã¡£\n\n" NOR,
+        HIB "é»‘æ— å¸¸è¯´é“ï¼šå–‚ï¼æ–°æ¥çš„ï¼Œä½ å«ä»€ä¹ˆåå­—ï¼Ÿ\n\n" NOR,
+        HIB "é»‘æ— å¸¸ç”¨å¥‡å¼‚çš„çœ¼å…‰ç›¯ç€ä½ ï¼Œå¥½åƒè¦çœ‹ç©¿ä½ çš„ä¸€åˆ‡ä¼¼çš„ã€‚\n\n" NOR,
+        HIB "é»‘æ— å¸¸ã€Œå“¼ã€çš„ä¸€å£°ï¼Œä»è¢–ä¸­æå‡ºä¸€æœ¬åƒå¸å†Œçš„ä¸œè¥¿ç¿»çœ‹è‘—ã€‚\n\n" NOR,
+        HIB "é»‘æ— å¸¸åˆä¸Šå†Œå­ï¼Œè¯´é“ï¼šå’¦ï¼Ÿé˜³å¯¿æœªå°½ï¼Ÿæ€ä¹ˆå¯èƒ½ï¼Ÿ\n\n" NOR,
+        HIB "é»‘æ— å¸¸æ”äº†æ”å¤´ï¼Œå¹é“ï¼šç½¢äº†ç½¢äº†ï¼Œä½ èµ°å§ã€‚\n\n"
+                "ä¸€è‚¡é˜´å†·çš„æµ“é›¾çªç„¶å‡ºç°ï¼Œå¾ˆå¿«åœ°åŒ…å›´äº†ä½ ã€‚\n\n" NOR,
 });
 
 void create()
 {
-        set_name("ºÚÎŞ³£", ({ "black gargoyle", "gargoyle" }) );
+        set_name("é»‘æ— å¸¸", ({ "black gargoyle", "gargoyle" }) );
         set("long",
 
-"ºÚÎŞ³£Éì×Å³¤³¤µÄÉàÍ·µÉ×ÅÄã£¬÷îºÚµÄÁ³ÉÏ¿´²»³öÈÎºÎÏ²Å­°§ÀÖ¡£\n");
+"é»‘æ— å¸¸ä¼¸ç€é•¿é•¿çš„èˆŒå¤´çªç€ä½ ï¼Œé»é»‘çš„è„¸ä¸Šçœ‹ä¸å‡ºä»»ä½•å–œæ€’å“€ä¹ã€‚\n");
         set("attitude", "peaceful");
         set("chat_chance", 10);
         set("chat_msg", ({
 
-"ºÚÎŞ³£·¢³öÒ»ÕóÏñÉëÒ÷µÄÉùÒô£¬µ±Ëû·¢ÏÖÄãÕı×¢ÊÓ×ÅËûµÄÊ±ºò£¬µÉÁËÄãÒ»ÑÛ¡£\n",
+"é»‘æ— å¸¸å‘å‡ºä¸€é˜µåƒå‘»åŸçš„å£°éŸ³ï¼Œå½“ä»–å‘ç°ä½ æ­£æ³¨è§†ç€ä»–çš„æ—¶å€™ï¼Œçªäº†ä½ ä¸€çœ¼ã€‚\n",
 
-"ºÚÎŞ³£°Ñ³¤³¤µÄÉàÍ·Éì³öÀ´£¬»º»ºµØÌòÁËÌò×Ô¼ºÓÖºÚÓÖ³¤µÄÊÖÖ¸¡£\n"
+"é»‘æ— å¸¸æŠŠé•¿é•¿çš„èˆŒå¤´ä¼¸å‡ºæ¥ï¼Œç¼“ç¼“åœ°èˆ”äº†èˆ”è‡ªå·±åˆé»‘åˆé•¿çš„æ‰‹æŒ‡ã€‚\n"
         }) );
 	set("per", 100);
 	set("str", 25);
@@ -46,7 +46,7 @@ void create()
 	set("max_mana", 500);
 	set("mana", 500);
 	set("mana_factor", 30);
-        set("title", "ËÍ»êÊ¹Õß");
+        set("title", "é€é­‚ä½¿è€…");
         set_temp("apply/damage", 10);
         set_skill("ghost-steps", 70);
         set_skill("dodge", 70);
@@ -65,7 +65,7 @@ void create()
 	map_skill("stick", "kusang-bang");
 	map_skill("parry", "kusang-bang");
         map_skill("unarmed", "jinghun-zhang");
-	create_family("ÑÖÂŞµØ¸®", 3, "ÄãºÃ");
+	create_family("é˜ç½—åœ°åºœ", 3, "ä½ å¥½");
         setup();
 	carry_object("/d/obj/cloth/hei")->wear();
 }
@@ -84,8 +84,8 @@ void death_stage(object ob, int stage)
         if( !ob || !present(ob) ) return;
 
         if( !ob->is_ghost()) {
-		if( visible(ob)&&(string)ob->query("family/family_name")!="ÑÖÂŞµØ¸®" ){
-        	        command("say Î¹£¡ÑôÈËÀ´Òõ¼ä×öÊ²Ã´£¿ÄÑµÀÊÇ»îµÄÑá¾ëÁËÂğ£¿\n");
+		if( visible(ob)&&(string)ob->query("family/family_name")!="é˜ç½—åœ°åºœ" ){
+        	        command("say å–‚ï¼é˜³äººæ¥é˜´é—´åšä»€ä¹ˆï¼Ÿéš¾é“æ˜¯æ´»çš„åŒå€¦äº†å—ï¼Ÿ\n");
                 	kill_ob(ob);
                		ob->fight_ob(this_object());
                 	return;
@@ -107,15 +107,15 @@ void death_stage(object ob, int stage)
 		ob->set("gin", (int)ob->query("max_gin"));
         ob->move(REVIVE_ROOM);
         message("vision",
-                "ÄãºöÈ»·¢ÏÖÇ°Ãæ¶àÁËÒ»¸öÈËÓ°£¬²»¹ıÄÇÈËÓ°ÓÖºÃÏñÒÑ¾­ÔÚÄÇÀï\n"
-                "ºÜ¾ÃÁË£¬Ö»ÊÇÄãÒ»Ö±Ã»·¢¾õ¡£\n", environment(ob), ob);
+                "ä½ å¿½ç„¶å‘ç°å‰é¢å¤šäº†ä¸€ä¸ªäººå½±ï¼Œä¸è¿‡é‚£äººå½±åˆå¥½åƒå·²ç»åœ¨é‚£é‡Œ\n"
+                "å¾ˆä¹…äº†ï¼Œåªæ˜¯ä½ ä¸€ç›´æ²¡å‘è§‰ã€‚\n", environment(ob), ob);
 }
 void attempt_apprentice()
 {       object me;
         me = this_player();
-        if ( (string)me->query("family/family_name")=="ÑÖÂŞµØ¸®") {
+        if ( (string)me->query("family/family_name")=="é˜ç½—åœ°åºœ") {
         if (((int)me->query("combat_exp") < 10000 )) {
-        command("say " + RANK_D->query_rude(me) + "µÄĞÄ»¹²»¹»ºÚ£¬ÀÏ·ò²»Ğ¼ÊÕÄã£¡\n");
+        command("say " + RANK_D->query_rude(me) + "çš„å¿ƒè¿˜ä¸å¤Ÿé»‘ï¼Œè€å¤«ä¸å±‘æ”¶ä½ ï¼\n");
         return;
         }
         command("grin");
@@ -123,14 +123,14 @@ void attempt_apprentice()
         me->reincarnate();
 	me->set("gin", (int)me->query("max_gin"));
         }
-        command("say ºÜºÃ£¬" + RANK_D->query_respect(me) +
-"¶à¼ÓÅ¬Á¦£¬ËûÈÕ±Ø¶¨ÓĞ³É¡£\n");
+        command("say å¾ˆå¥½ï¼Œ" + RANK_D->query_respect(me) +
+"å¤šåŠ åŠªåŠ›ï¼Œä»–æ—¥å¿…å®šæœ‰æˆã€‚\n");
        command("recruit " + me->query("id") );
         return;
         }
         command("shake");
         command("say " + RANK_D->query_rude(me) +
-"»¹ÊÇÏÈÈ¥Ñ§Ğ©»ù´¡¹¦·ò°É£¡\n");
+"è¿˜æ˜¯å…ˆå»å­¦äº›åŸºç¡€åŠŸå¤«å§ï¼\n");
         return;
 }
 
@@ -141,4 +141,3 @@ int recruit_apprentice(object ob)
 }
 
 
-ÿ

@@ -1,5 +1,5 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// pozhan.c 		ÆÆÕÀ°Ù³ö
+// pozhan.c 		ç ´ç»½ç™¾å‡º
 
 #include <ansi.h>
 
@@ -15,27 +15,27 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("²»ÔÚÕ½¶·ÖÐ£¬Â¶Ê²Ã´ÆÆÕÀ£¿\n");
+		return notify_fail("ä¸åœ¨æˆ˜æ–—ä¸­ï¼Œéœ²ä»€ä¹ˆç ´ç»½ï¼Ÿ\n");
 
 	myblade=(int)me->query_skill("kugu-blade",1);
 	if(myblade>160) myblade=160; // mon 12/7/98
 	if(myblade<50) 
-		return notify_fail("ÄãµÄÐÞÎª²»¹»Éî£¬Â¶ÆÆÕÀ¸øÈËÌ«Î£ÏÕÁË¡£\n");
+		return notify_fail("ä½ çš„ä¿®ä¸ºä¸å¤Ÿæ·±ï¼Œéœ²ç ´ç»½ç»™äººå¤ªå±é™©äº†ã€‚\n");
 
 	delay=myblade/16;
 
 	if( target->is_busy() )
-		return notify_fail(target->name() + "Ä¿Ç°Õý×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É£¡\n");
+		return notify_fail(target->name() + "ç›®å‰æ­£è‡ªé¡¾ä¸æš‡ï¼Œæ”¾èƒ†æ”»å‡»å§ï¼\n");
 
-	msg = CYN "$NµÄÕÐÊ½Í»È»Ò»±ä£¬±äµÃÈ«ÎÞÕÂ·¨£¬»ëÉíÉÏÏÂÆÆÕÀ°Ù³ö£¬\n";
+	msg = CYN "$Nçš„æ‹›å¼çªç„¶ä¸€å˜ï¼Œå˜å¾—å…¨æ— ç« æ³•ï¼Œæµ‘èº«ä¸Šä¸‹ç ´ç»½ç™¾å‡ºï¼Œ\n";
 	//change totoal random to half random half ur own value to make the sucessrate more stable
 	if( ((random(me->query("combat_exp"))*3/4 + (me->query("combat_exp")/4) > (int)target->query("combat_exp")*5/8 ))) {
-		msg += "$nÏë¹¥£¬È´²»ÖªµÀÄÄ¸öÆÆÕÀÊÇÕæ£¬ÄÄ¸öÊÇ¼Ù¡£\n";
-		msg += "½á¹û$p±»$P¹¥ÁË¸ö´ëÊÖ²»¼°£¡\n" NOR;
+		msg += "$næƒ³æ”»ï¼Œå´ä¸çŸ¥é“å“ªä¸ªç ´ç»½æ˜¯çœŸï¼Œå“ªä¸ªæ˜¯å‡ã€‚\n";
+		msg += "ç»“æžœ$pè¢«$Pæ”»äº†ä¸ªæŽªæ‰‹ä¸åŠï¼\n" NOR;
 		target->start_busy(delay);
 		me->start_busy(random(2));
 	} else {
-		msg += "¿ÉÊÇ$p¿´ÆÆÁË$PµÄÆóÍ¼£¬²¢Ã»ÓÐÉÏµ±¡£\n" NOR;
+		msg += "å¯æ˜¯$pçœ‹ç ´äº†$Pçš„ä¼å›¾ï¼Œå¹¶æ²¡æœ‰ä¸Šå½“ã€‚\n" NOR;
 		me->start_busy(delay/2);
 	}
 	message_vision(msg, me, target);

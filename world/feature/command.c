@@ -43,10 +43,10 @@ nomask int command_hook(string arg)
           if(me->query_temp("is_living")!=1) {
             if(verb!="bian" && verb!="say"
 	    && verb!="tell" && verb!="reply" && verb!="look") {
-	     write("±ğÍüÁËÄãÏÖÔÚÊÇÒ»"+
+	     write("åˆ«å¿˜äº†ä½ ç°åœ¨æ˜¯ä¸€"+
   	      (undefinedp(me->query_temp("unit"))?
-	      "¸ö":me->query_temp("unit"))
-              +me->name()+"£¡\n");
+	      "ä¸ª":me->query_temp("unit"))
+              +me->name()+"ï¼\n");
 	     return 1;
 	    }
 	  }

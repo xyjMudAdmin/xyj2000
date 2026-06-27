@@ -5,16 +5,16 @@ inherit FORK;
 
 void create()
 {
-        set_name("Áú½Ç²æ", ({ "dragon fork", "cha","fork" }) );
+        set_name("é¾™è§’å‰", ({ "dragon fork", "cha","fork" }) );
         set_weight(8000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
+                set("unit", "æŸ„");
                 set("value", 5000);
                 set("material", "iron");
-                set("long", "Ò»±ú¼âÀûµÄÁú½Ç²æ¡£\n");
-                set("wield_msg", "$N³­ÆğÒ»±ú$n£¬ÔÚÍ·ÉÏ»ÓÎèÁËÒ»È¦¡£\n");
+                set("long", "ä¸€æŸ„å°–åˆ©çš„é¾™è§’å‰ã€‚\n");
+                set("wield_msg", "$NæŠ„èµ·ä¸€æŸ„$nï¼Œåœ¨å¤´ä¸ŠæŒ¥èˆäº†ä¸€åœˆã€‚\n");
         }
         init_fork(50);
         setup();

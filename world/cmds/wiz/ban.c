@@ -16,13 +16,13 @@ int main(object me, string arg)
 		if (site[sizeof(site)-1] == '*' ||
 		    site[sizeof(site)-1] == '?' ||
 		    site[sizeof(site)-1] == '+')
-			write("²»ÄÜ½ûÒÔ *, +, ? ½áÎ²µÄµØÖ·¡£\n");
+			write("ä¸èƒ½ç¦ä»¥ *, +, ? ç»“å°¾çš„åœ°å€ã€‚\n");
 		else
 			BAN_D->add(site);
 		}
 	else if (sscanf(arg, "- %s", site) == 1)
 		BAN_D->remove(site);
-	else write("Ö¸Áî¸ñÊ½£ºban [+|- site]\n");
+	else write("æŒ‡ä»¤æ ¼å¼ï¼šban [+|- site]\n");
 
 	return 1;
 	
@@ -31,9 +31,9 @@ int main(object me, string arg)
 int help(object me)
 {
 	write(@HELP
-Ö¸Áî¸ñÊ½£ºban [+|- site]
+æŒ‡ä»¤æ ¼å¼ï¼šban [+|- site]
 
-µ±ÓĞÈË¸ãÆÆ»µÊ±¿ÉÒÔ¾Ü¾øÆäÏà¹ØIPµÄÁ¬Ïß¡£
+å½“æœ‰äººæç ´åæ—¶å¯ä»¥æ‹’ç»å…¶ç›¸å…³IPçš„è¿çº¿ã€‚
 HELP
 	);
 	return 1;

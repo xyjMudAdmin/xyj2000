@@ -18,13 +18,13 @@ string extra_long()
 	if( amount = query("liquid/remaining") ) {
 		max = query("max_liquid");
 		if( amount == max )
-			str = "ÀïÃæ×°ÂúÁË" + query("liquid/name") + "¡£\n";
+			str = "é‡Œé¢è£…æ»¡äº†" + query("liquid/name") + "ã€‚\n";
 		else if( amount > max/2 )
-			str = "ÀïÃæ×°ÁËÆß¡¢°Ë·ÖÂúµÄ" + query("liquid/name") + "¡£\n";
+			str = "é‡Œé¢è£…äº†ä¸ƒã€å…«åˆ†æ»¡çš„" + query("liquid/name") + "ã€‚\n";
 		else if( amount >= max/3 )
-			str = "ÀïÃæ×°ÁËÎå¡¢Áù·ÖÂúµÄ" + query("liquid/name") + "¡£\n";
+			str = "é‡Œé¢è£…äº†äº”ã€å…­åˆ†æ»¡çš„" + query("liquid/name") + "ã€‚\n";
 		else if( amount > max/2 )
-			str = "ÀïÃæ×°ÁËÉÙĞíµÄ" + query("liquid/name") + "¡£\n";
+			str = "é‡Œé¢è£…äº†å°‘è®¸çš„" + query("liquid/name") + "ã€‚\n";
 		return str;
 	}
 	else return 0;
@@ -37,15 +37,15 @@ int do_drink(string arg)
            return 1;
 	if( !this_object()->id(arg) ) return 0;
 	if( this_player()->is_busy() )
-		return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É¡£\n");
+		return notify_fail("ä½ ä¸Šä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆã€‚\n");
 	if( !query("liquid/remaining") ) {
-		write( name() + (query("liquid/name") ? "ÒÑ¾­±»ºÈµÃÒ»µÎÒ²²»Ê£ÁË¡£\n":"ÊÇ¿ÕµÄ¡£\n"));
+		write( name() + (query("liquid/name") ? "å·²ç»è¢«å–å¾—ä¸€æ»´ä¹Ÿä¸å‰©äº†ã€‚\n":"æ˜¯ç©ºçš„ã€‚\n"));
 		return 1;
 	}
 
 	if( (int)this_player()->query("water") >= 
 		(int)this_player()->max_water_capacity() ) {
-		write("ÄãÒÑ¾­ºÈÌ«¶àÁË£¬ÔÙÒ²¹à²»ÏÂÒ»µÎË®ÁË¡£\n");
+		write("ä½ å·²ç»å–å¤ªå¤šäº†ï¼Œå†ä¹ŸçŒä¸ä¸‹ä¸€æ»´æ°´äº†ã€‚\n");
 		return 1;
 	}
 
@@ -55,13 +55,13 @@ int do_drink(string arg)
 		message_vision(msg, this_player(), this_object());
 	}
 	else
-		message_vision("$NÄÃÆğ" + name() + "¹¾ààààµØºÈÁË¼¸¿Ú" + query("liquid/name")
-			+ "¡£\n", this_player());
+		message_vision("$Næ‹¿èµ·" + name() + "å’•å™œå™œåœ°å–äº†å‡ å£" + query("liquid/name")
+			+ "ã€‚\n", this_player());
 	this_player()->add("water", 30);
 	if( this_player()->is_fighting() ) this_player()->start_busy(2);
 	if( !query("liquid/remaining") )
-		write("ÄãÒÑ¾­½«" + name() + "ÀïµÄ" + query("liquid/name")
-			+ "ºÈµÃÒ»µÎÒ²²»Ê£ÁË¡£\n");
+		write("ä½ å·²ç»å°†" + name() + "é‡Œçš„" + query("liquid/name")
+			+ "å–å¾—ä¸€æ»´ä¹Ÿä¸å‰©äº†ã€‚\n");
 
 	// This allows customization of drinking effect.
 	if( query("liquid/drink_func") ) return 1;
@@ -101,19 +101,19 @@ int do_drink(string arg)
 				recover = (me->query("max_gin")-me->query("eff_gin"))/10;
 				if (recover == 0) recover = 1;
 				me->add("eff_gin",recover);
-				message_vision("¿´ÆğÀ´$NµÄ¾«Á¦»Ö¸´ÁË²»ÉÙ¡£\n",me);
+				message_vision("çœ‹èµ·æ¥$Nçš„ç²¾åŠ›æ¢å¤äº†ä¸å°‘ã€‚\n",me);
 			}
 			if (me->query("max_kee")>me->query("eff_kee")) {
 				recover = (me->query("max_kee")-me->query("eff_kee"))/10;
 				if (recover == 0) recover = 1;
 				me->add("eff_kee",recover);
-				message_vision("¿´ÆğÀ´$NµÄÆøÁ¦»Ö¸´ÁË²»ÉÙ¡£\n",me);
+				message_vision("çœ‹èµ·æ¥$Nçš„æ°”åŠ›æ¢å¤äº†ä¸å°‘ã€‚\n",me);
 			}
 			if (me->query("max_sen")>me->query("eff_sen")) {
 				recover = (me->query("max_sen")-me->query("eff_sen"))/10;
 				if (recover == 0) recover = 1;
 				me->add("eff_sen",recover);
-				message_vision("¿´ÆğÀ´$NµÄÉñÁ¦»Ö¸´ÁË²»ÉÙ¡£\n",me);
+				message_vision("çœ‹èµ·æ¥$Nçš„ç¥åŠ›æ¢å¤äº†ä¸å°‘ã€‚\n",me);
 			}
 			break;
 		}
@@ -130,23 +130,23 @@ int do_fill(string arg)
 		return 1;
 	if( !this_object()->id(arg) ) return 0;
 	if( this_player()->is_busy() )
-		return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É¡£\n");
+		return notify_fail("ä½ ä¸Šä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆã€‚\n");
 	// the following spring is added by snowcat jul 17 1997
 	if( !environment(this_player())->query("resource/water") &&
 	    !environment(this_player())->query("resource/nuerhong") &&
 	    !environment(this_player())->query("resource/spring") )
-		return notify_fail("ÕâÀïÃ»ÓĞµØ·½¿ÉÒÔ×°Ë®¡£\n");
+		return notify_fail("è¿™é‡Œæ²¡æœ‰åœ°æ–¹å¯ä»¥è£…æ°´ã€‚\n");
 
 	if (environment(this_player())->query("resource/spring")) {
-		liquid_name = "ÈªË®";
+		liquid_name = "æ³‰æ°´";
 		liquid_type = "spring";
 	}
 	else if (environment(this_player())->query("resource/nuerhong")) {
-		liquid_name = "Å®¶ùºì";
+		liquid_name = "å¥³å„¿çº¢";
 		liquid_type = "alcohol";
 	}
 	else {
-		liquid_name = "ÇåË®";
+		liquid_name = "æ¸…æ°´";
 		liquid_type = "water";
 	}
 
@@ -155,8 +155,8 @@ int do_fill(string arg)
 		liquid_type = "double_ice_poison"; //override previous liquid type.
 
 	if( query("liquid/remaining") )
-		message_vision("$N½«" + name() + "ÀïÊ£ÏÂµÄ" + query("liquid/name") + "µ¹µô¡£", this_player());
-	message_vision("$N½«" + name() + "×°Âú"+liquid_name+"¡£\n", this_player());
+		message_vision("$Nå°†" + name() + "é‡Œå‰©ä¸‹çš„" + query("liquid/name") + "å€’æ‰ã€‚", this_player());
+	message_vision("$Nå°†" + name() + "è£…æ»¡"+liquid_name+"ã€‚\n", this_player());
 
 	if( this_player()->is_fighting() ) this_player()->start_busy(2);
 

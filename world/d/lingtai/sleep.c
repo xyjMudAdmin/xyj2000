@@ -1,5 +1,5 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// Room: some place in 西牛贺洲
+// Room: some place in 瑗跨墰璐烘床
 // inside2.c
 
 inherit ROOM;
@@ -7,10 +7,10 @@ inherit "/d/wiz/no_get";
 
 void create()
 {
-  set ("short", "卧室");
+  set ("short", "鍗у");
   set ("long", @LONG
 
-老神仙也要睡觉．在这你就尽情的睡吧．
+鑰佺浠欎篃瑕佺潯瑙夛紟鍦ㄨ繖浣犲氨灏芥儏鐨勭潯鍚э紟
 
 LONG);
 set("exits", ([ /* sizeof() == 4 */

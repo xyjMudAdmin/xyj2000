@@ -5,13 +5,13 @@ inherit HEAD;
 
 void create()
 {
-        set_name("ÌìÊ¦·¨¹Ú", ({ "loyal bonnet", "bonnet", "hat" }) );
+        set_name("å¤©å¸ˆæ³•å† ", ({ "loyal bonnet", "bonnet", "hat" }) );
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¶¥");
-		set("long", "Ò»¶¥»ÆÉ«ÏóÑÀÓñ·¨¹Ú¡£\n");
+                set("unit", "é¡¶");
+		set("long", "ä¸€é¡¶é»„è‰²è±¡ç‰™çŽ‰æ³•å† ã€‚\n");
                 set("material", "steel");
                 set("value", 1000);
 		set("no_sell", 1);

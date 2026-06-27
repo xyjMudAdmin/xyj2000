@@ -5,17 +5,17 @@ inherit STICK;
 
 void create()
 {
-        set_name("ÅÌÁú¹÷", ({ "dragon stick","gun", "bang" }) );
+        set_name("ç›˜é¾™æ£", ({ "dragon stick","gun", "bang" }) );
         set_weight(8000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ù");
+                set("unit", "æ ¹");
                 set("value", 5000);
                 set("material", "steel");
-                set("long", "Ò»¸ù³Áµéµéµñ×ÅÅÌÁúµÄ³¤¹÷¡£\n");
-                set("wield_msg", "$NÄÃÆğÒ»¸ù$n£¬Ë³ÊÖÎèÁË¸ö¹÷»¨¡£\n");
-                set("unwield_msg", "$NºßÁËÒ»Éù£¬½«$n²å»ØºóÑü¡£\n");
+                set("long", "ä¸€æ ¹æ²‰ç”¸ç”¸é›•ç€ç›˜é¾™çš„é•¿æ£ã€‚\n");
+                set("wield_msg", "$Næ‹¿èµ·ä¸€æ ¹$nï¼Œé¡ºæ‰‹èˆäº†ä¸ªæ£èŠ±ã€‚\n");
+                set("unwield_msg", "$Nå“¼äº†ä¸€å£°ï¼Œå°†$næ’å›åè…°ã€‚\n");
         }
         init_stick(50);
         setup();

@@ -12,7 +12,7 @@ int main(object me, string arg)
 	object ob, *inv;
 	int i, count;
 
-	if( !arg ) return notify_fail("ÄãÒª´©´÷Ê²Ã´£¿\n");
+	if( !arg ) return notify_fail("ä½ è¦ç©¿æˆ´ä»€ä¹ˆï¼Ÿ\n");
 
 	if(arg=="all") {
 		inv = all_inventory(me);
@@ -25,10 +25,10 @@ int main(object me, string arg)
 	}
 
 	if( !objectp(ob = present(arg, me)) )
-		return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+		return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
 
 	if( ob->query("equipped") )
-		return notify_fail("ÄãÒÑ¾­×°±¸×ÅÁË¡£\n");
+		return notify_fail("ä½ å·²ç»è£…å¤‡ç€äº†ã€‚\n");
 
 	return do_wear(me, ob);
 }
@@ -39,15 +39,15 @@ int do_wear(object me, object ob)
 
 	if( ob->query("owner_id") && ob->query("owner_id") != getuid(me) )   {
 		destruct(ob);
-		return notify_fail("ÏÂ´Î±ğÂÒÍµ±ğÈËµÄ¶«Î÷¡£\n");
+		return notify_fail("ä¸‹æ¬¡åˆ«ä¹±å·åˆ«äººçš„ä¸œè¥¿ã€‚\n");
 	}
 
 	if( ob->query("No_Wear") )
-		return notify_fail("Õâ¼şÒÂ·ş²»ÄÜÔÙ´©ÁË£¡\n");
+		return notify_fail("è¿™ä»¶è¡£æœä¸èƒ½å†ç©¿äº†ï¼\n");
 
 	if( ob->query("female_only")
-	&&	(string)me->query("gender") != "Å®ĞÔ" )
-		return notify_fail("ÕâÊÇÅ®ÈËµÄÒÂÉÀ£¬ÄãÒ»¸ö´óÄĞÈËÒ²Ïë´©£¬ĞßÒ²²»Ğß£¿\n");
+	&&	(string)me->query("gender") != "å¥³æ€§" )
+		return notify_fail("è¿™æ˜¯å¥³äººçš„è¡£è¡«ï¼Œä½ ä¸€ä¸ªå¤§ç”·äººä¹Ÿæƒ³ç©¿ï¼Œç¾ä¹Ÿä¸ç¾ï¼Ÿ\n");
 
 	if( ob->wear() ) {
 		if( !stringp(str = ob->query("wear_msg")) )
@@ -56,20 +56,20 @@ int do_wear(object me, object ob)
 				case "armor":
 				case "boots":
 				case "surcoat":
-					str = YEL "$N´©ÉÏÒ»" + ob->query("unit") + "$n¡£\n" NOR;
+					str = YEL "$Nç©¿ä¸Šä¸€" + ob->query("unit") + "$nã€‚\n" NOR;
 					break;
 				case "head":
 				case "neck":
 				case "wrists":
 				case "finger":
 				case "hands":
-					str = YEL "$N´÷ÉÏÒ»" + ob->query("unit") + "$n¡£\n" NOR;
+					str = YEL "$Næˆ´ä¸Šä¸€" + ob->query("unit") + "$nã€‚\n" NOR;
 					break;
 				case "waist":
-					str = YEL "$NÅåÉÏÒ»" + ob->query("unit") + ob->query("name") + "¡£\n" NOR;
+					str = YEL "$Nä½©ä¸Šä¸€" + ob->query("unit") + ob->query("name") + "ã€‚\n" NOR;
 					break;
 				default:
-					str = YEL "$N×°±¸$n¡£\n" NOR;
+					str = YEL "$Nè£…å¤‡$nã€‚\n" NOR;
 			}
 		message_vision(str, me, ob);
 		return 1;
@@ -80,9 +80,9 @@ int do_wear(object me, object ob)
 int help(object me)
 {
 	write(@HELP
-Ö¸Áî¸ñÊ½£ºwear|chuan <×°±¸Ãû³Æ>
+æŒ‡ä»¤æ ¼å¼ï¼šwear|chuan <è£…å¤‡åç§°>
  
-Õâ¸öÖ¸ÁîÈÃÄã×°±¸Ä³¼ş·À¾ß¡£
+è¿™ä¸ªæŒ‡ä»¤è®©ä½ è£…å¤‡æŸä»¶é˜²å…·ã€‚
  
 HELP
     );

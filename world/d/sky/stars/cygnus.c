@@ -5,20 +5,20 @@ inherit NPC;
 
 void create()
 {
-	set_name("Ğ¡Áîºü", ({"cygnus"}));
+	set_name("å°ä»¤ç‹", ({"cygnus"}));
 	set("long", @LONG
-·çÑ©½£ÅÉ --- ÏşÌì·ÉÓê³ş·åÁ÷
-    ·çÓê·×·×·çÖĞ´³½­ºş·çÓêĞÄÏàÆİ
-½£
-Ïµ       ·çÑ©½£ÅÉÍøÖ·
-·ç   http://128.205.200.100/~xou
-Ñ©
-Çé
-    Ñ©Ô­Ã§Ã§Ñ©ÏÂÒäÉñÖİÑ©Ô­Ó³µ¤ĞÄ
+é£é›ªå‰‘æ´¾ --- æ™“å¤©é£é›¨æ¥šå³°æµ
+    é£é›¨çº·çº·é£ä¸­é—¯æ±Ÿæ¹–é£é›¨å¿ƒç›¸æˆš
+å‰‘
+ç³»       é£é›ªå‰‘æ´¾ç½‘å€
+é£   http://128.205.200.100/~xou
+é›ª
+æƒ…
+    é›ªåŸè½è½é›ªä¸‹å¿†ç¥å·é›ªåŸæ˜ ä¸¹å¿ƒ
 
 LONG);
-	set("title", "·¿ÈÕĞÇ¹Ù");
-	set("gender", "Å®ĞÔ");
+	set("title", "æˆ¿æ—¥æ˜Ÿå®˜");
+	set("gender", "å¥³æ€§");
 	set("age", 40);
 	set("class", "taoist");
 	set("attitude", "friendly");
@@ -66,7 +66,7 @@ LONG);
 	map_skill("parry", "qianjun-bang");
 	map_skill("dodge", "moondance");
 
-	create_family("·½´çÉ½ÈıĞÇ¶´", 2, "µÜ×Ó");
+	create_family("æ–¹å¯¸å±±ä¸‰æ˜Ÿæ´", 2, "å¼Ÿå­");
 	setup();
 
 	carry_object("/d/obj/cloth/shoes")->wear();

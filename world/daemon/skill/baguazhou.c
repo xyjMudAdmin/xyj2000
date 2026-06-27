@@ -9,7 +9,7 @@ int valid_learn(object me)
         if( (int)me->query_skill("spells", 1) < 20
         ||      (int)me->query_skill("spells") <= (int)me->query_skill("baguazhou") )
                 return
-notify_fail("你的法术修为还不够高深，无法学习八卦咒．\n");
+notify_fail("浣犵殑娉曟湳淇负杩樹笉澶熼珮娣憋紝鏃犳硶瀛︿範鍏崷鍜掞紟\n");
         return 1;
 }
 

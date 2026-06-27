@@ -11,18 +11,18 @@ void informing (object me, object who, string str)
 //  str = replace_string (str, "$N", me->query("name"));
 //  str = replace_string (str, "$n", who->query("name"));
 //  if (snowcat && wizardp(snowcat))
-//    tell_object (snowcat, " ¡ó "+str);
+//    tell_object (snowcat, " â—‡ "+str);
 }
 
 void reporting (object who, string reason, int points, string name)
 {
-  string str = reason+"µÃµ½ÁË"+to_chinese(points)+"µã"+name+"¡£\n";
+  string str = reason+"å¾—åˆ°äº†"+to_chinese(points)+"ç‚¹"+name+"ã€‚\n";
 
 // if (! DEBUG) return;
 
 //  object snowcat = find_player ("snowcat");
 //
 //  if (snowcat && wizardp(snowcat))
-//    tell_object (snowcat, " ¡Ñ "+who->query("name")+str);
+//    tell_object (snowcat, " âŠ™ "+who->query("name")+str);
 }
 

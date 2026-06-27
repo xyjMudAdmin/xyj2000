@@ -7,12 +7,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "×¡Õ¬Çø");
+  set ("short", "ä½å®…åŒº");
   set ("long", @LONG
 
-ãşË®Ö®±õµÄÒ»¿é×¡Õ¬Çø£¬ÑØºÓ×øÂä×ÅÒ»¶°¶°Æ¯ÁÁµÄĞ¡±ğÊû¡£
-ÕâÀï·ç¹âì½ì»£¬ÆøÏ¢ÇåĞÂ£¬ÕıÊÇ×¡¼ÒµÄ¾øºÃËùÔÚ¡£¼¸×ùĞ¡Â¥
-Ç°¹Ò×ÅÅÆ×Ó(paizi)£¬Ğ´×ÅĞ©ÈË¼ÒµÄÃû×Ö¡£
+æ³¾æ°´ä¹‹æ»¨çš„ä¸€å—ä½å®…åŒºï¼Œæ²¿æ²³åè½ç€ä¸€æ ‹æ ‹æ¼‚äº®çš„å°åˆ«å¢…ã€‚
+è¿™é‡Œé£å…‰æ—–æ—ï¼Œæ°”æ¯æ¸…æ–°ï¼Œæ­£æ˜¯ä½å®¶çš„ç»å¥½æ‰€åœ¨ã€‚å‡ åº§å°æ¥¼
+å‰æŒ‚ç€ç‰Œå­(paizi)ï¼Œå†™ç€äº›äººå®¶çš„åå­—ã€‚
 
 LONG);
   set("exits", ([ /* sizeof() == 3 */
@@ -54,14 +54,14 @@ int show_name(string arg)
           if(content){
             if(sscanf(content,"%*s\"name\":\"%s\"",
 	      chinese)==2) {
-	      result+=sprintf("  %-10s£º%-16s  ",files[i],chinese);
+	      result+=sprintf("  %-10sï¼š%-16s  ",files[i],chinese);
 	      if(k==1) result+="\n";
 	      k=1-k;
             }
           }
         }
       }
-      write("\n                        Íæ¼ÒÖ®¼Ò \n");
+      write("\n                        ç©å®¶ä¹‹å®¶ \n");
       write("\n"+result+"\n");
       
       return 1;
@@ -75,7 +75,7 @@ int enter_home(string arg)
       name=query_verb();
       files=get_dir("/d/changan/playerhomes/");
       if(member_array("h_"+name+".c",files)>-1) {
-	message_vision("$NÇáÇá´ò¿ªÒ»ÉÈÃÅ£¬×ßÁË½øÈ¥¡£\n",me);
+	message_vision("$Nè½»è½»æ‰“å¼€ä¸€æ‰‡é—¨ï¼Œèµ°äº†è¿›å»ã€‚\n",me);
         me->move("/d/changan/playerhomes/h_"+name);
 	return 1;
       }

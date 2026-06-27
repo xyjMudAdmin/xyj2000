@@ -6,17 +6,17 @@
 int cast(object me, object target)
 {
 	if( me->is_fighting() )
-		return notify_fail("Õ½¶·ÖÐÔË¹¦ÁÆÉË£¿ÕÒËÀÂð£¿\n");
+		return notify_fail("æˆ˜æ–—ä¸­è¿åŠŸç–—ä¼¤ï¼Ÿæ‰¾æ­»å—ï¼Ÿ\n");
 
 	if( (int)me->query("mana") < 50 )
-		return notify_fail("ÄãµÄ·¨Æø²»¹»¡£\n");
+		return notify_fail("ä½ çš„æ³•æ°”ä¸å¤Ÿã€‚\n");
 
 	if( (int)me->query("eff_sen") < (int)me->query("max_sen") / 2 )
-		return notify_fail("Äã¾«ÉñÊµÔÚ²»¼Ã£¬Ö»ÅÂÒ»ÔË·¨Á¦±ãÓÐÉúÃüÎ£ÏÕ£¡\n");
+		return notify_fail("ä½ ç²¾ç¥žå®žåœ¨ä¸æµŽï¼Œåªæ€•ä¸€è¿æ³•åŠ›ä¾¿æœ‰ç”Ÿå‘½å±é™©ï¼\n");
 
-	write( HIW "ÄãÈ«Éí·ÅËÉ£¬ÅÌÍÈ¶ø×ù£¬¿ªÊ¼ÉñÓÎÎïÍâ¡£\n" NOR);
+	write( HIW "ä½ å…¨èº«æ”¾æ¾ï¼Œç›˜è…¿è€Œåº§ï¼Œå¼€å§‹ç¥žæ¸¸ç‰©å¤–ã€‚\n" NOR);
 	message("vision",
-		HIW + me->name() + "ÅÌÍÈ¶ø×ù£¬¿ªÊ¼ÉñÓÎÎïÍâ¡£²»¾ÃÍÂ³öÒ»¿Ú×ÇÆø£¬¾«Éñ¿´ÆðÀ´ºÃ¶àÁË¡£\n"NOR,
+		HIW + me->name() + "ç›˜è…¿è€Œåº§ï¼Œå¼€å§‹ç¥žæ¸¸ç‰©å¤–ã€‚ä¸ä¹…åå‡ºä¸€å£æµŠæ°”ï¼Œç²¾ç¥žçœ‹èµ·æ¥å¥½å¤šäº†ã€‚\n"NOR,
 		environment(me), me);
 
 	me->receive_curing("sen", 10 + (int)me->query_skill("spells")/5 );

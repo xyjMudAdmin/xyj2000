@@ -6,9 +6,9 @@ inherit F_VENDOR_SALE;
 void create()
 {
   reload("biqiu_kan_duli");
-  set_name("¿²¶¼Á¦", ({"kan duli", "duli", "boss"}));
+  set_name("åéƒ½åŠ›", ({"kan duli", "duli", "boss"}));
   set("shop_id", ({"kanduli", "duli"}));
-  set("gender", "ÄĞĞÔ");
+  set("gender", "ç”·æ€§");
   set("combat_exp", 5000);
   set("age", 30);
   set("per", 21);

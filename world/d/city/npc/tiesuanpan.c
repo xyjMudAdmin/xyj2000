@@ -6,9 +6,9 @@ void reset_balance(object me);
 
 void create()
 {
-        set_name("ÌúËãÅÌ", ({"tie suanpan", "tie", "zhanggui"}));
-        set("title", "Ç®×¯ÕÆ¹ñ");
-        set("gender", "ÄĞĞÔ");
+        set_name("é“ç®—ç›˜", ({"tie suanpan", "tie", "zhanggui"}));
+        set("title", "é’±åº„æŒæŸœ");
+        set("gender", "ç”·æ€§");
         set("age", 54);
         set("kee", 800); 
         set("max_kee", 800);
@@ -19,9 +19,9 @@ void create()
         set("env/wimpy", 50);
         set("chat_chance", 10);
 /*        set("chat_msg", ({
-        "ÌúËãÅÌºÙºÙºÙµØĞ¦ÁË¼¸Éù£ºÎÒÕâ°ÑËãÅÌ¼¸Ê®ÄêÀ´¿É´ÓÀ´Ã»´í¹ı¡£\n",
+        "é“ç®—ç›˜å˜¿å˜¿å˜¿åœ°ç¬‘äº†å‡ å£°ï¼šæˆ‘è¿™æŠŠç®—ç›˜å‡ åå¹´æ¥å¯ä»æ¥æ²¡é”™è¿‡ã€‚\n",
 
-"ÌúËãÅÌ½¾°ÁµÄËµµÀ£ºÌáÆğ±¾Ç®×¯ÏàÀÏ°å£¬¿ÉÒÔËµÊÇÎŞÈË²»Ïş¡£Á¬µ±½ñ»ÊÉÏ¶¼¸úËûºÜÊì¡£\n"
+"é“ç®—ç›˜éª„å‚²çš„è¯´é“ï¼šæèµ·æœ¬é’±åº„ç›¸è€æ¿ï¼Œå¯ä»¥è¯´æ˜¯æ— äººä¸æ™“ã€‚è¿å½“ä»Šçš‡ä¸Šéƒ½è·Ÿä»–å¾ˆç†Ÿã€‚\n"
         }));
 */
         set_skill("unarmed", 60);
@@ -58,13 +58,13 @@ void reset_balance(object me)
 	me->set("balance_old", me->query("balance"));
 	me->set("balance", allowed);
 	removed_gold = (me->query("balance_old") - me->query("balance"))/10000;
-	log_file("MONEY_RESET", ctime( time() )+"£ºÎº´óÈËÊÕ½ÉÁË"+me->query("name")+"("+me->query("id")+")"+removed_gold+"Á½»Æ½ğ¡£\n");
-	tell_object(me, GRN+NPCNAME+"ÔÚÄãµÄ¶ú±ßÇÄÉùËµµÀ£º"+RANK_D->query_respect(me)+
-		"£¬Õâ¡¢ÕâÕæ²»ÖªÔõÃ´ËµÊÇºÃ£®£®£®\n"NOR);
-	tell_object(me, GRN+NPCNAME+"ÔÚÄãµÄ¶ú±ßÇÄÉùËµµÀ£º"+
-		"×òÈÕÎº´óÈËÅÉÈËÇ°À´²ì°¸£¬·¢¾õÄãÀÏµÄ»Æ½ğÀ´Â·£®£®£®\n"NOR);
-	tell_object(me, GRN+NPCNAME+"ÔÚÄãµÄ¶ú±ßÇÄÉùËµµÀ£º"+
-		"Èô²»ÊÇÔÚÏÂ°ïÄãÀÏ±ç½â£¬ÄãÀÏµÄÇ®¾ÍÈ«¶¼³ä¹«ÁË£®£®£®\n"NOR);
+	log_file("MONEY_RESET", ctime( time() )+"ï¼šé­å¤§äººæ”¶ç¼´äº†"+me->query("name")+"("+me->query("id")+")"+removed_gold+"ä¸¤é»„é‡‘ã€‚\n");
+	tell_object(me, GRN+NPCNAME+"åœ¨ä½ çš„è€³è¾¹æ‚„å£°è¯´é“ï¼š"+RANK_D->query_respect(me)+
+		"ï¼Œè¿™ã€è¿™çœŸä¸çŸ¥æ€ä¹ˆè¯´æ˜¯å¥½ï¼ï¼ï¼\n"NOR);
+	tell_object(me, GRN+NPCNAME+"åœ¨ä½ çš„è€³è¾¹æ‚„å£°è¯´é“ï¼š"+
+		"æ˜¨æ—¥é­å¤§äººæ´¾äººå‰æ¥å¯Ÿæ¡ˆï¼Œå‘è§‰ä½ è€çš„é»„é‡‘æ¥è·¯ï¼ï¼ï¼\n"NOR);
+	tell_object(me, GRN+NPCNAME+"åœ¨ä½ çš„è€³è¾¹æ‚„å£°è¯´é“ï¼š"+
+		"è‹¥ä¸æ˜¯åœ¨ä¸‹å¸®ä½ è€è¾©è§£ï¼Œä½ è€çš„é’±å°±å…¨éƒ½å……å…¬äº†ï¼ï¼ï¼\n"NOR);
     }
     return;
 }
@@ -81,7 +81,7 @@ void accept_kill(object me)
                 ob=new("/d/city/npc/xunluobing");
                 ob->move(environment());
         }
-        message_vision("\nºöÈ»´ÓÃÅÍâ³å½øÀ´¸öÑ²Âß¹Ù±ø£¬¶Ô$N´óº°Ò»Éù¡°¸ÉÊ²Ã´£¿ÏëÉ±ÈËÄ±²ÆÃ´£¡\n\n",me);        
+        message_vision("\nå¿½ç„¶ä»é—¨å¤–å†²è¿›æ¥ä¸ªå·¡é€»å®˜å…µï¼Œå¯¹$Nå¤§å–Šä¸€å£°â€œå¹²ä»€ä¹ˆï¼Ÿæƒ³æ€äººè°‹è´¢ä¹ˆï¼\n\n",me);        
 
         ob->kill_ob(me);
         ob->set_leader(me);

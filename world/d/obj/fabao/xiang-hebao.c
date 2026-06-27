@@ -10,13 +10,13 @@ inherit F_UNIQUE;
 
 void create()
 {
-        set_name("ÏãºÉ°ü", ({"xiang hebao", "hebao", "bao", "fabao"}));
+        set_name("é¦™è·åŒ…", ({"xiang hebao", "hebao", "bao", "fabao"}));
         set_weight(1000);
         if(clonep())
                 set_default_object(__FILE__);
         else {
-	set("long", "Ò»¸öºìÉ«µÄÐ¡ÏãºÉ°ü£¬ÉÏÃæÓÃ½ðÒøË¿ÏßÐåÁËÐ©ÖäÎÄ¡£\n");
-        set("unit", "¸ö");
+	set("long", "ä¸€ä¸ªçº¢è‰²çš„å°é¦™è·åŒ…ï¼Œä¸Šé¢ç”¨é‡‘é“¶ä¸çº¿ç»£äº†äº›å’’æ–‡ã€‚\n");
+        set("unit", "ä¸ª");
         set("value", 0);
         set("no_put",1);
         set("no_sell",1);
@@ -44,21 +44,21 @@ int ji_ob(object victim)
 
 
         if(me->is_busy())
-                return notify_fail("ÄãÕýÃ¦×ÅÄØ£¬ÎÞ·¨¼À³öÏãºÉ°ü¡£\n");
+                return notify_fail("ä½ æ­£å¿™ç€å‘¢ï¼Œæ— æ³•ç¥­å‡ºé¦™è·åŒ…ã€‚\n");
         if( !victim)
-                return notify_fail("ÄãÏë¼ÀµÄÈË²»ÔÚÕâÀï¡£\n");
+                return notify_fail("ä½ æƒ³ç¥­çš„äººä¸åœ¨è¿™é‡Œã€‚\n");
         if( where->query("no_magic"))
-                return notify_fail("ÕâÀï²»ÄÜ¼ÀÏãºÉ°ü¡£\n");
+                return notify_fail("è¿™é‡Œä¸èƒ½ç¥­é¦™è·åŒ…ã€‚\n");
         if( !me->is_fighting())
-                return notify_fail("Ö»ÓÐÕ½¶·ÖÐ²ÅÄÜ¼ÀÏãºÉ°ü¡£\n");
+                return notify_fail("åªæœ‰æˆ˜æ–—ä¸­æ‰èƒ½ç¥­é¦™è·åŒ…ã€‚\n");
         if( (int)me->query("mana") < 500 )
-                return notify_fail("ÄãµÄ·¨Á¦²»ÄÜ¿ØÖÆÏãºÉ°ü¡£\n");
+                return notify_fail("ä½ çš„æ³•åŠ›ä¸èƒ½æŽ§åˆ¶é¦™è·åŒ…ã€‚\n");
         if( (int)me->query("sen") < 200 )
-                return notify_fail("ÄãµÄ¾«Éñ²»×ã£¬ºÜÄÑ¼ÝÔ¦ÏãºÉ°ü¡£\n");
+                return notify_fail("ä½ çš„ç²¾ç¥žä¸è¶³ï¼Œå¾ˆéš¾é©¾é©­é¦™è·åŒ…ã€‚\n");
 
 
-        message_vision(HIC"\n$N´óº°Ò»Éù¡°Éã¡±£¬ÊÖÒ»»Ó£¬¼À³öÁË$n¡£¡£¡£\n"NOR, me, seal);
-message_vision(HIC"$n¡¸ºô¡¹µØÒ»ÏÂ·Éµ½°ë¿Õ£¬Ö»¼ûºì¹âÒ»ÉÁ£¬Ò»¹ÉºìÎíÅçÏòÁË$N¡£\n"NOR,victim,seal);
+        message_vision(HIC"\n$Nå¤§å–Šä¸€å£°â€œæ‘„â€ï¼Œæ‰‹ä¸€æŒ¥ï¼Œç¥­å‡ºäº†$nã€‚ã€‚ã€‚\n"NOR, me, seal);
+message_vision(HIC"$nã€Œå‘¼ã€åœ°ä¸€ä¸‹é£žåˆ°åŠç©ºï¼Œåªè§çº¢å…‰ä¸€é—ªï¼Œä¸€è‚¡çº¢é›¾å–·å‘äº†$Nã€‚\n"NOR,victim,seal);
 
 	limitmana = 500+random(300);
 	limitdx = 200000+random(100000);
@@ -73,10 +73,10 @@ message_vision(HIC"$n¡¸ºô¡¹µØÒ»ÏÂ·Éµ½°ë¿Õ£¬Ö»¼ûºì¹âÒ»ÉÁ£¬Ò»¹ÉºìÎíÅçÏòÁË$N¡£\n"NO
 	vic = (vicdx/1000 + vicmana) + vickar;
 
                 if( random(limit+vic) > vic ){
-        message_vision(HIC"\n$N¶ãÉÁ²»¼°£¬°ÑºìÎíÎüµ½ÁË±Ç×ÓÀï¡£\n"NOR,victim);
+        message_vision(HIC"\n$Nèº²é—ªä¸åŠï¼ŒæŠŠçº¢é›¾å¸åˆ°äº†é¼»å­é‡Œã€‚\n"NOR,victim);
 			victim->apply_condition("xiang_air", 5);
                 } else {
-                        message_vision(HIC"\n$NÃÍÍË¼¸²½£¬¶ãÁË¹ýÈ¥¡£\n"NOR,victim);
+                        message_vision(HIC"\n$NçŒ›é€€å‡ æ­¥ï¼Œèº²äº†è¿‡åŽ»ã€‚\n"NOR,victim);
                 }
 
                 if( !victim->is_fighting(me) ) {
@@ -103,7 +103,7 @@ int ji (string target)
   object victim;
 
   if (!target)
-    return notify_fail("ÄãÏë¶ÔË­¼À"+name+"£¿\n");
+    return notify_fail("ä½ æƒ³å¯¹è°ç¥­"+name+"ï¼Ÿ\n");
 
   victim=present(target,environment(me));
   return seal->ji_ob(victim);

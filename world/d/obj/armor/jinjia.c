@@ -1,18 +1,18 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// jinjia.c ½ğ¼×
+// jinjia.c é‡‘ç”²
 #include <armor.h>
 
 inherit ARMOR;
 
 void create()
 {
-        set_name("½ğ»·Ëø×Ó¼×", ({"golden armor","jinjia", "jia", "armor"}));
+        set_name("é‡‘ç¯é”å­ç”²", ({"golden armor","jinjia", "jia", "armor"}));
         set_weight(30000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼ş");
-		set("long", "Ò»¼ş½ğÏßÖ¯¾ÍµÄ±¦¼×£®\n");
+                set("unit", "ä»¶");
+		set("long", "ä¸€ä»¶é‡‘çº¿ç»‡å°±çš„å®ç”²ï¼\n");
                 set("material", "steel");
                 set("value", 10000);
                 set("armor_prop/armor", 60);

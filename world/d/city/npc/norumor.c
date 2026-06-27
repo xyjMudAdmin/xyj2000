@@ -14,10 +14,10 @@ void relay_channel(object ob, string channel, string msg) {
 void reveal(object who) {
   string name=who->query("name"),id=who->query("id");
   switch (random(5)) {
-   case 0: command("rumor* Ä³ÈË¶ñºİºİµØÍşĞ²µÀ£º"+name+"£¬Äã¸ö"+RANK_D->query_rude(who)+"£¡¸øÎÒ±Õ×ì£¡");break;
-    case 1: command("rumor* Ä³ÈËÏò"+name+"Ò¡Ò¡Ê³Ö¸£¬¡¸Ğ¡ÅóÓÑ£¬ÕâÑù²»¿ÉÒÔà¸£¡¡¹");break;  
-     case 2: command("say "+name+"Õâ"+RANK_D->query_rude(who)+"ÓÖÔÚÔìÒ¥ÁË¡£");break;
-     case 3: command("say "+name+"ÔõÃ´ÄÇÃ´Ï²»¶ÔìÒ¥Ñ½¡£");break;
-     case 4: command("rumor* Ä³ÈË¿Í¿ÍÆøÆøµØ¶Ô"+name+"µÀ£ºÊÇ²»ÊÇÄãÔÚÔìÒ¥£¿Èç¹ûÊÇµÄ»°ÇëÄã±ğÔÙÕÛÌÚÁË¡£");break;
+   case 0: command("rumor* æŸäººæ¶ç‹ ç‹ åœ°å¨èƒé“ï¼š"+name+"ï¼Œä½ ä¸ª"+RANK_D->query_rude(who)+"ï¼ç»™æˆ‘é—­å˜´ï¼");break;
+    case 1: command("rumor* æŸäººå‘"+name+"æ‘‡æ‘‡é£ŸæŒ‡ï¼Œã€Œå°æœ‹å‹ï¼Œè¿™æ ·ä¸å¯ä»¥å–”ï¼ã€");break;  
+     case 2: command("say "+name+"è¿™"+RANK_D->query_rude(who)+"åˆåœ¨é€ è°£äº†ã€‚");break;
+     case 3: command("say "+name+"æ€ä¹ˆé‚£ä¹ˆå–œæ¬¢é€ è°£å‘€ã€‚");break;
+     case 4: command("rumor* æŸäººå®¢å®¢æ°”æ°”åœ°å¯¹"+name+"é“ï¼šæ˜¯ä¸æ˜¯ä½ åœ¨é€ è°£ï¼Ÿå¦‚æœæ˜¯çš„è¯è¯·ä½ åˆ«å†æŠ˜è…¾äº†ã€‚");break;
   }
 }

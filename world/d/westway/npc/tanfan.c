@@ -7,10 +7,10 @@ inherit F_VENDOR;
 
 void create()
 {
-  set_name("Ì¯··", ({"tan fan","fan"}));
-  set("gender", "ÄĞĞÔ" );
+  set_name("æ‘Šè´©", ({"tan fan","fan"}));
+  set("gender", "ç”·æ€§" );
   set("age", 45);
-  set("long", "Ò»Î»ÀÁÑóÑóµÄÌ¯··¡£\n");
+  set("long", "ä¸€ä½æ‡’æ´‹æ´‹çš„æ‘Šè´©ã€‚\n");
   set("combat_exp", 1000);
   set("attitude", "peaceful");
   set("per", 15);

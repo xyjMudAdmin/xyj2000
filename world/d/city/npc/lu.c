@@ -4,11 +4,11 @@ inherit F_VENDOR_SALE;
 void create()
 {
     reload("lukeqiu");
-        set_name("Â³¿ÉÇğ", ({"lu keqiu", "lu", "keqiu"}));
-        set("title", "Ä¾Æ÷ÆÌÀÏ°å");
-        set("gender", "ÄĞĞÔ");
+        set_name("é²å¯ä¸˜", ({"lu keqiu", "lu", "keqiu"}));
+        set("title", "æœ¨å™¨é“ºè€æ¿");
+        set("gender", "ç”·æ€§");
         set("age", 42);
-        set("long", "Â³ÀÏ°åÊÇÄÏ·½ÈË£¬¿´ÆğÀ´Í¦¾«Ã÷µÄ¡£\n");
+        set("long", "é²è€æ¿æ˜¯å—æ–¹äººï¼Œçœ‹èµ·æ¥æŒºç²¾æ˜çš„ã€‚\n");
 	set("str", 30);
 	set("con", 30);
 	set("spi", 30);
@@ -54,13 +54,13 @@ void greeting(object ob)
         if( !ob || !visible(ob) || environment(ob) != environment() ) return;
         switch( random(1) ) {
                 case 0:
-                        say( name()+"Ã¦Ëµ£ºÇë½ø£¬Çë½ø£¡\n");
+                        say( name()+"å¿™è¯´ï¼šè¯·è¿›ï¼Œè¯·è¿›ï¼\n");
                         break;
         }
 }
 int accept_fight(object me)
 {
-        command("say Á·Á·Ò²ºÃ£¬Ò²ºÃ£¡\n");
+        command("say ç»ƒç»ƒä¹Ÿå¥½ï¼Œä¹Ÿå¥½ï¼\n");
         return 1;
 }
 

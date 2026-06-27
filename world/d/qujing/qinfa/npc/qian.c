@@ -7,9 +7,9 @@ inherit F_VENDOR_SALE;
 void create()
 {
   reload("qinfa_qian_guafu");
-  set_name("Ǯ�Ѹ�", ({"qian guafu", "qian", "guafu", "fu"}));
+  set_name("钱寡妇", ({"qian guafu", "qian", "guafu", "fu"}));
   set("shop_id", ({"guafu", "fu"}));
-  set("gender", "Ů��");
+  set("gender", "女性");
   set("combat_exp", 5000);
   set("age", 30);
   set("per", 21);

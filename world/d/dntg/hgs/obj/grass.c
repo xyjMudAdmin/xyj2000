@@ -9,9 +9,9 @@ int do_make(string);
 
 void create()
 {
-	set_name("Ğ¡²İ", ({ "grass"}) );
-	set("long", "Ò»¿ÅÂÌÓÍÓÍµÄĞ¡²İ¡£\n");
-	set("unit", "¿Å" );
+	set_name("å°è‰", ({ "grass"}) );
+	set("long", "ä¸€é¢—ç»¿æ²¹æ²¹çš„å°è‰ã€‚\n");
+	set("unit", "é¢—" );
         set("no_sell",1);
 }
 
@@ -27,9 +27,9 @@ int do_eat(string arg)
 {
         object me = this_player();
 
-        if (!id(arg)) return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+        if (!id(arg)) return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 
-        message_vision("$N¼¢²»ÔñÊ³£¬Ò§ÁË¼¸¿ÚÇà²İ£¬¿àµÃÓÖ¶¼ÍÂÁË³öÀ´£¡\n" , me);
+        message_vision("$Né¥¥ä¸æ‹©é£Ÿï¼Œå’¬äº†å‡ å£é’è‰ï¼Œè‹¦å¾—åˆéƒ½åäº†å‡ºæ¥ï¼\n" , me);
 
         destruct(this_object());
 

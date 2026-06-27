@@ -5,9 +5,9 @@ inherit STAFF;
 
 void create()
 {
-  set_name("ÑîÊ÷×®", ({ "yangshu zhuang", "zhuang", "staff" }) );
+  set_name("æ¨æ ‘æ¡©", ({ "yangshu zhuang", "zhuang", "staff" }) );
   init_staff(16);
-  set("unit", "¸ù");
+  set("unit", "æ ¹");
   set_weight(500);
   if( clonep() )
      set_default_object(__FILE__);
@@ -15,7 +15,7 @@ void create()
     set("value", 80);
     set("material", "wood");
   }
-  set("wield_msg","$N²ÙÆğ$nÎÕÔÚÊÖÀï¡£\n");
+  set("wield_msg","$Næ“èµ·$næ¡åœ¨æ‰‹é‡Œã€‚\n");
   setup();
 }
 

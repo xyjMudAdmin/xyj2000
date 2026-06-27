@@ -5,8 +5,8 @@ inherit NPC;
 
 void create()
 {
-  set_name("³¼×Ó", ({"chen zi", "chen"}));
-  set("gender", "ÄĞĞÔ");
+  set_name("è‡£å­", ({"chen zi", "chen"}));
+  set("gender", "ç”·æ€§");
   set("combat_exp", 100000);
   set("age", 30);
   set("per", 25);

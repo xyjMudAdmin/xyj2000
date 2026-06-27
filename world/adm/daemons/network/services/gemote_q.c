@@ -65,7 +65,7 @@ void send_msg(string channel, object me, string verb, string id,
 //		"||FILTER:" + filter +
                 "||CHANNEL:" +channel+
 		"||MSG:"+msg+"@@@\n");
-        tell_object(me, "��·ѶϢ���ͳ������Ժ�\n");
+        tell_object(me, "网路讯息已送出，请稍候。\n");
 }
 
 // Someone on another mud has sent us an intermud emote.

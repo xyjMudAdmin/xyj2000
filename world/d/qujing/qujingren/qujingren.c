@@ -1,6 +1,6 @@
 // cracked by vikee 2/09/2002   vikee@263.net
 // created by ajax 05/28/1999
-// È¡¾­ÈË
+// å–ç»äºº
 
 inherit NPC;
 // inherit F_CLEAN_UP;
@@ -16,17 +16,17 @@ int success_this_quest_xuanzang();
 void create()
 {
 
-  set_name("³ÂĞşŞÊ", ({"chen xuanzang", "chen", "xuanzang", "san zang", "tang seng", "tang"}));
-  set("gender", "ÄĞĞÔ" );
+  set_name("é™ˆç„å¥˜", ({"chen xuanzang", "chen", "xuanzang", "san zang", "tang seng", "tang"}));
+  set("gender", "ç”·æ€§" );
   set("age", 36);
-  set("title", "Èı²Ø·¨Ê¦");
+  set("title", "ä¸‰è—æ³•å¸ˆ");
   set ("long", @LONG
-ÁéÍ¨±¾»äºÅ½ğ²õ£¬Ö»ÎªÎŞĞÄÌı·ğ½²£¬×ªÍĞ³¾·²¿àÊÜÄ¥£¬½µÉúÊÀË×ÔâÂŞÍø¡£
-Í¶Ì¥ÂäµØ¾Í·êĞ×£¬Î´³öÖ®Ç°ÁÙ¶ñµ³¡£¸¸ÊÇº£Öİ³Â×´Ôª£¬Íâ¹«×Ü¹Üµ±³¯³¤¡£
-³öÉíÃü·¸Âä½­ĞÇ£¬Ë³Ë®Ëæ²¨ÖğÀËãó¡£º£µº½ğÉ½ÓĞ´óÔµ£¬Ç¨°²ºÍÉĞ½«ËûÑø¡£
-Äê·½Ê®°ËÈÏÇ×Äï£¬ÌØ¸°¾©¶¼ÇóÍâ³¤£¬×Ü¹Ü¿ªÉ½µ÷´ó¾ü£¬ºéÖİ½Ë¿ÜÖïĞ×µ³¡£
-×´Ôª¹âÈïÍÑÌìÂŞ£¬×Ó¸¸Ïà·ê¿°ºØ½±¡£¸´ÚËµ±½ñÊÜÖ÷¶÷£¬ÁèÑÌ¸óÉÏÏÍÃûÏì¡£
-¶÷¹Ù²»ÊÜÔ¸ÎªÉ®£¬ºé¸£É³ÃÅ½«µÀ·Ã¡£Ğ¡×Ö½­Á÷¹Å·ğ¶ù£¬·¨Ãû»»×ö³ÂĞşŞÊ¡£
+çµé€šæœ¬è®³å·é‡‘è‰ï¼Œåªä¸ºæ— å¿ƒå¬ä½›è®²ï¼Œè½¬æ‰˜å°˜å‡¡è‹¦å—ç£¨ï¼Œé™ç”Ÿä¸–ä¿—é­ç½—ç½‘ã€‚
+æŠ•èƒè½åœ°å°±é€¢å‡¶ï¼Œæœªå‡ºä¹‹å‰ä¸´æ¶å…šã€‚çˆ¶æ˜¯æµ·å·é™ˆçŠ¶å…ƒï¼Œå¤–å…¬æ€»ç®¡å½“æœé•¿ã€‚
+å‡ºèº«å‘½çŠ¯è½æ±Ÿæ˜Ÿï¼Œé¡ºæ°´éšæ³¢é€æµªæ³±ã€‚æµ·å²›é‡‘å±±æœ‰å¤§ç¼˜ï¼Œè¿å®‰å’Œå°šå°†ä»–å…»ã€‚
+å¹´æ–¹åå…«è®¤äº²å¨˜ï¼Œç‰¹èµ´äº¬éƒ½æ±‚å¤–é•¿ï¼Œæ€»ç®¡å¼€å±±è°ƒå¤§å†›ï¼Œæ´ªå·å‰¿å¯‡è¯›å‡¶å…šã€‚
+çŠ¶å…ƒå…‰è•Šè„±å¤©ç½—ï¼Œå­çˆ¶ç›¸é€¢å ªè´ºå¥–ã€‚å¤è°’å½“ä»Šå—ä¸»æ©ï¼Œå‡ŒçƒŸé˜ä¸Šè´¤åå“ã€‚
+æ©å®˜ä¸å—æ„¿ä¸ºåƒ§ï¼Œæ´ªç¦æ²™é—¨å°†é“è®¿ã€‚å°å­—æ±Ÿæµå¤ä½›å„¿ï¼Œæ³•åæ¢åšé™ˆç„å¥˜ã€‚
 LONG);
 
   set("class", "monk");
@@ -49,9 +49,9 @@ LONG);
 
 
   set("inquiry", ([
-     "name"     :   "Æ¶É®¶«ÍÁ´óÌÆÈËÊ¿£¬·îÎÒ»ÊÌ«×ÚÖ¼ÒâÇ°È¥Î÷ÌìÈ¡¾­¡£",
+     "name"     :   "è´«åƒ§ä¸œåœŸå¤§å”äººå£«ï¼Œå¥‰æˆ‘çš‡å¤ªå®—æ—¨æ„å‰å»è¥¿å¤©å–ç»ã€‚",
      "qujing"   :   (: ask_for_help() :),
-     "È¡¾­"     :   (: ask_for_help() :),
+     "å–ç»"     :   (: ask_for_help() :),
      ]) );
 
   set("chat_msg", ({
@@ -61,7 +61,7 @@ LONG);
 
 }
 
-// ¿ªÊ¼¹ı¹Ø
+// å¼€å§‹è¿‡å…³
 int ask_for_help()
 {
   object me = this_object();
@@ -75,35 +75,35 @@ int ask_for_help()
 
   if (who->query("class") == "yaomo" )
     {
-    message_vision("$N¶Ô$nµÀ£ºÊ©Ö÷ÂúÁ³ÑıÆø£¬²»ÖªÀ´´ËÊÇºÎ¾ÓĞÄ£¬"
-         +"¿àº£ÎŞ±ß£¬»ØÍ·ÊÇ°¶£¬ÎÒÈ°Ê©Ö÷»¹ÊÇºÃ×ÔÎªÖ®°É¡£\n", me,who);
+    message_vision("$Nå¯¹$né“ï¼šæ–½ä¸»æ»¡è„¸å¦–æ°”ï¼Œä¸çŸ¥æ¥æ­¤æ˜¯ä½•å±…å¿ƒï¼Œ"
+         +"è‹¦æµ·æ— è¾¹ï¼Œå›å¤´æ˜¯å²¸ï¼Œæˆ‘åŠæ–½ä¸»è¿˜æ˜¯å¥½è‡ªä¸ºä¹‹å§ã€‚\n", me,who);
     return 1;
     }
 
   if (who->query("daoxing") < daoxing_needed )
     {
-    message_vision("$N¶Ô$nËµµ½£º¶àĞ»Ê©Ö÷µÄºÃÒâ£¬Ö»ÊÇÕâÂ·Í¾¼èÏÕ£¬"
-         +"ÑıÄ§ÖÚ¶à£¬¿ÖÅÂÆ¶É®Á¬ÀÛÁËÊ©Ö÷¡£\n", me,who);
+    message_vision("$Nå¯¹$nè¯´åˆ°ï¼šå¤šè°¢æ–½ä¸»çš„å¥½æ„ï¼Œåªæ˜¯è¿™è·¯é€”è‰°é™©ï¼Œ"
+         +"å¦–é­”ä¼—å¤šï¼Œææ€•è´«åƒ§è¿ç´¯äº†æ–½ä¸»ã€‚\n", me,who);
     return 1;
     }
 
   if (me->query("qujing/ppl") == who->query("id") )
     {
-    message_vision("$N¶Ô$nËµµ½£ºÊÂ²»ÒÉ³Ù£¬ÔÛÃÇ»¹ÊÇ¸Ï½ô¸ÏÂ·°É¡£\n", me,who);
+    message_vision("$Nå¯¹$nè¯´åˆ°ï¼šäº‹ä¸ç–‘è¿Ÿï¼Œå’±ä»¬è¿˜æ˜¯èµ¶ç´§èµ¶è·¯å§ã€‚\n", me,who);
     return 1;
     }
 
   if (me->query("qujing/ppl") != "none" )
     {
-    message_vision("$N¶Ô$nÒ»±§È­£º¶àĞ»"
-         +RANK_D->query_respect(who)+"µÄºÃÒâ£¬ÒÑÓĞÈË°ïÖúÆ¶É®ÁË¡£\n", me,who);
+    message_vision("$Nå¯¹$nä¸€æŠ±æ‹³ï¼šå¤šè°¢"
+         +RANK_D->query_respect(who)+"çš„å¥½æ„ï¼Œå·²æœ‰äººå¸®åŠ©è´«åƒ§äº†ã€‚\n", me,who);
     return 1;
     }
 
   if (me->query("qujing/id"))
     {
-    message_vision("$NÏò$nÒ»¹°ÊÖ£ºÆ¶É®"+obstacles[me->query("qujing/id")][3]
-       +RANK_D->query_respect(who)+"ÄÜ·ñÖúÆ¶É®Ò»±ÛÖ®Á¦£¿\n", me,who);
+    message_vision("$Nå‘$nä¸€æ‹±æ‰‹ï¼šè´«åƒ§"+obstacles[me->query("qujing/id")][3]
+       +RANK_D->query_respect(who)+"èƒ½å¦åŠ©è´«åƒ§ä¸€è‡‚ä¹‹åŠ›ï¼Ÿ\n", me,who);
     me->command("follow "+who->query("id"));
     me->set("chat_chance",0);
     me->set("qujing/ppl",who->query("id"));
@@ -115,7 +115,7 @@ int ask_for_help()
     }
 }
 
-// Ã¿¸ôÁù·ÖÖÕÈç¹ûÃ»ÈË¹ı¹Ø£¬auto move to a new quest place
+// æ¯éš”å…­åˆ†ç»ˆå¦‚æœæ²¡äººè¿‡å…³ï¼Œauto move to a new quest place
 int random_move_xuanzang()
 {
   int i;
@@ -136,9 +136,9 @@ int random_move_xuanzang()
 int leave_this_quest_xuanzang()
 {
   object me = this_object();
-  message_vision("$N³¤Ì¾Ò»Éù£ºÎ÷ĞĞÖ®Â·¾¹Èç´Ë¼èĞÁ¡£\n", me);
+  message_vision("$Né•¿å¹ä¸€å£°ï¼šè¥¿è¡Œä¹‹è·¯ç«Ÿå¦‚æ­¤è‰°è¾›ã€‚\n", me);
 // here need clear ppl's mark and give punishment 
-  message_vision("$N÷öÈ»µÄÀë¿ªÁË¡£\n", me);
+  message_vision("$Né»¯ç„¶çš„ç¦»å¼€äº†ã€‚\n", me);
   call_out("random_move_xuanzang", 1);  
   return 1;  
 }
@@ -154,11 +154,11 @@ int success_this_quest_xuanzang()
   if (who)
     {
     me->command("chat "+who->query("name")+obstacles[me->query("qujing/id")][4]
-       +who->query("name")+"´³¹ıÎ÷ĞĞÓÖÒ»¹Ø£¡");
+       +who->query("name")+"é—¯è¿‡è¥¿è¡Œåˆä¸€å…³ï¼");
 // here need clear ppl's mark and give reward 
-    message_vision("$NÏò$nÒ»¹°ÊÖ£º¶àĞ»"+RANK_D->query_respect(who)+
-         "ÏàÖú£¬ÔÛÃÇºó»áÓĞÆÚ£¡\n", me,who);
-    message_vision("$N¼ÌĞøÏòÎ÷¸ÏÂ·È¥ÁË¡£\n", me);
+    message_vision("$Nå‘$nä¸€æ‹±æ‰‹ï¼šå¤šè°¢"+RANK_D->query_respect(who)+
+         "ç›¸åŠ©ï¼Œå’±ä»¬åä¼šæœ‰æœŸï¼\n", me,who);
+    message_vision("$Nç»§ç»­å‘è¥¿èµ¶è·¯å»äº†ã€‚\n", me);
     call_out("random_move_xuanzang", 1);  
     }
   return 1;  
@@ -173,10 +173,10 @@ void unconcious()
 void die()
 {
   object me = this_object();
-  message_vision("$N³¤Ì¾Ò»Éù£ºÎÒ²»ÈëµØÓü£¬Ë­ÈëµØÓü£¬"
-      +"Ö»ÊÇÈ¡¾­Î´³É£¬¹¼¸ºÁËÎÒÍõÌ«×ÚµÄÒ»Æ¬³ÏĞÄ¡£\n", me);
-  message_vision("$NËÀÁË¡£\n", me);
-// ³öÏÖÌÆÉ®Èâ
+  message_vision("$Né•¿å¹ä¸€å£°ï¼šæˆ‘ä¸å…¥åœ°ç‹±ï¼Œè°å…¥åœ°ç‹±ï¼Œ"
+      +"åªæ˜¯å–ç»æœªæˆï¼Œè¾œè´Ÿäº†æˆ‘ç‹å¤ªå®—çš„ä¸€ç‰‡è¯šå¿ƒã€‚\n", me);
+  message_vision("$Næ­»äº†ã€‚\n", me);
+// å‡ºç°å”åƒ§è‚‰
   set("eff_kee", 500);
   set("eff_sen", 500);
   set("kee", 500);

@@ -10,9 +10,9 @@ void invocation(object me, object who);
 
 void create()
 {
-	set_name("½©Ê¬", ({ "zombie" }) );
+	set_name("åƒµå°¸", ({ "zombie" }) );
 	set("long",
-		"ÕâÊÇÒ»¾ß±»ÈËÓÃ·ûÖä¿ØÖÆµÄ½©Ê¬£¬´ÓËü²Ô°×µÄÁ³ÉÏ¿´²»³öÈÎºÎÏ²Å­°§ÀÖ¡£\n");
+		"è¿™æ˜¯ä¸€å…·è¢«äººç”¨ç¬¦å’’æŽ§åˆ¶çš„åƒµå°¸ï¼Œä»Žå®ƒè‹ç™½çš„è„¸ä¸Šçœ‹ä¸å‡ºä»»ä½•å–œæ€’å“€ä¹ã€‚\n");
 	set("max_kee", 500);
 	set("max_sen", 500);
 	set("max_mana", 200);
@@ -24,9 +24,9 @@ void create()
 	set("cor", 30);
 	set("chat_chance", 15);
 	set("chat_msg_combat", ({
-		"½©Ê¬¿ÚÖÐ·¢³öºÉºÉµÄ½ÐÉù¡£\n",
-		"½©Ê¬µÄÁ³ÉÏ¿ªÊ¼¾·ÂÎ£¬Ò»Õó³é´¤£¬·¢¿ñËÆµØ´ó½Ð¡£\n",
-		"½©Ê¬ÎåÖ¸»þÕÅ£¬Ò§ÑÀÇÐ³Ý£¬Â¶³öÕøÄüµÄÐ¦ÈÝ¡£\n",
+		"åƒµå°¸å£ä¸­å‘å‡ºè·è·çš„å«å£°ã€‚\n",
+		"åƒµå°¸çš„è„¸ä¸Šå¼€å§‹ç—‰æŒ›ï¼Œä¸€é˜µæŠ½æï¼Œå‘ç‹‚ä¼¼åœ°å¤§å«ã€‚\n",
+		"åƒµå°¸äº”æŒ‡ç®•å¼ ï¼Œå’¬ç‰™åˆ‡é½¿ï¼Œéœ²å‡ºç‹°ç‹žçš„ç¬‘å®¹ã€‚\n",
 	}) );
 	set_skill("unarmed", 30);
 	set_skill("dodge", 30);
@@ -46,9 +46,9 @@ int do_release()
 	object who=this_player();
 
 	if( who != this_object()->query("possessed") )
-		return notify_fail("Ê²Ã´£¿\n");
+		return notify_fail("ä»€ä¹ˆï¼Ÿ\n");
 
-	message_vision("$NÏò$n»ÓÁË»ÓÊÖ£¬$nÂýÂýµØ×ß¿ªÁË¡£\n", who, this_object());
+	message_vision("$Nå‘$næŒ¥äº†æŒ¥æ‰‹ï¼Œ$næ…¢æ…¢åœ°èµ°å¼€äº†ã€‚\n", who, this_object());
 	destruct( this_object() );
 	return 1;
 }
@@ -131,7 +131,7 @@ void invocation(object me, object who)
         int i;
         object *enemy;
 
-	message_vision(HIY"\n$N¼ÓÈëÕ½¶·¡£\n\n"NOR, me);
+	message_vision(HIY"\n$NåŠ å…¥æˆ˜æ–—ã€‚\n\n"NOR, me);
 
         enemy = who->query_enemy();
         i = sizeof(enemy);
@@ -153,7 +153,7 @@ void die()
 {
 	object corpse;
         if( environment() ) {
-                message("sound", "½©Ê¬ÂýÂýµØµ¹ÁËÏÂÈ¥£¬»¯ÎªÒ»Ì²ÑªË®¡£\n", environment());
+                message("sound", "åƒµå°¸æ…¢æ…¢åœ°å€’äº†ä¸‹åŽ»ï¼ŒåŒ–ä¸ºä¸€æ»©è¡€æ°´ã€‚\n", environment());
         }
 
 	destruct(this_object());
@@ -167,7 +167,7 @@ int heal_up()
 	&&	(int)master->query("mana") > 100 
 	&&	(int)master->query("kee") > 100) {
 		message("tell",
-HIR"Äã¾õµÃÌåÄÚµÄÁ¦Á¿±»" + name()+"Ò»µãÒ»µãµØÎüÈ¥ÁË¡£\n"NOR, master);
+HIR"ä½ è§‰å¾—ä½“å†…çš„åŠ›é‡è¢«" + name()+"ä¸€ç‚¹ä¸€ç‚¹åœ°å¸åŽ»äº†ã€‚\n"NOR, master);
 		master->add("mana", -20);
 		::heal_up();
 		return 1;		// Always acquire power from master.

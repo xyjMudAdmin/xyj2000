@@ -19,27 +19,27 @@ int main(object me, string arg)
 
 	if(environment(me)->query("no_fight") || 
            environment(me)->query("no_magic") )
-              return notify_fail("°²È«ÇøÄÚ·¢Éä°µÆ÷¿ÉÊÇ»áÒıÆğ¹«·ßµÄàŞ£¡\n");
+              return notify_fail("å®‰å…¨åŒºå†…å‘å°„æš—å™¨å¯æ˜¯ä¼šå¼•èµ·å…¬æ„¤çš„å™¢ï¼\n");
 
     	if( this_player()->is_busy() )
-		return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+		return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
 
 	if( !arg || sscanf(arg, "%s on %s", item, targ)!=2 )
-		return notify_fail("Ö¸Áî¸ñÊ½£ºthrow <Ä³Îï> on <Ä³ÈË>\n");
+		return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šthrow <æŸç‰©> on <æŸäºº>\n");
 
 	if(targ == me->query("id"))
-                return notify_fail("Ïë×ÔÉ±Ó¦¸ÃÓÃsuicide°É£¿\n");
+                return notify_fail("æƒ³è‡ªæ€åº”è¯¥ç”¨suicideå§ï¼Ÿ\n");
 
 	if( !objectp(ob = present(item, me)))
-		return notify_fail("ÄãÉíÉÏÃ»ÓĞ "+item+"\n");
+		return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰ "+item+"\n");
 	if(ob->query("skill_type")!="throwing")
-		return notify_fail(ob->query("name")+"²»ÊÇ°µÆ÷£¡\n");
+		return notify_fail(ob->query("name")+"ä¸æ˜¯æš—å™¨ï¼\n");
 
 	if( !objectp(victim = present(targ, environment(me))) )
-		return notify_fail("ÄãÏëÏòË­Í¶ÖÀ°µÆ÷£¿\n");
+		return notify_fail("ä½ æƒ³å‘è°æŠ•æ·æš—å™¨ï¼Ÿ\n");
 
 	if( !living(victim)) 
-		return notify_fail("Ê²Ã´Äã¶¼ÏëÉ±£¿\n");
+		return notify_fail("ä»€ä¹ˆä½ éƒ½æƒ³æ€ï¼Ÿ\n");
 
 	if(!valid_kill(me,victim,0)) return 0;
 
@@ -50,7 +50,7 @@ int main(object me, string arg)
 	lucky=0;
 	ap=COMBAT_D->skill_power(me, "throwing", SKILL_USAGE_ATTACK);
 	dp=COMBAT_D->skill_power(victim, "dodge", SKILL_USAGE_DEFENSE);
-	dp/=2;			// °µÆ÷Ö®°µ
+	dp/=2;			// æš—å™¨ä¹‹æš—
 	if(random(ap+dp) > dp) {
 		success=1;
 		if(ap<dp) lucky=1;
@@ -59,11 +59,11 @@ int main(object me, string arg)
 	dp=victim->query("combat_exp")*victim->query_kar();
 	if(random(ap+dp) < dp) found=1;
 
-	tell_object(me, "ÄãÉìÊÖ´Ó»³ÀïÌÍ³öÒ»"+ob->query("base_unit")+ob->query("name")+"£¬Ïò"+victim->query("name")+"ÉäÁË¹ıÈ¥¡£\n");
-	msg="Ö»¼ûÒ»µÀº®¹â·ÉÏò$nµÄÃæÃÅ£¬";
+	tell_object(me, "ä½ ä¼¸æ‰‹ä»æ€€é‡Œæå‡ºä¸€"+ob->query("base_unit")+ob->query("name")+"ï¼Œå‘"+victim->query("name")+"å°„äº†è¿‡å»ã€‚\n");
+	msg="åªè§ä¸€é“å¯’å…‰é£å‘$nçš„é¢é—¨ï¼Œ";
 
 	if(success) {
-		msg+=victim->query("name")+"Ïë¶ãÈ´Ã»¶ã¿ª¡£\n";
+		msg+=victim->query("name")+"æƒ³èº²å´æ²¡èº²å¼€ã€‚\n";
 		damage=ob->query("weapon_prop/damage");
 		if( damage> 30 ) damage=30;
 		damage_bonus=me->query_str()/5;
@@ -85,7 +85,7 @@ int main(object me, string arg)
 		if(damage>0) {
 			victim->receive_damage("kee", damage, me);
 			if(wound >0) victim->receive_wound("kee", wound, me);
-			msg+=COMBAT_D->damage_msg(damage,"ÉËº¦");
+			msg+=COMBAT_D->damage_msg(damage,"ä¼¤å®³");
 		}
 		if(random(me->query("sen")*100/me->query("max_sen") + me->query_int()*me->query_cps()) > 150) {
 			me->improve_skill("throwing", 1);
@@ -97,11 +97,11 @@ int main(object me, string arg)
 		}
 	}
 	else 
-		msg+="µ«ÊÇ±»$n¶ã¿ªÁË¡£\n";
+		msg+="ä½†æ˜¯è¢«$nèº²å¼€äº†ã€‚\n";
 
 	if((int)ob->query_amount()==1) {
 		if(stringp(ob->query("equipped"))) ob->unequip();
-		tell_object(me, "ÄãµÄ" + ob->query("name") + "ÓÃÍêÁË£¡\n");
+		tell_object(me, "ä½ çš„" + ob->query("name") + "ç”¨å®Œäº†ï¼\n");
 	}
 	ob->add_amount(-1);
 
@@ -111,7 +111,7 @@ int main(object me, string arg)
 
 	if(found) {
 		if(living(victim)) {
-			msg="$nÅ­ÊÓ$N£¬´óÉùºÈµÀ£ºĞ¡ÍÃáÌ×Ó¸ÒÊ¹°µÆ÷£¡\n";
+			msg="$næ€’è§†$Nï¼Œå¤§å£°å–é“ï¼šå°å…”å´½å­æ•¢ä½¿æš—å™¨ï¼\n";
 			message_vision(msg, me, victim);
 			if(userp(victim)) victim->fight_ob(me);
 			else victim->kill_ob(me);
@@ -119,7 +119,7 @@ int main(object me, string arg)
 		}
 	}
 	else {
-		msg="$nÒ»Á³Ã£È»£¬×ìÀïà½àìµÀ£ºÊÇË­£¿ÊÇË­£¿\n";
+		msg="$nä¸€è„¸èŒ«ç„¶ï¼Œå˜´é‡Œå˜Ÿå›”é“ï¼šæ˜¯è°ï¼Ÿæ˜¯è°ï¼Ÿ\n";
 		message_vision(msg, me, victim);
 	}
 
@@ -130,9 +130,9 @@ int main(object me, string arg)
 int help(object me)
 {
    write( @HELP
-Ö¸Áî¸ñÊ½: throw <something> on <someone>
+æŒ‡ä»¤æ ¼å¼: throw <something> on <someone>
 
-ÕâÒ»Ö¸ÁîÈÃÄã¿ÉÒÔÏòÄ³ÈË·¢Éä°µÆ÷¡£
+è¿™ä¸€æŒ‡ä»¤è®©ä½ å¯ä»¥å‘æŸäººå‘å°„æš—å™¨ã€‚
 HELP
    );
    return 1;

@@ -6,18 +6,18 @@ inherit STAFF;
 
 void create()
 {
-  set_name("ó´Áú¹Õ", ({"panlong guai", "guai", "staff"}));
+  set_name("èŸ é¾™æ‹", ({"panlong guai", "guai", "staff"}));
   set_weight(1000);
   if( clonep() )
       set_default_object(__FILE__);
   else {
-    set("unit", "¸ù");
+    set("unit", "æ ¹");
     set("value", 5000);
 	set("no_sell", 1);
     set("material", "iron");
-    set("long", "Ò»¸ùÎÚºÚµÄó´Áú¹ÕÕÈ£¬ÉÏµñÓĞÁúÍ·¡£\n");
-    set("wield_msg", "$N¾ÙÆğÒ»¸ù$n£¬ïÏµØÒ»Îè¡£\n");
-    set("unequip_msg", "$N½«$nïÏµØÒ»ÉùÍùµØÉÏÒ»´Á¡£\n");
+    set("long", "ä¸€æ ¹ä¹Œé»‘çš„èŸ é¾™æ‹æ–ï¼Œä¸Šé›•æœ‰é¾™å¤´ã€‚\n");
+    set("wield_msg", "$Nä¸¾èµ·ä¸€æ ¹$nï¼Œé”µåœ°ä¸€èˆã€‚\n");
+    set("unequip_msg", "$Nå°†$né”µåœ°ä¸€å£°å¾€åœ°ä¸Šä¸€æˆ³ã€‚\n");
   }
   init_staff(15);
   setup();

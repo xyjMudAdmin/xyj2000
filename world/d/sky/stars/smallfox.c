@@ -6,9 +6,9 @@ inherit NPC;
 
 void create()
 {
-	set_name("Ğ¡ºüÀê", ({"smallfox"}));
-	set("long", "°¢ĞåµÄĞ¡Ñ¾»·¡£\n");
-	set("gender", "Å®ĞÔ");
+	set_name("å°ç‹ç‹¸", ({"smallfox"}));
+	set("long", "é˜¿ç»£çš„å°ä¸«ç¯ã€‚\n");
+	set("gender", "å¥³æ€§");
 	set("age", 15);
 	set("attitude", "friendly");
 	set("per", 20);

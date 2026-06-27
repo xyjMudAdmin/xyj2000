@@ -4,7 +4,7 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIG"ÂÌµ¤Æ¿"NOR, ({ "lvdan ping", "ping" }) );
+        set_name(HIG"ç»¿ä¸¹ç“¶"NOR, ({ "lvdan ping", "ping" }) );
         set_weight(5000);
         set_max_encumbrance(50);
         if( clonep() ) {
@@ -15,8 +15,8 @@ void create()
 
                 set_default_object(__FILE__);
         } else {
-                set("unit", "¸ö");
-                set("long", "Ò»¸öÂÌÉ«µÄĞ¡µ¤Æ¿£¬µàÔÚÊÖÀïÖØÖØµÄ¡£\n");
+                set("unit", "ä¸ª");
+                set("long", "ä¸€ä¸ªç»¿è‰²çš„å°ä¸¹ç“¶ï¼Œæ‚åœ¨æ‰‹é‡Œé‡é‡çš„ã€‚\n");
                 set("value", 10000);
 		set("no_sell", 1);
         }

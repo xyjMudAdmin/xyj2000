@@ -9,13 +9,13 @@ void expire();
 
 void create ()
 {
-  set ("short", "Ç®×¯µØÏÂÊÒ");
+  set ("short", "é’±åº„åœ°ä¸‹å®¤");
   set ("long", @LONG
 
-Ò»¼ä½ä±¸É­ÑÏµÄµØÏÂÊÒ£¬×¨ÃÅÌá¹©¼Ä´æ·şÎñ¡£Äã¿ÉÒÔÔÚ
-ÕâÀï¼Ä´æ(jicun)ÎïÆ·£¬¼Û¸ñ¹«µÀ£¬²»ÂÛÎïÆ·¹ó¼ú£¬Ò»ÂÉ
-Ã¿Ğ¡Ê±°×ÒøÒ»Á½¡£ÈôÓâÆÚ²»È¡(qu)£¬ÎïÆ·Ã»ÊÕºóÒÔÃ¿Ñù
-ÎÆÒøÊ®Á½µÄµÍ¼Û¹«¿ª³öÊÛ(pick box)¡£
+ä¸€é—´æˆ’å¤‡æ£®ä¸¥çš„åœ°ä¸‹å®¤ï¼Œä¸“é—¨æä¾›å¯„å­˜æœåŠ¡ã€‚ä½ å¯ä»¥åœ¨
+è¿™é‡Œå¯„å­˜(jicun)ç‰©å“ï¼Œä»·æ ¼å…¬é“ï¼Œä¸è®ºç‰©å“è´µè´±ï¼Œä¸€å¾‹
+æ¯å°æ—¶ç™½é“¶ä¸€ä¸¤ã€‚è‹¥é€¾æœŸä¸å–(qu)ï¼Œç‰©å“æ²¡æ”¶åä»¥æ¯æ ·
+çº¹é“¶åä¸¤çš„ä½ä»·å…¬å¼€å‡ºå”®(pick box)ã€‚
 
 LONG);
 
@@ -47,40 +47,40 @@ int do_cun(string arg) {
   object box,me=this_player();
 
   if (!arg) 
-    return notify_fail("¸ñÊ½£ºjicun <ÎïÆ·> for <Ê±¼ä>\n"+
-            "Ê±¼äÒÔĞ¡Ê±Îªµ¥Î»£¬×î¶à²»³¬¹ı¶şÊ®ËÄĞ¡Ê±¡£\n");
+    return notify_fail("æ ¼å¼ï¼šjicun <ç‰©å“> for <æ—¶é—´>\n"+
+            "æ—¶é—´ä»¥å°æ—¶ä¸ºå•ä½ï¼Œæœ€å¤šä¸è¶…è¿‡äºŒåå››å°æ—¶ã€‚\n");
 
   if (sscanf(arg,"%s for %d",boxname,howlong)!=2)
-    return notify_fail("¸ñÊ½£ºjicun <ÎïÆ·> for <Ê±¼ä>\n"+
-            "Ê±¼äÒÔĞ¡Ê±Îªµ¥Î»£¬×î¶à²»³¬¹ı¶şÊ®ËÄĞ¡Ê±¡£\n");
+    return notify_fail("æ ¼å¼ï¼šjicun <ç‰©å“> for <æ—¶é—´>\n"+
+            "æ—¶é—´ä»¥å°æ—¶ä¸ºå•ä½ï¼Œæœ€å¤šä¸è¶…è¿‡äºŒåå››å°æ—¶ã€‚\n");
   box=present(boxname,me);
-  if (!box) return notify_fail("ÄãÏë´æÊ²Ã´£¿\n");
+  if (!box) return notify_fail("ä½ æƒ³å­˜ä»€ä¹ˆï¼Ÿ\n");
 
   if (howlong<1 || howlong>24) 
-     return notify_fail("´æ·ÅÊ±¼äÒ»ÖÁ¶şÊ®ËÄĞ¡Ê±¡£\n");
+     return notify_fail("å­˜æ”¾æ—¶é—´ä¸€è‡³äºŒåå››å°æ—¶ã€‚\n");
   if (box->query("id")!="deposit box")
-     return notify_fail("Îª±£ÃÜÆğ¼û£¬Çë½«¼Ä´æÎïÆ·ÏÈ·ÅÈëÌúºĞÖĞ¡£\n");
+     return notify_fail("ä¸ºä¿å¯†èµ·è§ï¼Œè¯·å°†å¯„å­˜ç‰©å“å…ˆæ”¾å…¥é“ç›’ä¸­ã€‚\n");
 
   if (!mark=box->query("mark")) 
-     return notify_fail("ÇëÏÈÔÚÌúºĞÉÏ×ö¸ö¼ÇºÅ(mark)¡£\n");
+     return notify_fail("è¯·å…ˆåœ¨é“ç›’ä¸Šåšä¸ªè®°å·(mark)ã€‚\n");
 
   if( !(afford=me->can_afford(howlong*100)) )  {
-     write("ÄãÃ»ÓĞ×ã¹»µÄÇ®¡£\n");
+     write("ä½ æ²¡æœ‰è¶³å¤Ÿçš„é’±ã€‚\n");
      return 1; 
   } else if( afford == 2 )  {
-      write("ÄãÃ»ÓĞ×ã¹»µÄÁãÇ®£¬¶øÒøÆ±ÓÖÃ»ÈËÕÒµÃ¿ª¡£\n");
+      write("ä½ æ²¡æœ‰è¶³å¤Ÿçš„é›¶é’±ï¼Œè€Œé“¶ç¥¨åˆæ²¡äººæ‰¾å¾—å¼€ã€‚\n");
       return 1;
   }
   if (box->move(findbox())) {
     box->set("owner",me->query("id"));
     box->set("expire_time",time()+howlong*3600);
     me->pay_money(howlong*100);
-    message_vision("$N¼Ä´æÌúºĞÒ»Ö»£¬ÆÚÏŞ"+chinese_number(howlong)+
-               "Ğ¡Ê±¡£\n",me);
-    write("¹æ¶¨ÆÚÏŞÄÚ£¬¿ÉÓÃ¡°qu "+mark+"¡±ÃüÁîÈ¡³ö¡£\n");
+    message_vision("$Nå¯„å­˜é“ç›’ä¸€åªï¼ŒæœŸé™"+chinese_number(howlong)+
+               "å°æ—¶ã€‚\n",me);
+    write("è§„å®šæœŸé™å†…ï¼Œå¯ç”¨â€œqu "+mark+"â€å‘½ä»¤å–å‡ºã€‚\n");
     return 1;
   } else 
-    write("¶Ô²»Æğ£¬±¾µêÒÑ¾­¿ÍÂú£¬ÇëÏÂ´Î¹âÁÙ¡£\n");
+    write("å¯¹ä¸èµ·ï¼Œæœ¬åº—å·²ç»å®¢æ»¡ï¼Œè¯·ä¸‹æ¬¡å…‰ä¸´ã€‚\n");
   return 1;
 }
 
@@ -89,7 +89,7 @@ int do_qu(string arg) {
   object *inv;
   object me=this_player();
 
-  if (!arg) return notify_fail("¸ñÊ½£ºqu <¼ÇºÅ>\n");
+  if (!arg) return notify_fail("æ ¼å¼ï¼šqu <è®°å·>\n");
   inv=all_inventory(findbox());
 
   for (int i=0;i<sizeof(inv);i++) 
@@ -97,11 +97,11 @@ int do_qu(string arg) {
         inv[i]->query("mark")==arg ) {
           inv[i]->delete("owner");
           inv[i]->delete("expire_time");
-          message_vision("$NÈ¡³öÒ»Ö»ÌúºĞ¡£\n",me);
+          message_vision("$Nå–å‡ºä¸€åªé“ç›’ã€‚\n",me);
           if (!inv[i]->move(me)) inv[i]->move(environment(me));
           return 1;
      }
-  write("ÄãÃ»ÓĞ´æ¹ı¼ÇºÅÎª¡°"+mark+"¡±µÄºĞ×Ó£¬»òÕßÒÑ¾­¹ıÆÚÁË¡£\n");
+  write("ä½ æ²¡æœ‰å­˜è¿‡è®°å·ä¸ºâ€œ"+mark+"â€çš„ç›’å­ï¼Œæˆ–è€…å·²ç»è¿‡æœŸäº†ã€‚\n");
   return 1;
 }
 
@@ -128,23 +128,23 @@ int do_pick(string arg) {
   int afford;
 
   if (arg!="box") 
-     return notify_fail("¸ñÊ½£ºpick box\nÄã½«ÔÚ»õ¼ÜÉÏËæ»úÑ¡ÔñÒ»¸öÌúºĞ¡£\n");
+     return notify_fail("æ ¼å¼ï¼špick box\nä½ å°†åœ¨è´§æ¶ä¸Šéšæœºé€‰æ‹©ä¸€ä¸ªé“ç›’ã€‚\n");
 
   if (!inv || sizeof(inv)==0) 
-     return notify_fail("ÏÖÔÚÃ»ÓĞÃ»ÊÕ»õÎï³öÊÛ¡£\n");                     
+     return notify_fail("ç°åœ¨æ²¡æœ‰æ²¡æ”¶è´§ç‰©å‡ºå”®ã€‚\n");                     
 
   if( !(afford=me->can_afford(1000)) )  {
-     write("ÄãÃ»ÓĞ×ã¹»µÄÇ®¡£\n");
+     write("ä½ æ²¡æœ‰è¶³å¤Ÿçš„é’±ã€‚\n");
      return 1; 
   } else if( afford == 2 )  {
-      write("ÄãÃ»ÓĞ×ã¹»µÄÁãÇ®£¬¶øÒøÆ±ÓÖÃ»ÈËÕÒµÃ¿ª¡£\n");
+      write("ä½ æ²¡æœ‰è¶³å¤Ÿçš„é›¶é’±ï¼Œè€Œé“¶ç¥¨åˆæ²¡äººæ‰¾å¾—å¼€ã€‚\n");
       return 1;
   }
     
   pick=inv[random(sizeof(inv))];
   me->pay_money(1000);
   pick->delete("owner");
-  message_vision("$NÂòÏÂÒ»¸öÌúºĞ¡£\n",me);
+  message_vision("$Nä¹°ä¸‹ä¸€ä¸ªé“ç›’ã€‚\n",me);
   if (!pick->move(me)) pick->move(environment(me));  
   return 1;
 }
@@ -156,8 +156,8 @@ object findcart()
 
     cart=new("/std/room/shopbox");
     cart->move(this_object());
-    cart->set("name","»õ¼Ü");
-    cart->set("short","»õ¶Ñ");
+    cart->set("name","è´§æ¶");
+    cart->set("short","è´§å †");
     return cart;
 }
 

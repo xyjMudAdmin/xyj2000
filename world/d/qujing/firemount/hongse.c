@@ -8,11 +8,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "��ɫׯԺ");
+  set ("short", "红色庄院");
   set ("long", @LONG
 
-��һ��������������һƬ��ɫ�����߸ǵķ��ᣬ��ש����ԫǽ����
-�����ȣ������齣����Ǻ�ġ�
+你一定睛，发现这里一片红色：红瓦盖的房舍，红砖砌的垣墙，红
+油门扇，红漆板榻，都是红的。
 
 LONG);
 

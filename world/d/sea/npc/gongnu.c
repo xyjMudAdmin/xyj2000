@@ -3,10 +3,10 @@ inherit NPC;
 
 void create()
 {
-       set_name("¹¬Å®", ({"gongnu"}));
+       set_name("å®«å¥³", ({"gongnu"}));
 
-set("long","Ò»¸öĞ¡Ñ¾»·£®\n");
-       set("gender", "Å®ĞÔ");
+set("long","ä¸€ä¸ªå°ä¸«ç¯ï¼\n");
+       set("gender", "å¥³æ€§");
        set("age", 26);
 	set("per", 30);
        set("attitude", "peaceful");

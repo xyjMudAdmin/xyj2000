@@ -3,13 +3,13 @@ inherit NPC;
 
 void create()
 {
-       	set_name("½ôÂŞÄÇ", ({"jinluo na", "luona", "na"}));
-       	set("gender", "ÄĞĞÔ");
+       	set_name("ç´§ç½—é‚£", ({"jinluo na", "luona", "na"}));
+       	set("gender", "ç”·æ€§");
        	set("age", 20);
         set("class", "xian");
        	set("attitude", "friendly");
-	set("title", "¸èÉñ");
-       	set("rank_info/respect", "¸èÉñ");
+	set("title", "æ­Œç¥");
+       	set("rank_info/respect", "æ­Œç¥");
         set("per", 30);
         set("int", 30);
 	set("str", 30);

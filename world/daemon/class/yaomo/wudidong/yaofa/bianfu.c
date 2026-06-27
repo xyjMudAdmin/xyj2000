@@ -1,6 +1,6 @@
 // cracked by vikee 2/09/2002   vikee@263.net
 
-//òùòð
+//è™è 
 //requirement:force,dodge over 100
 
 #include <ansi.h>
@@ -15,35 +15,35 @@ int cast(object me, object target)
         int skill_spells, skill_dodge, dodge_amount,howlong;
 
 //        if( me->query_skill_mapped("dodge") != "ling" )
-  //              return notify_fail("Äã»¹Ã»ÓÐÊ©Õ¹ÀäÔÂÄýÏãÎèÄØ¡£\n");
+  //              return notify_fail("ä½ è¿˜æ²¡æœ‰æ–½å±•å†·æœˆå‡é¦™èˆžå‘¢ã€‚\n");
         skill_dodge = me->query_skill("dodge");            
-        if (skill_dodge<100) return notify_fail("ÄãµÄÇá¹¦»¹²»¹»¸ßÃ÷£¬±äÁËòùòðÒ²·É²»ÆðÀ´¡£\n");
+        if (skill_dodge<100) return notify_fail("ä½ çš„è½»åŠŸè¿˜ä¸å¤Ÿé«˜æ˜Žï¼Œå˜äº†è™è ä¹Ÿé£žä¸èµ·æ¥ã€‚\n");
         skill_spells=me->query_skill("spells");        
-        if (skill_spells<100) return notify_fail("ÄãµÄÑý·¨²»¹»´¿Êì¡£\n");
+        if (skill_spells<100) return notify_fail("ä½ çš„å¦–æ³•ä¸å¤Ÿçº¯ç†Ÿã€‚\n");
 
         if( (int)me->query("mana") < 100 )      
-                return notify_fail("ÄãµÄ·¨Á¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿã€‚\n");
         if (me->query("sen")<100)
-              return notify_fail("ÄãµÄ¾«Éñ²»×ã¡£\n");
+              return notify_fail("ä½ çš„ç²¾ç¥žä¸è¶³ã€‚\n");
         if( (int)me->query_temp("wdd_powerup") )
-                return notify_fail("ÄãÒÑ¾­ÔÚÔË¹¦ÖÐÁË¡£\n");
+                return notify_fail("ä½ å·²ç»åœ¨è¿åŠŸä¸­äº†ã€‚\n");
         
         if (!me->query_temp("wdd_drink_hulu"))
-           return notify_fail("ÄãºÃ¾ÃÃ»ÍµÓÍ³ÔÁË£¬±ä²»³Éòùòð¡£\n");
+           return notify_fail("ä½ å¥½ä¹…æ²¡å·æ²¹åƒäº†ï¼Œå˜ä¸æˆè™è ã€‚\n");
 
         me->add("mana", -50);
         me->add("sen",-50);
         me->delete_temp("wdd_drink_hulu");
-        message_vision(HIB"$N×ìÀïÄîÄîÓÐ´Ç£¬Í»È»¼ç°òÉÏ³¤³öÁËÒ»¶Ô³á°ò£¬±ä³ÉÁËÒ»Ö»òùòð£¡\n"NOR,me);
+        message_vision(HIB"$Nå˜´é‡Œå¿µå¿µæœ‰è¾žï¼Œçªç„¶è‚©è†€ä¸Šé•¿å‡ºäº†ä¸€å¯¹ç¿…è†€ï¼Œå˜æˆäº†ä¸€åªè™è ï¼\n"NOR,me);
  
         dodge_amount=me->query_skill("lingfu-steps",1)/2; 
         me->add_temp("apply/dodge",dodge_amount);  
         me->set_temp("wdd_powerup", 1);
         me->set_temp("wdd_limbs",me->query("limbs"));
         me->set("limbs",({
-  "Í·²¿",  "¾±²¿", "ÐØ¿Ú",  "ºóÐÄ",  "×ó¼ç",  "ÓÒ¼ç",  "×ó±Û", "ÓÒ±Û",
-  "×óÊÖ",  "ÓÒÊÖ", "Ñü¼ä",  "Ð¡¸¹",  "×óÍÈ",  "ÓÒÍÈ",  "×ó½Å", "ÓÒ½Å",
-  "³á°ò",  "³á°ò",  "³á°ò",  "³á°ò",  "³á°ò",  "³á°ò",  "³á°ò",  "³á°ò",
+  "å¤´éƒ¨",  "é¢ˆéƒ¨", "èƒ¸å£",  "åŽå¿ƒ",  "å·¦è‚©",  "å³è‚©",  "å·¦è‡‚", "å³è‡‚",
+  "å·¦æ‰‹",  "å³æ‰‹", "è…°é—´",  "å°è…¹",  "å·¦è…¿",  "å³è…¿",  "å·¦è„š", "å³è„š",
+  "ç¿…è†€",  "ç¿…è†€",  "ç¿…è†€",  "ç¿…è†€",  "ç¿…è†€",  "ç¿…è†€",  "ç¿…è†€",  "ç¿…è†€",
 }));
 
         howlong=me->query_skill("yaofa",1)/5+5+random(5);
@@ -59,7 +59,7 @@ void remove_effect(object me, int dodge_amount)
         me->add_temp("apply/dodge", -dodge_amount);
         me->delete_temp("wdd_powerup");
         me->set("limbs",me->query_temp("wdd_limbs"));
-        message_vision(HIB"$N½¥¸Ð»ëÉíÄÑÊÜ£¬Ò¡ÁËÒ¡ÄÔ´ü£¬ÏÖ³öÁËÔ­ÐÎ¡£\n"NOR,me);
+        message_vision(HIB"$Næ¸æ„Ÿæµ‘èº«éš¾å—ï¼Œæ‘‡äº†æ‘‡è„‘è¢‹ï¼ŒçŽ°å‡ºäº†åŽŸå½¢ã€‚\n"NOR,me);
         
 }
 

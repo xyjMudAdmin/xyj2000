@@ -7,10 +7,10 @@ inherit NPC;
 
 void create()
 {
-	set_name("»ğ²¿Éñ±ø", ({"huo bing", "bing"}));
-	set("gender", "ÄĞĞÔ" );
+	set_name("ç«éƒ¨ç¥å…µ", ({"huo bing", "bing"}));
+	set("gender", "ç”·æ€§" );
 	set("age", 33);
-	set("long", "Ìì¹¬»ğ²¿´ó½«£¬¾Ã¾«É³³¡£¬ÊÖÏÂÃÍ½«ÈçÔÆ¡£\n");
+	set("long", "å¤©å®«ç«éƒ¨å¤§å°†ï¼Œä¹…ç²¾æ²™åœºï¼Œæ‰‹ä¸‹çŒ›å°†å¦‚äº‘ã€‚\n");
 	set("class", "xian");
 	set("combat_exp", 100000);
         set("daoxing", 1000000);
@@ -75,8 +75,8 @@ void penhuo (object me, object ob)
   huobing = new (__DIR__"huobing");
   huobing->move(environment (me));
   me->command("exert recover");
-  message_vision (HIY"Ö»¼û$N£¬½«ÊÖÖĞµÄÁîÆìÒ»Õ¹£¬¶ÙÊ±ËÄ±ÚĞÜĞÜ´ó»ğÏò$n¾íÀ´£¡\n"NOR,me,ob);
-  message_vision (HIY"»ğÑæÖĞÏÖ³öÒ»Ö»$N£¡\n"NOR,huobing);
+  message_vision (HIY"åªè§$Nï¼Œå°†æ‰‹ä¸­çš„ä»¤æ——ä¸€å±•ï¼Œé¡¿æ—¶å››å£ç†Šç†Šå¤§ç«å‘$nå·æ¥ï¼\n"NOR,me,ob);
+  message_vision (HIY"ç«ç„°ä¸­ç°å‡ºä¸€åª$Nï¼\n"NOR,huobing);
 
   remove_call_out ("penhuo");  
   call_out ("penhuo",random(15)+15,me,ob);  
@@ -89,7 +89,7 @@ void die ()
   object me = this_object();
   object ob = query_temp("my_killer");
   ob->add_temp("dntg/laojunlu_day",2);
-  message_vision (HIY"$NÏûÊ§ÔÚ»ğº£Ö®ÖĞ¡£\n"NOR,me);
+  message_vision (HIY"$Næ¶ˆå¤±åœ¨ç«æµ·ä¹‹ä¸­ã€‚\n"NOR,me);
   destruct (this_object());
   return ;
 }

@@ -4,12 +4,12 @@
 inherit ROOM;
 void create ()
 {
-  set ("short", "ÁúÑ¨");
+  set ("short", "é¾™ç©´");
   set ("long", @LONG
 
-¼·¹ýÊ¯·ìÒ»ÇÆ£¬¹Ô¹Ô²»µÃÁË¡£ÕâÀïÔ­À´ÊÇÌõ¾®ÁúµÄ³²Ñ¨¡£ËäÈ»ÕâÀïÃ»
-ÓÐË®£¬µ«³±ÊªÎÞ±È¡£ËÄ´¦ÅÀ×Å¸÷ÖÖ¸÷ÑùÄã´ÓÎ´¼û¹ýµÄ³æ×Ó£¬½ÇÂäÀïÒ»
-¶Ñº¡¹Ç(bones)·¢É¢×ÅÕóÕó¸¯³ôÖ®Æø¡£
+æŒ¤è¿‡çŸ³ç¼ä¸€çž§ï¼Œä¹–ä¹–ä¸å¾—äº†ã€‚è¿™é‡ŒåŽŸæ¥æ˜¯æ¡äº•é¾™çš„å·¢ç©´ã€‚è™½ç„¶è¿™é‡Œæ²¡
+æœ‰æ°´ï¼Œä½†æ½®æ¹¿æ— æ¯”ã€‚å››å¤„çˆ¬ç€å„ç§å„æ ·ä½ ä»Žæœªè§è¿‡çš„è™«å­ï¼Œè§’è½é‡Œä¸€
+å †éª¸éª¨(bones)å‘æ•£ç€é˜µé˜µè…è‡­ä¹‹æ°”ã€‚
 LONG);
 
   set("exits", ([ /* sizeof() == 1 */
@@ -32,7 +32,7 @@ int valid_leave(object me, string dir)
 {
   if(dir=="west" &&
      objectp(present("dragon", environment(me))))
-    return notify_fail("¶ñÁúµ²×¡ÁËÄãµÄÈ¥Â·£¡\n");
+    return notify_fail("æ¶é¾™æŒ¡ä½äº†ä½ çš„åŽ»è·¯ï¼\n");
   return ::valid_leave(me, dir);
 }
 
@@ -49,13 +49,13 @@ int do_move()
 	if( !(biyaoshi =find_object(__DIR__"biyaoshi"))) 
 		biyaoshi=load_object(__DIR__"biyaoshi");
 	if( biyaoshi = find_object(__DIR__"biyaoshi")) {
-		message_vision("$NÒÆ¶¯ÁË¼¸¸ùº¡¹Ç£¬¾ÓÈ»·¢ÏÖÁËÒ»¸ö°´Å¥¡£\n", me);
+		message_vision("$Nç§»åŠ¨äº†å‡ æ ¹éª¸éª¨ï¼Œå±…ç„¶å‘çŽ°äº†ä¸€ä¸ªæŒ‰é’®ã€‚\n", me);
 		if(biyaoshi->query("door_locked")) {
-			message_vision("$N°´ÁË°´°´Å¥£¬È´Ê²Ã´Ò²Ã»·¢Éú¡£\n", me);
+			message_vision("$NæŒ‰äº†æŒ‰æŒ‰é’®ï¼Œå´ä»€ä¹ˆä¹Ÿæ²¡å‘ç”Ÿã€‚\n", me);
 		}
 		else {
-			message_vision("$N°´ÁËÒ»ÏÂ°´Å¥£¬½ÅÏÂÍ»È»³öÏÖÒ»µÀÁÑ·ì£¬\n", me);
-			message_vision("$NÂäÈëÁÑ·ìÖ®ºó£¬ÁÑ·ì¾ÍºÏÉÏÁË¡£\n", me);
+			message_vision("$NæŒ‰äº†ä¸€ä¸‹æŒ‰é’®ï¼Œè„šä¸‹çªç„¶å‡ºçŽ°ä¸€é“è£‚ç¼ï¼Œ\n", me);
+			message_vision("$Nè½å…¥è£‚ç¼ä¹‹åŽï¼Œè£‚ç¼å°±åˆä¸Šäº†ã€‚\n", me);
 			me->move(__DIR__"biyaoshi");
 		}
 	}

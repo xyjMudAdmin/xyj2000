@@ -1,14 +1,14 @@
 
 mapping color_code=([
-        "zhu bajie": HIR"∫Ï"NOR,
-        "chen guangrui": HIG"¬Ã"NOR,
-        "hu jingde": HIY"ª∆"NOR,
-        "xiang gong": HIB"¿∂"NOR,
-        "xiang po": HIM"∑€"NOR,
-        "yin wenjiao": HIC"«‡"NOR,
-//	"yu lan":HIR"∫Ï"NOR,
-//	"cui lan":HIM"∑€"NOR,
-//	"xiang lan":HIB"¿∂"NOR,
-	"xiang lan":HIW"∞◊"NOR,
+        "zhu bajie": HIR"Á∫¢"NOR,
+        "chen guangrui": HIG"Áªø"NOR,
+        "hu jingde": HIY"ÈªÑ"NOR,
+        "xiang gong": HIB"Ëìù"NOR,
+        "xiang po": HIM"Á≤â"NOR,
+        "yin wenjiao": HIC"Èùí"NOR,
+//	"yu lan":HIR"Á∫¢"NOR,
+//	"cui lan":HIM"Á≤â"NOR,
+//	"xiang lan":HIB"Ëìù"NOR,
+	"xiang lan":HIW"ÁôΩ"NOR,
         ]);
 

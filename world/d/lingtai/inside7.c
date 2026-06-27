@@ -1,15 +1,15 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// Room: some place in Î÷Å£ºØÖŞ
+// Room: some place in è¥¿ç‰›è´ºæ´²
 // inside2.c
 
 inherit ROOM;
 
 void create()
 {
-  set ("short", "Á·¹¦ÊÒ");
+  set ("short", "ç»ƒåŠŸå®¤");
   set ("long", @LONG
 
-ÊÒÖĞ¾²ÇÄÇÄµÄ£¬¼¸Î»µÀ³¤ÕıÔÚ´ò×ùÁ·¹¦¡£
+å®¤ä¸­é™æ‚„æ‚„çš„ï¼Œå‡ ä½é“é•¿æ­£åœ¨æ‰“åº§ç»ƒåŠŸã€‚
 LONG);
 set("exits", ([ /* sizeof() == 4 */
 "west": __DIR__"inside2",

@@ -16,17 +16,17 @@ string level_description(int level)
 {
 	int grade;
 	string *level_desc = ({
-		BLU "ÈôÓÐÈôÎÞ" NOR,
-		HIB "³õ¿úÃÅ¾¶" NOR,
-		HIY "½¥Èë¼Ñ¾³" NOR,
-		HIB "ÆøÏ¢ÓÆ³¤" NOR,
-		YEL "ÉúÉú²»¾ø" NOR,
-		YEL "Ó¢»ªÄÚÁ²" NOR,
-		YEL "Í¨¹ØÔÚ¼´" NOR,
-		CYN "»íÈ»¹áÍ¨" NOR,
-		HIC "¾ÙÊÀÎÞË«" NOR,
-		HIC "Õð¹Åîå½ñ" NOR,
-		HIW "Éî²»¿É²â" NOR
+		BLU "è‹¥æœ‰è‹¥æ— " NOR,
+		HIB "åˆçª¥é—¨å¾„" NOR,
+		HIY "æ¸å…¥ä½³å¢ƒ" NOR,
+		HIB "æ°”æ¯æ‚ é•¿" NOR,
+		YEL "ç”Ÿç”Ÿä¸ç»" NOR,
+		YEL "è‹±åŽå†…æ•›" NOR,
+		YEL "é€šå…³åœ¨å³" NOR,
+		CYN "è±ç„¶è´¯é€š" NOR,
+		HIC "ä¸¾ä¸–æ— åŒ" NOR,
+		HIC "éœ‡å¤é“„ä»Š" NOR,
+		HIW "æ·±ä¸å¯æµ‹" NOR
 	});
 
 	grade = level / 20;

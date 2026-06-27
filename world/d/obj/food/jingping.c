@@ -1,18 +1,18 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// jingping.c ¾»Æ¿ 
+// jingping.c å‡€ç“¶ 
 
 inherit ITEM;
 inherit F_LIQUID;
 
 void create()
 {
-	set_name("¾»Æ¿", ({"jingping", "bottle"}));
+	set_name("å‡€ç“¶", ({"jingping", "bottle"}));
 	set_weight(1000);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "ÄÏº£¹ÛÒôÊ¢Ë®µÄ¾»Æ¿¡£\n");
-		set("unit", "¸ö");
+		set("long", "å—æµ·è§‚éŸ³ç››æ°´çš„å‡€ç“¶ã€‚\n");
+		set("unit", "ä¸ª");
 		set("value", 5000);
 		set("max_liquid", 500);
 	}
@@ -21,7 +21,7 @@ void create()
 	// we set it to contain wine at the beginning
 	set("liquid", ([
 		"type": "water",
-		"name": "¾»Ë®",
+		"name": "å‡€æ°´",
 		"remaining": 400,
 		"drunk_supply": 20,
 	]));

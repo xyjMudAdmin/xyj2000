@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-  set("short", "¾øÑÂ");
+  set("short", "ç»å´–");
   set("long", @LONG
       
-ÕâÊÇ¾øÑÂµÄÁíÒ»Ãæ¡£ÍùÎ÷¾ÍÊÇÓñÊó¾«µÄÁ·¹¦·¿ÁË¡£
+è¿™æ˜¯ç»å´–çš„å¦ä¸€é¢ã€‚å¾€è¥¿å°±æ˜¯ç‰é¼ ç²¾çš„ç»ƒåŠŸæˆ¿äº†ã€‚
 LONG);
   set("exits", ([ /* sizeof() == 1 */
 		 "west" : __DIR__"gongshi",
@@ -38,9 +38,9 @@ int do_leap()
   factor=mydodge+mykar*4;
   if ( random(factor) < random(mydodge) )
     {
-      message_vision("$NÒ»¸öÃ»Õ¾ÎÈ£¬µôÏÂ¾øÑÂ£¬·ÛÉíËé¹Ç£¬Î÷ÌìÈ¥ÁË£¡\n", me);
+      message_vision("$Nä¸€ä¸ªæ²¡ç«™ç¨³ï¼Œæ‰ä¸‹ç»å´–ï¼Œç²‰èº«ç¢éª¨ï¼Œè¥¿å¤©å»äº†ï¼\n", me);
       me->delete_temp("last_damage_from");
-      me->set_temp("death_msg", "Ë¤ËÀÁË¡£\n");
+      me->set_temp("death_msg", "æ‘”æ­»äº†ã€‚\n");
       me->die();
       me->save();
       corpse=present("corpse");
@@ -49,7 +49,7 @@ int do_leap()
     }
   else
     {
-      message_vision("$NÌÚ¿Õ×İÆğ£¬Ìøµ½¶ÔÑÂÈ¥ÁË¡£\n", me);
+      message_vision("$Nè…¾ç©ºçºµèµ·ï¼Œè·³åˆ°å¯¹å´–å»äº†ã€‚\n", me);
       me->move(__DIR__"cave1");
       return 1;
     }

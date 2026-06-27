@@ -1,5 +1,5 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-//±ÌÅº
+//ç¢§è—•
 
 
 #include <ansi.h>
@@ -12,25 +12,25 @@ void init();
 void init()
 {
   if (!wizardp(this_player())) {
-    set("no_get","ÄãÊÖÀïÒ»ËÉ"+this_object()->query("name")+"µ¤´ÓÖ¸¼ä»¬Âä£¡\n");
-    set("no_give","ÕâÃ´Õä¹óµÄÒ©£¬ÄÄÄÜËæ±ã¸øÈË£¿\n");
-    set("no_drop","ÕâÃ´±¦¹óµÄµ¤Ò©£¬ÈÓÁË¶à¿ÉÏ§Ñ½£¡\n");
-    set("no_sell","·²ÈËÄÄÀïÖªµÀ"+this_object()->query("name")+"µÄ¼ÛÖµ£¿»¹ÊÇ×Ô¼ºÁô×Å°É¡£\n");
+    set("no_get","ä½ æ‰‹é‡Œä¸€æ¾"+this_object()->query("name")+"ä¸¹ä»ŽæŒ‡é—´æ»‘è½ï¼\n");
+    set("no_give","è¿™ä¹ˆçè´µçš„è¯ï¼Œå“ªèƒ½éšä¾¿ç»™äººï¼Ÿ\n");
+    set("no_drop","è¿™ä¹ˆå®è´µçš„ä¸¹è¯ï¼Œæ‰”äº†å¤šå¯æƒœå‘€ï¼\n");
+    set("no_sell","å‡¡äººå“ªé‡ŒçŸ¥é“"+this_object()->query("name")+"çš„ä»·å€¼ï¼Ÿè¿˜æ˜¯è‡ªå·±ç•™ç€å§ã€‚\n");
   }                                    
     add_action("do_eat", "eat");
 }
 
 void create()
 {
-  set_name(HIW "±ÌÅº" NOR, ({"bi ou","ou"}));
+  set_name(HIW "ç¢§è—•" NOR, ({"bi ou","ou"}));
   set_weight(200);
   if (clonep())
     set_default_object(__FILE__);
   else {
-    set("unit", "Ã¶");
-    set("long", "Ò»Ã¶²É×Ôº£ÖÐÏÉÉ½£¬»ëÈ»ÈçÓñµÄ±ÌÅº¡£\n");
+    set("unit", "æžš");
+    set("long", "ä¸€æžšé‡‡è‡ªæµ·ä¸­ä»™å±±ï¼Œæµ‘ç„¶å¦‚çŽ‰çš„ç¢§è—•ã€‚\n");
     set("value", 5000);
-	set("drug_type", "²¹Æ·");
+	set("drug_type", "è¡¥å“");
   }
   
   // the following line is added by snowcat
@@ -44,7 +44,7 @@ int do_eat(string arg)
   int force_add, howold;
   howold = (int)me->query("mud_age") + (int)me->query("age_modify");
   if (!id(arg))
-    return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+    return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
   
   me->set("food", (int)me->max_food_capacity());
   me->set("water", (int)me->max_water_capacity());
@@ -55,13 +55,13 @@ int do_eat(string arg)
       me->add_maximum_force(-5);
     }
     me->delete("eat_biou");
-    message_vision(HIG "$N³ÔÏÂÒ»Ã¶±ÌÅº£¬Á³É«Í»È»×ªÂÌ£¬¡¸ÍÛÍÛ¡¹¼¸¿ÚÓÖÍÂÁË³öÀ´£¡\n" NOR, me);
-    tell_object(me,BLK "Äã¿ÚÖÐÓÖ¿àÓÖÉ¬£¬Ô­À´ÊÇÃ¶¿àÅº£¡\n" NOR);
+    message_vision(HIG "$Nåƒä¸‹ä¸€æžšç¢§è—•ï¼Œè„¸è‰²çªç„¶è½¬ç»¿ï¼Œã€Œå“‡å“‡ã€å‡ å£åˆåäº†å‡ºæ¥ï¼\n" NOR, me);
+    tell_object(me,BLK "ä½ å£ä¸­åˆè‹¦åˆæ¶©ï¼ŒåŽŸæ¥æ˜¯æžšè‹¦è—•ï¼\n" NOR);
   }
   else if( me->add_maximum_force(force_add)) {
-    message_vision(HIG "$N³ÔÏÂÒ»Ã¶±ÌÅº£¬Á³É«±äµÄÈçÍ¬Á¼ÓñÒ»°ãÑ©°×£¡\n" NOR, me);
+    message_vision(HIG "$Nåƒä¸‹ä¸€æžšç¢§è—•ï¼Œè„¸è‰²å˜çš„å¦‚åŒè‰¯çŽ‰ä¸€èˆ¬é›ªç™½ï¼\n" NOR, me);
   }
-  else message_vision(HIG "$N³ÔÏÂÒ»Ã¶±ÌÅº£¬Á³É«Í»È»·¢Çà£¬¹ýÁËÐí¾Ã²Å×ªÎªÆ½³££¡\n" NOR, me);
+  else message_vision(HIG "$Nåƒä¸‹ä¸€æžšç¢§è—•ï¼Œè„¸è‰²çªç„¶å‘é’ï¼Œè¿‡äº†è®¸ä¹…æ‰è½¬ä¸ºå¹³å¸¸ï¼\n" NOR, me);
   
   if( howold > 1382400 ) {
     me->add("age_modify", -1200);

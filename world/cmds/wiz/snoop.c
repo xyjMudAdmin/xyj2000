@@ -11,13 +11,13 @@ int main(object me, string arg)
 
 	if( !arg ) {
 		if( objectp(ob = query_snooping(me)) )
-			write("ÄãÏÖÔÚÕıÔÚ¼àÌı" + ob->query("name") + "ËùÊÕµ½µÄÑ¶Ï¢¡£\n");
+			write("ä½ ç°åœ¨æ­£åœ¨ç›‘å¬" + ob->query("name") + "æ‰€æ”¶åˆ°çš„è®¯æ¯ã€‚\n");
 		return 1;
 	}
 	 else if( arg=="-none" ) {
 if( objectp(ob = query_snooping(me)) && wizardp(ob) )
 			tell_object(ob, HIW + me->name(1) + 
-				"Í£Ö¹¼àÌıÄãËùÊÕµ½µÄÑ¶Ï¢¡£\n" NOR);
+				"åœæ­¢ç›‘å¬ä½ æ‰€æ”¶åˆ°çš„è®¯æ¯ã€‚\n" NOR);
 		snoop(me);
 		write("Ok.\n");
 		return 1;
@@ -30,13 +30,13 @@ else if(query_snooping(me)) snoop(me);
 	if(!ob) ob = LOGIN_D->find_body(arg);
 	/* added by mon. 2/23/97 */
 
-	if(!ob || !me->visible(ob)) return notify_fail("Ã»ÓĞÕâ¸öÈË¡£\n");
+	if(!ob || !me->visible(ob)) return notify_fail("æ²¡æœ‰è¿™ä¸ªäººã€‚\n");
 
 	if( wizhood(me) != "(admin)"
 	&&	wiz_level(me) <= wiz_level(ob) )
-		return notify_fail("ÄãÃ»ÓĞ¼àÌı" + ob->name() + "ËùÊÕÌıÑ¶Ï¢µÄÈ¨Àû¡£\n");
+		return notify_fail("ä½ æ²¡æœ‰ç›‘å¬" + ob->name() + "æ‰€æ”¶å¬è®¯æ¯çš„æƒåˆ©ã€‚\n");
 
-	if( me==ob ) return notify_fail("ÇëÓÃ snoop -none ½â³ı¼àÌı¡£\n");
+	if( me==ob ) return notify_fail("è¯·ç”¨ snoop -none è§£é™¤ç›‘å¬ã€‚\n");
 		
 	snoop(me, ob);
 
@@ -44,13 +44,13 @@ else if(query_snooping(me)) snoop(me);
 		(int)me->query_encoding()*10+ob->query_encoding());
 	// added by mon 6/1/98
 
-	write("ÄãÏÖÔÚ¿ªÊ¼ÇÔÌı" + ob->name(1) + "ËùÊÕµ½µÄÑ¶Ï¢¡£\n");
+	write("ä½ ç°åœ¨å¼€å§‹çªƒå¬" + ob->name(1) + "æ‰€æ”¶åˆ°çš„è®¯æ¯ã€‚\n");
 	if( userp(ob) ) log_file("SNOOP_PLAYER",
 		sprintf("%s(%s) snoops %s on %s.\n", me->name(1), geteuid(me), ob->name(1),
 			ctime(time()) ) );
 // if( wizardp(ob) && wizhood(me) != "(admin)")
 if( wizardp(ob)) 
-		tell_object(ob, HIW + me->name(1) + "¿ªÊ¼¼àÌıÄãËùÊÕµ½µÄÑ¶Ï¢¡£\n" + NOR);
+		tell_object(ob, HIW + me->name(1) + "å¼€å§‹ç›‘å¬ä½ æ‰€æ”¶åˆ°çš„è®¯æ¯ã€‚\n" + NOR);
 
 	return 1;
 }
@@ -58,9 +58,9 @@ if( wizardp(ob))
 int help()
 {
 	write(@TEXT
-Ö¸Áî¸ñÊ½£ºsnoop <Ä³ÈË>|-none
+æŒ‡ä»¤æ ¼å¼ï¼šsnoop <æŸäºº>|-none
 
-¼àÌıÆäËûÊ¹ÓÃÕßËùÊÕÌıµÄÑ¶Ï¢£¬snoop -none ÔòÈ¡Ïû¼àÌı¡£
+ç›‘å¬å…¶ä»–ä½¿ç”¨è€…æ‰€æ”¶å¬çš„è®¯æ¯ï¼Œsnoop -none åˆ™å–æ¶ˆç›‘å¬ã€‚
 TEXT
 	);
 	return 1;

@@ -4,15 +4,15 @@ int update_condition(object me, int duration)
                                                 
         me->receive_wound("sen", 10);
         me->receive_wound("kee", 10);
-        me->set_temp("death_msg","ÎÁ²¡·¢×÷ËÀÁË¡£\n");
+        me->set_temp("death_msg","ç˜Ÿç—…å‘ä½œæ­»äº†ã€‚\n");
         me->apply_condition("jjf_poison", duration - 1);
 
         if( (int)me->query("kee") < (int)me->query("max_kee")/4 )
-                message_vision("$N»ëÉí²ü¸ö²»Í££¬ËÆºõËæÊ±¶¼»áµ¹ÏÂÈ¥¡£\n", me);
+                message_vision("$Næµ‘èº«é¢¤ä¸ªä¸åœï¼Œä¼¼ä¹Žéšæ—¶éƒ½ä¼šå€’ä¸‹åŽ»ã€‚\n", me);
         else if( (int)me->query("kee") < (int)me->query("max_kee")/2 )
-                message_vision("$NÃæÄ¿¸¡Ö×£¬×ìÖÐ²»¶ÏÁ÷³ö»ÆÄ­¡£\n", me);
+                message_vision("$Né¢ç›®æµ®è‚¿ï¼Œå˜´ä¸­ä¸æ–­æµå‡ºé»„æ²«ã€‚\n", me);
         else 
-                message_vision("$NÁ³É«·¢»Æ£¬ËÄÖ«²ü¸ö²»Í£¡£\n", me);
+                message_vision("$Nè„¸è‰²å‘é»„ï¼Œå››è‚¢é¢¤ä¸ªä¸åœã€‚\n", me);
 
         if( duration < 1 ) return 0;
         return 1;

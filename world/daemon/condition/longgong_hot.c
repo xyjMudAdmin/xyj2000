@@ -20,21 +20,21 @@ int update_condition(object me, int duration)
         &&      living(me) ) {
                 me->unconcious();
         } else if( !living(me) ) {
-message("vision", me->name() + "×ìÀïÅç³ö¹ÉÅ¨ÑÌ£¬È´ÒÀÈ»»èÃÔ²»ÐÑ¡£\n",environment(me), me);
+message("vision", me->name() + "å˜´é‡Œå–·å‡ºè‚¡æµ“çƒŸï¼Œå´ä¾ç„¶æ˜è¿·ä¸é†’ã€‚\n",environment(me), me);
 		return 0;
         } else if( shaqi > limit/2 ) {
-                tell_object(me, "Äã¾õµÃ¸¹ÄÚÈç»ðÁÇÒ»°ã£¬ËæÊÇÒªÕ¨¿ªÒ»Ñù¡£\n");
-                message("vision", me->name() + "Ò»ÕÅ×ì£¬ËÆºõÍÂ³ö¼¸¿Å»ðÐÇ£¬±Ù±ÙÂÒ±Å¡£\n",environment(me), me);
+                tell_object(me, "ä½ è§‰å¾—è…¹å†…å¦‚ç«ç‡Žä¸€èˆ¬ï¼Œéšæ˜¯è¦ç‚¸å¼€ä¸€æ ·ã€‚\n");
+                message("vision", me->name() + "ä¸€å¼ å˜´ï¼Œä¼¼ä¹Žåå‡ºå‡ é¢—ç«æ˜Ÿï¼Œè¾Ÿè¾Ÿä¹±è¿¸ã€‚\n",environment(me), me);
                 me->receive_damage("sen", 30);
 		me->add("bellicosity", 30);
         } else if( shaqi > limit/4 ) {
-                tell_object(me, "Äã¾õµÃÈçÍ¬»ðÂ¯Ò»°ãÉÕµÄÄÑÊÜ¡£\n");
-                message("vision", me->name() + "×ìÀïÃ°³öµ­µ­¼¸ÐíºÚÑÌ¡£\n",environment(me), me);
+                tell_object(me, "ä½ è§‰å¾—å¦‚åŒç«ç‚‰ä¸€èˆ¬çƒ§çš„éš¾å—ã€‚\n");
+                message("vision", me->name() + "å˜´é‡Œå†’å‡ºæ·¡æ·¡å‡ è®¸é»‘çƒŸã€‚\n",environment(me), me);
                 me->receive_damage("sen", 20);
 		me->add("bellicosity", 20);
         } else {
-		tell_object(me, "Äã¾õµÃ¸¹ÄÚÏóÓÐÒ»ÍÅ»ðÔÚÉÕÒ»Ñù¡£\n");
-                message("vision", me->name() + "Í·ÉÏÃ°³öË¿Ë¿°×ÑÌ¡£\n",environment(me), me);
+		tell_object(me, "ä½ è§‰å¾—è…¹å†…è±¡æœ‰ä¸€å›¢ç«åœ¨çƒ§ä¸€æ ·ã€‚\n");
+                message("vision", me->name() + "å¤´ä¸Šå†’å‡ºä¸ä¸ç™½çƒŸã€‚\n",environment(me), me);
                 me->receive_damage("sen", 10);
                 me->add("bellicosity", 10);
 	}

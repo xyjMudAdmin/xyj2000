@@ -6,13 +6,13 @@ void start(object leitai) {leitai->start();}
 
 void create ()
 {
-  set ("short", "¹ÛÀñÌ¨");
+  set ("short", "è§‚ç¤¼å°");
   set ("long", @LONG
 
-¹ÛÀñÌ¨ÓÉÆ½Ì¹¿íÊÊµÄºìÄ¾Ò»¼¶¼¶´î³É£¬µØÏÂÆÌ×Å»¨ÎÆ»¢Æ¤ºÍ½ğÇ®±ª
-Æ¤¡£Ì¨ÉÏ·Å×ÅÒ»ÅÅÅÅĞÉºìÈŞÃæÌ«Ê¦ÒÎ£¬¿ÉÒÔÈÃ¹ó±öÃÇ±È½ÏÊæÊÊµØ¹Û
-¿´±ÈÈü¡£²ÎÈüÑ¡ÊÖÒ²¿ÉÒÔÔÚÕâÀï²éÑ¯(checkscore)×Ô¼ºµÄÕ½¼¨£¬¿´
-Ò»¿´¸ßÊÖµÄÅÅÃû(list)¡£
+è§‚ç¤¼å°ç”±å¹³å¦å®½é€‚çš„çº¢æœ¨ä¸€çº§çº§æ­æˆï¼Œåœ°ä¸‹é“ºç€èŠ±çº¹è™çš®å’Œé‡‘é’±è±¹
+çš®ã€‚å°ä¸Šæ”¾ç€ä¸€æ’æ’çŒ©çº¢ç»’é¢å¤ªå¸ˆæ¤…ï¼Œå¯ä»¥è®©è´µå®¾ä»¬æ¯”è¾ƒèˆ’é€‚åœ°è§‚
+çœ‹æ¯”èµ›ã€‚å‚èµ›é€‰æ‰‹ä¹Ÿå¯ä»¥åœ¨è¿™é‡ŒæŸ¥è¯¢(checkscore)è‡ªå·±çš„æˆ˜ç»©ï¼Œçœ‹
+ä¸€çœ‹é«˜æ‰‹çš„æ’å(list)ã€‚
 
 LONG);
 
@@ -40,7 +40,7 @@ int do_list() {
   size=room->query("size");
   if (size>10) size=10;
   if (!size) return 1;
-  write("Ãû´Î    £É£Ä        »ı·Ö\n");
+  write("åæ¬¡    ï¼©ï¼¤        ç§¯åˆ†\n");
   for (int i=1;i<=size;i++) {
   write(sprintf("%2d      %-8s    %d\n",i,room->query("list/"+i),room->query("scores/"+room->query("list/"+i))));
   }
@@ -56,11 +56,11 @@ int do_checkscore() {
 */
 
 int do_list() {
-  write("ÓĞ¹Ø¸öÈËÒşË½£¬»¹ÊÇ²»Òª¶àÎÊµÄºÃ¡£\n");
+  write("æœ‰å…³ä¸ªäººéšç§ï¼Œè¿˜æ˜¯ä¸è¦å¤šé—®çš„å¥½ã€‚\n");
   return 1;
 }
 int do_checkscore() {
-  write("Äã×Ô¼ºµÄ³É¼¨ÔõÃ´Ñù£¬×Ô¼º»¹²»Çå³ş£¿\n");
+  write("ä½ è‡ªå·±çš„æˆç»©æ€ä¹ˆæ ·ï¼Œè‡ªå·±è¿˜ä¸æ¸…æ¥šï¼Ÿ\n");
  return 1;
 }
 int do_defend(string arg) {
@@ -68,17 +68,17 @@ int do_defend(string arg) {
   object challenger;
   object leitai=find_object(__DIR__"leitai");
 
-  if (!arg) return notify_fail("ÄãÒªÕÒË­Ó¦Õ½£¿\n");
+  if (!arg) return notify_fail("ä½ è¦æ‰¾è°åº”æˆ˜ï¼Ÿ\n");
   if (!challenger=present(arg,this_object()))
-      return notify_fail("ÕâÀïÃ»ÓĞÕâ¸öÈË¡£\n");
+      return notify_fail("è¿™é‡Œæ²¡æœ‰è¿™ä¸ªäººã€‚\n");
   if (challenger->query_temp("leitai/challenge")!=defender)
-     return notify_fail("ÕâÈËÃ»ÓĞÏòÄãÌôÕ½¡£\n");
+     return notify_fail("è¿™äººæ²¡æœ‰å‘ä½ æŒ‘æˆ˜ã€‚\n");
 
   if (!leitai) leitai=load_object(__DIR__"leitai");
   if (leitai->query("busy")) 
-    return notify_fail("ÓĞÈËÕıÔÚÀŞÌ¨ÉÏ½»ÊÖ£¬ÇëÉÔºò¡£\n");  
+    return notify_fail("æœ‰äººæ­£åœ¨æ“‚å°ä¸Šäº¤æ‰‹ï¼Œè¯·ç¨å€™ã€‚\n");  
 
-  message_vision("$N½ÓÊÜ$nµÄÌôÕ½£¡\n",defender,challenger);
+  message_vision("$Næ¥å—$nçš„æŒ‘æˆ˜ï¼\n",defender,challenger);
   if (defender->move(leitai) && challenger->move(leitai)) {
     defender->delete_temp("leitai/being_challenged");
     challenger->delete_temp("leitai/challenge");

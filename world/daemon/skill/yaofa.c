@@ -7,7 +7,7 @@ int valid_enable(string usage) { return usage=="spells"; }
 int valid_learn(object me)
 {
         if( 2*(int)me->query_skill("spells") <= (int)me->query_skill("yaofa") )
-        return notify_fail("你的法术修为还不够高深，无法学习「妖法」。\n");
+        return notify_fail("浣犵殑娉曟湳淇负杩樹笉澶熼珮娣憋紝鏃犳硶瀛︿範銆屽娉曘�嶃�俓n");
         return 1;
 }
 

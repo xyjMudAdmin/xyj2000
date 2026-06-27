@@ -5,16 +5,16 @@ inherit ROOM;
 
 void create ()
 {
-	set ("short", "ĵ��ͤ");
+	set ("short", "牡丹亭");
 	set ("long", @LONG
 
       ***********************
-      &      ĵ��ͤ         &
+      &      牡丹亭         &
       ***********************         
 
-��Ȼ��������԰�ľ���ȥ���������������������󣬴��������
-�����ֿɼ�������ľ�԰�з���񳪣�ʱ�м�Ƭ��Ƶľհ����
-Ʈ����
+果然是饮酒赏园的绝妙去处！北面桃林中甜香阵阵，大红蜜桃似
+乎伸手可及。南面的菊园中蜂飞鸟唱，时有几片金黄的菊瓣随风
+飘来。
 LONG);
 
 	set("exits", 
@@ -31,7 +31,7 @@ LONG);
 		__DIR__"npc/hanzhongli" : 1,
 	]));
 
-	create_door("down","���װ���", "up", DOOR_CLOSED);
+	create_door("down","桌底暗门", "up", DOOR_CLOSED);
 	set("outdoors", "wuzhuang");
 
 	setup();

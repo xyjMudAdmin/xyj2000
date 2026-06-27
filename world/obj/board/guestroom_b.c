@@ -5,9 +5,9 @@ inherit BULLETIN_BOARD;
 
 void create()
 {
-	set_name("Ó­¿ÍÌüÁôÑÔ°å", ({ "board" }) );
+	set_name("è¿å®¢å…ç•™è¨€æ¿", ({ "board" }) );
 	set("board_id", "guestroom_b");
-	set("long",	"ÕâÊÇÒ»¸ö¹©ÈËÁôÑÔ¼ÇÊÂµÄÁôÑÔ°å¡£\n" );
+	set("long",	"è¿™æ˜¯ä¸€ä¸ªä¾›äººç•™è¨€è®°äº‹çš„ç•™è¨€æ¿ã€‚\n" );
 	setup();
 	set("capacity", 10);
 	replace_program(BULLETIN_BOARD);

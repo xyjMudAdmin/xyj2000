@@ -7,18 +7,18 @@ int steps;
 
 void create()
 {
-  set_name("Óã¸Í", ({"yu gan"}));
+  set_name("é±¼ç«¿", ({"yu gan"}));
   set_weight(1000);
   if( clonep() )
   set_default_object(__FILE__);
   else 
     {
-    set("long","Ò»¸öÓã¸Í£¬×°(zhuang)ÁËòÇò¾ºó¾ÍÄÜÓÃÀ´µö(diao)ÓãÁË£¬ÓãÉÏ¹³ºó±ðÍüÁËÌá(ti)¸Ë£¡\n");
-    set("unit", "¸ö");
+    set("long","ä¸€ä¸ªé±¼ç«¿ï¼Œè£…(zhuang)äº†èš¯èš“åŽå°±èƒ½ç”¨æ¥é’“(diao)é±¼äº†ï¼Œé±¼ä¸Šé’©åŽåˆ«å¿˜äº†æ(ti)æ†ï¼\n");
+    set("unit", "ä¸ª");
     set("material", "wood");
     set("value", 2000);
-    set("wield_msg", "$N°Ñ$n¿¸ÔÚ¼ç°òÉÏ¡£\n");
-    set("unequip_msg", "$N½«$nÊÕÁËÆðÀ´¡£\n");
+    set("wield_msg", "$NæŠŠ$næ‰›åœ¨è‚©è†€ä¸Šã€‚\n");
+    set("unequip_msg", "$Nå°†$næ”¶äº†èµ·æ¥ã€‚\n");
     }
   set("have_qiuyin",0);
   init_staff(3);
@@ -39,20 +39,20 @@ int do_zhuang (string arg)
   object me=this_object();
   object ob;
 
-  if( (!arg) || (arg != "qiu yin" && arg != "qiuyin" && arg !="òÇò¾") )
-        return notify_fail("ÄãÒª°ÑÊ²Ã´´©ÔÚÓã¹³ÉÏ£¿\n");
+  if( (!arg) || (arg != "qiu yin" && arg != "qiuyin" && arg !="èš¯èš“") )
+        return notify_fail("ä½ è¦æŠŠä»€ä¹ˆç©¿åœ¨é±¼é’©ä¸Šï¼Ÿ\n");
 
   ob=present("qiu yin", who);
   if(! present("qiu yin", who)) 
-        return notify_fail("ÄãÉíÉÏÃ»ÓÐÕâ¶«Î÷¡£\n");
+        return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™ä¸œè¥¿ã€‚\n");
 
   if(me->query("have_qiuyin")==1)   
-        return notify_fail("¹³ÉÏÒÑ¾­ÓÐòÇò¾ÁË£¬²»ÓÃÔÙ´©ÁË¡£\n");
+        return notify_fail("é’©ä¸Šå·²ç»æœ‰èš¯èš“äº†ï¼Œä¸ç”¨å†ç©¿äº†ã€‚\n");
 
   if (who->query_skill("dodge",1)<20)
-        return notify_fail("ÇÆÄã±¿ÊÖ±¿½ÅµÄ£¬ÕâÊÂ¿ÖÅÂ×÷²»À´¡£\n");
+        return notify_fail("çž§ä½ ç¬¨æ‰‹ç¬¨è„šçš„ï¼Œè¿™äº‹ææ€•ä½œä¸æ¥ã€‚\n");
 
-  message_vision( "$NÔÚÓã¹³ÉÏ´©ÁËÒ»Ö»òÇò¾¡£\n",who);
+  message_vision( "$Nåœ¨é±¼é’©ä¸Šç©¿äº†ä¸€åªèš¯èš“ã€‚\n",who);
   destruct(ob);
   who->start_busy(3);
   me->set("have_qiuyin",1); 
@@ -70,22 +70,22 @@ int do_diao (string arg)
 
   where=environment(who);
 
-  if( (!arg) || (arg != "fish" && arg != "yu" && arg !="Óã") )
-        return notify_fail("ÄãÒªµöÊ²Ã´£¿\n");
+  if( (!arg) || (arg != "fish" && arg != "yu" && arg !="é±¼") )
+        return notify_fail("ä½ è¦é’“ä»€ä¹ˆï¼Ÿ\n");
 
   if (where->query("can_fish") != 1)
-         return notify_fail("ÕâÀï²»ÄÜµöÓã¡£\n");
+         return notify_fail("è¿™é‡Œä¸èƒ½é’“é±¼ã€‚\n");
 
   if(me->query("have_qiuyin")!=1)   
-        return notify_fail("¹³ÉÏÊ²Ã´¶¼Ã»ÓÐ£¬ÔõÃ´µö£¿\n");
+        return notify_fail("é’©ä¸Šä»€ä¹ˆéƒ½æ²¡æœ‰ï¼Œæ€Žä¹ˆé’“ï¼Ÿ\n");
 
   if(who->query("is_fishing") ==1)   
-        return notify_fail("ÄãÒÑ¾­µö×ÅÓãÁË¡£\n");
+        return notify_fail("ä½ å·²ç»é’“ç€é±¼äº†ã€‚\n");
 
   if(! me->query("equipped") )
-         return notify_fail("Äã±ØÐë°Ñ¸Ë×°±¸ÉÏ²ÅÄÜµö¡£\n");
+         return notify_fail("ä½ å¿…é¡»æŠŠæ†è£…å¤‡ä¸Šæ‰èƒ½é’“ã€‚\n");
 
-  message_vision("$N½«Óã¹³Ô¶Ô¶ÏòºÓÀïÒ»Å×£¬×øÏÂÀ´¿ªÊ¼µöÓã¡£\n",who);
+  message_vision("$Nå°†é±¼é’©è¿œè¿œå‘æ²³é‡Œä¸€æŠ›ï¼Œåä¸‹æ¥å¼€å§‹é’“é±¼ã€‚\n",who);
   steps=0;
   who->set("is_fishing", 1);
   who->start_busy(10);
@@ -100,17 +100,17 @@ int fishing (object who)
 {
   object me=this_object();
   string *msg = ({
-  "Ë®ÃæÉÏÒ»µã¶¯¾²Ò²Ã»ÓÐ¡£\n",
-  "ºÓË®·ºÆðÒ»Æ¬Á°äô¡£\n",
-  "Ò»¸öÐ¡Ë®»¨Öð½¥¿¿Ïò¸¡×Ó¡£\n",
-  "¸¡×Ó¶¶¶¯ÁËÁ½ÏÂ¡£\n",
-  "¸¡×Ó¿ªÊ¼²ü¶¶×Å¡£\n",
-  "Ë®ÃæÓÖ»Ö¸´ÁËÆ½¾²¡£\n",
+  "æ°´é¢ä¸Šä¸€ç‚¹åŠ¨é™ä¹Ÿæ²¡æœ‰ã€‚\n",
+  "æ²³æ°´æ³›èµ·ä¸€ç‰‡æ¶Ÿæ¼ªã€‚\n",
+  "ä¸€ä¸ªå°æ°´èŠ±é€æ¸é å‘æµ®å­ã€‚\n",
+  "æµ®å­æŠ–åŠ¨äº†ä¸¤ä¸‹ã€‚\n",
+  "æµ®å­å¼€å§‹é¢¤æŠ–ç€ã€‚\n",
+  "æ°´é¢åˆæ¢å¤äº†å¹³é™ã€‚\n",
 });
 
   if (who->query("sen")<30) 
     {
-    message_vision("$NÒ»²»ÁôÉñ£¬ÊÖÖÐµÄµö¸ÍµôÂäÔÚË®ÖÐ¡£\n",who);
+    message_vision("$Nä¸€ä¸ç•™ç¥žï¼Œæ‰‹ä¸­çš„é’“ç«¿æŽ‰è½åœ¨æ°´ä¸­ã€‚\n",who);
     who->delete("is_fishing");
     destruct(me);
     return 1;
@@ -139,22 +139,22 @@ int do_ti()
   object fish;
 
   if(who->query("is_fishing") !=1)   
-        return notify_fail("¸Ë²»¾ÍÔÚÄãÊÖÀïÂð£¿»¹ÌáÊ²Ã´¾¢£¿\n");
+        return notify_fail("æ†ä¸å°±åœ¨ä½ æ‰‹é‡Œå—ï¼Ÿè¿˜æä»€ä¹ˆåŠ²ï¼Ÿ\n");
 
   set("have_qiuyin",0);
-  message_vision("$NÍ»È»½«ÊÖÖÐµÄÓã¸Ë¼²ËÙÉÏÌá£¬",who);
+  message_vision("$Nçªç„¶å°†æ‰‹ä¸­çš„é±¼æ†ç–¾é€Ÿä¸Šæï¼Œ",who);
   if (steps ==4 && random(2)==1) 
     {
     fish=new("/d/southern/jinghe/obj/fish");
     fish->move(who);
-    message_vision("½á¹ûµöÉÏÁËÒ»Ìõ"+fish->query("name")+"£¡\n",who);
+    message_vision("ç»“æžœé’“ä¸Šäº†ä¸€æ¡"+fish->query("name")+"ï¼\n",who);
     who->delete("is_fishing");
     return 1;
     }
 
   if (steps ==4 || steps ==3) 
     {
-    message_vision("Ì«¿ÉÏ§ÁË£¬ÓãÃ»µö×Å£º£¨\n",who);
+    message_vision("å¤ªå¯æƒœäº†ï¼Œé±¼æ²¡é’“ç€ï¼šï¼ˆ\n",who);
     who->delete("is_fishing");
     return 1;
     }
@@ -162,8 +162,8 @@ int do_ti()
     {
     fish=new("/d/southern/jinghe/obj/trash");
     fish->move(who);
-    message_vision("$NÖ»¾õµÃÓã¸Ë³Á³ÁµÄ£¬·ÜÁ¦Ò»Ìá£¬ÉÏÀ´ÁËÒ»"
-      +fish->query("unit")+fish->query("name")+"£¡\n",who);
+    message_vision("$Nåªè§‰å¾—é±¼æ†æ²‰æ²‰çš„ï¼Œå¥‹åŠ›ä¸€æï¼Œä¸Šæ¥äº†ä¸€"
+      +fish->query("unit")+fish->query("name")+"ï¼\n",who);
     who->delete("is_fishing");
     return 1;
     } 

@@ -6,16 +6,16 @@ inherit ROOM;
 
 void create ()
 {
-	set ("short", "±ù¹È¿Ú");
+	set ("short", "å†°è°·å£");
 	set ("long", @LONG
 
-ÕâÀïÍ»È»³öÏÖÁËÒ»µÀÉî¹È¡£ÏòÏÂÖ»ÄÜ¿´µ½Ò»¶Îµ¶Ï÷¸«ÅüËÆµÄ±ù
-ÑÂ£¬ÔÚÍùÏÂÔòÊÇÑ©ÎíçÔÈÆ£¬Ê²Ã´Ò²¿´²»ÇåÁË¡£²»¹Ê¹Èµ×ËÆºõÓÐ
-Ò»¹É´¶ÑÌµÄÏãÎ¶Æ®ÁËÉÏÀ´£¬ÔÚ±ùÌìÑ©µØÖÐÕõÔúÇóÉúµÄÄã²»½ûÓÐ
-µãÅéÈ»ÐÄ¶¯¡£
+è¿™é‡Œçªç„¶å‡ºçŽ°äº†ä¸€é“æ·±è°·ã€‚å‘ä¸‹åªèƒ½çœ‹åˆ°ä¸€æ®µåˆ€å‰Šæ–§åŠˆä¼¼çš„å†°
+å´–ï¼Œåœ¨å¾€ä¸‹åˆ™æ˜¯é›ªé›¾ç¼­ç»•ï¼Œä»€ä¹ˆä¹Ÿçœ‹ä¸æ¸…äº†ã€‚ä¸æ•…è°·åº•ä¼¼ä¹Žæœ‰
+ä¸€è‚¡ç‚ŠçƒŸçš„é¦™å‘³é£˜äº†ä¸Šæ¥ï¼Œåœ¨å†°å¤©é›ªåœ°ä¸­æŒ£æ‰Žæ±‚ç”Ÿçš„ä½ ä¸ç¦æœ‰
+ç‚¹ç °ç„¶å¿ƒåŠ¨ã€‚
 LONG);
 
-	set("item_desc", (["north" : "±ù¹ÈÖÐÑ©ÎíçÔÈÆ£¬Ê²Ã´Ò²¿´²»Çå¡£\n", ]));
+	set("item_desc", (["north" : "å†°è°·ä¸­é›ªé›¾ç¼­ç»•ï¼Œä»€ä¹ˆä¹Ÿçœ‹ä¸æ¸…ã€‚\n", ]));
 	//for look something.
 
 	set("exits", 
@@ -52,11 +52,11 @@ int do_climb(string arg)
 	me=this_player();
 
 	if( !arg || arg != "down" ){
-		return notify_fail("ÄãÒªÅÀµ½ÄÄÀïÈ¥£¿\n");
+		return notify_fail("ä½ è¦çˆ¬åˆ°å“ªé‡ŒåŽ»ï¼Ÿ\n");
 	}
-	message_vision("$NÊÖ×ã²¢ÓÃ£¬ÅÊ×¡±ùÑÂÏòÏÂÅÀÁË¹ýÈ¥¡£\n", me);
+	message_vision("$Næ‰‹è¶³å¹¶ç”¨ï¼Œæ”€ä½å†°å´–å‘ä¸‹çˆ¬äº†è¿‡åŽ»ã€‚\n", me);
 	me->move(__DIR__"bingya-up7");
-	message_vision("$NÆø´­ºôºôµØ´ÓÉÏÃæÅÀÁË¹ýÀ´¡£\n", me);   
+	message_vision("$Næ°”å–˜å‘¼å‘¼åœ°ä»Žä¸Šé¢çˆ¬äº†è¿‡æ¥ã€‚\n", me);   
 	return 1;    
 }
 
@@ -66,11 +66,11 @@ int valid_leave(object me, string dir)
 	{
 	    if(!userp(me)) return 0;
 
-		message_vision("$N²»¹ËÒ»ÇÐµØÍù±ùÑÂÏÂÒ»Ìø£®£®£®\n", me);
-		message("vision", "Á¼¾Ã£¬Ò»ÉùÉ±Öí°ãµÄ²ÒºÅ´Ó±ùÑÂÏÂ´«ÁËÉÏÀ´¡£\n", environment(me), ({ me }));
+		message_vision("$Nä¸é¡¾ä¸€åˆ‡åœ°å¾€å†°å´–ä¸‹ä¸€è·³ï¼Žï¼Žï¼Ž\n", me);
+		message("vision", "è‰¯ä¹…ï¼Œä¸€å£°æ€çŒªèˆ¬çš„æƒ¨å·ä»Žå†°å´–ä¸‹ä¼ äº†ä¸Šæ¥ã€‚\n", environment(me), ({ me }));
 
 		call_out("do_unconcious", 0, me);
-		return notify_fail("ÍêÁË£®£®£®\n");
+		return notify_fail("å®Œäº†ï¼Žï¼Žï¼Ž\n");
 	}
 
 	return ::valid_leave(me, dir);
@@ -79,6 +79,6 @@ int valid_leave(object me, string dir)
 void do_unconcious(object me)
 {
 		me->move(__DIR__"binggu");
-		message_vision("Ö»ÌýÒ»Éù²Ò½Ð£¬$NËÀÖí°ãµØ´Ó±ùÑÂÉÏË¤ÁËÏÂÀ´£¡\n", me);
+		message_vision("åªå¬ä¸€å£°æƒ¨å«ï¼Œ$Næ­»çŒªèˆ¬åœ°ä»Žå†°å´–ä¸Šæ‘”äº†ä¸‹æ¥ï¼\n", me);
 	me->unconcious();
 }

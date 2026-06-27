@@ -5,25 +5,25 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "±øÆ÷¿â");
+  set ("short", "å…µå™¨åº“");
   set ("long", @LONG
 
-±øÆ÷¿âÀïÒ»ÅÅ»æ½ðÌ´Ä¾¼ÜÉÏ·Å×Å¸÷ÖÖ¸÷ÑùµÄ±ê×¼±øÆ÷£¬±ÈÎäµÄ
-ÈËÀ´ÕâÀïÏòÎ×Ê¦ÁìÈ¡³ÆÊÖµÄ±øÆ÷¡£Î×Ê¦¿É´ÓÌ´Ä¾¼Ü×ÓÉÏÄÃ(take)
-ÎäÆ÷·Ö·¢¸ø²Î¼Ó´ó»áµÄÈüÊÖ¡£¼Ü×ÓÉÏ·ÅÓÐ£º
-  ´ó°å¸«£º    axe
-  ¸Öµ¶£º      blade
-  ¸Ö²æ£º      fork
-  ÊìÍ­ïµ£º    mace
-  ¸Ö°Ò£º      rake
-  ³¤Ç¹£º      spear
-  ìøÕÈ£º      staff
-  ïÙÌú¹÷£º    stick
-  ³¤½££º      sword
-  ·Éè«Ê¯£º    throwing
-  Æ¤±Þ£º      whip
-  Ø°Ê×£º      dagger
-  Ìú´¸£º      hammer
+å…µå™¨åº“é‡Œä¸€æŽ’ç»˜é‡‘æª€æœ¨æž¶ä¸Šæ”¾ç€å„ç§å„æ ·çš„æ ‡å‡†å…µå™¨ï¼Œæ¯”æ­¦çš„
+äººæ¥è¿™é‡Œå‘å·«å¸ˆé¢†å–ç§°æ‰‹çš„å…µå™¨ã€‚å·«å¸ˆå¯ä»Žæª€æœ¨æž¶å­ä¸Šæ‹¿(take)
+æ­¦å™¨åˆ†å‘ç»™å‚åŠ å¤§ä¼šçš„èµ›æ‰‹ã€‚æž¶å­ä¸Šæ”¾æœ‰ï¼š
+  å¤§æ¿æ–§ï¼š    axe
+  é’¢åˆ€ï¼š      blade
+  é’¢å‰ï¼š      fork
+  ç†Ÿé“œé”ï¼š    mace
+  é’¢è€™ï¼š      rake
+  é•¿æžªï¼š      spear
+  ç¦…æ–ï¼š      staff
+  é•”é“æ£ï¼š    stick
+  é•¿å‰‘ï¼š      sword
+  é£žç’œçŸ³ï¼š    throwing
+  çš®éž­ï¼š      whip
+  åŒ•é¦–ï¼š      dagger
+  é“é”¤ï¼š      hammer
 
 LONG);
 
@@ -46,10 +46,10 @@ int do_take (string arg)
   object ob;
 
   if (! wizardp(who))
-    return notify_fail ("¶Ô²»Æð£¬ÇëÈÃÎ×Ê¦ÌæÄúÀ´ÄÃ¶«Î÷¡£\n");
+    return notify_fail ("å¯¹ä¸èµ·ï¼Œè¯·è®©å·«å¸ˆæ›¿æ‚¨æ¥æ‹¿ä¸œè¥¿ã€‚\n");
 
   if (! arg)
-    return notify_fail ("ÄúÒªÄÃÊ²Ã´£¿\n");
+    return notify_fail ("æ‚¨è¦æ‹¿ä»€ä¹ˆï¼Ÿ\n");
   if (arg == "axe")
     ob = new ("/d/obj/weapon/standard/axe");    
   else if (arg == "blade")
@@ -77,8 +77,8 @@ int do_take (string arg)
   else if (arg == "whip")
     ob = new ("/d/obj/weapon/standard/whip");    
   else
-    return notify_fail ("ÄúÒªÄÃÊ²Ã´£¿\n");
-  message_vision ("$N´Ó¼Ü×ÓÉÏÄÃÆð$n¡£\n",who,ob);
+    return notify_fail ("æ‚¨è¦æ‹¿ä»€ä¹ˆï¼Ÿ\n");
+  message_vision ("$Nä»Žæž¶å­ä¸Šæ‹¿èµ·$nã€‚\n",who,ob);
   ob->move(who);
   return 1;
 }

@@ -5,12 +5,12 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÖéÁ¯", ({ "ban niang","niang", "girl"}) );
-        set("gender", "Å®ĞÔ");
+        set_name("ç æ€œ", ({ "ban niang","niang", "girl"}) );
+        set("gender", "å¥³æ€§");
         set("age", 18);
 	set("per", 20+random(5));
-	set("title", "Ğ¡°éÄï");
-        set("long","Ò»¸öÆ¯ÁÁµÄĞ¡°éÄï¡£\n");
+	set("title", "å°ä¼´å¨˜");
+        set("long","ä¸€ä¸ªæ¼‚äº®çš„å°ä¼´å¨˜ã€‚\n");
         set("combat_exp", 500);
         set("attitude", "friendly");
         setup();

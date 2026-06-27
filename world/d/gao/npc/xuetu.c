@@ -5,10 +5,10 @@ inherit NPC;
 
 void create()
 {
-       set_name("Ğ¡Ñ§Í½", ({"xuetu"}));
+       set_name("å°å­¦å¾’", ({"xuetu"}));
 
-set("long","ÊİÊİĞ¡Ğ¡£¬»¹ÊÇ¸öº¢×Ó£®\nÔÚ°ïÀÏÀîÍ·´òÁ¶ÌúÆ÷£®\n");
-       set("gender", "ÄĞĞÔ");
+set("long","ç˜¦ç˜¦å°å°ï¼Œè¿˜æ˜¯ä¸ªå­©å­ï¼\nåœ¨å¸®è€æå¤´æ‰“ç‚¼é“å™¨ï¼\n");
+       set("gender", "ç”·æ€§");
        set("age", 15+random(4));
        set("attitude", "peaceful");
        set("shen_type", 1);

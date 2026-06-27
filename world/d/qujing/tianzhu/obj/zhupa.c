@@ -5,17 +5,17 @@ inherit RAKE;
 
 void create()
 {
-  set_name("Öñ°Ò",({ "zhu pa","zhupa", "pa", "rake" }) );
+  set_name("ç«¹è€™",({ "zhu pa","zhupa", "pa", "rake" }) );
   set_weight(900);
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("unit", "°Ñ");
+    set("unit", "æŠŠ");
     set("value", 100);
     set("material", "bamboo");
-    set("long", "ÕâÊÇÒ»°Ñ³¤³¤µÄÖñ°Ò¡£\n");
-    set("wield_msg", "$NÄÃ³öÒ»°Ñ$n£¬¾ÙÔÚÊÖÖĞ¡£\n");
-    set("unequip_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+    set("long", "è¿™æ˜¯ä¸€æŠŠé•¿é•¿çš„ç«¹è€™ã€‚\n");
+    set("wield_msg", "$Næ‹¿å‡ºä¸€æŠŠ$nï¼Œä¸¾åœ¨æ‰‹ä¸­ã€‚\n");
+    set("unequip_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
   }
   init_rake(10);
   setup();

@@ -3,12 +3,12 @@ inherit F_VENDOR_SALE;
 void create()
 {
     reload("city_weiluqi");
-        set_name("ÎºÂ¼Æë", ({"wei luqi", "wei"}));
+        set_name("é­å½•é½", ({"wei luqi", "wei"}));
         set("age", 42);
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("long",
-"ÔÓ»õÆÌµÄÀÏ°å£¬Ğ¦ÃĞÃĞµÄ¿´×ÅÄã¡£\n");
-	set("title", "ÔÓ»õÆÌÀÏ°å");
+"æ‚è´§é“ºçš„è€æ¿ï¼Œç¬‘çœ¯çœ¯çš„çœ‹ç€ä½ ã€‚\n");
+	set("title", "æ‚è´§é“ºè€æ¿");
         set("attitude", "peaceful");
 
         set("combat_exp", 10000);
@@ -48,9 +48,9 @@ void greeting(object ob)
         if( !ob || !visible(ob) || environment(ob) != environment() ) return;
         switch( random(1) ) {
                 case 0:
-                        say( name()+"ËµµÀ£ºÕâÎ»" +
+                        say( name()+"è¯´é“ï¼šè¿™ä½" +
 RANK_D->query_respect(ob)
-                                + "£¬ÒªÂòĞ©Ê²Ã´¶«Î÷£¿\n");
+                                + "ï¼Œè¦ä¹°äº›ä»€ä¹ˆä¸œè¥¿ï¼Ÿ\n");
                         break;
         }
 }

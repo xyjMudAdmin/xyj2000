@@ -5,9 +5,9 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÊÌÅ®", ({"shi nu", "nu", "waiter"}));
-        set("gender", "Å®ĞÔ");
-        set("long","»Ê¹¬ÖĞµÄÊÌÅ®£¬¸ºÔğ»Ê¹¬ÀïµÄÒûÊ³Æğ¾ÓµÈÔÓÎñ¡£\n");
+        set_name("ä¾å¥³", ({"shi nu", "nu", "waiter"}));
+        set("gender", "å¥³æ€§");
+        set("long","çš‡å®«ä¸­çš„ä¾å¥³ï¼Œè´Ÿè´£çš‡å®«é‡Œçš„é¥®é£Ÿèµ·å±…ç­‰æ‚åŠ¡ã€‚\n");
         set("combat_exp", 1000+random(4000));
         set("attitude", "friendly");
         set("max_kee", 200);

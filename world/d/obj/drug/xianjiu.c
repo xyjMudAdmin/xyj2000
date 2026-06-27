@@ -1,6 +1,6 @@
 // cracked by vikee 2/09/2002   vikee@263.net
 // by snowcat 6/1/1997
-// xianjiu.c ÏÉ¾Æ
+// xianjiu.c ä»™é…’
 // updated pickle 6-20-97
 
 #include <ansi.h>
@@ -10,15 +10,15 @@ inherit ITEM;
 
 void create()
 {
-  set_name(YEL "ÏÉ¾Æ" NOR, ({"xian jiu", "jiu"}));
+  set_name(YEL "ä»™é…’" NOR, ({"xian jiu", "jiu"}));
   set_weight(20);
   if (clonep())
     set_default_object(__FILE__);
   else {
-    set("unit", "ÖÑ");
-    set("long", "Ò»ÖÑÌìÉÏ²ÅÓÐµÄÓñÒºñ·½¬¡£\n");
+    set("unit", "ç›…");
+    set("long", "ä¸€ç›…å¤©ä¸Šæ‰æœ‰çš„çŽ‰æ¶²ç©¹æµ†ã€‚\n");
     set("value", 0);
-    set("drug_type", "²¹Æ·");
+    set("drug_type", "è¡¥å“");
   }
   setup();
 }
@@ -26,10 +26,10 @@ void create()
 void init()
 {
   if (!wizardp(this_player())) {
-    set("no_get","ÄãÊÖÀïÒ»ËÉ"+this_object()->query("name")+"µ¤´ÓÖ¸¼ä»¬Âä£¡\n");
-    set("no_give","ÕâÃ´Õä¹óµÄÒ©£¬ÄÄÄÜËæ±ã¸øÈË£¿\n");
-    set("no_drop","ÕâÃ´±¦¹óµÄµ¤Ò©£¬ÈÓÁË¶à¿ÉÏ§Ñ½£¡\n");
-    set("no_sell","·²ÈËÄÄÀïÖªµÀ"+this_object()->query("name")+"µÄ¼ÛÖµ£¿»¹ÊÇ×Ô¼ºÁô×Å°É¡£\n");
+    set("no_get","ä½ æ‰‹é‡Œä¸€æ¾"+this_object()->query("name")+"ä¸¹ä»ŽæŒ‡é—´æ»‘è½ï¼\n");
+    set("no_give","è¿™ä¹ˆçè´µçš„è¯ï¼Œå“ªèƒ½éšä¾¿ç»™äººï¼Ÿ\n");
+    set("no_drop","è¿™ä¹ˆå®è´µçš„ä¸¹è¯ï¼Œæ‰”äº†å¤šå¯æƒœå‘€ï¼\n");
+    set("no_sell","å‡¡äººå“ªé‡ŒçŸ¥é“"+this_object()->query("name")+"çš„ä»·å€¼ï¼Ÿè¿˜æ˜¯è‡ªå·±ç•™ç€å§ã€‚\n");
   }                                                    
   add_action("do_drink", "drink");
 }
@@ -40,14 +40,14 @@ int do_drink(string arg)
   object me = this_player();
 
   if (!id(arg))
-    return notify_fail("ÄãÒªºÈÊ²Ã´£¿\n");
+    return notify_fail("ä½ è¦å–ä»€ä¹ˆï¼Ÿ\n");
 
   me->set("water", (int)me->max_water_capacity());
   switch (random(3))
   {
     case 0:
     {
-      message_vision(HIG "$NºÈÏÂÒ»ÖÑÏÉ¾Æ£¬¹ûÕæ¾«Éñ¶¶ËÓ£¡\n" NOR, me);
+      message_vision(HIG "$Nå–ä¸‹ä¸€ç›…ä»™é…’ï¼ŒæžœçœŸç²¾ç¥žæŠ–æ“žï¼\n" NOR, me);
       me->set("eff_gin", me->query("max_gin"));
       me->set("gin",     me->query("max_gin"));
       me->set("force",   me->query("max_force"));
@@ -56,7 +56,7 @@ int do_drink(string arg)
     }
     case 1:
     {
-      message_vision(HIG "$NºÈÏÂÒ»ÖÑÏÉ¾Æ£¬¹ûÕæÆøÉ«¼«¼Ñ£¡\n" NOR, me);
+      message_vision(HIG "$Nå–ä¸‹ä¸€ç›…ä»™é…’ï¼ŒæžœçœŸæ°”è‰²æžä½³ï¼\n" NOR, me);
       me->set("eff_kee", me->query("max_kee"));
       me->set("kee",     me->query("max_kee"));
       me->set("force",   me->query("max_force"));
@@ -65,7 +65,7 @@ int do_drink(string arg)
     }
     case 2:
     {
-      message_vision(HIG "$NºÈÏÂÒ»ÖÑÏÉ¾Æ£¬¹ûÕæÉñ²É·ÉÑï£¡\n" NOR, me);
+      message_vision(HIG "$Nå–ä¸‹ä¸€ç›…ä»™é…’ï¼ŒæžœçœŸç¥žé‡‡é£žæ‰¬ï¼\n" NOR, me);
       me->set("eff_sen", me->query("max_sen"));
       me->set("sen",     me->query("max_sen"));
       me->set("force",   me->query("max_force"));

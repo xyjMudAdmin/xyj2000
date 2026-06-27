@@ -3,11 +3,11 @@ inherit ITEM;
 
 void create()
 {
-        set_name("´ÖÄ¾Ïä×Ó", ({ "big box", "box"}));
+        set_name("ç²—æœ¨ç®±å­", ({ "big box", "box"}));
         set_weight(40000);
         if( clonep() ) {
-                set("unit", "¸ö");
-                set("long","Ò»¸ö×°»õµÄ´ÖÄ¾Ïä×Ó£¬¿´ÆğÀ´Ïàµ±³ÁÖØ¡£\n");
+                set("unit", "ä¸ª");
+                set("long","ä¸€ä¸ªè£…è´§çš„ç²—æœ¨ç®±å­ï¼Œçœ‹èµ·æ¥ç›¸å½“æ²‰é‡ã€‚\n");
                 set("value", 1);
         }
         setup();
@@ -24,12 +24,12 @@ int do_get(string arg)
         ||      !id(arg) ) return 0;
 
         if( (int)this_player()->query_stat("kee") < 10 ) {
-                write("ÄãµÄÁ¦Æø²»¹»ÁË£¬ĞªĞªÔÙ°á°É£¡\n");
+                write("ä½ çš„åŠ›æ°”ä¸å¤Ÿäº†ï¼Œæ­‡æ­‡å†æ¬å§ï¼\n");
                 return 1;
         }
 
         if( move(this_player()) ) {
-                message_vision("$NÍäÑü½«µØÏÂµÄ" + name()+"¿¸ÁËÆğÀ´¡£\n", 
+                message_vision("$Nå¼¯è…°å°†åœ°ä¸‹çš„" + name()+"æ‰›äº†èµ·æ¥ã€‚\n", 
 this_player());
                 this_player()->consume_stat("kee", 10);
                 return 1;

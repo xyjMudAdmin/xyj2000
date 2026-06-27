@@ -12,16 +12,16 @@ inherit HAMMER;
 
 void create()
 {
-	set_name(HIC"Éã»êÏ»"NOR, ({"camera"}));
+	set_name(HIC"æ‘„é­‚åŒ£"NOR, ({"camera"}));
 	set_weight(500);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¼Ü");
+		set("unit", "æž¶");
 		set("value", 50000);
 		set("material", "steel");
-		set("wield_msg", "$N¼±¼±Ã¦Ã¦µØ¾ÙÆð$n¡£\n");
-		set("unwield_msg", "$N½«ÊÖÖÐµÄ$n·Å»Ø°üÀï¡£\n");
+		set("wield_msg", "$Næ€¥æ€¥å¿™å¿™åœ°ä¸¾èµ·$nã€‚\n");
+		set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næ”¾å›žåŒ…é‡Œã€‚\n");
 	}
   	init_hammer(10);
 	setup();
@@ -35,7 +35,7 @@ void init()
 
 string per_status_msg(int per, string gender)
 {                                                                               
-	if ( gender == "ÄÐÐÔ" ) {                                               
+	if ( gender == "ç”·æ€§" ) {                                               
     	if ( per>=25 )                                                  
         	return ( per_msg_male1[random(sizeof(per_msg_male1))]); 
 		else if ( per>=20 )
@@ -43,7 +43,7 @@ string per_status_msg(int per, string gender)
 		else if ( per<20 )
         	return ( per_msg_male3[random(sizeof(per_msg_male3))]); 
     }                                                               
-	if ( gender == "Å®ÐÔ" ) {
+	if ( gender == "å¥³æ€§" ) {
 		if ( per>=25 )
         	return ( per_msg_female1[random(sizeof(per_msg_female1))]); 
 		else if ( per>=20 )
@@ -80,10 +80,10 @@ int do_shoot(string arg)
 	{
 		env = environment(me);
 		str = objname = env->query("short");
-		if( !env ) str = "ÕÕÆ¬ÉÏ»ÒÃÉÃÉµØÒ»Æ¬£¬²»ÖªµÀÊÇ±¾À´¾ÍÊÇÕâÑù»¹ÊÇ³å»µÁË¡£\n";
+		if( !env ) str = "ç…§ç‰‡ä¸Šç°è’™è’™åœ°ä¸€ç‰‡ï¼Œä¸çŸ¥é“æ˜¯æœ¬æ¥å°±æ˜¯è¿™æ ·è¿˜æ˜¯å†²åäº†ã€‚\n";
 		else
 		{
-			str = sprintf( "%sµÄÕÕÆ¬\n\n    %s%s\n",env->query("short"), env->query("long"),
+			str = sprintf( "%sçš„ç…§ç‰‡\n\n    %s%s\n",env->query("short"), env->query("long"),
 					env->query("outdoors")? NATURE_D->outdoor_room_description() : "" );
 
 			inv = all_inventory(env);
@@ -104,12 +104,12 @@ int do_shoot(string arg)
 			}
 		}
 
-		str += "\n" + me->query("name")+"ÉãÓÚ"+NATURE_D->game_time() + "¡£\n";
-		message_vision("$NÇáÇá°´ÏÂÁË¿ìÃÅ¡­" HIY
-				"\n°éËæ×ÅÒ»µÀÑ£Ä¿µÄÁÁ¹âºÍßÇàêÒ»ÉùÏì¡­¡­\nÈËÔà¾ã»ñ£¬ÌúÖ¤ÈçÉ½£¬ÅÜ²»µôÁË£¡£¡\n" NOR, me);
+		str += "\n" + me->query("name")+"æ‘„äºŽ"+NATURE_D->game_time() + "ã€‚\n";
+		message_vision("$Nè½»è½»æŒ‰ä¸‹äº†å¿«é—¨â€¦" HIY
+				"\nä¼´éšç€ä¸€é“çœ©ç›®çš„äº®å…‰å’Œå’”åš“ä¸€å£°å“â€¦â€¦\näººè„ä¿±èŽ·ï¼Œé“è¯å¦‚å±±ï¼Œè·‘ä¸æŽ‰äº†ï¼ï¼\n" NOR, me);
 
 		pic=new(__DIR__"photo");
-		pic->set_name( objname + "µÄÕÕÆ¬", ({ "photo" }) );
+		pic->set_name( objname + "çš„ç…§ç‰‡", ({ "photo" }) );
 		pic->set("long", str);
 
 		if( !pic->move(me) )
@@ -119,24 +119,24 @@ int do_shoot(string arg)
     }
 
 	if( !objectp(obj = present(arg, environment(me)) ) )
-		return notify_fail("ÄãÏëÅÄÊ²Ã´£¿\n");
+		return notify_fail("ä½ æƒ³æ‹ä»€ä¹ˆï¼Ÿ\n");
 
 	if( !(obj -> is_character()) )
-		return notify_fail("ÄãÏëÅÄË­£¿\n");
+		return notify_fail("ä½ æƒ³æ‹è°ï¼Ÿ\n");
 
 	objname = obj->query("name");
 	objid = obj->query("id");
-	str = objname+"µÄÕÕÆ¬\n\n";
+	str = objname+"çš„ç…§ç‰‡\n\n";
 
 	switch (random(6))
 	{
 	case 0:
-		str="Ò»ÕÅÑÏÖØÆØ¹â¹ý¶ÈµÄÕÕÆ¬£¬ºÃÒ»¸ö¡°°×Ã£Ã£Ò»Æ¬´óµØÕæ¸É¾»¡±¡£\n";
-		str += "\n" + me->query("name")+"ÉãÓÚ"+NATURE_D->game_time() + "¡£\n";
+		str="ä¸€å¼ ä¸¥é‡æ›å…‰è¿‡åº¦çš„ç…§ç‰‡ï¼Œå¥½ä¸€ä¸ªâ€œç™½èŒ«èŒ«ä¸€ç‰‡å¤§åœ°çœŸå¹²å‡€â€ã€‚\n";
+		str += "\n" + me->query("name")+"æ‘„äºŽ"+NATURE_D->game_time() + "ã€‚\n";
         break;
 	case 1:
-		str="Ò»ÕÅÑÏÖØÆØ¹â²»×ãµÄÕÕÆ¬£¬½ÇÂäÀïÒþÒþÔ¼Ô¼Ð´×Å¡°ºÚÒ¹ÀïÎÚÑ»ÔÚ·É¡±¡£\n";
-		str += "\n" + me->query("name")+"ÉãÓÚ"+NATURE_D->game_time() + "¡£\n";
+		str="ä¸€å¼ ä¸¥é‡æ›å…‰ä¸è¶³çš„ç…§ç‰‡ï¼Œè§’è½é‡Œéšéšçº¦çº¦å†™ç€â€œé»‘å¤œé‡Œä¹Œé¸¦åœ¨é£žâ€ã€‚\n";
+		str += "\n" + me->query("name")+"æ‘„äºŽ"+NATURE_D->game_time() + "ã€‚\n";
         break;
 	case 2:
     case 3:
@@ -146,9 +146,9 @@ int do_shoot(string arg)
 		str += obj->long();
 	   	pro = (obj==me) ? gender_self(obj->query("gender")) : gender_pronoun(obj->query("gender"));
 
-		if( (string)obj->query("race")=="ÈËÀà"
+		if( (string)obj->query("race")=="äººç±»"
 		&&	intp(obj->query("age")) )
-			str += sprintf("%s¿´ÆðÀ´Ô¼%s¶àËê¡£\n", pro, 
+			str += sprintf("%sçœ‹èµ·æ¥çº¦%så¤šå²ã€‚\n", pro, 
 			chinese_number( ( ( obj->query("always_young") && (obj->query("age")>obj->query("fake_age")) )?
 				obj->query("fake_age"):obj->query("age")) / 10 * 10) );
 
@@ -159,18 +159,18 @@ int do_shoot(string arg)
 			inv = map_array(inv, "i_look", this_object(), obj->is_corpse()? 0 : 1 );
 			inv -= ({ 0 });
 			if( sizeof(inv) )
-				str += sprintf( obj->is_corpse() ? "%sµÄÒÅÎïÓÐ£º\n%s\n" : "%sÉíÉÏ´ø×Å£º\n%s\n",
+				str += sprintf( obj->is_corpse() ? "%sçš„é—ç‰©æœ‰ï¼š\n%s\n" : "%sèº«ä¸Šå¸¦ç€ï¼š\n%s\n",
 					pro, implode(inv, "\n") );
 		}
-		str += "\n" + me->query("name")+"ÉãÓÚ"+NATURE_D->game_time() + "¡£\n";
+		str += "\n" + me->query("name")+"æ‘„äºŽ"+NATURE_D->game_time() + "ã€‚\n";
 		break;
     }
 
-	message_vision("$NÇáÇá°´ÏÂÁË¿ìÃÅ¡­¡­"+HIY+"\n°éËæ×ÅÒ»µÀÑ£Ä¿µÄÁÁ¹âºÍßÇàêÒ»ÉùÏì£¬\n"
-			"$nÍ»È»¾õµÃÉí×ÓÇáÆ®Æ®µØ£¬ÄÔ´üÀï¿Õ¿Õµ´µ´£¬ºÃÏó»êÒÑ¾­³öÇÏÁË£¡\n" NOR,	me, obj);
+	message_vision("$Nè½»è½»æŒ‰ä¸‹äº†å¿«é—¨â€¦â€¦"+HIY+"\nä¼´éšç€ä¸€é“çœ©ç›®çš„äº®å…‰å’Œå’”åš“ä¸€å£°å“ï¼Œ\n"
+			"$nçªç„¶è§‰å¾—èº«å­è½»é£˜é£˜åœ°ï¼Œè„‘è¢‹é‡Œç©ºç©ºè¡è¡ï¼Œå¥½è±¡é­‚å·²ç»å‡ºçªäº†ï¼\n" NOR,	me, obj);
 
 	pic=new(__DIR__"photo");
-	pic->set_name( objname + "µÄÕÕÆ¬", ({ objid+"'s photo", "photo" }) );
+	pic->set_name( objname + "çš„ç…§ç‰‡", ({ objid+"'s photo", "photo" }) );
 	pic->set("long", str);
 
 	if( !pic->move(this_player()) )
@@ -186,7 +186,7 @@ string i_look(object obj, int flag)
 
 	str = obj->short();
 	if( obj->query("equipped") )
-		str = HIC "  ¡õ" NOR + str;
+		str = HIC "  â–¡" NOR + str;
 	else if( !flag )
 		str = "    " + str;
 	else

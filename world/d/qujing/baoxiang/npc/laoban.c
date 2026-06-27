@@ -6,10 +6,10 @@ inherit F_VENDOR_SALE;
 void create()
 {
   reload("baoxiang_lao_ban");
-  set_name("ÀÏ°å", ({"laoban"}));
+  set_name("è€æ¿", ({"laoban"}));
   set("shop_id", ({"laoban"}));
-  set("shop_title", "ÀÏ°å");
-  set("gender", "ÄĞĞÔ");
+  set("shop_title", "è€æ¿");
+  set("gender", "ç”·æ€§");
   set("combat_exp", 500);
   set("age", 30);
   set("per", 34);

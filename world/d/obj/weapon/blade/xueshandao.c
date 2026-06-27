@@ -6,10 +6,10 @@
 inherit BLADE;
 
 string *names = ({
-  "ÁøÔÂµ¶",
-  "·ïÃùµ¶",
-  "¹íÍ·µ¶",
-  "×Ï½ğµ¶",
+  "æŸ³æœˆåˆ€",
+  "å‡¤é¸£åˆ€",
+  "é¬¼å¤´åˆ€",
+  "ç´«é‡‘åˆ€",
 });
 
 string *ids = ({
@@ -29,12 +29,12 @@ void create()
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "±ú");
+		set("unit", "æŸ„");
 		set("value", 1500);
 		set("material", "steel");
-		set("long", "Ò»±úº®¹âÉÁÉÁµÄ"+this_object()->query("name")+"¡£\n");
-		set("wield_msg", "$N³é³öÒ»°Ñ$nÎÕÔÚÊÖÖĞ¡£\n");
-		set("unequip_msg", "$N½«ÊÖÖĞµÄ$n²åÈëÑü¼äµÄµ¶ÇÊ¡£\n");
+		set("long", "ä¸€æŸ„å¯’å…‰é—ªé—ªçš„"+this_object()->query("name")+"ã€‚\n");
+		set("wield_msg", "$NæŠ½å‡ºä¸€æŠŠ$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+		set("unequip_msg", "$Nå°†æ‰‹ä¸­çš„$næ’å…¥è…°é—´çš„åˆ€é˜ã€‚\n");
 	}
 	init_blade(35);
 	setup();

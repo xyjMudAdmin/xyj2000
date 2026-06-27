@@ -7,10 +7,10 @@ inherit F_VENDOR_SALE;
 void create()
 {
   reload("tianzhu_fu_sao");
-  set_name("¸£É©", ({"fu sao", "sao", "fu"}));
+  set_name("ç¦å«‚", ({"fu sao", "sao", "fu"}));
   set("shop_id", ({"fusao", "sao", "fu"}));
-  set("shop_title", "°¢¸£É©");
-  set("gender", "Å®ĞÔ");
+  set("shop_title", "é˜¿ç¦å«‚");
+  set("gender", "å¥³æ€§");
   set("combat_exp", 2000);
   set("age", 30);
   set("per", 30);

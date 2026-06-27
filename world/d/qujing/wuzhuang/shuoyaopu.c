@@ -5,12 +5,12 @@ inherit ROOM;
 
 void create ()
 {
-	set ("short", "��ҩ��");
+	set ("short", "芍药圃");
 	set ("long", @LONG
 
-��ǳ��ʢ�������ڵ����̿���һ�Ż��ĵ�̺����λ���Ż�����
-��Ů�ڴ˴�����Ϸ�������������Ʈ�㣬�㲻�ɵ�����������
-һ������
+圃浅花盛，宛如在地上铺开了一张火红的地毯。几位提着花蓝的
+少女在此打闹嬉戏，清风拂过，袖带飘香，你不由得醉醉地吸了
+一口气。
 LONG);
 
 	set("exits", 
@@ -27,7 +27,7 @@ LONG);
 		__DIR__"npc/girl" : 3,
 	]));
 
-	//create_door("south", "�滨��", "north", DOOR_CLOSED);
+	//create_door("south", "梨花门", "north", DOOR_CLOSED);
 	set("outdoors", "wuzhuang");
 
 	setup();

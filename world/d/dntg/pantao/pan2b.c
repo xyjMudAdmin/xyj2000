@@ -7,12 +7,12 @@ inherit "/d/dntg/pantao/climbtree.c";
 
 void create ()
 {
-  set ("short", "��ǧ�����԰");
+  set ("short", "六千年蟠桃园");
   set ("long", @LONG
 
-���԰�ڻ���Ҷ�̣�زز���ƻ�ӯ�����ſ�֦֦��ѹ֦��ֻ��
-�ǣ�ʱ��ʱ��ǧ���죬�����޶����س٣�����ģ�����������
-�����ģ�������Ƥ���ø���֬�����̣�ӳ���Ե��ˡ�
+蟠桃园内花红叶绿，夭夭灼灼花盈树，颗颗枝枝果压枝。只见
+是：时开时结千年熟，无夏无冬万载迟，先熟的，酡颜醉脸，
+还生的，带蒂青皮。好个凝脂肌带绿，映日显丹姿。
 LONG);
 
   set("exits", ([

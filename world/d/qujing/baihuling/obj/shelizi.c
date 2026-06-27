@@ -5,13 +5,13 @@ inherit COMBINED_ITEM;
 
 void create()
 {
-        set_name("ÉáÀû×Ó", ({"sheli zi","sheli"}));
+        set_name("èˆåˆ©å­", ({"sheli zi","sheli"}));
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»Ã¶ÉáÀû×Ó£¬³£ÔÚÓĞµÀ¸ßÉ®µÄ¹ÇÖ³ÖĞ·¢ÏÖ¡£\n");
-                set("unit", "Ğ©");
-                set("base_unit", "Ã¶");
+                set("long", "ä¸€æšèˆåˆ©å­ï¼Œå¸¸åœ¨æœ‰é“é«˜åƒ§çš„éª¨æ®–ä¸­å‘ç°ã€‚\n");
+                set("unit", "äº›");
+                set("base_unit", "æš");
                 set("base_weight", 50);
                 set("value", 10000);
 		set("no_sell",1);

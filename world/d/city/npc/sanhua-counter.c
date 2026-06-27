@@ -10,11 +10,11 @@ void check_date();
 void create()
 {
         reload("city_sanhua");
-        set_name("´òÊÖ", ({"da shou", "shou"}));
+        set_name("æ‰“æ‰‹", ({"da shou", "shou"}));
         set("age", 22);
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("long",
-"Èı»¨ÌÃµÄĞ¡à¶ÂŞ£¬ËäÈ»Îä¹¦²»ÔõÃ´Ñù£¬µ«ĞÄºÚÊÖÀ±£¬Ò²²»ºÃÈÇ¡£\n");
+"ä¸‰èŠ±å ‚çš„å°å–½ç½—ï¼Œè™½ç„¶æ­¦åŠŸä¸æ€ä¹ˆæ ·ï¼Œä½†å¿ƒé»‘æ‰‹è¾£ï¼Œä¹Ÿä¸å¥½æƒ¹ã€‚\n");
         set("attitude", "heroism");
 
         set("combat_exp", 10000+random(2000));
@@ -98,18 +98,18 @@ int do_pay(string arg)
     if(!arg) return notify_fail("Usage: pay <amount> gold for <id>\n");
 
     if(sscanf(arg, "%d gold for %s", amount, id)!=2) 
-	return notify_fail("ÄãÒªĞüÉÍ¶àÉÙ»Æ½ğÈ¥É±Ë­£¿\n");
+	return notify_fail("ä½ è¦æ‚¬èµå¤šå°‘é»„é‡‘å»æ€è°ï¼Ÿ\n");
     
-    if(amount<1) return notify_fail("ĞèÒªÖÁÉÙÒ»Á½»Æ½ğ¡£\n");
-    if(amount>1000) return notify_fail("Ò»´Î×î¶àÒ»Ç§Á½»Æ½ğ¡£\n");
+    if(amount<1) return notify_fail("éœ€è¦è‡³å°‘ä¸€ä¸¤é»„é‡‘ã€‚\n");
+    if(amount>1000) return notify_fail("ä¸€æ¬¡æœ€å¤šä¸€åƒä¸¤é»„é‡‘ã€‚\n");
     
     if(me->query("balance")<(amount*10000))
-	return notify_fail("ÄãµÄÕÊ»§ÀïÃ»ÓĞÕâÃ´¶àÇ®¡£\n");
+	return notify_fail("ä½ çš„å¸æˆ·é‡Œæ²¡æœ‰è¿™ä¹ˆå¤šé’±ã€‚\n");
 
     if(wizardp(me))
-	return notify_fail("Õâ¸ö£®£®£®ÅÂ²»Ì«ºÃ°É£¿£º£©\n");
+	return notify_fail("è¿™ä¸ªï¼ï¼ï¼æ€•ä¸å¤ªå¥½å§ï¼Ÿï¼šï¼‰\n");
 
-    notify_fail("ÄãÒªĞüÉÍÈ¥É±Ë­£¿\n");
+    notify_fail("ä½ è¦æ‚¬èµå»æ€è°ï¼Ÿ\n");
     
     if(!id || sizeof(id)<1) return 0;
     id=replace_string(id,"#"," ");
@@ -126,7 +126,7 @@ int do_pay(string arg)
 		map_delete(list, id);
 		save();
 	    }
-	    return notify_fail("ÕÒ²»µ½ "+id+" Õâ¸öÈË¡£\n");
+	    return notify_fail("æ‰¾ä¸åˆ° "+id+" è¿™ä¸ªäººã€‚\n");
 	}
 	online=0;
     } else {
@@ -135,17 +135,17 @@ int do_pay(string arg)
 
     if(SECURITY_D->get_wiz_level(who)>0) {
 	if(!online) destruct(who);
-	return notify_fail("Õâ¸ö£®£®£®ÅÂ²»Ì«ºÃ°É£¿£º£©\n");
+	return notify_fail("è¿™ä¸ªï¼ï¼ï¼æ€•ä¸å¤ªå¥½å§ï¼Ÿï¼šï¼‰\n");
     }
 
     if(online && amount>=50) {
-	tell_object(who,"ÄãĞÄÖĞºöÈ»ÉıÆğÒ»ÖÖÒìÑùµÄ¸Ğ¾õ¡£\n");
+	tell_object(who,"ä½ å¿ƒä¸­å¿½ç„¶å‡èµ·ä¸€ç§å¼‚æ ·çš„æ„Ÿè§‰ã€‚\n");
     }
 
     if(undefinedp(list[id])) {
 	if(sizeof(list)>2000) {
 	    if(!online) destruct(who);
-	    return notify_fail("±»ĞüÉÍ×·¼©µÄÍæ¼ÒÊıÌ«¶àÁË¡£\n");
+	    return notify_fail("è¢«æ‚¬èµè¿½ç¼‰çš„ç©å®¶æ•°å¤ªå¤šäº†ã€‚\n");
 	}
 
 	list[id]=(["amount": amount,
@@ -166,11 +166,11 @@ int do_pay(string arg)
 
     save();
     
-    message_vision("$N³ö"+chinese_number(amount)+
-	    "Á½»Æ½ğĞüÉÍ"+who->query("name")+
-	    "("+id+")Í·Â­£¬Ä¿Ç°×ÜÉÍ½ğ"+
+    message_vision("$Nå‡º"+chinese_number(amount)+
+	    "ä¸¤é»„é‡‘æ‚¬èµ"+who->query("name")+
+	    "("+id+")å¤´é¢…ï¼Œç›®å‰æ€»èµé‡‘"+
 	    chinese_number(list[id]["amount"])+
-	    "Á½¡£\n", me);
+	    "ä¸¤ã€‚\n", me);
     
     log_file("sanhua","["+ctime(time())+"] "+
 	    me->query("id")+" paid "+amount+" gold for "+
@@ -192,10 +192,10 @@ string get_time(int last)
     last/=3600;
     day=last/24;
     last=last%24;
-    if(day) result=chinese_number(day)+"Ìì";
+    if(day) result=chinese_number(day)+"å¤©";
     else result="";
     
-    result+=chinese_number(last)+"Ğ¡Ê±";
+    result+=chinese_number(last)+"å°æ—¶";
     return result;
 }
 int do_list(string arg)
@@ -207,13 +207,13 @@ int do_list(string arg)
 
     i=sizeof(list);
     if(i<1) return notify_fail(
-	    "Ä¿Ç°Ã»ÓĞÈË±»×·É±¡£\n");
+	    "ç›®å‰æ²¡æœ‰äººè¢«è¿½æ€ã€‚\n");
 
-    format="¡¡%-24s%20s%20s\n";
+    format="ã€€%-24s%20s%20s\n";
 
-    result="\n"+sprintf(format,"¡¡¡¡Ãû¡¡×Ö","ÉÍ¡¡½ğ",
-	    "¾àÉÏ´ÎÔö¼ÓÉÍ½ğ")+
- "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n";
+    result="\n"+sprintf(format,"ã€€ã€€åã€€å­—","èµã€€é‡‘",
+	    "è·ä¸Šæ¬¡å¢åŠ èµé‡‘")+
+ "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n";
 
 
     if(!arg) {
@@ -222,7 +222,7 @@ int do_list(string arg)
 	    sort+=({sprintf("%6d",list[key[i]]["amount"])
 		    +"|"+
 		    sprintf(format,list[key[i]]["name"],
-		    chinese_number(list[key[i]]["amount"])+"Á½",
+		    chinese_number(list[key[i]]["amount"])+"ä¸¤",
 		    get_time(list[key[i]]["last_time"]))});
 	}
 	if(i=sizeof(sort)) {
@@ -233,14 +233,14 @@ int do_list(string arg)
 	}
     } else {
 	if(undefinedp(list[arg])) return
-	    notify_fail("Ã»ÓĞÈËĞüÉÍ×·É± "+arg+"¡£\n");
+	    notify_fail("æ²¡æœ‰äººæ‚¬èµè¿½æ€ "+arg+"ã€‚\n");
 
 	result+=sprintf(format,list[arg]["name"],
-		chinese_number(list[arg]["amount"])+"Á½",
+		chinese_number(list[arg]["amount"])+"ä¸¤",
 		get_time(list[arg]["last_time"]));
     }
     result+=
- "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n";
+ "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n";
 
     this_player()->start_more(result);
     return 1;
@@ -266,12 +266,12 @@ int do_drop(string arg)
     
     if(undefinedp(list[id]))  return 0;
     
-    message_vision("$N½«ÉíÉÏ±³×ÅµÄÊ¬Ê×ÍùµØÉÏÒ»Ë¤£¬"+
-	    "$n¼±Ã¦Ç÷Ç°Ï¸¿´£¬²»½ûÃæÂ¶Ï²É«¡£\n",me,this_object());
-    message_vision("$N¶Ô$nĞ¡ÉùàÖ¹¾µÀ£º¿ÉÕæÓĞÄãµÄ£¬¾ÓÈ»°Ñ"+
-	    list[id]["name"]+"¸øÅªËÀÁË£¡Õâ"+
+    message_vision("$Nå°†èº«ä¸ŠèƒŒç€çš„å°¸é¦–å¾€åœ°ä¸Šä¸€æ‘”ï¼Œ"+
+	    "$næ€¥å¿™è¶‹å‰ç»†çœ‹ï¼Œä¸ç¦é¢éœ²å–œè‰²ã€‚\n",me,this_object());
+    message_vision("$Nå¯¹$nå°å£°å˜€å’•é“ï¼šå¯çœŸæœ‰ä½ çš„ï¼Œå±…ç„¶æŠŠ"+
+	    list[id]["name"]+"ç»™å¼„æ­»äº†ï¼è¿™"+
 	    chinese_number(list[id]["amount"])+
-	    "Á½½ğ×ÓĞ¡µÄ¾Í°ïÄú´æÇ®×¯À²£¡\n\n",this_object(),me);
+	    "ä¸¤é‡‘å­å°çš„å°±å¸®æ‚¨å­˜é’±åº„å•¦ï¼\n\n",this_object(),me);
 
     me->add("balance",10000*list[id]["amount"]);
     log_file("sanhua","["+ctime(time())+"] "+me->query("id")

@@ -7,13 +7,13 @@ inherit F_AUTOLOAD;
 inherit F_SAVE;
 #include <ansi.h>
 
-#define SYN_CREATE  "Ö¸Áî¸ñÊ½£º\tcreate <É½¶´Ãû³Æ> (<É½¶´´úºÅ>) for <¶´Ö÷>¡£\nÀı£º\t\tcreate Ë®Á±¶´ (shuilian dong) for wukong\n"
+#define SYN_CREATE  "æŒ‡ä»¤æ ¼å¼ï¼š\tcreate <å±±æ´åç§°> (<å±±æ´ä»£å·>) for <æ´ä¸»>ã€‚\nä¾‹ï¼š\t\tcreate æ°´å¸˜æ´ (shuilian dong) for wukong\n"
 
 void create()
 {
-    set_name("Õò¶´Ö®±¦", ({ "zhendong bao", "token", "bao", "zhendong" }) );
-    set("unit", "¸ö");
-    set("leader_title", "¶´Ö÷");
+    set_name("é•‡æ´ä¹‹å®", ({ "zhendong bao", "token", "bao", "zhendong" }) );
+    set("unit", "ä¸ª");
+    set("leader_title", "æ´ä¸»");
     seteuid(getuid());
 }
 
@@ -32,23 +32,23 @@ string long()
     if( stringp(query("long")) )
         return ::long();
     else if ( stringp(query("guild_id"))) return @TEXT
-ÕâÊÇÒ»¸öÒÑ¾­½â¿ª·âÓ¡µÄÕò¶´Ö®±¦£¬Äã¿ÉÒÔÓÃÈçÏÂÖ¸Áî´´ÔìÊôÓÚÄã×Ô¼ºµÄÉ½¶´£º
+è¿™æ˜¯ä¸€ä¸ªå·²ç»è§£å¼€å°å°çš„é•‡æ´ä¹‹å®ï¼Œä½ å¯ä»¥ç”¨å¦‚ä¸‹æŒ‡ä»¤åˆ›é€ å±äºä½ è‡ªå·±çš„å±±æ´ï¼š
 
-    modify/xiugai	ĞŞ¸ÄĞÅÎïµÄÍâ¹Û¡¢É½¶´Ãû³ÆµÈµÈ¡£
-    assign/zhiding	½«¶´Ö÷µÄÎ»ÖÃ´«¸ø±ğÈË¡£
-    dismiss/jiesan	ÓÀ¾Ã½âÉ¢Õâ¸öÉ½¶´¡£
+    modify/xiugai	ä¿®æ”¹ä¿¡ç‰©çš„å¤–è§‚ã€å±±æ´åç§°ç­‰ç­‰ã€‚
+    assign/zhiding	å°†æ´ä¸»çš„ä½ç½®ä¼ ç»™åˆ«äººã€‚
+    dismiss/jiesan	æ°¸ä¹…è§£æ•£è¿™ä¸ªå±±æ´ã€‚
 
 TEXT
     ;
     else return @TEXT
 
-ÕâÊÇÒ»¸öÓÃÀ´ÈÃÍæ¼Ò½¨Á¢É½¶´Ê±ËùÓÃµÄÕò¶´Ö®±¦¡£
-³ÖÓĞ´Ë±¦Ö®ÈË¾ÍÊÇ±¾¶´Ö®¶´Ö÷£¬¾ßÓĞÕĞÄ¼ĞÂ³ÉÔ±¡¢
-¿ª³ıÔ­ÓĞ³ÉÔ±¡¢ÒÔ¼°¸ü¸Ä³ÉÔ±³ÆºÅµÈÈ¨Á¦¼°ÈÎÎñ¡£
-´Ë±¦»á×Ô¶¯´¢´æ¡£
+è¿™æ˜¯ä¸€ä¸ªç”¨æ¥è®©ç©å®¶å»ºç«‹å±±æ´æ—¶æ‰€ç”¨çš„é•‡æ´ä¹‹å®ã€‚
+æŒæœ‰æ­¤å®ä¹‹äººå°±æ˜¯æœ¬æ´ä¹‹æ´ä¸»ï¼Œå…·æœ‰æ‹›å‹Ÿæ–°æˆå‘˜ã€
+å¼€é™¤åŸæœ‰æˆå‘˜ã€ä»¥åŠæ›´æ”¹æˆå‘˜ç§°å·ç­‰æƒåŠ›åŠä»»åŠ¡ã€‚
+æ­¤å®ä¼šè‡ªåŠ¨å‚¨å­˜ã€‚
 
-ÔÚ½¨Á¢ĞÂ¶´Ö®Ç°±ØĞëÏÈÓĞÒ»ÃûÎ×Ê¦½â³ı·âÓ¡£¬²¢ÇÒ
-Ñ¡ÔñµÚÒ»ÈÎ¶´Ö÷£¨create/jianli£©¡£
+åœ¨å»ºç«‹æ–°æ´ä¹‹å‰å¿…é¡»å…ˆæœ‰ä¸€åå·«å¸ˆè§£é™¤å°å°ï¼Œå¹¶ä¸”
+é€‰æ‹©ç¬¬ä¸€ä»»æ´ä¸»ï¼ˆcreate/jianliï¼‰ã€‚
 
 TEXT
     ;
@@ -56,7 +56,7 @@ TEXT
 void init()
 {
     if( !environment()->is_character() ) {
-	message_vision("$N·¢³öÒ»ÕóÒ«ÑÛµÄ¹âÃ¢£¬È»ºóÏûÊ§ÁË¡£\n", this_object());
+	message_vision("$Nå‘å‡ºä¸€é˜µè€€çœ¼çš„å…‰èŠ’ï¼Œç„¶åæ¶ˆå¤±äº†ã€‚\n", this_object());
 	destruct(this_object());
     } else {
 	add_action("do_create", "create");
@@ -90,12 +90,12 @@ int do_create(string arg)
     object me=this_player(), guild_leader;
 
     if( query("unsealed") )
-        return notify_fail( query("name") + "µÄ·âÓ¡ÒÑ¾­±»½â¿ªÁË¡£\n");
+        return notify_fail( query("name") + "çš„å°å°å·²ç»è¢«è§£å¼€äº†ã€‚\n");
  
     if( !wizardp(me) )
         return notify_fail(
-            "Ö»ÓĞÎ×Ê¦ÄÜ½â³ı´ËÎï·âÓ¡¡£Èç¹ûÄãÒª´´Á¢Ò»¸öĞÂµÄÉ½¶´£¬Çë\n"
-            "ÏÈÕÒÒ»Î»Î×Ê¦×öµ£±£ÈË£¬ÇëËû£¨Ëı£©ÎªÄã½â³ı·âÓ¡¡£\n");
+            "åªæœ‰å·«å¸ˆèƒ½è§£é™¤æ­¤ç‰©å°å°ã€‚å¦‚æœä½ è¦åˆ›ç«‹ä¸€ä¸ªæ–°çš„å±±æ´ï¼Œè¯·\n"
+            "å…ˆæ‰¾ä¸€ä½å·«å¸ˆåšæ‹…ä¿äººï¼Œè¯·ä»–ï¼ˆå¥¹ï¼‰ä¸ºä½ è§£é™¤å°å°ã€‚\n");
  
     if(!arg) return notify_fail(SYN_CREATE);
  
@@ -104,11 +104,11 @@ int do_create(string arg)
 
     for(i=0; i<strlen(guild_id); i++)
 	if( (guild_id[i] < 'a' || guild_id[i] > 'z') && guild_id[i] != '_')
-        return notify_fail("<É½¶´´úºÅ>±ØĞëÓÉĞ¡Ğ´Ó¢ÎÄ×ÖÄ¸»ò '_' ×é³É¡£\n");
+        return notify_fail("<å±±æ´ä»£å·>å¿…é¡»ç”±å°å†™è‹±æ–‡å­—æ¯æˆ– '_' ç»„æˆã€‚\n");
 
     if (!objectp(guild_leader=present(player_name, environment(me)))
      || !living (guild_leader))
-	return notify_fail("ÕâÀïÃ»ÓĞ "+player_name+"¡£\n");
+	return notify_fail("è¿™é‡Œæ²¡æœ‰ "+player_name+"ã€‚\n");
 
     set("guild_id", guild_id);
     set("guild_name", guild_name);
@@ -119,14 +119,14 @@ int do_create(string arg)
 	restore();
     else {
 	log_file("GUILD", 
-	    sprintf("%s£¨%s£©ÓÚ%s£¨%s£©\n\t´´"+HIG+"%s£¨%s£©"+NOR+"£¬"
-		    "ÓĞ"+HIY+"%s£¨%s£©"+NOR+"ÔÚ³¡ÎªÖ¤¡£\n\n",
+	    sprintf("%sï¼ˆ%sï¼‰äº%sï¼ˆ%sï¼‰\n\tåˆ›"+HIG+"%sï¼ˆ%sï¼‰"+NOR+"ï¼Œ"
+		    "æœ‰"+HIY+"%sï¼ˆ%sï¼‰"+NOR+"åœ¨åœºä¸ºè¯ã€‚\n\n",
 	    guild_leader->query("name"), guild_leader->query("id"),
 	    NATURE_D->game_time(), ctime(time()),
 	    guild_name, guild_id,
 	    me->query("name"), me->query("id")));
 	    save();
-	    message_vision(HIY"¹§Ï²$N³ÉÁ¢ÁË"+guild_name+"("+guild_id+")£¡\n"NOR, guild_leader);
+	    message_vision(HIY"æ­å–œ$Næˆç«‹äº†"+guild_name+"("+guild_id+")ï¼\n"NOR, guild_leader);
     }
  
     return 1;
@@ -141,7 +141,7 @@ int do_assign(string arg)
  
     if( !arg || !objectp(ob = present(arg, environment(me)))
     || !living(ob) ) 
-        return notify_fail("ÄãÒª½«¶´Ö÷Ö®Î»´«¸øË­£¿\n");
+        return notify_fail("ä½ è¦å°†æ´ä¸»ä¹‹ä½ä¼ ç»™è°ï¼Ÿ\n");
  
     family = me->query("family");
  
@@ -155,7 +155,7 @@ int do_assign(string arg)
         else {
             family = ob->query("family");
             if( !mapp(family) || (family["family_name"]!=(string)query("guild_name")) )
-                return notify_fail( ob->name() + "²¢²»ÊÇ" + query("guild_name") + "µÄÒ»Ô±¡£\n");
+                return notify_fail( ob->name() + "å¹¶ä¸æ˜¯" + query("guild_name") + "çš„ä¸€å‘˜ã€‚\n");
         }
         ob->assign_apprentice( query("leader_title"), -1 );
         set("leader", ob->query("id"));
@@ -163,13 +163,13 @@ int do_assign(string arg)
             message_vision(assign_msg, me, ob);
         else
             message_vision(
-                "\n$N½«" + query("guild_name") + "µÄ" + query("name") + "½»¸øÁË$n¡£\n"
-                "\n½ñºó$p¾ÍÊÇ" + query("guild_name") + "µÄ¶´Ö÷ÁË¡£\n\n", me, ob);
+                "\n$Nå°†" + query("guild_name") + "çš„" + query("name") + "äº¤ç»™äº†$nã€‚\n"
+                "\nä»Šå$på°±æ˜¯" + query("guild_name") + "çš„æ´ä¸»äº†ã€‚\n\n", me, ob);
         move(ob);
         write("Ok.\n");
         return 1;
     } else
-        return notify_fail("ÄãÃ»ÓĞÕâÖÖÈ¨Á¦¡£\n");
+        return notify_fail("ä½ æ²¡æœ‰è¿™ç§æƒåŠ›ã€‚\n");
 }
 
 int do_modify(string arg)
@@ -177,7 +177,7 @@ int do_modify(string arg)
     string prop, str;
     if( !query("guild_id") ) return 0;
      if( !arg || sscanf(arg, "%s %s", prop, str)!=2 )
-        return notify_fail("Ö¸Áî¸ñÊ½£ºmodify <ÏîÄ¿> <Ñ¶Ï¢>\n");
+        return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šmodify <é¡¹ç›®> <è®¯æ¯>\n");
     switch(prop) {
         case "name":
         case "long":
@@ -189,7 +189,7 @@ int do_modify(string arg)
             write("Ok.\n");
             break;
         default:
-            write("ÄãÄÜĞŞ¸ÄµÄÏîÄ¿Ö»ÓĞ£ºname, short, long, assign_msg, leader_title¡£\n");
+            write("ä½ èƒ½ä¿®æ”¹çš„é¡¹ç›®åªæœ‰ï¼šname, short, long, assign_msg, leader_titleã€‚\n");
     }
     return 1;
 }
@@ -199,9 +199,9 @@ int do_dismiss(string arg)
     if( !query("guild_id") ) return 0;
  
     rm(query_save_file() + __SAVE_EXTENSION__);
-    write( query("guild_name") + "±»½âÉ¢ÁË¡£\n");
+    write( query("guild_name") + "è¢«è§£æ•£äº†ã€‚\n");
     log_file("GUILD", 
-        sprintf("%s£¨%s£©ÓÚ%s£¨%s£©\n\t½âÉ¢%s£¨%s£©¡£\n",
+        sprintf("%sï¼ˆ%sï¼‰äº%sï¼ˆ%sï¼‰\n\tè§£æ•£%sï¼ˆ%sï¼‰ã€‚\n",
         this_player()->query("name"), this_player()->query("id"),
         NATURE_D->game_time(), ctime(time()),
         query("guild_name"), query("guild_id")));

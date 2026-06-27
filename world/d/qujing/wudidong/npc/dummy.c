@@ -12,8 +12,8 @@ inherit NPC;
 
 void create()
 {
-  set_name("²âÊÔ´óÃ×", ({"crash test dummy", "dummy"}));
-  set("gender", "ÄĞĞÔ");
+  set_name("æµ‹è¯•å¤§ç±³", ({"crash test dummy", "dummy"}));
+  set("gender", "ç”·æ€§");
   set("age", 20+random(15));
   set("str", 5);
   set("attitude", "peaceful");

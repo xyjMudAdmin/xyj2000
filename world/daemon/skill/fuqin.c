@@ -1,5 +1,5 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// xiao  ×àóïÖ®¼¼   qin  ¸§ÇÙÖ®¼¼
+// xiao  å¥ç®«ä¹‹æŠ€   qin  æŠšç´ä¹‹æŠ€
 #include <ansi.h>
 
 inherit SKILL;
@@ -8,12 +8,12 @@ string level_description(int level)
 {
 	int grade;
 	string *level_desc = ({
-		BLU "³õÁìÃîµÀ" NOR,     
-		HIB "ÂÔÍ¨ÀÖÀí" NOR,
-		HIB "¾«Í¨ÒôÂÉ" NOR,     
-		CYN "¸ßÇéÑÅÖÂ" NOR,
-		HIC "ÃîÇúÍ¨Éñ" NOR,     
-		HIW "ÇÙ¼¼ÎŞË«" NOR,
+		BLU "åˆé¢†å¦™é“" NOR,     
+		HIB "ç•¥é€šä¹ç†" NOR,
+		HIB "ç²¾é€šéŸ³å¾‹" NOR,     
+		CYN "é«˜æƒ…é›…è‡´" NOR,
+		HIC "å¦™æ›²é€šç¥" NOR,     
+		HIW "ç´æŠ€æ— åŒ" NOR,
 	});
 
 	grade = level / 30;

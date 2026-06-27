@@ -7,9 +7,9 @@ inherit NPC;
 
 void create()
 {
-  set_name("ÃÏ×ÓÈç", ({ "meng ziru", "meng", "ziru", "da chen" }));
-  set("title", "´ó³¼");
-  set("gender", "ÄÐÐÔ");
+  set_name("å­Ÿå­å¦‚", ({ "meng ziru", "meng", "ziru", "da chen" }));
+  set("title", "å¤§è‡£");
+  set("gender", "ç”·æ€§");
   set("age", 60);
   set("per", 30);
   set("combat_exp", 300000);
@@ -52,17 +52,17 @@ void reward (object who)
   points = points * 15;
   if(points>2000)
       points=2000;
-  message_vision ("$N¶Ô$nÒ»°Ý£º±ÝÏÂÓÐÖ¼£¬´Í"+RANK_D->query_respect(who)+
-                  chinese_number(points)+"Á½°×Òø£¡\n",me,who);
+  message_vision ("$Nå¯¹$nä¸€æ‹œï¼šé™›ä¸‹æœ‰æ—¨ï¼Œèµ"+RANK_D->query_respect(who)+
+                  chinese_number(points)+"ä¸¤ç™½é“¶ï¼\n",me,who);
 /*  
-  command (channel+" "+who->query("name")+who->query("quest/reason")+"±ÝÏÂÓÐÖ¼£¬´Í"+
-           chinese_number(points)+"Á½°×Òø£¡\n");
+  command (channel+" "+who->query("name")+who->query("quest/reason")+"é™›ä¸‹æœ‰æ—¨ï¼Œèµ"+
+           chinese_number(points)+"ä¸¤ç™½é“¶ï¼\n");
 */  
   who->add("quest/gain/silver",points);
-  reporting (who, who->query("quest/reason"), points, "Á½°×Òø");
+  reporting (who, who->query("quest/reason"), points, "ä¸¤ç™½é“¶");
   silver->set_amount(points);
   if(!(silver->move(who)))
     silver->move(environment(who));
-  message_vision ("$NµÝ¸ø$nÒ»°ü°×Òø¡£\n",me,who);
+  message_vision ("$Né€’ç»™$nä¸€åŒ…ç™½é“¶ã€‚\n",me,who);
 }
 

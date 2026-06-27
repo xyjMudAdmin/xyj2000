@@ -15,14 +15,14 @@ string *index=({
 	"cps","per","cor","kar",
 	});
 mapping giftn=([
-	"str":"Ìå¸ñ",
-	"con":"¸ù¹Ç",
-	"int":"ÎòĞÔ",
-	"spi":"ÁéĞÔ",
-	"cps":"¶¨Á¦",
-	"per":"ÈİÃ²",
-	"kar":"¸£Ôµ",
-	"cor":"µ¨Ê¶",
+	"str":"ä½“æ ¼",
+	"con":"æ ¹éª¨",
+	"int":"æ‚Ÿæ€§",
+	"spi":"çµæ€§",
+	"cps":"å®šåŠ›",
+	"per":"å®¹è²Œ",
+	"kar":"ç¦ç¼˜",
+	"cor":"èƒ†è¯†",
 	]);
 mapping gift=([
 	"str":20,
@@ -37,7 +37,7 @@ mapping gift=([
 
 void create()
 {
-	set("short", "»¶Ó­¹âÁÙÎ÷ÓÎ¼Ç£¡");
+	set("short", "æ¬¢è¿å…‰ä¸´è¥¿æ¸¸è®°ï¼");
 	set("no_fight",1);
 	set("no_magic",1);
 	
@@ -75,13 +75,13 @@ void get_start0(object me)
 int get_start1(string arg)
 {
     object me=this_player();
-    write("\n\n»¶Ó­¹âÁÙÎ÷ÓÎ¼Ç£¡\n");
+    write("\n\næ¬¢è¿å…‰ä¸´è¥¿æ¸¸è®°ï¼\n");
     write(@LONG
 
-ÔÚ¿ªÊ¼ÄãµÄÎ÷ÓÎÀú³ÌÖ®Ç°£¬Ê×ÏÈÒªÎª×Ô¼ºËù´´ÔìµÄÈËÎïÑ¡ÔñÒ»¸öºÏÊÊ
-µÄÌì¸³£¬ÒòÎªÕâ½«¶ÔÄã½ñºóµÄ·¢Õ¹ÓĞÖØ´óµÄÓ°Ïì¡£Î÷ÓÎ¼ÇÖĞµÄÈËÎïÌì
-¸³¹²ÓĞËÄÏî£¨Ïê¼û help gifts £©£¬Ã¿ÏîÓÉÒ»¸öÊ®µ½ÈıÊ®Ö®¼äµÄÕûÊı
-À´±íÊ¾£¬Ò»°ãÊıÖµÔ½´óÔ½ºÃ£¬µ«¸÷ÏîµÄ×ÜºÍÊÇ¹Ì¶¨²»±äµÄ¡£
+åœ¨å¼€å§‹ä½ çš„è¥¿æ¸¸å†ç¨‹ä¹‹å‰ï¼Œé¦–å…ˆè¦ä¸ºè‡ªå·±æ‰€åˆ›é€ çš„äººç‰©é€‰æ‹©ä¸€ä¸ªåˆé€‚
+çš„å¤©èµ‹ï¼Œå› ä¸ºè¿™å°†å¯¹ä½ ä»Šåçš„å‘å±•æœ‰é‡å¤§çš„å½±å“ã€‚è¥¿æ¸¸è®°ä¸­çš„äººç‰©å¤©
+èµ‹å…±æœ‰å››é¡¹ï¼ˆè¯¦è§ help gifts ï¼‰ï¼Œæ¯é¡¹ç”±ä¸€ä¸ªååˆ°ä¸‰åä¹‹é—´çš„æ•´æ•°
+æ¥è¡¨ç¤ºï¼Œä¸€èˆ¬æ•°å€¼è¶Šå¤§è¶Šå¥½ï¼Œä½†å„é¡¹çš„æ€»å’Œæ˜¯å›ºå®šä¸å˜çš„ã€‚
 LONG
 	);
     if(!me->query_temp("gifts")) return 1;
@@ -108,11 +108,11 @@ void get_input(string arg, object me)
 	return;
     }
     if(ind<8) {
-	write("ÇëÊäÈë"+giftn[index[ind]]+"µÄĞÂÈ¡Öµ[10-30]£º");
+	write("è¯·è¾“å…¥"+giftn[index[ind]]+"çš„æ–°å–å€¼[10-30]ï¼š");
 	input_to("get_number",me,ind);
 	return;
     } else {
-	write("ÄãÈ·¶¨½ÓÊÜµ±Ç°µÄÌì¸³ÉèÖÃÂğ£¿[y/n]");
+	write("ä½ ç¡®å®šæ¥å—å½“å‰çš„å¤©èµ‹è®¾ç½®å—ï¼Ÿ[y/n]");
 	input_to("get_finish",me);
 	return;
     }
@@ -122,7 +122,7 @@ void get_finish(string arg, object me)
 {
     if(!me) return;
     if(!arg) {
-	write("ÄãÈ·¶¨½ÓÊÜµ±Ç°µÄÌì¸³ÉèÖÃÂğ£¿[y/n]");
+	write("ä½ ç¡®å®šæ¥å—å½“å‰çš„å¤©èµ‹è®¾ç½®å—ï¼Ÿ[y/n]");
 	input_to("get_finish",me);
 	return;
     }
@@ -134,7 +134,7 @@ void get_finish(string arg, object me)
 	get_start(me);
 	return;
     }
-    write("ÄãÈ·¶¨½ÓÊÜµ±Ç°µÄÌì¸³ÉèÖÃÂğ£¿[y/n]");
+    write("ä½ ç¡®å®šæ¥å—å½“å‰çš„å¤©èµ‹è®¾ç½®å—ï¼Ÿ[y/n]");
     input_to("get_finish",me);
     return;
 }
@@ -156,23 +156,23 @@ string _show_gift(object me)
     if(!my) return "";
     
     result=("\n");
-    result+="©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n";
+    result+="â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n";
     result+=sprintf(
-//	    " 0. ¶¨Á¦£º[%d]        1. ÈİÃ²£º[%d]\n"+
-//            " 2. µ¨Ê¶£º[%d]        3. ¸£Ôµ£º[%d]\n"
-//	    +" 4. Ìå¸ñ£º[%d]        5. ¸ù¹Ç£º[%d]\n"+
-//	     " 6. ÎòĞÔ£º[%d]        7. ÁéĞÔ£º[%d]\n"
-	    " 0. Ìå¸ñ£º[%d]        1. ¸ù¹Ç£º[%d]\n"+
-	    " 2. ÎòĞÔ£º[%d]        3. ÁéĞÔ£º[%d]\n"
+//	    " 0. å®šåŠ›ï¼š[%d]        1. å®¹è²Œï¼š[%d]\n"+
+//            " 2. èƒ†è¯†ï¼š[%d]        3. ç¦ç¼˜ï¼š[%d]\n"
+//	    +" 4. ä½“æ ¼ï¼š[%d]        5. æ ¹éª¨ï¼š[%d]\n"+
+//	     " 6. æ‚Ÿæ€§ï¼š[%d]        7. çµæ€§ï¼š[%d]\n"
+	    " 0. ä½“æ ¼ï¼š[%d]        1. æ ¹éª¨ï¼š[%d]\n"+
+	    " 2. æ‚Ÿæ€§ï¼š[%d]        3. çµæ€§ï¼š[%d]\n"
 	     ,
 //	    my["cps"],my["per"],my["cor"],my["kar"],
 	    my["str"],my["con"],my["int"],my["spi"]
 	    );
-    result+="©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n";
+    result+="â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n";
     if(left)
-      result+="ÄãÏÖÓĞ"+chinese_number(left)+"µãÌì¸³»¹Ã»ÓĞ·ÖÅä¡£\n";
-    result+="ÇëÑ¡ÔñÄãÏëÖØĞÂÉèÖÃÄÄÒ»ÏîÌì¸³µÄÈ¡Öµ[0-3]£¬\n"+
-	"Ñ¡Ôñ[9]Ôò½ÓÊÜµ±Ç°µÄÉèÖÃ£º";
+      result+="ä½ ç°æœ‰"+chinese_number(left)+"ç‚¹å¤©èµ‹è¿˜æ²¡æœ‰åˆ†é…ã€‚\n";
+    result+="è¯·é€‰æ‹©ä½ æƒ³é‡æ–°è®¾ç½®å“ªä¸€é¡¹å¤©èµ‹çš„å–å€¼[0-3]ï¼Œ\n"+
+	"é€‰æ‹©[9]åˆ™æ¥å—å½“å‰çš„è®¾ç½®ï¼š";
     return result;
 }
 
@@ -186,9 +186,9 @@ void do_finish(object me)
     if(!me) return;
     left=me->query_temp("gift_left");
     if(left>0) {
-	write("Äã×Ü¹²¿ÉÓĞ 90 µãÌì¸³£¬ÏÖÔÚ»¹ÓĞÊ£Óà"+chinese_number(left)
-	    +"µãÌì¸³Ã»ÓĞ·ÖÅä¡£\n");
-	write("ÄãÊÇ·ñÏë¼ÌĞø·ÖÅäÕâĞ©Ê£ÓàµãÊı£¿[y/n]");
+	write("ä½ æ€»å…±å¯æœ‰ 90 ç‚¹å¤©èµ‹ï¼Œç°åœ¨è¿˜æœ‰å‰©ä½™"+chinese_number(left)
+	    +"ç‚¹å¤©èµ‹æ²¡æœ‰åˆ†é…ã€‚\n");
+	write("ä½ æ˜¯å¦æƒ³ç»§ç»­åˆ†é…è¿™äº›å‰©ä½™ç‚¹æ•°ï¼Ÿ[y/n]");
 	input_to("continue_finish",me);    
 	get_start(me);
 	return;
@@ -203,20 +203,20 @@ void do_finish(object me)
 	return;
     }
     if((int)(gt["str"]+gt["con"]+gt["int"]+gt["spi"])>90) {
-	write("ÄãµÄ"+giftn["str"]+"¡¢"+
-		giftn["con"]+"¡¢"+
-		giftn["int"]+"¼°"+
-		giftn["spi"]+"Ö®ºÍ²»ÄÜ¶àÓÚ 90 ¡£\n");
+	write("ä½ çš„"+giftn["str"]+"ã€"+
+		giftn["con"]+"ã€"+
+		giftn["int"]+"åŠ"+
+		giftn["spi"]+"ä¹‹å’Œä¸èƒ½å¤šäº 90 ã€‚\n");
 	get_start(me);
 	return;
     }
 
     /*
     if((int)(gt["cps"]+gt["per"]+gt["kar"]+gt["cor"])>80) {
-	write("ÄãµÄ"+giftn["cps"]+"¡¢"+
-		giftn["per"]+"¡¢"+
-		giftn["kar"]+"¼°"+
-		giftn["cor"]+"Ö®ºÍ²»ÄÜ¶àÓÚ 80 ¡£\n");
+	write("ä½ çš„"+giftn["cps"]+"ã€"+
+		giftn["per"]+"ã€"+
+		giftn["kar"]+"åŠ"+
+		giftn["cor"]+"ä¹‹å’Œä¸èƒ½å¤šäº 80 ã€‚\n");
 	get_start(me);
 	return;
     }
@@ -225,7 +225,7 @@ void do_finish(object me)
     ok=0;
     while(!ok) {
 	gt["cps"]=10+random(21);
-	if(me->query("gender")=="ÄĞĞÔ")
+	if(me->query("gender")=="ç”·æ€§")
 	  gt["per"]=10+random(21);
 	else
 	  gt["per"]=15+random(16);  
@@ -245,9 +245,9 @@ void do_finish(object me)
     }
     me->delete("no_gift");
     me->flush_buffer(); // clear receive message buffer.
-    tell_object(me,"\n\n\nºÃ£¡×£ÄãÎ÷ÌìÈ¡¾­Ôç³ÉÕı¹û£¡\n\n\n");
+    tell_object(me,"\n\n\nå¥½ï¼ç¥ä½ è¥¿å¤©å–ç»æ—©æˆæ­£æœï¼\n\n\n");
     tell_object(me,
-	"Ö»¼ûÑÛÇ°Ï¼¹âÒ»ÉÁ£¬ÄãÒÑ¾­À´µ½ÁËÒ»¸öÄ°ÉúµÄÊÀ½ç£¨£ì£ï£ï£ë£©£®£®£®\n\n");
+	"åªè§çœ¼å‰éœå…‰ä¸€é—ªï¼Œä½ å·²ç»æ¥åˆ°äº†ä¸€ä¸ªé™Œç”Ÿçš„ä¸–ç•Œï¼ˆï½Œï½ï½ï½‹ï¼‰ï¼ï¼ï¼\n\n");
 
     if (("/adm/daemons/band"
        ->create_char_banned(query_ip_number(me)) == 1 ||
@@ -259,9 +259,9 @@ void do_finish(object me)
     }
 
     env=load_object(start_room);
-    tell_object(env,({"\n¶ä¶äÏéÔÆºöÈ»Ó¿ÏÖÔÚÌì¼Ê¡£\n\n",
-		"\nÌì±ßÒ»¿ÅÁ÷ĞÇÙ¿µØ»®¹ı£®£®£®\n\n",
-		"ºöÌıÔ¶´¦¾ªÌì¶¯µØÒ»Éù¾ŞÏì£¬Ëæ¼´Ò»µÀ½ğ¹âÉÁ¹ı£®£®£®\n"})
+    tell_object(env,({"\næœµæœµç¥¥äº‘å¿½ç„¶æ¶Œç°åœ¨å¤©é™…ã€‚\n\n",
+		"\nå¤©è¾¹ä¸€é¢—æµæ˜Ÿå€åœ°åˆ’è¿‡ï¼ï¼ï¼\n\n",
+		"å¿½å¬è¿œå¤„æƒŠå¤©åŠ¨åœ°ä¸€å£°å·¨å“ï¼Œéšå³ä¸€é“é‡‘å…‰é—ªè¿‡ï¼ï¼ï¼\n"})
 	    [random(3)]);
     me->move(env,1);
     me->save();
@@ -272,7 +272,7 @@ void continue_finish(string arg, object me)
 {
     if(!me) return;
     if(!arg) {
-	write("ÄãÊÇ·ñÏë¼ÌĞø·ÖÅäÕâĞ©Ê£ÓàµãÊı£¿[y/n]");
+	write("ä½ æ˜¯å¦æƒ³ç»§ç»­åˆ†é…è¿™äº›å‰©ä½™ç‚¹æ•°ï¼Ÿ[y/n]");
 	input_to("continue_finish",me);    
 	return;
     }
@@ -285,7 +285,7 @@ void continue_finish(string arg, object me)
 	do_finish(me);
 	return;
     }
-	write("ÄãÊÇ·ñÏë¼ÌĞø·ÖÅäÕâĞ©Ê£ÓàµãÊı£¿[y/n]");
+	write("ä½ æ˜¯å¦æƒ³ç»§ç»­åˆ†é…è¿™äº›å‰©ä½™ç‚¹æ•°ï¼Ÿ[y/n]");
 	input_to("continue_finish",me);    
     return;
 }
@@ -297,13 +297,13 @@ void get_number(string arg, object me, int ind)
     
     if(!me) return;
     if(!arg || sscanf(arg,"%d",value)!=1) {
-	write("ÇëÊäÈë"+giftn[index[ind]]+"µÄĞÂÈ¡Öµ[10-30]£º");
+	write("è¯·è¾“å…¥"+giftn[index[ind]]+"çš„æ–°å–å€¼[10-30]ï¼š");
 	input_to("get_number",me,ind);
 	return;
     }
     if(value<10 || value>30) {
-	write("ÊıÖµÓ¦½éÓÚ 10 ºÍ 30 Ö®¼ä¡£\n");
-	write("ÇëÊäÈë"+giftn[index[ind]]+"µÄĞÂÈ¡Öµ[10-30]£º");
+	write("æ•°å€¼åº”ä»‹äº 10 å’Œ 30 ä¹‹é—´ã€‚\n");
+	write("è¯·è¾“å…¥"+giftn[index[ind]]+"çš„æ–°å–å€¼[10-30]ï¼š");
 	input_to("get_number",me,ind);
 	return;
     }
@@ -320,29 +320,29 @@ void get_number(string arg, object me, int ind)
     
     if((int)(gt["str"]+gt["con"]+gt["int"]+gt["spi"])>90) {
 	gt[name]=old_value;
-	write("ÄãµÄ"+giftn["str"]+"¡¢"+
-		giftn["con"]+"¡¢"+
-		giftn["int"]+"¼°"+
-		giftn["spi"]+"Ö®ºÍ²»ÄÜ¶àÓÚ 90 ¡£\n");
-	write("ÇëÊäÈë"+giftn[index[ind]]+"µÄĞÂÈ¡Öµ[10-30]£º");
+	write("ä½ çš„"+giftn["str"]+"ã€"+
+		giftn["con"]+"ã€"+
+		giftn["int"]+"åŠ"+
+		giftn["spi"]+"ä¹‹å’Œä¸èƒ½å¤šäº 90 ã€‚\n");
+	write("è¯·è¾“å…¥"+giftn[index[ind]]+"çš„æ–°å–å€¼[10-30]ï¼š");
 	input_to("get_number",me,ind);
 	return;
     }
 /*
     if((int)(gt["cps"]+gt["per"]+gt["kar"]+gt["cor"])>80) {
 	gt[name]=old_value;
-	write("ÄãµÄ"+giftn["cps"]+"¡¢"+
-		giftn["per"]+"¡¢"+
-		giftn["kar"]+"¼°"+
-		giftn["cor"]+"Ö®ºÍ²»ÄÜ¶àÓÚ 80 ¡£\n");
-	write("ÇëÊäÈë"+giftn[index[ind]]+"µÄĞÂÈ¡Öµ[10-30]£º");
+	write("ä½ çš„"+giftn["cps"]+"ã€"+
+		giftn["per"]+"ã€"+
+		giftn["kar"]+"åŠ"+
+		giftn["cor"]+"ä¹‹å’Œä¸èƒ½å¤šäº 80 ã€‚\n");
+	write("è¯·è¾“å…¥"+giftn[index[ind]]+"çš„æ–°å–å€¼[10-30]ï¼š");
 	input_to("get_number",me,ind);
 	return;
     }
  */   
     me->add_temp("gift_left",old_value-value);
     me->set_temp("gifts",gt);
-    write("Äã½«"+giftn[name]+"ÉèÎª"+chinese_number(value)+"¡£\n");
+    write("ä½ å°†"+giftn[name]+"è®¾ä¸º"+chinese_number(value)+"ã€‚\n");
 
     get_start(me);
 }

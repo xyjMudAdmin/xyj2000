@@ -9,23 +9,23 @@ inherit ITEM;
  
 void create()
 {
-  set_name("¾É°×²¼´î°ü",({"da bao", "bao", "fabao"}));
+  set_name("æ—§ç™½å¸ƒæ­åŒ…",({"da bao", "bao", "fabao"}));
   set_weight(5000);
   set_max_encumbrance(100000000000);
   if(clonep())
     set_default_object(__FILE__);
   else {
-    set("unit","Ö»");
+    set("unit","åª");
     set("value", 100000);
     set("material","cloth");
-    set("long","Ò»Ö»ÆÆ¾ÉµÄ°×²¼´î°ü¡£\n");
+    set("long","ä¸€åªç ´æ—§çš„ç™½å¸ƒæ­åŒ…ã€‚\n");
   }
   set("no_fight", 1);
   set("no_magic", 1);
   set("unique", 1);
-  set("no_sell", "¾É°×²¼´î°üÄË·¨±¦Ã»ÈË¸ÒÂòÒ²¡£\n");
-  //set("no_drop", "¾É°×²¼´î°üÄË·¨±¦²»¿ÉÈÓÆúÒ²¡£\n");
-  //set("no_give", "¾É°×²¼´î°üÄË·¨±¦²»¿ÉÔùÈËÒ²¡£\n");
+  set("no_sell", "æ—§ç™½å¸ƒæ­åŒ…ä¹ƒæ³•å®æ²¡äººæ•¢ä¹°ä¹Ÿã€‚\n");
+  //set("no_drop", "æ—§ç™½å¸ƒæ­åŒ…ä¹ƒæ³•å®ä¸å¯æ‰”å¼ƒä¹Ÿã€‚\n");
+  //set("no_give", "æ—§ç™½å¸ƒæ­åŒ…ä¹ƒæ³•å®ä¸å¯èµ äººä¹Ÿã€‚\n");
   set("replace_file", "/d/qujing/xiaoxitian/obj/baofake.c");
   set("is_monitored",1);
   setup();
@@ -50,14 +50,14 @@ int do_out ()
   if (who->query_temp("no_move") ||
       who->is_busy())
   {
-    tell_object (who, "Ïë³öÈ¥£¿¿ÉÏ§ÄãÏÖÔÚ¶¯¶¼¶¯²»ÁË¡£\n");
+    tell_object (who, "æƒ³å‡ºåŽ»ï¼Ÿå¯æƒœä½ çŽ°åœ¨åŠ¨éƒ½åŠ¨ä¸äº†ã€‚\n");
     return 1;
   }
-  tell_object (who, "ÄãÏÆ¿ª¾É°×²¼´î°ü¿Ú£¬ÂýÂýÅÀÁË³öÈ¥¡£\n");
+  tell_object (who, "ä½ æŽ€å¼€æ—§ç™½å¸ƒæ­åŒ…å£ï¼Œæ…¢æ…¢çˆ¬äº†å‡ºåŽ»ã€‚\n");
   if (room->is_character())
     room = environment (room);
   who->move(room);
-  message_vision ("$N´Ó¾É°×²¼´î°ü¿ÚÀï¹°ÁË³öÀ´¡£\n",who);
+  message_vision ("$Nä»Žæ—§ç™½å¸ƒæ­åŒ…å£é‡Œæ‹±äº†å‡ºæ¥ã€‚\n",who);
   return 1;
 }
 
@@ -71,54 +71,54 @@ int ji_ob (object victim)
 
   if (me->is_busy())
   {
-    tell_object (me, "ÄãÎÞ·¨Ã¦ÖÐÍµÏÐ¼À"+baoname+"¡£\n");
-    return notify_fail("ÄãÕýÃ¦×ÅÄØ¡£\n");
+    tell_object (me, "ä½ æ— æ³•å¿™ä¸­å·é—²ç¥­"+baoname+"ã€‚\n");
+    return notify_fail("ä½ æ­£å¿™ç€å‘¢ã€‚\n");
   }
 
   if (sizeof(all_inventory(bao))>0)
   {
-    tell_object (me, baoname+"ÀïÓÐÔÓÎï£¬ÄãÎÞ·¨ÔÙ¼À"+baoname+"¡£\n");
-    return notify_fail("Äã¼À"+baoname+"Ê§°Ü¡£\n");
+    tell_object (me, baoname+"é‡Œæœ‰æ‚ç‰©ï¼Œä½ æ— æ³•å†ç¥­"+baoname+"ã€‚\n");
+    return notify_fail("ä½ ç¥­"+baoname+"å¤±è´¥ã€‚\n");
   }
 
   if (!victim)
   {
-    tell_object (me, "ÄãÏë¼ÀµÄÈË²»ÔÚÕâÀï¡£\n");
-    return notify_fail("Äã¼À"+baoname+"Ê§°Ü¡£\n");
+    tell_object (me, "ä½ æƒ³ç¥­çš„äººä¸åœ¨è¿™é‡Œã€‚\n");
+    return notify_fail("ä½ ç¥­"+baoname+"å¤±è´¥ã€‚\n");
   }
 
   if (!living(victim))
   {
-    tell_object (me, victim->query("name")+"ÒÑ¾­ºÁÎÞµÖ¿¹ÄÜÁ¦£¬²»±Ø¼ÀÁË¡£\n");
-    return notify_fail("Äã¼À"+baoname+"Ê§°Ü¡£\n");
+    tell_object (me, victim->query("name")+"å·²ç»æ¯«æ— æŠµæŠ—èƒ½åŠ›ï¼Œä¸å¿…ç¥­äº†ã€‚\n");
+    return notify_fail("ä½ ç¥­"+baoname+"å¤±è´¥ã€‚\n");
   }
 
   if (!me->is_fighting(victim))
   {
-    tell_object (me, "Ö»ÓÐÕ½¶·ÖÐ²ÅÄÜ¼À"+baoname+"¡£\n");
-    return notify_fail("Äã¼À"+baoname+"Ê§°Ü¡£\n");
+    tell_object (me, "åªæœ‰æˆ˜æ–—ä¸­æ‰èƒ½ç¥­"+baoname+"ã€‚\n");
+    return notify_fail("ä½ ç¥­"+baoname+"å¤±è´¥ã€‚\n");
   }
 
   if ((int)me->query("mana") < 500)
   {
-    tell_object (me, "ÄãµÄ·¨Á¦²»×ã£¬¼À²»ÁË"+baoname+"¡£\n");
-    return notify_fail("Äã¼À"+baoname+"Ê§°Ü¡£\n");
+    tell_object (me, "ä½ çš„æ³•åŠ›ä¸è¶³ï¼Œç¥­ä¸äº†"+baoname+"ã€‚\n");
+    return notify_fail("ä½ ç¥­"+baoname+"å¤±è´¥ã€‚\n");
   }
 
   if( (int)me->query("sen") < 500)
   {
-    tell_object (me, "ÄãÎÞ·¨¼¯ÖÐ¾«ÉñÄîÖäÓï¡£\n");
-    return notify_fail("Äã¼À"+baoname+"Ê§°Ü¡£\n");
+    tell_object (me, "ä½ æ— æ³•é›†ä¸­ç²¾ç¥žå¿µå’’è¯­ã€‚\n");
+    return notify_fail("ä½ ç¥­"+baoname+"å¤±è´¥ã€‚\n");
   }
 
-  message_vision ("\n$N¿ÚÖÐÄî×ÅÖäÓï£¬à§µØÈÓÆð"+baoname+"¡£\n",me,victim);
+  message_vision ("\n$Nå£ä¸­å¿µç€å’’è¯­ï¼Œå”°åœ°æ‰”èµ·"+baoname+"ã€‚\n",me,victim);
   if (bao->query("interactive_usage") > (me->query("kar")/2))
   {
-    message_vision ("Ö»¼û"+baoname+"Í»È»ÔÚ°ë¿ÕÖÐ±ä³ÉËéÆ¬ÈçÌìÅ®É¢»¨°ãÆ®Âä¡£\n",me);
+    message_vision ("åªè§"+baoname+"çªç„¶åœ¨åŠç©ºä¸­å˜æˆç¢Žç‰‡å¦‚å¤©å¥³æ•£èŠ±èˆ¬é£˜è½ã€‚\n",me);
     destruct (bao);
-    return notify_fail("Äã¼À"+baoname+"Ê§°Ü¡£\n");
+    return notify_fail("ä½ ç¥­"+baoname+"å¤±è´¥ã€‚\n");
   }
-  message_vision (baoname+"ÌÚÆðÔÚ°ë¿ÕÖÐ£¬Ö»¼ûÒ»¹É°×Æø¿ñ·çÒ»°ãµ¹Îü½øÈ¥¡£\n",me,victim);
+  message_vision (baoname+"è…¾èµ·åœ¨åŠç©ºä¸­ï¼Œåªè§ä¸€è‚¡ç™½æ°”ç‹‚é£Žä¸€èˆ¬å€’å¸è¿›åŽ»ã€‚\n",me,victim);
   me->start_busy(60/mykar);
   victimkar=victim->query("kar");
   myspells=me->query_skill("spells")/10;
@@ -130,18 +130,18 @@ int ji_ob (object victim)
   dp=(victimexp+victimspells*victimspells*victimspells/3)*victim->query("sen")/victim->query("max_sen");
   dp=dp*victimkar/1000;
   if (wizardp(me) && me->query("env/combat")=="verbose")
-    tell_object(me, GRN "½ø¹¥£º"+ap+"£¬·ÀÊØ£º"+dp+"¡£\n" NOR);
+    tell_object(me, GRN "è¿›æ”»ï¼š"+ap+"ï¼Œé˜²å®ˆï¼š"+dp+"ã€‚\n" NOR);
 
   if(random(ap+dp)>dp ||
      (!interactive(me) && 
       (!victim->query_temp("obstacle/xiaoxitian_entered") ||
-       strsrch(victim->query("nickname")+" ","½û")==-1)))
+       strsrch(victim->query("nickname")+" ","ç¦")==-1)))
       // add " " to avoid null string being strsrch.
   {
      int ratio;
 
-     message_vision ("$n¶Ù¸ÐÍ·ÖØ½ÅÇá£¬Éí²»ÓÉ¼ºµØÆ®ÁËÆðÀ´£¡\n",me,victim);
-     message_vision ("Ò»Ë²¼ä£¬$nÒÑ±»"+baoname+"×°ÁË½øÈ¥£¡\n",me,victim);
+     message_vision ("$né¡¿æ„Ÿå¤´é‡è„šè½»ï¼Œèº«ä¸ç”±å·±åœ°é£˜äº†èµ·æ¥ï¼\n",me,victim);
+     message_vision ("ä¸€çž¬é—´ï¼Œ$nå·²è¢«"+baoname+"è£…äº†è¿›åŽ»ï¼\n",me,victim);
      victim->move(bao);
      if (!userp(me))
      {
@@ -150,11 +150,11 @@ int ji_ob (object victim)
 
        victim->move("/d/qujing/xiaoxitian/chanfang");
        room = environment(victim);
-       message_vision ("$N±»ÍÏÁË¹ýÀ´¡£\n",victim);
+       message_vision ("$Nè¢«æ‹–äº†è¿‡æ¥ã€‚\n",victim);
        nao = present ("jin nao",room);
        if (nao)
        {
-         message_vision ("ïÏµØÒ»Éù£¬$N±»¹Ø½øÁËÒ»Ö»¾Þ´óµÄ½ðîó¡£\n",victim,nao);
+         message_vision ("é”µåœ°ä¸€å£°ï¼Œ$Nè¢«å…³è¿›äº†ä¸€åªå·¨å¤§çš„é‡‘é“™ã€‚\n",victim,nao);
          victim->set_temp("obstacle/xiaoxitian_entered", 1);
          victim->move(nao);
        }
@@ -183,7 +183,7 @@ int ji_ob (object victim)
   }
   else
   {
-    message_vision ("$nÒ»×ªÉí±Ü¿ªÁË"+baoname+"µÄÖÂÃüÒ»ÕÐ£¡\n",me,victim);
+    message_vision ("$nä¸€è½¬èº«é¿å¼€äº†"+baoname+"çš„è‡´å‘½ä¸€æ‹›ï¼\n",me,victim);
     me->add("mana", -200);
   }
   if (victim)
@@ -228,7 +228,7 @@ void releasing (object who)
   if (environment(who) != me)
     return;
   who->move(room);
-  message_vision ("$N´Ó¾É°×²¼´î°ü¿ÚÀï¹°ÁË³öÀ´¡£\n",who);
+  message_vision ("$Nä»Žæ—§ç™½å¸ƒæ­åŒ…å£é‡Œæ‹±äº†å‡ºæ¥ã€‚\n",who);
 }
 
 int ji (string target)
@@ -239,7 +239,7 @@ int ji (string target)
   object victim;
 
   if (!target)
-    return notify_fail("ÄãÏë¶ÔË­¼À"+baoname+"£¿\n");
+    return notify_fail("ä½ æƒ³å¯¹è°ç¥­"+baoname+"ï¼Ÿ\n");
 
   victim=present(target,environment(me));
   bao->ji_ob(victim);

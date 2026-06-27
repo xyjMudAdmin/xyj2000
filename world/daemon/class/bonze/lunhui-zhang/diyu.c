@@ -1,6 +1,6 @@
 // cracked by vikee 2/09/2002   vikee@263.net
 
-//�������
+//我入地狱
 
 #include <ansi.h>
 #include <combat.h>
@@ -17,22 +17,22 @@ int perform(object me, object target)
 
       if( !target ) target = offensive_target(me);
       if( !target || !target->is_character()||target->is_corpse()||target==me)
-          return notify_fail("��Ҫ����˭��\n");
+          return notify_fail("你要攻击谁？\n");
       if (!target->is_fighting(me))
-             return notify_fail("����û���ڴ�ܣ�\n");
+             return notify_fail("你们没有在打架！\n");
       if (me->query_skill("force")<100)
-          return notify_fail("����ڹ�̫�\n");
+          return notify_fail("你的内功太差。\n");
       if (me->query_skill("buddhism",1)<60)
-         return notify_fail("��𷨲�������û��������Ĵȱ��ĳ���\n");
+         return notify_fail("你佛法不够，还没有入地狱的慈悲心肠。\n");
       if (damage=me->query_skill("staff")<100) 
-          return notify_fail("����ȷ���Ƿ���\n");
+          return notify_fail("你的杖法还欠火候。\n");
       if (me->query("force")<500)
-           return notify_fail("���������̣����Գ��С�\n");
+           return notify_fail("你内力不继，难以出招。\n");
      
-    if (me->query_temp("pfm_diyu_delay")) return notify_fail("����ù����У������ȵ���һ�°ɡ�\n");
+    if (me->query_temp("pfm_diyu_delay")) return notify_fail("你刚用过此招，还是先调整一下吧。\n");
   me->add("force",-200);
-    message_vision(HIY"$N���з�ţ���ȫ������ע������"+weapon->name()+
-       HIY"��ʱ��ϼ�����䣬�յ�$n�������ۣ�\n"NOR,me,target);
+    message_vision(HIY"$N口诵佛号，将全身功力注入手中"+weapon->name()+
+       HIY"顿时间霞光四射，照得$n睁不开眼！\n"NOR,me,target);
     enhance=me->query_skill("lotusforce",1)/2;
     me->add_temp("apply/attack", enhance);  
     damage=me->query_skill("buddhism",1);
@@ -58,7 +58,7 @@ void postdiyu(object me,object target,object weapon,int damage) {
    if (!me->query_temp("putuo_diyu")) return;
    me->delete_temp("putuo_diyu");
    if (damage<100) return;
-   message_vision(HIR"$N�������ȣ�ֻ���û������ѣ��������á�\n"NOR,me);
+   message_vision(HIR"$N用力过度，只觉得浑身虚脱，动弹不得。\n"NOR,me);
    damage=random(damage);
    if (me->query("kee")-damage<10) damage=me->query("kee")-10;
   if (damage<0) damage=0;

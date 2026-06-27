@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-  set ("short", "¹¬Ç½ÍâÎ§");
+  set ("short", "å®«å¢™å¤–å›´");
   set ("long", @LONG
 
-ÕâÀïÊÇÍõ¹¬µÄ¹¬Ç½ÍâÎ§£¬¸ß´óµÄÇ½±ÚÄËÊÇÇàÊ¯Àİ³É£¬Ê®·Ö½áÊµÕûÆë¡£
-¹¬Ç½ÉÏ·½ÓĞÒ»¸öÉÚÍ¤½ÇÂ¥¡£
+è¿™é‡Œæ˜¯ç‹å®«çš„å®«å¢™å¤–å›´ï¼Œé«˜å¤§çš„å¢™å£ä¹ƒæ˜¯é’çŸ³å’æˆï¼Œååˆ†ç»“å®æ•´é½ã€‚
+å®«å¢™ä¸Šæ–¹æœ‰ä¸€ä¸ªå“¨äº­è§’æ¥¼ã€‚
 
 LONG);
 
@@ -27,6 +27,6 @@ int valid_leave (object who, string dir)
 {
   object shi = present ("wei shi", environment(who));
   if (dir == "west" && shi && living (shi))
-      return notify_fail (shi->query("name")+"ºÈµÀ£º½ûĞĞ£¡\n");
+      return notify_fail (shi->query("name")+"å–é“ï¼šç¦è¡Œï¼\n");
   return ::valid_leave(who, dir);
 }

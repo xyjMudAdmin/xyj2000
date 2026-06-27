@@ -5,10 +5,10 @@ inherit NPC;
 
 void create()
 {
-  set_name("Ì«ÉÏÀÏ¾ý",({"taishang laojun","laojun","dao"}));
-  set("gender", "ÄÐÐÔ");
+  set_name("å¤ªä¸Šè€å›",({"taishang laojun","laojun","dao"}));
+  set("gender", "ç”·æ€§");
   set("age", 55);
-  set("long", "    \nÌ«ÉÏÀÏ¾ý¡£\n");
+  set("long", "    \nå¤ªä¸Šè€å›ã€‚\n");
 
   set("attitude", "peaceful");
   set("class", "taoist");
@@ -34,7 +34,7 @@ void create()
 
 
   set("inquiry", ([
-  "here"   : "ÕâÀï¾ÍÊÇ¶µÂÊ¹¬£¬ÄãÀ´ÕâÀï¸ÉÊ²Ã´£¿",
+  "here"   : "è¿™é‡Œå°±æ˜¯å…œçŽ‡å®«ï¼Œä½ æ¥è¿™é‡Œå¹²ä»€ä¹ˆï¼Ÿ",
 ]));
 
 
@@ -64,7 +64,7 @@ void greeting(object who)
   if (who->query("dntg/laojunlu")=="allow")
     {
     me->command("kick");
-    me->command("chat ´óÊÂ²»ºÃ£¡"+who->query("name")+"´Ó°ËØÔÂ¯ÖÐÌÓ³öÀ´ÁË£¡");
+    me->command("chat å¤§äº‹ä¸å¥½ï¼"+who->query("name")+"ä»Žå…«å¦ç‚‰ä¸­é€ƒå‡ºæ¥äº†ï¼");
     remove_call_out("leave_laojunlu");
     call_out("leave_laojunlu", 1, who);  
     } 
@@ -72,6 +72,6 @@ void greeting(object who)
 
 int leave_laojunlu(object who)
 {
-    message_vision("$NÅ­»ðÉÏ×²£¬Ò»½ÅÌß·­ÀÏ¾ýÂ¯£¬¶ÏºÈÒ»Éù£º´ýÎÒÉ±µ½ÌìÍ¥£¬¶áÁËÄÇ»è¾ýµÄ±¦×ù£¡¡£\n", who);
+    message_vision("$Næ€’ç«ä¸Šæ’žï¼Œä¸€è„šè¸¢ç¿»è€å›ç‚‰ï¼Œæ–­å–ä¸€å£°ï¼šå¾…æˆ‘æ€åˆ°å¤©åº­ï¼Œå¤ºäº†é‚£æ˜å›çš„å®åº§ï¼ã€‚\n", who);
     who->move("/d/dntg/sky/tongmingdian");
 }

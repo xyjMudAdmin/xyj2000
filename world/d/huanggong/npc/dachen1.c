@@ -7,9 +7,9 @@ inherit NPC;
 
 void create()
 {
-  set_name("¶ÎÖ¾ÏÍ", ({ "duan zhixian", "duan", "zhixian", "da chen" }));
-  set("title", "´ó³¼");
-  set("gender", "ÄÐÐÔ");
+  set_name("æ®µå¿—è´¤", ({ "duan zhixian", "duan", "zhixian", "da chen" }));
+  set("title", "å¤§è‡£");
+  set("gender", "ç”·æ€§");
   set("age", 60);
   set("per", 30);
   set("combat_exp", 300000);
@@ -49,14 +49,14 @@ void reward (object who)
 
   who->set("channels",channels);
 
-  message_vision ("$N¶Ô$nÒ»°Ý£ºÆÐÈøÍÐ±ÝÏÂ´«·¨Ö¼£¬´Í"+RANK_D->query_respect(who)+
-                  chinese_number(points)+"µãÇ±ÄÜ£¡\n",me,who);
+  message_vision ("$Nå¯¹$nä¸€æ‹œï¼šè©è¨æ‰˜é™›ä¸‹ä¼ æ³•æ—¨ï¼Œèµ"+RANK_D->query_respect(who)+
+                  chinese_number(points)+"ç‚¹æ½œèƒ½ï¼\n",me,who);
 /*
-  command (channel+" "+who->query("name")+who->query("quest/reason")+"±ÝÏÂÓÐÖ¼£¬´Í"+
-           chinese_number(points)+"µãÇ±ÄÜ£¡");
+  command (channel+" "+who->query("name")+who->query("quest/reason")+"é™›ä¸‹æœ‰æ—¨ï¼Œèµ"+
+           chinese_number(points)+"ç‚¹æ½œèƒ½ï¼");
 */                  
   who->add("quest/gain/potential",points);
-  reporting (who, who->query("quest/reason"), points, "µãÇ±ÄÜ");
+  reporting (who, who->query("quest/reason"), points, "ç‚¹æ½œèƒ½");
   who->add("potential",points);
 }
 

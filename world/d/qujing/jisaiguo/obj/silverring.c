@@ -5,16 +5,16 @@ inherit FINGER;
 
 void create()
 {
-        set_name("Òø½äÖ¸", ({ "silver ring", "ring" }));
+        set_name("é“¶æˆ’æŒ‡", ({ "silver ring", "ring" }));
         set("weight", 500);
-        set("long", "Ò»¸öÒø¹â²Ó²ÓµÄ½äÖ¸¡£\n");
+        set("long", "ä¸€ä¸ªé“¶å…‰ç¿ç¿çš„æˆ’æŒ‡ã€‚\n");
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
+                set("unit", "ä¸ª");
                 set("value", 400);
                 set("material", "gold");
-		set("wear_msg", "$N´÷ÉÏÒ»¸ö$n¡£\n");
+		set("wear_msg", "$Næˆ´ä¸Šä¸€ä¸ª$nã€‚\n");
                 set("armor_prop/armor", 1);
         }
         setup();

@@ -7,15 +7,15 @@ void reset_long();
 
 string long=@LONG
 
-ÕâÊÇÒ»¼ä¿í³¨Ã÷ÁÁµÄ´óÌü£¬ÌüµÄÕýÖÐ¼äÊÇÒ»¸ùÔ²ÐÎµÄÖù×Ó¡£Öù×ÓÉÏÌù
-ÂúÁË¸÷ÖÖ¹ã¸æ£ºÓÐ»»·¿µÄ£¬ÓÐÂô¼Ò¾ßµÄ£¬µ«ÆäÖÐ×î¶àµÄ»¹ÊÇÕÒ´òÅÆ´î
-µµµÄ¹ã¸æ¡£ÌüµÄ¶«ÄÏÎ÷±±¸÷ÓÐ¸öÃÅ£¬ÀïÃæ´«³ö¡°¹°°¡£¡¡±¡°±ÐÁË£¡¡±
-µÈµÄ½ÐÉù¡£
+è¿™æ˜¯ä¸€é—´å®½æ•žæ˜Žäº®çš„å¤§åŽ…ï¼ŒåŽ…çš„æ­£ä¸­é—´æ˜¯ä¸€æ ¹åœ†å½¢çš„æŸ±å­ã€‚æŸ±å­ä¸Šè´´
+æ»¡äº†å„ç§å¹¿å‘Šï¼šæœ‰æ¢æˆ¿çš„ï¼Œæœ‰å–å®¶å…·çš„ï¼Œä½†å…¶ä¸­æœ€å¤šçš„è¿˜æ˜¯æ‰¾æ‰“ç‰Œæ­
+æ¡£çš„å¹¿å‘Šã€‚åŽ…çš„ä¸œå—è¥¿åŒ—å„æœ‰ä¸ªé—¨ï¼Œé‡Œé¢ä¼ å‡ºâ€œæ‹±å•Šï¼â€â€œæ¯™äº†ï¼â€
+ç­‰çš„å«å£°ã€‚
 LONG;
 
 void create ()
 {
-  set ("short", "¾ÛÒåÌü");
+  set ("short", "èšä¹‰åŽ…");
   set("light_up", 1);
   set("no_magic", 1);
   set("no_fight", 1);

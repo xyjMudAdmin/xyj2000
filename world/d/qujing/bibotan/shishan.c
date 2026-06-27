@@ -3,12 +3,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "��ʯɽ");
+  set ("short", "乱石山");
   set ("long", @LONG
 
-��ʯɽ����ʯ��أ����С�ĵ������ǡ����ϼ����������ľ
-Ψ�к���������ɽ������һ�ź��ơ�Զ���̲�̶�����Թ�������
-��«����ѩ��
+乱石山上乱石遍地，大的小的到处都是。坡上极干燥，所生草木
+唯有红柳，如在山上笼了一团红云。远望碧波潭中浪淘滚滚，岸
+边芦花如雪。
 LONG);
 
 //  set("objects", ([ /* sizeof() == 1*/ 

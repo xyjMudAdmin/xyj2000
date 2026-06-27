@@ -5,11 +5,11 @@ inherit ITEM;
 
 void create()
 {
-	set_name("·ûÖä", ({"seal"}) );
+	set_name("ç¬¦å’’", ({"seal"}) );
 	set_weight(5);
 	set("long",
-		"ÕâÊÇÒ»ÕÅ»­ºÃµÄ·ûÖä£¬ÓÃ attach Ö¸Áî¿ÉÒÔ½«ËüÌùÔÚÄ³ÈË(»òÄ³Îï)ÉíÉÏ¡£\n");
-	set("unit", "ÕÅ");
+		"è¿™æ˜¯ä¸€å¼ ç”»å¥½çš„ç¬¦å’’ï¼Œç”¨ attach æŒ‡ä»¤å¯ä»¥å°†å®ƒè´´åœ¨æŸäºº(æˆ–æŸç‰©)èº«ä¸Šã€‚\n");
+	set("unit", "å¼ ");
 }
 
 int unequip()
@@ -30,24 +30,24 @@ int do_attach(string arg)
 	function f;
 
 	if( !arg || sscanf(arg, "%s to %s", sheet, dest)!=2 )
-		return notify_fail("Ö¸Áî¸ñÊ½£ºattach <·ûÖä> to <Ä¿±ê>\n");
+		return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šattach <ç¬¦å’’> to <ç›®æ ‡>\n");
 	
 	if( !id(sheet) ) return 0;
 
 	ob = present(dest, this_player());
 	if( !ob ) ob = present(dest, environment(this_player()));
-	if( !ob ) return notify_fail("ÄãÒª¶ÔÊ²Ã´¶«Î÷Ê¹ÓÃÕâÕÅ·ûÖä£¿\n");
+	if( !ob ) return notify_fail("ä½ è¦å¯¹ä»€ä¹ˆä¸œè¥¿ä½¿ç”¨è¿™å¼ ç¬¦å’’ï¼Ÿ\n");
 
 	if( !functionp(f = query("attach_func", 1)) )
-		return notify_fail("ÕâÕÅ·ûÃ»ÓĞÓÃ¡£\n");
+		return notify_fail("è¿™å¼ ç¬¦æ²¡æœ‰ç”¨ã€‚\n");
 
 	if( evaluate(f, ob) ) {
 		if( ob!=this_player() )
-			message_vision("$NÄÃ³öÒ»ÕÅ" + name() + "Íù$nÒ»Ìù¡£\n", this_player(), ob);
+			message_vision("$Næ‹¿å‡ºä¸€å¼ " + name() + "å¾€$nä¸€è´´ã€‚\n", this_player(), ob);
 		if( ob && ob->is_character() ) {
 			move(ob);
 			set("equipped", "sealed");
-			set("no_drop", "ÕâÑù¶«Î÷²»ÄÜ¶ªÆú£¬±ØĞëÓÃ detach¡£\n");
+			set("no_drop", "è¿™æ ·ä¸œè¥¿ä¸èƒ½ä¸¢å¼ƒï¼Œå¿…é¡»ç”¨ detachã€‚\n");
 		} else destruct(this_object());
 		return 1;
 	} else 

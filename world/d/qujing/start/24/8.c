@@ -3,12 +3,12 @@ inherit NPC;
 
 void create()
 {
-       	set_name("ÈÕ¹¬Ìì×Ó", ({"rigong tianzi", "tianzi", "zi"}));
-       	set("gender", "ÄĞĞÔ");
+       	set_name("æ—¥å®«å¤©å­", ({"rigong tianzi", "tianzi", "zi"}));
+       	set("gender", "ç”·æ€§");
        	set("age", 20);
         set("class", "xian");
        	set("attitude", "friendly");
-       	set("rank_info/respect", "ÈÕÉñ");
+       	set("rank_info/respect", "æ—¥ç¥");
         set("per", 30);
         set("int", 30);
 	set("str", 30);

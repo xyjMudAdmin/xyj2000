@@ -5,11 +5,11 @@ inherit ITEM;
 
 void init()
 {
-    set("no_get", "ÄãÄÃ²»ÆğÀ´ÕâÑù¶«Î÷¡£ÊÔÊÔÍÚÍÚ(dig)¡£\n");
-    set("no_give","ÕâÃ´Õä¹óµÄÒ©£¬ÄÄÄÜËæ±ã¸øÈË£¿\n");
-    set("no_drop","ÕâÃ´±¦¹óµÄµ¤Ò©£¬ÈÓÁË¶à¿ÉÏ§Ñ½£¡\n");
-    set("no_sell","·²ÈËÄÄÀïÖªµÀ"+this_object()->query("name")+
-	    "µÄ¼ÛÖµ£¿»¹ÊÇ×Ô¼ºÁô×Å°É¡£\n");
+    set("no_get", "ä½ æ‹¿ä¸èµ·æ¥è¿™æ ·ä¸œè¥¿ã€‚è¯•è¯•æŒ–æŒ–(dig)ã€‚\n");
+    set("no_give","è¿™ä¹ˆçè´µçš„è¯ï¼Œå“ªèƒ½éšä¾¿ç»™äººï¼Ÿ\n");
+    set("no_drop","è¿™ä¹ˆå®è´µçš„ä¸¹è¯ï¼Œæ‰”äº†å¤šå¯æƒœå‘€ï¼\n");
+    set("no_sell","å‡¡äººå“ªé‡ŒçŸ¥é“"+this_object()->query("name")+
+	    "çš„ä»·å€¼ï¼Ÿè¿˜æ˜¯è‡ªå·±ç•™ç€å§ã€‚\n");
 
     add_action("do_dig", "dig");
     add_action("do_eat", "eat");
@@ -17,15 +17,15 @@ void init()
 
 void create()
 {
-  set_name(RED "Çí²İÄÛÑ¿" NOR, ({"qiong cao","cao"}));
+  set_name(RED "ç¼è‰å«©èŠ½" NOR, ({"qiong cao","cao"}));
   set_weight(200);
   if (clonep())
     set_default_object(__FILE__);
   else {
-    set("unit", "¿Å");
-    set("long", "Ò»¿Å×ÏºìÉ«µÄĞ¡²İ¡£\n");
+    set("unit", "é¢—");
+    set("long", "ä¸€é¢—ç´«çº¢è‰²çš„å°è‰ã€‚\n");
     set("value", 0);
-    set("drug_type", "²¹Æ·");
+    set("drug_type", "è¡¥å“");
   }
   
   // the following line is added by snowcat
@@ -40,22 +40,22 @@ int do_dig(string arg)
 	where=environment(me);
 
 	if( me->query("can_eat"))
-		return notify_fail("Ê²Ã´£¿\n");
+		return notify_fail("ä»€ä¹ˆï¼Ÿ\n");
 
 	if( !arg || (arg!="qiong cao" && arg!="cao"))
-		return notify_fail("ÄãÒªÍÚÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦æŒ–ä»€ä¹ˆï¼Ÿ\n");
 
 	if(who->is_fighting() && who->is_busy())
-		return notify_fail("ÄãºÜÃ¦£¬Ã»Ê±¼äÍÚ²İ¡£\n");
+		return notify_fail("ä½ å¾ˆå¿™ï¼Œæ²¡æ—¶é—´æŒ–è‰ã€‚\n");
 
 	if( baihe=present("bai he")){
-		message_vision("°×º×³¤ÃùÒ»Éù£¬¶Ô$N·¢ÆğÁË¹¥»÷¡£\n", who);
+		message_vision("ç™½é¹¤é•¿é¸£ä¸€å£°ï¼Œå¯¹$Nå‘èµ·äº†æ”»å‡»ã€‚\n", who);
 		baihe->kill_ob(who);
 		who->fight_ob(baihe);
 		return 1;
 	}
 
-		message_vision("$NÇáÇá½«$nÍÚÁËÆğÀ´¡£\n", who, me);
+		message_vision("$Nè½»è½»å°†$næŒ–äº†èµ·æ¥ã€‚\n", who, me);
 		me->set("can_eat", 1);
 		remove_call_out("grow_a");
 		remove_call_out("grow_b");
@@ -70,7 +70,7 @@ int do_dig(string arg)
 		seteuid(getuid());
 		baihe=new("/d/penglai/npc/baihe");
 		baihe->move(where);
-	tell_room(environment(who), "ºöÌıÒ»Éùº×Ãù£¬°ë¿ÕÖĞ³åÏÂÒ»Ö»°×º×À´¡£\n");
+	tell_room(environment(who), "å¿½å¬ä¸€å£°é¹¤é¸£ï¼ŒåŠç©ºä¸­å†²ä¸‹ä¸€åªç™½é¹¤æ¥ã€‚\n");
 	baihe->kill_ob(who);
 	who->fight_ob(baihe);
 	}
@@ -88,9 +88,9 @@ int do_eat(string arg)
 	int force_add, mana_add, howold;
 	
   	if (!id(arg))
-    		return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+    		return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 	if( !me->query("can_eat"))
-		return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 
 
 	howold = (int)who->query("mud_age") + (int)who->query("age_modify");
@@ -99,7 +99,7 @@ int do_eat(string arg)
   	who->set("water", (int)who->max_water_capacity());
 
 	if( !me->query("eatable")){
-		message_vision("$NÀÇÍÌ»¢ÑÊ°ãµØ½«Ò»¿Å$n³ÔÁËÏÂÈ¥¡£\n", who, me);
+		message_vision("$Nç‹¼åè™å’½èˆ¬åœ°å°†ä¸€é¢—$nåƒäº†ä¸‹å»ã€‚\n", who, me);
 		destruct(me);
 		return 1;
 	}
@@ -107,8 +107,8 @@ int do_eat(string arg)
 	force_add=5;
 	mana_add=5;
 	
-	message_vision("$N½«Ò»¿Å$nÇáÇá½À×ÅÑÊÏÂÁË¶Ç£¬Á³ÉÏ·ºÆğÕóºìÔÎ¡£\n", who, me);
-	tell_object(who, "Äã¾õµÃÒ»ÕóÈÈÆøÖ±Í¨ÆßÇÏ£¬»ëÉíÉÏÏÂºÃÏóÓĞÊ¹²»ÍêµÄÁ¦Æø¡£\n");
+	message_vision("$Nå°†ä¸€é¢—$nè½»è½»åš¼ç€å’½ä¸‹äº†è‚šï¼Œè„¸ä¸Šæ³›èµ·é˜µçº¢æ™•ã€‚\n", who, me);
+	tell_object(who, "ä½ è§‰å¾—ä¸€é˜µçƒ­æ°”ç›´é€šä¸ƒçªï¼Œæµ‘èº«ä¸Šä¸‹å¥½è±¡æœ‰ä½¿ä¸å®Œçš„åŠ›æ°”ã€‚\n");
 
   who->set("eff_sen", (int)who->query("max_sen"));
   who->set("sen", (int)who->query("max_sen"));
@@ -140,8 +140,8 @@ void invocation()
 int grow_a(object me)
 {
 	int i=400+random(400);
-	tell_room(environment(me), me->name()+"ÂıÂıµØ³¤³öÁËÒ»¸öĞ¡Ò¶¡£\n", ({me, me}));
-	set_name(RED "Ò»Ò¶Çí²İ" NOR, ({"qiong cao","cao"}));
+	tell_room(environment(me), me->name()+"æ…¢æ…¢åœ°é•¿å‡ºäº†ä¸€ä¸ªå°å¶ã€‚\n", ({me, me}));
+	set_name(RED "ä¸€å¶ç¼è‰" NOR, ({"qiong cao","cao"}));
 	call_out("grow_b", i, me);
 	return 1;
 }
@@ -149,8 +149,8 @@ int grow_a(object me)
 int grow_b(object me)
 {
         int i=600+random(600);
-        tell_room(environment(me), me->name()+"ÂıÂıµØ³¤³öÁËÒ»¸öĞ¡Ò¶¡£\n", ({me, me}));
-        set_name(RED "¶şÒ¶Çí²İ" NOR, ({"qiong cao","cao"}));
+        tell_room(environment(me), me->name()+"æ…¢æ…¢åœ°é•¿å‡ºäº†ä¸€ä¸ªå°å¶ã€‚\n", ({me, me}));
+        set_name(RED "äºŒå¶ç¼è‰" NOR, ({"qiong cao","cao"}));
         call_out("grow_c", i, me);
         return 1;
 }
@@ -158,8 +158,8 @@ int grow_b(object me)
 int grow_c(object me)
 {
         int i=800+random(800);
-        tell_room(environment(me), me->name()+"ÂıÂıµØ³¤³öÁËÒ»¸öĞ¡Ò¶¡£\n", ({me, me}));
-        set_name(RED "ÈıÒ¶Çí²İ" NOR, ({"qiong cao","cao"}));
+        tell_room(environment(me), me->name()+"æ…¢æ…¢åœ°é•¿å‡ºäº†ä¸€ä¸ªå°å¶ã€‚\n", ({me, me}));
+        set_name(RED "ä¸‰å¶ç¼è‰" NOR, ({"qiong cao","cao"}));
         call_out("grow_d", i, me);  
         return 1;
 }
@@ -167,8 +167,8 @@ int grow_c(object me)
 int grow_d(object me)
 {
         int i=1000+random(1000);
-        tell_room(environment(me), me->name()+"ÂıÂıµØ³¤³öÁËÒ»¸öĞ¡Ò¶¡£\n", ({me, me}));
-        set_name(RED "ËÄÒ¶Çí²İ" NOR, ({"qiong cao","cao"}));
+        tell_room(environment(me), me->name()+"æ…¢æ…¢åœ°é•¿å‡ºäº†ä¸€ä¸ªå°å¶ã€‚\n", ({me, me}));
+        set_name(RED "å››å¶ç¼è‰" NOR, ({"qiong cao","cao"}));
         call_out("grow_e", i, me);  
         return 1;
 }
@@ -176,8 +176,8 @@ int grow_d(object me)
 int grow_e(object me)
 {
         int i=1200+random(1000);
-        tell_room(environment(me), me->name()+"ÂıÂıµØ³¤³öÁËÒ»¸öĞ¡Ò¶¡£\n", ({me, me}));
-        set_name(RED "ÎåÒ¶Çí²İ" NOR, ({"qiong cao","cao"}));
+        tell_room(environment(me), me->name()+"æ…¢æ…¢åœ°é•¿å‡ºäº†ä¸€ä¸ªå°å¶ã€‚\n", ({me, me}));
+        set_name(RED "äº”å¶ç¼è‰" NOR, ({"qiong cao","cao"}));
         call_out("grow_f", i, me);  
         return 1;
 }
@@ -185,8 +185,8 @@ int grow_e(object me)
 int grow_f(object me)
 {
         int i=1500+random(1000);
-        tell_room(environment(me), me->name()+"ÂıÂıµØ³¤³öÁËÒ»¸öĞ¡Ò¶¡£\n", ({me, me}));
-        set_name(RED "ÁùÒ¶Çí²İ" NOR, ({"qiong cao","cao"}));
+        tell_room(environment(me), me->name()+"æ…¢æ…¢åœ°é•¿å‡ºäº†ä¸€ä¸ªå°å¶ã€‚\n", ({me, me}));
+        set_name(RED "å…­å¶ç¼è‰" NOR, ({"qiong cao","cao"}));
         call_out("grow_g", i, me);  
         return 1;
 }
@@ -194,9 +194,9 @@ int grow_f(object me)
 int grow_g(object me)
 {
         int i=2000+random(1000);
-        tell_room(environment(me), me->name()+"ÂıÂıµØ³¤³öÁËÒ»¸öĞ¡Ò¶¡£\n", ({me, me}));
-	tell_room(environment(me), me->name()+"ÖÜÎ§½¥½¥ÁıÆğÒ»¹Éºì¹â¡£\n", ({me, me}));
-        set_name(RED "ÆßÒ¶ÇíÖ¥²İ" NOR, ({"qiong cao","cao"}));
+        tell_room(environment(me), me->name()+"æ…¢æ…¢åœ°é•¿å‡ºäº†ä¸€ä¸ªå°å¶ã€‚\n", ({me, me}));
+	tell_room(environment(me), me->name()+"å‘¨å›´æ¸æ¸ç¬¼èµ·ä¸€è‚¡çº¢å…‰ã€‚\n", ({me, me}));
+        set_name(RED "ä¸ƒå¶ç¼èŠè‰" NOR, ({"qiong cao","cao"}));
 	set("eatable",1);
         return 1;
 }

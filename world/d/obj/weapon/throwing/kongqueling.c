@@ -7,14 +7,14 @@ inherit THROWING;
 
 void create()
 {
-        set_name("¿×È¸ôá", ({"kongque ling","ling"}));
+        set_name("å­”é›€ç¿", ({"kongque ling","ling"}));
         if( clonep() )
                 set_default_object(__FILE__);
         else 
    	  {
-           set("long",    "¼¸Ö§¿×È¸ÉíÉÏµÄÓğÃ«£¬ÔÚÑô¹âµÄÕÕÉäÏÂÉÁ×ÅÆæÒìµÄÉ«²Ê¡£\n");
-           set("unit", "°Ñ");
-           set("base_unit", "Ö§");
+           set("long",    "å‡ æ”¯å­”é›€èº«ä¸Šçš„ç¾½æ¯›ï¼Œåœ¨é˜³å…‰çš„ç…§å°„ä¸‹é—ªç€å¥‡å¼‚çš„è‰²å½©ã€‚\n");
+           set("unit", "æŠŠ");
+           set("base_unit", "æ”¯");
            set("base_weight", 5);
            set("value", 3);
            set("can_install", 1);

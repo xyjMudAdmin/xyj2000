@@ -6,13 +6,13 @@ inherit ITEM;
 
 void create()
 {
-  set_name("ÌúÔ¿³×", ({ "tie yaoshi","key","iron key", "yaoshi" }));
+  set_name("é“é’¥åŒ™", ({ "tie yaoshi","key","iron key", "yaoshi" }));
   set_weight(200);
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("long", "Ò»°ÑÆÕÆÕÍ¨Í¨µÄÔ¿³×. \n");
-    set("unit", "°Ñ");
+    set("long", "ä¸€æŠŠæ™®æ™®é€šé€šçš„é’¥åŒ™. \n");
+    set("unit", "æŠŠ");
     set("material", "iron");
     set("value", 0);
     set("no_give", 1);

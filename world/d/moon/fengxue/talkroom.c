@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Ì¸ĞÄÊÒ");
+        set("short", "è°ˆå¿ƒå®¤");
         set("long", @LONG
 
-Ò»¼ä×¨¹©ËµÇÄÇÄ»°µÄ½»Ì¸ÊÒ¡£
+ä¸€é—´ä¸“ä¾›è¯´æ‚„æ‚„è¯çš„äº¤è°ˆå®¤ã€‚
 LONG
         );
 
@@ -18,7 +18,7 @@ LONG
                 "out" : __DIR__"zoulang"
         ]));
 
-        create_door("out", "ÌÒÄ¾ÃÅ", "enter", DOOR_CLOSED);
+        create_door("out", "æ¡ƒæœ¨é—¨", "enter", DOOR_CLOSED);
 
         setup();
 }
@@ -36,7 +36,7 @@ void init()
 
         if ( num > 2 && room->query("locked") ) {
                 this_player()->move(__DIR__"zoulang1");
-                write("ºÙºÙ£¡ÃÅËø×ÅÄÄ£¬Äã½ø²»È¥£¡\n");
+                write("å˜¿å˜¿ï¼é—¨é”ç€å“ªï¼Œä½ è¿›ä¸å»ï¼\n");
         }
 
         add_action("do_lock", "lock");
@@ -61,10 +61,10 @@ int do_lock()
         string dir;
 
         if( !(doors["out"]["status"] & DOOR_CLOSED) )
-                return notify_fail("ÃÅ»¹Ã»¹ØÉÏÄÄ£¡\n");
+                return notify_fail("é—¨è¿˜æ²¡å…³ä¸Šå“ªï¼\n");
 
         if ( room->query("locked") )
-                return notify_fail("ÃÅÕıËø×ÅÄÄ£¡\n");
+                return notify_fail("é—¨æ­£é”ç€å“ªï¼\n");
                                        
         person = all_inventory(room);
                                 
@@ -73,15 +73,15 @@ int do_lock()
         }                                                               
          
         if ( num < 2 ) 
-                return notify_fail("·¿ÀïÖ»ÓĞÄãÒ»¸öÈË£¬ÏòË­ËµÇÄÇÄ»°ÄØ£¿²»±Ø°ÑÃÅËøÉÏ°É¡£\n");
+                return notify_fail("æˆ¿é‡Œåªæœ‰ä½ ä¸€ä¸ªäººï¼Œå‘è°è¯´æ‚„æ‚„è¯å‘¢ï¼Ÿä¸å¿…æŠŠé—¨é”ä¸Šå§ã€‚\n");
        
         room->set("locked", 1);
                                
         remove_call_out("unlock_door");
         call_out("unlock_door", 1800, room);
                                                                      
-        message_vision("$N½«ÃÅË©Ò»ĞıÒ»°´ËøºÃ£¬ÂúÁ³Ğ¦ÈİµÄ×ª¹ıÉíÀ´¡£\n", this_player());                                                           
-        write("ÄãÊıÁËÊıÎİÀïÒ»¹²" + num + "¸öÈË¡£\n");
+        message_vision("$Nå°†é—¨æ‹´ä¸€æ—‹ä¸€æŒ‰é”å¥½ï¼Œæ»¡è„¸ç¬‘å®¹çš„è½¬è¿‡èº«æ¥ã€‚\n", this_player());                                                           
+        write("ä½ æ•°äº†æ•°å±‹é‡Œä¸€å…±" + num + "ä¸ªäººã€‚\n");
         return 1;
 }
                                                                                 
@@ -89,7 +89,7 @@ int do_lock()
 int unlock_door(object room)
 {
         room->delete("locked");
-        write("ÃÅËø±ÄµÄÒ»Éùµ¯¿ªÁË£¡\n");
+        write("é—¨é”è¹¦çš„ä¸€å£°å¼¹å¼€äº†ï¼\n");
         return 1;
 }
 

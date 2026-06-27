@@ -5,15 +5,15 @@ inherit ITEM;
 
 void create()
 {
-        set_name("¡¼µÀµÂ¾­¡½", ({"daodejing", "book"}));
+        set_name("ã€–é“å¾·ç»ã€—", ({"daodejing", "book"}));
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
+                set("unit", "æœ¬");
         set("material", "paper");
 	set("value", 100);
-	set("long", "µÀ¼Ò¾­µä£­£­µÀµÂ¾­");
+	set("long", "é“å®¶ç»å…¸ï¼ï¼é“å¾·ç»");
         set("skill", ([
                         "name": "spells",
                         "dx_required": 2000,

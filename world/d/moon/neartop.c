@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "��Ů��");
+  set ("short", "玉女峰");
   set ("long", @LONG
 
-���￿����Ů�嶥����˵�Ǳ�ѩ��أ��㲢������̫�䡣���ܱ����г���
-һЩ��׵�ѩ����
+这里靠近玉女峰顶。虽说是冰雪遍地，你并不觉得太冷。四周冰缝中长着
+一些洁白的雪莲。
 LONG);
 
   set("objects", ([ /* sizeof() == 1 */

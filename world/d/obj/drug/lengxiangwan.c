@@ -6,16 +6,16 @@ inherit ITEM;
 
 void create()
 {
-  set_name( "ÀäÏãÍè" , ({"lengxiang wan", "wan"}));
+  set_name( "å†·é¦™ä¸¸" , ({"lengxiang wan", "wan"}));
   set_weight(120);
   if (clonep())
     set_default_object(__FILE__);
   else {
-    set("unit", "¿Å");
-    set("long", "Ò»¿ÅÁúÑÛ´óµÄÒ©Íè£¬ÓÐ½¡Æ¢¿ªÎ¸£¬Ôö½øÏû»¯Ö®Ð§¡£\n");
+    set("unit", "é¢—");
+    set("long", "ä¸€é¢—é¾™çœ¼å¤§çš„è¯ä¸¸ï¼Œæœ‰å¥è„¾å¼€èƒƒï¼Œå¢žè¿›æ¶ˆåŒ–ä¹‹æ•ˆã€‚\n");
 // set("value",800);
     set("no_sell", 1);
-    set("drug_type", "²¹Æ·");
+    set("drug_type", "è¡¥å“");
   }
   setup();
 //  call_out("self_dest",600);
@@ -26,7 +26,7 @@ void self_dest()
     object env;
     if(this_object()) {
 	if(env=environment(this_object()))
-	    tell_object(env,name()+"µôÔÚµØÉÏ²»¼ûÁË¡£\n");
+	    tell_object(env,name()+"æŽ‰åœ¨åœ°ä¸Šä¸è§äº†ã€‚\n");
 	destruct(this_object());
     }
 }
@@ -48,8 +48,8 @@ int do_eat(string arg)
   if (me->query("food")>food) me->set("food",food);
   if (me->query("water")>water) me->set("water",water);
 
-  message_vision(HIG "$NÄóÆðÒ»¿ÅÀäÏãÍèËÍ½ø×ìÀïÍÌÏÂ¡£\n" NOR, me);
-  tell_object(me, HIG"¶ÙÊ±Äã¾õµÃÒ»¹ÉÇåÁ¹Ö®Æø£¬ÔÚÎåÔàÁù¸­ÖÐÓÎ×ß£¬Ëùµ½Ö®´¦£¬Ëµ²»³öµÄÊæÌ¹£¡\n"NOR);
+  message_vision(HIG "$Næèµ·ä¸€é¢—å†·é¦™ä¸¸é€è¿›å˜´é‡Œåžä¸‹ã€‚\n" NOR, me);
+  tell_object(me, HIG"é¡¿æ—¶ä½ è§‰å¾—ä¸€è‚¡æ¸…å‡‰ä¹‹æ°”ï¼Œåœ¨äº”è„å…­è…‘ä¸­æ¸¸èµ°ï¼Œæ‰€åˆ°ä¹‹å¤„ï¼Œè¯´ä¸å‡ºçš„èˆ’å¦ï¼\n"NOR);
   log_file("lentxiangwan",sprintf("%s(%s) ate lengxiangwan on %s\n",me->query("name"),geteuid(me),ctime(time())));
   destruct(this_object());
   return 1;

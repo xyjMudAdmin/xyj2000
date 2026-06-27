@@ -6,9 +6,9 @@ inherit F_VENDOR_SALE;
 void create()
 {
   reload("chechi_jiu_bao");
-  set_name("¾Æ±£", ({"jiu bao", "jiubao", "bao"}));
+  set_name("é…’ä¿", ({"jiu bao", "jiubao", "bao"}));
   set("shop_id", ({"jiubao", "jiu bao", "bao"}));
-  set("gender", "ÄĞĞÔ");
+  set("gender", "ç”·æ€§");
   set("combat_exp", 500);
   set("age", 30);
   set("per", 34);

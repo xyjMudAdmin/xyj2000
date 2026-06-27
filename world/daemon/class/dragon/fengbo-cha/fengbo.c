@@ -14,16 +14,16 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("¡¸ÎÞ¾¡·ç²¨¡¹Ö»ÓÐÔÚÕ½¶·ÖÐ²ÅÄÜÊ¹ÓÃ¡£\n");
+		return notify_fail("ã€Œæ— å°½é£Žæ³¢ã€åªæœ‰åœ¨æˆ˜æ–—ä¸­æ‰èƒ½ä½¿ç”¨ã€‚\n");
 
 	if( (int)me->query_skill("fengbo-cha", 1) < 50 ) 
-		return notify_fail("ÄãµÄÐÞÎª²»¹»Éî£¬»¹Ê¹²»³öÕâÒ»ÕÐ£¡\n");
+		return notify_fail("ä½ çš„ä¿®ä¸ºä¸å¤Ÿæ·±ï¼Œè¿˜ä½¿ä¸å‡ºè¿™ä¸€æ‹›ï¼\n");
 
 	if( target->is_busy() )
-		return notify_fail(target->name()+"ÒÑ¾­¹»Ã¦ÁË£¬ÄãÊ¹µÄÔÙÆ¯ÁÁÒ²²»»á×¢Òâµ½¡£\n");
+		return notify_fail(target->name()+"å·²ç»å¤Ÿå¿™äº†ï¼Œä½ ä½¿çš„å†æ¼‚äº®ä¹Ÿä¸ä¼šæ³¨æ„åˆ°ã€‚\n");
 
-	message_vision(HIC"$N»ÓÕ¹¿ªÀ´£¬×óÒ»²æ£¬ÓÒÒ»²æ£¬»Ã³öÎÞÊý´óÐ¡¹â»·Ïò$nÈÆÈ¥¡£
-Ëä¿´ÆðÀ´ÈáÈõÎÞÁ¦£¬È´ÍðÈôÇï²¨°ãÁ¬Ãà²»¾ø£¬ÊµÊÇ°µ²ØÉ±»ú£¡\n\n"NOR,me, target);
+	message_vision(HIC"$NæŒ¥å±•å¼€æ¥ï¼Œå·¦ä¸€å‰ï¼Œå³ä¸€å‰ï¼Œå¹»å‡ºæ— æ•°å¤§å°å…‰çŽ¯å‘$nç»•åŽ»ã€‚
+è™½çœ‹èµ·æ¥æŸ”å¼±æ— åŠ›ï¼Œå´å®›è‹¥ç§‹æ³¢èˆ¬è¿žç»µä¸ç»ï¼Œå®žæ˜¯æš—è—æ€æœºï¼\n\n"NOR,me, target);
 
 	me->add("sen", -100);
 
@@ -38,10 +38,10 @@ int perform(object me, object target)
 	if ( time < 5  ) time = 5;
 
 	if ( random( mypot + tapot ) > tapot ) {
-		message_vision(HIR"$N¹ûÈ»±»Õâ¹â»·Ì××¡£¬µ±Ê±Ä¿µÉ¿Ú´ô£¬²»ÖªËù´ë£¡\n"NOR,target);
+		message_vision(HIR"$Næžœç„¶è¢«è¿™å…‰çŽ¯å¥—ä½ï¼Œå½“æ—¶ç›®çžªå£å‘†ï¼Œä¸çŸ¥æ‰€æŽªï¼\n"NOR,target);
 		target->start_busy(time);
 	}else {
-	message_vision(HIR"²»ÁÏÈ´±»$N¿´ÆÆ£¬¹¥Æä²»±¸£¬$n·´±»´òÁË¸ö´ëÊÖ²»¼°£¡\n"NOR,target,
+	message_vision(HIR"ä¸æ–™å´è¢«$Nçœ‹ç ´ï¼Œæ”»å…¶ä¸å¤‡ï¼Œ$nåè¢«æ‰“äº†ä¸ªæŽªæ‰‹ä¸åŠï¼\n"NOR,target,
 me);
 		me->start_busy(3);
 	}

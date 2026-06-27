@@ -5,14 +5,14 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ÆÙ²¼Ç°");
+  set ("short", "ç€‘å¸ƒå‰");
   set ("long", @LONG
 
-Ö»¼ûÄÇ¹É½§Ë®±¼Á÷£¬Õæ¸öËÆ¹ö¹ÏÓ¿½¦¡£Ë³½§ÅÀÉ½£¬Ö±ÖÁÔ´Á÷Ö®´¦£¬
-ÄËÊÇÒ»¹ÉÆÙ²¼·ÉÈª¡£µ«¼ûÄÇ£º
+åªè§é‚£è‚¡æ¶§æ°´å¥”æµï¼ŒçœŸä¸ªä¼¼æ»šç“œæ¶Œæº…ã€‚é¡ºæ¶§çˆ¬å±±ï¼Œç›´è‡³æºæµä¹‹å¤„ï¼Œ
+ä¹ƒæ˜¯ä¸€è‚¡ç€‘å¸ƒé£æ³‰ã€‚ä½†è§é‚£ï¼š
 
-¡¡¡¡Ò»ÅÉ°×ºçÆğ£¬Ç§Ñ°Ñ©ÀË·É£»º£·ç´µ²»¶Ï£¬½­ÔÂÕÕ»¹ÒÀ¡£
-¡¡¡¡ÀäÆø·ÖÇàáÖ£¬âÅÁ÷Èó´äÎ¢£»äı¡õÃûÆÙ²¼£¬ÕæËÆ¹ÒÁ±á¡¡£
+ã€€ã€€ä¸€æ´¾ç™½è™¹èµ·ï¼Œåƒå¯»é›ªæµªé£ï¼›æµ·é£å¹ä¸æ–­ï¼Œæ±Ÿæœˆç…§è¿˜ä¾ã€‚
+ã€€ã€€å†·æ°”åˆ†é’å¶‚ï¼Œé¦€æµæ¶¦ç¿ å¾®ï¼›æ½ºâ–¡åç€‘å¸ƒï¼ŒçœŸä¼¼æŒ‚å¸˜å¸·ã€‚
 LONG);
 
 
@@ -49,7 +49,7 @@ void appearing (object who)
   {
     houzi = new (__DIR__"npc/hou");
     houzi->move(where);
-    message_vision ("Ê÷´ÔÖĞ´Ú³öÒ»Ö»$N¡£\n",houzi);
+    message_vision ("æ ‘ä¸›ä¸­è¹¿å‡ºä¸€åª$Nã€‚\n",houzi);
   }
 
 
@@ -61,18 +61,18 @@ int do_jump(string arg)
         object me;
 
         me = this_player();
-        if ( !arg || ( arg != "pubu" ) ) return  notify_fail("ÄãÍùÄÄ¶ùÌø£¿\n");
+        if ( !arg || ( arg != "pubu" ) ) return  notify_fail("ä½ å¾€å“ªå„¿è·³ï¼Ÿ\n");
 
         else if ( random(30)+me->query("kar") < 30 )
 //        else if ( (random(10)+me->query("kar")+me->query("donation/1000000")) < 40 )
           { 
-          message_vision("$NÏòÏÂÒ»×İ£¬²»Ğ¡ĞÄ×²ÔÚÁËÒ»¿éÊ¯Í·ÉÏ¡£\n", me);
+          message_vision("$Nå‘ä¸‹ä¸€çºµï¼Œä¸å°å¿ƒæ’åœ¨äº†ä¸€å—çŸ³å¤´ä¸Šã€‚\n", me);
           me->unconcious();
           }
 
         else
           {
-          message_vision("$N´óºÈÒ»Éù£º¡°ÎÒÈ¥ÇÆÇÆ£¡£¢Ëµ°Õ·ÉÉíÔ¾ÈëÆÙ²¼¡£\n", me);
+          message_vision("$Nå¤§å–ä¸€å£°ï¼šâ€œæˆ‘å»ç§ç§ï¼ï¼‚è¯´ç½¢é£èº«è·ƒå…¥ç€‘å¸ƒã€‚\n", me);
           me->move(__DIR__"pubu1");
           }
 
@@ -86,14 +86,14 @@ int do_wave(string arg)
         object hb = this_object();
 
         me = this_player();
-        if ( !arg || ( arg != "flag" ) ) return  notify_fail("ÄãÏë»ÓÎèÊ²Ã´£¿\n");
+        if ( !arg || ( arg != "flag" ) ) return  notify_fail("ä½ æƒ³æŒ¥èˆä»€ä¹ˆï¼Ÿ\n");
 
         else if (!(hb=present(arg, me))) 
-           return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâ¶«Î÷¡£\n");
+           return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™ä¸œè¥¿ã€‚\n");
     
         else 
           { 
-          message_vision("$N»ÓÎè×ÅÆğÆì×Ó£¬´óºÈÒ»Éù£º¡°´óÔì»¯£¡´óÔì»¯£¡ÏÂÃæÃ»Ë®£¡Ô­À´ÊÇÒ»×ùÌú°åÇÅ¡£ÇÅÄÇ±ßÊÇÒ»×ùÌìÔìµØÉèµÄ¼Òµ±¡£ĞÖµÜÃÇ¿ìÈ¥Ñ½£¡¡±\n", me);
+          message_vision("$NæŒ¥èˆç€èµ·æ——å­ï¼Œå¤§å–ä¸€å£°ï¼šâ€œå¤§é€ åŒ–ï¼å¤§é€ åŒ–ï¼ä¸‹é¢æ²¡æ°´ï¼åŸæ¥æ˜¯ä¸€åº§é“æ¿æ¡¥ã€‚æ¡¥é‚£è¾¹æ˜¯ä¸€åº§å¤©é€ åœ°è®¾çš„å®¶å½“ã€‚å…„å¼Ÿä»¬å¿«å»å‘€ï¼â€\n", me);
           call_out("jumping",2,me);
           if(me->query("dntg/huaguo")!="done")  me->set("dntg/huaguo", "allow");
           destruct(hb);
@@ -113,5 +113,5 @@ void jumping(object who)
   destruct(who2);
   destruct(who3);
   destruct(who4);
-  message_vision("ºï×ÓÃÇÌı°ÕÕùÏÈ¿ÖºóµÄÌøÏÂÆÙ²¼¡£\n", who);
+  message_vision("çŒ´å­ä»¬å¬ç½¢äº‰å…ˆæåçš„è·³ä¸‹ç€‘å¸ƒã€‚\n", who);
 }

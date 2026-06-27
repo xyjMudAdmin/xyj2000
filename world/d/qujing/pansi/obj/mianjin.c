@@ -6,13 +6,13 @@ inherit F_FOOD;
 
 void create()
 {
-  set_name("ÉÕÃæ½î", ({"shao mianjin", "mianjin", "jin"}));
+  set_name("çƒ§é¢ç­‹", ({"shao mianjin", "mianjin", "jin"}));
   set_weight(1000);
   if (clonep())
     set_default_object(__FILE__);
   else {
-    set("long", "Ò»ÍëÉÕµÃºÚºõºõµÄÃæ½î£¬¿´ÉÏÈ¥ÓĞµã¹Ö¡£\n");
-    set("unit", "Íë");
+    set("long", "ä¸€ç¢—çƒ§å¾—é»‘ä¹ä¹çš„é¢ç­‹ï¼Œçœ‹ä¸Šå»æœ‰ç‚¹æ€ªã€‚\n");
+    set("unit", "ç¢—");
     set("value", 300);
     set("food_remaining", 4);
     set("food_supply", 50);
@@ -47,5 +47,5 @@ void reacting (object who)
   if (! who)
     return;
 
-  message_vision("$NÒ»Õó×Ó¶ñĞÄ£¬²îµã¶ùÍÂ³öÀ´¡£\n",who);
+  message_vision("$Nä¸€é˜µå­æ¶å¿ƒï¼Œå·®ç‚¹å„¿åå‡ºæ¥ã€‚\n",who);
 }

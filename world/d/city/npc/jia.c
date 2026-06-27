@@ -3,11 +3,11 @@ inherit F_VENDOR_SALE;
 void create()
 {
     reload("city_jiaer");
-        set_name("¼Ö¶ş", ({"jia er", "jia"}));
+        set_name("è´¾äºŒ", ({"jia er", "jia"}));
         set("age", 32);
-        set("gender", "ÄĞĞÔ");
-        set("long","°ü×ÓÆÌµÄÀÏ°å£¬Ğ¦ÃĞÃĞµÄ¿´×ÅÄã¡£\n");
-	set("shop_title", "°ü×ÓÆÌÀÏ°å");
+        set("gender", "ç”·æ€§");
+        set("long","åŒ…å­é“ºçš„è€æ¿ï¼Œç¬‘çœ¯çœ¯çš„çœ‹ç€ä½ ã€‚\n");
+	set("shop_title", "åŒ…å­é“ºè€æ¿");
 	set("shop_id", ({"laoban"}));
         set("attitude", "friendly");
 
@@ -30,7 +30,7 @@ void create()
 }
 int accept_fight(object me)
 {
-        command("say ´ó¼ÒºÍÆøÉú²Æ£¬ºÍÆøÉú²Æ£¡\n");
+        command("say å¤§å®¶å’Œæ°”ç”Ÿè´¢ï¼Œå’Œæ°”ç”Ÿè´¢ï¼\n");
         return 0;
 }
 
@@ -52,9 +52,9 @@ void greeting(object ob)
         if( !ob || !visible(ob) || environment(ob) != environment() ) return;
         switch( random(1) ) {
                 case 0:
-                        say( name()+"Ğ¦ßäßäµØËµµÀ£ºÕâÎ»" +
+                        say( name()+"ç¬‘å’ªå’ªåœ°è¯´é“ï¼šè¿™ä½" +
 RANK_D->query_respect(ob)
-                                + "£¬½øÀ´³Ô¼¸¸ö°ü×Ó°É¡£\n");
+                                + "ï¼Œè¿›æ¥åƒå‡ ä¸ªåŒ…å­å§ã€‚\n");
                         break;
         }
 }

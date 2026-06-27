@@ -4,12 +4,12 @@ inherit NPC;
 void create()
 {
 
-        set_name("¶«·½´Ï", ({ "dongfang cong", "dongfang", "cong"}) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("ä¸œæ–¹èª", ({ "dongfang cong", "dongfang", "cong"}) );
+        set("gender", "ç”·æ€§" );
         set("age", 22);
-        set("long", "¶«·½´ÏÊÇ¹İÖ÷µÄ´ó¶ù×Ó£¬Õı½ÌÒ»Ğ©Í½µÜÎäÒÕ¡£\n");
+        set("long", "ä¸œæ–¹èªæ˜¯é¦†ä¸»çš„å¤§å„¿å­ï¼Œæ­£æ•™ä¸€äº›å¾’å¼Ÿæ­¦è‰ºã€‚\n");
         set("combat_exp", 20000);
-	set("title", "Îä¹İ½ÌÍ·");
+	set("title", "æ­¦é¦†æ•™å¤´");
 	set_skill("stick", 50);
 	set_skill("parry", 50);
         set_skill("dodge", 50);
@@ -23,7 +23,7 @@ void create()
 int recognize_apprentice()
 {
 	if(!this_player()->query("newbie/learn") )
-	return notify_fail("¶«·½´ÏĞ¦µÀ£º½Ì²»½ÌÄã£¬ÄãÈ¥ÎÊµù¡£\n");
+	return notify_fail("ä¸œæ–¹èªç¬‘é“ï¼šæ•™ä¸æ•™ä½ ï¼Œä½ å»é—®çˆ¹ã€‚\n");
 
 	return 1;
 }

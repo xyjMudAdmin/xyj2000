@@ -9,16 +9,16 @@ inherit HAMMER;
 
 void create()
 {
-  set_name(YEL "Ç¬À¤È¦" NOR,({"qiankun quan", "quan", "qiankunquan", "qiankun"}));
+  set_name(YEL "ä¹¾å¤åœˆ" NOR,({"qiankun quan", "quan", "qiankunquan", "qiankun"}));
   set_weight(10000);
   if(clonep())
     set_default_object(__FILE__);
   else {
-    set("unit","Ö»");
+    set("unit","åª");
     set("value",0);
-    set("long","Ò»Ö»´¿¸Ö´òÔìµÄ¸Ö»·£¬ºÜ½áÊµ¡£\n");
-    set("wield_msg","$NÄÃ³öÒ»Ö»$nÎÕÔÚÊÖÖÐ¡£\n");
-    set("unequip_msg","$N½«ÊÖÖÐµÄ$nÊÕÈë±ªÆ¤ÄÒ¡£\n");
+    set("long","ä¸€åªçº¯é’¢æ‰“é€ çš„é’¢çŽ¯ï¼Œå¾ˆç»“å®žã€‚\n");
+    set("wield_msg","$Næ‹¿å‡ºä¸€åª$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+    set("unequip_msg","$Nå°†æ‰‹ä¸­çš„$næ”¶å…¥è±¹çš®å›Šã€‚\n");
   }
   init_hammer(25);
   setup();
@@ -28,14 +28,14 @@ int ji(string target)
     string objname=this_object()->name();
     object me=this_player(), victim;
 
-    if (!target) return notify_fail("ÄãÏëÓÃ¶ÔË­ÓÃ"+objname+"£¿\n");
+    if (!target) return notify_fail("ä½ æƒ³ç”¨å¯¹è°ç”¨"+objname+"ï¼Ÿ\n");
     victim=present(target,environment(me));
-    if(!victim) return notify_fail("ÕâÀïÃ»ÓÐ "+target+"¡£\n");
-    if(!living(victim)) return notify_fail("ÄãµÄÄ¿±ê²»ÊÇ»îÎï£¡\n");
-    if(!me->is_fighting()) return notify_fail("Ö»ÓÐÕ½¶·ÖÐ²ÅÄÜ¼À"+objname+"¡£\n");  
+    if(!victim) return notify_fail("è¿™é‡Œæ²¡æœ‰ "+target+"ã€‚\n");
+    if(!living(victim)) return notify_fail("ä½ çš„ç›®æ ‡ä¸æ˜¯æ´»ç‰©ï¼\n");
+    if(!me->is_fighting()) return notify_fail("åªæœ‰æˆ˜æ–—ä¸­æ‰èƒ½ç¥­"+objname+"ã€‚\n");  
     if( (int)me->query("mana") < 250)
-        return notify_fail("ÄãµÄ·¨Á¦²»¹»ÁË£¡\n");
+        return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿäº†ï¼\n");
     if( (int)me->query("sen") < 100)
-        return notify_fail("ÄãµÄ¾«ÉñÎÞ·¨¼¯ÖÐ£¡\n");
-    return notify_fail("ÎÞÂÛÄãÔõÃ´ÄîÖä£¬"+objname+"¾ÍÊÇ²»¶¯¡£\n");
+        return notify_fail("ä½ çš„ç²¾ç¥žæ— æ³•é›†ä¸­ï¼\n");
+    return notify_fail("æ— è®ºä½ æ€Žä¹ˆå¿µå’’ï¼Œ"+objname+"å°±æ˜¯ä¸åŠ¨ã€‚\n");
 }

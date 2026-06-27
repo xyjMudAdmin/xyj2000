@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ºó¹¬");
+  set ("short", "åŽå®«");
   set ("long", @LONG
 
-Õâ±ãÊÇÎ÷Áº¹«Ö÷½Ó¼û±ö¿ÍµÄºó¹¬ÁË¡£Ò»Á±ÏâÖé×Ïºì´óÕÊ½«ºó
-¹¬µÄÈë¿ÚÕÚÑÏ£¬µîÄÚ×¯ÑÏËàÄÂ£¬ÕýÖÐÓñ°×Ì¨½×ÉÏÊÇ²ÊÁú½ð·ï
-Ë«µû±¦×ù£¬ÉÏÃæ¸ß¸ßµØ×ø×ÅÎ÷Áº¹«Ö÷¡£
+è¿™ä¾¿æ˜¯è¥¿æ¢å…¬ä¸»æŽ¥è§å®¾å®¢çš„åŽå®«äº†ã€‚ä¸€å¸˜é•¶ç ç´«çº¢å¤§å¸å°†åŽ
+å®«çš„å…¥å£é®ä¸¥ï¼Œæ®¿å†…åº„ä¸¥è‚ƒç©†ï¼Œæ­£ä¸­çŽ‰ç™½å°é˜¶ä¸Šæ˜¯å½©é¾™é‡‘å‡¤
+åŒè¶å®åº§ï¼Œä¸Šé¢é«˜é«˜åœ°åç€è¥¿æ¢å…¬ä¸»ã€‚
 
 LONG);
 
@@ -34,7 +34,7 @@ int valid_leave (object me, string dir)
   princess = present("xiliang princess",environment(me)); 
   if (princess && dir=="north") 
   {
-    return notify_fail("Ð¡¹«Ö÷¶ÔÄã´óºÈÒ»Éù´óµ¨£¡\n");
+    return notify_fail("å°å…¬ä¸»å¯¹ä½ å¤§å–ä¸€å£°å¤§èƒ†ï¼\n");
   }
   // once get into here, reset all greenyard temps, to prevent abuse
   me->set_temp("lost_in_greenyard",0);

@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create ()
 {
-	set ("short", "Î÷¹ÏµØ");
+	set ("short", "è¥¿ç“œåœ°");
 	set ("long", @LONG
 
-Îå×¯¹Û×öÊÂµÄ¶à£¬³Ô·¹µÄÒ²²»ÉÙ£¬ËùÒÔ¹ÛÄÚ¹ÍÁË¸½½üµÄÒ»Ğ©Å©¼Ò
-À´ÖÖÊß²Ë¹Ï¹û¡£ÕâÀïÊÇÎ÷¹ÏµØ¡£Íù±±ÊÇÓĞÒ»µÀ¾£¼¬½á³ÉµÄÀé°Ê£¬
-Àé°ÊÉÏ¿ªÁËÒ»µÀ¼òÂªµÄĞÓÄ¾ÃÅ£¬ÃÅÉÏ¹Ò×ÅÒ»°Ñ»ÆÍ­Ëø¡£
+äº”åº„è§‚åšäº‹çš„å¤šï¼Œåƒé¥­çš„ä¹Ÿä¸å°‘ï¼Œæ‰€ä»¥è§‚å†…é›‡äº†é™„è¿‘çš„ä¸€äº›å†œå®¶
+æ¥ç§è”¬èœç“œæœã€‚è¿™é‡Œæ˜¯è¥¿ç“œåœ°ã€‚å¾€åŒ—æ˜¯æœ‰ä¸€é“è†æ£˜ç»“æˆçš„ç¯±ç¬†ï¼Œ
+ç¯±ç¬†ä¸Šå¼€äº†ä¸€é“ç®€é™‹çš„ææœ¨é—¨ï¼Œé—¨ä¸ŠæŒ‚ç€ä¸€æŠŠé»„é“œé”ã€‚
 LONG);
 
 	set("exits", 
@@ -25,7 +25,7 @@ LONG);
 		"/d/obj/food/watermelon" : 3,
 	]));
 
-	//create_door("north", "ĞÓÄ¾ÃÅ", "south", DOOR_CLOSED);
+	//create_door("north", "ææœ¨é—¨", "south", DOOR_CLOSED);
 	set("outdoors", "wuzhuang");
 
 	setup();
@@ -43,24 +43,24 @@ int do_open(string arg)
 	me = this_player();
 
 	if( !arg || arg != "door" ) 
-		return notify_fail("ÄãÒª´ò¿ªÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦æ‰“å¼€ä»€ä¹ˆï¼Ÿ\n");
 
 //    if( !(key = present("huangtong key", me) && key->query("id")=="huangtong key") ) 
   key=present("huangtong key",me);
   if (!key || key->query("id")!="huangtong key")
-		return notify_fail("ÄãÃ»ÓĞ¿ªÕâµÀÃÅµÄÔ¿³×¡£\n");
+		return notify_fail("ä½ æ²¡æœ‰å¼€è¿™é“é—¨çš„é’¥åŒ™ã€‚\n");
 
 	//now we are ready to open...
 	if( !(nroom = find_object(__DIR__"renshenguo-yuan")) )
 		nroom = load_object(__DIR__"renshenguo-yuan");
 
 	nroom->set("exits/south", __FILE__);
-  message_vision("$NĞ¡ĞÄÒíÒíµØ½«Ô¿³×²åÈë³×¿×¡£\n",me);
-  message_vision(HIW"ĞÓÄ¾ÃÅÍ»È»·¢³öÒ»µÀÇ¿ÁÒµÄ°×¹â£¬ÕÕµÃÄãÕö²»¿ªÑÛ¡£\n"NOR,me);
+  message_vision("$Nå°å¿ƒç¿¼ç¿¼åœ°å°†é’¥åŒ™æ’å…¥åŒ™å­”ã€‚\n",me);
+  message_vision(HIW"ææœ¨é—¨çªç„¶å‘å‡ºä¸€é“å¼ºçƒˆçš„ç™½å…‰ï¼Œç…§å¾—ä½ çä¸å¼€çœ¼ã€‚\n"NOR,me);
   me->set_temp("used_huangtong_key",1);
-  tell_room(environment(me),"µÈ°×¹â÷öÈ¥£¬ÄãÕöÑÛÒ»¿´£¬·¢ÏÖ"+me->name()+"´Ó¿ÕÆøÖĞÏûÊ§ÁË£¡\n",me);
+  tell_room(environment(me),"ç­‰ç™½å…‰é»¯å»ï¼Œä½ ççœ¼ä¸€çœ‹ï¼Œå‘ç°"+me->name()+"ä»ç©ºæ°”ä¸­æ¶ˆå¤±äº†ï¼\n",me);
   me->move(nroom);
-  tell_object(me,"µÈ°×¹â÷öÈ¥£¬ÄãÕöÑÛÒ»¿´£¬·¢ÏÖÖÃÉíÓÚÒ»¸öÄ°ÉúµÄµØ·½¡£\n");
+  tell_object(me,"ç­‰ç™½å…‰é»¯å»ï¼Œä½ ççœ¼ä¸€çœ‹ï¼Œå‘ç°ç½®èº«äºä¸€ä¸ªé™Œç”Ÿçš„åœ°æ–¹ã€‚\n");
 
 	destruct(key);
 	return 1;

@@ -5,14 +5,14 @@ inherit ITEM;
 
 void create()
 {
-  set_name("µçÁé·û", ({"dian ling fu","fu"}));
-  set("unit", "ÕÅ" );
+  set_name("ç”µçµç¬¦", ({"dian ling fu","fu"}));
+  set("unit", "å¼ " );
   set_weight(10);
   set("long", @LONG
-Ò»ÕÅµçÄ¸¸øµÄµÄÁé·û¡£
+ä¸€å¼ ç”µæ¯ç»™çš„çš„çµç¬¦ã€‚
 LONG);
-  set("no_give","ÕâÖÖÍæÒÕÔõÄÜËæ±ã¸øÈË£¿\n");
-  set("no_sell","ÕÆ¹ñµÄÒ¡Ò¡Í·Ëµ£ºÕâ±¦±´Ğ¡µê²»¸ÒÊÕ¡£\n");
+  set("no_give","è¿™ç§ç©è‰ºæ€èƒ½éšä¾¿ç»™äººï¼Ÿ\n");
+  set("no_sell","æŒæŸœçš„æ‘‡æ‘‡å¤´è¯´ï¼šè¿™å®è´å°åº—ä¸æ•¢æ”¶ã€‚\n");
   setup();
 }
 

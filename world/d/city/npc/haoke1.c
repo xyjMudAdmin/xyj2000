@@ -3,11 +3,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("¾Æ¿Í", ({"jiu ke"}));
+        set_name("é…’å®¢", ({"jiu ke"}));
         set("age", 32);
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("long",
-"Ò»¸ö¾«¾«ÊİÊİµÄĞ¡¸ö×Ó£¬Ô½ºÈ»¹Ô½ÓĞ¾«Éñ¡£\n");
+"ä¸€ä¸ªç²¾ç²¾ç˜¦ç˜¦çš„å°ä¸ªå­ï¼Œè¶Šå–è¿˜è¶Šæœ‰ç²¾ç¥ã€‚\n");
         set("attitude", "peaceful");
 
         set("combat_exp", 20000);

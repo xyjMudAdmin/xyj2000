@@ -3,11 +3,11 @@ inherit NPC;
 
 void create()
 {
-       	set_name("¹í×ÓÄ¸Éñ", ({"guizimu shen", "shen"}));
-       	set("gender", "Å®ĞÔ");
+       	set_name("é¬¼å­æ¯ç¥", ({"guizimu shen", "shen"}));
+       	set("gender", "å¥³æ€§");
        	set("age", 20);
         set("class", "youling");
-	set("title", "Ä¸Ò¹²æ");
+	set("title", "æ¯å¤œå‰");
        	set("attitude", "friendly");
         set("per", 30);
         set("int", 30);

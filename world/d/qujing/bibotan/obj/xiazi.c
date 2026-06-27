@@ -13,7 +13,7 @@ void init() // added by mon 9/9/98
       if (me->query("owned")!=where->query("id"))
       {
         if(ob=present("tooth",me)) {
-	    message_vision("$NÒ»²»Ğ¡ĞÄ£¬$nµôµ½µØÉÏ²»¼ûÁË£º£¨\n",
+	    message_vision("$Nä¸€ä¸å°å¿ƒï¼Œ$næ‰åˆ°åœ°ä¸Šä¸è§äº†ï¼šï¼ˆ\n",
 		    where, ob);
 	    destruct(ob);
 	}
@@ -29,7 +29,7 @@ void init() // added by mon 9/9/98
 
 void create()
 {
-        set_name("»Æ½ğÏ»×Ó", ({ "xiazi" }) );
+        set_name("é»„é‡‘åŒ£å­", ({ "xiazi" }) );
         set_weight(2000);
         set_max_encumbrance(1200);
         if( clonep() ) {
@@ -51,11 +51,11 @@ else if(i>=1) {
 */
               set_default_object(__FILE__);
         } else {
-                set("unit", "¸ö");
+                set("unit", "ä¸ª");
 		set("no_sell", 1);
 		set("no_put", 1);
 		set("no_give", 1);
-                set("long", "Ò»¸ö½ğ¹â²ÓÈ»µÄ»Æ½ğÏ»×Ó¡£\n");
+                set("long", "ä¸€ä¸ªé‡‘å…‰ç¿ç„¶çš„é»„é‡‘åŒ£å­ã€‚\n");
                 set("value",0);
         }
 }

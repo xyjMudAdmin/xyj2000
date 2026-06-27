@@ -5,12 +5,12 @@ inherit ROOM;
 
 void create()
 {
-  set ("short", "��·");
+  set ("short", "土路");
   set ("long", @LONG
 
-��Χ��һƬ���һЩũ��������������ڸ��֣�����һЩ������
-�������ˣ��Զ���Ĵ�����Լ�������������ģ�һ������̫ƽ�ľ�
-��
+周围是一片蹈田，一些农夫在田里赶着牲口耕种．还有一些孩子在
+田地里玩耍．远处的村落隐约而见，炊烟饶饶，一幅天下太平的景
+象．
 LONG);
 set("exits", ([ /* sizeof() == 4 */
 "north" : __DIR__"daotian1",

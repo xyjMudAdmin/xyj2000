@@ -5,11 +5,11 @@ inherit NPC;
 
 void create()
 {
-  set_name("Ğ¡Í¯", ({"xiao tong", "tong"}));
-  set("gender", "ÄĞĞÔ");
+  set_name("å°ç«¥", ({"xiao tong", "tong"}));
+  set("gender", "ç”·æ€§");
   set("age", 12);
   set("per", 25);
-  set("long", "Ò»Î»Í·ÉÏÔú÷İµÄµÀÍ¯¡£\n");
+  set("long", "ä¸€ä½å¤´ä¸Šæ‰é¬çš„é“ç«¥ã€‚\n");
   set("attitude", "friendly");
   set("max_kee", 200);
   set("max_gin", 200);

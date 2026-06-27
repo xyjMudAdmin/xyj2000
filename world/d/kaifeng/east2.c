@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "��ٵ�");
+  set ("short", "大官道");
   set ("long", @LONG
 
-һ��������ֱ�Ĵ�ٵ���ƽԭ���ɶ�����ԶԶ�����ӿ�������
-��ƽ�����ݵ���ʮ�����ۡ���ٵ��Ķ���ͨ��Զ����
+一条宽阔笔直的大官道自平原上由东西向远远地伸延开来，官
+道平整可容得下十马并驰。大官道的东西通向远方。
 
 LONG);
 

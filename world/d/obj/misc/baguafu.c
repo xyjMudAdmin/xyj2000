@@ -6,10 +6,10 @@ inherit ITEM;
 
 void create()
 {
-  set_name("°ËØÔ·û", ({"bagua fu", "fu",}));
+  set_name("å…«å¦ç¬¦", ({"bagua fu", "fu",}));
   set_weight(100);
  
-  set("unit", "ÕÅ");
+  set("unit", "å¼ ");
   set("value", 0);
   setup();
 }
@@ -23,8 +23,8 @@ int do_direct (string arg)
 {
   object me = this_player();
   
-  if (!arg) return notify_fail("ÓÃ·¨£ºdirect <direction>\n");
-  write ("ÄãÓÃÖì±ÊÔÚ°ËØÔ·ûÉÏĞ´ÏÂ "HIR+arg+ NOR" ¡£\n");
+  if (!arg) return notify_fail("ç”¨æ³•ï¼šdirect <direction>\n");
+  write ("ä½ ç”¨æœ±ç¬”åœ¨å…«å¦ç¬¦ä¸Šå†™ä¸‹ "HIR+arg+ NOR" ã€‚\n");
   set("dir",arg);
   return 1;
 }

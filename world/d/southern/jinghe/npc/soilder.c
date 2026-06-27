@@ -4,9 +4,9 @@
 inherit NPC;
 
 string *names = ({
-  "Ïº³¼",
-  "Ğ·Ê¿",
-  "Ñ²Ë®Ò¹²æ",
+  "è™¾è‡£",
+  "èŸ¹å£«",
+  "å·¡æ°´å¤œå‰",
 });
 
 string *ids =   ({
@@ -22,9 +22,9 @@ void create()
 
   i=random(sizeof(names));
   set_name(names[i], ({ids[i]}));
-  set("gender", "ÄĞĞÔ" );
+  set("gender", "ç”·æ€§" );
   set("age", 33);
-  set("long", "ãşË®ºÓµÄ¸É½«£¬ÕıÔÚËÄ´¦Ñ²Âß¡£\n");
+  set("long", "æ³¾æ°´æ²³çš„å¹²å°†ï¼Œæ­£åœ¨å››å¤„å·¡é€»ã€‚\n");
   set("class", "dragon");
   set("combat_exp", 50000);
   set("daoxing", 25000);

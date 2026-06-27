@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "�ɸ���");
+  set ("short", "干戈隅");
   set ("long", @LONG
-���ź�����ǽ���Ϲ���һ��Ф�����Թ���������ǹ��һ��
-Сͯ�ոմ�ɨ�����䣬����һ����Ⱦ������������ǹ�������ù��
-���ˡ�
+进门后，右手墙壁上挂了一幅肖像，两旁供着两柄长枪。一个
+小童刚刚打扫过房间，屋里一尘不染。尤其是两柄枪，被擦得光可
+鉴人。
 LONG);
 
   set("exits", ([ /* sizeof() == 1 */

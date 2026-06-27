@@ -5,27 +5,27 @@ inherit ITEM;
 inherit F_FOOD;
 
 string *names = ({
-  "山鼠",
-  "花蛇",
-  "灰兔",
-  "黑狐",
-  "羚羊",
-  "野马",
-  "野鹿",
-  "野驴",
-  "山驼",
-  "土狍",
-  "山鸡",
-  "树鸦",
-  "猩猩",
+  "灞遍紶",
+  "鑺辫泧",
+  "鐏板厰",
+  "榛戠嫄",
+  "缇氱緤",
+  "閲庨┈",
+  "閲庨箍",
+  "閲庨┐",
+  "灞遍┘",
+  "鍦熺媿",
+  "灞遍浮",
+  "鏍戦甫",
+  "鐚╃尒",
 });
 
 string *pieces = ({
-  "肉干",
-  "肉巴",
-  "肉条",
-  "肉饼",
-  "肉板",
+  "鑲夊共",
+  "鑲夊反",
+  "鑲夋潯",
+  "鑲夐ゼ",
+  "鑲夋澘",
 });
 
 void create()
@@ -37,8 +37,8 @@ void create()
   if (clonep())
     set_default_object(__FILE__);
   else {
-    set("long", "一大块晒干的兽肉。\n");
-    set("unit", "大块");
+    set("long", "涓�澶у潡鏅掑共鐨勫吔鑲夈�俓n");
+    set("unit", "澶у潡");
     set("food_remaining", 6);
     set("food_supply", 35);
   }

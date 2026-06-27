@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÈıÂ¥£º×ßÀÈ");
+        set("short", "ä¸‰æ¥¼ï¼šèµ°å»Š");
         set("long", @LONG
 
-×ßÀÈµÄ¾¡Í·ÓĞÉÈÌÒÄ¾ÃÅ£¬ÃÅºóÓĞ¼äÌ¸ĞÄÊÒ¡£
+èµ°å»Šçš„å°½å¤´æœ‰æ‰‡æ¡ƒæœ¨é—¨ï¼Œé—¨åæœ‰é—´è°ˆå¿ƒå®¤ã€‚
 LONG
         );
 
@@ -19,7 +19,7 @@ LONG
                 "east" : __DIR__"living",
         ]));
 
-        create_door("enter", "ÌÒÄ¾ÃÅ", "out", DOOR_CLOSED);
+        create_door("enter", "æ¡ƒæœ¨é—¨", "out", DOOR_CLOSED);
 
         setup();
 }
@@ -46,7 +46,7 @@ int do_open(string arg)
         }
 
         if ( num >= 2 && room->query("locked") ) {
-                write("·¿ÀïÓĞÈË£¬ÃÅÕıËø×ÅÄØ£¡\n");
+                write("æˆ¿é‡Œæœ‰äººï¼Œé—¨æ­£é”ç€å‘¢ï¼\n");
                 return 0;
         }
 

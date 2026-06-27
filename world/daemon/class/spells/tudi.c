@@ -16,10 +16,10 @@ int cast(object me)
 	env=environment(me);
 	
 	if(!wizardp(me))
-		return notify_fail("Ê²Ã´£¿\n");
+		return notify_fail("ä»€ä¹ˆï¼Ÿ\n");
 
 
-message_vision(HIC"$NÄî¶¯ÖäÓï£ºÌ«ÉÏÀÏ¾ý¼±¼±ÈçÂÉÁî£¬±¾¼äÍÁµØºÎÔÚ£¿\n\n"NOR,
+message_vision(HIC"$Nå¿µåŠ¨å’’è¯­ï¼šå¤ªä¸Šè€å›æ€¥æ€¥å¦‚å¾‹ä»¤ï¼Œæœ¬é—´åœŸåœ°ä½•åœ¨ï¼Ÿ\n\n"NOR,
 me);
 	call_out("find_result", 1, me, env);
 	return 1;
@@ -53,7 +53,7 @@ void find_result(object me, object env)
 			return;
 		}
 tell_room(environment(tudi),
-tudi->name()+"¾ªµÀ£º·¨Ö÷ÕÙ»½£¬ÉÙÅã¡£\n"+tudi->name()+"»¯×öÒ»µÀ°×¹â²»¼ûÁË¡£\n\n");
+tudi->name()+"æƒŠé“ï¼šæ³•ä¸»å¬å”¤ï¼Œå°‘é™ªã€‚\n"+tudi->name()+"åŒ–åšä¸€é“ç™½å…‰ä¸è§äº†ã€‚\n\n");
 		tudi->move(environment(me));
 	}else{
 		seteuid(getuid());
@@ -65,15 +65,15 @@ tudi->name()+"¾ªµÀ£º·¨Ö÷ÕÙ»½£¬ÉÙÅã¡£\n"+tudi->name()+"»¯×öÒ»µÀ°×¹â²»¼ûÁË¡£\n\n")
 		return fail(me);
 	}
 
-message_vision(HIC"Ò»µÀ°×¹âÂÓ¹ý£¬$N´ÓÖÐ×ßÁË³öÀ´¡£\n"NOR, tudi);	
-message_vision(HIC"$N¶Ô×Å$nÉîÉîÒ»¹ª£º²»Öª"+RANK_D->query_respect(me)+"½µÁÙ£¬ÓÐÊ§Ô¶Ó­¡£\n\n"NOR,
+message_vision(HIC"ä¸€é“ç™½å…‰æŽ è¿‡ï¼Œ$Nä»Žä¸­èµ°äº†å‡ºæ¥ã€‚\n"NOR, tudi);	
+message_vision(HIC"$Nå¯¹ç€$næ·±æ·±ä¸€èº¬ï¼šä¸çŸ¥"+RANK_D->query_respect(me)+"é™ä¸´ï¼Œæœ‰å¤±è¿œè¿Žã€‚\n\n"NOR,
 tudi, me);
 	return;
 }
 
 void fail(object me)
 {
-        tell_object(me,"±¾´¦ÎÞÍÁµØ¡£\n");
+        tell_object(me,"æœ¬å¤„æ— åœŸåœ°ã€‚\n");
         return;
 }
 
@@ -127,13 +127,13 @@ string find_place(object where)
 
         if(sscanf(filename,"/d/changan/bed#%*s")==1) {
 	//this need check first.
-	  answer="´²ÉÏ";
+	  answer="åºŠä¸Š";
         } else if(!undefinedp(maps[filename1])) {
 	  answer=maps[filename1];
 	} else if(where->is_character()) {
-	  answer=where->query("name")+"ÉíÉÏ";
+	  answer=where->query("name")+"èº«ä¸Š";
         } else if(sscanf(filename,"/obj/home#%*s")==1) {
-          answer="×¡¼ÒÀï";
+          answer="ä½å®¶é‡Œ";
         } else { 
           answer=undefinedp(where->query("short"))?
 		  where->short():

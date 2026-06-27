@@ -3,9 +3,9 @@ inherit NPC;
 
 void create()
 {
-	set_name("·áÓÀ¹ó", ({"feng yonggui", "feng", "boss"}));
-	set("title", "Á¸µêÕÆ¹ñ");
-	set("gender", "ÄĞĞÔ");
+	set_name("ä¸°æ°¸è´µ", ({"feng yonggui", "feng", "boss"}));
+	set("title", "ç²®åº—æŒæŸœ");
+	set("gender", "ç”·æ€§");
 	set("age", 35);
 	set("kee", 350); 
 	set("max_kee", 350);

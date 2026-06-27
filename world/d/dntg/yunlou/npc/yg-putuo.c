@@ -9,7 +9,7 @@ void set_skills(int j, int level)
         object me=this_object();
 	object weapon;
 
-	set("title","ÆÕÍÓ¶ñÉ®");
+	set("title","æ™®é™€æ¶åƒ§");
 	me->set_skill("unarmed", j);
 	me->set_skill("dodge", j);
 	me->set_skill("parry", j);

@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "¶´Ç°¹ã³¡");
+  set ("short", "æ´žå‰å¹¿åœº");
   set ("long", @LONG
 
-ÕâÊÇÄÏº£ÆÕÍÓÉ½ÉÏÒ»¿ì±È½ÏÆ½ÕûµÄÍÁµØ£¬ÆÕÍÓÉ½ÃÅÈËµÜ×ÓÃÇ¾­
-³£ÔÚÕâÀïÇÐ´èÎäÒÕ£¬Ðû½²·ð·¨£¬½»Á÷ÐÄµÃ¡£
+è¿™æ˜¯å—æµ·æ™®é™€å±±ä¸Šä¸€å¿«æ¯”è¾ƒå¹³æ•´çš„åœŸåœ°ï¼Œæ™®é™€å±±é—¨äººå¼Ÿå­ä»¬ç»
+å¸¸åœ¨è¿™é‡Œåˆ‡ç£‹æ­¦è‰ºï¼Œå®£è®²ä½›æ³•ï¼Œäº¤æµå¿ƒå¾—ã€‚
 LONG);
 
   set("objects", ([ /* sizeof() == 2 */
@@ -35,7 +35,7 @@ int valid_leave(object me, string dir)
 	if (dir == "enter" )
 	{
 	  if(me->query("obstacles/tongtian")=="guanyin")
-	    return notify_fail("¹ÛÒôÔÚ½²¾­²»ÄÜ¼ûÄã£¬Äãµ½ºóÃæ(back)È¥µÈËý°É£®\n");
+	    return notify_fail("è§‚éŸ³åœ¨è®²ç»ä¸èƒ½è§ä½ ï¼Œä½ åˆ°åŽé¢(back)åŽ»ç­‰å¥¹å§ï¼Ž\n");
 	}
 return 1;
 }
@@ -45,7 +45,7 @@ int do_back(string arg)
 	object me = this_player();
 	if (arg) return 0;
 	if( me->query("obstacles/tongtian")!="won") return 0;
-	if (me->is_busy()) return notify_fail("µÈÄãÃ¦ÍêÁËÔÙËµÒ²²»³ÙÂï£¡\n");
+	if (me->is_busy()) return notify_fail("ç­‰ä½ å¿™å®Œäº†å†è¯´ä¹Ÿä¸è¿Ÿå˜›ï¼\n");
 	me->move("/u/opal/qujing/tongtian/lianting");		
 	return 1;
 }

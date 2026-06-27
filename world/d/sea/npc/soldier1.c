@@ -3,9 +3,9 @@ inherit NPC;
 
 void create()
 {
-        set_name("Ïº±ø", ({"xia bing", "xia"}));
-        set("long","Ò»¸ö´©×Å¿ø¼×µÄ´óÏºÃ×£¬Õı×ßÀ´×ßÈ¥Î¬»¤ÖÈĞò£®\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("è™¾å…µ", ({"xia bing", "xia"}));
+        set("long","ä¸€ä¸ªç©¿ç€ç›”ç”²çš„å¤§è™¾ç±³ï¼Œæ­£èµ°æ¥èµ°å»ç»´æŠ¤ç§©åºï¼\n");
+        set("gender", "ç”·æ€§");
         set("age", 14);
         set("per", 10);
         set("attitude", "heroism");

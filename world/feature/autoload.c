@@ -39,7 +39,7 @@ void restore_autoload()
 		if( err || !ob ||
 		    (file[0..2]=="/u/"&&!wizardp(this_object())) ) {
 		    //mon 1/20/98
-		  write("Äã¾õµÃËÆºõÊ§ÂäÁËÊ²Ã´ÖØÒªµÄ¶«Î÷£¬×îºÃÍ¨ÖªÒ»ÏÂÎ×Ê¦¡£\n");
+		  write("ä½ è§‰å¾—ä¼¼ä¹Žå¤±è½äº†ä»€ä¹ˆé‡è¦çš„ä¸œè¥¿ï¼Œæœ€å¥½é€šçŸ¥ä¸€ä¸‹å·«å¸ˆã€‚\n");
 		  log_file("AUTOLOAD", sprintf(
 		    "Fail to autoload %s of %s, error %s on %s\n",
 		    file, this_object()->query("id"), err, ctime(time())));
@@ -55,7 +55,7 @@ void restore_autoload()
         {     
            object user,cloth;
            user=this_object();
-           if (user->query("gender")=="Å®ÐÔ")
+           if (user->query("gender")=="å¥³æ€§")
            {
               cloth = new("/obj/loginload/skirt.c");
               cloth->move(user);

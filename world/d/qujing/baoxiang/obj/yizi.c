@@ -5,15 +5,15 @@ inherit ITEM;
 
 void create()
 {
-  set_name("µñÄ¾Ğ±¿¿ÒÎ", ({"yi zi", "yizi", "seat"}));
+  set_name("é›•æœ¨æ–œé æ¤…", ({"yi zi", "yizi", "seat"}));
   set_weight(7000);
   if( clonep() )
     set_default_object(__FILE__);
   else
   {
-    set("long", "Ò»°ÑµñÄ¾Ğ±¿¿ÒÎ¡£\n");
+    set("long", "ä¸€æŠŠé›•æœ¨æ–œé æ¤…ã€‚\n");
     set("material", "wood");
-    set("unit", "°Ñ");
+    set("unit", "æŠŠ");
     set("value", 900);
   }
   setup();

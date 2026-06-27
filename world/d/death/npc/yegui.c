@@ -4,10 +4,10 @@ inherit NPC;
 
 void create()
 {
-       set_name("¹Â»êÒ°¹í", ({"ye gui", "gui"}));
-       set("gender", "ÄĞĞÔ");
+       set_name("å­¤é­‚é‡é¬¼", ({"ye gui", "gui"}));
+       set("gender", "ç”·æ€§");
        set("age", 60);
-	set("long", "Ò»¸ö¿´ÆğÀ´Ïàµ±¿ÉÁ¯µÄÀÏÍ·£®\n");
+	set("long", "ä¸€ä¸ªçœ‹èµ·æ¥ç›¸å½“å¯æ€œçš„è€å¤´ï¼\n");
        set("attitude", "friendly");
        set("shen_type", 1);
        set("per", 10);
@@ -30,7 +30,7 @@ setup();
 
 int accept_fight(object me)
 {
-        command("say ÎÒÒÑÂÙÂäµ½Õâ¸öµØ²½ÁË£¬¾Í¿ÉÁ¯¿ÉÁ¯ÎÒ°É£¡");
+        command("say æˆ‘å·²æ²¦è½åˆ°è¿™ä¸ªåœ°æ­¥äº†ï¼Œå°±å¯æ€œå¯æ€œæˆ‘å§ï¼");
         return 0;
 }
 

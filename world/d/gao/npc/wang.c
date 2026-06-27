@@ -6,10 +6,10 @@ inherit F_VENDOR_SALE;
 void create()
 {
     reload("wang_zhanggui");
-       set_name("ÍõÕÆ¹ñ", ({"wang zhanggui", "wang"}));
-       set("long", "Ğ¡¾Æ¹İµÄÀÏ°å£¬³ÔµÄÅÖÅÖµÄ£®\n");
-       set("gender", "ÄĞĞÔ");
-	set("title", "¾Æ¹İÀÏ°å");
+       set_name("ç‹æŒæŸœ", ({"wang zhanggui", "wang"}));
+       set("long", "å°é…’é¦†çš„è€æ¿ï¼Œåƒçš„èƒ–èƒ–çš„ï¼\n");
+       set("gender", "ç”·æ€§");
+	set("title", "é…’é¦†è€æ¿");
 	set("combat_exp", 3000);
        set("age", 46);
        set("attitude", "friendly");
@@ -45,9 +45,9 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         switch( random(1) ) {
                 case 0:
-                        say( name()+"Ğ¦ßäßäµØËµµÀ£ºÕâÎ»" +
+                        say( name()+"ç¬‘å’ªå’ªåœ°è¯´é“ï¼šè¿™ä½" +
 RANK_D->query_respect(ob)
-                                + "£¬½øÀ´ºÈÁ½ÖÑ°É¡£\n");
+                                + "ï¼Œè¿›æ¥å–ä¸¤ç›…å§ã€‚\n");
                         break;
 	}
 }

@@ -5,9 +5,9 @@ inherit AXE;
 
 void create()
 {
-  set_name("¿ªÉ½¸«", ({ "kaishan fu", "fu", "axe" }) );
+  set_name("å¼€å±±æ–§", ({ "kaishan fu", "fu", "axe" }) );
   init_axe(35);
-  set("unit", "°Ñ");
+  set("unit", "æŠŠ");
   set_weight(1100);
   if( clonep() )
      set_default_object(__FILE__);

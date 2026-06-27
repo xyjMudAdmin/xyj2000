@@ -5,9 +5,9 @@ inherit NPC;
 string *wang=({"qingguang","songdi","chujiang","chuguan","pingdeng",
               "dushi","taishan","lunzhuan","biancheng","yanluo",
              });
-mapping name=(["qingguang":"ÇØ¹ãÍõ","songdi":"ËÎµÛÍõ","chujiang":"³þ½­Íõ",
-  "chuguan":"Øõ¹ÙÍõ","pingdeng":"Æ½µÈÍõ","dushi":"¶¼ÊÐÍõ","taishan":"Ì©É½Íõ",
-  "lunzhuan":"ÂÖ×ªÍõ","biancheng":"±å³ÇÍõ","yanluo":"ÑÖÂÞÍõ" ]);
+mapping name=(["qingguang":"ç§¦å¹¿çŽ‹","songdi":"å®‹å¸çŽ‹","chujiang":"æ¥šæ±ŸçŽ‹",
+  "chuguan":"ä»µå®˜çŽ‹","pingdeng":"å¹³ç­‰çŽ‹","dushi":"éƒ½å¸‚çŽ‹","taishan":"æ³°å±±çŽ‹",
+  "lunzhuan":"è½®è½¬çŽ‹","biancheng":"åžåŸŽçŽ‹","yanluo":"é˜Žç½—çŽ‹" ]);
 
 string get_next(object);
 
@@ -37,28 +37,28 @@ int do_complain(string arg) {
   object ob=this_player();
   object me=this_object();
   string complainee=ob->query_temp("dntg_hell/next");
-  if (!arg) return notify_fail("ÄãÒªÕÒË­ÉêËß£¿\n");
+  if (!arg) return notify_fail("ä½ è¦æ‰¾è°ç”³è¯‰ï¼Ÿ\n");
   if (me!=present(arg,environment(me)) ) return 0;
   
   
-  message_vision("$N¶Ô×Å$n½ÐµÀ£º¡°"+RANK_D->query_self_rude(ob)+
-    "ÔçÒÑ³¬³öÈý½çÖ®Íâ£¬²»ÔÚÎåÐÐÖ®ÖÐ£¬ÒÑ²»¹éÒõË¾¹ÜÏ½£¬ÔõÃ´ÓÖÀ´¹´ÎÒ£¿¡±\n"NOR,ob,me);
+  message_vision("$Nå¯¹ç€$nå«é“ï¼šâ€œ"+RANK_D->query_self_rude(ob)+
+    "æ—©å·²è¶…å‡ºä¸‰ç•Œä¹‹å¤–ï¼Œä¸åœ¨äº”è¡Œä¹‹ä¸­ï¼Œå·²ä¸å½’é˜´å¸ç®¡è¾–ï¼Œæ€Žä¹ˆåˆæ¥å‹¾æˆ‘ï¼Ÿâ€\n"NOR,ob,me);
   ob->command("bug "+me->query("id"));
 
   if (!complainee) {
-    message_vision("\n$NÖåÁËÖåÃ¼Í·£¬¶Ô$nËµµÀ£º¡°ÄãÎÒÒõÑôÊâÍ¾£¬"+
-      "ÎÒ²»ÖÎÄãË½´³ÓÄÚ¤Ö®×ï£¬Ò²¾ÍÊÇÁË¡£»¹²»¿ì¿ìÍËÏÂ£¡¡±\n\n",me,ob);
+    message_vision("\n$Nçš±äº†çš±çœ‰å¤´ï¼Œå¯¹$nè¯´é“ï¼šâ€œä½ æˆ‘é˜´é˜³æ®Šé€”ï¼Œ"+
+      "æˆ‘ä¸æ²»ä½ ç§é—¯å¹½å†¥ä¹‹ç½ªï¼Œä¹Ÿå°±æ˜¯äº†ã€‚è¿˜ä¸å¿«å¿«é€€ä¸‹ï¼â€\n\n",me,ob);
     return 1;
   }
   if (name[complainee]!=me->name()) {
-    message_vision("\n$NÖåÁËÖåÃ¼Í·£¬¶Ô$nËµµÀ£º¡°´ËÊÂ·ÇÎÒ¾­ÊÖ£¬"+
-      "Ô©ÓÐÍ·£¬Õ®ÓÐÖ÷£¬ÄÄ¸öÇ²ÈË¹´Äã£¬ÄãÈ¥ÕÒÄÄ¸ö°É¡£¡±\n\n",me,ob);
+    message_vision("\n$Nçš±äº†çš±çœ‰å¤´ï¼Œå¯¹$nè¯´é“ï¼šâ€œæ­¤äº‹éžæˆ‘ç»æ‰‹ï¼Œ"+
+      "å†¤æœ‰å¤´ï¼Œå€ºæœ‰ä¸»ï¼Œå“ªä¸ªé£äººå‹¾ä½ ï¼Œä½ åŽ»æ‰¾å“ªä¸ªå§ã€‚â€\n\n",me,ob);
     ob->set_temp("dntg_hell/next",get_next(me));
     return 1;
   }
   ob->delete_temp("dntg_hell/ready");  
-  message_vision("\n$NÄÕÐß³ÉÅ­µÀ£º¡°±¾Íõ½ÐÄãÈý¸üËÀ£¬Ë­¸ÒÁôÄãµ½Îå¸ü¡£"+
-        "´ýÎÒÇ××ÔËÍÄãÈ¥¼û´ÞÅÐ¹Ù£¡¡±\n",me);
+  message_vision("\n$Næ¼ç¾žæˆæ€’é“ï¼šâ€œæœ¬çŽ‹å«ä½ ä¸‰æ›´æ­»ï¼Œè°æ•¢ç•™ä½ åˆ°äº”æ›´ã€‚"+
+        "å¾…æˆ‘äº²è‡ªé€ä½ åŽ»è§å´”åˆ¤å®˜ï¼â€\n",me);
   me->set_temp("target",ob);
   me->kill_ob(ob);
   return 1;
@@ -87,7 +87,7 @@ void die() {
     return;
   }
   ob->set_temp("dntg_hell/"+me->name(),1);
-  message_vision(HIW"\n$NËµµÀ£º¡¸²»´òÁË£¬²»´òÁË£¬ÎÒÍ¶½µ....¡£¡¹\n\n"NOR,me);
+  message_vision(HIW"\n$Nè¯´é“ï¼šã€Œä¸æ‰“äº†ï¼Œä¸æ‰“äº†ï¼Œæˆ‘æŠ•é™....ã€‚ã€\n\n"NOR,me);
   me->remove_killer(ob);
   me->remove_enemy(ob);
   ob->remove_killer(me);
@@ -99,12 +99,12 @@ void die() {
   me->clear_condition();
   
   me->command("say "+ob->name()+RANK_D->query_respect(ob)+
-       "ÉñÍ¨¹ã´ó£¬Ð¡Íõ¸Ê°ÝÏÂ·ç¡£");
+       "ç¥žé€šå¹¿å¤§ï¼Œå°çŽ‹ç”˜æ‹œä¸‹é£Žã€‚");
   next=get_next(me);
   ob->set_temp("dntg_hell/next",next);
-  message_vision("$N·­ÁË·­°¸ÉÏµÄÎÄÊé£¬¶Ô$nËµµÀ£º¡°´ËÊÂÄË"+name[next]+
-   "´«ÎÄÖÁ´Ë£¬ÒªÐ¡Íõ¹´ÄÃ"+RANK_D->query_respect(ob)+"£¬"+RANK_D->query_respect(ob)
-   +"»¹ÊÇÈ¥ÕÒËûÀíÂÛ°É¡£\n\n",me,ob);
+  message_vision("$Nç¿»äº†ç¿»æ¡ˆä¸Šçš„æ–‡ä¹¦ï¼Œå¯¹$nè¯´é“ï¼šâ€œæ­¤äº‹ä¹ƒ"+name[next]+
+   "ä¼ æ–‡è‡³æ­¤ï¼Œè¦å°çŽ‹å‹¾æ‹¿"+RANK_D->query_respect(ob)+"ï¼Œ"+RANK_D->query_respect(ob)
+   +"è¿˜æ˜¯åŽ»æ‰¾ä»–ç†è®ºå§ã€‚\n\n",me,ob);
 
   if (ob->query_temp("dntg_hell/"+name[next]) ) 
       ob->set_temp("dntg_hell/ready",me);      
@@ -115,21 +115,21 @@ int do_kill(string arg) {
   object ob=this_player();
   string next=ob->query_temp("dntg_hell/next");
 
-  if (!arg) return notify_fail("Äã²»ÄÜÕâÃ´¸É£¡\n");
+  if (!arg) return notify_fail("ä½ ä¸èƒ½è¿™ä¹ˆå¹²ï¼\n");
   if (me!=present(arg,environment(me))) return 0;
   if (ob->query_temp("dntg_hell/ready")!=me) return 0;
   if (ob->query("dntg/hell")=="done") return 0;
   if (!next) return 0;
 
-   message_vision("$NÅÄ°¸´ó½Ð£º¡°ÔõÃ´ÓÖÊÇ"+name[next]+
-        "£¿£¡ÄãÕâ¼éÍõ¾¹¸ÒË£ÅªÓÚÎÒ£¡ÄÃÃüÀ´£¡¡±\n\n",ob);
+   message_vision("$Næ‹æ¡ˆå¤§å«ï¼šâ€œæ€Žä¹ˆåˆæ˜¯"+name[next]+
+        "ï¼Ÿï¼ä½ è¿™å¥¸çŽ‹ç«Ÿæ•¢è€å¼„äºŽæˆ‘ï¼æ‹¿å‘½æ¥ï¼â€\n\n",ob);
 
-   message_vision("$NÏÅµÃ»ê·ÉÆÇÉ¢£¬²üÉíËµ£º¡°°ÕÁË°ÕÁË£¬ÒÀÄã£¬¶¼ÒÀÄã¡£¡±\n",me);
-   message_vision("$N´Ó°¸ÉÏÄÃ³öÉúËÀ²¾£¬ÌáÆðÖì±Ê£¬±¥ÕºÅ¨Ä«£¬½«$nµÄÃû×Ö»®È¥¡£\n\n",me,ob);
+   message_vision("$Nå“å¾—é­‚é£žé­„æ•£ï¼Œé¢¤èº«è¯´ï¼šâ€œç½¢äº†ç½¢äº†ï¼Œä¾ä½ ï¼Œéƒ½ä¾ä½ ã€‚â€\n",me);
+   message_vision("$Nä»Žæ¡ˆä¸Šæ‹¿å‡ºç”Ÿæ­»ç°¿ï¼Œæèµ·æœ±ç¬”ï¼Œé¥±è˜¸æµ“å¢¨ï¼Œå°†$nçš„åå­—åˆ’åŽ»ã€‚\n\n",me,ob);
 
    ob->set("dntg/hell","done");
-   me->command("chat "+ob->name()+"Õâ"+RANK_D->query_rude(ob)+
-     "³ÑÇ¿ÐÐÐ×£¬²»·þ¾Ð»½£¬´óÄÖÂÞÉ­£¬Ç¿ÏúÃûºÅ£¬´ýÎÒÉÏÌìÙ÷Ã÷ÓñµÛ£¬ÔÙÀ´ÄÃÄã£¡");
+   me->command("chat "+ob->name()+"è¿™"+RANK_D->query_rude(ob)+
+     "é€žå¼ºè¡Œå‡¶ï¼Œä¸æœæ‹˜å”¤ï¼Œå¤§é—¹ç½—æ£®ï¼Œå¼ºé”€åå·ï¼Œå¾…æˆ‘ä¸Šå¤©ç¦€æ˜ŽçŽ‰å¸ï¼Œå†æ¥æ‹¿ä½ ï¼");
    me->delete_temp("target");
   ob->set("life/no_death_decrease",1);
    ob->delete_temp("dntg_hell");

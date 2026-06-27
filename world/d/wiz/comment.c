@@ -10,13 +10,13 @@ mapping get_info(string);
 string* get_info_string(string); 
 void create() {
   
-  set("short","µµ°¸¹İ");
+  set("short","æ¡£æ¡ˆé¦†");
   set("long",@LONG
 
-Ò»¼ä²»´óµÄ·¿¼ä£¬²¼ÖÃµÃµäÑÅËàÄÂ£¬ËÄÖÜµÄÎÄ¼ş³÷ÉÏ
-¶ÑÂúÁË¸÷Ê½¸÷ÑùµÄ¾í×Ú¡£ÔÚÕâÀïÄã¿ÉÒÔ²é¿´(consult)
-±ğÈË¶ÔÄã»òÆäËûÈËÎïµÄÆÀ¼Û£¬Ò²¿ÉÒÔĞ´ÏÂ(comment)
-Äã¶ÔÄ³ÈËµÄ¿´·¨¡£
+ä¸€é—´ä¸å¤§çš„æˆ¿é—´ï¼Œå¸ƒç½®å¾—å…¸é›…è‚ƒç©†ï¼Œå››å‘¨çš„æ–‡ä»¶æ©±ä¸Š
+å †æ»¡äº†å„å¼å„æ ·çš„å·å®—ã€‚åœ¨è¿™é‡Œä½ å¯ä»¥æŸ¥çœ‹(consult)
+åˆ«äººå¯¹ä½ æˆ–å…¶ä»–äººç‰©çš„è¯„ä»·ï¼Œä¹Ÿå¯ä»¥å†™ä¸‹(comment)
+ä½ å¯¹æŸäººçš„çœ‹æ³•ã€‚
 
 LONG);
   set("exits",([
@@ -41,30 +41,30 @@ int do_consult(string arg) {
    string* comments;
    object ob;
 
-   if (!arg) return notify_fail("¸ñÊ½£ºconsult <id>\n");
+   if (!arg) return notify_fail("æ ¼å¼ï¼šconsult <id>\n");
    if( file_size(DATA_DIR + "login/" + arg[0..0] + "/" + arg + __SAVE_EXTENSION__)<0 )
-                return notify_fail("Ã»ÓĞÕâÎ»Íæ¼Ò¡£\n");
+                return notify_fail("æ²¡æœ‰è¿™ä½ç©å®¶ã€‚\n");
   
    seteuid(arg);
    ob = new(USER_OB);
    ob->set("id", arg);
    if (ob->restore()) {
      name=ob->query("name");
-     if (!title=ob->query("title")) title="ÎŞ";
-     if (!nick=ob->query("nickname")) nick="ÎŞ";
-     if (!desc=ob->query("long")) desc="ÎŞ";
+     if (!title=ob->query("title")) title="æ— ";
+     if (!nick=ob->query("nickname")) nick="æ— ";
+     if (!desc=ob->query("long")) desc="æ— ";
    }
    destruct (ob);
        
-   write("£É£Ä£º "+arg+"\n");
-   write("ĞÕÃû£º "+name+"\n");
-   write("Í·ÏÎ£º "+title+"\n");
-   write("´ÂºÅ£º "+nick+"\n");
-   write("ÌØÕ÷£º \n"+desc+"\n");
-   write("ÆÀ´«£º\n\n");
+   write("ï¼©ï¼¤ï¼š "+arg+"\n");
+   write("å§“åï¼š "+name+"\n");
+   write("å¤´è¡”ï¼š "+title+"\n");
+   write("ç»°å·ï¼š "+nick+"\n");
+   write("ç‰¹å¾ï¼š \n"+desc+"\n");
+   write("è¯„ä¼ ï¼š\n\n");
   
    if (file_size(DIR+arg)<0) {
-       write("ÎŞ\n\n");
+       write("æ— \n\n");
        return 1;
    }
    
@@ -79,12 +79,12 @@ int do_comment(string arg) {
   string str,name,comment,option;
   mapping comments;
   object me=this_player();
-  string fail_msg="¸ñÊ½£ºcomment <id> <comment> <-s>(optional)\n"+
-         "±¸×¢£ºÏµÍ³½«²»ÏÔÊ¾ÄãµÄÃû×Ö£¬³ı·ÇÓÃ-sÇ©ÉÏÄãµÄ´óÃû¡£\n"+
-         "      commentÖĞÇëÎğÊ¹ÓÃ¿Õ¸ñ¼ü¡£\n"+
-         "      ¡°Ò»×ÖÈë¹«ÃÅ£¬¾ÅÅ£°Î²»»Ø¡±£¬ÏÂ±ÊÇ°Ç§ÍòÉ÷ÖØ£¡\n"+
-         "      ÈôÓĞ±ÊÎó£¬¿ÉÓÃclearÉ¾³ı¡£\n"+
-         "      ÑóÎÄÆÀ´«£¬Ë¡²»Èëµµ¡£\n";
+  string fail_msg="æ ¼å¼ï¼šcomment <id> <comment> <-s>(optional)\n"+
+         "å¤‡æ³¨ï¼šç³»ç»Ÿå°†ä¸æ˜¾ç¤ºä½ çš„åå­—ï¼Œé™¤éç”¨-sç­¾ä¸Šä½ çš„å¤§åã€‚\n"+
+         "      commentä¸­è¯·å‹¿ä½¿ç”¨ç©ºæ ¼é”®ã€‚\n"+
+         "      â€œä¸€å­—å…¥å…¬é—¨ï¼Œä¹ç‰›æ‹”ä¸å›â€ï¼Œä¸‹ç¬”å‰åƒä¸‡æ…é‡ï¼\n"+
+         "      è‹¥æœ‰ç¬”è¯¯ï¼Œå¯ç”¨clearåˆ é™¤ã€‚\n"+
+         "      æ´‹æ–‡è¯„ä¼ ï¼Œæ•ä¸å…¥æ¡£ã€‚\n";
   if (!arg) return notify_fail(fail_msg);
   if (sscanf(arg,"%s %s %s",name,comment,option)!=3 ) 
     if (sscanf(arg,"%s %s",name,comment)!=2) 
@@ -92,21 +92,21 @@ int do_comment(string arg) {
   if (option && option!="-s")
     return notify_fail(fail_msg);
   if (!in_chinese(comment))
-    return notify_fail("¿´²»Çå¡£¡£¡£ÇëÓÃÖĞÎÄÕı¿¬ÌÜĞ´Çå³ş¡£\n");
+    return notify_fail("çœ‹ä¸æ¸…ã€‚ã€‚ã€‚è¯·ç”¨ä¸­æ–‡æ­£æ¥·èªŠå†™æ¸…æ¥šã€‚\n");
   if (option=="-s") 
-    comment=me->query("name")+"("+me->query("id")+")£º"+comment;
+    comment=me->query("name")+"("+me->query("id")+")ï¼š"+comment;
   if( file_size(DATA_DIR + "login/" + name[0..0] + "/" + name + __SAVE_EXTENSION__)<0 )
-                return notify_fail("Ã»ÓĞÕâÎ»Íæ¼Ò¡£\n");
+                return notify_fail("æ²¡æœ‰è¿™ä½ç©å®¶ã€‚\n");
 
   if (!comments=get_info(DIR+name)) comments=allocate_mapping(10);
   if (comments[me->query("id")]) 
-    return notify_fail("ÄãÒÑ¾­·¢±í¹ıÒâ¼ûÁË¡£\n");
+    return notify_fail("ä½ å·²ç»å‘è¡¨è¿‡æ„è§äº†ã€‚\n");
 
-  if (sizeof(comment)>90) return notify_fail("Ğ´µÃ¼ò¶Ì¶óÒªĞ©¡£\n");
+  if (sizeof(comment)>90) return notify_fail("å†™å¾—ç®€çŸ­æ‰¼è¦äº›ã€‚\n");
 
-  message_vision("$NÂÔÒ»Ë¼Ë÷£¬ÔË±ÊÈç·É£¬ÔÚ"+name+"µÄµµ°¸ÉÏĞ´ÏÂÒ»¶ÎÆÀÓï¡£\n",me);
+  message_vision("$Nç•¥ä¸€æ€ç´¢ï¼Œè¿ç¬”å¦‚é£ï¼Œåœ¨"+name+"çš„æ¡£æ¡ˆä¸Šå†™ä¸‹ä¸€æ®µè¯„è¯­ã€‚\n",me);
   comments[me->query("id")]=comment+"\n";
-  log_file("star_comment",sprintf("On %s,%s(%s)ÈÏÎª%s£º%s\n",
+  log_file("star_comment",sprintf("On %s,%s(%s)è®¤ä¸º%sï¼š%s\n",
      ctime(time()),me->query("name"),geteuid(me),name,comment));
   write_file(DIR+name,me->query("id")+" "+comment+"\n",0);
   return 1;
@@ -142,14 +142,14 @@ int do_clear(string arg) {
   int line=1;
   string str,name,comment;
 
-   if (!arg) return notify_fail("¸ñÊ½£ºclear <id>\n");
+   if (!arg) return notify_fail("æ ¼å¼ï¼šclear <id>\n");
    if (file_size(DIR+arg)<0)
-      return notify_fail("Ã»ÓĞÕâ¸öµµ°¸¡£\n");
+      return notify_fail("æ²¡æœ‰è¿™ä¸ªæ¡£æ¡ˆã€‚\n");
 
    comments=get_info(DIR+arg);      
    if (!comments[me->query("id")]) 
-      return notify_fail("Ã»ÓĞ·¢ÏÖÄãµÄÄ«±¦¡£\n");
-   message_vision("$N³ÃÈË²»×¢Òâ£¬´Óµµ°¸ÀïËºÏÂÒ»Ò³£¬´§ÔÚ»³Àï¡£\n",me);
+      return notify_fail("æ²¡æœ‰å‘ç°ä½ çš„å¢¨å®ã€‚\n");
+   message_vision("$Nè¶äººä¸æ³¨æ„ï¼Œä»æ¡£æ¡ˆé‡Œæ’•ä¸‹ä¸€é¡µï¼Œæ£åœ¨æ€€é‡Œã€‚\n",me);
 
    while(str=read_file(DIR+arg,line,1)) {
      sscanf(str,"%s %s",name,comment);

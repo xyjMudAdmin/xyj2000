@@ -5,12 +5,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "Ê®×Ö½Ö²ÊÂ¥");
+  set ("short", "åå­—è¡—å½©æ¥¼");
   set ("long", @LONG
 
-ÕâÀïÊÇÌìóÃ¹úµÄ³ÇÖÐÐÄÊ®×Ö½Ö¿Ú£¬½ÖÉÏÎõÎõÈÁÈÁÊ®·ÖÈÈÄÖ£¬½Ö
-ÐÄÓÐÒ»»æºì»­ÂÌµÄÁðÁ§²ÊÂ¥£¬Ò»´óÈºÈË¼·ÔÚ²ÊÂ¥ËÄÖÜ£¬½»Í·½Ó
-¶úÐË·ÜµØÒéÂÛ×ÅÊ²Ã´¡£
+è¿™é‡Œæ˜¯å¤©ç«ºå›½çš„åŸŽä¸­å¿ƒåå­—è¡—å£ï¼Œè¡—ä¸Šç†™ç†™æ”˜æ”˜ååˆ†çƒ­é—¹ï¼Œè¡—
+å¿ƒæœ‰ä¸€ç»˜çº¢ç”»ç»¿çš„ç‰ç’ƒå½©æ¥¼ï¼Œä¸€å¤§ç¾¤äººæŒ¤åœ¨å½©æ¥¼å››å‘¨ï¼Œäº¤å¤´æŽ¥
+è€³å…´å¥‹åœ°è®®è®ºç€ä»€ä¹ˆã€‚
 
 LONG);
 
@@ -47,7 +47,7 @@ void init ()
 //  if (who->query("obstacle/tianzhu")=="done")
 //    return;
 
-  message_vision ("ÈËÃÇ½»Í·½Ó¶ú£¬µÍÉùÒéÂÛ×ÅÊ²Ã´¡£\n",who);
+  message_vision ("äººä»¬äº¤å¤´æŽ¥è€³ï¼Œä½Žå£°è®®è®ºç€ä»€ä¹ˆã€‚\n",who);
   remove_call_out ("noicing");
   call_out ("noicing",random(10)+5,who);
 }
@@ -65,11 +65,11 @@ void noicing (object who)
     return;
   if (where->query("has_thrown"))
   {
-    message_vision ("ÈËÈºÖÐß´ß´ÔûÔûÒéÂÛ£ºÌýËµÐåÇò´òÖÐÁËÒ»Â·¿Í¡£\n",who);
-    message_vision ("ÓÖÓÐÈËËµµÀ£ºÒ²²»Öª´òÖÐÁËºÎÐíÈËÒ²¡£\n",who);
+    message_vision ("äººç¾¤ä¸­å½å½å–³å–³è®®è®ºï¼šå¬è¯´ç»£çƒæ‰“ä¸­äº†ä¸€è·¯å®¢ã€‚\n",who);
+    message_vision ("åˆæœ‰äººè¯´é“ï¼šä¹Ÿä¸çŸ¥æ‰“ä¸­äº†ä½•è®¸äººä¹Ÿã€‚\n",who);
     return;
   }
-  message_vision ("²ÊÂ¥ÉÏÓÐÈË¸ßº°£º¹«Ö÷ÄéÏãÍê±Ï£¬Õý×£¸æÌìµØ¡£\n",who);
+  message_vision ("å½©æ¥¼ä¸Šæœ‰äººé«˜å–Šï¼šå…¬ä¸»æ‹ˆé¦™å®Œæ¯•ï¼Œæ­£ç¥å‘Šå¤©åœ°ã€‚\n",who);
   remove_call_out ("preparing");
   call_out ("preparing",random(10)+10,who);
 }
@@ -89,8 +89,8 @@ void preparing (object who)
   {
     return;
   }
-  message_vision ("²ÊÂ¥ÉÏÓÐÈËÓÖ¸ßº°£º¹«Ö÷ÁÙ´°£¬ËÅÅ®±¸Çò£¡\n",who);
-  message_vision ("µ×ÏÂÎÞÊý¿´¿Í¸ßÉùÄÅº°£ºÇÀÐåÇòÒ²£¡ÇÀÐåÇòÒ²£¡\n",who);
+  message_vision ("å½©æ¥¼ä¸Šæœ‰äººåˆé«˜å–Šï¼šå…¬ä¸»ä¸´çª—ï¼Œä¼ºå¥³å¤‡çƒï¼\n",who);
+  message_vision ("åº•ä¸‹æ— æ•°çœ‹å®¢é«˜å£°å‘å–Šï¼šæŠ¢ç»£çƒä¹Ÿï¼æŠ¢ç»£çƒä¹Ÿï¼\n",who);
   remove_call_out ("throwing");
   call_out ("throwing",random(10)+10,who);
 }
@@ -110,11 +110,11 @@ void throwing (object who)
   {
     return;
   }
-  message_vision ("Ò»Ö»ÐåÇò·ÉÀ´£¬Å¾µØÔÒÔÚ$NµÄÍ·ÉÏ£¡\n",who);
-  if (who->query("gender") == "Å®ÐÔ")
-    message_vision ("¿´¿ÍÃÇ¸ßº°£ºÅ®æâÂí£¡Å®æâÂí£¡\n",who);
+  message_vision ("ä¸€åªç»£çƒé£žæ¥ï¼Œå•ªåœ°ç ¸åœ¨$Nçš„å¤´ä¸Šï¼\n",who);
+  if (who->query("gender") == "å¥³æ€§")
+    message_vision ("çœ‹å®¢ä»¬é«˜å–Šï¼šå¥³é©¸é©¬ï¼å¥³é©¸é©¬ï¼\n",who);
   else
-    message_vision ("¿´¿ÍÃÇ¸ßº°£º´ò×ÅÁË£¡´ò×ÅÁË£¡\n",who);
+    message_vision ("çœ‹å®¢ä»¬é«˜å–Šï¼šæ‰“ç€äº†ï¼æ‰“ç€äº†ï¼\n",who);
 
   where->set("has_thrown",1);
   call_out ("reset_thrown",1200);
@@ -134,14 +134,14 @@ void leaving (object who)
   if (! who &&
       environment (who) != where)
     return;
-  message_vision ("Ò»Æ¬ßººÈÉùÖÐ£¬ÈËÈºÉÁ¿ªÒ»ÌõµÀ£¬¹«Ö÷×ßÁË¹ýÀ´¡£\n",who);
-  message_vision ("¹«Ö÷¶Ô$NÍñ¶ûÒ»Ð¦£¬ÇáÉùËµ£ºÈ¥¼û¸¸ÍõÒ²¡£\n",who);
-  message_vision ("Ò»ÈºËÅ¹Ù¹¬Å®´ØÓµ×ÅÔÎÔÎºõºõµÄ$NÏò±±×ßÈ¥¡£\n",who);
+  message_vision ("ä¸€ç‰‡å†å–å£°ä¸­ï¼Œäººç¾¤é—ªå¼€ä¸€æ¡é“ï¼Œå…¬ä¸»èµ°äº†è¿‡æ¥ã€‚\n",who);
+  message_vision ("å…¬ä¸»å¯¹$Nå©‰å°”ä¸€ç¬‘ï¼Œè½»å£°è¯´ï¼šåŽ»è§çˆ¶çŽ‹ä¹Ÿã€‚\n",who);
+  message_vision ("ä¸€ç¾¤ä¼ºå®˜å®«å¥³ç°‡æ‹¥ç€æ™•æ™•ä¹Žä¹Žçš„$Nå‘åŒ—èµ°åŽ»ã€‚\n",who);
   who->move(__DIR__"jiedao45");
   who->move(__DIR__"wumen");
   who->move(__DIR__"zhaoyang");
   who->move(__DIR__"jinluan");
-  message_vision ("$NÔÎÔÎºõºõµØÇåÐÑÁË¹ýÀ´¡£\n",who);
-  message_vision ("¹«Ö÷¶Ô¹úÍõÈöÁË¸ö½¿£¬ºì×ÅÁ³Ïòºó¹¬×ßÈ¥¡£\n",who);
+  message_vision ("$Næ™•æ™•ä¹Žä¹Žåœ°æ¸…é†’äº†è¿‡æ¥ã€‚\n",who);
+  message_vision ("å…¬ä¸»å¯¹å›½çŽ‹æ’’äº†ä¸ªå¨‡ï¼Œçº¢ç€è„¸å‘åŽå®«èµ°åŽ»ã€‚\n",who);
   who->set_temp("obstacle/tianzhu_thrown",1);
 }

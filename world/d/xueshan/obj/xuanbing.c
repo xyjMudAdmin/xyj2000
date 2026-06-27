@@ -5,12 +5,12 @@ inherit ITEM;
 
 void create() 
   {
-   set_name("Ğş±ù",({"xuan bing"}));
+   set_name("ç„å†°",({"xuan bing"}));
         set ("long", @LONG
-Ò»¿éĞş±ù£¬Ã°×ÅË¿Ë¿°×Æø£¬²»Öªµ½µ×ÓĞ¶àÀä¡£
+ä¸€å—ç„å†°ï¼Œå†’ç€ä¸ä¸ç™½æ°”ï¼Œä¸çŸ¥åˆ°åº•æœ‰å¤šå†·ã€‚
 LONG);
    set_weight(10);
-   set("unit","¿é");
+   set("unit","å—");
    set("cook/allow",1);
    set("cook/value",5);
    set("cook/type","shui");

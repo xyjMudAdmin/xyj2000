@@ -1,5 +1,5 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// Åå½£ 
+// ä½©å‰‘ 
 
 
 #include <weapon.h>
@@ -8,19 +8,19 @@ inherit "/d/obj/weapon/sword/anqi_container.c";
 
 void create()
 {
-   set_name("Åå½£", ({"pei jian","jian","sword"}));
+   set_name("ä½©å‰‘", ({"pei jian","jian","sword"}));
    set_weight(4000);
    if( clonep() ) 
           set_default_object(__FILE__);
    else 
      {
-      set("long", "Ò»±úËæÉíµÄÅå½££¬½£±ú´¦ËÆºõÓĞĞ©»ú¹ØÄÜ×°(install)Ğ©°µÆ÷½øÈ¥¡£\n");
-      set("orilong", "Ò»±úËæÉíµÄÅå½££¬½£±ú´¦ËÆºõÓĞĞ©»ú¹ØÄÜ×°(install)Ğ©°µÆ÷½øÈ¥¡£\n");
-      set("unit", "±ú");
+      set("long", "ä¸€æŸ„éšèº«çš„ä½©å‰‘ï¼Œå‰‘æŸ„å¤„ä¼¼ä¹æœ‰äº›æœºå…³èƒ½è£…(install)äº›æš—å™¨è¿›å»ã€‚\n");
+      set("orilong", "ä¸€æŸ„éšèº«çš„ä½©å‰‘ï¼Œå‰‘æŸ„å¤„ä¼¼ä¹æœ‰äº›æœºå…³èƒ½è£…(install)äº›æš—å™¨è¿›å»ã€‚\n");
+      set("unit", "æŸ„");
       set("value", 3000);
       set("material", "iron");
-      set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù³é³öÒ»±ú$nÎÕÔÚÊÖÖĞ¡£\n");
-      set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²å»Ø½£ÇÊ¡£\n");
+      set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€å£°æŠ½å‡ºä¸€æŸ„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+      set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næ’å›å‰‘é˜ã€‚\n");
       set("anqi/allow", 1);
       set("anqi/max", 20);
       set("anqi/now", 0);

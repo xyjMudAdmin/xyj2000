@@ -4,18 +4,18 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÀÏÄ¸Öí", ({ "old pig", "pig" }) );
-        set("race", "Ò°ÊŞ");
-        set("gender", "´ÆĞÔ");
+        set_name("è€æ¯çŒª", ({ "old pig", "pig" }) );
+        set("race", "é‡å…½");
+        set("gender", "é›Œæ€§");
         set("age", 10);
-        set("long", "Ò»Ö»·ÊÅÖµÄÀÏÄ¸Öí£¬Æ¨¹ÉÉÏ²»Öª±»Ë­ÓÃºÚÌ¿ÍáÍáÅ¤Å¤µÄĞ´ÁË¡°°¢»¨¡±Á½×Ö¡£\n");
+        set("long", "ä¸€åªè‚¥èƒ–çš„è€æ¯çŒªï¼Œå±è‚¡ä¸Šä¸çŸ¥è¢«è°ç”¨é»‘ç‚­æ­ªæ­ªæ‰­æ‰­çš„å†™äº†â€œé˜¿èŠ±â€ä¸¤å­—ã€‚\n");
         set("attitude", "friendly");
-	set("looking", "·Ê·ÊÅÖÅÖ£¬¿´ÆğÀ´×ãÓĞ¶ş°ÙÀ´½ï¡£");
+	set("looking", "è‚¥è‚¥èƒ–èƒ–ï¼Œçœ‹èµ·æ¥è¶³æœ‰äºŒç™¾æ¥æ–¤ã€‚");
         set("str", 20);
         set("con", 40);
 	set("kee", 300);
 	set("sen", 300);
-        set("limbs", ({ "Í·²¿", "ÉíÌå" }) );
+        set("limbs", ({ "å¤´éƒ¨", "èº«ä½“" }) );
         set("verbs", ({ "bite"}) );
 	set("combat_exp", 2000);
         set_skill("dodge", 20);
@@ -39,7 +39,7 @@ void leave()
 	this_object()->add("time", 1);
 	if ( (int)this_object()->query("time") > 3 ) {
         message("vision",
-               name() + "ºßºßß´ß´µØ½ĞÁË¼¸Éù£¬Å¤×ÅÆ¨¹ÉÅÜÁË¡£\n", environment(),
+               name() + "å“¼å“¼å½å½åœ°å«äº†å‡ å£°ï¼Œæ‰­ç€å±è‚¡è·‘äº†ã€‚\n", environment(),
                 this_object() );
         destruct(this_object());
 	}

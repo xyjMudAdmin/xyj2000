@@ -9,14 +9,14 @@ void reporting (object who, string reason, int points, string name)
   colors=who->query("quest/colors");
   color=sizeof(colors);
 
-  str = reason+"µÃµ½ÁË("+color+")"+to_chinese(points)+name+"¡£\n";
+  str = reason+"å¾—åˆ°äº†("+color+")"+to_chinese(points)+name+"ã€‚\n";
 
   if (DEBUG)
   {
     object snowcat = find_player ("snowcat");
 
     if (snowcat && wizardp(snowcat))
-      tell_object (snowcat, " ¡Ñ "+who->query("name")+str);
+      tell_object (snowcat, " âŠ™ "+who->query("name")+str);
   }
   else
     MONITOR_D->report_system_object_msg (who, str);

@@ -1,16 +1,16 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// head.c ÕÔÀÏ´ó
+// head.c èµµè€å¤§
 
 inherit NPC;
 
 void create()
 {
-       set_name("ÏÄÅôÕ¹", ({"xia pengzhan", "xia"}));
-       set("title", "Çå·çÕ¯Ç¿µÁÍ·Áì");
+       set_name("å¤é¹å±•", ({"xia pengzhan", "xia"}));
+       set("title", "æ¸…é£å¯¨å¼ºç›—å¤´é¢†");
        
-set("long","ÏÄÅôÕ¹Ô­ÊÇ³¤°²³ÇÖĞÒ»Ãû²¶Í·£¬ÒòÔôĞÔÄÑ¸Ä£¬Âä²İ×÷ÁËÇ¿µÁ£®
-Ê¹Ò»Â·Ñã¸èµ¶·¨£¬ÊÖÖĞÑãÔÆµ¶ÒõºİÎŞ±È£®\n");
-       set("gender", "ÄĞĞÔ");
+set("long","å¤é¹å±•åŸæ˜¯é•¿å®‰åŸä¸­ä¸€åæ•å¤´ï¼Œå› è´¼æ€§éš¾æ”¹ï¼Œè½è‰ä½œäº†å¼ºç›—ï¼
+ä½¿ä¸€è·¯é›æ­Œåˆ€æ³•ï¼Œæ‰‹ä¸­é›äº‘åˆ€é˜´ç‹ æ— æ¯”ï¼\n");
+       set("gender", "ç”·æ€§");
        set("age", 37);
 	set("str", 25);
        set("attitude", "aggressive");
@@ -51,6 +51,6 @@ void init()
 void greeting(object ob)
 {
         if( !ob || !present(ob, environment(this_object())) ) return;
-        say( "ÏÄÅôÕ¹ºÈµÀ£ºÄÇÀïÀ´µÄ" + RANK_D->query_rude(ob) +
-"£¬ÎÒ¿´Äã²»Ïë»îÁË£¡\n");
+        say( "å¤é¹å±•å–é“ï¼šé‚£é‡Œæ¥çš„" + RANK_D->query_rude(ob) +
+"ï¼Œæˆ‘çœ‹ä½ ä¸æƒ³æ´»äº†ï¼\n");
 }

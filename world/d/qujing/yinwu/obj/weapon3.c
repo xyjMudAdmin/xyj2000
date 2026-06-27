@@ -5,9 +5,9 @@ inherit FORK;
 
 void create()
 {
-  set_name("»±´Ì²æ", ({ "huaici cha", "cha", "fork" }) );
+  set_name("æ§åˆºå‰", ({ "huaici cha", "cha", "fork" }) );
   init_fork(20);
-  set("unit", "¸ù");
+  set("unit", "æ ¹");
   set_weight(500);
   if( clonep() )
     set_default_object(__FILE__);
@@ -15,7 +15,7 @@ void create()
     set("value", 180);
     set("material", "metal");
   }
-  set("wield_msg","$N²ÙÆğ$nÎÕÔÚÊÖÀï¡£\n");
+  set("wield_msg","$Næ“èµ·$næ¡åœ¨æ‰‹é‡Œã€‚\n");
   setup();
 }
 

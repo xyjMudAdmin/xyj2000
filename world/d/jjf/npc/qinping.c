@@ -14,9 +14,9 @@ mapping count=([]);
 
 void create()
 {
-  set_name("ÇØÆ½", ({"qin ping", "qin", "master"}));
-  set("title", "½«¾ü¸®¹Ü¼Ò");
-  set("gender", "ÄĞĞÔ");
+  set_name("ç§¦å¹³", ({"qin ping", "qin", "master"}));
+  set("title", "å°†å†›åºœç®¡å®¶");
+  set("gender", "ç”·æ€§");
   set("age", 46);
   set("str", 30);
   set("int", 25);
@@ -43,11 +43,11 @@ void create()
 
   setup();
   set("inquiry", ([
-		   "±øÆ÷": (: try_me :),
-		   "ÒÂ¼×": (: try_me :)
+		   "å…µå™¨": (: try_me :),
+		   "è¡£ç”²": (: try_me :)
 ]) );
   
-  create_family("½«¾ü¸®", 3, "À¶");
+  create_family("å°†å†›åºœ", 3, "è“");
   carry_object("/d/obj/armor/tenjia")->wear();
   carry_object("/d/obj/weapon/spear/tieqiang")->wield();
 }
@@ -57,7 +57,7 @@ int attempt_apprentice(object me)
 {
   string myname=RANK_D->query_respect(me);
   command("pat "+me->query("id"));
-  command("say ºÜºÃ£¬Ê±ÏÂÕıÊÇÓÃÈËÖ®¼Ê£¬"+myname+"¶à¼ÓÅ¬Á¦£¬ËûÈÕ±Ø¶¨ÓĞ³É¡£");
+  command("say å¾ˆå¥½ï¼Œæ—¶ä¸‹æ­£æ˜¯ç”¨äººä¹‹é™…ï¼Œ"+myname+"å¤šåŠ åŠªåŠ›ï¼Œä»–æ—¥å¿…å®šæœ‰æˆã€‚");
   command("recruit " + me->query("id") );
   return 1;
 }
@@ -79,8 +79,8 @@ int do_yao(string arg)
 {
   object me=this_player(), npc=this_object(), obj;
   
-  if((string)me->query("family/family_name")!="½«¾ü¸®")
-    return notify_fail(CYN"ÇØÆ½µÀ£º¶Ô²»×¡£¬½«¾ü¸®ÒÂ¼×±øÆ÷Ö»·¢¸ø±¾ÅÉ×ÓµÜ¡£\n"NOR);
+  if((string)me->query("family/family_name")!="å°†å†›åºœ")
+    return notify_fail(CYN"ç§¦å¹³é“ï¼šå¯¹ä¸ä½ï¼Œå°†å†›åºœè¡£ç”²å…µå™¨åªå‘ç»™æœ¬æ´¾å­å¼Ÿã€‚\n"NOR);
   if( !arg ||
      (arg != "blade"
    && arg != "sword"
@@ -99,22 +99,22 @@ int do_yao(string arg)
    && arg != "head"
    && arg != "feet"
    && arg != "waist"))
-    return notify_fail(CYN"ÇØÆ½µÀ£º¶Ô²»×¡£¬ÄãÒªµÄ¶«Î÷ÎÒÕâÀïÃ»ÓĞ¡£\n"NOR);
+    return notify_fail(CYN"ç§¦å¹³é“ï¼šå¯¹ä¸ä½ï¼Œä½ è¦çš„ä¸œè¥¿æˆ‘è¿™é‡Œæ²¡æœ‰ã€‚\n"NOR);
     if(count[arg]>=total)
-	return notify_fail(CYN"ÇØÆ½µÀ£º¶Ô²»×¡£¬ÄãÒªµÄ¶«Î÷ÎÒÒÑ¾­·¢ÍêÁË¡£\n"NOR); 
+	return notify_fail(CYN"ç§¦å¹³é“ï¼šå¯¹ä¸ä½ï¼Œä½ è¦çš„ä¸œè¥¿æˆ‘å·²ç»å‘å®Œäº†ã€‚\n"NOR); 
     if (arg == "body"
      || arg == "head"
      || arg == "feet"
      || arg == "waist")
     {
 	if (me->query_temp("mark/jjf_armor") >=4)
-	    return notify_fail(CYN"ÇØÆ½Å­µÀ£ºÄãÒªÁËÕâÃ´¶à¼şÒÂ¼×£¬»¹²»¹»£¿£¡\n"NOR);
+	    return notify_fail(CYN"ç§¦å¹³æ€’é“ï¼šä½ è¦äº†è¿™ä¹ˆå¤šä»¶è¡£ç”²ï¼Œè¿˜ä¸å¤Ÿï¼Ÿï¼\n"NOR);
 	me->add_temp("mark/jjf_armor", 1);
     }
     else
     {
 	if (me->query_temp("mark/jjf_weapon") >= 3)
-	    return notify_fail(CYN"ÇØÆ½Å­µÀ£ºÄãÒªÁËÕâÃ´¶à¼ş±øÆ÷£¬»¹²»¹»£¿£¡\n"NOR);
+	    return notify_fail(CYN"ç§¦å¹³æ€’é“ï¼šä½ è¦äº†è¿™ä¹ˆå¤šä»¶å…µå™¨ï¼Œè¿˜ä¸å¤Ÿï¼Ÿï¼\n"NOR);
 	me->add_temp("mark/jjf_weapon", 1);
     }
     count[arg]+=1;
@@ -124,9 +124,9 @@ int do_yao(string arg)
         obj->set("no_drop", 1);
         obj->set("no_give", 1);
 	obj->set("jjf_weapon", 1);
-        command("say ÕâÎ»"+RANK_D->query_respect(me)+"£¬"+obj->query("name")+"ÎªÊı²»¶à£¬Ç§Íò±ğËæ±ãÈÓ¡£");
-	command("say ÒªÊÇÄú²»ÔÙĞèÒª£¬Çë»¹(huan)¸øÎÒ¡£");
-        message_vision("ÇØÆ½¸ø$NÒ»"+obj->query("unit")+obj->query("name")+ "¡£\n", me);
+        command("say è¿™ä½"+RANK_D->query_respect(me)+"ï¼Œ"+obj->query("name")+"ä¸ºæ•°ä¸å¤šï¼Œåƒä¸‡åˆ«éšä¾¿æ‰”ã€‚");
+	command("say è¦æ˜¯æ‚¨ä¸å†éœ€è¦ï¼Œè¯·è¿˜(huan)ç»™æˆ‘ã€‚");
+        message_vision("ç§¦å¹³ç»™$Nä¸€"+obj->query("unit")+obj->query("name")+ "ã€‚\n", me);
         obj->move(me);
     }
     else if (arg == "body"
@@ -138,9 +138,9 @@ int do_yao(string arg)
         obj->set("no_drop", 1);
         obj->set("no_give", 1);
 	obj->set("jjf_armor", 1);
-        command("say ÕâÎ»"+RANK_D->query_respect(me)+"£¬"+obj->query("name")+"ÎªÊı²»¶à£¬Ç§Íò±ğËæ±ãÈÓ¡£");
-	command("say ÒªÊÇÄú²»ÔÙĞèÒª£¬Çë»¹(huan)¸øÎÒ¡£");
-        message_vision("ÇØÆ½¸ø$NÒ»"+obj->query("unit")+obj->query("name")+ "¡£\n", me);
+        command("say è¿™ä½"+RANK_D->query_respect(me)+"ï¼Œ"+obj->query("name")+"ä¸ºæ•°ä¸å¤šï¼Œåƒä¸‡åˆ«éšä¾¿æ‰”ã€‚");
+	command("say è¦æ˜¯æ‚¨ä¸å†éœ€è¦ï¼Œè¯·è¿˜(huan)ç»™æˆ‘ã€‚");
+        message_vision("ç§¦å¹³ç»™$Nä¸€"+obj->query("unit")+obj->query("name")+ "ã€‚\n", me);
         obj->move(me);
     }
     else {
@@ -149,9 +149,9 @@ int do_yao(string arg)
         obj->set("no_drop", 1);
         obj->set("no_give", 1);
 	obj->set("jjf_weapon", 1);
-        command("say ÕâÎ»"+RANK_D->query_respect(me)+"£¬"+obj->query("name")+"ÎªÊı²»¶à£¬Ç§Íò±ğËæ±ãÈÓ¡£");
-	command("say ÒªÊÇÄú²»ÔÙĞèÒª£¬Çë»¹(huan)¸øÎÒ¡£");
-        message_vision("ÇØÆ½¸ø$NÒ»"+obj->query("unit")+obj->query("name")+ "¡£\n", me);
+        command("say è¿™ä½"+RANK_D->query_respect(me)+"ï¼Œ"+obj->query("name")+"ä¸ºæ•°ä¸å¤šï¼Œåƒä¸‡åˆ«éšä¾¿æ‰”ã€‚");
+	command("say è¦æ˜¯æ‚¨ä¸å†éœ€è¦ï¼Œè¯·è¿˜(huan)ç»™æˆ‘ã€‚");
+        message_vision("ç§¦å¹³ç»™$Nä¸€"+obj->query("unit")+obj->query("name")+ "ã€‚\n", me);
         obj->move(me);
     }
 
@@ -160,8 +160,8 @@ int do_yao(string arg)
 
 string try_me()
 {
-  command("say ÇØ½«¾üÇ××ÔÆÆ·Ñ£¬×¼±¸ÁËÒ»Ğ©±øÆ÷ºÍÒÂ¼×¡£");
-  return ("Ö»ÒªÊÇ½«¾ü¸®µÄµÜ×Ó¾Í¿ÉÒÔÄÃÒ»Ì×È¥ÓÃ¡£");
+  command("say ç§¦å°†å†›äº²è‡ªç ´è´¹ï¼Œå‡†å¤‡äº†ä¸€äº›å…µå™¨å’Œè¡£ç”²ã€‚");
+  return ("åªè¦æ˜¯å°†å†›åºœçš„å¼Ÿå­å°±å¯ä»¥æ‹¿ä¸€å¥—å»ç”¨ã€‚");
 }
 
 int do_huan(string arg)
@@ -169,23 +169,23 @@ int do_huan(string arg)
 	object me=this_player(), npc=this_object(), ob;
 
 	if(!objectp(ob=present(arg, me)))
-		return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+		return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
 	if(ob->query("jjf_weapon")==1) {
-		message_vision("$NÄÃ³ö" + ob->short() + "¸ø$n¡£\n", me, npc);
-		command("say ²»´í£¬²»´í£¬Õâ"+ob->query("unit")+ob->query("name")+"ĞŞĞŞ»¹¿ÉÒÔÓÃ¡£");
+		message_vision("$Næ‹¿å‡º" + ob->short() + "ç»™$nã€‚\n", me, npc);
+		command("say ä¸é”™ï¼Œä¸é”™ï¼Œè¿™"+ob->query("unit")+ob->query("name")+"ä¿®ä¿®è¿˜å¯ä»¥ç”¨ã€‚");
 		command("thank "+me->query("id"));
 		destruct(ob);
 		me->add_temp("mark/jjf_weapon", -1);
 	}
 	else if(ob->query("jjf_armor")==1) {
-		message_vision("$NÄÃ³ö" + ob->short() + "¸ø$n¡£\n", me, npc);
-		command("say ²»´í£¬²»´í£¬Õâ"+ob->query("unit")+ob->query("name")+"ĞŞĞŞ»¹¿ÉÒÔÓÃ¡£");
+		message_vision("$Næ‹¿å‡º" + ob->short() + "ç»™$nã€‚\n", me, npc);
+		command("say ä¸é”™ï¼Œä¸é”™ï¼Œè¿™"+ob->query("unit")+ob->query("name")+"ä¿®ä¿®è¿˜å¯ä»¥ç”¨ã€‚");
                 command("thank "+me->query("id"));
                 destruct(ob);
                 me->add_temp("mark/jjf_armor", -1);
 	}
 	else
-		return notify_fail(CYN"ÇØÆ½µÀ£º¶Ô²»×¡£¬ÕâºÃÏó²»ÊÇÎÒÃÇ¸®ÀïµÄ¶«Î÷°É£¡\n"NOR);
+		return notify_fail(CYN"ç§¦å¹³é“ï¼šå¯¹ä¸ä½ï¼Œè¿™å¥½è±¡ä¸æ˜¯æˆ‘ä»¬åºœé‡Œçš„ä¸œè¥¿å§ï¼\n"NOR);
 
 	return 1;
 }

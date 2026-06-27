@@ -4,17 +4,17 @@ inherit FORK;
 
 void create()
 {
-        set_name("ÔÂÑÀ²ù", ({ "moon fork", "fork" }) );
+        set_name("æœˆç‰™é“²", ({ "moon fork", "fork" }) );
         set_weight(10000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "ÕâÊÇÒ»°ÑÏàµ±Æ¯ÁÁµÄÔÂÑÀ²ù£¬²ù·æÈçÔÂÑÀ°ã£¬¿´ÆğÀ´·æÀûµÄºÜ¡£\n");
+                set("unit", "æŠŠ");
+                set("long", "è¿™æ˜¯ä¸€æŠŠç›¸å½“æ¼‚äº®çš„æœˆç‰™é“²ï¼Œé“²é”‹å¦‚æœˆç‰™èˆ¬ï¼Œçœ‹èµ·æ¥é”‹åˆ©çš„å¾ˆã€‚\n");
                 set("value", 7000);
                 set("material", "iron");
-                set("wield_msg", "$NÄÃ³öÒ»°Ñ$n£¬ÊÔÁËÊÔÖØÁ¿£¬È»ºóÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+                set("wield_msg", "$Næ‹¿å‡ºä¸€æŠŠ$nï¼Œè¯•äº†è¯•é‡é‡ï¼Œç„¶åæ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
         }
         init_fork(65);
         setup();

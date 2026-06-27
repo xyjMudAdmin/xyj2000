@@ -1,5 +1,5 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// zhujian.c Öñ¼ı
+// zhujian.c ç«¹ç®­
 
 #include <weapon.h>
 
@@ -7,14 +7,14 @@ inherit ARCHERY;
 
 void create()
 {
-  set_name("Öñ¼ı", ({ "zhu jian", "arrow", "jian" }) );
+  set_name("ç«¹ç®­", ({ "zhu jian", "arrow", "jian" }) );
   if( clonep() )
     set_default_object(__FILE__);
   else {
     set("long",
-"Öñ×ÓÏ÷³ÉµÄ¼ı£¬¼ıÍ·Ï÷¼â£¬¼ıÎ²ºúÂÒ²åÁËĞ©ÓğÃ«¡£\n");
-    set("unit", "ºø");
-    set("base_unit", "Ö¦");
+"ç«¹å­å‰Šæˆçš„ç®­ï¼Œç®­å¤´å‰Šå°–ï¼Œç®­å°¾èƒ¡ä¹±æ’äº†äº›ç¾½æ¯›ã€‚\n");
+    set("unit", "å£¶");
+    set("base_unit", "æ");
     set("base_weight", 20);
     set("base_value", 10);
   }

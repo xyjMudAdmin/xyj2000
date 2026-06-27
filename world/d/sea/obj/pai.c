@@ -3,14 +3,14 @@ inherit ITEM;
 
 void create()
 {
-  set_name("Ë®¾§ÑüÅÆ", ({ "yao pai" }));
+  set_name("æ°´æ™¶è…°ç‰Œ", ({ "yao pai" }));
   set_weight(1000);
-  set("long", "ÕâÊÇÒ»¸öË®¾§ÖÆ³ÉµÄÑüÅÆ£¬ÉÏ¿ÌÓĞ¡°¶«º£Áú¹¬¡±ËÄ¸ö×Ö¡£
-Ææ¹ÖµÄÊÇ±ß·æÉÏÓĞĞ©Í»²Û£¬±ãÈçÔ¿³×Ò»°ã¡£\n" );
+  set("long", "è¿™æ˜¯ä¸€ä¸ªæ°´æ™¶åˆ¶æˆçš„è…°ç‰Œï¼Œä¸Šåˆ»æœ‰â€œä¸œæµ·é¾™å®«â€å››ä¸ªå­—ã€‚
+å¥‡æ€ªçš„æ˜¯è¾¹é”‹ä¸Šæœ‰äº›çªæ§½ï¼Œä¾¿å¦‚é’¥åŒ™ä¸€èˆ¬ã€‚\n" );
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("unit", "Ö»");
+    set("unit", "åª");
     set("longgong", 1);
     set("no_sell", 1);
     set("material", "bone");
@@ -41,7 +41,7 @@ void init()
 }
 void destruct_me(object where, object me)
 {
-        message_vision("$NÊÖÖĞµÄ$nµôµ½µØÏÂË¤ËéÁË¡£\n",where,me);
+        message_vision("$Næ‰‹ä¸­çš„$næ‰åˆ°åœ°ä¸‹æ‘”ç¢äº†ã€‚\n",where,me);
         destruct(me);
 }
 

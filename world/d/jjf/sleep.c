@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ģ����");
+  set ("short", "模糊中");
   set ("long", @LONG
 
-ģģ�����У�������һ��İ���ĵط����������涼���Ʋʣ����㿴������
-�ա����¶����������㿴�������档Ҳ��֪�������棬�ǻá�
+模模糊糊中，你来到一个陌生的地方。这里四面都是云彩，但你看不到天
+空。脚下都是雾，但你看不到地面。也不知这里是真，是幻。
 LONG);
 
   set("exits", ([ /* sizeof() == 1 */

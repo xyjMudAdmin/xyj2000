@@ -5,12 +5,12 @@ inherit ROOM;
 
 void create()
 {
-  set ("short", "街道");
+  set ("short", "琛楅亾");
   set ("long", @LONG
 
-一条石板小路，刚下过雨，路上看起来还满干净的．一些乡下人
-挑着自己种的蔬菜到镇里卖，人不是很多，吆喝声传出很远，在
-镇子里回荡．
+涓�鏉＄煶鏉垮皬璺紝鍒氫笅杩囬洦锛岃矾涓婄湅璧锋潵杩樻弧骞插噣鐨勶紟涓�浜涗埂涓嬩汉
+鎸戠潃鑷繁绉嶇殑钄彍鍒伴晣閲屽崠锛屼汉涓嶆槸寰堝锛屽悊鍠濆０浼犲嚭寰堣繙锛屽湪
+闀囧瓙閲屽洖鑽★紟
 LONG);
 set("exits", ([ /* sizeof() == 4 */
 //"north" : __DIR__"zhyuan",

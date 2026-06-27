@@ -5,18 +5,18 @@ inherit NPC;
 
 void create()
 {
-        set_name("»ÆæôÂí", ({"huangbiao ma", "ma"}));
-        set("race", "Ò°ÊŞ");
+        set_name("é»„éª é©¬", ({"huangbiao ma", "ma"}));
+        set("race", "é‡å…½");
         set("age", 20);
-        set("long", "Ò»Ö»³¤µÃ²»ºÜ¾«Éñ£¬Ò»Éí»ÆÃ«µÄ´óÂí£®\n");
+        set("long", "ä¸€åªé•¿å¾—ä¸å¾ˆç²¾ç¥ï¼Œä¸€èº«é»„æ¯›çš„å¤§é©¬ï¼\n");
 
 	set("combat_exp", 10000);
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Ç°½Å", "ºó½Å", "Î²°Í" }) );
+        set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å‰è„š", "åè„š", "å°¾å·´" }) );
         set("verbs", ({ "bite"}));
 
         set("chat_chance", 1);
         set("chat_msg", ({
-                "»ÆæôÂíºßºßµÄ½ĞÁË¼¸Éù£®\n"
+                "é»„éª é©¬å“¼å“¼çš„å«äº†å‡ å£°ï¼\n"
 }));
 
         set_temp("apply/attack", 10);

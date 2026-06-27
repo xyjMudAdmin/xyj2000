@@ -5,12 +5,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "Ûº¶¼³ÇÃÅ");
+  set ("short", "é…†éƒ½åŸé—¨");
   set ("long", @LONG
 
-ÄãÏÖÔÚÀ´µ½Ò»×ùºÚÉ«³ÇÂ¥Ö®Ç°£¬³ÇÂ¥ÉÏ¿Ì×ÅÈı¸ö´ó×Ö£ºÛº¶¼³Ç¡£Íù
-±±×ß½ø³ÇÂ¥Ö»¼ûÒ»Æ¬ºÚÆáÆáµÄ£¬Ö»ÓĞÉÙĞí°µºìÉ«µÄ»ğ¹âÈôÒşÈôÏÖµØ
-ÉÁË¸×Å¡£
+ä½ ç°åœ¨æ¥åˆ°ä¸€åº§é»‘è‰²åŸæ¥¼ä¹‹å‰ï¼ŒåŸæ¥¼ä¸Šåˆ»ç€ä¸‰ä¸ªå¤§å­—ï¼šé…†éƒ½åŸã€‚å¾€
+åŒ—èµ°è¿›åŸæ¥¼åªè§ä¸€ç‰‡é»‘æ¼†æ¼†çš„ï¼Œåªæœ‰å°‘è®¸æš—çº¢è‰²çš„ç«å…‰è‹¥éšè‹¥ç°åœ°
+é—ªçƒç€ã€‚
 LONG);
 
   set("exits", ([ /* sizeof() == 2 */
@@ -31,9 +31,9 @@ int valid_leave(object me, string dir)
 	if( wizardp(me)) return 1;
 
 	if (dir == "north") {
-		if((string)me->query("family/family_name")!="ÑÖÂŞµØ¸®") {
+		if((string)me->query("family/family_name")!="é˜ç½—åœ°åºœ") {
 			if (objectp(present("black gargoyle", environment(me))))
-				return notify_fail("ºÚÎŞ³£¶ÔÄãºÈµÀ£º²»ĞíÂÒ´³£¡\n");
+				return notify_fail("é»‘æ— å¸¸å¯¹ä½ å–é“ï¼šä¸è®¸ä¹±é—¯ï¼\n");
 			if(me->is_ghost()){
 				me->reincarnate();
 			}

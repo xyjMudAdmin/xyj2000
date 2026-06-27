@@ -3,50 +3,50 @@
 inherit ITEM;
 inherit F_FOOD;
 
-string *food_name= ({"ÂéÀ±¶ÇË¿",
-                "ËÉÈÊÓñÃ×",
-		"Ã·²Ë¿ÛÈâ",
-		"ÎåÏãÀ°³¦",
-		"ÓãÏãÈâË¿",
-		"ºìÓÍ¼¦Æ¬",
-		"Çå³´ÏºÈÊ",
-		"Îå»¨ìËÈâ",
-		"ÇàË¿Ñ¬Óã",
-		"ÌÇ´×ÅÅ¹Ç",
-		"¾©½´ÈâË¿",
-		"ÓÍìÁ´óÏº",
-		"´àÆ¤¿¾Ñ¼",
-		"ºìÉÕËØ¶ì",
-		"¹¬±£¼¦¶¡",
-		"ÂéÀ±¶ÇË¿",
-		"ºìÓÍ·ÎÆ¬",
-		"ÄÛÙàÖí¸Î",
-		"×ßÓÍ´à³¦",
-		"±¬³´Ñü»¨",
-		"÷êÏã¶¬Ëñ",
-		"ôä´ä¶¹¸¯",
-		"ÂéÆÅ¶¹¸¯",
-		"ÈıÏÊ¸¯Öñ",
+string *food_name= ({"éº»è¾£è‚šä¸",
+                "æ¾ä»ç‰ç±³",
+		"æ¢…èœæ‰£è‚‰",
+		"äº”é¦™è…Šè‚ ",
+		"é±¼é¦™è‚‰ä¸",
+		"çº¢æ²¹é¸¡ç‰‡",
+		"æ¸…ç‚’è™¾ä»",
+		"äº”èŠ±ç„–è‚‰",
+		"é’ä¸ç†é±¼",
+		"ç³–é†‹æ’éª¨",
+		"äº¬é…±è‚‰ä¸",
+		"æ²¹ç‚å¤§è™¾",
+		"è„†çš®çƒ¤é¸­",
+		"çº¢çƒ§ç´ é¹…",
+		"å®«ä¿é¸¡ä¸",
+		"éº»è¾£è‚šä¸",
+		"çº¢æ²¹è‚ºç‰‡",
+		"å«©æ±†çŒªè‚",
+		"èµ°æ²¹è„†è‚ ",
+		"çˆ†ç‚’è…°èŠ±",
+		"éºé¦™å†¬ç¬‹",
+		"ç¿¡ç¿ è±†è…",
+		"éº»å©†è±†è…",
+		"ä¸‰é²œè…ç«¹",
 });
 
 string *eat_msg=({
-	  "$NÄÃÆğÓñ¿ê¼ĞÁËĞ©$name£¬·Åµ½×ìÖĞ³ÔÁËÆğÀ´¡£\n",
-	  "$N³ÔÁËÒ»´ó¿Ú$name¡£\n",
-	  "$N³¢ÁË³¢$name¡£\n",
-	  "$N¼ĞÁËĞ©$name£¬·Åµ½×ìÖĞ¡£\n",
-	  "$NÏ¸Ï¸Æ·³¢×Å$name¡£\n",
+	  "$Næ‹¿èµ·ç‰ç­·å¤¹äº†äº›$nameï¼Œæ”¾åˆ°å˜´ä¸­åƒäº†èµ·æ¥ã€‚\n",
+	  "$Nåƒäº†ä¸€å¤§å£$nameã€‚\n",
+	  "$Nå°äº†å°$nameã€‚\n",
+	  "$Nå¤¹äº†äº›$nameï¼Œæ”¾åˆ°å˜´ä¸­ã€‚\n",
+	  "$Nç»†ç»†å“å°ç€$nameã€‚\n",
 	  });
 
 void create()
-{	string name = "»éÀñ´ó²Ë";
+{	string name = "å©šç¤¼å¤§èœ";
   	set_name(name, ({"food"}));
   	set_weight(1000);
   	if (clonep())
    		 set_default_object(__FILE__);
   	else {
-    		set("long", "Ò»ÅÌÁîÈË´¹ÏÑµÄ»éÀñ´ó²Ë¡£\n");
-    		set("unit", "ÅÌ");
-//		set("eat_msg", "$NÄÃÆğÓñ¿ê¼ĞÁËĞ©" + name + "£¬·Åµ½×ìÖĞ³ÔÁËÆğÀ´¡£\n");
+    		set("long", "ä¸€ç›˜ä»¤äººå‚æ¶çš„å©šç¤¼å¤§èœã€‚\n");
+    		set("unit", "ç›˜");
+//		set("eat_msg", "$Næ‹¿èµ·ç‰ç­·å¤¹äº†äº›" + name + "ï¼Œæ”¾åˆ°å˜´ä¸­åƒäº†èµ·æ¥ã€‚\n");
     		set("value", 250);
     		set("food_remaining", 5);
     		set("food_supply", 20);
@@ -55,16 +55,16 @@ void create()
 
 void init ()
 {
-	if (query("name")=="»éÀñ´ó²Ë")
+	if (query("name")=="å©šç¤¼å¤§èœ")
 	{
 		string name;
 		name=food_name[random(sizeof(food_name))];
   		set_name(name, ({"food"}));
-		set("long", "Ò»ÅÌÁîÈË´¹ÏÑµÄ"+name+"¡£\n");
-//		set("eat_msg", "$NÄÃÆğÓñ¿ê¼ĞÁËĞ©" + name + "£¬·Åµ½×ìÖĞ³ÔÁËÆğÀ´¡£\n");
+		set("long", "ä¸€ç›˜ä»¤äººå‚æ¶çš„"+name+"ã€‚\n");
+//		set("eat_msg", "$Næ‹¿èµ·ç‰ç­·å¤¹äº†äº›" + name + "ï¼Œæ”¾åˆ°å˜´ä¸­åƒäº†èµ·æ¥ã€‚\n");
 	}
         if(!wizardp(this_player())) {
-        	set("no_get", "ÔÚ»éÀñÉÏÕâÃ´¸ÉËÆºõ²»´óºÃ°É£¡\n");
+        	set("no_get", "åœ¨å©šç¤¼ä¸Šè¿™ä¹ˆå¹²ä¼¼ä¹ä¸å¤§å¥½å§ï¼\n");
         }
         add_action("do_get", "get");
         add_action("do_eat", "eat");
@@ -81,15 +81,15 @@ int do_eat (string arg)
   set("eat_msg", replace_string(eat_msg[random(sizeof(eat_msg))],
 	  "$name",name));
   i=::do_eat(arg);
-  if(i && name=="ËÉÈÊÓñÃ×") {
+  if(i && name=="æ¾ä»ç‰ç±³") {
       if(!who->query_temp("xifuhui_eatcorn")) {
-       if(who->query("gender")=="Å®ĞÔ" && who->query("married")) {
+       if(who->query("gender")=="å¥³æ€§" && who->query("married")) {
 	  string id;
 	  if(id=who->query("couple/id")) {
 	      object ob;
 	      if(ob=present(id, environment(me))) {
-		  message_vision("ÖÚÈË¿´×Å$NºÍ$n£¬ÆëÉù´óĞ¦µÀ£º"+
-			  "¹ş£¡ËÉÈÊÓñÃ×£¡¹§Ï²£¡¹§Ï²£¡\n",who,ob);
+		  message_vision("ä¼—äººçœ‹ç€$Nå’Œ$nï¼Œé½å£°å¤§ç¬‘é“ï¼š"+
+			  "å“ˆï¼æ¾ä»ç‰ç±³ï¼æ­å–œï¼æ­å–œï¼\n",who,ob);
 		  who->add_temp("xifuhui_eatcorn",1);
 		  // this will be used in born child later.
 	      }
@@ -110,7 +110,7 @@ int do_get (string arg)
 
   if (present(arg,environment(who))==me)
   {
-    tell_object(who,"ÔÚ»éÀñÉÏÕâÃ´¸ÉËÆºõ²»´óºÃ°É£¡\n");
+    tell_object(who,"åœ¨å©šç¤¼ä¸Šè¿™ä¹ˆå¹²ä¼¼ä¹ä¸å¤§å¥½å§ï¼\n");
     return 1;
   }
   return 0;

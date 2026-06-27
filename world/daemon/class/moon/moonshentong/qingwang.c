@@ -14,38 +14,38 @@ int cast(object me, object target)
         object qingwang;
 
         if( !target ) target = offensive_target(me);
-//        if (!wizardp(me)) return notify_fail("Äã²»ÊÇÎ×Ê¦£¬²»ÄÜÓÃÇéÍø¡£\n");
+//        if (!wizardp(me)) return notify_fail("ä½ ä¸æ˜¯å·«å¸ˆï¼Œä¸èƒ½ç”¨æƒ…ç½‘ã€‚\n");
 
         if (!weapon || weapon->query("skill_type")!="whip")
-           return notify_fail("Ã»ÓÐ±Þ×Ó£¬ÄãÄÃÊ²Ã´Ö¯ÇéÍø°¡£¿\n");
+           return notify_fail("æ²¡æœ‰éž­å­ï¼Œä½ æ‹¿ä»€ä¹ˆç»‡æƒ…ç½‘å•Šï¼Ÿ\n");
         if (me->query_skill_mapped("whip")!="jueqingbian")
-           return notify_fail("ÄãÃ»ÔÚÓÃ¾øÇé±Þ£¬Ê¹²»³öÇéÍø¡£\n");
+           return notify_fail("ä½ æ²¡åœ¨ç”¨ç»æƒ…éž­ï¼Œä½¿ä¸å‡ºæƒ…ç½‘ã€‚\n");
 
         if((int)me->query_skill("spells") < 150 || 
            (int)me->query_skill("moonshentong",1) < 100 ||
            (int)me->query_skill("jueqingbian",1)<100 ||
            (int)me->query_skill("whip")<150)
-                return notify_fail("Äã»¹²»»áÓÃÇéÍø¡£¡£¡£\n");
+                return notify_fail("ä½ è¿˜ä¸ä¼šç”¨æƒ…ç½‘ã€‚ã€‚ã€‚\n");
 
         if( !target
         ||      !target->is_character()
         ||      target->is_corpse()
         ||      target==me)
-                return notify_fail("ÄãÏë¶ÔË­Ê¹ÓÃÇéÍø£¿\n");  
+                return notify_fail("ä½ æƒ³å¯¹è°ä½¿ç”¨æƒ…ç½‘ï¼Ÿ\n");  
 
         if(me->query_temp("qingwang"))
-          return notify_fail("ÄãÒÑ¾­Èö³öÒ»ÕÅÍøÁË£¡\n");  
+          return notify_fail("ä½ å·²ç»æ’’å‡ºä¸€å¼ ç½‘äº†ï¼\n");  
 
         if((int)me->query("mana") < 200 )
-                return notify_fail("ÄãµÄ·¨Á¦²»¹»£¡\n");
+                return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿï¼\n");
 
         if((int)me->query("sen") < 10 )
-                return notify_fail("ÄãÎÞ·¨¼¯ÖÐ¾«Á¦£¡\n");
+                return notify_fail("ä½ æ— æ³•é›†ä¸­ç²¾åŠ›ï¼\n");
 
         me->add("mana", -200);
         me->receive_damage("sen", 10);
 
-        message_vision(HIB"$N´ß¶¯·¨Á¦£¬½«ÊÖÖÐ"+weapon->name()+"Îè³ÉÒ»ÍÅ£¬»¯×öÒ»ÕÅ´óÍø£¬Ïò$nµ±Í·ÕÖÀ´¡£\n"NOR,me,target);
+        message_vision(HIB"$Nå‚¬åŠ¨æ³•åŠ›ï¼Œå°†æ‰‹ä¸­"+weapon->name()+"èˆžæˆä¸€å›¢ï¼ŒåŒ–åšä¸€å¼ å¤§ç½‘ï¼Œå‘$nå½“å¤´ç½©æ¥ã€‚\n"NOR,me,target);
 
         success = 1;
         ap = me->query_skill("spells");
@@ -72,7 +72,7 @@ int cast(object me, object target)
     if( random(ap+dp)<dp) success = 0;
 
     if(success == 1 ){
-      message_vision(HIB"$NÄÔ×ÓÀïÒ»Æ¬»ìÂÒ£¬¹íÊ¹Éñ²î°ãÍ»È»·¢´ô£¬ÉõÖÁÍü¼ÇÁË¶ãÉÁ£¬±»ÇéÍøµ±Í·ÕÖ×¡¡£\n"NOR,target);
+      message_vision(HIB"$Nè„‘å­é‡Œä¸€ç‰‡æ··ä¹±ï¼Œé¬¼ä½¿ç¥žå·®èˆ¬çªç„¶å‘å‘†ï¼Œç”šè‡³å¿˜è®°äº†èº²é—ªï¼Œè¢«æƒ…ç½‘å½“å¤´ç½©ä½ã€‚\n"NOR,target);
       howlong = random(me->query_skill("jueqingbian",1)+me->query_skill("moonshentong",1))/10+5;
       if(howlong>60) howlong=60;
 
@@ -84,7 +84,7 @@ int cast(object me, object target)
       me->set_temp("qingwang",qingwang);
       qingwang->set("time_expired",time()+howlong);
       if (!qingwang->move(environment(target))) {
-         message_vision(HIY"$NÉíÉÏ·¢³öÒ»µÀ»¤Ìå½ð¹â£¬½«ÇéÍø»÷µÄ·ÛËé¡£\n"NOR,target);
+         message_vision(HIY"$Nèº«ä¸Šå‘å‡ºä¸€é“æŠ¤ä½“é‡‘å…‰ï¼Œå°†æƒ…ç½‘å‡»çš„ç²‰ç¢Žã€‚\n"NOR,target);
          destruct(qingwang);
       }
       if ((!userp(target)) && npc_chance=target->query("chat_chance_combat")) {
@@ -93,7 +93,7 @@ int cast(object me, object target)
             call_out("remove_effect",howlong,target,me);
       }
     } else {
-        message_vision(HIG"$NÉñÖÇÇåÐÑ£¬²»ÎªÇéËùÀ§£¬ÇáÇáÏòÅÔÒ»Ô¾£¬¶ã¹ýÁËÇéÍøµÄÏ®»÷¡£\n"NOR,target);
+        message_vision(HIG"$Nç¥žæ™ºæ¸…é†’ï¼Œä¸ä¸ºæƒ…æ‰€å›°ï¼Œè½»è½»å‘æ—ä¸€è·ƒï¼Œèº²è¿‡äº†æƒ…ç½‘çš„è¢­å‡»ã€‚\n"NOR,target);
         me->start_busy(random(2));
         if( living(target) ) target->kill_ob(me);
         } 

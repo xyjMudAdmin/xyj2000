@@ -7,10 +7,10 @@ int random_go(object me, string* dirs);
 void create()
 {
        reload("xiaoer");
-       set_name("µêĞ¡¶ş", ({"xiao er","xiaoer","xiao","waiter","er"}));
+       set_name("åº—å°äºŒ", ({"xiao er","xiaoer","xiao","waiter","er"}));
        set("shop_id",({"waiter","xiaoer","xiao","er"}));
-       set("shop_title","µêĞ¡¶ş");
-       set("gender", "ÄĞĞÔ");
+       set("shop_title","åº—å°äºŒ");
+       set("gender", "ç”·æ€§");
         set("combat_exp", 1000);
        set("age", 26);
        set("per", 14);
@@ -84,10 +84,10 @@ int no_animal()
                         random_go(ob, dirs);
 			if(!announced) {
                           message_vision(
-				  "$NËµµÀ£ºĞ¡µêÇåÉ¨£¬¸÷Î»¿Í¹ÙÔ­ÁÂÔò¸ö¡£\n", me);
+				  "$Nè¯´é“ï¼šå°åº—æ¸…æ‰«ï¼Œå„ä½å®¢å®˜åŸè°…åˆ™ä¸ªã€‚\n", me);
 			  announced=1;
 			}
-                        message_vision("$N»ÓÎè×ÅÉ¨Öã°Ñ$nºäÁË³öÈ¥¡£\n", me, ob);
+                        message_vision("$NæŒ¥èˆç€æ‰«å¸šæŠŠ$nè½°äº†å‡ºå»ã€‚\n", me, ob);
                 }
         }
         return 1;
@@ -133,9 +133,9 @@ void greeting(object ob)
         if( !ob || !visible(ob) || environment(ob) != environment() ) return;
         switch( random(3) ) {  // 1/3 chance to greet.
                 case 0:
-                        say( name()+"Ğ¦ßäßäµØËµµÀ£ºÕâÎ»" +
+                        say( name()+"ç¬‘å’ªå’ªåœ°è¯´é“ï¼šè¿™ä½" +
 RANK_D->query_respect(ob)
-                                + "£¬½øÀ´ĞªĞª½Å£¬ºÈÁ½ÖÑ°É¡£\n");
+                                + "ï¼Œè¿›æ¥æ­‡æ­‡è„šï¼Œå–ä¸¤ç›…å§ã€‚\n");
                         break;
         }
 }
@@ -147,7 +147,7 @@ int accept_object(object who, object ob)
 	if (ob->query("money_id") && (value=ob->value()) >= 300) 
 	{
 		tell_object(who, name()+
-			"Ò»¹şÑü£¬ËµµÀ£º¶àĞ»ÄúÀÏ£¬¿Í¹ÙÇëÉÏ·¿ĞªÏ¢¡£\n");
+			"ä¸€å“ˆè…°ï¼Œè¯´é“ï¼šå¤šè°¢æ‚¨è€ï¼Œå®¢å®˜è¯·ä¸Šæˆ¿æ­‡æ¯ã€‚\n");
 		who->set_temp("rent_paid",1);
 		take_money(value, 300);
 		return 1;

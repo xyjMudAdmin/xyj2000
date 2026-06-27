@@ -4,15 +4,15 @@ inherit NPC;
 
 void create()
 {
-        set_name("Ð£Î¾", ({ "xiao wei", "wei", "guard" }) );
-        set("gender", "ÄÐÐÔ");
+        set_name("æ ¡å°‰", ({ "xiao wei", "wei", "guard" }) );
+        set("gender", "ç”·æ€§");
         set("age", 25);
         set("long",
 
-"ÕâÊÇÎ»ÊØ»¤»Ê³ÇµÄ½ð¼×ÎäÊ¿£¬ÉíÅûÍ­¼×£¬ÊÖÖ´½ð¹Ï¡£
-ËûË«Ä¿¾«¹â¾¼¾¼£¬¾¯ÌèµØÑ²ÊÓ×ÅËÄÖÜµÄÇéÐÎ¡£\n");
+"è¿™æ˜¯ä½å®ˆæŠ¤çš‡åŸŽçš„é‡‘ç”²æ­¦å£«ï¼Œèº«æŠ«é“œç”²ï¼Œæ‰‹æ‰§é‡‘ç“œã€‚
+ä»–åŒç›®ç²¾å…‰ç‚¯ç‚¯ï¼Œè­¦æƒ•åœ°å·¡è§†ç€å››å‘¨çš„æƒ…å½¢ã€‚\n");
         set("combat_exp", 220000);
-	set("title", "ÓùÁÖ¾ü");
+	set("title", "å¾¡æž—å†›");
         set("attitude", "heroism");
         set("str", 25);
         set("max_kee", 850);
@@ -45,7 +45,7 @@ void init()
 
 int accept_fight(object me)
 {
-        message_vision("ÓùÁÖ¾üÎÀÊ¿¶Ô$N´óºÈÒ»Éù£ºÄã»îµÃ²»ÄÍ·³ÁË£¿»Ê¹¬Ç°Ò²¸ÒºúÄÖ£¡\n", me);
+        message_vision("å¾¡æž—å†›å«å£«å¯¹$Nå¤§å–ä¸€å£°ï¼šä½ æ´»å¾—ä¸è€çƒ¦äº†ï¼Ÿçš‡å®«å‰ä¹Ÿæ•¢èƒ¡é—¹ï¼\n", me);
         me->apply_condition("killer", 100);
         kill_ob(me);
         return 1;

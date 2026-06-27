@@ -5,11 +5,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÕÅÉÒ", ({"fisher","zhangshao","zhang"}));
-        set("gender", "ÄĞĞÔ" );
+        set_name("å¼ æ¢¢", ({"fisher","zhangshao","zhang"}));
+        set("gender", "ç”·æ€§" );
         set("age", 45);
-        set("title","Óæ·ò");
-        set("long", "ËûËäÊÇ¸öÓæ·ò£¬È´Ò²ÖªÊé´ïÀí£¬ÄÜÒ÷Ê«×÷´Ê¡£\n¸ú¸½½üÒ»¸ö½ĞÀî¶¨µÄéÔ·òÄËÊÇÖª½»ºÃÓÑ¡£\n");
+        set("title","æ¸”å¤«");
+        set("long", "ä»–è™½æ˜¯ä¸ªæ¸”å¤«ï¼Œå´ä¹ŸçŸ¥ä¹¦è¾¾ç†ï¼Œèƒ½åŸè¯—ä½œè¯ã€‚\nè·Ÿé™„è¿‘ä¸€ä¸ªå«æå®šçš„æ¨µå¤«ä¹ƒæ˜¯çŸ¥äº¤å¥½å‹ã€‚\n");
         set("combat_exp", 500);
         set("attitude", "peaceful");
         set_skill("dodge", 10);

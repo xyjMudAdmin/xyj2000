@@ -7,13 +7,13 @@ inherit THROWING;
 
 void create()
 {
-        set_name("Ê¯¿é", ({"shi kuai", "shi", "stone"}));
+        set_name("çŸ³å—", ({"shi kuai", "shi", "stone"}));
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ğ©");
-		set("long","Ò»¿é´óÊ¯Í·¡£");
-                set("base_unit", "¿é");
+                set("unit", "äº›");
+		set("long","ä¸€å—å¤§çŸ³å¤´ã€‚");
+                set("base_unit", "å—");
                 set("base_weight", 4000);
                 set("fill_sea",1);
         }

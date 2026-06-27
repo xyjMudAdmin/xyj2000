@@ -9,13 +9,13 @@ inherit "/d/wiz/no_get";
 
 void create ()
 {
-	set ("short", "Å®µÜ×ÓÎÔ·¿");
+	set ("short", "å¥³å¼Ÿå­å§æˆ¿");
 	set ("long", @LONG
 
-Ñ©É½ÅÉµÄÅ®µÜ×ÓÎÔ·¿¡£³ÂÉèÏàµ±ËØ¾»¡£¿¿Ç½°Ú×Å¼¸ÕÅ´²ÆÌ(bed)¡£
+é›ªå±±æ´¾çš„å¥³å¼Ÿå­å§æˆ¿ã€‚é™ˆè®¾ç›¸å½“ç´ å‡€ã€‚é å¢™æ‘†ç€å‡ å¼ åºŠé“º(bed)ã€‚
 LONG);
 
-	set("item_desc", (["bed" : "Ò»ÕÅ¾«ÖÂµÄ´²ÆÌ(gosleep, gobed, bed)¡£\n", ]));
+	set("item_desc", (["bed" : "ä¸€å¼ ç²¾è‡´çš„åºŠé“º(gosleep, gobed, bed)ã€‚\n", ]));
 	//for look something.
 
 	set("exits", 
@@ -53,9 +53,9 @@ int do_bed()
 	object me;
 	me=this_player();
 
-	message_vision(HIY "$NÏÆ¿ªÉ´ÕÊ£¬×¼±¸ÉÏ´²ÁË¡£\n\n" NOR, me);
+	message_vision(HIY "$Næ€å¼€çº±å¸ï¼Œå‡†å¤‡ä¸ŠåºŠäº†ã€‚\n\n" NOR, me);
 	me->move(__DIR__"girlbed");
-	message_vision(HIY "\nÉ³ÕÊÇáÇáÒ»¶¯£¬$N×êÁË½øÀ´¡£\n" NOR, me);
+	message_vision(HIY "\næ²™å¸è½»è½»ä¸€åŠ¨ï¼Œ$Né’»äº†è¿›æ¥ã€‚\n" NOR, me);
 	return 1;
 }
 

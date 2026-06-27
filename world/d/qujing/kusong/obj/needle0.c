@@ -4,16 +4,16 @@ inherit DAGGER;
 
 void create()
 {
-        set_name("Ì«°×´Ì", ({"taibai ci", "ci", "dagger"}));
+        set_name("å¤ªç™½åˆº", ({"taibai ci", "ci", "dagger"}));
         set_weight(5000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
-                set("long", "ÕâÊÇÒ»¸ù³¤³¤µÄ°×Ìú¶¤¡£\n");
+                set("unit", "æŸ„");
+                set("long", "è¿™æ˜¯ä¸€æ ¹é•¿é•¿çš„ç™½é“é’‰ã€‚\n");
                 set("value", 500);
                 set("material", "steel");
-                set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù³é³öÒ»¸ù$nÎÕÔÚÊÖÖĞ¡£\n");
+                set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€å£°æŠ½å‡ºä¸€æ ¹$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
         }
         init_dagger(10);
         setup();

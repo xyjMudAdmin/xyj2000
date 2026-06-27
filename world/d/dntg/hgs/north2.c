@@ -4,12 +4,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "���ҽ�");
+  set ("short", "北菀街");
   set ("long", @LONG
 
-���ǰ�����������һ���֣��������ɡ����еĸ����̼Ҷ����
-�ˣ���ׯ�̺ţ����ݿ�ջ���ϡ���������ӵ��������Ҳ������װ
-���ε����ˡ�
+这是傲来国中最大的一条街，宽有数丈。城中的富豪商家多聚于
+此，银庄商号，饭馆客栈不断。往来人流拥挤，其中也不乏奇装
+怪饰的外人。
 LONG);
 
   set("exits", ([ /* sizeof() == 4 */

@@ -4,11 +4,11 @@ inherit NPC;
  
 void create()
 {
-	set_name("¼à¸±", ({"jian fu","fu"})); 
-        set("gender", "ÄĞĞÔ" );
-	set("long", "ÓùÂí¼à¼à¸±¡£\n");
+	set_name("ç›‘å‰¯", ({"jian fu","fu"})); 
+        set("gender", "ç”·æ€§" );
+	set("long", "å¾¡é©¬ç›‘ç›‘å‰¯ã€‚\n");
         set("age",40);
-	set("title", "ÓùÂí¼à");
+	set("title", "å¾¡é©¬ç›‘");
         set("str", 30);
         set("int", 20);
 	set("con", 30);
@@ -26,4 +26,3 @@ void create()
 }
  
 
-ÿ

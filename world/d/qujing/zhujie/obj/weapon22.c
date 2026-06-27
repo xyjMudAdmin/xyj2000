@@ -5,9 +5,9 @@ inherit SWORD;
 
 void create()
 {
-  set_name("¸ğ½£", ({ "ge jian", "jian", "sword" }) );
+  set_name("è‘›å‰‘", ({ "ge jian", "jian", "sword" }) );
   init_sword(25);
-  set("unit", "°Ñ");
+  set("unit", "æŠŠ");
   set_weight(1000);
   if( clonep() )
      set_default_object(__FILE__);
@@ -15,7 +15,7 @@ void create()
     set("value", 280);
     set("material", "wood");
   }
-  set("wield_msg","$N²ÙÆğ$nÎÕÔÚÊÖÀï¡£\n");
+  set("wield_msg","$Næ“èµ·$næ¡åœ¨æ‰‹é‡Œã€‚\n");
   setup();
 }
 

@@ -14,8 +14,8 @@ void pre_status(object);
 void create ()
 {
   restore();
-  set ("short", "ÀŞÌ¨");
-  set ("long", "\n\t       °Ë  ÏÉ  ¹ı  º£         ¸÷  ÏÔ  Éñ  Í¨\n\n");
+  set ("short", "æ“‚å°");
+  set ("long", "\n\t       å…«  ä»™  è¿‡  æµ·         å„  æ˜¾  ç¥  é€š\n\n");
   set("exits",([]));
   set("broadcast",1);
   set("alternative_die",1);
@@ -38,8 +38,8 @@ int do_checkscore() {
 }
 
 int do_quit(string arg) {
-  write("Äã²»ÄÜÔÚÕâÀïÓÃÕâÌõÃüÁî¡£\n");
-  if (wizardp(this_player())) write("Î×Ê¦Çë²ÎÔÄÍ¬Ò»Â·¾¶ÄÚµÄbanned.hÎÄµµ¡£\n");
+  write("ä½ ä¸èƒ½åœ¨è¿™é‡Œç”¨è¿™æ¡å‘½ä»¤ã€‚\n");
+  if (wizardp(this_player())) write("å·«å¸ˆè¯·å‚é˜…åŒä¸€è·¯å¾„å†…çš„banned.hæ–‡æ¡£ã€‚\n");
   return 1;
 }
 int do_cast(string arg) {
@@ -49,7 +49,7 @@ int do_cast(string arg) {
     while(sscanf(arg,"%s %*s",arg)==2);
     //write(arg+"\n");
     if(member_array(arg,banned_cast)==-1) return 0;
-    write("ÀŞÌ¨ÉÏÇëÎğÊ¹ÓÃ"+arg+",¶àĞ»ºÏ×÷¡£\n");
+    write("æ“‚å°ä¸Šè¯·å‹¿ä½¿ç”¨"+arg+",å¤šè°¢åˆä½œã€‚\n");
     return 1;
 }
 
@@ -60,7 +60,7 @@ void alternative_die(object who)
   int winner=0;
 
   if (!userp(who)) {
-    message_vision("$NËÀÁË¡£\n",who);
+    message_vision("$Næ­»äº†ã€‚\n",who);
     destruct(who);
     return;
   }
@@ -99,12 +99,12 @@ void finish(int r) {
   loser->remove_enemy(winner);
 
   if (!r) {     
-    message_vision(HIG"$N$n´óÕ½Èı°Ù»ØºÏ£¬²»·ÖÊ¤°Ü£¬¸÷×ÔÀë³¡£¬¸ÄÈÕÔÙÕ½£¡\n"NOR,winner,loser);
+    message_vision(HIG"$N$nå¤§æˆ˜ä¸‰ç™¾å›åˆï¼Œä¸åˆ†èƒœè´¥ï¼Œå„è‡ªç¦»åœºï¼Œæ”¹æ—¥å†æˆ˜ï¼\n"NOR,winner,loser);
     loser->move(__DIR__"kantai");
   } else {
-     message_vision(HIG"$N°Ñ$n´ò·­ÔÚµØ£¬·ÉÆğÒ»½Å£¬½«$nÌßÏÂÁËÀŞÌ¨¡£\n"NOR,winner,loser);
+     message_vision(HIG"$NæŠŠ$næ‰“ç¿»åœ¨åœ°ï¼Œé£èµ·ä¸€è„šï¼Œå°†$nè¸¢ä¸‹äº†æ“‚å°ã€‚\n"NOR,winner,loser);
      loser->move(__DIR__"kantai");
-     message_vision(HIG"$NÔÚ¹ÛÖÚµÄ»¶ºôÉùÖĞ£¬¸ß¸ßĞËĞËµØÏÂ³¡ĞİÏ¢ÁË¡£\n"NOR,winner);
+     message_vision(HIG"$Nåœ¨è§‚ä¼—çš„æ¬¢å‘¼å£°ä¸­ï¼Œé«˜é«˜å…´å…´åœ°ä¸‹åœºä¼‘æ¯äº†ã€‚\n"NOR,winner);
 //     update_score(winner,loser);
   } 
   winner->move(__DIR__"kantai");
@@ -185,7 +185,7 @@ void start() {
   object p1=query("player1");
   object p2=query("player2");
   if ((!p1) || (!p2)) return;
-  message_vision(HIW"$NºÍ$n±ÈÎä¿ªÊ¼£¡ÏŞÊ±Îå·ÖÖÓ£¡\n"NOR,p1,p2);  
+  message_vision(HIW"$Nå’Œ$næ¯”æ­¦å¼€å§‹ï¼é™æ—¶äº”åˆ†é’Ÿï¼\n"NOR,p1,p2);  
   delete("no_fight");
   p1->kill_ob(p2);
   p2->kill_ob(p1);
@@ -194,7 +194,7 @@ void start() {
 
 void broadcast_room (object room, string str)
 {
-  string prefix = HIY"¡¾ÀŞÌ¨¡¿"NOR;
+  string prefix = HIY"ã€æ“‚å°ã€‘"NOR;
   string s1 = str, s2 = "", s3;
   int i;
 

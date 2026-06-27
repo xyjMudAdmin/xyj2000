@@ -4,13 +4,13 @@ inherit F_LIQUID;
 
 void create()
 {
-  set_name("Ñ©Òû±­", ({ "snowglass", "glass" }) );
+  set_name("é›ªé¥®æ¯", ({ "snowglass", "glass" }) );
   set_weight(600);
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("long", "±­Ìå±ÌÂÌÍ¨Í¸£¬Ááçç¿É°®£®\n");
-    set("unit", "¸ö");
+    set("long", "æ¯ä½“ç¢§ç»¿é€šé€ï¼Œç²ç‘å¯çˆ±ï¼\n");
+    set("unit", "ä¸ª");
     set("value", 120);
     set("max_liquid", 100); 
     set("liquid_supply", 80);
@@ -18,7 +18,7 @@ void create()
 
   set("liquid", ([
     "type": "water",
-    "name": "±ÌéØ²è",
+    "name": "ç¢§æ¨¨èŒ¶",
     "remaining": 90,
   ]) );
   setup();

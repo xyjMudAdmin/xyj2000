@@ -6,12 +6,12 @@ inherit STICK;
 
 void create()
 {
-        set_name("Ä¾°ô", ({"mu bang"}));
+        set_name("æœ¨æ£’", ({"mu bang"}));
         set_weight(3000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
+                set("unit", "ä¸ª");
 		set("value", 100);
 		set("material", "wood");
 	     }

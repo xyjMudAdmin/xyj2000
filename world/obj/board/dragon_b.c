@@ -3,11 +3,11 @@ inherit BULLETIN_BOARD;
 
 void create()
 {
-        set_name("┴·╠┌╦─║г┴Ї╤╘░ц", ({ "board" }) );
+        set_name("щ╛ЩшЕ╛хЫЫц╡╖чХЩшиАчЙИ", ({ "board" }) );
         set("location", "/d/sea/yujie2");
         set("board_id", "dragon_b");
 	set("long", "
-гнгнгнгнгнгнгнгнгнгнгнгнгнгнгнгнгнгнгнгнгнгнгнгнгнгнгнгнгнгнгнгнгнгнгнгн\n");
+я╝Ня╝Ня╝Ня╝Ня╝Ня╝Ня╝Ня╝Ня╝Ня╝Ня╝Ня╝Ня╝Ня╝Ня╝Ня╝Ня╝Ня╝Ня╝Ня╝Ня╝Ня╝Ня╝Ня╝Ня╝Ня╝Ня╝Ня╝Ня╝Ня╝Ня╝Ня╝Ня╝Ня╝Ня╝Ня╝Н\n");
         setup();
         set("capacity", 80);
         replace_program(BULLETIN_BOARD);

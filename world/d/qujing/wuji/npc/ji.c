@@ -4,16 +4,16 @@ inherit NPC;
 
 void create()
 {
-  set_name("山鸡", ({ "shan ji", "ji" }) );
-  set("race", "野兽");
+  set_name("灞遍浮", ({ "shan ji", "ji" }) );
+  set("race", "閲庡吔");
   set("age", 20);
   set("per", 20);
-  set("long", "一只成精的母花山鸡。\n");
+  set("long", "涓�鍙垚绮剧殑姣嶈姳灞遍浮銆俓n");
   set("attitude", "friendly");
   set_skill("unarmed", 100);
   set_skill("dodge", 100);
   set_skill("parry", 100);
-  set("limbs", ({ "头部", "身体", "尾巴" }) );
+  set("limbs", ({ "澶撮儴", "韬綋", "灏惧反" }) );
   set("verbs", ({ "bite"}) );
 
   setup();

@@ -27,15 +27,15 @@ int do_tear(string str)
 	if( !id(str) ) return 0;
 
 	if( (string)query("material") != "cloth" )
-		return notify_fail("ÄãÖ»ÄÜËº²¼ÁÏµÄÒÂ·þ¡£\n");
+		return notify_fail("ä½ åªèƒ½æ’•å¸ƒæ–™çš„è¡£æœã€‚\n");
 
 	if( (int)query("teared_count") >= 4 )
-		return notify_fail( name() + "µÄÐä¿Ú£¬ÏÂÃæÒÑ¾­Ã»ÓÐ¶àÓàµÄ²¼¿ÉËºÁË¡£\n");
+		return notify_fail( name() + "çš„è¢–å£ï¼Œä¸‹é¢å·²ç»æ²¡æœ‰å¤šä½™çš„å¸ƒå¯æ’•äº†ã€‚\n");
 
-	message_vision("$N´Ó" + name() + "ËºÏÂÒ»Ìõ²¼Ìõ¡£\n", this_player() );
+	message_vision("$Nä»Ž" + name() + "æ’•ä¸‹ä¸€æ¡å¸ƒæ¡ã€‚\n", this_player() );
 	add("teared_count", 1);
 	ob = new("/obj/bandage");
-	ob->set_name("´Ó" + name() + "ËºÏÂµÄ²¼Ìõ", ({ "cloth piece", "piece", "cloth" }) );
+	ob->set_name("ä»Ž" + name() + "æ’•ä¸‹çš„å¸ƒæ¡", ({ "cloth piece", "piece", "cloth" }) );
 	if( !ob->move(this_player()) )
 		ob->move(environment(this_player()));
 	return 1;

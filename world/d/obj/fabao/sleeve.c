@@ -12,10 +12,10 @@ int is_sleeve() {return 1;}
 
 void create()
 {
-     set_name("ÒÂĞäÖĞ",({"in sleeve","sleeve"}));     
-     set("short","ÒÂĞäÖĞ");
+     set_name("è¡£è¢–ä¸­",({"in sleeve","sleeve"}));     
+     set("short","è¡£è¢–ä¸­");
      set("long", @LONG
-ÕâÀïÆáºÚÒ»Æ¬£®£®£®
+è¿™é‡Œæ¼†é»‘ä¸€ç‰‡ï¼ï¼ï¼
 LONG
      );
      set_max_encumbrance(300000);

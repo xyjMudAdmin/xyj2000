@@ -3,15 +3,15 @@
 inherit ITEM;
 void create()
 {
-	set_name("ÖñÀº",({"devine basket"}));
-	set("long", "Ò»Ö»¾«ÇÉµÄÖñÀº£¬ÊÇÓÃ×ÏÖñ±àÖ¯³ÉµÄ£®\n");
+	set_name("ç«¹ç¯®",({"devine basket"}));
+	set("long", "ä¸€åªç²¾å·§çš„ç«¹ç¯®ï¼Œæ˜¯ç”¨ç´«ç«¹ç¼–ç»‡æˆçš„ï¼\n");
 	set("material","magic");
 	set_weight(100);
 	set_max_encumbrance(400000);
 	if(clonep())
 		set_default_object(__FILE__);
 	else{
-	set("unit", "Ö»");
+	set("unit", "åª");
 	set("no_get", 1);
 	set("no_drop",1);
 	set("no_sell",1);

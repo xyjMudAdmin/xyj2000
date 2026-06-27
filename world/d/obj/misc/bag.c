@@ -4,14 +4,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name("²¼´ü", ({ "bag" }) );
+        set_name("å¸ƒè¢‹", ({ "bag" }) );
         set_weight(500);
         set_max_encumbrance(8000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Ú");
-                set("long", "ÕâÊÇÒ»¿ÚÑ°³£µÄ²¼´ü£¬¿ÉÒÔÓÃÀ´×°Ò»Ğ©ÔÓÎï¡£\n");
+                set("unit", "å£");
+                set("long", "è¿™æ˜¯ä¸€å£å¯»å¸¸çš„å¸ƒè¢‹ï¼Œå¯ä»¥ç”¨æ¥è£…ä¸€äº›æ‚ç‰©ã€‚\n");
                 set("value", 50);
         }
 }

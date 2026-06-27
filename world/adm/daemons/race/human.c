@@ -7,20 +7,20 @@
 inherit F_DBASE;
 
 mapping *combat_action = ({
-	([	"action":		"$N»ÓÈ­¹¥»÷$nµÄ$l",
-		"damage_type":	"ğöÉË",
+	([	"action":		"$NæŒ¥æ‹³æ”»å‡»$nçš„$l",
+		"damage_type":	"ç˜€ä¼¤",
 	]),
-	([	"action":		"$NÍù$nµÄ$lÒ»×¥",
-		"damage_type":	"×¥ÉË",
+	([	"action":		"$Nå¾€$nçš„$lä¸€æŠ“",
+		"damage_type":	"æŠ“ä¼¤",
 	]),
-	([	"action":		"$NÍù$nµÄ$lºİºİµØÌßÁËÒ»½Å",
-		"damage_type":	"ğöÉË",
+	([	"action":		"$Nå¾€$nçš„$lç‹ ç‹ åœ°è¸¢äº†ä¸€è„š",
+		"damage_type":	"ç˜€ä¼¤",
 	]),
-	([	"action":		"$NÌáÆğÈ­Í·Íù$nµÄ$l´·È¥",
-		"damage_type":	"ÔÒÉË",
+	([	"action":		"$Næèµ·æ‹³å¤´å¾€$nçš„$læ¶å»",
+		"damage_type":	"ç ¸ä¼¤",
 	]),
-	([	"action":		"$N¶Ô×¼$nµÄ$lÓÃÁ¦»Ó³öÒ»È­",
-		"damage_type":	"ğöÉË",
+	([	"action":		"$Nå¯¹å‡†$nçš„$lç”¨åŠ›æŒ¥å‡ºä¸€æ‹³",
+		"damage_type":	"ç˜€ä¼¤",
 	]),
 });
 
@@ -109,14 +109,14 @@ void setup_human(object ob)
 		if(my["max_sen"]<1) my["max_sen"]=1;//mon 1/28/98
 	}
 
-	if( undefinedp(my["unit"])) my["unit"]="Î»";
-	if( undefinedp(my["gender"])) my["gender"]="ÄĞĞÔ";
+	if( undefinedp(my["unit"])) my["unit"]="ä½";
+	if( undefinedp(my["gender"])) my["gender"]="ç”·æ€§";
 	if( undefinedp(my["can_speak"])) my["can_speak"]=1;
 	if( undefinedp(my["attitude"])) my["attitude"]="peaceful";
 	if( undefinedp(my["limbs"])) my["limbs"]=({
-		"Í·²¿",	"¾±²¿",	"ĞØ¿Ú",	"ºóĞÄ",	"×ó¼ç",	"ÓÒ¼ç",	"×ó±Û",
-		"ÓÒ±Û",	"×óÊÖ",	"ÓÒÊÖ",	"Ñü¼ä",	"Ğ¡¸¹",	"×óÍÈ",	"ÓÒÍÈ",
-		"×ó½Å",	"ÓÒ½Å"
+		"å¤´éƒ¨",	"é¢ˆéƒ¨",	"èƒ¸å£",	"åå¿ƒ",	"å·¦è‚©",	"å³è‚©",	"å·¦è‡‚",
+		"å³è‡‚",	"å·¦æ‰‹",	"å³æ‰‹",	"è…°é—´",	"å°è…¹",	"å·¦è…¿",	"å³è…¿",
+		"å·¦è„š",	"å³è„š"
 	}) ;
 
 //	ob->set_default_object(__FILE__);

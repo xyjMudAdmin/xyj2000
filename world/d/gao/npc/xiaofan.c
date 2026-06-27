@@ -6,9 +6,9 @@ inherit NPC;
 
 void create()
 {
-       set_name("Ğ¡··", ({"xiaofan"}));
-       set("long", "Ò»¸ö¿´ÆğÀ´¾«Ã÷ÄÜ¸ÉµÄĞ¡··£®\n");
-       set("gender", "ÄĞĞÔ");
+       set_name("å°è´©", ({"xiaofan"}));
+       set("long", "ä¸€ä¸ªçœ‹èµ·æ¥ç²¾æ˜èƒ½å¹²çš„å°è´©ï¼\n");
+       set("gender", "ç”·æ€§");
 	set("combat_exp", 1500);
        set("age", 28);
        set("attitude", "peaceful");
@@ -24,8 +24,8 @@ void init()
         ::init();
         set("chat_chance", 10);
         set("chat_msg", ({
-            "Ğ¡··´òÁË¸öÅçÌç£®\n",
-            "Ğ¡··ÉÏÉÏÏÂÏÂ´òÁ¿ÁËÄã¼¸ÑÛ¡£\n",
+            "å°è´©æ‰“äº†ä¸ªå–·åšï¼\n",
+            "å°è´©ä¸Šä¸Šä¸‹ä¸‹æ‰“é‡äº†ä½ å‡ çœ¼ã€‚\n",
 	    (: random_move :)
         }) );
 }

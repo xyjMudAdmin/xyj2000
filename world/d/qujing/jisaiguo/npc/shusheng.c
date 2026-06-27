@@ -3,10 +3,10 @@ inherit NPC;
 
 void create()
 {
-       set_name("ÊéÉú", ({"shu sheng", "sheng"}));
-       set("gender", "ÄĞĞÔ");
+       set_name("ä¹¦ç”Ÿ", ({"shu sheng", "sheng"}));
+       set("gender", "ç”·æ€§");
        set("age", 20);
-        set("long", "Ò»¸ö°×ÃæÆ¤£¬ÊÖÎŞ¸¿¼¦Ö®Á¦µÄÊéÉú¡£\n");
+        set("long", "ä¸€ä¸ªç™½é¢çš®ï¼Œæ‰‹æ— ç¼šé¸¡ä¹‹åŠ›çš„ä¹¦ç”Ÿã€‚\n");
        set("attitude", "friendly");
        set("shen_type", 1);
        set("per", 24);

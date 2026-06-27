@@ -45,10 +45,10 @@ void receive_damage(object who, int amount)
 
 void create ()
 {
-  set ("short", "ÓíÍõÁÖ");
+  set ("short", "ç¦¹ç‹æ—");
   set ("long", @LONG
 
-¡­¡­¡¡ÓíÍõÁÖÀïÅ¨ÎíÕÚÌì£¬ÄãÑ¬Ñ¬ÔÎÔÎÊ²Ã´Ò²¿´²»Çå¡¡¡­¡­
+â€¦â€¦ã€€ç¦¹ç‹æ—é‡Œæµ“é›¾é®å¤©ï¼Œä½ ç†ç†æ™•æ™•ä»€ä¹ˆä¹Ÿçœ‹ä¸æ¸…ã€€â€¦â€¦
 
 LONG);
 
@@ -88,12 +88,12 @@ void switch_off ()
 {
   set ("long", @LONG
 
-¡­¡­¡¡ÓíÍõÁÖÀïÅ¨ÎíÕÚÌì£¬ÄãÑ¬Ñ¬ÔÎÔÎÊ²Ã´Ò²¿´²»Çå¡¡¡­¡­
+â€¦â€¦ã€€ç¦¹ç‹æ—é‡Œæµ“é›¾é®å¤©ï¼Œä½ ç†ç†æ™•æ™•ä»€ä¹ˆä¹Ÿçœ‹ä¸æ¸…ã€€â€¦â€¦
 
 LONG);
 
   set("outdoors", 0);
-  tell_room (this_object(),"Ò»ÕóÅ¨ÎíÏ®À´£¬ÄãÊ²Ã´¶¼¿´²»ÇåÁË¡£\n");
+  tell_room (this_object(),"ä¸€é˜µæµ“é›¾è¢­æ¥ï¼Œä½ ä»€ä¹ˆéƒ½çœ‹ä¸æ¸…äº†ã€‚\n");
 
 }
 
@@ -101,12 +101,12 @@ void switch_on ()
 {
   set ("long", @LONG
 
-¡­¡­¡¡ÓíÍõÁÖÀïÆ®×Åµ­µ­µÄÒ»²ãÎíÆø£¬Ê÷Ä¾ÁÖÁ¢£¬Ö¦Ò¶Ã¯Ê¢¡¡¡­¡­
+â€¦â€¦ã€€ç¦¹ç‹æ—é‡Œé£˜ç€æ·¡æ·¡çš„ä¸€å±‚é›¾æ°”ï¼Œæ ‘æœ¨æ—ç«‹ï¼Œæå¶èŒ‚ç››ã€€â€¦â€¦
 
 LONG);
 
   set("outdoors", "milin");
-  tell_room (this_object(),"·ç´µÀ´£¬ÎíÆø½¥½¥µØµ­ÁË¡£\n");
+  tell_room (this_object(),"é£å¹æ¥ï¼Œé›¾æ°”æ¸æ¸åœ°æ·¡äº†ã€‚\n");
 
 }
 
@@ -147,7 +147,7 @@ void detecting (object me, int extra)
   inv = all_inventory(this_object());
   for(k=0; k<sizeof(inv); k++) {
     if (living(inv[k]) && inv[k]!=me && !me->is_fighting()) {
-      tell_object (me, "ÄãËÆºõ¾õµÃÄãÉí±ßÓĞÊ²Ã´¶¯¾²¡­¡­\n");
+      tell_object (me, "ä½ ä¼¼ä¹è§‰å¾—ä½ èº«è¾¹æœ‰ä»€ä¹ˆåŠ¨é™â€¦â€¦\n");
       return;
     }
   }
@@ -158,23 +158,23 @@ void detecting (object me, int extra)
         inv = all_inventory(OUTROOM->search_for_room(i,j));
         for(k=0; k<sizeof(inv); k++) {
           if (living(inv[k]) && inv[k]!=me) {
-	    str = "Äã·Â·ğ¾õµÃ";
+	    str = "ä½ ä»¿ä½›è§‰å¾—";
 	    if (j < my_j)
-		str += "¶«";
+		str += "ä¸œ";
 	    else if (j > my_j)
-		str += "Î÷";
+		str += "è¥¿";
 	    if (i < my_i)
-		str += "±±";
+		str += "åŒ—";
 	    else if (i > my_i)
-		str += "ÄÏ";
-	    str += "±ß";
+		str += "å—";
+	    str += "è¾¹";
             if (d <= (maxi()+maxj())/9)
-		str += "½ü´¦";
+		str += "è¿‘å¤„";
 	    else if (d <= (maxi()+maxj())*2/9)
-		str += "²»Ô¶´¦";
+		str += "ä¸è¿œå¤„";
 	    else
-		str += "Ô¶´¦";
-            tell_object (me, str+"ÓĞÊ²Ã´¶«Î÷ÕıÏòÄãÇÄÇÄ±Æ½ü¡­¡­\n");
+		str += "è¿œå¤„";
+            tell_object (me, str+"æœ‰ä»€ä¹ˆä¸œè¥¿æ­£å‘ä½ æ‚„æ‚„é€¼è¿‘â€¦â€¦\n");
             return;
           }
         }
@@ -228,7 +228,7 @@ int do_go(string arg)
     int no_look=query("no_look");
     if(no_look) {
 	tell_object(this_player(),
-		HIR"ÄãÔÚÅ¨ÎíÀïõÔõÄ×ÅÒ»Í·×²ÁË¸ö¿Õ¡£\n"NOR);
+		HIR"ä½ åœ¨æµ“é›¾é‡Œè¸‰è·„ç€ä¸€å¤´æ’äº†ä¸ªç©ºã€‚\n"NOR);
 	receive_damage(this_player(),200);
     } else {
 	receive_damage(this_player(),20);
@@ -251,7 +251,7 @@ int do_cast(string arg)
 
     if(arg!="qiankun") return 0;
     
-    write("ÓíÍõÁÖÀïÖ¦Ò¶Ã¯Ê¢£¬ÄãµÄ´óĞäÊµÔÚÊÇÊ©Õ¹²»¿ª£º£¨\n");
+    write("ç¦¹ç‹æ—é‡Œæå¶èŒ‚ç››ï¼Œä½ çš„å¤§è¢–å®åœ¨æ˜¯æ–½å±•ä¸å¼€ï¼šï¼ˆ\n");
     return 1;
 }
 */
@@ -264,9 +264,9 @@ void trapped ()
   inv = all_inventory(this_object());
   for(k=0; k<sizeof(inv); k++) {
     if (interactive(inv[k])) {
-      message_vision ("Ò»¹ÉÕÎÆøÏ®À´£¬$N½ÅÒ»Íá±»ÈíÈíµØ¾í×ßÁË¡£\n",inv[k]);
+      message_vision ("ä¸€è‚¡ç˜´æ°”è¢­æ¥ï¼Œ$Nè„šä¸€æ­ªè¢«è½¯è½¯åœ°å·èµ°äº†ã€‚\n",inv[k]);
       inv[k]->move(OUTROOM->random_room());
-      message_vision ("$N±»Ò»¹ÉÅ¨ÁÒµÄÕÎÆø¾íÁË¹ıÀ´¡£\n",inv[k]);
+      message_vision ("$Nè¢«ä¸€è‚¡æµ“çƒˆçš„ç˜´æ°”å·äº†è¿‡æ¥ã€‚\n",inv[k]);
       receive_damage(inv[k],100);
       return;
     }
@@ -275,7 +275,7 @@ void trapped ()
 
 void broadcast (string str)
 {
-  string prefix = HIY"¡¾ÓíÍõÁÖ¡¿"NOR;
+  string prefix = HIY"ã€ç¦¹ç‹æ—ã€‘"NOR;
   string s1 = str, s2 = "";
   object room=load_object(OUTROOM);
   object *user;
@@ -326,7 +326,7 @@ mixed no_leave(object who, object where)
 		    __DIR__"yuwang5",
 		    __DIR__"yuwang6",
 		    }))>-1) return 0;
-    return "Ò»¹ÉÅ¨ÁÒµÄÕÎÆøµ²×¡ÁËÄã¡£\n";
+    return "ä¸€è‚¡æµ“çƒˆçš„ç˜´æ°”æŒ¡ä½äº†ä½ ã€‚\n";
 }
 
 

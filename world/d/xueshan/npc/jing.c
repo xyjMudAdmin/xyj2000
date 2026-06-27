@@ -2,11 +2,11 @@
 inherit NPC;
 
 string *names = ({
-  "ÀÏ»¢",
-  "»¨±ª",
-  "ĞÛÊ¨",
-  "²òÀÇ",
-  "´óÏó",
+  "è€è™",
+  "èŠ±è±¹",
+  "é›„ç‹®",
+  "è±ºç‹¼",
+  "å¤§è±¡",
 });
 
 string *ids = ({
@@ -24,18 +24,18 @@ int ii;
 ii=random(sizeof(names));
 
 set_name(names[ii], ({ids[ii], "jing", "monster"}));
-set("race", "Ò°ÊŞ");
+set("race", "é‡å…½");
 set("age", 33);
 
 set("long", @LONG
-Ò»Ö»ÎüÈ¡ÈÕÔÂ¾«»ª¶ø³É¾«µÄÃÍÊŞ¡£
+ä¸€åªå¸å–æ—¥æœˆç²¾åè€Œæˆç²¾çš„çŒ›å…½ã€‚
 LONG);
 
 set("attitude", "aggressive");
 set("class", "yaomo");
 set("combat_exp", (random(5)*10000+50000));
 set("daoxing", (random(5)*1000+20000));
-set("limbs", ({ "Í·²¿", "ÉíÌå", "Ç°½Å", "áá½Å", "Î²°Í" }) );
+set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å‰è„š", "å¾Œè„š", "å°¾å·´" }) );
 set("verbs", ({ "bite"}));
 
 set("kee", 800);

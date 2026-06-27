@@ -5,8 +5,8 @@ inherit F_VENDOR;
 
 void create()
 {
-       set_name("��С��", ({"xiao er","xiaoer","xiao","waiter","wang"}));
-       set("gender", "����");
+       set_name("王小二", ({"xiao er","xiaoer","xiao","waiter","wang"}));
+       set("gender", "男性");
         set("combat_exp", 3000);
        set("age", 26);
        set("per", 14);
@@ -40,9 +40,9 @@ void greeting(object ob)
         if( !ob || !visible(ob) || environment(ob) != environment() ) return;
         switch( random(3) ) {  // 1/3 chance to greet.
                 case 0:
-                        say( "��С��Ц�����˵������λ" +
+                        say( "王小二笑咪咪地说道：这位" +
 RANK_D->query_respect(ob)
-                                + "������ЪЪ�ţ�������ůů���ӣ�\n");
+                                + "，进来歇歇脚，喝两盅暖暖身子！\n");
                         break;
         }
 }

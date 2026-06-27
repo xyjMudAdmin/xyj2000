@@ -51,7 +51,7 @@ void make_profile(string sort_by)
 	if( !stringp(sort_by) )	entry = sort_array(entry, 1);
 	else 					entry = sort_array(entry, "sort_entry", this_object() );
 	msg = 
-"Ãû³Æ           ´ÎÊı    ¼ÇÒäÌå         ÏµÍ³Ê±¼ä  Ê¹ÓÃÕßÊ±¼ä     Ö¸ÁîÊı\n";
+"åç§°           æ¬¡æ•°    è®°å¿†ä½“         ç³»ç»Ÿæ—¶é—´  ä½¿ç”¨è€…æ—¶é—´     æŒ‡ä»¤æ•°\n";
 // ecost is eval_cost.
 	for(i=0; i<sizeof(entry); i++) {
 	        int count=command_log[entry[i]]["count"];

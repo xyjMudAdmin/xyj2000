@@ -6,7 +6,7 @@ inherit "/d/dntg/pantao/npc/xiannu.c";
 void create()
 {
   ::create();
-  set_name("×ÏÒÂÏÉÅ®",({ "ziyi xiannu", "xiannu", "xian","huangyi" }) );
-  set("long", "Ò»Î»Óñô¢ÖéÂÄç­É´ÒÂµÄÏÉÅ®£¬Æß´óÏÉÅ®Ö®Ò»¡£\n");
+  set_name("ç´«è¡£ä»™å¥³",({ "ziyi xiannu", "xiannu", "xian","huangyi" }) );
+  set("long", "ä¸€ä½ç‰ç°ªç å±¥ç»›çº±è¡£çš„ä»™å¥³ï¼Œä¸ƒå¤§ä»™å¥³ä¹‹ä¸€ã€‚\n");
 
 }

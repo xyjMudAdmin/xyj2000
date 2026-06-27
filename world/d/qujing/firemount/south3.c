@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ɽ��");
+  set ("short", "山脚");
   set ("long", @LONG
 
-������ɽ�ţ���·ʮ����Ţ���Ӳݴ����������Ǵ���ɽ����������һ
-��Сɽ����ǻ���ɽ��
+这里是山脚，道路十分泥泞，杂草丛生。南面是翠云山，往北翻过一
+座小山丘便是火焰山。
 
 LONG);
 

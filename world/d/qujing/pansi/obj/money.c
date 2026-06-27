@@ -5,13 +5,13 @@ inherit ITEM;
 
 void create()
 {
-  set_name("»ÆÇ®", ({"huang qian", "qian", "money"}));
+  set_name("é»„é’±", ({"huang qian", "qian", "money"}));
   set_weight(100);
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("unit", "ÕÅ");
-    set("long", "Ò»ÕÅ¼ÀµìÊ±µÄÉÕÖ½»ÆÇ®¡£\n");
+    set("unit", "å¼ ");
+    set("long", "ä¸€å¼ ç¥­å¥ æ—¶çš„çƒ§çº¸é»„é’±ã€‚\n");
   }
   set("is_monitored",1);
   setup();
@@ -19,7 +19,7 @@ void create()
 
 void destruct_me(object where, object me)
 {
-  message_vision("$n±»Ò»Õó·ç´µ×ßÁË¡£\n",where,me);
+  message_vision("$nè¢«ä¸€é˜µé£å¹èµ°äº†ã€‚\n",where,me);
   destruct (me);
 }
 

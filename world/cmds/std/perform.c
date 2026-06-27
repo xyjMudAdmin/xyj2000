@@ -13,22 +13,22 @@ int main(object me, string arg)
 	seteuid(getuid());
 
 	if( me->is_busy() )
-		return notify_fail("( ����һ��������û����ɣ�����ʩ���⹦��)\n");
+		return notify_fail("( 你上一个动作还没有完成，不能施用外功。)\n");
 
-	if( !arg ) return notify_fail("��Ҫ���⹦��ʲô��\n");
+	if( !arg ) return notify_fail("你要用外功做什么？\n");
 	if ( !wizardp(me) && environment(me)->query("no_fight")) 
-		return notify_fail("���ﲻ��ʩ���⹦��\n");
+		return notify_fail("这里不能施用外功。\n");
 
         if( sscanf(arg, "%s on %s", perf, arg)==2 ) {
                 target = present(arg, environment(me));
                 if( !target ) target = present(arg, me);
-                if( !target ) return notify_fail("����û�� " + arg + "��\n");
+                if( !target ) return notify_fail("这里没有 " + arg + "。\n");
 
                 if(!valid_kill(me,target,0)) return 0;
 
                 if( userp(me) && userp(target) && 
                     target->query_temp("netdead") )
-                   return notify_fail("�Է����ڶ����У����ܶ���ʩ���⹦��\n");
+                   return notify_fail("对方正在断线中，不能对其施用外功。\n");
 
                 arg=perf+" "+arg;
         } else if(sscanf(arg, "%s %s", perf, arg)==2 ) {
@@ -47,7 +47,7 @@ int main(object me, string arg)
 	if( stringp(skill = me->query_skill_mapped(martial)) ) {
 //	write(arg+" "+SKILL_D(skill)->perform_action(me, arg)+
 //		SKILL_D(martial)->perform_action(me, arg)+"\n");
-		notify_fail("����ʹ�õ��⹦��û�����ֹ��ܡ�\n");
+		notify_fail("你所使用的外功中没有这种功能。\n");
 		if( SKILL_D(skill)->perform_action(me, arg) ) {
 			if( random(120) < (int)me->query_skill(skill) )
 				me->improve_skill(skill, 1, 1);
@@ -60,20 +60,20 @@ int main(object me, string arg)
 		return 0;
 	}
 
-	return notify_fail("�������� enable ָ��ѡ����Ҫʹ�õ��⹦��\n");
+	return notify_fail("你请先用 enable 指令选择你要使用的外功。\n");
 }
 
 int help (object me)
 {
         write(@HELP
-ָ���ʽ��perfrom [<�书����>.]<��ʽ����> [<ʩ�ö���>]
+指令格式：perfrom [<武功种类>.]<招式名称> [<施用对象>]
 
-�������ѧ���⹦(ȭ�š�����������....)��һЩ����Ĺ�����ʽ����ʽ������
-�����ָ����ʹ�ã���������� enable ָ��ָ����ʹ�õ��书����ָ���书��
-��ʱ�����ֵ��⹦��ָ���ȭ�Ź���ʹ������ʱ���Ǳ��е��书��
+如果你所学的外功(拳脚、剑法、刀法....)有一些特殊的攻击方式或招式，可以
+用这个指令来使用，你必须先用 enable 指令指定你使用的武功，不指定武功种
+类时，空手的外功是指你的拳脚功夫，使用武器时则是兵刃的武功。
 
 
-���仰˵��ֻҪ�� enable �е��书��������ʽ�ģ������������ָ��ʹ�á�
+换句话说，只要是 enable 中的武功有特殊招式的，都可以用这个指令使用。
 HELP
         );
         return 1;

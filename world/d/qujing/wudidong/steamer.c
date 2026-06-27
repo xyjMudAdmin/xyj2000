@@ -12,10 +12,10 @@ void reset();
 
 void create()
 {
-  set ("short", "ÕôÁı");
+  set ("short", "è’¸ç¬¼");
   set ("long", @LONG
 
-ºÃ´óµÄÒ»¸öÕôÁı£¬²»ÖªÎªºÎÄã»áÂäÔÚÕâ¶ù£¬¿ìµãÌÓ(tao)°É£¡
+å¥½å¤§çš„ä¸€ä¸ªè’¸ç¬¼ï¼Œä¸çŸ¥ä¸ºä½•ä½ ä¼šè½åœ¨è¿™å„¿ï¼Œå¿«ç‚¹é€ƒ(tao)å§ï¼
 LONG);
   set("no_fight", 1);
   set("no_magic", 1);
@@ -45,27 +45,27 @@ int do_tao()
   if (random(100)<80) // 20% chance escape
   {		
       if (kee<=mkee/5) {
-	me->set_temp("death_msg","±»ÕôÊìÁË¡£\n");
+	me->set_temp("death_msg","è¢«è’¸ç†Ÿäº†ã€‚\n");
 	bao = new(__DIR__"obj/renroubao.c");
-	bao->set("long", "Ò»¸öÏãÅçÅç¡¢ÈÈÌÚÌÚµÄÈËÈâ°ü×Ó£¬¾İËµÈâÏÚÊÇ"
-		 + me->query("name") + "µÄÈâ×öµÄ£¬ÉÏÃæ»¹Õ´×ÅÒ»Ğ©ÑªË¿¡£\n"
-		 + "ÆäÈâÏÚÎ¶µÀÖ®ÏÊÃÀ£¬²»ÓÉµÃÈÃÈË´¹ÏÑÓûµÎ¡£\n");
+	bao->set("long", "ä¸€ä¸ªé¦™å–·å–·ã€çƒ­è…¾è…¾çš„äººè‚‰åŒ…å­ï¼Œæ®è¯´è‚‰é¦…æ˜¯"
+		 + me->query("name") + "çš„è‚‰åšçš„ï¼Œä¸Šé¢è¿˜æ²¾ç€ä¸€äº›è¡€ä¸ã€‚\n"
+		 + "å…¶è‚‰é¦…å‘³é“ä¹‹é²œç¾ï¼Œä¸ç”±å¾—è®©äººå‚æ¶æ¬²æ»´ã€‚\n");
 	fainter = me->query("wudidong/last_sold_by");
 	if (!fainter) {
 	    if(bao->move("/d/city/kezhan.c"))
 		tell_object("/d/city/kezhan.c",
-			"ÅéµØÒ»Éù£¬ÌìÉÏµôÏÂÒ»¸ö´óÈâ°ü×Ó£¡\n");
+			"ç °åœ°ä¸€å£°ï¼Œå¤©ä¸Šæ‰ä¸‹ä¸€ä¸ªå¤§è‚‰åŒ…å­ï¼\n");
 	} else {
 	  user = find_player(fainter);
 	  if (user)
 	  {
 	    if(!bao->move(user))
 		bao->move(environment(user));
-	    tell_object(user, "ÄãµÄÈËÈâ°ü×ÓÕôÊìÁË¡£\n");
+	    tell_object(user, "ä½ çš„äººè‚‰åŒ…å­è’¸ç†Ÿäº†ã€‚\n");
 	  } else 
 	    if(bao->move("/d/city/kezhan.c"))
 		tell_object("/d/city/kezhan.c",
-			"ÅéµØÒ»Éù£¬ÌìÉÏµôÏÂÒ»¸ö´óÈâ°ü×Ó£¡\n");
+			"ç °åœ°ä¸€å£°ï¼Œå¤©ä¸Šæ‰ä¸‹ä¸€ä¸ªå¤§è‚‰åŒ…å­ï¼\n");
 	}
 	//by mon 8/25/97
 	me->die();
@@ -73,22 +73,22 @@ int do_tao()
       }
       else
       {
-	  message_vision(RED "Ò»ÕóÁÒ»ğ£¬°Ñ$NÉÕÍËÁË»ØÀ´¡£\n" NOR, me);
+	  message_vision(RED "ä¸€é˜µçƒˆç«ï¼ŒæŠŠ$Nçƒ§é€€äº†å›æ¥ã€‚\n" NOR, me);
 	  me->receive_damage("kee", mkee/5);
 	  me->receive_wound("kee", mkee/5-10);
 	  switch (random(4)) {
 	    case 0: 
 		  me->add_maximum_force(-5);
-	      msg="Äã¾õµÃ×Ô¼ºµÄÄÚÁ¦ËÆºõÒ²ËæÖ®ÔÚÏûÊÅ£®£®£®\n";
+	      msg="ä½ è§‰å¾—è‡ªå·±çš„å†…åŠ›ä¼¼ä¹ä¹Ÿéšä¹‹åœ¨æ¶ˆé€ï¼ï¼ï¼\n";
 	      break;
 	    case 1: 
 	          me->add_maximum_mana(-5);
-	      msg="Äã¾õµÃ×Ô¼ºµÄ·¨Á¦ËÆºõÒ²ËæÖ®ÔÚÏûÊÅ£®£®£®\n";
+	      msg="ä½ è§‰å¾—è‡ªå·±çš„æ³•åŠ›ä¼¼ä¹ä¹Ÿéšä¹‹åœ¨æ¶ˆé€ï¼ï¼ï¼\n";
 	      break; 
             default :
 	      me->add("combat_exp", 
 		      -((int)me->query("combat_exp")/1000));
-	      msg="Äã¾õµÃ×Ô¼ºµÄµÀĞĞËÆºõÒ²ËæÖ®ÔÚÏûÊÅ£®£®£®\n";
+	      msg="ä½ è§‰å¾—è‡ªå·±çš„é“è¡Œä¼¼ä¹ä¹Ÿéšä¹‹åœ¨æ¶ˆé€ï¼ï¼ï¼\n";
 	      break;
 	  }
 
@@ -99,9 +99,9 @@ int do_tao()
     }
   else
     {
-      message_vision(HIG "$NÒ»Ò§ÑÀ£¬¡°ºô¡±µØÒ»ÉùÌøÁË³öÈ¥¡£\n" NOR, me);
+      message_vision(HIG "$Nä¸€å’¬ç‰™ï¼Œâ€œå‘¼â€åœ°ä¸€å£°è·³äº†å‡ºå»ã€‚\n" NOR, me);
       me->move(__DIR__"kitchen");
-      message_vision(CYN "$NÍ»È»´ÓÂ¯ÉÏµÄÕôÁıÀïÌøÁË³öÀ´£¬Ä£ÑùÊ®·ÖÀÇ±·¡£\n" NOR, me);
+      message_vision(CYN "$Nçªç„¶ä»ç‚‰ä¸Šçš„è’¸ç¬¼é‡Œè·³äº†å‡ºæ¥ï¼Œæ¨¡æ ·ååˆ†ç‹¼ç‹ˆã€‚\n" NOR, me);
       me->save();
       return 1;
     }

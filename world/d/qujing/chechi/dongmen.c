@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "������");
+  set ("short", "东城门");
   set ("long", @LONG
 
-�����Ŵ󿪣���¥���ʣ����ٹ����ӭ������Ʈ�¥��������ʯǽ��¥
-��վ�����й����֡�¥�»�ǽ�豸ɭ�ϣ�����һ�Ŵ��״����ĵ���������
-�Դ���
+东城门大开，城楼高耸，车迟国旌旗迎风簌簌飘扬。楼两角筑有石墙箭楼
+，站有两列弓箭手。楼下护墙借备森严，内有一排穿甲戴盔的刀斧手严阵
+以待。
 LONG);
 
   set("outdoors", "/d/qujing/chechi");

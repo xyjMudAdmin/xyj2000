@@ -1,5 +1,5 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// snshou.c ßïÄÅÊÖ
+// snshou.c å”¢å‘æ‰‹
 
 #include <ansi.h>
 inherit NPC;
@@ -8,10 +8,10 @@ int do_kill(string);
 
 void create()
 {
-	set_name("ßïÄÅÊÖ", ({ "suona shou", "shou" }));
-	set("long", "Ëû¾ÍÊÇ»éÀñÉÏ×àÀñÀÖµÄ´µ¹ÄÊÖ¡£\n"
-		"ËûÊÖÖĞÄÃ×ÅÒ»Ö»ßïÄÅ£¬Õı¹Ä×ãÁ¦Æø³Á×íµØ´µ×Å¡£\n");
-	set("gender", "ÄĞĞÔ");
+	set_name("å”¢å‘æ‰‹", ({ "suona shou", "shou" }));
+	set("long", "ä»–å°±æ˜¯å©šç¤¼ä¸Šå¥ç¤¼ä¹çš„å¹é¼“æ‰‹ã€‚\n"
+		"ä»–æ‰‹ä¸­æ‹¿ç€ä¸€åªå”¢å‘ï¼Œæ­£é¼“è¶³åŠ›æ°”æ²‰é†‰åœ°å¹ç€ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 30);
 	set("attitude", "peaceful");
 	set("str", 50);
@@ -36,7 +36,7 @@ int do_kill(string arg)
 {
 	if ((arg=="shou" || arg=="suona shou")
 		&& environment()!=find_object("/d/moon/yltw")) {
-		write("ÄãÏë»µÈËºÃÊÂ£¬Ì«²»µÀµÂÁË°É¡£\n");
+		write("ä½ æƒ³åäººå¥½äº‹ï¼Œå¤ªä¸é“å¾·äº†å§ã€‚\n");
 		return 1; }
 	return 0;
 }

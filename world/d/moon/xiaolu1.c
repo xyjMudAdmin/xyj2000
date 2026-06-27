@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "���С·");
+  set ("short", "崎岖小路");
   set ("long", @LONG
 
-С·�쳣���С�ʱ�����ϸ�ɽ��ʱ�������ȡ�һ·������ϡ�٣�ֻ��һ
-Щ���㾪��ķ������ޡ�
+小路异常难行。时而盘上高山，时而跨过深谷。一路上人烟稀少，只有一
+些被你惊起的飞禽走兽。
 LONG);
 
   set("outdoors", 1);

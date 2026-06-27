@@ -12,13 +12,13 @@ inherit F_UNIQUE;
 
 void create()
 {
-        set_name("±ªÆ¤½õÄÒ", ({"baopi jinnang", "jinnang", "fabao"}));
+        set_name("è±¹çš®é”¦å›Š", ({"baopi jinnang", "jinnang", "fabao"}));
         set_weight(10000);
         if(clonep())
                 set_default_object(__FILE__);
         else {
-	set("long", "Ò»¸ö¹ü×Å±ªÆ¤µÄÐåÄÒ£¬ÈëÊÖ³ÁµéµéµÄ¡£\n");
-        set("unit", "¸ö");
+	set("long", "ä¸€ä¸ªè£¹ç€è±¹çš®çš„ç»£å›Šï¼Œå…¥æ‰‹æ²‰ç”¸ç”¸çš„ã€‚\n");
+        set("unit", "ä¸ª");
         set("value", 0);
         set("no_put",1);
         set("no_sell",1);
@@ -42,21 +42,21 @@ int ji_ob(object victim)
 	object dog;
 
         if(me->is_busy())
-                return notify_fail("ÄãÕýÃ¦×ÅÄØ£¬ÎÞ·¨¼À³ö±ªÆ¤½õÄÒ¡£\n");
+                return notify_fail("ä½ æ­£å¿™ç€å‘¢ï¼Œæ— æ³•ç¥­å‡ºè±¹çš®é”¦å›Šã€‚\n");
         if( !victim)
-                return notify_fail("ÄãÏë¼ÀµÄÈË²»ÔÚÕâÀï¡£\n");
+                return notify_fail("ä½ æƒ³ç¥­çš„äººä¸åœ¨è¿™é‡Œã€‚\n");
         if( where->query("no_magic"))
-                return notify_fail("ÕâÀï²»ÄÜ¼À±ªÆ¤½õÄÒ¡£\n");
+                return notify_fail("è¿™é‡Œä¸èƒ½ç¥­è±¹çš®é”¦å›Šã€‚\n");
         if( !me->is_fighting())
-                return notify_fail("Ö»ÓÐÕ½¶·ÖÐ²ÅÄÜ¼À±ªÆ¤½õÄÒ¡£\n");
+                return notify_fail("åªæœ‰æˆ˜æ–—ä¸­æ‰èƒ½ç¥­è±¹çš®é”¦å›Šã€‚\n");
         if( (int)me->query("mana") < 1000 )
-                return notify_fail("ÄãµÄ·¨Á¦²»ÄÜ¿ØÖÆ±ªÆ¤½õÄÒ¡£\n");
+                return notify_fail("ä½ çš„æ³•åŠ›ä¸èƒ½æŽ§åˆ¶è±¹çš®é”¦å›Šã€‚\n");
         if( (int)me->query("sen") < 200 )
-                return notify_fail("ÄãµÄ¾«Éñ²»×ã£¬ºÜÄÑ¼ÝÔ¦±ªÆ¤½õÄÒ¡£\n");
+                return notify_fail("ä½ çš„ç²¾ç¥žä¸è¶³ï¼Œå¾ˆéš¾é©¾é©­è±¹çš®é”¦å›Šã€‚\n");
 
 
-        message_vision(HIC"\n$N´óº°Ò»Éù¡°Éã¡±£¬ÊÖÒ»»Ó£¬¼À³öÁË$n¡£¡£¡£\n"NOR, me, seal);
-message_vision(HIC"$n¡¸ºô¡¹µØÒ»ÏÂ·Éµ½°ë¿Õ£¬Ö»¼ûºÚ¹âÒ»ÉÁ£¬Ò»Ö»Ð¡ÊÞÃÍ³åÏòÁË$N¡£\n"NOR,victim,seal);
+        message_vision(HIC"\n$Nå¤§å–Šä¸€å£°â€œæ‘„â€ï¼Œæ‰‹ä¸€æŒ¥ï¼Œç¥­å‡ºäº†$nã€‚ã€‚ã€‚\n"NOR, me, seal);
+message_vision(HIC"$nã€Œå‘¼ã€åœ°ä¸€ä¸‹é£žåˆ°åŠç©ºï¼Œåªè§é»‘å…‰ä¸€é—ªï¼Œä¸€åªå°å…½çŒ›å†²å‘äº†$Nã€‚\n"NOR,victim,seal);
 
 	seteuid(getuid());
 	dog=new("/obj/npc/xiaotian-quan");
@@ -93,7 +93,7 @@ int ji (string target)
   object victim;
 
   if (!target)
-    return notify_fail("ÄãÏë¶ÔË­¼À"+name+"£¿\n");
+    return notify_fail("ä½ æƒ³å¯¹è°ç¥­"+name+"ï¼Ÿ\n");
 
   victim=present(target,environment(me));
   return seal->ji_ob(victim);

@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "Ë®¾§¹¬");
+  set ("short", "æ°´æ™¶å®«");
   set ("long", @LONG
 
-ºÚ°µÉî´¦Ò»Æ¬¹âÃ÷£¬Ò»×ùÅÆÂ¥ÔÚË®ÏÂ»ĞÈ»ÒşÏÖ£¬ÄãÕıĞĞ×ßÔÚË®¾§¹¬
-Àï£¬ËÄÖÜÈçÃ÷¾µÒ»°ã£¬·½ÏòÄÑ±æ¡£
+é»‘æš—æ·±å¤„ä¸€ç‰‡å…‰æ˜ï¼Œä¸€åº§ç‰Œæ¥¼åœ¨æ°´ä¸‹æç„¶éšç°ï¼Œä½ æ­£è¡Œèµ°åœ¨æ°´æ™¶å®«
+é‡Œï¼Œå››å‘¨å¦‚æ˜é•œä¸€èˆ¬ï¼Œæ–¹å‘éš¾è¾¨ã€‚
 
 LONG);
 
@@ -48,7 +48,7 @@ int do_all (string arg)
 
 
   who->set_temp("obstacle/wuji_shuijing",0);
-  message_vision ("Ë®Ãæ»º»ºÉıÆğ£¬ÂıÂıÏÔ³öÁúÍõµÄĞÎÌå¡£\n",who);
+  message_vision ("æ°´é¢ç¼“ç¼“å‡èµ·ï¼Œæ…¢æ…¢æ˜¾å‡ºé¾™ç‹çš„å½¢ä½“ã€‚\n",who);
   longwang = new ("/d/qujing/wuji/npc/longwang");
   longwang->move(where);
   longwang->command_function("hi");
@@ -66,7 +66,7 @@ void longwang_disappear(object where)
   if (longwang->query("id") != "jing longwang")
     return;
 
-  message_vision ("Ë®Ãæ»º»º·Ö¿ª£¬ÁúÍõĞìĞìµØ³ÁÁËÏÂÈ¥¡£\n",longwang);
+  message_vision ("æ°´é¢ç¼“ç¼“åˆ†å¼€ï¼Œé¾™ç‹å¾å¾åœ°æ²‰äº†ä¸‹å»ã€‚\n",longwang);
   destruct (longwang);
 }
 

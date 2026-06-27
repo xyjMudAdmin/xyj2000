@@ -8,18 +8,18 @@ int getflag;
 
 void create()
 {
-set("short", "Ê¯·¿");
+set("short", "çŸ³æˆ¿");
 set("long", @LONG
     
-Ò»×ù¿í´óµÄÊ¯·¿£¬·¿ÄÚÓĞÊ¯ÎÑ¡¢Ê¯Ôî¡¢Ê¯Íë¡¢Ê¯Åè¡¢Ê¯´²¡¢
-Ê¯µÊ£¬¸÷ÖÖ¼Òµ±¡£ºÃÒ»×ùÌìÔìµØÉèµÄ°²ÉíÖ®Ëù¡£ÕıÖĞ¼ä²å×Å
-Ò»¸Ë´óÆì(flag)£¬ºóÃæ»¹ÓĞÒ»ÕÅÊ¯´²(bed)¡£
+ä¸€åº§å®½å¤§çš„çŸ³æˆ¿ï¼Œæˆ¿å†…æœ‰çŸ³çªã€çŸ³ç¶ã€çŸ³ç¢—ã€çŸ³ç›†ã€çŸ³åºŠã€
+çŸ³å‡³ï¼Œå„ç§å®¶å½“ã€‚å¥½ä¸€åº§å¤©é€ åœ°è®¾çš„å®‰èº«ä¹‹æ‰€ã€‚æ­£ä¸­é—´æ’ç€
+ä¸€æ†å¤§æ——(flag)ï¼Œåé¢è¿˜æœ‰ä¸€å¼ çŸ³åºŠ(bed)ã€‚
 LONG );
 
 set("item_desc",(["flag":"
-Ò»ÃæÓ­·çÕĞÕ¹µÄÈıÉ«´óÆì£¬ÔÚ¿Õ¿õÖ®´¦Ó­·ç»ÓÎè(wave)ÆğÀ´Ò»¶¨É·ÊÇºÃ¿´£¬µ«ËÆºõºÜÄÑ°Î(ba)¶¯¡£\n",
+ä¸€é¢è¿é£æ‹›å±•çš„ä¸‰è‰²å¤§æ——ï¼Œåœ¨ç©ºæ—·ä¹‹å¤„è¿é£æŒ¥èˆ(wave)èµ·æ¥ä¸€å®šç…æ˜¯å¥½çœ‹ï¼Œä½†ä¼¼ä¹å¾ˆéš¾æ‹”(ba)åŠ¨ã€‚\n",
 
-   "bed": "Ò»ÕÅÊ¯´²(gosleep,gobed,bed)¡£ \n", 
+   "bed": "ä¸€å¼ çŸ³åºŠ(gosleep,gobed,bed)ã€‚ \n", 
 ]));
 
 set("exits", ([
@@ -33,7 +33,7 @@ set("objects", ([
 //__DIR__"obj/flag" : 1,
 ]));
 
-create_door("west", "Ê¯ÃÅ", "east", DOOR_CLOSED);
+create_door("west", "çŸ³é—¨", "east", DOOR_CLOSED);
 
 setup();
 }
@@ -48,7 +48,7 @@ void init()
 
       if(this_player()->query("dntg/huaguo")=="allow")
         {
-         message_vision("Ò»Èººï×Ó¸ú×Å$N±Ä±ÄÌøÌøµÄÅÜÁË¹ıÀ´¡£\n",this_player());
+         message_vision("ä¸€ç¾¤çŒ´å­è·Ÿç€$Nè¹¦è¹¦è·³è·³çš„è·‘äº†è¿‡æ¥ã€‚\n",this_player());
          if (! present ("hou zi 3", where))
            {
             houzi = new (__DIR__"npc/hou1");
@@ -67,9 +67,9 @@ void init()
 int do_bed()
 {       object me;
         me=this_player();
-        message_vision("$NÍùÊ¯´²ÉÏÒ»ÌÉ£¬×¼±¸Ë¯¾õÁË¡£\n\n", me);
+        message_vision("$Nå¾€çŸ³åºŠä¸Šä¸€èººï¼Œå‡†å¤‡ç¡è§‰äº†ã€‚\n\n", me);
         me->move(__DIR__"shichuang");
-            message_vision("\n$N×êµ½ÁË±»ÎÑÀï¡£\n", me);
+            message_vision("\n$Né’»åˆ°äº†è¢«çªé‡Œã€‚\n", me);
                 return 1;
 }
 
@@ -81,12 +81,12 @@ int do_ba(string arg)
 
         me = this_player();
         if ( !arg || ( arg != "flag" ) ) 
-            return notify_fail("ÄãÒª°ÎÊ²Ã´£¿\n");
-      if (present("flag",me)) return notify_fail("Äã²»ÊÇÒÑ¾­ÓĞÆì×ÓÁËÂğ£¿\n");
+            return notify_fail("ä½ è¦æ‹”ä»€ä¹ˆï¼Ÿ\n");
+      if (present("flag",me)) return notify_fail("ä½ ä¸æ˜¯å·²ç»æœ‰æ——å­äº†å—ï¼Ÿ\n");
         else if(getflag==1)  
-            return notify_fail("´óÆìÒÑ¾­±»±ğÈË°Î×ßÁË£¬ÕâÀïÖ»ÁôÏÂÒ»½ØÆì¸Ë¡£\n");
+            return notify_fail("å¤§æ——å·²ç»è¢«åˆ«äººæ‹”èµ°äº†ï¼Œè¿™é‡Œåªç•™ä¸‹ä¸€æˆªæ——æ†ã€‚\n");
         else if(me->query("dntg/huaguo")=="done")  
-            return notify_fail("ÄãÊÖÎÕ´óÆì£¬²»½ûÏëÆğ×Ô¼ºµ±ÄêÔÚ´Ë³ÆÍõµÄ¿ìÀÖÊ±¹â¡£\n");
+            return notify_fail("ä½ æ‰‹æ¡å¤§æ——ï¼Œä¸ç¦æƒ³èµ·è‡ªå·±å½“å¹´åœ¨æ­¤ç§°ç‹çš„å¿«ä¹æ—¶å…‰ã€‚\n");
         else if ( random(10) < 5 )
           {
           if (me->query("kee")>200)  me->add("kee",-200); 
@@ -95,7 +95,7 @@ int do_ba(string arg)
             me->unconcious();
             return 1;
             }
-          message_vision("$NÊ¹¾¡³ÔÄÌµÄÁ¦ÆøÒ²Ã»½«´óÆì°Î³öÀ´¡£\n", me);
+          message_vision("$Nä½¿å°½åƒå¥¶çš„åŠ›æ°”ä¹Ÿæ²¡å°†å¤§æ——æ‹”å‡ºæ¥ã€‚\n", me);
           }
 
           else
@@ -108,7 +108,7 @@ int do_ba(string arg)
               }
             qi = new (__DIR__"obj/flag");
             qi->move(me);
-            message_vision("$N´óºÈÒ»Éù£¬½«´óÆì°ÎÁËÏÂÀ´¡£\n", me);
+            message_vision("$Nå¤§å–ä¸€å£°ï¼Œå°†å¤§æ——æ‹”äº†ä¸‹æ¥ã€‚\n", me);
             getflag=1;
             }
           return 1;
@@ -126,7 +126,7 @@ int valid_leave(object me, string dir)
 
         {
         if(me->query("dntg/huaguo")!="allow")
-        return notify_fail("¼¸Ö»Ğ¡ºï×ÓÅÜ¹ıÀ´³åÄãº°µ½£º£¢ÎÒÃÇÕıÔÚÑ¡ºïÍõ£¬Ã»ÊÂ±ğÀ´µ·ÂÒ¡££¢\nĞ¡ºï×ÓÓÖ¼±´Ò´ÒµÄ×ßÁË¡£\n");
+        return notify_fail("å‡ åªå°çŒ´å­è·‘è¿‡æ¥å†²ä½ å–Šåˆ°ï¼šï¼‚æˆ‘ä»¬æ­£åœ¨é€‰çŒ´ç‹ï¼Œæ²¡äº‹åˆ«æ¥æ£ä¹±ã€‚ï¼‚\nå°çŒ´å­åˆæ€¥åŒ†åŒ†çš„èµ°äº†ã€‚\n");
         }
 
 

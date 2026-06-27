@@ -5,9 +5,9 @@ inherit BLADE;
 
 void create()
 {
-  set_name("¿³É½µ¶", ({ "kanshan dao", "dao", "blade" }) );
+  set_name("ç å±±åˆ€", ({ "kanshan dao", "dao", "blade" }) );
   init_blade(35);
-  set("unit", "°Ñ");
+  set("unit", "æŠŠ");
   set_weight(750);
   if( clonep() )
      set_default_object(__FILE__);
@@ -15,7 +15,7 @@ void create()
     set("value", 300);
     set("material", "metal");
   }
-  set("wield_msg","$N²ÙÆğ$nÎÕÔÚÊÖÀï¡£\n");
+  set("wield_msg","$Næ“èµ·$næ¡åœ¨æ‰‹é‡Œã€‚\n");
   setup();
 }
 

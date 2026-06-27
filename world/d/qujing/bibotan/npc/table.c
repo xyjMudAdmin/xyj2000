@@ -5,13 +5,13 @@ int ok_to_push(object who);
         
 void create()
 {
-        set_name("Ê¯×À",({"table"}));
+        set_name("çŸ³æ¡Œ",({"table"}));
         set_weight(5000000);
         if (clonep())
                 set_default_object(__FILE__);
         else {  
-                set("long","Ò»ÕÅ°Ë½ÇÐÎµÄÊ¯×À£¬ÏÂ±ßÓÐ²»ÉÙ»®ºÛ£¬ËÆºõ¿ÉÒÔÍÆ¶¯(push)¡£\n");
-                set("unit", "ÕÅ");
+                set("long","ä¸€å¼ å…«è§’å½¢çš„çŸ³æ¡Œï¼Œä¸‹è¾¹æœ‰ä¸å°‘åˆ’ç—•ï¼Œä¼¼ä¹Žå¯ä»¥æŽ¨åŠ¨(push)ã€‚\n");
+                set("unit", "å¼ ");
     }
  
         setup();
@@ -27,7 +27,7 @@ int do_push(string arg)
 {	object who=this_player();
                 
         if( !arg || arg!="table")
-                return notify_fail("ÄãÒªÍÆÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦æŽ¨ä»€ä¹ˆï¼Ÿ\n");
                 call_out("ok_to_push", 1, who);
 		return 1;
 }
@@ -38,13 +38,13 @@ int fail_to_push(object who)
         ||      (int)who->query("force") < 100
         ||      (int)who->query_str() < 60 ) {
 
-		message_vision("$NÊÔ×ÅÈ¥ÍÆÊ¯×À£¬¿ÉÊ¯×ÀÈ´ÏóÔúÁË¸ùÒ»°ã¶¯Ò²²»¶¯¡£\n",who);
+		message_vision("$Nè¯•ç€åŽ»æŽ¨çŸ³æ¡Œï¼Œå¯çŸ³æ¡Œå´è±¡æ‰Žäº†æ ¹ä¸€èˆ¬åŠ¨ä¹Ÿä¸åŠ¨ã€‚\n",who);
                 return 1;
         }
         who->receive_damage("kee", 80);
         who->add("force", -30);
 
-	message_vision("$NÊÔ×ÅÈ¥ÍÆÊ¯×À£¬Ê¯×ÀÖ»ÊÇÇáÇá»Î¶¯ÁËÁ½ÏÂ£¬ÓÖ»Øµ½Ô­Î»¡£\n",who);
+	message_vision("$Nè¯•ç€åŽ»æŽ¨çŸ³æ¡Œï¼ŒçŸ³æ¡Œåªæ˜¯è½»è½»æ™ƒåŠ¨äº†ä¸¤ä¸‹ï¼Œåˆå›žåˆ°åŽŸä½ã€‚\n",who);
         return 1;
 }
 int ok_to_push(object who)
@@ -70,35 +70,35 @@ int ok_to_push(object who)
                 call_out("succeed", 2, who);
 		return 1;
         }
-	if ( (string)who->query_temp("enter_position") =="Ç¬" ) {
+	if ( (string)who->query_temp("enter_position") =="ä¹¾" ) {
                 call_out("qian", 2, who);
         	return 1;
 	}
-	if ( (string)who->query_temp("enter_position") =="À¤" ) {
+	if ( (string)who->query_temp("enter_position") =="å¤" ) {
                 call_out("kun", 2, who);
         	return 1;
 	}
-	if ( (string)who->query_temp("enter_position") =="ôÞ" ) {
+	if ( (string)who->query_temp("enter_position") =="è‰®" ) {
                 call_out("gen", 2, who);
 		return 1;
         }
-	if ( (string)who->query_temp("enter_position") =="¶Ò" ) {
+	if ( (string)who->query_temp("enter_position") =="å…‘" ) {
                 call_out("dui", 2, who);
 		return 1;
         }
-	if ( (string)who->query_temp("enter_position") =="Õð" ) {
+	if ( (string)who->query_temp("enter_position") =="éœ‡" ) {
                 call_out("zhen", 2, who);
         	return 1;
 	} 
-	if ( (string)who->query_temp("enter_position") =="Ùã" ) {
+	if ( (string)who->query_temp("enter_position") =="å·½" ) {
                 call_out("gong", 2, who);
         	return 1;
 	}
-	if ( (string)who->query_temp("enter_position") =="¿²" ) {
+	if ( (string)who->query_temp("enter_position") =="åŽ" ) {
                 call_out("kan", 2, who);
         	return 1;
 	}
-	if ( (string)who->query_temp("enter_position") =="Àë" ) {
+	if ( (string)who->query_temp("enter_position") =="ç¦»" ) {
                 call_out("li", 2, who);
 		return 1;
         }
@@ -108,8 +108,8 @@ int succeed(object who)
         if( !who || environment(who) !=environment(this_object()) ) return 1;
 	if( m = new("/d/qujing/bibotan/obj/xiazi") ){
 	m->move(who);
-	message_vision("$NÊ¹¾¡È«ÉíÁ¦ÆøÍÆ¿ªÁËÊ¯×À£¬Â¶³ö¸ö½ð¹â²Ó²ÓµÄÏ»×Ó¡£\n", who);
-	message_vision("$NÉìÊÖ½«Ï»×ÓÀ¿µ½ÁË»³Àï¡£\n", who);
+	message_vision("$Nä½¿å°½å…¨èº«åŠ›æ°”æŽ¨å¼€äº†çŸ³æ¡Œï¼Œéœ²å‡ºä¸ªé‡‘å…‰ç¿ç¿çš„åŒ£å­ã€‚\n", who);
+	message_vision("$Nä¼¸æ‰‹å°†åŒ£å­æ½åˆ°äº†æ€€é‡Œã€‚\n", who);
 	}
 	this_object()->set("done", 1);
 	return 1;
@@ -119,8 +119,8 @@ int qian(object who)
 	i=(int)who->query("max_kee")/5;
         if( !who || environment(who) !=environment(this_object()) ) return 1;
 
-        message_vision("$NÊ¹³öÈ«ÉíµÄÁ¦ÆøÈ¥ÍÆÄÇÊ¯×À£¬Ê¯×ÀÒ¡ÁËÒ¡£¬Ð¡Í¤Ò»½ÇÈ´µôÁËÏÂÀ´¡£\n",who);
-        message_vision("\nÐ¡Í¤µÄÒ»½ÇÍáÍáµÄÔÒÔÚ$NµÄÄÔ´üÉÏ£¬ÔÒµÄ$NÍ·ÆÆÑªÁ÷¡£\n", who);
+        message_vision("$Nä½¿å‡ºå…¨èº«çš„åŠ›æ°”åŽ»æŽ¨é‚£çŸ³æ¡Œï¼ŒçŸ³æ¡Œæ‘‡äº†æ‘‡ï¼Œå°äº­ä¸€è§’å´æŽ‰äº†ä¸‹æ¥ã€‚\n",who);
+        message_vision("\nå°äº­çš„ä¸€è§’æ­ªæ­ªçš„ç ¸åœ¨$Nçš„è„‘è¢‹ä¸Šï¼Œç ¸çš„$Nå¤´ç ´è¡€æµã€‚\n", who);
         if( (int)who->query_temp("push_time") > 3) {
                 call_out("faint_him", 1, who);
         return 1;
@@ -135,13 +135,13 @@ int kun(object who)
 	i=(int)who->query("max_kee")/5;
         if( !who || environment(who) !=environment(this_object()) ) return 1;
 
-        message_vision("$NÊ¹³öÈ«ÉíµÄÁ¦ÆøÈ¥ÍÆÄÇÊ¯×À£¬½ÅÏÂµÄµØÈ´ºöÈ»ÏÝ¿ªÒ»¸ö´ó¶´¡£\n",who);
-        message_vision("\n$NÒ»²»Ð¡ÐÄÏÝÁËÏÂÈ¥£¬ÓÖÕõÔú×ÅÅÀÁËÉÏÀ´¡£\n", who);
+        message_vision("$Nä½¿å‡ºå…¨èº«çš„åŠ›æ°”åŽ»æŽ¨é‚£çŸ³æ¡Œï¼Œè„šä¸‹çš„åœ°å´å¿½ç„¶é™·å¼€ä¸€ä¸ªå¤§æ´žã€‚\n",who);
+        message_vision("\n$Nä¸€ä¸å°å¿ƒé™·äº†ä¸‹åŽ»ï¼ŒåˆæŒ£æ‰Žç€çˆ¬äº†ä¸Šæ¥ã€‚\n", who);
         if( (int)who->query_temp("push_time") > 3) {
                 call_out("faint_him", 0, who);
         return 1;
 	}
-        message_vision("\n$NÉíÉÏ±»²ÁÆÆºÃ¼¸´¦£¬Ò»·ùÀÇ±·²»¿°µÄÑù×Ó¡£\n", who);
+        message_vision("\n$Nèº«ä¸Šè¢«æ“¦ç ´å¥½å‡ å¤„ï¼Œä¸€å¹…ç‹¼ç‹ˆä¸å ªçš„æ ·å­ã€‚\n", who);
         who->receive_wound("kee", i);
         COMBAT_D->report_status(who);  
         who->add("push_time", 1);   
@@ -152,13 +152,13 @@ int gen(object who)
 	i=(int)who->query("max_kee")/5;
         if( !who || environment(who) !=environment(this_object()) ) return 1;
 
-        message_vision("$NÊ¹³öÈ«ÉíµÄÁ¦ÆøÈ¥ÍÆÄÇÊ¯×À£¬Ê¯×ÀÍÆ¿ªºóÈ´Â¶³öÒ»¶Ñ´óÊ¯Í·¡£\n",who);
-	message_vision("\n$N±»¹öÏÂµÄÊ¯Í·ÂñÁËÆðÀ´¡£\n",who);
+        message_vision("$Nä½¿å‡ºå…¨èº«çš„åŠ›æ°”åŽ»æŽ¨é‚£çŸ³æ¡Œï¼ŒçŸ³æ¡ŒæŽ¨å¼€åŽå´éœ²å‡ºä¸€å †å¤§çŸ³å¤´ã€‚\n",who);
+	message_vision("\n$Nè¢«æ»šä¸‹çš„çŸ³å¤´åŸ‹äº†èµ·æ¥ã€‚\n",who);
         if( (int)who->query_temp("push_time") > 3) {
                 call_out("faint_him", 0, who);
         return 1;
 	}
-        message_vision("\n$N´ÓÊ¯¶Ñ´ÓÅÀÁË³öÀ´£¬ÊÖ½Å¶¼±»ÔÒÆÆÁË¡£\n", who);
+        message_vision("\n$Nä»ŽçŸ³å †ä»Žçˆ¬äº†å‡ºæ¥ï¼Œæ‰‹è„šéƒ½è¢«ç ¸ç ´äº†ã€‚\n", who);
         who->receive_wound("kee", i);
         COMBAT_D->report_status(who);
         who->add("push_time", 1);   
@@ -169,13 +169,13 @@ int dui(object who)
 	i=(int)who->query("max_sen")/5;
         if( !who || environment(who) !=environment(this_object()) ) return 1;
 
-        message_vision("$NÊ¹³öÈ«ÉíµÄÁ¦ÆøÈ¥ÍÆÄÇÊ¯×À£¬Ê¯×ÀÏÂºöÈ»ÏÖ³öÒ»¸öÄàÌ¶À´¡£\n",who);
-        message_vision("\n$NÒ»¸ö²»ÎÈ£¬µôµ½ÁËÄàÌ¶ÖÐ£¬½¦ÆðÒ»Ì²Ï¡Äà¡£\n", who);
+        message_vision("$Nä½¿å‡ºå…¨èº«çš„åŠ›æ°”åŽ»æŽ¨é‚£çŸ³æ¡Œï¼ŒçŸ³æ¡Œä¸‹å¿½ç„¶çŽ°å‡ºä¸€ä¸ªæ³¥æ½­æ¥ã€‚\n",who);
+        message_vision("\n$Nä¸€ä¸ªä¸ç¨³ï¼ŒæŽ‰åˆ°äº†æ³¥æ½­ä¸­ï¼Œæº…èµ·ä¸€æ»©ç¨€æ³¥ã€‚\n", who);
         if( (int)who->query_temp("push_time") > 3) {
                 call_out("faint_him", 0, who);
         return 1;
 	}
-        message_vision("\n$NÂýÂýµØ´ÓÄàÌ¶ÖÐÅÀÁË³öÀ´£¬¿´ÆðÀ´Ïàµ±ÀÇ±·¡£\n", who);
+        message_vision("\n$Næ…¢æ…¢åœ°ä»Žæ³¥æ½­ä¸­çˆ¬äº†å‡ºæ¥ï¼Œçœ‹èµ·æ¥ç›¸å½“ç‹¼ç‹ˆã€‚\n", who);
         who->receive_wound("sen", i);
         COMBAT_D->report_sen_status(who);
         who->add_temp("push_time", 1);   
@@ -186,13 +186,13 @@ int zhen(object who)
 	i= (int)who->query("max_sen")/5 ;
         if( !who || environment(who) !=environment(this_object()) ) return 1;
 
-        message_vision("$NÊ¹³öÈ«ÉíµÄÁ¦ÆøÈ¥ÍÆÄÇÊ¯×À£¬Í·ÉÏºöÈ»Õ¨ÆðÒ»ÉùÃÆÀ×¡£\n",who);
-        message_vision("\nÀ×ÉùÕðµÄÐ¡Í¤ÉÏ»ÒÍÁÖ±Âä£¬ºÃÏóÒªËúÁËµÄÑù×Ó¡£\n", who);
+        message_vision("$Nä½¿å‡ºå…¨èº«çš„åŠ›æ°”åŽ»æŽ¨é‚£çŸ³æ¡Œï¼Œå¤´ä¸Šå¿½ç„¶ç‚¸èµ·ä¸€å£°é—·é›·ã€‚\n",who);
+        message_vision("\né›·å£°éœ‡çš„å°äº­ä¸Šç°åœŸç›´è½ï¼Œå¥½è±¡è¦å¡Œäº†çš„æ ·å­ã€‚\n", who);
         if( (int)who->query_temp("push_time") > 3) {
                 call_out("faint_him", 0, who);
         return 1;
 	}
-        message_vision("\n$N±»ÕðµÄÔÎÍ·×ªÏò£¬Ì±×øÔÚµØÏÂ¡£\n", who);
+        message_vision("\n$Nè¢«éœ‡çš„æ™•å¤´è½¬å‘ï¼Œç˜«ååœ¨åœ°ä¸‹ã€‚\n", who);
         who->receive_wound("sen", i);
         COMBAT_D->report_sen_status(who);
         who->add_temp("push_time", 1);   
@@ -203,13 +203,13 @@ int gong(object who)
         i= (int)who->query("max_sen")/5 ;
         if( !who || environment(who) !=environment(this_object()) ) return 1;
 
-	message_vision("$NÊ¹³öÈ«ÉíµÄÁ¦ÆøÈ¥ÍÆÄÇÊ¯×À£¬Ê¯×À¾¹±»ÍÆ¿ªÁË£¬Â¶³öºÚ÷î÷îµÄÒ»¸ö¶´¿Ú¡£\n",who);
-        message_vision("\n¶´¿ÚÖÐºöÈ»¹Î³öÒ»ÕóÒõ·ç£¬¼ÐÍ·¼ÐÄÔµÄ´µÏò$N£¡\n", who);
+	message_vision("$Nä½¿å‡ºå…¨èº«çš„åŠ›æ°”åŽ»æŽ¨é‚£çŸ³æ¡Œï¼ŒçŸ³æ¡Œç«Ÿè¢«æŽ¨å¼€äº†ï¼Œéœ²å‡ºé»‘é»é»çš„ä¸€ä¸ªæ´žå£ã€‚\n",who);
+        message_vision("\næ´žå£ä¸­å¿½ç„¶åˆ®å‡ºä¸€é˜µé˜´é£Žï¼Œå¤¹å¤´å¤¹è„‘çš„å¹å‘$Nï¼\n", who);
         if( (int)who->query_temp("push_time") > 3) {
                 call_out("faint_him", 0, who);
         return 1;
 	}
-        message_vision("\n$N±»´µµÄÔÎÍ·×ªÏò£¬²»ÖªËù´ë¡£\n", who);
+        message_vision("\n$Nè¢«å¹çš„æ™•å¤´è½¬å‘ï¼Œä¸çŸ¥æ‰€æŽªã€‚\n", who);
         who->receive_wound("sen", i);
         COMBAT_D->report_sen_status(who);
         who->add_temp("push_time", 1);
@@ -220,13 +220,13 @@ int kan(object who)
         i= (int)who->query("max_kee")/5 ;
         if( !who || environment(who) !=environment(this_object()) ) return 1;
 
-        message_vision("$NÊ¹³öÈ«ÉíµÄÁ¦ÆøÈ¥ÍÆÄÇÊ¯×À£¬Ê¯×À¾¹±»ÍÆ¿ªÁË£¬×ê³öÁ½ÌõÀäÁúÀ´¡£\n",who);
-        message_vision("\nÀäÁú¿ÚÒ»ÕÅ£¬¶Ô×¼$NÅç³öÁËÁ½¹ÉÆæº®ÎÞ±ÈµÄË®Öù¡£\n", who);
+        message_vision("$Nä½¿å‡ºå…¨èº«çš„åŠ›æ°”åŽ»æŽ¨é‚£çŸ³æ¡Œï¼ŒçŸ³æ¡Œç«Ÿè¢«æŽ¨å¼€äº†ï¼Œé’»å‡ºä¸¤æ¡å†·é¾™æ¥ã€‚\n",who);
+        message_vision("\nå†·é¾™å£ä¸€å¼ ï¼Œå¯¹å‡†$Nå–·å‡ºäº†ä¸¤è‚¡å¥‡å¯’æ— æ¯”çš„æ°´æŸ±ã€‚\n", who);
         if( (int)who->query_temp("push_time") > 3) {
                 call_out("faint_him", 0, who);
         return 1;
 	}
-        message_vision("\n$N±»Ë®Öù»÷ÖÐ£¬»ëÉíÉÏÏÂ¶¼ÊªÍ¸ÁË£¬¶³µÄÖ±´ò¶ßàÂ¡£\n", who);
+        message_vision("\n$Nè¢«æ°´æŸ±å‡»ä¸­ï¼Œæµ‘èº«ä¸Šä¸‹éƒ½æ¹¿é€äº†ï¼Œå†»çš„ç›´æ‰“å“†å—¦ã€‚\n", who);
         who->receive_wound("kee", i);
         COMBAT_D->report_status(who);
         who->add_temp("push_time", 1);   
@@ -237,14 +237,14 @@ int li(object who)
         i= (int)who->query("max_kee")/5 ;
         if( !who || environment(who) !=environment(this_object()) ) return 1;
 
-        message_vision("$NÊ¹³öÈ«ÉíµÄÁ¦ÆøÈ¥ÍÆÄÇÊ¯×À£¬Ê¯×À¾¹±»ÍÆ¿ªÁË£¬×ê³öÁ½Ìõ»ðÁúÀ´¡\n",who);
-        message_vision("\n»ðÁú¿ÚÒ»ÕÅ£¬¶Ô×¼$NÅç³öÁËÁ½¹É·Û½ðÈÚÓñµÄ»ðÖù¡£\n", who);
+        message_vision("$Nä½¿å‡ºå…¨èº«çš„åŠ›æ°”åŽ»æŽ¨é‚£çŸ³æ¡Œï¼ŒçŸ³æ¡Œç«Ÿè¢«æŽ¨å¼€äº†ï¼Œé’»å‡ºä¸¤æ¡ç«é¾™æ¥î“¢n",who);
+        message_vision("\nç«é¾™å£ä¸€å¼ ï¼Œå¯¹å‡†$Nå–·å‡ºäº†ä¸¤è‚¡ç²‰é‡‘èžçŽ‰çš„ç«æŸ±ã€‚\n", who);
         if( (int)who->query_temp("push_time") > 3) {
                 call_out("faint_him", 0, who);
         return 1;
 	}
 
-        message_vision("\n$N±»ÉÕµÄ±éÌåôÔÉË£¬²Ò²»ÈÌ¶Ã¡£\n", who);
+        message_vision("\n$Nè¢«çƒ§çš„éä½“ç²¼ä¼¤ï¼Œæƒ¨ä¸å¿ç¹ã€‚\n", who);
         who->receive_wound("kee",i);
         COMBAT_D->report_status(who);
         who->add_temp("push_time", 1);   

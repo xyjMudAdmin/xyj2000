@@ -20,19 +20,19 @@ void self_dest()
 {
     object env=environment(this_object());
     if(env)
-	tell_object(env, name()+"ºöÀ­À­ÅûÉ¢¿ª£¬Ëæ·ç¶øÈ¥ÁË¡£\n");
+	tell_object(env, name()+"å¿½æ‹‰æ‹‰æŠ«æ•£å¼€ï¼Œéšé£è€Œå»äº†ã€‚\n");
     destruct(this_object());
 }
 
 void create()
 {
-	set_name(HIY"½õïçôÂôÄ"NOR, ({ "jinlan jiasha", "jiasha" }) );
-	set("long", "´ËÄËÎÒ×æÈçÀ´Ëù´ÍÖ®½õïçôÂôÄ£¬¾İËµ´©ÉÏ¿ÉÃâ¶éÂÖ»Ø¡£\n");
+	set_name(HIY"é”¦é•§è¢ˆè£Ÿ"NOR, ({ "jinlan jiasha", "jiasha" }) );
+	set("long", "æ­¤ä¹ƒæˆ‘ç¥–å¦‚æ¥æ‰€èµä¹‹é”¦é•§è¢ˆè£Ÿï¼Œæ®è¯´ç©¿ä¸Šå¯å…å •è½®å›ã€‚\n");
 	set_weight(3000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¼ş");
+		set("unit", "ä»¶");
 		set("material", "cloth");
 		set("armor_prop/armor", 90);
 		set("armor_prop/spells", 50);

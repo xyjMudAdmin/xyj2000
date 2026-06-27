@@ -25,7 +25,7 @@ int main(object me, string arg)
 int help(object me)
 {
 write(@HELP
-指令格式 : dns <on>
+鎸囦护鏍煎紡 : dns <on>
 
 to set debug mode for the dns_master.
 HELP

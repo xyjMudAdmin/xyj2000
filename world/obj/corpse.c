@@ -8,9 +8,9 @@ int do_mai(string);
 
 void create()
 {
-	set_name("ÎŞÃûÊ¬Ìå", ({ "corpse" }) );
-	set("long", "ÕâÊÇÒ»¾ßÎŞÃûÊ¬Ìå¡£\n");
-	set("unit", "¾ß" );
+	set_name("æ— åå°¸ä½“", ({ "corpse" }) );
+	set("long", "è¿™æ˜¯ä¸€å…·æ— åå°¸ä½“ã€‚\n");
+	set("unit", "å…·" );
 	decayed = 0;
 	if( clonep(this_object()) ) call_out("decay", 120, 1);
 }
@@ -27,30 +27,30 @@ void decay(int phase)
 	switch(phase) {
 		case 1:
 			tell_room(environment(this_object()),
-				query("name") + "¿ªÊ¼¸¯ÀÃÁË¡£\n" );
+				query("name") + "å¼€å§‹è…çƒ‚äº†ã€‚\n" );
 			switch(query("gender")) {
-				case "ÄĞĞÔ":
-					set_name("¸¯ÀÃµÄÄĞÊ¬", ({ "corpse", "Ê¬Ìå" }) );
-				case "Å®ĞÔ":
-					set_name("¸¯ÀÃµÄÅ®Ê¬", ({ "corpse", "Ê¬Ìå" }) );
+				case "ç”·æ€§":
+					set_name("è…çƒ‚çš„ç”·å°¸", ({ "corpse", "å°¸ä½“" }) );
+				case "å¥³æ€§":
+					set_name("è…çƒ‚çš„å¥³å°¸", ({ "corpse", "å°¸ä½“" }) );
 				default:
-					set_name("¸¯ÀÃµÄÊ¬Ìå", ({ "corpse", "Ê¬Ìå" }) );
+					set_name("è…çƒ‚çš„å°¸ä½“", ({ "corpse", "å°¸ä½“" }) );
 			}
 			set("long",	
-	"Õâ¾ßÊ¬ÌåÏÔÈ»ÒÑ¾­ÌÉÔÚÕâÀïÓĞÒ»¶ÎÊ±¼äÁË£¬ÕıÉ¢·¢×ÅÒ»¹É¸¯Ê¬µÄÎ¶µÀ¡£\n");
+	"è¿™å…·å°¸ä½“æ˜¾ç„¶å·²ç»èººåœ¨è¿™é‡Œæœ‰ä¸€æ®µæ—¶é—´äº†ï¼Œæ­£æ•£å‘ç€ä¸€è‚¡è…å°¸çš„å‘³é“ã€‚\n");
 			call_out("decay", 120, phase + 1);
 			break;
 		case 2:
 			tell_room(environment(this_object()),
-			 query("name") + "±»·ç´µ¸ÉÁË£¬±ä³ÉÒ»¾ßº¡¹Ç¡£\n" );
-			set_name("Ò»¾ß¿İ¸ÉµÄº¡¹Ç", ({ "skeleton", "º¡¹Ç" }) );
-			set("long", "Õâ¸±º¡¹ÇÒÑ¾­ÌÉÔÚÕâÀïºÜ¾ÃÁË¡£\n");
+			 query("name") + "è¢«é£å¹å¹²äº†ï¼Œå˜æˆä¸€å…·éª¸éª¨ã€‚\n" );
+			set_name("ä¸€å…·æ¯å¹²çš„éª¸éª¨", ({ "skeleton", "éª¸éª¨" }) );
+			set("long", "è¿™å‰¯éª¸éª¨å·²ç»èººåœ¨è¿™é‡Œå¾ˆä¹…äº†ã€‚\n");
 			set("is_skeleton",1);
 			call_out("decay", 60, phase + 1);
 			break;
 		case 3:
 			tell_room(environment(this_object()),
-			 "Ò»Õó·ç´µ¹ı£¬°Ñ" + query("name") + "»¯³É¹Ç»Ò´µÉ¢ÁË¡£\n" );
+			 "ä¸€é˜µé£å¹è¿‡ï¼ŒæŠŠ" + query("name") + "åŒ–æˆéª¨ç°å¹æ•£äº†ã€‚\n" );
 			if( environment() ) {
 				object *inv;
 				int i;
@@ -73,7 +73,7 @@ object animate(object who, int time)
 
 	seteuid(getuid());
 	zombie = new("/obj/npc/zombie");
-	zombie->set_name( (string)query("victim_name") + "µÄ½©Ê¬", ({ "zombie" }) );
+	zombie->set_name( (string)query("victim_name") + "çš„åƒµå°¸", ({ "zombie" }) );
 	zombie->move(environment());
 	zombie->animate(who);
 	zombie->set_temp("invoker",who); // mon 6/25/99
@@ -92,9 +92,9 @@ int do_mai(string arg)
         object me = this_player();
   object *inv=all_inventory(this_object());
         if (!id(arg))
-                return notify_fail("ÄãÒªÂñÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦åŸ‹ä»€ä¹ˆï¼Ÿ\n");
 	if(!environment(me)->query("mai_corpse_able"))
-		return notify_fail("Äã²»ÄÜÔÚÕâÀïÂñÊ¬Ìå£¡\n");
+		return notify_fail("ä½ ä¸èƒ½åœ¨è¿™é‡ŒåŸ‹å°¸ä½“ï¼\n");
 
 	if( random(3)==1) {
 	me->add("potential", 1);
@@ -106,8 +106,8 @@ int do_mai(string arg)
 	me->receive_damage("kee", 5);
 	me->add("bury_corpse", 1);
 
-	message_vision("$NÔÚµØÏÂÅÙÁË¸ö¿Ó£¬°Ñ$n·ÅÁË½øÈ¥£¬ÓÃÍÁÂñÁËÆğÀ´¡£\n", me, this_object());
-        message_vision("$N¶Ô·ØÍ·¾ÏÁË¸ö¹ª£¬µÀ£º¹ÖÄãÇ°ÊÀÃü¶Ì£¬ºÃºÃĞŞÀ´ÉúÈ¥°É£¡\n", me);
+	message_vision("$Nåœ¨åœ°ä¸‹åˆ¨äº†ä¸ªå‘ï¼ŒæŠŠ$næ”¾äº†è¿›å»ï¼Œç”¨åœŸåŸ‹äº†èµ·æ¥ã€‚\n", me, this_object());
+        message_vision("$Nå¯¹åŸå¤´é äº†ä¸ªèº¬ï¼Œé“ï¼šæ€ªä½ å‰ä¸–å‘½çŸ­ï¼Œå¥½å¥½ä¿®æ¥ç”Ÿå»å§ï¼\n", me);
   for(int i=0;i<sizeof(inv);i++) {
     destruct(inv[i]);
   

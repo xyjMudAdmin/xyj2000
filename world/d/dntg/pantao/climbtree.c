@@ -10,19 +10,19 @@ int do_climb(string arg)
   string dest;
  
   if( (!arg) || arg != "tree" )
-    return notify_fail("ÅÀÊ²Ã´£¿\n");
+    return notify_fail("çˆ¬ä»€ä¹ˆï¼Ÿ\n");
   if( me->query("kee") < (int)(me->query("max_kee")/3)){
     me->receive_damage("kee",(int)me->query("kee")/2);
-    return notify_fail("ÄãÉí×Ó·¢Ğé£¬Ò»Í·ÔÔÁËÏÂÀ´£¬°¥Ñ½£¡\n");
+    return notify_fail("ä½ èº«å­å‘è™šï¼Œä¸€å¤´æ ½äº†ä¸‹æ¥ï¼Œå“å‘€ï¼\n");
   }
 
   bulb=all_inventory();
   for (int i=0;i<sizeof(bulb);i++) 
      if (living(bulb[i]) && bulb[i]!=me)
-        return notify_fail("µ±×Å±ğÈËµÄÃæÉÏÊ÷ÍµÌÒ£¿²»Í×²»Í×¡£\n");
+        return notify_fail("å½“ç€åˆ«äººçš„é¢ä¸Šæ ‘å·æ¡ƒï¼Ÿä¸å¦¥ä¸å¦¥ã€‚\n");
   dest=__DIR__+(string)this_object()->query("up");
-  tell_object(me,"Äã±¿ÊÖ±¿½ÅµØÏòÉÏÅÀÈ¥¡£\n");
+  tell_object(me,"ä½ ç¬¨æ‰‹ç¬¨è„šåœ°å‘ä¸Šçˆ¬å»ã€‚\n");
   me->move(dest);
-  tell_room(environment(me),me->query("name")+"±¿ÊÖ±¿½ÅµØÅÀÁËÉÏÀ´¡£",me);
+  tell_room(environment(me),me->query("name")+"ç¬¨æ‰‹ç¬¨è„šåœ°çˆ¬äº†ä¸Šæ¥ã€‚",me);
   return 1;
 }

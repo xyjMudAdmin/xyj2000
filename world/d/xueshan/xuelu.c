@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create ()
 {
-	set ("short", "ѩ·");
+	set ("short", "雪路");
 	set ("long", @LONG
 
-ããѩҰ�У�Զ��������һ�ˣ��ֳ����У��������ݣ�
-��ű���ѩɽ�ɸ���ӭ�͵����Ŵ�ʦ���ˡ�
+茫茫雪野中，远方凝立着一人，手持利刃，威风凛凛，
+大概便是雪山派负责迎客的掌门大师兄了。
 LONG);
 
 

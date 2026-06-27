@@ -4,13 +4,13 @@ inherit ROOM;
 int do_dive();
 void create ()
 {
-  set ("short", "¹Å¶É¿Ú");
+  set ("short", "å¤æ¸¡å£");
   set ("long", @LONG
 
-ÕâÀïÄËÊÇ±Ì²¨Ì¶±ßÒ»¸ö¶É¿Ú£¬ºóÀ´ÒòÌ¶ÖĞÄÖË®¹Ö£¬¸½½üµÄ°ÙĞÕ·×
-·×Ç¨µ½³ÇÖĞ£¬¶É¿Ú±ã»Ä·ÏÁËÏÂÀ´¡£¿¿Ë®±ßÖ»ÓĞÁãÁãÉ¢É¢¼¸¸ùÄ¾Í·
-´î×Å£¬ËÆºõÒ»Õó·çÀË¾Í¿ÉÏÆ·­¡£Ô¶ÍûºşĞÄÓĞÒ»Ğ¡µº£¬µ¹Ò²Ê÷Ä¾Ã¯
-Ê¢¡£
+è¿™é‡Œä¹ƒæ˜¯ç¢§æ³¢æ½­è¾¹ä¸€ä¸ªæ¸¡å£ï¼Œåæ¥å› æ½­ä¸­é—¹æ°´æ€ªï¼Œé™„è¿‘çš„ç™¾å§“çº·
+çº·è¿åˆ°åŸä¸­ï¼Œæ¸¡å£ä¾¿è’åºŸäº†ä¸‹æ¥ã€‚é æ°´è¾¹åªæœ‰é›¶é›¶æ•£æ•£å‡ æ ¹æœ¨å¤´
+æ­ç€ï¼Œä¼¼ä¹ä¸€é˜µé£æµªå°±å¯æ€ç¿»ã€‚è¿œæœ›æ¹–å¿ƒæœ‰ä¸€å°å²›ï¼Œå€’ä¹Ÿæ ‘æœ¨èŒ‚
+ç››ã€‚
 LONG);
 
 //  set("objects", ([ /* sizeof() == 1*/ 
@@ -32,22 +32,22 @@ void init()
 int do_dive()
 {   object me,ridee;
         me=this_player();
-if(me->is_busy()) return notify_fail("ÄãÕıÃ¦×ÅÄØ!\n");
+if(me->is_busy()) return notify_fail("ä½ æ­£å¿™ç€å‘¢!\n");
      ridee=me->ride();
             if( (!present("bishui zhou", me)) &&
-	    (!((string)me->query("family/family_name")=="¶«º£Áú¹¬")) &&
-	    (!((string)me->query("family/family_name")=="»ğÔÆ¶´")) )
+	    (!((string)me->query("family/family_name")=="ä¸œæµ·é¾™å®«")) &&
+	    (!((string)me->query("family/family_name")=="ç«äº‘æ´")) )
                 return
-notify_fail("ÄãÒ»¸öÃÍ×ÓÔúµ½Ë®Àï£®£®£®\n\nµ«Ã»¶à»á¶ù¾Í±»±ïµÃ°ëËÀ£¬Ö»ºÃ¸Ï½ôÅÀÉÏ°¶À´¡£\n");
+notify_fail("ä½ ä¸€ä¸ªçŒ›å­æ‰åˆ°æ°´é‡Œï¼ï¼ï¼\n\nä½†æ²¡å¤šä¼šå„¿å°±è¢«æ†‹å¾—åŠæ­»ï¼Œåªå¥½èµ¶ç´§çˆ¬ä¸Šå²¸æ¥ã€‚\n");
 
    if (ridee && ridee->query("under_water")) {
-     message_vision("$NÒ»ÅÄ$nµÄÍ·£¬Á¬ÈË´øÂíÔ¾ÈëË®ÖĞ¡£\n",me,ridee);
+     message_vision("$Nä¸€æ‹$nçš„å¤´ï¼Œè¿äººå¸¦é©¬è·ƒå…¥æ°´ä¸­ã€‚\n",me,ridee);
      ridee->move("/d/qujing/bibotan/tandi3");
    }
     else
-                message_vision("$NÒ»¸öÃÍ×ÓÔúµ½Ë®ÖĞ£¬È»ºó²»¼ûÁË£®\n", me);
+                message_vision("$Nä¸€ä¸ªçŒ›å­æ‰åˆ°æ°´ä¸­ï¼Œç„¶åä¸è§äº†ï¼\n", me);
                 me->move("/d/qujing/bibotan/tandi3");
-		message_vision("$NÓÎÁË¹ıÀ´¡£\n", me);
+		message_vision("$Næ¸¸äº†è¿‡æ¥ã€‚\n", me);
                 return 1;
 }
 

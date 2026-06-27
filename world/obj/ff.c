@@ -12,7 +12,7 @@ inherit F_BACKUP;
 void create()
 {
 	seteuid(0);	
-	set_name("×ÔÖÆ·¨±¦Îï¼ş", ({ "fabao object", "fabao", "object" }) );
+	set_name("è‡ªåˆ¶æ³•å®ç‰©ä»¶", ({ "fabao object", "fabao", "object" }) );
 	setup();
 }
 
@@ -50,7 +50,7 @@ int save()
 	//is this needed?...
 	if( query("equipped") )   
 	{
-		write("±ØĞë·ÅÏÂ·¨±¦²ÅÄÜ´¢´æ¡£\n");
+		write("å¿…é¡»æ”¾ä¸‹æ³•å®æ‰èƒ½å‚¨å­˜ã€‚\n");
 		return 0;
 	}
 	return ::save();
@@ -75,8 +75,8 @@ string status_bar(int max, int current, string color)
 
 	for(i=1; i<=max; i++)
 	{
-		if( i <= current ) status += "¡ö";
-		else status += "¡õ";
+		if( i <= current ) status += "â– ";
+		else status += "â–¡";
 	}
    
 	status += NOR;
@@ -86,19 +86,19 @@ string status_bar(int max, int current, string color)
 
 string show_status()
 {
-	string status = (string)query("name")+"·¨±¦×´Ì¬£º\n";
+	string status = (string)query("name")+"æ³•å®çŠ¶æ€ï¼š\n";
 	
 	if( query("series_no") == "1" ) //weapon
 	{
-		status += " <ÆøÑªÉËº¦Á¦> " + status_bar(query("fabao/max_attack_qi"), query_temp("fabao/attack_qi"), RED) + "\n";
-		status += " <¾«ÉñÉËº¦Á¦> " + status_bar(query("fabao/max_attack_shen"), query_temp("fabao/attack_shen"), BLU) + "\n";
+		status += " <æ°”è¡€ä¼¤å®³åŠ›> " + status_bar(query("fabao/max_attack_qi"), query_temp("fabao/attack_qi"), RED) + "\n";
+		status += " <ç²¾ç¥ä¼¤å®³åŠ›> " + status_bar(query("fabao/max_attack_shen"), query_temp("fabao/attack_shen"), BLU) + "\n";
 	}
 
 	else //armor
 	{
-		status += " <ÆøÑª±£»¤Á¦> " + status_bar(query("fabao/max_defense_qi"), query_temp("fabao/defense_qi"), RED) + "\n";
-		status += " <¾«Éñ±£»¤Á¦> " + status_bar(query("fabao/max_defense_shen"), query_temp("fabao/defense_shen"), BLU) + "\n";
-		status += " <·¨±¦ÊÕÈ¡Á¦> " + status_bar(query("fabao/max_defense_shou"), query_temp("fabao/defense_shou"), HIY) + "\n";	
+		status += " <æ°”è¡€ä¿æŠ¤åŠ›> " + status_bar(query("fabao/max_defense_qi"), query_temp("fabao/defense_qi"), RED) + "\n";
+		status += " <ç²¾ç¥ä¿æŠ¤åŠ›> " + status_bar(query("fabao/max_defense_shen"), query_temp("fabao/defense_shen"), BLU) + "\n";
+		status += " <æ³•å®æ”¶å–åŠ›> " + status_bar(query("fabao/max_defense_shou"), query_temp("fabao/defense_shou"), HIY) + "\n";	
 	}
 
 	return status;
@@ -116,40 +116,40 @@ int do_charge(string arg)
 	if( me->is_busy()
 	|| me->is_fighting()
 	|| me->query_temp("pending/exercising"))
-		return notify_fail("ÄãÕıÃ¦×ÅÄØ£®£®£®\n");
+		return notify_fail("ä½ æ­£å¿™ç€å‘¢ï¼ï¼ï¼\n");
         
 	if( environment(me)->query("no_fight")
 	|| environment(me)->query("no_magic") )
-		return notify_fail("ÕâÀï²»ÊÇĞŞÁ¶·¨±¦µÄµØ·½¡£\n");
+		return notify_fail("è¿™é‡Œä¸æ˜¯ä¿®ç‚¼æ³•å®çš„åœ°æ–¹ã€‚\n");
 
-	if( !arg || !fabao_ob->id(arg) ) return notify_fail("ÄãÏëĞŞÁ¶Ê²Ã´·¨±¦£¿\n");
+	if( !arg || !fabao_ob->id(arg) ) return notify_fail("ä½ æƒ³ä¿®ç‚¼ä»€ä¹ˆæ³•å®ï¼Ÿ\n");
 	
 	if( (int)me->query("mana") < 3*cost ) //maybe used to charge 3 parameters.
-		return notify_fail("ÄãÄ¿Ç°µÄ·¨Á¦Ì«µÍ£¬²»ÄÜĞŞÁ¶·¨±¦¡£\n");
+		return notify_fail("ä½ ç›®å‰çš„æ³•åŠ›å¤ªä½ï¼Œä¸èƒ½ä¿®ç‚¼æ³•å®ã€‚\n");
 
 	if( (int)me->query("force") < 3*cost ) //maybe used to charge 3 parameters.
-		return notify_fail("ÄãÄ¿Ç°µÄÄÚÁ¦Ì«µÍ£¬²»ÄÜĞŞÁ¶·¨±¦¡£\n");
+		return notify_fail("ä½ ç›®å‰çš„å†…åŠ›å¤ªä½ï¼Œä¸èƒ½ä¿®ç‚¼æ³•å®ã€‚\n");
 
 	if( query("series_no")=="1" )//weapon
 	{
 		if( query_temp("fabao/attack_qi") >= query("fabao/max_attack_qi") )
-			write(query("name")+"µÄÆøÑªÉËº¦Á¦ÒÑÔÚ×î¼Ñ×´Ì¬¡£\n");
+			write(query("name")+"çš„æ°”è¡€ä¼¤å®³åŠ›å·²åœ¨æœ€ä½³çŠ¶æ€ã€‚\n");
 		else 
 		{
 			me->add("force", -cost);
 			me->add("mana", -cost);
-			message_vision("$N¿ÚÖĞÄîÄîÓĞ´Ê£¬ÒÔ·¨Á¦½«×Ô¼ºµÄÄÚÁ¦»º»ºµØ×¢Èë$nÖ®ÖĞ¡£\n", me, fabao_ob);
+			message_vision("$Nå£ä¸­å¿µå¿µæœ‰è¯ï¼Œä»¥æ³•åŠ›å°†è‡ªå·±çš„å†…åŠ›ç¼“ç¼“åœ°æ³¨å…¥$nä¹‹ä¸­ã€‚\n", me, fabao_ob);
 			me->start_busy(cost/delay_factor);
 			call_out("charged", cost/delay_factor, me, "attack_qi");
 		}
 
 		if( query_temp("fabao/attack_shen") >= query("fabao/max_attack_shen") )
-			write(query("name")+"µÄ¾«ÉñÉËº¦Á¦ÒÑÔÚ×î¼Ñ×´Ì¬¡£\n");
+			write(query("name")+"çš„ç²¾ç¥ä¼¤å®³åŠ›å·²åœ¨æœ€ä½³çŠ¶æ€ã€‚\n");
 		else 
 		{
 			me->add("force", -cost);
 			me->add("mana", -cost);
-			message_vision("$N¿ÚÖĞÄîÄîÓĞ´Ê£¬ÒÔÄÚÁ¦½«×Ô¼ºµÄ·¨Á¦»º»ºµØ×¢Èë$nÖ®ÖĞ¡£\n", me, fabao_ob);
+			message_vision("$Nå£ä¸­å¿µå¿µæœ‰è¯ï¼Œä»¥å†…åŠ›å°†è‡ªå·±çš„æ³•åŠ›ç¼“ç¼“åœ°æ³¨å…¥$nä¹‹ä¸­ã€‚\n", me, fabao_ob);
 			me->start_busy(cost/delay_factor);
 			call_out("charged", cost/delay_factor, me, "attack_shen");
 		}
@@ -160,34 +160,34 @@ int do_charge(string arg)
 	else //armor
 	{
 		if( query_temp("fabao/defense_qi") >= query("fabao/max_defense_qi") )
-			write(query("name")+"µÄÆøÑª±£»¤Á¦ÒÑÔÚ×î¼Ñ×´Ì¬¡£\n");
+			write(query("name")+"çš„æ°”è¡€ä¿æŠ¤åŠ›å·²åœ¨æœ€ä½³çŠ¶æ€ã€‚\n");
 		else 
 		{
 			me->add("force", -cost);
 			me->add("mana", -cost);
-			message_vision("$N¿ÚÖĞÄîÄîÓĞ´Ê£¬ÒÔ·¨Á¦½«×Ô¼ºµÄÄÚÁ¦»º»ºµØ×¢Èë$nÖ®ÖĞ¡£\n", me, fabao_ob);
+			message_vision("$Nå£ä¸­å¿µå¿µæœ‰è¯ï¼Œä»¥æ³•åŠ›å°†è‡ªå·±çš„å†…åŠ›ç¼“ç¼“åœ°æ³¨å…¥$nä¹‹ä¸­ã€‚\n", me, fabao_ob);
 			me->start_busy(cost/delay_factor);
 			call_out("charged", cost/delay_factor, me, "defense_qi");
 		}
 
 		if( query_temp("fabao/defense_shen") >= query("fabao/max_defense_shen") )
-			write(query("name")+"µÄ¾«Éñ±£»¤Á¦ÒÑÔÚ×î¼Ñ×´Ì¬¡£\n");
+			write(query("name")+"çš„ç²¾ç¥ä¿æŠ¤åŠ›å·²åœ¨æœ€ä½³çŠ¶æ€ã€‚\n");
 		else 
 		{
 			me->add("force", -cost);
 			me->add("mana", -cost);
-			message_vision("$N¿ÚÖĞÄîÄîÓĞ´Ê£¬ÒÔÄÚÁ¦½«×Ô¼ºµÄ·¨Á¦»º»ºµØ×¢Èë$nÖ®ÖĞ¡£\n", me, fabao_ob);
+			message_vision("$Nå£ä¸­å¿µå¿µæœ‰è¯ï¼Œä»¥å†…åŠ›å°†è‡ªå·±çš„æ³•åŠ›ç¼“ç¼“åœ°æ³¨å…¥$nä¹‹ä¸­ã€‚\n", me, fabao_ob);
 			me->start_busy(cost/delay_factor);
 			call_out("charged", cost/delay_factor, me, "defense_shen");
 		}
 
 		if( query_temp("fabao/defense_shou") >= query("fabao/max_defense_shou") )
-			write(query("name")+"µÄ·¨±¦ÊÕÈ¡Á¦ÒÑÔÚ×î¼Ñ×´Ì¬¡£\n");
+			write(query("name")+"çš„æ³•å®æ”¶å–åŠ›å·²åœ¨æœ€ä½³çŠ¶æ€ã€‚\n");
 		else 
 		{
 			me->add("force", -cost);
 			me->add("mana", -cost);
-			message_vision("$N¿ÚÖĞÄîÄîÓĞ´Ê£¬½«×Ô¼ºµÄ·¨Á¦ºÍÄÚÁ¦½»»ã£¬»º»ºµØ×¢Èë$nÖ®ÖĞ¡£\n", me, fabao_ob);
+			message_vision("$Nå£ä¸­å¿µå¿µæœ‰è¯ï¼Œå°†è‡ªå·±çš„æ³•åŠ›å’Œå†…åŠ›äº¤æ±‡ï¼Œç¼“ç¼“åœ°æ³¨å…¥$nä¹‹ä¸­ã€‚\n", me, fabao_ob);
 			me->start_busy(cost/delay_factor);
 			call_out("charged", cost/delay_factor, me, "defense_shou");
 		}
@@ -206,7 +206,7 @@ void charged(object me, string type)
 	if( query_temp(property) >= query(max) ) return;
 	add_temp(property, 1);
 	//save();//do not save...use temp now.
-	message_vision("\nÖ»¼û$nÍ»È»·Å³öÎå²ÊÏ¼¹â£¬$NÃæÂ¶Ï²É«£¬³¤³¤µØÍÂÁËÒ»¿ÚÆø¡£\n", me, this_object());
+	message_vision("\nåªè§$nçªç„¶æ”¾å‡ºäº”å½©éœå…‰ï¼Œ$Né¢éœ²å–œè‰²ï¼Œé•¿é•¿åœ°åäº†ä¸€å£æ°”ã€‚\n", me, this_object());
 	return;
 }
 
@@ -290,27 +290,27 @@ int ji(string target_id)
         object d_fabao1, d_fabao2;
 
         if (!target_id)
-                return notify_fail("ÄãÏë¶ÔË­¼À"+fabao_name+"£¿\n");
+                return notify_fail("ä½ æƒ³å¯¹è°ç¥­"+fabao_name+"ï¼Ÿ\n");
 
         target=present(target_id, environment(attacker));
         if( !target )
-                return notify_fail("ÄãµÄ¹¥»÷Ä¿±ê²»ÔÚÕâÀï¡£\n");
+                return notify_fail("ä½ çš„æ”»å‡»ç›®æ ‡ä¸åœ¨è¿™é‡Œã€‚\n");
 
         if( attacker->is_busy() )
-                return notify_fail("ÄãÕıÃ¦×ÅÄØ£¬ÎŞ·¨¼À³ö"+fabao_name+"¡£\n");
+                return notify_fail("ä½ æ­£å¿™ç€å‘¢ï¼Œæ— æ³•ç¥­å‡º"+fabao_name+"ã€‚\n");
         if( where->query("no_magic") || where->query("no_fight") )
-                return notify_fail("ÕâÀï²»ÄÜ¼À"+fabao_name+"¡£\n");
+                return notify_fail("è¿™é‡Œä¸èƒ½ç¥­"+fabao_name+"ã€‚\n");
 
         if( (int)attacker->query("mana") < 500 )
-                return notify_fail("ÄãµÄ·¨Á¦²»ÄÜ¿ØÖÆ"+fabao_name+"¡£\n");
+                return notify_fail("ä½ çš„æ³•åŠ›ä¸èƒ½æ§åˆ¶"+fabao_name+"ã€‚\n");
         if( (int)attacker->query("sen") < 200 )
-                return notify_fail("ÄãÏÖÔÚÉñÖÇ²»Çå£¬ºÜÄÑ¼İÔ¦"+fabao_name+"¡£\n");
+                return notify_fail("ä½ ç°åœ¨ç¥æ™ºä¸æ¸…ï¼Œå¾ˆéš¾é©¾é©­"+fabao_name+"ã€‚\n");
 
         if( !fabao->query("equipped") )
-                return notify_fail(fabao_name+"»¹Ã»×°±¸ÆğÀ´¡£\n");
+                return notify_fail(fabao_name+"è¿˜æ²¡è£…å¤‡èµ·æ¥ã€‚\n");
 
-        message_vision(HIC"\n$N¶¶×ã¾«Éñ£¬´óºÈÒ»Éù¡°¿´·¨±¦£¡¡±£¬Ö»¼û$n¡¸ºô¡¹µØÒ»ÏÂ·Éµ½°ë¿Õ£¬\n"NOR, attacker, fabao);
-        message_vision(HIC"ö®ÄÇ¼äÌìÉ«Ò»±ä£¬·çÉù´ó×÷£¡$n´ø³öÒ»µÀµÍĞ¥Ïò$NÁè¿Õ»÷À´£¡\n\n"NOR,  target, fabao);
+        message_vision(HIC"\n$NæŠ–è¶³ç²¾ç¥ï¼Œå¤§å–ä¸€å£°â€œçœ‹æ³•å®ï¼â€ï¼Œåªè§$nã€Œå‘¼ã€åœ°ä¸€ä¸‹é£åˆ°åŠç©ºï¼Œ\n"NOR, attacker, fabao);
+        message_vision(HIC"éœé‚£é—´å¤©è‰²ä¸€å˜ï¼Œé£å£°å¤§ä½œï¼$nå¸¦å‡ºä¸€é“ä½å•¸å‘$Nå‡Œç©ºå‡»æ¥ï¼\n\n"NOR,  target, fabao);
 
         //start kill...
         target->kill_ob(attacker);
@@ -323,9 +323,9 @@ int ji(string target_id)
 
 //1st, daoxing vs. daoxing, if target dx enough, can prevent anything from happening.
 
-//2nd, combat_exp vs. daoxing, if target exp enough, can ¶ãÉÁ.
+//2nd, combat_exp vs. daoxing, if target exp enough, can èº²é—ª.
 
-//3rd, fali vs. fali, if victim fali enough, can try use his/her defense fabao to ½ÓÊÕ.
+//3rd, fali vs. fali, if victim fali enough, can try use his/her defense fabao to æ¥æ”¶.
 //here, damage to fabao's power may happen...
 
 //4th, to this point, a successful hit happens, consider damage now. 
@@ -344,9 +344,9 @@ int ji(string target_id)
         //stage 1, attacker's dx vs. target's dx
         if( d_dx*100/(a_dx+d_dx) > random(100) )
         {
-                //message_vision(HIW"\n½á¹û$NÇáÇáÒ»»ÓÊÖ£ºÃ×Á£Ö®Öé£¬Ò²·Å¹â»ª£¿\n"NOR, attacker);   
-                message_vision(HIW"\n½á¹û$NÇáÒ»»ÓÊÖ£¬ºÙºÙĞ¦ÁË¼¸Éù£ºÏë¸úÎÒ¶·£¿ÔÙÈ¥ĞŞ¸öÈıÎå°ÙÄê°É£¡\n"NOR, target);   
-                message_vision(HIW"\nÖ»¼û$n¼¸¸ö·­¹ö£¬ÓÖ»Øµ½ÁË$NµÄÊÖÖĞ¡£\n"NOR, attacker, fabao);    
+                //message_vision(HIW"\nç»“æœ$Nè½»è½»ä¸€æŒ¥æ‰‹ï¼šç±³ç²’ä¹‹ç ï¼Œä¹Ÿæ”¾å…‰åï¼Ÿ\n"NOR, attacker);   
+                message_vision(HIW"\nç»“æœ$Nè½»ä¸€æŒ¥æ‰‹ï¼Œå˜¿å˜¿ç¬‘äº†å‡ å£°ï¼šæƒ³è·Ÿæˆ‘æ–—ï¼Ÿå†å»ä¿®ä¸ªä¸‰äº”ç™¾å¹´å§ï¼\n"NOR, target);   
+                message_vision(HIW"\nåªè§$nå‡ ä¸ªç¿»æ»šï¼Œåˆå›åˆ°äº†$Nçš„æ‰‹ä¸­ã€‚\n"NOR, attacker, fabao);    
                 return 1;    
         }
 
@@ -354,12 +354,12 @@ int ji(string target_id)
         //note here, 1/3 exp can be considered as effective dx.
         if( (d_exp/3)*100/(a_dx+d_exp/3) > random(100) )
         {
-                message_vision(HIC"\n½á¹û$NÉíĞÎ¼±ÉÁ£¬¶ã¹ıÁË$nµÄ¹¥ÊÆ¡£\n"NOR, target, fabao);
+                message_vision(HIC"\nç»“æœ$Nèº«å½¢æ€¥é—ªï¼Œèº²è¿‡äº†$nçš„æ”»åŠ¿ã€‚\n"NOR, target, fabao);
                 return 1;
         }
         
         //stage 3, attacker's fali vs. target's fali
-        //if target has a higher fali, he/she may want to try ÊÕÈ¡¶Ô·½·¨±¦¡£
+        //if target has a higher fali, he/she may want to try æ”¶å–å¯¹æ–¹æ³•å®ã€‚
         //btw, this is determined by his/her defense fabao's power, hoho.
         if( d_fali*100/(a_fali+d_fali) > random(100) )
         {
@@ -387,11 +387,11 @@ int ji(string target_id)
 
                 if( d_fabao_power > 0 )
                 {
-                        message_vision(HIC"$Nºß£¡ÁËÒ»Éù£ºÃ×Á£Ö®Öé£¬Ò²·Å¹â»ª£¿¿´ÎÒµÄ·¨±¦£¡\n"NOR, target);
+                        message_vision(HIC"$Nå“¼ï¼äº†ä¸€å£°ï¼šç±³ç²’ä¹‹ç ï¼Œä¹Ÿæ”¾å…‰åï¼Ÿçœ‹æˆ‘çš„æ³•å®ï¼\n"NOR, target);
                         if( d_fabao1 ) 
-                                message_vision(HIW"Ö»¼ûÏ¼¹âÒ»ÉÁ£¬$NµÄ$nÒÑ¸ú"+fabao_name+"¶·ÔÚÒ»Æğ£¡\n"NOR, target, d_fabao1);
+                                message_vision(HIW"åªè§éœå…‰ä¸€é—ªï¼Œ$Nçš„$nå·²è·Ÿ"+fabao_name+"æ–—åœ¨ä¸€èµ·ï¼\n"NOR, target, d_fabao1);
                         if( d_fabao2 ) 
-                                message_vision(HIW"Ö»¼ûÏ¼¹âÒ»ÉÁ£¬$NµÄ$nÒÑ¸ú"+fabao_name+"¶·ÔÚÒ»Æğ£¡\n"NOR, target, d_fabao2);
+                                message_vision(HIW"åªè§éœå…‰ä¸€é—ªï¼Œ$Nçš„$nå·²è·Ÿ"+fabao_name+"æ–—åœ¨ä¸€èµ·ï¼\n"NOR, target, d_fabao2);
                         
                         if( a_fabao_power > d_fabao_power )//possible to damage defense fabao...
                         {
@@ -406,7 +406,7 @@ int ji(string target_id)
                                                 if( d_fabao1->query("fabao/max_defense_shou") > 1 && random(2) == 0 )
                                                         d_fabao2->add("fabao/max_defense_shou", -1);
 
-                                                message_vision(HIC"½á¹ûÑª¹â´óÊ¢£¬$N·¢³öÒ»Éù°§ÃùÍËÁËÏÂÀ´¡£\n"NOR, d_fabao2);
+                                                message_vision(HIC"ç»“æœè¡€å…‰å¤§ç››ï¼Œ$Nå‘å‡ºä¸€å£°å“€é¸£é€€äº†ä¸‹æ¥ã€‚\n"NOR, d_fabao2);
                                                 if( d_fabao2->unequip() ) d_fabao2->save(); 
                                         }
                                         else if( d_fabao1 )
@@ -418,7 +418,7 @@ int ji(string target_id)
                                                 if( d_fabao1->query("fabao/max_defense_shou") > 1 && random(2) == 0 )
                                                         d_fabao1->add("fabao/max_defense_shou", -1);
 
-                                                message_vision(HIC"½á¹ûÑª¹â´óÊ¢£¬$N·¢³öÒ»Éù°§ÃùÍËÁËÏÂÀ´¡£\n"NOR, d_fabao1);
+                                                message_vision(HIC"ç»“æœè¡€å…‰å¤§ç››ï¼Œ$Nå‘å‡ºä¸€å£°å“€é¸£é€€äº†ä¸‹æ¥ã€‚\n"NOR, d_fabao1);
                                                 if( d_fabao1->unequip() ) d_fabao1->save(); 
                                         }   
                                          
@@ -434,7 +434,7 @@ int ji(string target_id)
                                         if( fabao->query("fabao/max_attack_shen") > 1 )
                                                 fabao->add("fabao/max_attack_shen", -1);        
                          
-                                        message_vision(HIC"½á¹ûÑª¹â´óÊ¢£¬$n·¢³öÒ»Éù°§Ãù£¬¾ÓÈ»±»$NÊÕÁË¹ıÈ¥£¡\n"NOR, target, fabao);  
+                                        message_vision(HIC"ç»“æœè¡€å…‰å¤§ç››ï¼Œ$nå‘å‡ºä¸€å£°å“€é¸£ï¼Œå±…ç„¶è¢«$Næ”¶äº†è¿‡å»ï¼\n"NOR, target, fabao);  
                                         if( fabao->unequip() ) fabao->save();//here save may cause bug?...
 
                                         fabao->move(target); 
@@ -442,14 +442,14 @@ int ji(string target_id)
                                 }
                         }
                 
-                        message_vision(HIC"½á¹ûË«·½µÄ·¨±¦¶·ÁË¸öÆì¹ÄÏàµ±£¬Ö»ºÃ¸÷×ÔÊÕ»Ø¡£\n"NOR, fabao);   
+                        message_vision(HIC"ç»“æœåŒæ–¹çš„æ³•å®æ–—äº†ä¸ªæ——é¼“ç›¸å½“ï¼Œåªå¥½å„è‡ªæ”¶å›ã€‚\n"NOR, fabao);   
                         return 1;     
                 }
         }
 
         //stage 4, finally, the fabao results in a hit to the target...
         //compare target's enchant + defense fabao with attacker's attacking fabao + enchat
-        hit_msg = HIC "½á¹û$n±»´òÁË¸öÕı×Å£¡\n" NOR;
+        hit_msg = HIC "ç»“æœ$nè¢«æ‰“äº†ä¸ªæ­£ç€ï¼\n" NOR;
         if( fabao->query_temp("fabao/attack_qi") > fabao->query_temp("fabao/attack_shen") )
         {//attack qi
                 damage = fabao->query_temp("fabao/attack_qi")*attacker->query_spi() + a_enchant - (d_enchant/2+random(d_enchant/2));
@@ -482,7 +482,7 @@ int ji(string target_id)
                 }                
         }
 
-        message_vision(HIC"½á¹û$NÓ²ÊÜ$nÒ»¼Ç£¬È´ÊÇºÁ·¢ÎŞÉË£¡\n"NOR, target, fabao); 
+        message_vision(HIC"ç»“æœ$Nç¡¬å—$nä¸€è®°ï¼Œå´æ˜¯æ¯«å‘æ— ä¼¤ï¼\n"NOR, target, fabao); 
 
         return 1;
 }

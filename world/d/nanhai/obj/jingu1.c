@@ -1,5 +1,5 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// jingu.c ½ô¹¿Öä
+// jingu.c ç´§ç®å’’
 
 #include <ansi.h>
 
@@ -8,14 +8,14 @@ inherit F_UNIQUE;
 
 void create()
 {
-        set_name(HIR"½ô¹¿Öä"NOR, ({ "jingu zhou" }) );
+        set_name(HIR"ç´§ç®å’’"NOR, ({ "jingu zhou" }) );
         set_weight(100);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Æª");
+                set("unit", "ç¯‡");
         set("long",
-        "½ô¹¿Öä£¬ÓÖ»½×ö¡°¶¨ĞÄÕæÑÔ¡±¡£×²¼ûÉñÍ¨¹ã´óµÄÑıÄ§£¬Ö»ÒÀËùÓÃµÄÖäÓïÄîÒ»Äî£¬¹Ü½ÌËûÈëÎÒÃÅÀ´¡£\n");
+        "ç´§ç®å’’ï¼Œåˆå”¤åšâ€œå®šå¿ƒçœŸè¨€â€ã€‚æ’è§ç¥é€šå¹¿å¤§çš„å¦–é­”ï¼Œåªä¾æ‰€ç”¨çš„å’’è¯­å¿µä¸€å¿µï¼Œç®¡æ•™ä»–å…¥æˆ‘é—¨æ¥ã€‚\n");
         set("material", "paper");       
         }
 	setup();
@@ -23,7 +23,7 @@ void create()
 
 void init()
 {
-	if (this_player() -> query("family/family_name") != "ÄÏº£ÆÕÍÓÉ½" ) {
+	if (this_player() -> query("family/family_name") != "å—æµ·æ™®é™€å±±" ) {
 		remove_call_out("free_jingu");
 		call_out("free_jingu", 120, this_object(), this_player()); 
 	}
@@ -35,9 +35,9 @@ void free_jingu(object ob, object who)
 {
         if(!who || !ob) return;
 
-	if (who -> query("family/family_name") != "ÄÏº£ÆÕÍÓÉ½" ) {
-		tell_object(who, HIR"Äã·Â·ğÌıµ½ÓĞÈËËµ£º·Ç·ğÃÅÖĞÈË£¬µÃÖ®ÎŞÓÃ£¬²»ÈçÆúÖ®¡£\n"
-			+ "Ëæ×ÅÒ»ÉùÇáÏì£¬½ô¹¿ÖäÒÑÌÚ¿Õ¶øÈ¥£¬²»ÁôÏÂÒ»Ë¿ºÛ¼£¡£\n\n"NOR);
+	if (who -> query("family/family_name") != "å—æµ·æ™®é™€å±±" ) {
+		tell_object(who, HIR"ä½ ä»¿ä½›å¬åˆ°æœ‰äººè¯´ï¼šéä½›é—¨ä¸­äººï¼Œå¾—ä¹‹æ— ç”¨ï¼Œä¸å¦‚å¼ƒä¹‹ã€‚\n"
+			+ "éšç€ä¸€å£°è½»å“ï¼Œç´§ç®å’’å·²è…¾ç©ºè€Œå»ï¼Œä¸ç•™ä¸‹ä¸€ä¸ç—•è¿¹ã€‚\n\n"NOR);
 		destruct(ob);
 	}
 	else { 

@@ -1,17 +1,17 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// Room: some place in Î÷Å£ºØÖŞ
+// Room: some place in è¥¿ç‰›è´ºæ´²
 // gate.c
 #include <room.h>
 inherit ROOM;
 
 void create()
 {
-  set ("short", "É½ÃÅ");
+  set ("short", "å±±é—¨");
   set ("long", @LONG
 
-ÃÅ¿ÚÁ¢Ò»Ê¯±®£¬Ô¼ÓĞÈıÕÉâÅ¸ß£¬°Ë³ßâÅÀ«£¬ÉÏÓĞÒ»ĞĞÊ®¸ö´ó×Ö£¬
-ÄËÊÇ¡°ÁéÌ¨·½´çÉ½£¬Ğ±ÔÂÈıĞÇ¶´¡±¡£É½ÃÅÅÔÁ¢Ò»ÏÉÍ¯£¬Õæ¸ö·á×Ë
-Ó¢Î°£¬ÏñÃ²ÇåÆæ£¬±ÈÑ°³£Ë××Ó²»Í¬¡£
+é—¨å£ç«‹ä¸€çŸ³ç¢‘ï¼Œçº¦æœ‰ä¸‰ä¸ˆé¦€é«˜ï¼Œå…«å°ºé¦€é˜”ï¼Œä¸Šæœ‰ä¸€è¡Œåä¸ªå¤§å­—ï¼Œ
+ä¹ƒæ˜¯â€œçµå°æ–¹å¯¸å±±ï¼Œæ–œæœˆä¸‰æ˜Ÿæ´â€ã€‚å±±é—¨æ—ç«‹ä¸€ä»™ç«¥ï¼ŒçœŸä¸ªä¸°å§¿
+è‹±ä¼Ÿï¼Œåƒè²Œæ¸…å¥‡ï¼Œæ¯”å¯»å¸¸ä¿—å­ä¸åŒã€‚
 LONG);
 set("exits", ([ /* sizeof() == 2 */
 "north" : __DIR__"gate1",
@@ -20,7 +20,7 @@ set("exits", ([ /* sizeof() == 2 */
 
 set("objects", ([
                 __DIR__"npc/yingke": 1 ]) );
-        create_door("north", "Ê¯ÃÅ", "south", DOOR_CLOSED);
+        create_door("north", "çŸ³é—¨", "south", DOOR_CLOSED);
          set("outdoors", 1);
         set("no_clean_up", 0);
 

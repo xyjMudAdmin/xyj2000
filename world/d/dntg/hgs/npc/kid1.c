@@ -4,8 +4,8 @@ inherit NPC;
 
 void create()
 {
-       set_name("Ğ¡ÄĞº¢", ({"kid"}));
-       set("gender", "ÄĞĞÔ");
+       set_name("å°ç”·å­©", ({"kid"}));
+       set("gender", "ç”·æ€§");
         set("combat_exp", 100);
 	set("per", 19);
 	set("str", 10);
@@ -14,7 +14,7 @@ void create()
        set("shen_type", 1);
        set("chat_chance", 10);
         set("chat_msg", ({
-            "Ğ¡ÄĞº¢¶ÔÄãÎûÎûµØÉµĞ¦ÁË¼¸Éù¡£\n",
+            "å°ç”·å­©å¯¹ä½ å˜»å˜»åœ°å‚»ç¬‘äº†å‡ å£°ã€‚\n",
             (: random_move :)
         }) );
 

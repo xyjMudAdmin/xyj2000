@@ -7,8 +7,8 @@ inherit F_VENDOR_SALE;
 void create()
 {
   reload("tianzhu_xiner_niang");
-  set_name("ÐÁ¶ùÄï", ({"xiner niang", "xiner", "niang"}));
-  set("gender", "Å®ÐÔ");
+  set_name("è¾›å„¿å¨˜", ({"xiner niang", "xiner", "niang"}));
+  set("gender", "å¥³æ€§");
   set("combat_exp", 2000);
   set("age", 28);
   set("per", 21);

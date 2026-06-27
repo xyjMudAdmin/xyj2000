@@ -8,11 +8,11 @@ object room = 0;
 
 void create()
 {
-  set_name("×¯¶«", ({"zhuang dong", "zhuang" }));
-  set("gender", "ÄĞĞÔ");
+  set_name("åº„ä¸œ", ({"zhuang dong", "zhuang" }));
+  set("gender", "ç”·æ€§");
   set("age", 30);
   set("per", 30);
-  set("long", "Ò»Î»ÅÖºÇºÇµÄ×¯¶«¡£\n");
+  set("long", "ä¸€ä½èƒ–å‘µå‘µçš„åº„ä¸œã€‚\n");
   set("combat_exp", 5000);
   set_skill("force", 50);
   set_skill("spells", 50);
@@ -48,7 +48,7 @@ void init()
 
 void refuse_message (object me, object who)
 {
-  message_vision ("$NÏò$nÀÖºÇºÇµØÒ»Ğ¦ÁËÊÂ¡£\n",me,who);
+  message_vision ("$Nå‘$nä¹å‘µå‘µåœ°ä¸€ç¬‘äº†äº‹ã€‚\n",me,who);
 }
 
 int do_fight(string arg)
@@ -58,7 +58,7 @@ int do_fight(string arg)
 
   if (arg && present(arg,environment(who))==me)
   {
-    message_vision ("$N¿´Ñù×ÓÊäºìÁËÑÛ£¬ÏëÕÒ$n´ò¼Ü¡£\n",who,me);
+    message_vision ("$Nçœ‹æ ·å­è¾“çº¢äº†çœ¼ï¼Œæƒ³æ‰¾$næ‰“æ¶ã€‚\n",who,me);
     refuse_message (me,who);
     return 1;
   }
@@ -72,7 +72,7 @@ int do_kill(string arg)
 
   if (arg && present(arg,environment(who))==me)
   {
-    message_vision ("$N¿´Ñù×ÓÊäºìÁËÑÛ£¬ÏëÉ±$n¡£\n",who,me);
+    message_vision ("$Nçœ‹æ ·å­è¾“çº¢äº†çœ¼ï¼Œæƒ³æ€$nã€‚\n",who,me);
     refuse_message (me,who);
     return 1;
   }
@@ -84,7 +84,7 @@ int do_cast(string arg)
   object who = this_player();
   object me = this_object();
 
-  message_vision ("$N¿´Ñù×ÓÊäºìÁËÑÛ£¬ÏëÄîÖäÓï¡£\n",who,me);
+  message_vision ("$Nçœ‹æ ·å­è¾“çº¢äº†çœ¼ï¼Œæƒ³å¿µå’’è¯­ã€‚\n",who,me);
   refuse_message (me,who);
   return 1;
 }
@@ -94,7 +94,7 @@ int do_exert(string arg)
   object who = this_player();
   object me = this_object();
 
-  message_vision ("$N¿´Ñù×ÓÊäºìÁËÑÛ£¬ÏëÊ©ÄÚ¹¦¡£\n",who,me);
+  message_vision ("$Nçœ‹æ ·å­è¾“çº¢äº†çœ¼ï¼Œæƒ³æ–½å†…åŠŸã€‚\n",who,me);
   refuse_message (me,who);
   return 1;
 }
@@ -104,7 +104,7 @@ int do_steal(string arg)
   object who = this_player();
   object me = this_object();
 
-  message_vision ("$N¿´Ñù×ÓÊäºìÁËÑÛ£¬¹í¹íËîËîµØÏëÍµÊ²Ã´¡£\n",who,me);
+  message_vision ("$Nçœ‹æ ·å­è¾“çº¢äº†çœ¼ï¼Œé¬¼é¬¼ç¥Ÿç¥Ÿåœ°æƒ³å·ä»€ä¹ˆã€‚\n",who,me);
   refuse_message (me,who);
   return 1;
 }

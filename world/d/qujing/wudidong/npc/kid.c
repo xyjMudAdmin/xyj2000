@@ -3,13 +3,13 @@
 inherit NPC;
 void create()
 {
-        set_name("Ğ¡ÍŞÍŞ", ({ "kid", "wawa"}));
+        set_name("å°å¨ƒå¨ƒ", ({ "kid", "wawa"}));
         if(random(10)<7)
-	set("gender", "ÄĞĞÔ" );
+	set("gender", "ç”·æ€§" );
         else
-	set("gender", "Å®ĞÔ" );
+	set("gender", "å¥³æ€§" );
         set("age", 3+random(5));
-        set("long", "Ò»¸ö¿É°®µÄĞ¡ÍŞÍŞ¡£µùÄï¶¼È¥¸É»îÁË£¬×Ô¼ºÔÚÏª±ß×½Óã¡£\n");
+        set("long", "ä¸€ä¸ªå¯çˆ±çš„å°å¨ƒå¨ƒã€‚çˆ¹å¨˜éƒ½å»å¹²æ´»äº†ï¼Œè‡ªå·±åœ¨æºªè¾¹æ‰é±¼ã€‚\n");
         set("combat_exp", 10);
         set("attitude", "friendly");
         setup();

@@ -6,9 +6,9 @@ inherit F_FOOD;
 
 
 string *names = ({
-  "ÇàÓã",
-  "½ğÉ«ÀğÓã",
-  "²İÓã",
+  "é’é±¼",
+  "é‡‘è‰²é²¤é±¼",
+  "è‰é±¼",
 });
 
 void create()
@@ -19,10 +19,10 @@ void create()
            set_default_object(__FILE__);
    else 
      {
-     set("long","Ò»ÌõÏÊÓã¡£\n");
-     set("unit", "Ìõ");
+     set("long","ä¸€æ¡é²œé±¼ã€‚\n");
+     set("unit", "æ¡");
      set("value", 80000);
-     set("no_sell","ÕÆ¹ñµÄÒ¡ÁËÒ¡Í·£ºÕâÍæÒÕ»î±ÄÀÃÌøµÄ£¬Ã»·¨±£´æ£¬²»Òª¡£\n");
+     set("no_sell","æŒæŸœçš„æ‘‡äº†æ‘‡å¤´ï¼šè¿™ç©è‰ºæ´»è¹¦çƒ‚è·³çš„ï¼Œæ²¡æ³•ä¿å­˜ï¼Œä¸è¦ã€‚\n");
      set("food_remaining", 4);
      set("food_supply", 50);
      }

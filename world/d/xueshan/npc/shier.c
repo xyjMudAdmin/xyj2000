@@ -5,24 +5,24 @@ inherit NPC;
 
 
 string *names = ({
-  "»ÆİºÊÌ¶ù",
-  "»Æğ¿ÊÌ¶ù",
-  "»Æº×ÊÌ¶ù",
+  "é»„èºä¾å„¿",
+  "é»„é¹‚ä¾å„¿",
+  "é»„é¹¤ä¾å„¿",
 });
 
 
 void create()
 {
         set_name(names[random(sizeof(names))], ({"shi er", "shier"}));
-	set("gender", "Å®ĞÔ" );
+	set("gender", "å¥³æ€§" );
 	set("age", 16);
-	set("long", "Ñ©É½ÃÅÏÂ¹«Ö÷ÊÌÎÀ¡£\n");
+	set("long", "é›ªå±±é—¨ä¸‹å…¬ä¸»ä¾å«ã€‚\n");
 	set("class", "yaomo");
 	set("combat_exp", 25000);
         set("daoxing", 30000);
 
 	set("attitude", "peaceful");
-//	create_family("´óÑ©É½", 4, "µÜ×Ó");
+//	create_family("å¤§é›ªå±±", 4, "å¼Ÿå­");
 	set_skill("unarmed", 20);
 	set_skill("dodge", 20);
 	set_skill("parry", 20);

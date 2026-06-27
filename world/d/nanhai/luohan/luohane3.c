@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ÂŞººËş");
+  set ("short", "ç½—æ±‰å¡”");
   set ("long", @LONG
 
 
-			·ğ
+			ä½›
 
 
 LONG);
@@ -24,14 +24,14 @@ LONG);
 }
 int valid_leave(object me, string dir)
 {
-        if( (string)me->query("family/family_name")=="ÄÏº£ÆÕÍÓÉ½" ) return 1;
+        if( (string)me->query("family/family_name")=="å—æµ·æ™®é™€å±±" ) return 1;
         if( wizardp(me)) return 1;
 
 
         if (dir == "northup") {
         if (objectp(present("luo han", environment(me))))
 
-        return notify_fail("ÂŞººÉìÊÖµ²×¡ÁËÄãµÄÈ¥Â·¡£\n");
+        return notify_fail("ç½—æ±‰ä¼¸æ‰‹æŒ¡ä½äº†ä½ çš„å»è·¯ã€‚\n");
         }   
         return ::valid_leave(me, dir);
 }

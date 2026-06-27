@@ -10,14 +10,14 @@ int main(object me, string str)
      int i, number;
 
      if (!str) str = me->query("cwf");
-     if(!str) return notify_fail("ÄãÒª²é¿´ÄÄ¸öÎÄ¼þ£¿\n");
+     if(!str) return notify_fail("ä½ è¦æŸ¥çœ‹å“ªä¸ªæ–‡ä»¶ï¼Ÿ\n");
  
      str = resolve_path(me->query("cwd"), str);
         if( sscanf(str, "%*s.c") != 1 ) str += ".c";
         me->set("cwf", str);
    
      if( file_size(str) < 0 )
-                return notify_fail("Ã»ÓÐÕâ¸öÎÄ¼þ£º" + str + ")\n");
+                return notify_fail("æ²¡æœ‰è¿™ä¸ªæ–‡ä»¶ï¼š" + str + ")\n");
 
      list=children(str);
      number=sizeof(list);
@@ -46,7 +46,7 @@ int main(object me, string str)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : child filename
+æŒ‡ä»¤æ ¼å¼ : child filename
 
 List information about all copies (master and cloned)
 of a given file in the mud.

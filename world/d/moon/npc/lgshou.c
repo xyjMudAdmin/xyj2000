@@ -1,5 +1,5 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// lgshou.c Âà¹ÄÊÖ
+// lgshou.c é”£é¼“æ‰‹
 
 #include <ansi.h>
 inherit NPC;
@@ -8,10 +8,10 @@ int do_kill(string);
 
 void create()
 {
-	set_name("Âà¹ÄÊÖ", ({ "luogu shou", "shou" }));
-	set("long", "Ëû¾ÍÊÇ»éÀñÉÏ×àÀñÀÖµÄ´µ¹ÄÊÖ¡£\n"
-		"ËûĞØÇ°¹Ò×ÅÒ»¸ö´ó¹Ä£¬Ë«ÊÖ¸÷ÄÃÒ»¸ö¹Äé³£¬Æğ¾¢µØÇÃ´ò×Å¡£\n");
-	set("gender", "ÄĞĞÔ");
+	set_name("é”£é¼“æ‰‹", ({ "luogu shou", "shou" }));
+	set("long", "ä»–å°±æ˜¯å©šç¤¼ä¸Šå¥ç¤¼ä¹çš„å¹é¼“æ‰‹ã€‚\n"
+		"ä»–èƒ¸å‰æŒ‚ç€ä¸€ä¸ªå¤§é¼“ï¼ŒåŒæ‰‹å„æ‹¿ä¸€ä¸ªé¼“æ§Œï¼Œèµ·åŠ²åœ°æ•²æ‰“ç€ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 30);
 	set("attitude", "peaceful");
 	set("str", 50);
@@ -35,7 +35,7 @@ int do_kill(string arg)
 {
 	if ((arg=="shou" || arg=="luogu shou")
 		&& environment()!=find_object("/d/moon/yltw")) {
-		write("ÄãÏë»µÈËºÃÊÂ£¬Ì«²»µÀµÂÁË°É¡£\n");
+		write("ä½ æƒ³åäººå¥½äº‹ï¼Œå¤ªä¸é“å¾·äº†å§ã€‚\n");
 		return 1; }
 	return 0;
 }

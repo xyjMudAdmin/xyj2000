@@ -21,14 +21,14 @@ int main(object me, string arg)
 		ob = present(arg, environment(me));
 		if (!ob) ob = find_player(arg);
 		if (!ob) ob = find_living(arg);
-        if (!ob) return notify_fail("ÄãÒª²ì¿´Ë­µÄ×´Ì¬£¿\n");
+        if (!ob) return notify_fail("ä½ è¦å¯Ÿçœ‹è°çš„çŠ¶æ€ï¼Ÿ\n");
 	} else
-		return notify_fail("Ö»ÓĞÎ×Ê¦ÄÜ²ì¿´±ğÈËµÄ×´Ì¬¡£\n");
+		return notify_fail("åªæœ‰å·«å¸ˆèƒ½å¯Ÿçœ‹åˆ«äººçš„çŠ¶æ€ã€‚\n");
  
 	my = ob->query_entire_dbase();
  
-	printf(" ÆøÑª£º %s%4d/ %4d %s(%3d%%)" NOR 
-		"    ÄÚÁ¦£º %s%4d / %4d (%3d%%) (+%d)\n" NOR,
+	printf(" æ°”è¡€ï¼š %s%4d/ %4d %s(%3d%%)" NOR 
+		"    å†…åŠ›ï¼š %s%4d / %4d (%3d%%) (+%d)\n" NOR,
 		status_color(my["kee"], my["eff_kee"]),my["kee"],my["eff_kee"],
 		status_color(my["eff_kee"], my["max_kee"]),	
 		my["eff_kee"] * 100 / my["max_kee"],
@@ -38,8 +38,8 @@ int main(object me, string arg)
 		  my["max_force"] * 100 / my["maximum_force"] : 100,
 		my["force_factor"] );
 
-	printf(" ¾«Éñ£º %s%4d/ %4d %s(%3d%%)" NOR 
-		"    ·¨Á¦£º %s%4d / %4d (%3d%%) (+%d)\n" NOR,
+	printf(" ç²¾ç¥ï¼š %s%4d/ %4d %s(%3d%%)" NOR 
+		"    æ³•åŠ›ï¼š %s%4d / %4d (%3d%%) (+%d)\n" NOR,
 		status_color(my["sen"], my["eff_sen"]),my["sen"],my["eff_sen"],
 		status_color(my["eff_sen"], my["max_sen"]),	
 		my["eff_sen"] * 100 / my["max_sen"],
@@ -49,7 +49,7 @@ int main(object me, string arg)
 		  my["max_mana"] * 100 / my["maximum_mana"] : 100,
 		my["mana_factor"] );
     
-	printf(" Ê³Îï£º %s%4d/ %4d      " NOR "     ÎäÑ§£º %s%d\n" NOR,
+	printf(" é£Ÿç‰©ï¼š %s%4d/ %4d      " NOR "     æ­¦å­¦ï¼š %s%d\n" NOR,
 		status_color(my["food"], ob->max_food_capacity()),
 		my["food"], ob->max_food_capacity(),
 		HIY,
@@ -59,17 +59,17 @@ int main(object me, string arg)
 	day = (my["daoxing"] - year * 1000) / 4;
 	hour = (my["daoxing"] - year * 1000 - day * 4) * 3; 
     
-	printf(" ÒûË®£º %s%4d/ %4d      " NOR "     µÀĞĞ£º %s",
+	printf(" é¥®æ°´ï¼š %s%4d/ %4d      " NOR "     é“è¡Œï¼š %s",
 		status_color(my["water"], ob->max_water_capacity()),
 		my["water"], ob->max_water_capacity(), HIM );
     
-	if(year) printf("%sÄê", chinese_number(year));
-	if(day) printf("%sÌì", chinese_number(day));
-	if(hour) printf("%sÊ±³½", chinese_number(hour));
-	if(!year && !day && !hour)  printf("Ã»ÓĞµÀĞĞ");
+	if(year) printf("%så¹´", chinese_number(year));
+	if(day) printf("%så¤©", chinese_number(day));
+	if(hour) printf("%sæ—¶è¾°", chinese_number(hour));
+	if(!year && !day && !hour)  printf("æ²¡æœ‰é“è¡Œ");
 	printf("\n"NOR);
 
-	printf(" Ç±ÄÜ£º %s%-8d        " NOR "     É±Æø£º %s%d\n "NOR,
+	printf(" æ½œèƒ½ï¼š %s%-8d        " NOR "     æ€æ°”ï¼š %s%d\n "NOR,
 		YEL,
 		(int)ob->query("potential") - (int)ob->query("learned_points"),
 		RED,
@@ -95,10 +95,10 @@ string status_color(int current, int max)
 int help(object me)
 {
 	write(@HELP
-Ö¸Áî¸ñÊ½ : hp
-           hp <¶ÔÏóÃû³Æ>                   (Î×Ê¦×¨ÓÃ)
+æŒ‡ä»¤æ ¼å¼ : hp
+           hp <å¯¹è±¡åç§°>                   (å·«å¸ˆä¸“ç”¨)
  
-Õâ¸öÖ¸Áî¿ÉÒÔÏÔÊ¾Äã»òÖ¸¶¨¶ÔÏó(º¬¹ÖÎï)µÄ¾«, Æø, ÉñÊıÖµ¡£
+è¿™ä¸ªæŒ‡ä»¤å¯ä»¥æ˜¾ç¤ºä½ æˆ–æŒ‡å®šå¯¹è±¡(å«æ€ªç‰©)çš„ç²¾, æ°”, ç¥æ•°å€¼ã€‚
  
 see also : score
 HELP

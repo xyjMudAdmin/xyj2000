@@ -8,11 +8,11 @@ void leave_here(object me);
 
 void create ()
 {
-  set ("short", "ÂÌÃÔ¹¬");
+  set ("short", "ç»¿è¿·å®«");
   set ("long", @LONG
 
-Ò»×ùÓÃÎŞÊı¿ÃÂÌÊ÷ĞŞ¼ô³ÉµÄ´óÃÔ¹¬£¬Ç°ºó×óÓÒ¶¼ÊÇÒ»Æ¬ÂÌÉ«
-µÄÃÜÊ÷´Ô£¬ºÜÄÑ±æ±ğ·½Ïò£¬Ò²¿´²»µ½ÈÎºÎ³ö¿Ú¡£
+ä¸€åº§ç”¨æ— æ•°æ£µç»¿æ ‘ä¿®å‰ªæˆçš„å¤§è¿·å®«ï¼Œå‰åå·¦å³éƒ½æ˜¯ä¸€ç‰‡ç»¿è‰²
+çš„å¯†æ ‘ä¸›ï¼Œå¾ˆéš¾è¾¨åˆ«æ–¹å‘ï¼Œä¹Ÿçœ‹ä¸åˆ°ä»»ä½•å‡ºå£ã€‚
 
 LONG);
 
@@ -41,7 +41,7 @@ int do_quit ()
   me = this_player();
 
   me->set("startroom",base_name(environment(me)));
-  tell_object(me,"ÔİÊ±Àë¿ªÃÔ¹¬¡­¡­\n");
+  tell_object(me,"æš‚æ—¶ç¦»å¼€è¿·å®«â€¦â€¦\n");
   return 0; // return 0 to invoke normal quit
 }
 
@@ -50,8 +50,8 @@ int do_fly (string arg)
   object me;
   me = this_player();
 
-  message_vision("Ö»¼û$NÏòÉÏÒ»·É£¬ÖØÖØµØË¤ÁËÏÂÀ´£¬Í·ÉÏÕ³×Å¼¸Æ¬¿İÊ÷Ò¶¡£\n", me);
-  tell_object(me,"¿´Ñù×ÓÔÚÃÔ¹¬ÀïÕæÊÇ²å³áÄÑ·É¡­¡­\n");
+  message_vision("åªè§$Nå‘ä¸Šä¸€é£ï¼Œé‡é‡åœ°æ‘”äº†ä¸‹æ¥ï¼Œå¤´ä¸Šç²˜ç€å‡ ç‰‡æ¯æ ‘å¶ã€‚\n", me);
+  tell_object(me,"çœ‹æ ·å­åœ¨è¿·å®«é‡ŒçœŸæ˜¯æ’ç¿…éš¾é£â€¦â€¦\n");
   return 1;
 }
 
@@ -69,7 +69,7 @@ mixed no_leave(object who, object where)
     if(member_array(file, ({__DIR__"greenyard",
                    __DIR__"outlet",
                    }))>-1) return 0;
-    return "¿´Ñù×ÓÔÚÃÔ¹¬ÀïÕæÊÇ²å³áÄÑÌÓ¡­¡­\n";
+    return "çœ‹æ ·å­åœ¨è¿·å®«é‡ŒçœŸæ˜¯æ’ç¿…éš¾é€ƒâ€¦â€¦\n";
 }
 
 
@@ -114,7 +114,7 @@ void leave_here(object me)
         icedew = new(__DIR__"obj/icedew");
         icedew->move(environment(me));
       }
-      tell_object(me,"ÂÌ²İµØÉÏÓĞÒ»¸öÁÁÉÁÉÁµÄ¶«Î÷£¡\n");
+      tell_object(me,"ç»¿è‰åœ°ä¸Šæœ‰ä¸€ä¸ªäº®é—ªé—ªçš„ä¸œè¥¿ï¼\n");
 }
 
 void found_outlet(object me)

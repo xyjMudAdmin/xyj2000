@@ -1,7 +1,7 @@
 // cracked by vikee 2/09/2002   vikee@263.net
 
 // qinbing.c
-//Ç×±ø, used for jjf people.
+//äº²å…µ, used for jjf people.
 
 #include <ansi.h>
 
@@ -11,8 +11,8 @@ void create()
 {
     	object ob1, ob2;
 
-	set_name("¹í±ø", ({ "guibing" }) );
-	set("long", "Ò»¸ö°ò´óÑüÔ²£¬ÃæÄ¿Ğ×¶ñµÄµØ¸®¹í±ø¡£\n");
+	set_name("é¬¼å…µ", ({ "guibing" }) );
+	set("long", "ä¸€ä¸ªè†€å¤§è…°åœ†ï¼Œé¢ç›®å‡¶æ¶çš„åœ°åºœé¬¼å…µã€‚\n");
 	set("attitude", "heroism");
 	set("class", "ghost");
 
@@ -41,21 +41,21 @@ void create()
 
 	ob1=carry_object("/d/obj/armor/gujia");
 	ob1->wear();
-	ob1->set("no_sell", "ÕÆ¹ñµÄî©ÁËÒ»ÑÛµÀ£ºÕâ¶«Î÷Ò»¿´¾ÍÊÇÁÓµÈÆ·£¬²»Òª£¡²»Òª£¡\n");
+	ob1->set("no_sell", "æŒæŸœçš„çŸäº†ä¸€çœ¼é“ï¼šè¿™ä¸œè¥¿ä¸€çœ‹å°±æ˜¯åŠ£ç­‰å“ï¼Œä¸è¦ï¼ä¸è¦ï¼\n");
 	ob2=carry_object("/d/obj/weapon/stick/wuchangbang");
 	ob2->wield();
-	ob2->set("no_sell", "ÕÆ¹ñµÄî©ÁËÒ»ÑÛµÀ£ºÕâ¶«Î÷Ò»¿´¾ÍÊÇÁÓµÈÆ·£¬²»Òª£¡²»Òª£¡\n");
+	ob2->set("no_sell", "æŒæŸœçš„çŸäº†ä¸€çœ¼é“ï¼šè¿™ä¸œè¥¿ä¸€çœ‹å°±æ˜¯åŠ£ç­‰å“ï¼Œä¸è¦ï¼ä¸è¦ï¼\n");
 }
 
 void leave()
 {
-	message("vision", name() + "ËÄÖÜÕÅÍûÁËÒ»ÏÂ£¬Ò»ÁïÑÌµØÅÜÁË¡£\n", environment(), this_object() );
+	message("vision", name() + "å››å‘¨å¼ æœ›äº†ä¸€ä¸‹ï¼Œä¸€æºœçƒŸåœ°è·‘äº†ã€‚\n", environment(), this_object() );
 	destruct(this_object());
 }
 
 void show(object who)
 {
-	string *cname = ({"¹í±ø¼×", "¹í±øÒÒ", "¹í±ø±û", "¹í±ø¶¡"});
+	string *cname = ({"é¬¼å…µç”²", "é¬¼å…µä¹™", "é¬¼å…µä¸™", "é¬¼å…µä¸"});
 	string *ename = ({"-jia", "-yi", "-bing", "-ding"});
 
 	int current = 0;
@@ -68,7 +68,7 @@ void show(object who)
 	}
 
 	this_object()->set_name(cname[current-1], ({ (string)who->query("id")+ename[current-1] }) );	
-	message_vision("ÂıÂıµØ´ÓµØÏÂ¸¡ÆğÒ»Î»¹í±ø£¬Õ¾µ½$NÉíºó¡£\n", who);
+	message_vision("æ…¢æ…¢åœ°ä»åœ°ä¸‹æµ®èµ·ä¸€ä½é¬¼å…µï¼Œç«™åˆ°$Nèº«åã€‚\n", who);
 
 	 //set the leader of this bing.
 	set("owner_id", (string)who->query("id")); 
@@ -80,7 +80,7 @@ void relay_whisper(object me, string msg)
 	if (query("owner_id") != me->query("id"))
 	{
 		message_vision((string)this_object()->query("name") 
-			+ "¶Ô×Å$NÀäºßÁËÒ»Éù¡£\n", me);
+			+ "å¯¹ç€$Nå†·å“¼äº†ä¸€å£°ã€‚\n", me);
 		return;
 	}
 	
@@ -99,7 +99,7 @@ void relay_whisper(object me, string msg)
 
 		return;
 
-	message_vision((string)this_object()->query("name") + "¶Ô×Å$NµãÁËµãÍ·¡£\n", me);
+	message_vision((string)this_object()->query("name") + "å¯¹ç€$Nç‚¹äº†ç‚¹å¤´ã€‚\n", me);
 	if (msg)
 	{
 		remove_call_out ("relaying");

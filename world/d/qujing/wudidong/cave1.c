@@ -6,13 +6,13 @@ void reset();
 
 void create ()
 {
-  set ("short", "ÃØ¶´");
+  set ("short", "ç§˜æ´");
   set ("long", @LONG
 
-ÕâÀïÊÇÎŞµ×¶´µÄÒ»ÌõÃØµÀ£¬Ñ°³£Ğ¡Ñı²»×¼½ø³ö¡£Õı´ıÂõ²½£¬Í»È»·¢ÏÖ
-½ÅÏÂ¾¹ÊÇÍòÕÉÉîÔ¨£¬ºÚÆáÆáµÄ£¬Íû²»¼ûµ×¡£ºÚ°µÖ®ÖĞÄã¼«Ä¿Ô¶Ì÷£¬Ö»
-¼ûÄ£Ä£ºıºıµÄËÆºõÊÇÁíÒ»´¦ĞüÑÂ¡£¿´ÉÏÈ¥Á½·åÖ®¼ä²»¹ıÒ»×İÖ®Ò££¬µ«
-Ò»Ê§×ã¡£¡£¡£
+è¿™é‡Œæ˜¯æ— åº•æ´çš„ä¸€æ¡ç§˜é“ï¼Œå¯»å¸¸å°å¦–ä¸å‡†è¿›å‡ºã€‚æ­£å¾…è¿ˆæ­¥ï¼Œçªç„¶å‘ç°
+è„šä¸‹ç«Ÿæ˜¯ä¸‡ä¸ˆæ·±æ¸Šï¼Œé»‘æ¼†æ¼†çš„ï¼Œæœ›ä¸è§åº•ã€‚é»‘æš—ä¹‹ä¸­ä½ æç›®è¿œçœºï¼Œåª
+è§æ¨¡æ¨¡ç³Šç³Šçš„ä¼¼ä¹æ˜¯å¦ä¸€å¤„æ‚¬å´–ã€‚çœ‹ä¸Šå»ä¸¤å³°ä¹‹é—´ä¸è¿‡ä¸€çºµä¹‹é¥ï¼Œä½†
+ä¸€å¤±è¶³ã€‚ã€‚ã€‚
 LONG);
   set("outdoors", 0);
   setup();
@@ -39,15 +39,15 @@ int do_leap()
   inv=all_inventory(me);
   i=sizeof(inv);
 
-  message_vision("$NÏòÑÂÍâÌøÁË³öÈ¥¡£\n", me);
+  message_vision("$Nå‘å´–å¤–è·³äº†å‡ºå»ã€‚\n", me);
 
   while (i--)
   {
 	if(userp(inv[i])) {
 		me->move("/d/qujing/wudidong/yadi");
-		message_vision("$NÒ»¸öÃ»Õ¾ÎÈ£¬µôÏÂ¾øÑÂ£¬·ÛÉíËé¹Ç£¬Î÷ÌìÈ¥ÁË£¡\n", me);
+		message_vision("$Nä¸€ä¸ªæ²¡ç«™ç¨³ï¼Œæ‰ä¸‹ç»å´–ï¼Œç²‰èº«ç¢éª¨ï¼Œè¥¿å¤©å»äº†ï¼\n", me);
                 me->delete_temp("last_damage_from");
-                me->set_temp("death_msg", "Ë¤ËÀÁË¡£\n");
+                me->set_temp("death_msg", "æ‘”æ­»äº†ã€‚\n");
                 me->die(); 
                 me->save();
 		inv[i]->move("/d/qujing/wudidong/yadi");
@@ -56,12 +56,12 @@ int do_leap()
   }
 
 
-  if ( (string)me->query("family/family_name") != "Ïİ¿ÕÉ½ÎŞµ×¶´" ) {
+  if ( (string)me->query("family/family_name") != "é™·ç©ºå±±æ— åº•æ´" ) {
 	if( random(mykar) < 10 || mydodge < 100 ) {
 		me->move("/d/qujing/wudidong/yadi");
-		message_vision("$NÒ»¸öÃ»Õ¾ÎÈ£¬µôÏÂ¾øÑÂ£¬·ÛÉíËé¹Ç£¬Î÷ÌìÈ¥ÁË£¡\n", me);
+		message_vision("$Nä¸€ä¸ªæ²¡ç«™ç¨³ï¼Œæ‰ä¸‹ç»å´–ï¼Œç²‰èº«ç¢éª¨ï¼Œè¥¿å¤©å»äº†ï¼\n", me);
       		me->delete_temp("last_damage_from");
-      		me->set_temp("death_msg", "Ë¤ËÀÁË¡£\n");
+      		me->set_temp("death_msg", "æ‘”æ­»äº†ã€‚\n");
       		me->die();
       		me->save();
 	      	return 1;
@@ -74,9 +74,9 @@ int do_leap()
 
        	}
   }
-      message_vision("$NÌÚ¿Õ×İÆğ£¬Ìøµ½¶ÔÑÂÈ¥ÁË¡£\n", me);
+      message_vision("$Nè…¾ç©ºçºµèµ·ï¼Œè·³åˆ°å¯¹å´–å»äº†ã€‚\n", me);
       me->move(__DIR__"cave2");
-      message_vision("$NÌøÁË¹ıÀ´¡£\n",me);
+      message_vision("$Nè·³äº†è¿‡æ¥ã€‚\n",me);
 	return 1;
 }
 
@@ -88,16 +88,16 @@ int do_push(string arg)
   int myforce=me->query("maximum_force");
 
   if ( !arg || ((arg !="men") ))
-    return notify_fail("ÄãÒªÍÆÊ²Ã´£¿ \n");
+    return notify_fail("ä½ è¦æ¨ä»€ä¹ˆï¼Ÿ \n");
   if ( mystr <50 || myeffstr<20) 
-    return notify_fail("ÄãÁ¦ÆøÌ«Ğ¡ÁË£¬ÍÆ²»¶¯£¡ \n");
+    return notify_fail("ä½ åŠ›æ°”å¤ªå°äº†ï¼Œæ¨ä¸åŠ¨ï¼ \n");
   if (random(myforce)>1000)
     {
-      message_vision("$NÍÆÊ¯ÃÅÊ±ÓÃÁ¦¹ıÃÍ£¬ËÆºõÊÜÁËÄÚÉË¡£\n", me);
+      message_vision("$Næ¨çŸ³é—¨æ—¶ç”¨åŠ›è¿‡çŒ›ï¼Œä¼¼ä¹å—äº†å†…ä¼¤ã€‚\n", me);
       me->add_maximum_force(-myforce/100);
     }
-  message_vision("$NÒ»ÍÆÊ¯ÃÅ£¬Í»È»¼ä£¬Ò»ÕóÒõ·ç°Ñ$NÍÆµ½ÁËÁíÒ»¼ä·¿¼äÈ¥ÁË¡£\n", me);
+  message_vision("$Nä¸€æ¨çŸ³é—¨ï¼Œçªç„¶é—´ï¼Œä¸€é˜µé˜´é£æŠŠ$Næ¨åˆ°äº†å¦ä¸€é—´æˆ¿é—´å»äº†ã€‚\n", me);
   me->move(__DIR__"inner-bedroom");
-  message_vision("Ê¯ÃÅ·­×ª´¦£¬$N×ßÁË¹ıÀ´¡£\n", me);
+  message_vision("çŸ³é—¨ç¿»è½¬å¤„ï¼Œ$Nèµ°äº†è¿‡æ¥ã€‚\n", me);
   return 1;
 }

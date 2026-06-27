@@ -10,21 +10,21 @@ int cast(object me, object target)
   int myforce, mymana, temp;
   
   if(!target) target=me;    
-  if( target != me ) return notify_fail("ÄãÖ»ÄÜÒÔ·¨Á¦»Ö¸´×Ô¼ºµÄÕæÆø¡£\n");
+  if( target != me ) return notify_fail("ä½ åªèƒ½ä»¥æ³•åŠ›æ¢å¤è‡ªå·±çš„çœŸæ°”ã€‚\n");
   
   forcelev=me->query_skill("force");
   if (forcelev > 300) forcelev=300;
   spellslev=me->query_skill("spells");
   if (spellslev > 300) spellslev=300;
-  if( spellslev < 20 ) return notify_fail("ÄãµÄ·¨ÊõÐÞÎªÌ«µÍ¡£\n");
-  if( forcelev < 20 ) return notify_fail("ÄãµÄÄÚ¹¦ÐÞÎªÌ«µÍ¡£\n");
+  if( spellslev < 20 ) return notify_fail("ä½ çš„æ³•æœ¯ä¿®ä¸ºå¤ªä½Žã€‚\n");
+  if( forcelev < 20 ) return notify_fail("ä½ çš„å†…åŠŸä¿®ä¸ºå¤ªä½Žã€‚\n");
   mymana=me->query("mana");
-  if( mymana< 50 ) return notify_fail("ÄãµÄ·¨Á¦²»¹»ÁË¡£\n");
+  if( mymana< 50 ) return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿäº†ã€‚\n");
   
   mymaxforce=me->query("max_force");
   myforce=me->query("force");
   diff = mymaxforce - myforce;
-  if( diff<1 ) return notify_fail("ÄãÏÖÔÚÕæÆø³äÓ¯¡£\n");
+  if( diff<1 ) return notify_fail("ä½ çŽ°åœ¨çœŸæ°”å……ç›ˆã€‚\n");
   
   manacost = diff;
   if( manacost>mymana) manacost = mymana;
@@ -43,14 +43,14 @@ int cast(object me, object target)
   neiligain=neiligain*eff/100;
   me->add("force", neiligain);
   if(wizardp(me) && me->query("env/combat")=="verbose")
-    tell_object(me,GRN "ÓÃ "+manacost+" ·¨Á¦£¬µÃµ½ "+neiligain+" ÄÚÁ¦£¬ÓÐÐ§ÂÊÎª "+eff+"¡£\n"NOR);
+    tell_object(me,GRN "ç”¨ "+manacost+" æ³•åŠ›ï¼Œå¾—åˆ° "+neiligain+" å†…åŠ›ï¼Œæœ‰æ•ˆçŽ‡ä¸º "+eff+"ã€‚\n"NOR);
   if(me->query("force")>mymaxforce)
     {
       me->set("force", mymaxforce);
       //to prevent possible bug, set neili always smaller than max neili.
     }
   
-  message_vision("$N×ìÀïàÖ¹¾ÁË¼¸¾ä£¬¾õµÃÕæÆø³äÓ¯¶àÁË¡£\n", me);
+  message_vision("$Nå˜´é‡Œå˜€å’•äº†å‡ å¥ï¼Œè§‰å¾—çœŸæ°”å……ç›ˆå¤šäº†ã€‚\n", me);
   
   if(me->is_fighting())me->start_busy(1);
   else me->start_busy(random(30/me->query_kar()));

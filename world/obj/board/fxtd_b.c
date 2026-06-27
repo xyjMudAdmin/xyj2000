@@ -5,10 +5,10 @@ inherit BULLETIN_BOARD;
 
 void create()
 {
-        set_name("·ãÑ©ÌìµØÁôÑÔ°å", ({ "board" }) );
+        set_name("æ«é›ªå¤©åœ°ç•™è¨€æ¿", ({ "board" }) );
         set("location", "/d/moon/fengxue/living.c");
         set("board_id", "fxtd_b");
-        set("long",     "·ãÑ©ÌìµØÁôÑÔ°å¡£\n" );
+        set("long",     "æ«é›ªå¤©åœ°ç•™è¨€æ¿ã€‚\n" );
         setup();
         set("capacity", 80);
         replace_program(BULLETIN_BOARD);

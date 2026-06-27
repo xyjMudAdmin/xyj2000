@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "¶´ÄÚ");
+  set ("short", "æ´å†…");
   set ("long", @LONG
 
-¶´ÀïÒ»Æ¬ÆáºÚ£¬ÄãÊ²Ã´Ò²¿´²»Çå£¬ËÆºõ¾õµÃÓĞĞí¶àÑÛ¾¦ÔÚºÚ°µÖĞ¶¢
-×ÅÄã¡£Äã»·¹ËËÄÖÜ£¬Ä£Ä£ºıºı·Ö±æ³öÒ»¸öÒ»¸öµÄÓ°×Ó¡£
+æ´é‡Œä¸€ç‰‡æ¼†é»‘ï¼Œä½ ä»€ä¹ˆä¹Ÿçœ‹ä¸æ¸…ï¼Œä¼¼ä¹è§‰å¾—æœ‰è®¸å¤šçœ¼ç›åœ¨é»‘æš—ä¸­ç›¯
+ç€ä½ ã€‚ä½ ç¯é¡¾å››å‘¨ï¼Œæ¨¡æ¨¡ç³Šç³Šåˆ†è¾¨å‡ºä¸€ä¸ªä¸€ä¸ªçš„å½±å­ã€‚
 
 LONG);
 
@@ -36,20 +36,20 @@ int do_koujian (string arg)
 
   if (arg != "princess")
   {
-    message_vision("Ö»¼û$N·üÏÂÉíÈ¥¡­¡­\n",me);
-    tell_object(me,"ÄãÏëßµ¼ûË­£¿\n");
+    message_vision("åªè§$Nä¼ä¸‹èº«å»â€¦â€¦\n",me);
+    tell_object(me,"ä½ æƒ³å©è§è°ï¼Ÿ\n");
     return 1;
   }  
 
-  message_vision("Ö»¼û$N·üÏÂÉíÈ¥º°µÀ£º"+
+  message_vision("åªè§$Nä¼ä¸‹èº«å»å–Šé“ï¼š"+
                  RANK_D->query_self(me)+
-                 "ßµ¼û¹«Ö÷£¡\n",me);
+                 "å©è§å…¬ä¸»ï¼\n",me);
 
   if (princess)
-    message_vision("$NÉìÊÖÒ»°Ñ½«$nĞ¡¼¦ËÆµÄÁàÆğÀ´£º²»±Ø²»±Ø¡£\n",princess,me);
+    message_vision("$Nä¼¸æ‰‹ä¸€æŠŠå°†$nå°é¸¡ä¼¼çš„æ‹èµ·æ¥ï¼šä¸å¿…ä¸å¿…ã€‚\n",princess,me);
   else
   {
-    message_vision("¶´Ñ¨ÀïÒşÒşµØ·º³öÒ»Ğ©ºìÉ«ÔÆÎí¡£\n",me);
+    message_vision("æ´ç©´é‡Œéšéšåœ°æ³›å‡ºä¸€äº›çº¢è‰²äº‘é›¾ã€‚\n",me);
     call_out("princess_appear",10+random(10),me);
   }
   return 1;
@@ -67,5 +67,5 @@ void princess_appear(object me)
 
   princess = new (__DIR__"npc/princess");
   princess->move(environment(me));
-  message_vision("Ò»ÕóºìÉ«ÔÆÎí¾ÛÔÚÒ»Æğ£¬ÂıÂıÄı×ö$N¡£\n",princess);
+  message_vision("ä¸€é˜µçº¢è‰²äº‘é›¾èšåœ¨ä¸€èµ·ï¼Œæ…¢æ…¢å‡åš$Nã€‚\n",princess);
 }

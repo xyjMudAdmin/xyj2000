@@ -19,10 +19,10 @@ int do_join(string arg)
 
 	me = this_player();
 	if( stringp(me->query("class")) )
-		return notify_fail("你已经参加了其他公会。\n");
+		return notify_fail("浣犲凡缁忓弬鍔犱簡鍏朵粬鍏細銆俓n");
 	me->set("class", "fighter");
 	me->set("startroom", CLASS_D("fighter") + "/guildhall");
-	write("\n恭喜，从今天起您已经成为一名武者！\n\n");
+	write("\n鎭枩锛屼粠浠婂ぉ璧锋偍宸茬粡鎴愪负涓�鍚嶆鑰咃紒\n\n");
 	return 1;
 }
 

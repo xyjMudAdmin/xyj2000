@@ -5,9 +5,9 @@ inherit SPEAR;
 
 void create()
 {
-  set_name("Ë«Í·Ã¬", ({ "shuangtou mao", "mao", "spear" }) );
+  set_name("åŒå¤´çŸ›", ({ "shuangtou mao", "mao", "spear" }) );
   init_spear(30);
-  set("unit", "°Ñ");
+  set("unit", "æŠŠ");
   set_weight(900);
   if( clonep() )
      set_default_object(__FILE__);
@@ -15,7 +15,7 @@ void create()
     set("value", 480);
     set("material", "metal");
   }
-  set("wield_msg","$N²ÙÆğ$nÎÕÔÚÊÖÀï¡£\n");
+  set("wield_msg","$Næ“èµ·$næ¡åœ¨æ‰‹é‡Œã€‚\n");
   setup();
 }
 

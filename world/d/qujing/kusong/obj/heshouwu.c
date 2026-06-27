@@ -10,24 +10,24 @@ void init();
 void init()
 {
   if (!wizardp(this_player())) {
-    set("no_get","ÄãÊÖÀïÒ»ËÉ"+this_object()->query("name")+"µ¤´ÓÖ¸¼ä»¬Âä£¡\n");
-    set("no_give","ÕâÃ´Õä¹óµÄÒ©£¬ÄÄÄÜËæ±ã¸øÈË£¿\n");
-    set("no_drop","ÕâÃ´±¦¹óµÄµ¤Ò©£¬ÈÓÁË¶à¿ÉÏ§Ñ½£¡\n");
-    set("no_sell","·²ÈËÄÄÀïÖªµÀ"+this_object()->query("name")+"µÄ¼ÛÖµ£¿»¹ÊÇ×Ô¼ºÁô×Å°É¡£\n");
+    set("no_get","ä½ æ‰‹é‡Œä¸€æ¾"+this_object()->query("name")+"ä¸¹ä»ŽæŒ‡é—´æ»‘è½ï¼\n");
+    set("no_give","è¿™ä¹ˆçè´µçš„è¯ï¼Œå“ªèƒ½éšä¾¿ç»™äººï¼Ÿ\n");
+    set("no_drop","è¿™ä¹ˆå®è´µçš„ä¸¹è¯ï¼Œæ‰”äº†å¤šå¯æƒœå‘€ï¼\n");
+    set("no_sell","å‡¡äººå“ªé‡ŒçŸ¥é“"+this_object()->query("name")+"çš„ä»·å€¼ï¼Ÿè¿˜æ˜¯è‡ªå·±ç•™ç€å§ã€‚\n");
   }                                    
     add_action("do_eat", "eat");
 }
 
 void create()
 {
-  set_name(HIW "ºÎÊ×ÎÚ" NOR, ({"heshouwu","wu"}));
+  set_name(HIW "ä½•é¦–ä¹Œ" NOR, ({"heshouwu","wu"}));
   set_weight(200);
   if (clonep())
     set_default_object(__FILE__);
   else {
-    set("unit", "¿Å");
-    set("long", "Ò»¿ÅÓÖºÚÓÖ×³µÄºÎÊ×ÎÚ¡£\n");
-        set("drug_type", "²¹Æ·");
+    set("unit", "é¢—");
+    set("long", "ä¸€é¢—åˆé»‘åˆå£®çš„ä½•é¦–ä¹Œã€‚\n");
+        set("drug_type", "è¡¥å“");
   }
   
   set("is_monitored",1);
@@ -40,7 +40,7 @@ int do_eat(string arg)
   int howold;
   howold = (int)me->query("mud_age") + (int)me->query("age_modify");
   if (!id(arg))
-    return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+    return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
   
   me->set("food", (int)me->max_food_capacity());
   me->set("water", (int)me->max_water_capacity());
@@ -48,7 +48,7 @@ int do_eat(string arg)
     me->add_maximum_force(2);
     me->add_maximum_mana(2);
 
-  message_vision(HIG "$N³ÔÏÂÒ»¿ÅºÎÊ×ÎÚ£¬Á³ÉÏ·ºÆðÒ»Æ¬ºì¹â¡£\n" NOR, me);
+  message_vision(HIG "$Nåƒä¸‹ä¸€é¢—ä½•é¦–ä¹Œï¼Œè„¸ä¸Šæ³›èµ·ä¸€ç‰‡çº¢å…‰ã€‚\n" NOR, me);
   
   if( howold > 1382400 ) {
     me->add("age_modify", -1200);

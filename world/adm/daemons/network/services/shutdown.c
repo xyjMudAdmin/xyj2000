@@ -68,5 +68,5 @@ void send_shutdown(string host, int port)
 void create()
 {
   seteuid(ROOT_UID);
-  set("channel_id", "ÍøÂ·¹Ø±Õ¾«Áé");
+  set("channel_id", "ç½‘è·¯å…³é—­ç²¾çµ");
 }

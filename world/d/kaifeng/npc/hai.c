@@ -6,9 +6,9 @@ inherit F_VENDOR_SALE;
 void create()
 {
   reload ("kaifeng_hai");
-  set_name("º£ÀÏ°å", ({"hai laoban", "hai", "laoban"}));
+  set_name("æµ·è€æ¿", ({"hai laoban", "hai", "laoban"}));
   set("shop_id",({"laoban","waiter"}));
-  set("gender", "ÄĞĞÔ");
+  set("gender", "ç”·æ€§");
   set("combat_exp", 5000);
   set("age", 48);
   set("per", 24);

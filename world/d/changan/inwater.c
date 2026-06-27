@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "泾水");
+  set ("short", "娉炬按");
   set ("long", @LONG
 
-周围是齐腰深的河水，从四周的景色来看大概是在长安城南，泾
-水之中．流水清澈见底，远处还有几条小船．
+鍛ㄥ洿鏄綈鑵版繁鐨勬渤姘达紝浠庡洓鍛ㄧ殑鏅壊鏉ョ湅澶ф鏄湪闀垮畨鍩庡崡锛屾尘
+姘翠箣涓紟娴佹按娓呮緢瑙佸簳锛岃繙澶勮繕鏈夊嚑鏉″皬鑸癸紟
 LONG);
 
   set("exits", ([ /* sizeof() == 1 */

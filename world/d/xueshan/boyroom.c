@@ -7,13 +7,13 @@ inherit "/d/wiz/no_get";
 
 void create ()
 {
-	set ("short", "ÄĞµÜ×ÓÎÔ·¿");
+	set ("short", "ç”·å¼Ÿå­å§æˆ¿");
 	set ("long", @LONG
 
-Ñ©É½ÅÉµÄÄĞµÜ×ÓÎÔ·¿¡£³ÂÉèÏàµ±¼òÂª£¬Á¬ÕÅ´²¶¼Ã»ÓĞ¡£
+é›ªå±±æ´¾çš„ç”·å¼Ÿå­å§æˆ¿ã€‚é™ˆè®¾ç›¸å½“ç®€é™‹ï¼Œè¿å¼ åºŠéƒ½æ²¡æœ‰ã€‚
 LONG);
 
-	//set("item_desc", (["bed" : "Ò»ÕÅ¾«ÖÂµÄ´²ÆÌ(gosleep, gobed, bed)¡£\n", ]));
+	//set("item_desc", (["bed" : "ä¸€å¼ ç²¾è‡´çš„åºŠé“º(gosleep, gobed, bed)ã€‚\n", ]));
 	//for look something.
 
 	set("exits", 

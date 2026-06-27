@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ʯǽ");
+  set ("short", "石墙");
   set ("long", @LONG
 
-ǽ�����棬�߸ߵ�ʯǽ�£���һ��խ��ͨ����С·һ�㣬����
-�ȵý��ʵʵ��
+墙的南面，高高的石墙下，有一狭窄的通道如小路一般，被人
+踩得结结实实。
 
 LONG);
 

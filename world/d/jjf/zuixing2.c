@@ -4,12 +4,12 @@ inherit ROOM;
  
 void create ()
 {
-  set ("short", "×íÐÇÂ¥¶þÂ¥");
+  set ("short", "é†‰æ˜Ÿæ¥¼äºŒæ¥¼");
   set ("long", @LONG
 
-ÉÏµÃÂ¥ÌÝ£¬Ó­ÃæÊÇÒ»ÃæÓñÊ¯ÆÁ·ç£¬ÉÏ»ææÏ¶ð±¼ÔÂµÄ¹ÊÊÂ¡£×ª¹ýÆÁ·ç£¬
-Ö»¼ûÁ½ÈË×øÔÚÒ»ÕÅ×ÀÉÏ¿ñÒû×÷ÀÖ£¬ÅÔ±ßÎèÅ®ÔÚ×àÀÖÆðÎè¡£Ò»±ß£¬¼¸¸ö
-ÇàÒÂÐ¡Í¯ÕýÔÚËÅºò×Å¡£ÓÐµÄÔÚÉÏ²Ë£¬ÓÐµÄÔÚ´òÉÈ¡£
+ä¸Šå¾—æ¥¼æ¢¯ï¼Œè¿Žé¢æ˜¯ä¸€é¢çŽ‰çŸ³å±é£Žï¼Œä¸Šç»˜å«¦å¨¥å¥”æœˆçš„æ•…äº‹ã€‚è½¬è¿‡å±é£Žï¼Œ
+åªè§ä¸¤äººååœ¨ä¸€å¼ æ¡Œä¸Šç‹‚é¥®ä½œä¹ï¼Œæ—è¾¹èˆžå¥³åœ¨å¥ä¹èµ·èˆžã€‚ä¸€è¾¹ï¼Œå‡ ä¸ª
+é’è¡£å°ç«¥æ­£åœ¨ä¼ºå€™ç€ã€‚æœ‰çš„åœ¨ä¸Šèœï¼Œæœ‰çš„åœ¨æ‰“æ‰‡ã€‚
 LONG);
   set("objects", ([ /* sizeof() == 4 */
     __DIR__"npc/liyuanji.c": 1,
@@ -24,7 +24,7 @@ LONG);
 }
 void init()
 {
-  add_action("do_kan", "¿³");
+  add_action("do_kan", "ç ");
   add_action("do_kan", "chop");
   add_action("do_kan", "kan3"); 
 } 
@@ -33,33 +33,33 @@ int do_kan(string arg)
   object me=this_player(), here=this_object(), ob;
   int kar=me->query_kar();
  
-  if( (!arg || arg != "Öù×Ó") && (arg != "zhuzi" && arg!="pillar"))
-    return notify_fail("ÄãÒª´ÓÄÄÀïÏÂÊÖ£¿\n");
+  if( (!arg || arg != "æŸ±å­") && (arg != "zhuzi" && arg!="pillar"))
+    return notify_fail("ä½ è¦ä»Žå“ªé‡Œä¸‹æ‰‹ï¼Ÿ\n");
   if( !(ob = me->query_temp("weapon")) || (string)ob->query("skill_type") != "axe" )
-    return notify_fail("Ã»ÓÐË³ÊÖµÄ¼Ò»ïÔõÃ´²ðµÃ¶¯£¿\n");
+    return notify_fail("æ²¡æœ‰é¡ºæ‰‹çš„å®¶ä¼™æ€Žä¹ˆæ‹†å¾—åŠ¨ï¼Ÿ\n");
  
  if(objectp(present("li jiancheng", environment(me))) || objectp(present("li yua
 nji", environment(me))))
-    return notify_fail("µ±³¯´ï¹óÔÚ´Ë£¬²»ÅÂÔÒÉËÁËµ£ÔðÈÎÂð£¿\n");
+    return notify_fail("å½“æœè¾¾è´µåœ¨æ­¤ï¼Œä¸æ€•ç ¸ä¼¤äº†æ‹…è´£ä»»å—ï¼Ÿ\n");
   
   here->add("pending/breakdown", 1);
   if (here->query("already_breakdown"))
-    return notify_fail("Öù×Ó¶¼ËúÁË£¬»¹¿³Ê²Ã´¿³£¿ÒªÃüµÄ¿ìÏÂÂ¥È¥°É£¡\n");
-  message_vision("$NÓÃ×ãÁË¾¢£¬Ò»¸«ÂÕÏò²ÊÂ¥µÄÖù×Ó£¡Ö»¼û¼¸Æ¬Ä¾Æ¬ËÄÉ¢·É¿ª¡£\n", me);
+    return notify_fail("æŸ±å­éƒ½å¡Œäº†ï¼Œè¿˜ç ä»€ä¹ˆç ï¼Ÿè¦å‘½çš„å¿«ä¸‹æ¥¼åŽ»å§ï¼\n");
+  message_vision("$Nç”¨è¶³äº†åŠ²ï¼Œä¸€æ–§æŠ¡å‘å½©æ¥¼çš„æŸ±å­ï¼åªè§å‡ ç‰‡æœ¨ç‰‡å››æ•£é£žå¼€ã€‚\n", me);
   if (here->query("pending/breakdown") > (int)(40 - kar)/5 )
     {
-      message_vision("Ö»ÌýÒ»Éù¾ÞÏì£¬Öù×Ó´ÓÖÐÕÛ¶Ï£¬" + here->query("short") + "ËúÁËÏÂÀ´£¡\n", me);
-      message_vision("$NËäÈ»¸ãµÃ»ÒÍ·ÍÁÁ³£¬µ«¾ÓÈ»Ã»ÓÐÊÜÉË£¡´óÃü²»ËÀ£¬»¹ÊÇ¸Ï½ôÏÂÂ¥È¥°É£¡\n", me);
+      message_vision("åªå¬ä¸€å£°å·¨å“ï¼ŒæŸ±å­ä»Žä¸­æŠ˜æ–­ï¼Œ" + here->query("short") + "å¡Œäº†ä¸‹æ¥ï¼\n", me);
+      message_vision("$Nè™½ç„¶æžå¾—ç°å¤´åœŸè„¸ï¼Œä½†å±…ç„¶æ²¡æœ‰å—ä¼¤ï¼å¤§å‘½ä¸æ­»ï¼Œè¿˜æ˜¯èµ¶ç´§ä¸‹æ¥¼åŽ»å§ï¼\n", me);
       here->set("long", @LONG
 
-ÕâÀïÔø¾­ÊÇÒ»¼ä»ªÀöÎÞ±ÈµÄ·¿¼ä£¬µ«ÏÖÔÚÖ»Ê£Ò»Æ¬·ÏÐæ¡£¼¸¿éÀÃÄ¾Í·
-ÏÂÃæµ½´¦¶¼ÊÇ¾Æ±­Íë¿êµÄËéÆ¬¡£Ô­À´ÔÚÕâÀï·þÊÌµÄÎèÅ®¡¢Ð¡Í¯Ò²Ôç¾Í
-²»ÖªÈ¥ÏòÁË¡£
+è¿™é‡Œæ›¾ç»æ˜¯ä¸€é—´åŽä¸½æ— æ¯”çš„æˆ¿é—´ï¼Œä½†çŽ°åœ¨åªå‰©ä¸€ç‰‡åºŸå¢Ÿã€‚å‡ å—çƒ‚æœ¨å¤´
+ä¸‹é¢åˆ°å¤„éƒ½æ˜¯é…’æ¯ç¢—ç­·çš„ç¢Žç‰‡ã€‚åŽŸæ¥åœ¨è¿™é‡Œæœä¾çš„èˆžå¥³ã€å°ç«¥ä¹Ÿæ—©å°±
+ä¸çŸ¥åŽ»å‘äº†ã€‚
 LONG);
       here->set("already_breakdown", 1);
       here->set("outdoors", 1);
-      me->add_temp("mark/jjf×íÐÇÂ¥¶þÂ¥broken", 1);
-      me->add("mark/jjf°ÝÎºáçÎÞÍû", 1);
+      me->add_temp("mark/jjfé†‰æ˜Ÿæ¥¼äºŒæ¥¼broken", 1);
+      me->add("mark/jjfæ‹œé­å¾µæ— æœ›", 1);
     }
   me->receive_damage("kee", (int)me->query("max_kee")/4);
   me->receive_damage("kee", (int)me->query("max_kee")/4);

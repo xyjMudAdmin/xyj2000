@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "Ğ¡Â·");
+  set ("short", "å°è·¯");
   set ("long", @LONG
  
-ÕâÊÇÒ»ÌõÍ¨ÍùºóÉ½µÄĞ¡Â·¡£
+è¿™æ˜¯ä¸€æ¡é€šå¾€åå±±çš„å°è·¯ã€‚
 LONG);
 
   set("outdoors", "/d/nanhai");

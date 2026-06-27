@@ -1,5 +1,5 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// huanyang.c »¹Ñôµ¤
+// huanyang.c è¿˜é˜³ä¸¹
 
 #include <ansi.h>
 
@@ -11,8 +11,8 @@ void init();
 void init()
 {
         if (!wizardp(this_player())) {
-                set("no_get", "ºÙºÙ£¬×öÃÎ°É! \n");
-                set("no_drop","ÕâÃ´±¦¹óµÄ»¹Ñôµ¤£¬ÄÄÄÜÂÒÈÓ! \n");
+                set("no_get", "å˜¿å˜¿ï¼Œåšæ¢¦å§! \n");
+                set("no_drop","è¿™ä¹ˆå®è´µçš„è¿˜é˜³ä¸¹ï¼Œå“ªèƒ½ä¹±æ‰”! \n");
         }
                                               
         add_action("do_eat", "eat");
@@ -20,13 +20,13 @@ void init()
 
 void create()
 {
-        set_name(HIG "»¹Ñôµ¤" NOR, ({"huanyang dan", "dan"}));
+        set_name(HIG "è¿˜é˜³ä¸¹" NOR, ({"huanyang dan", "dan"}));
         set_weight(20);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Á£");
-                set("long", "Ò»Á£»¹Ñôµ¤£¬¾İËµÓĞÆğËÀ»ØÉúÖ®Ğ§¡£\n");
+                set("unit", "ç²’");
+                set("long", "ä¸€ç²’è¿˜é˜³ä¸¹ï¼Œæ®è¯´æœ‰èµ·æ­»å›ç”Ÿä¹‹æ•ˆã€‚\n");
                 set("value", 100000);
         }
 
@@ -39,7 +39,7 @@ int do_eat(string arg)
         object victim = this_player();
 
         if (!id(arg))
-                return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 
         victim->add("combat_exp", (int)victim->query("combat_exp") / 40);
         if( (int)victim->query("potential") > (int)victim->query("learned_points"))
@@ -52,7 +52,7 @@ int do_eat(string arg)
 
 	if( userp(victim) ) log_file("RECOVER", sprintf("%s(%s) Got recovered on %s.\n", victim->name(1), geteuid(victim), ctime(time()) ) );
 
-       message_vision(HIG "\n$N³ÔÏÂÒ»Á£»¹Ñôµ¤£¬Ó²ÊÇ´Ó°×ÎŞ³£ÄÇÀïÌÓÍÑ£¬¼ñ»ØÁËÒ»ÌõĞ¡Ãü¡£\n\n" NOR, victim);
+       message_vision(HIG "\n$Nåƒä¸‹ä¸€ç²’è¿˜é˜³ä¸¹ï¼Œç¡¬æ˜¯ä»ç™½æ— å¸¸é‚£é‡Œé€ƒè„±ï¼Œæ¡å›äº†ä¸€æ¡å°å‘½ã€‚\n\n" NOR, victim);
 
         destruct(this_object());
         return 1;

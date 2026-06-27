@@ -7,10 +7,10 @@ void create()
 {
 	int skill;
 
-	set_name("³¤°²³ÇÍÁµØ", ({ "changan tudi", "tudi"}) );
-	set("gender", "ÄĞĞÔ" );
+	set_name("é•¿å®‰åŸåœŸåœ°", ({ "changan tudi", "tudi"}) );
+	set("gender", "ç”·æ€§" );
 	set("age", 80);
-	set("long", "Ò»Î»°×ºú×ÓÀÏ¹«¹«¡£\n");
+	set("long", "ä¸€ä½ç™½èƒ¡å­è€å…¬å…¬ã€‚\n");
 
 	set("combat_exp",4000);
 	set("daoxing", 4000);

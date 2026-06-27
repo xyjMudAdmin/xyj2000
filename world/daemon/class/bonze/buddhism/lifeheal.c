@@ -6,20 +6,20 @@
 int cast(object me, object target)
 {
 	if( !target )
-		return notify_fail("ÄãÒªÓÃ·¨Á¦ÎªË­ÁÆÉË£¿\n");
+		return notify_fail("ä½ è¦ç”¨æ³•åŠ›ä¸ºè°ç–—ä¼¤ï¼Ÿ\n");
 
 	if( me->is_fighting() || target->is_fighting())
-		return notify_fail("Õ½¶·ÖÐÎÞ·¨ÔË¹¦ÁÆÉË£¡\n");
+		return notify_fail("æˆ˜æ–—ä¸­æ— æ³•è¿åŠŸç–—ä¼¤ï¼\n");
 
 	if( (int)me->query("mana") - (int)me->query("max_mana") < 150 )
-		return notify_fail("ÄãµÄ·¨Á¦²»¹»¡£\n");
+		return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿã€‚\n");
 
 	if( (int)target->query("eff_sen") < (int)target->query("max_sen") / 5 )
-		return notify_fail( target->name() + "ÉñÖÇÒÑÊ§£¬¾­ÊÜ²»ÆðÄãµÄ·¨Á¦Õðµ´£¡\n");
+		return notify_fail( target->name() + "ç¥žæ™ºå·²å¤±ï¼Œç»å—ä¸èµ·ä½ çš„æ³•åŠ›éœ‡è¡ï¼\n");
 
 	message_vision(
-		HIY "$N×øÁËÏÂÀ´ÔË¶¯·¨ÃÅ£¬½«ÊÖÕÆÌùÔÚ$nÁéÌ¨£¬»º»ºµØ½«·¨Á¦ÊäÈë$nÌåÄÚ....\n\n"
-		"¹ýÁË²»¾Ã£¬$N¶îÍ·ÉÏÃ°³ö¶¹´óµÄº¹Öé£¬$nÍÂ³öÒ»¿Ú×ÇÆø£¬¾«Éñ¿´ÆðÀ´ºÃ¶àÁË¡£\n" NOR,
+		HIY "$Nåäº†ä¸‹æ¥è¿åŠ¨æ³•é—¨ï¼Œå°†æ‰‹æŽŒè´´åœ¨$nçµå°ï¼Œç¼“ç¼“åœ°å°†æ³•åŠ›è¾“å…¥$nä½“å†…....\n\n"
+		"è¿‡äº†ä¸ä¹…ï¼Œ$Né¢å¤´ä¸Šå†’å‡ºè±†å¤§çš„æ±—ç ï¼Œ$nåå‡ºä¸€å£æµŠæ°”ï¼Œç²¾ç¥žçœ‹èµ·æ¥å¥½å¤šäº†ã€‚\n" NOR,
 		me, target );
 
 	target->receive_curing("sen", 10 + (int)me->query_skill("spells")/3 );

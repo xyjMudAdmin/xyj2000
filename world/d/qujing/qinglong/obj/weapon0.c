@@ -5,9 +5,9 @@ inherit SWORD;
 
 void create()
 {
-  set_name("ÌÄ»¨½£", ({ "tanghua jian", "jian", "sword" }) );
+  set_name("æ£ èŠ±å‰‘", ({ "tanghua jian", "jian", "sword" }) );
   init_sword(35);
-  set("unit", "°Ñ");
+  set("unit", "æŠŠ");
   set_weight(750);
   if( clonep() )
      set_default_object(__FILE__);
@@ -15,7 +15,7 @@ void create()
     set("value", 310);
     set("material", "metal");
   }
-  set("wield_msg","$N²ÙÆğ$nÎÕÔÚÊÖÀï¡£\n");
+  set("wield_msg","$Næ“èµ·$næ¡åœ¨æ‰‹é‡Œã€‚\n");
   setup();
 }
 

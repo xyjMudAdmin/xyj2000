@@ -20,8 +20,8 @@ int update_condition(object me, int duration)
 	if( mysen  > random(limitsen+mysen)   ) success=0;
 	if( mykar  > random(limitkar+mykar)   ) success=0;
 
-        tell_object(me, "你觉得鼻子里面痒痒的，打了个大喷嚏。\n");
-        tell_room(environment(me), me->name()+"使劲地打了个喷嚏！\n", ({me, me}));
+        tell_object(me, "浣犺寰楅蓟瀛愰噷闈㈢棐鐥掔殑锛屾墦浜嗕釜澶у柗鍤忋�俓n");
+        tell_room(environment(me), me->name()+"浣垮姴鍦版墦浜嗕釜鍠峰殢锛乗n", ({me, me}));
 
 	if ( !success ) {
 

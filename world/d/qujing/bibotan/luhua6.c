@@ -3,12 +3,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "«����");
+  set ("short", "芦花荡");
   set ("long", @LONG
 
-����«������������һ���Թ���ǰ�����Ҷ���һ�˶�ߵ�«
-�ݣ�������������˱粻�巽λ���������«��մ������
-�����ǡ�
+走如芦花荡便如走入一个迷宫，前后左右都是一人多高的芦
+草，密密麻麻的让人辩不清方位，随风而舞的芦花沾了人满
+身都是。
 LONG);
 
 //  set("objects", ([ /* sizeof() == 1*/ 

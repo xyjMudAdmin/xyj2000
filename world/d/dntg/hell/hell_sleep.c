@@ -49,13 +49,13 @@ int do_sleep (string arg)
   int phase = NATURE_D->query_current_day_phase();
 
   if (me->query("combat_exp")<50000) return 0;
-  if (phase > 0 && phase < 5) {tell_object(me,"´ó°×ÌìµÄË¯Ê²Ã´¾õ£¿\n");return 1;}
-  if (!is_drunk(me)) {tell_object(me,"Äã¾«ÉñÊ®×ã£¬²»ÐèÒªË¯¾õ¡£\n");return 1;}
+  if (phase > 0 && phase < 5) {tell_object(me,"å¤§ç™½å¤©çš„ç¡ä»€ä¹ˆè§‰ï¼Ÿ\n");return 1;}
+  if (!is_drunk(me)) {tell_object(me,"ä½ ç²¾ç¥žåè¶³ï¼Œä¸éœ€è¦ç¡è§‰ã€‚\n");return 1;}
   if (me->query("dntg/hell")=="done") return 0;
 //  if(!me->query("HellZhenPass")) return 0
   if (me->query_temp("dntg_hell/next")) return 0;
 
-  message_vision ("$NºÈµÃõ¤ôú´ó×í£¬ÒÐÔÚÔÚÌú°åÇÅ±ßËÉÒõÖ®ÏÂ£¬ö®Ê±¼äË¯×ÅÁË¡£\n",me);
+  message_vision ("$Nå–å¾—é…©é…Šå¤§é†‰ï¼Œå€šåœ¨åœ¨é“æ¿æ¡¥è¾¹æ¾é˜´ä¹‹ä¸‹ï¼ŒéœŽæ—¶é—´ç¡ç€äº†ã€‚\n",me);
   remove_call_out ("go_hell");
   call_out ("go_hell",2+random(5),me);
   return 1; 
@@ -69,16 +69,16 @@ void go_hell(object me) {
                  "dushi","taishan","lunzhuan","biancheng","yanluo",
                });
 
-  mapping name=(["qingguang":"ÇØ¹ãÍõ","songdi":"ËÎµÛÍõ","chujiang":"³þ½­Íõ",
-    "chuguan":"Øõ¹ÙÍõ","pingdeng":"Æ½µÈÍõ","dushi":"¶¼ÊÐÍõ","taishan":"Ì©É½Íõ",
-    "lunzhuan":"ÂÖ×ªÍõ","biancheng":"±å³ÇÍõ","yanluo":"ÑÖÂÞÍõ" ]);
+  mapping name=(["qingguang":"ç§¦å¹¿çŽ‹","songdi":"å®‹å¸çŽ‹","chujiang":"æ¥šæ±ŸçŽ‹",
+    "chuguan":"ä»µå®˜çŽ‹","pingdeng":"å¹³ç­‰çŽ‹","dushi":"éƒ½å¸‚çŽ‹","taishan":"æ³°å±±çŽ‹",
+    "lunzhuan":"è½®è½¬çŽ‹","biancheng":"åžåŸŽçŽ‹","yanluo":"é˜Žç½—çŽ‹" ]);
 
   string wang1=wang[random(10)];
   me->set_temp("dntg_hell/next",wang1);
   
-  tell_object(me,HIB"\nË¯ÃÎÖÐºö¼ûÁ½ÈË×ßÁË¹ýÀ´£¬´óÉùºÈµÀ£º¡°"+me->query("name")+
-               "£¬ÈêÑôÊÙÒÑ¾¡£¬ÎáµÈ·îÚ¤ÍõÖ®Ãü£¬ÌØÀ´¹´Äã¡£¡±\n"
-                +"Ëµ°Õ²»ÈÝ·ÖËµ£¬ÄÃ¸ùÌúË÷ÍùÄã¾±ÉÏÒ»Ì×£¬À­ÁË¾Í×ß¡£\n\n"NOR);
+  tell_object(me,HIB"\nç¡æ¢¦ä¸­å¿½è§ä¸¤äººèµ°äº†è¿‡æ¥ï¼Œå¤§å£°å–é“ï¼šâ€œ"+me->query("name")+
+               "ï¼Œæ±é˜³å¯¿å·²å°½ï¼Œå¾ç­‰å¥‰å†¥çŽ‹ä¹‹å‘½ï¼Œç‰¹æ¥å‹¾ä½ ã€‚â€\n"
+                +"è¯´ç½¢ä¸å®¹åˆ†è¯´ï¼Œæ‹¿æ ¹é“ç´¢å¾€ä½ é¢ˆä¸Šä¸€å¥—ï¼Œæ‹‰äº†å°±èµ°ã€‚\n\n"NOR);
   me->move("/d/death/new-zhaopo");
   env=environment(me);
   if (!bai=present("bai wuchang",env)) {
@@ -93,9 +93,9 @@ void go_hell(object me) {
   piwen=new("/d/dntg/hell/piwen");
   if (random(2)) piwen->move(hei);
    else piwen->move(bai);
-  piwen->set("long","    ²é"+me->query("name")+
-             "ÑôÊÙÒÑ¾¡£¬×ÅÁîºÚ°×ÎÞ³£½«Æä»êÆÇ¹´ÄÃ¹é°¸¡£\n\n"+
-             "                            "+name[wang1]+"  ÚÍ\n\n\n");
+  piwen->set("long","    æŸ¥"+me->query("name")+
+             "é˜³å¯¿å·²å°½ï¼Œç€ä»¤é»‘ç™½æ— å¸¸å°†å…¶é­‚é­„å‹¾æ‹¿å½’æ¡ˆã€‚\n\n"+
+             "                            "+name[wang1]+"  è°•\n\n\n");
 
   piwen->set("target",me->query("name"));
 }

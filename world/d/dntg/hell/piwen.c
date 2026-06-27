@@ -4,9 +4,9 @@ inherit ITEM;
 #include <ansi.h>
 
 void create() {
-  set_name("ÅúÎÄ",({"pi wen","piwen","wen"}));
+  set_name("æ‰¹æ–‡",({"pi wen","piwen","wen"}));
   set_weight(10);
-  set("unit","ÕÅ");
+  set("unit","å¼ ");
   setup();
 }
 void init() {
@@ -19,7 +19,7 @@ int do_look(string arg) {
   if (arg!="pi wen" && arg!="piwen" && arg!="wen") return 0;
   write(this_object()->long());
   if (query("target")!=me->query("name")) return 1;
-  message_vision(HIR"$N¿´°ÕÅúÎÄ£¬²ªÈ»´óÅ­£¬°ÑÅúÎÄËºÁË¸ö·ÛËé£¬´ó½Ğ£º¡°´ıÎÒÈ¥ÕÒÕâ¸ö»èÍõÆÀÀí£¡¡±\n"NOR,me);
+  message_vision(HIR"$Nçœ‹ç½¢æ‰¹æ–‡ï¼Œå‹ƒç„¶å¤§æ€’ï¼ŒæŠŠæ‰¹æ–‡æ’•äº†ä¸ªç²‰ç¢ï¼Œå¤§å«ï¼šâ€œå¾…æˆ‘å»æ‰¾è¿™ä¸ªæ˜ç‹è¯„ç†ï¼â€\n"NOR,me);
   destruct(this_object());
   return 1;
 }

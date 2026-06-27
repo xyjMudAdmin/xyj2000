@@ -31,13 +31,13 @@ int get_current_day_phase() {
 
 void create ()
 {
-  set ("short", "¶«º£º£Ì²");
+  set ("short", "ä¸œæµ·æµ·æ»©");
   set ("long", @LONG
 
-Ò¹¼äµÄ´óº££¬º£Ë®ÈçÄ«£¬·çÆ½ÀË¾²¡£ÔÂ¹âÔÚº£ÃæÉÏ»®
-³öÒ»µÀÒø¹â£¬¸ø°²¾²µÄº£ÃæÔö¼ÓÁËÒ»Ë¿Éú»ú¡£È»¶ø¾Í
-ÔÚÕâÄş¼ÅµÄ±íÃæÏÂ£¬º£Ë®Éî´¦°µÌÎĞÚÓ¿£¬Ë®ÉùÂ¡Â¡£¬
-ËÆºõÒª½«Ò»ÇĞÉúÃüÍÌÊÉ¡£
+å¤œé—´çš„å¤§æµ·ï¼Œæµ·æ°´å¦‚å¢¨ï¼Œé£å¹³æµªé™ã€‚æœˆå…‰åœ¨æµ·é¢ä¸Šåˆ’
+å‡ºä¸€é“é“¶å…‰ï¼Œç»™å®‰é™çš„æµ·é¢å¢åŠ äº†ä¸€ä¸ç”Ÿæœºã€‚ç„¶è€Œå°±
+åœ¨è¿™å®å¯‚çš„è¡¨é¢ä¸‹ï¼Œæµ·æ°´æ·±å¤„æš—æ¶›æ±¹æ¶Œï¼Œæ°´å£°éš†éš†ï¼Œ
+ä¼¼ä¹è¦å°†ä¸€åˆ‡ç”Ÿå‘½åå™¬ã€‚
 
 LONG);
 
@@ -55,7 +55,7 @@ void flood() {
   object *inv=all_inventory(this_object());
   call_out("flood",21+random(20));
 
-  tell_room(this_object(),"ÕÇ³±ÁË£¬º£Ë®·¢³öÕğ¶úÓûÁûµÄ¾ŞºğÉù£¬ÍòÂí±¼ÌÚ°ãÏòÄãÆËÀ´£¡\n");
+  tell_room(this_object(),"æ¶¨æ½®äº†ï¼Œæµ·æ°´å‘å‡ºéœ‡è€³æ¬²è‹çš„å·¨å¼å£°ï¼Œä¸‡é©¬å¥”è…¾èˆ¬å‘ä½ æ‰‘æ¥ï¼\n");
   for (int i=0;i<sizeof(inv);i++)
     if (userp(inv[i])) _flood(inv[i]);
 }
@@ -63,25 +63,25 @@ void flood() {
 void _flood(object me) {
   object corpse;
   if (!me->query("life/live_forever")) {
-    message_vision("$N±»³±Ë®³å×ßÁË¡£\n\n",me);
-    me->set_temp("death_msg","µô½ø¶«º£ÑÍËÀÁË¡£\n");
+    message_vision("$Nè¢«æ½®æ°´å†²èµ°äº†ã€‚\n\n",me);
+    me->set_temp("death_msg","æ‰è¿›ä¸œæµ·æ·¹æ­»äº†ã€‚\n");
 // strip(me);
     me->die();
     me->delete_temp("death_msg");
     corpse=present("corpse",this_object());
     if (corpse && corpse->move(dest))
-        tell_room(environment(corpse),"³±Ë®½«"+corpse->name()+"³åÉÏ°¶À´¡£\n");
+        tell_room(environment(corpse),"æ½®æ°´å°†"+corpse->name()+"å†²ä¸Šå²¸æ¥ã€‚\n");
     return;
    }
   if (random(me->query_kar())>8) {
-    message_vision("$NÒ»ÌáÆø£¬ÇáÇáÒ»Ô¾£¬ÂäÔÚ½¸Ê¯ÉÏ£¬º£Ë®ºôĞ¥×Å´Ó$N½ÅÏÂÂş¹ı£¬ºÃÏÕ£¡\n\n",me);
+    message_vision("$Nä¸€ææ°”ï¼Œè½»è½»ä¸€è·ƒï¼Œè½åœ¨ç¤çŸ³ä¸Šï¼Œæµ·æ°´å‘¼å•¸ç€ä»$Nè„šä¸‹æ¼«è¿‡ï¼Œå¥½é™©ï¼\n\n",me);
     return;
   }
-  message_vision("$N±»³±Ë®³å×ßÁË¡£\n\n",me);
+  message_vision("$Nè¢«æ½®æ°´å†²èµ°äº†ã€‚\n\n",me);
 // strip(me);
   me->unconcious();
   if (me->move(dest))
-    tell_room(environment(me),"³±Ë®½«"+me->name()+"³åÉÏ°¶À´¡£\n");
+    tell_room(environment(me),"æ½®æ°´å°†"+me->name()+"å†²ä¸Šå²¸æ¥ã€‚\n");
 }
 
 void strip(object me) {
@@ -107,7 +107,7 @@ int do_fill(string arg) {
     int r;
 
     if (!arg && arg!="hai" && arg!="sea") 
-       return notify_fail("ÄãÒªÌîÊ²Ã´£¿\n");
+       return notify_fail("ä½ è¦å¡«ä»€ä¹ˆï¼Ÿ\n");
 
 /*
     if (phase < 6) 
@@ -115,25 +115,25 @@ int do_fill(string arg) {
 */
  
     if (me->is_fighting() || me->is_busy() ) {
-        write("ÄãÕıÃ¦×ÅÄØ¡£\n");
+        write("ä½ æ­£å¿™ç€å‘¢ã€‚\n");
         return 1;
     }   
     if (me->query("kee")<500 || me->query("sen")<500 ||
         me->query("mana") <1000 || me->query("force")<1000) {
-            write("ÄãÌ«ÀÛÁË£¬»¹ÊÇĞª»á¶ù°É¡£\n");
+            write("ä½ å¤ªç´¯äº†ï¼Œè¿˜æ˜¯æ­‡ä¼šå„¿å§ã€‚\n");
         return 1;
     }
         
   stone=present("shi kuai",me);
   if (!stone || stone->query_amount()==0)
   {
-       write("ÄãÄÃÊ²Ã´À´Ìîº£°¡£¿\n");
+       write("ä½ æ‹¿ä»€ä¹ˆæ¥å¡«æµ·å•Šï¼Ÿ\n");
        return 1;
     }
-    message_vision("$N´Ó»³ÀïÌÍ³öÒ»¿éÊ¯Í·Í¶Èëº£ÖĞ£¬Ê¯¿éÑ¸ËÙ³ÁÈëË®ÖĞ£¬Á¬Ë®»¨¶¼Ã»¼¤Æğ°ëµã¡£\n",me);
+    message_vision("$Nä»æ€€é‡Œæå‡ºä¸€å—çŸ³å¤´æŠ•å…¥æµ·ä¸­ï¼ŒçŸ³å—è¿…é€Ÿæ²‰å…¥æ°´ä¸­ï¼Œè¿æ°´èŠ±éƒ½æ²¡æ¿€èµ·åŠç‚¹ã€‚\n",me);
     // mon 7/28/99
     if(stone->query("fill_sea")) {
-	write("ÄãÀÛµÃÑüËá±³Í´£¬Á¬ÊÖ±Û¶¼Ì§²»ÆğÀ´¡£\n\n");
+	write("ä½ ç´¯å¾—è…°é…¸èƒŒç—›ï¼Œè¿æ‰‹è‡‚éƒ½æŠ¬ä¸èµ·æ¥ã€‚\n\n");
 	r=random(4)+1;
 	if (r>stone->query_amount()) r=stone->query_amount();
 	me->add("potential",me->query_skill("spells")/10);

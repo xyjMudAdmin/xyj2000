@@ -10,10 +10,10 @@ int leave_here(string arg,object who)
     if (living (obs[i]) && obs[i]!=who && userp(obs[i]))
       {
        tell_object(obs[i],arg
-           +"ÏòÄãÒ»¹°ÊÖµÀ£º½ñÈÕÌìÍ¥ÓĞÄÑ£¬Çë¸÷Î»²»Ïà¸ÉµÄÅóÓÑÏÈ±ÜÒ»±Ü£¡\n");
-       tell_object(obs[i],"Ëµ×Å£¬"+arg+"½«ÄãÒıÁË³öÀ´¡£\n");
+           +"å‘ä½ ä¸€æ‹±æ‰‹é“ï¼šä»Šæ—¥å¤©åº­æœ‰éš¾ï¼Œè¯·å„ä½ä¸ç›¸å¹²çš„æœ‹å‹å…ˆé¿ä¸€é¿ï¼\n");
+       tell_object(obs[i],"è¯´ç€ï¼Œ"+arg+"å°†ä½ å¼•äº†å‡ºæ¥ã€‚\n");
        obs[i]->move("/d/dntg/sky/nantian");
-       tell_room(environment(obs[i]),obs[i]->name()+"×ßÁË¹ıÀ´¡£\n",who); 
+       tell_room(environment(obs[i]),obs[i]->name()+"èµ°äº†è¿‡æ¥ã€‚\n",who); 
       } 
     }
 
@@ -25,10 +25,10 @@ int you_leave(string arg,object who)
 // avoid players' help
 
    tell_object(who,arg
-           +"ÏòÄãÒ»¹°ÊÖµÀ£º½ñÈÕÌìÍ¥ÓĞÄÑ£¬Çë¸÷Î»²»Ïà¸ÉµÄÅóÓÑÏÈ±ÜÒ»±Ü£¡\n");
-   tell_object(who,"Ëµ×Å£¬"+arg+"½«ÄãÒıÁË³öÀ´¡£\n");
+           +"å‘ä½ ä¸€æ‹±æ‰‹é“ï¼šä»Šæ—¥å¤©åº­æœ‰éš¾ï¼Œè¯·å„ä½ä¸ç›¸å¹²çš„æœ‹å‹å…ˆé¿ä¸€é¿ï¼\n");
+   tell_object(who,"è¯´ç€ï¼Œ"+arg+"å°†ä½ å¼•äº†å‡ºæ¥ã€‚\n");
    who->move("/d/dntg/sky/nantian");
-   tell_room(environment(who),who->name()+"×ßÁË¹ıÀ´¡£\n",who); 
+   tell_room(environment(who),who->name()+"èµ°äº†è¿‡æ¥ã€‚\n",who); 
    return 1;
 }
 

@@ -6,16 +6,16 @@ inherit NPC;
  
 void create()
 {
-        set_name("Ä§ÀñÊÙ", ({ "tian wang", "chiguo tianwang", "shou", "tianwang", "wang" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("é­”ç¤¼å¯¿", ({ "tian wang", "chiguo tianwang", "shou", "tianwang", "wang" }) );
+        set("gender", "ç”·æ€§" );
         set("long","
-ËÄ´óÌìÍõÖ®Ò»£¬Éíµ£×Å±£»¤ºó¹¬°²È«µÄÖØµ££¬·ÇÍ¬Ğ¡¿É¡£Ëû
-µÄÎä¹¦ËÆºõÊô·ğÃÅÒ»ÅÉ£¬»¤¹úÌìÍõ»¹ÓĞÁíÍâµÄÉ±ÊÖ¾øÕĞ£¬µ«
-Ã»ÓĞÈËÖªµÀÊÇÊ²Ã´¡£Ò²ĞíÕıÒòÎªÈç´Ë£¬Óñ»Ê²Å·ÅĞÄÈÃËû¶Àµ£
-ÖØÈÎ¡£\n"
+å››å¤§å¤©ç‹ä¹‹ä¸€ï¼Œèº«æ‹…ç€ä¿æŠ¤åå®«å®‰å…¨çš„é‡æ‹…ï¼ŒéåŒå°å¯ã€‚ä»–
+çš„æ­¦åŠŸä¼¼ä¹å±ä½›é—¨ä¸€æ´¾ï¼ŒæŠ¤å›½å¤©ç‹è¿˜æœ‰å¦å¤–çš„æ€æ‰‹ç»æ‹›ï¼Œä½†
+æ²¡æœ‰äººçŸ¥é“æ˜¯ä»€ä¹ˆã€‚ä¹Ÿè®¸æ­£å› ä¸ºå¦‚æ­¤ï¼Œç‰çš‡æ‰æ”¾å¿ƒè®©ä»–ç‹¬æ‹…
+é‡ä»»ã€‚\n"
         );
 	set("class", "xian");
-	set("title", "³Ö¹úÌìÍõ");
+	set("title", "æŒå›½å¤©ç‹");
         set("age",43);
         set("str",30);
         set("int",37);
@@ -51,8 +51,8 @@ void create()
         map_skill("parry","lunhui-zhang");
 	map_skill("unarmed", "changquan");
         set("inquiry", ([
-                "name" : "ÔÚÏÂ¾ÍÊÇ³Ö¹úÌìÍõ£¬·îÊ¥ÚÍ°ÑÊØ±±ÌìÃÅ¡£",
-                "here" : "ÕâÀï¾ÍÊÇ±±ÌìÃÅ£¬ÀïÃæÊÇºó¹¬½ûµØ¡£",
+                "name" : "åœ¨ä¸‹å°±æ˜¯æŒå›½å¤©ç‹ï¼Œå¥‰åœ£è°•æŠŠå®ˆåŒ—å¤©é—¨ã€‚",
+                "here" : "è¿™é‡Œå°±æ˜¯åŒ—å¤©é—¨ï¼Œé‡Œé¢æ˜¯åå®«ç¦åœ°ã€‚",
         ]) );
         setup();
         carry_object("/d/obj/weapon/mace/copperjian")->wield();
@@ -86,15 +86,15 @@ void huahudiao (object me, object ob)
   if (environment(ob) != environment(me))
     return;
 
-  message_vision (HIY"$N´ÓÄÒÖĞÈ¡³ö»¨ºüõõ£¬¼ÀÔÚ¿ÕÖĞ£¬»¯×÷Ò»Ö»°×Ïó£»"
-       +"¿ÚËÆÑªÅè£¬ÑÀÈçÀûµ¶£¬Ïò$nÒ§À´£¡\n"NOR,me,ob);
+  message_vision (HIY"$Nä»å›Šä¸­å–å‡ºèŠ±ç‹è²‚ï¼Œç¥­åœ¨ç©ºä¸­ï¼ŒåŒ–ä½œä¸€åªç™½è±¡ï¼›"
+       +"å£ä¼¼è¡€ç›†ï¼Œç‰™å¦‚åˆ©åˆ€ï¼Œå‘$nå’¬æ¥ï¼\n"NOR,me,ob);
 
   if ( (ob->query("force")+random(1000)) > 3000 )
-     message_vision (HIY"$N´óºÈÒ»Éù£º´óµ¨£¡\n"
-       +"»¨ºüõõÏÅµÄÁ¬Ã¦×ê»Ø$nµÄÄÒÖĞ¡£\n"NOR,ob,me);
+     message_vision (HIY"$Nå¤§å–ä¸€å£°ï¼šå¤§èƒ†ï¼\n"
+       +"èŠ±ç‹è²‚å“çš„è¿å¿™é’»å›$nçš„å›Šä¸­ã€‚\n"NOR,ob,me);
   else 
     {
-     message_vision (HIY"½á¹û$N±»Ò§³öÒ»ÌõÑªÈâÄ£ºıµÄ¿Ú×Ó£¡\n"NOR,ob,me);
+     message_vision (HIY"ç»“æœ$Nè¢«å’¬å‡ºä¸€æ¡è¡€è‚‰æ¨¡ç³Šçš„å£å­ï¼\n"NOR,ob,me);
      damage=(me->query("force"))/5; 
      if ( ob->query("kee") < damage ) ob->unconcious();
      else ob->add("kee",-damage);
@@ -108,7 +108,7 @@ void huahudiao (object me, object ob)
 void die ()
 {
   object me = this_object();
-  message_vision (HIY"$NÏÅµÃÈöÍÈ¾ÍÅÜ¡£\n"NOR,me);
+  message_vision (HIY"$Nå“å¾—æ’’è…¿å°±è·‘ã€‚\n"NOR,me);
   destruct (this_object());
   return ;
 }

@@ -5,9 +5,9 @@ inherit DAGGER;
 
 void create()
 {
-  set_name("ºü¹Ç´Ì", ({ "hugu ci", "ci", "dagger" }) );
+  set_name("ç‹éª¨åˆº", ({ "hugu ci", "ci", "dagger" }) );
   init_dagger(11);
-  set("unit", "¸ù");
+  set("unit", "æ ¹");
   set_weight(300);
   if( clonep() )
      set_default_object(__FILE__);
@@ -15,7 +15,7 @@ void create()
     set("value", 180);
     set("material", "bone");
   }
-  set("wield_msg","$N²ÙÆğ$nÎÕÔÚÊÖÀï¡£\n");
+  set("wield_msg","$Næ“èµ·$næ¡åœ¨æ‰‹é‡Œã€‚\n");
   setup();
 }
 

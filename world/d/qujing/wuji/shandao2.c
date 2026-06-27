@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ɽ��");
+  set ("short", "山道");
   set ("long", @LONG
 
-ɽ����᫲�ƽ������ɽ�������������ƣ�����ʮ���ն�Ⱥ
-�ͻ��ƣ��ѱ涫���ϱ�����紵�����е����˺�����
+山道崎岖不平，沿着山势上下左右盘绕，地形十分险恶。群
+峦环绕，难辨东西南北。大风吹来，有点令人寒颤。
 
 LONG);
 

@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "С·");
+  set ("short", "小路");
   set ("long", @LONG
 
-���߰�ʯ��㣬������֣��������ޣ��ݺ����������̦޺�ɰߣ�������
-ӳ������΢¶��С����
+两边白石陵层，或如鬼怪，或如猛兽，纵横傲立；上面苔藓成斑，藤萝掩
+映；其中微露羊肠小径。
 LONG);
 
   set("outdoors", 1);

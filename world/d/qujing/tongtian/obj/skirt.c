@@ -4,23 +4,23 @@
 inherit CLOTH;
 
 string *prefixs = ({
-  "»¨",
-  "ËØ",
-  "Èí",
-  "Ï¸",
+  "èŠ±",
+  "ç´ ",
+  "è½¯",
+  "ç»†",
 });
 
 string *names = ({
-  "ÃÞ",
-  "É´",
-  "½õ",
-  "¶Ð",
+  "æ£‰",
+  "çº±",
+  "é”¦",
+  "ç¼Ž",
 });
 
 string *suffixs = ({
-  "³¤È¹",
-  "¶ÌÈ¹",
-  "±¡È¹",
+  "é•¿è£™",
+  "çŸ­è£™",
+  "è–„è£™",
 });
 
 void create()
@@ -31,7 +31,7 @@ void create()
   if ( clonep() )
      set_default_object(__FILE__);
   else {
-   set("unit", "¼þ");
+   set("unit", "ä»¶");
    set("value", 300);
    set("female_only", 1);
    set("material", "cloth");

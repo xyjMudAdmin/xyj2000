@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "µÚÈý×ßÀÈ");
+  set ("short", "ç¬¬ä¸‰èµ°å»Š");
   set ("long", @LONG
-Ò»Ìõ³¤³¤µÄ×ßÀÈ±»·Ö³ÉÁËºÃ¼¸¸ö¹Ø¿Ú,ÕâÀïÊÇµÚÈý¹Ø.Äã¿ÉÒÔ¸Ð¾õµÃµ½
-Òþ²ØµÄÎ£»ú.·Ç³£ÖÐ¹ú·ç¸ñµÄ×ßÀÈ,Ï°¹ßÐÔµÄµñÁú¿Ì·ï.ÃÀºÍ³ó,ÉÆºÍ¶ñ
-¾ÍÕâÑùÃ¬¶ÜµÄ½»Ö¯×Å¡£
+ä¸€æ¡é•¿é•¿çš„èµ°å»Šè¢«åˆ†æˆäº†å¥½å‡ ä¸ªå…³å£,è¿™é‡Œæ˜¯ç¬¬ä¸‰å…³.ä½ å¯ä»¥æ„Ÿè§‰å¾—åˆ°
+éšè—çš„å±æœº.éžå¸¸ä¸­å›½é£Žæ ¼çš„èµ°å»Š,ä¹ æƒ¯æ€§çš„é›•é¾™åˆ»å‡¤.ç¾Žå’Œä¸‘,å–„å’Œæ¶
+å°±è¿™æ ·çŸ›ç›¾çš„äº¤ç»‡ç€ã€‚
 LONG);
 
   set("exits", ([ /* sizeof() == 4 */
@@ -35,16 +35,16 @@ int do_defend(string arg)
 
    if (who->query("id")!=OBSTACLE_D->query("cated_id"))return 0;
    
-   if (!arg) return notify_fail("ÄãÒªË­·ÀÊØÕâÀïÄØ?\n");
+   if (!arg) return notify_fail("ä½ è¦è°é˜²å®ˆè¿™é‡Œå‘¢?\n");
 
    if (arg=="none") 
 	{
-		write("Äã³·µôÁËÕâÀïµÄ·ÀÊØ\n");
+		write("ä½ æ’¤æŽ‰äº†è¿™é‡Œçš„é˜²å®ˆ\n");
 		me->delete("shouhu")	;
 		return 1;
 	}
 
-   write("ÄãÖ¸¶¨"+arg+"·ÀÊØÕâÀï\n");   
+   write("ä½ æŒ‡å®š"+arg+"é˜²å®ˆè¿™é‡Œ\n");   
    me->set("shouhu",arg);
    return 1;
 }
@@ -64,7 +64,7 @@ int valid_leave (object who, string dir)
     	    if (man=find_player(shouhu))
 	      {
 		if (environment(man)==me)
-		   return notify_fail(man->query("name")+"·ÀÊØÕâÀï,ÄãÒª´ò°ÜËû²Å¹ýµÃÈ¥\n");
+		   return notify_fail(man->query("name")+"é˜²å®ˆè¿™é‡Œ,ä½ è¦æ‰“è´¥ä»–æ‰è¿‡å¾—åŽ»\n");
 	      }
           }
     } 

@@ -3,12 +3,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "������");
+  set ("short", "火云堂");
   set ("long", @LONG
 
-������ǻ��ƶ������ģ������á���ǰ��һ�Ѻڻ�Ƥ�����θ߸�
-���ϣ��κ�һ����ɫ����죬�������š�ʥӤ�������ĸ����ӡ�
-����С��������ͷ����ʮ�����͵ư������յ�ѩ����
+这里就是火云洞的中心－火云堂。正前方一把黑虎皮的软椅高高
+在上，椅后一把玄色大锦旗，上面绣着“圣婴大王”四个金子。
+两旁小妖林立，头顶几十把松油灯把堂上照的雪亮。
 LONG);
   set("exits", ([ /* sizeof() == 4 */
   "south" : __DIR__"yongdao7",

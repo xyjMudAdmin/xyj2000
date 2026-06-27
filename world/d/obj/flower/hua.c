@@ -11,17 +11,17 @@ int DEBUG=1;
 
 string chinese_daoxing(int);
 void create() {
-    set_name("¸÷É«ÏÊ»¨", ({ "flower","hua"}));
+    set_name("å„è‰²é²œèŠ±", ({ "flower","hua"}));
    set("value",200);
   set_weight(100);
-  set("unit", "¶ä");
+  set("unit", "æœµ");
   set("armor_prop/armor", 1);
   set("armor_prop/personality", 2);
   setup();
 }
 
 void init() {
-   if (query("name")=="¸÷É«ÏÊ»¨")     set_name(flowers[random(sizeof(flowers))], ({ "flower"}));
+   if (query("name")=="å„è‰²é²œèŠ±")     set_name(flowers[random(sizeof(flowers))], ({ "flower"}));
     add_action("do_eat","eat");
 }
 
@@ -30,13 +30,13 @@ int do_eat(string arg) {
    int qn=0;
   int score=query("score");
   if (this_object()!=present(arg,me)) return 0;
-   message_vision(HIC"$N³ÔÏÂÒ»¶ä"+query("name")+HIC"£¬Ö»¾õµÃÏãÆøÆË±Ç£¬³İ¼Õ·Ò·¼¡£\n"NOR,me);
+   message_vision(HIC"$Nåƒä¸‹ä¸€æœµ"+query("name")+HIC"ï¼Œåªè§‰å¾—é¦™æ°”æ‰‘é¼»ï¼Œé½¿é¢ŠèŠ¬èŠ³ã€‚\n"NOR,me);
   if (query("target")==me && score>0) {
-     if (me->query("family/family_name")!="ÔÂ¹¬") score=random(score);
+     if (me->query("family/family_name")!="æœˆå®«") score=random(score);
     me->add("daoxing",score);
   qn=score*(20+random(10))/100;
   me->add("potential",qn);
-    tell_object(me,HIC"ÄãµÃµ½ÁË"+chinese_daoxing(score)+"µÀĞĞ£¬"+qn+"µãÇ±ÄÜ¡£\n"NOR);
+    tell_object(me,HIC"ä½ å¾—åˆ°äº†"+chinese_daoxing(score)+"é“è¡Œï¼Œ"+qn+"ç‚¹æ½œèƒ½ã€‚\n"NOR);
   MONITOR_D->report_system_object_msg(me," got "+score+" daoxing "+qn+" pots from baihua-gu.\n" );
   }
   destruct(this_object());
@@ -50,8 +50,8 @@ string chinese_daoxing(int gain) {
              day=(gain-year*1000)/4;
              hour=(gain-year*1000-day*4)*3;
              str="";
-             if(year) str=str+chinese_number(year)+"Äê";
-             if(day) str=str+chinese_number(day)+"Ìì";
-             if(hour) str=str+chinese_number(hour)+"Ê±³½";
+             if(year) str=str+chinese_number(year)+"å¹´";
+             if(day) str=str+chinese_number(day)+"å¤©";
+             if(hour) str=str+chinese_number(hour)+"æ—¶è¾°";
              return str;
 }

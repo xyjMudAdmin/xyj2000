@@ -5,12 +5,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "Ò»Ò¶Ð¡ÖÛ");
+  set ("short", "ä¸€å¶å°èˆŸ");
   set ("long", @LONG
 
-Ò»Ò¶×î¶àÖ»ÄÜÔØÁ½ÈËµÄ±âÖÛ£¬´¬Í·Õ¾×ÅÒ»Î»½ÅÌ¤ÆßÉ«ÏéÔÆµÄÂÌÉÀÉÙÅ®£¬
-ÊÖÎÕÒ»¸ù±ÌÂÌµÄÖñ¸Ý£¬ÕýÐ¦Ò÷Ò÷µØ¿´×ÅÄã¡£ÄãÍù´¬ÖÐ×ÐÏ¸Ò»¿´£¬²»½û
-ÏÅÁËÒ»Ìø£¬Ô­À´¾¹ÊÇÒ»ÌõÎÞµ×´¬¡£
+ä¸€å¶æœ€å¤šåªèƒ½è½½ä¸¤äººçš„æ‰èˆŸï¼Œèˆ¹å¤´ç«™ç€ä¸€ä½è„šè¸ä¸ƒè‰²ç¥¥äº‘çš„ç»¿è¡«å°‘å¥³ï¼Œ
+æ‰‹æ¡ä¸€æ ¹ç¢§ç»¿çš„ç«¹ç¯™ï¼Œæ­£ç¬‘åŸåŸåœ°çœ‹ç€ä½ ã€‚ä½ å¾€èˆ¹ä¸­ä»”ç»†ä¸€çœ‹ï¼Œä¸ç¦
+å“äº†ä¸€è·³ï¼ŒåŽŸæ¥ç«Ÿæ˜¯ä¸€æ¡æ— åº•èˆ¹ã€‚
 LONG);
 
   set("exits", ([ /* sizeof() == 1 */
@@ -26,7 +26,7 @@ void init() {
   object me=this_player();
   object *inv=deep_inventory(me);
   if (me->query("daoxing")<1000000 || random(me->query_kar())<10) call_out("drown",1,me);
-  else if (me->query("family/family_name")!="ÔÂ¹¬" && random(3)) call_out("drown",1,me);
+  else if (me->query("family/family_name")!="æœˆå®«" && random(3)) call_out("drown",1,me);
   else for (int i=0;i<sizeof(inv);i++)
     if (userp(inv[i]) ) {call_out("drown",1,me);return;}
 
@@ -39,19 +39,19 @@ void drown(object me) {
   if (!me) return;
   inv=deep_inventory(me);
 
-  message_vision(HIC"$NÃ»ÓÐ×¢Òâµ½½ÅÏÂÊÇÌõÎÞµ×Ö®´¬£¬Ò»½ÅÌ¤ÁË¸ö¿Õ£¬ÆËÍ¨Ò»Éùµô½øÁËºþµ×¡£\n"NOR,me);
+  message_vision(HIC"$Næ²¡æœ‰æ³¨æ„åˆ°è„šä¸‹æ˜¯æ¡æ— åº•ä¹‹èˆ¹ï¼Œä¸€è„šè¸äº†ä¸ªç©ºï¼Œæ‰‘é€šä¸€å£°æŽ‰è¿›äº†æ¹–åº•ã€‚\n"NOR,me);
   me->move(__DIR__"hudi");
   for (int i=0;i<sizeof(inv);i++) 
     if (userp(inv[i])) {
 /*
       inv[i]->remove_all_killer();
       inv[i]->remove_all_enemy();
-      inv[i]->set_temp("death_msg","±»ÔÂÁÁºþ¹ÖÊÞ³ÔµôÁË¡£\n");
+      inv[i]->set_temp("death_msg","è¢«æœˆäº®æ¹–æ€ªå…½åƒæŽ‰äº†ã€‚\n");
       inv[i]->die();
       inv[i]->delete_temp("death_msg");
 */
    inv[i]->unconcious();
    inv[i]->move(__DIR__"hudi");
     } else destruct(inv[i]);
-  if (me->query("family/family_name")!="ÔÂ¹¬" || me->query("family/generation")!=2) me->unconcious();
+  if (me->query("family/family_name")!="æœˆå®«" || me->query("family/generation")!=2) me->unconcious();
 }

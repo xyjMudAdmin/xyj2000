@@ -5,9 +5,9 @@ inherit RAKE;
 
 void create()
 {
-  set_name("ÖşĞÇ°Ò", ({ "zhuxing pa", "pa", "rake" }) );
+  set_name("ç­‘æ˜Ÿè€™", ({ "zhuxing pa", "pa", "rake" }) );
   init_rake(40);
-  set("unit", "¸ù");
+  set("unit", "æ ¹");
   set_weight(1000);
   if( clonep() )
      set_default_object(__FILE__);
@@ -15,7 +15,7 @@ void create()
     set("value", 480);
     set("material", "metal");
   }
-  set("wield_msg","$N²ÙÆğ$nÎÕÔÚÊÖÀï¡£\n");
+  set("wield_msg","$Næ“èµ·$næ¡åœ¨æ‰‹é‡Œã€‚\n");
   setup();
 }
 

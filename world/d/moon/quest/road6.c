@@ -5,12 +5,12 @@ inherit ROOM;
 int index=6;
 void create ()
 {
-  set ("short", "Ñò³¦Ğ¡µÀ");
+  set ("short", "ç¾Šè‚ å°é“");
   set ("long", @LONG
 
-Ò»ÌõòêÑÑÇúÕÛµÄĞ¡¾¶£¬Á½±ß¶¼ÊÇµ¶Ï÷°ãµÄÇÍ±Ú¡£
-Â·ÅÔ³¤ÂúÁËÒ»ÈË¶à¸ßµÄÒ°²İ£¬¾İËµ³£ÓĞÑı¹Ö¾«Áé
-³öÃ»¡£
+ä¸€æ¡èœ¿èœ’æ›²æŠ˜çš„å°å¾„ï¼Œä¸¤è¾¹éƒ½æ˜¯åˆ€å‰Šèˆ¬çš„å³­å£ã€‚
+è·¯æ—é•¿æ»¡äº†ä¸€äººå¤šé«˜çš„é‡è‰ï¼Œæ®è¯´å¸¸æœ‰å¦–æ€ªç²¾çµ
+å‡ºæ²¡ã€‚
 
 LONG);
   set("exits", ([ /* sizeof() == 3 */
@@ -34,7 +34,7 @@ void greeting() {
   if (random(2))  npc=new(__DIR__"npc/beauty");
   else   npc=new(__DIR__"npc/beast");
   npc->move(this_object());
-  message_vision("Â·ÅÔ²İ´ÔÀï¡°à²¡±µÄÒ»Éù´Ü³öÒ»Ö»$N¡£\n",npc);
+  message_vision("è·¯æ—è‰ä¸›é‡Œâ€œå—–â€çš„ä¸€å£°çªœå‡ºä¸€åª$Nã€‚\n",npc);
 }
 
 int valid_leave(object me, string dir) {
@@ -43,10 +43,10 @@ int valid_leave(object me, string dir) {
   if (dir=="east") return 1;
 
   if (npc=present("monster",this_object())) 
-    return notify_fail(npc->name()+"À¹ÔÚÄãµÄÉíÇ°²»ÈÃÄã¹ı¡£\n");
+    return notify_fail(npc->name()+"æ‹¦åœ¨ä½ çš„èº«å‰ä¸è®©ä½ è¿‡ã€‚\n");
 
    if (npc=present("little elf",this_object()))
-     return notify_fail(npc->name()+"À­×¡ÄãµÄÒÂ½ÇÉá²»µÃÈÃÄã×ß¡£\n");
+     return notify_fail(npc->name()+"æ‹‰ä½ä½ çš„è¡£è§’èˆä¸å¾—è®©ä½ èµ°ã€‚\n");
   return 1;
 }
 

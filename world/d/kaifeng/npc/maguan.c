@@ -4,8 +4,8 @@ inherit NPC;
 
 void create()
 {
-       set_name("Âí¹Ù", ({"ma guan","guan"}));
-       set("gender", "ÄĞĞÔ");
+       set_name("é©¬å®˜", ({"ma guan","guan"}));
+       set("gender", "ç”·æ€§");
         set("combat_exp", 2000);
        set("age", 36);
        set("per", 34);
@@ -36,8 +36,8 @@ void greeting(object ob)
         if( !ob || !visible(ob) || environment(ob) != environment() ) return;
         switch( random(3) ) {  // 1/3 chance to greet.
                 case 0:
-                        say( "Âí¹ÙÒ»¾Ï¹ªËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-                                + "Çë½ø£¡\n");
+                        say( "é©¬å®˜ä¸€é èº¬è¯´é“ï¼šè¿™ä½" + RANK_D->query_respect(ob)
+                                + "è¯·è¿›ï¼\n");
                         break;
 		}
 }

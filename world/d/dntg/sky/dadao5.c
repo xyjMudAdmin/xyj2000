@@ -13,11 +13,11 @@ string look_gate();
 
 void create ()
 {
-  set ("short", "Ìì¹¬´óµÀ");
+  set ("short", "å¤©å®«å¤§é“");
   set ("long", @LONG
 
-Ò»Ìõ´óµÀ£¬±ÊÖ±µÄÉìÕ¹³öÈ¥£¬Ö±Í¨ÄÏÌìÃÅ¡£µÀÉÏ²»Ê±×ß¹ý¼¸Ãû
-Ñ²²éµÄÌì±ø£¬³Öµ¶Ðü½££¬Íþ·çÁÝÁÝ¡£
+ä¸€æ¡å¤§é“ï¼Œç¬”ç›´çš„ä¼¸å±•å‡ºåŽ»ï¼Œç›´é€šå—å¤©é—¨ã€‚é“ä¸Šä¸æ—¶èµ°è¿‡å‡ å
+å·¡æŸ¥çš„å¤©å…µï¼ŒæŒåˆ€æ‚¬å‰‘ï¼Œå¨é£Žå‡›å‡›ã€‚
 
 LONG);
 

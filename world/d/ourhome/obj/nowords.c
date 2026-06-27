@@ -9,14 +9,14 @@ void tear();
 
 void create()
 {
-        set_name("ÎŞ×ÖÌìÊé", ({"book","nowords","shu"}));
+        set_name("æ— å­—å¤©ä¹¦", ({"book","nowords","shu"}));
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
+                set("unit", "æœ¬");
 	set("long",
-	"Ò»±¾ÔàÙâÙâµÄĞ¡²á×Ó¡£ÉÏÃæ»®×ÅÒ»Ğ©ÏóÊÇòÇò¾ÅÀ³öÀ´µÄÍ¼°¸¡£\n");
+	"ä¸€æœ¬è„å…®å…®çš„å°å†Œå­ã€‚ä¸Šé¢åˆ’ç€ä¸€äº›è±¡æ˜¯èš¯èš“çˆ¬å‡ºæ¥çš„å›¾æ¡ˆã€‚\n");
         set("material", "paper");
         set("value", 100);
         set("skill", ([
@@ -41,7 +41,7 @@ int do_tear(string arg){
 	if( !this_object()->id(arg) ) return 0;
 	ob=new("/d/ourhome/obj/bishuizhou");
 	ob->move(me);
-	message_vision("$NËº¿ªÎŞ×ÖÌìÊéµÄ±³Ò³£¬´ÓÀïÃæĞ¡ĞÄÒíÒíµØÈ¡³öÒ»ÕÅĞ¡Ö½Æ¬¡£\n", me);
+	message_vision("$Næ’•å¼€æ— å­—å¤©ä¹¦çš„èƒŒé¡µï¼Œä»é‡Œé¢å°å¿ƒç¿¼ç¿¼åœ°å–å‡ºä¸€å¼ å°çº¸ç‰‡ã€‚\n", me);
 	destruct(this_object());
 	return 1;		
 }

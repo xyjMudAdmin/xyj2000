@@ -7,12 +7,12 @@ inherit FINGER;
 
 void create()
 {
-  set_name("×Ï½ð½äÖ¸", ({ "zijin jiezhi", "jiezhi", "ring" }));
+  set_name("ç´«é‡‘æˆ’æŒ‡", ({ "zijin jiezhi", "jiezhi", "ring" }));
   set("weight", 100);
   if (clonep())
     set_default_object(__FILE__);
   else {
-    set("unit", "¸ö");
+    set("unit", "ä¸ª");
     set("value", 1000);
     set("material", "gold");
     set("armor_prop/armor", 1);

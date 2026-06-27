@@ -5,17 +5,17 @@ inherit SWORD;
 
 void create()
 {
-        set_name("ºÉÒ¶", ({ "he ye", "heye", "sword" }) );
+        set_name("è·å¶", ({ "he ye", "heye", "sword" }) );
         set_weight(100);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Æ¬");
+                set("unit", "ç‰‡");
                 set("value", 700);
                 set("material", "steel");
-                set("long", "Ò»Æ¬±ÌÂÌµÄºÉÒ¶¡£\n");
-                set("wield_msg", "$NÄéÆğÒ»Æ¬$n¡£\n");
-                set("unwield_msg", "$N°Ñ$n·ÅÔÚÒ»±ß¡£\n");
+                set("long", "ä¸€ç‰‡ç¢§ç»¿çš„è·å¶ã€‚\n");
+                set("wield_msg", "$Næ‹ˆèµ·ä¸€ç‰‡$nã€‚\n");
+                set("unwield_msg", "$NæŠŠ$næ”¾åœ¨ä¸€è¾¹ã€‚\n");
         }
         init_sword(40);
         setup();

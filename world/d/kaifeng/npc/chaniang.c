@@ -6,8 +6,8 @@ inherit F_VENDOR_SALE;
 void create()
 {
   reload("kaifeng_cha");
-  set_name("²èÄï×Ó", ({"chaniang zi", "niang zi", "niang", "zi"}));
-  set("gender", "Å®ĞÔ");
+  set_name("èŒ¶å¨˜å­", ({"chaniang zi", "niang zi", "niang", "zi"}));
+  set("gender", "å¥³æ€§");
   set("combat_exp", 3000);
   set("age", 38);
   set("per", 29);

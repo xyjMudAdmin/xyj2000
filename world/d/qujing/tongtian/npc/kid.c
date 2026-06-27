@@ -5,11 +5,11 @@ inherit NPC;
 
 void create()
 {
-  set_name("Ğ¡Í¯", ({"kid"}));
+  set_name("å°ç«¥", ({"kid"}));
   if (random(2))
-    set("gender", "ÄĞĞÔ");
+    set("gender", "ç”·æ€§");
   else
-    set("gender", "Å®ĞÔ");
+    set("gender", "å¥³æ€§");
   set("combat_exp", random(1000));
   set("age", 3+random(5));
   set("per", 14+random(20));

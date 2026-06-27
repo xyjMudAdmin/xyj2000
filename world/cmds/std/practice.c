@@ -14,47 +14,47 @@ int main(object me, string arg)
 
 	if( environment(me)->query("no_fight") || 
 		environment(me)->query("no_magic") )
-		   return notify_fail("ÕâÀï²»ÊÇÁ·¹¦µÄµØ·½¡£\n");
+		   return notify_fail("è¿™é‡Œä¸æ˜¯ç»ƒåŠŸçš„åœ°æ–¹ã€‚\n");
 
 	if( me->is_fighting() )
-		return notify_fail("ÄãÒÑ¾­ÔÚÕ½¶·ÖĞÁË£¬Ñ§Ò»µãÊµÕ½¾­Ñé°É¡£\n");
+		return notify_fail("ä½ å·²ç»åœ¨æˆ˜æ–—ä¸­äº†ï¼Œå­¦ä¸€ç‚¹å®æˆ˜ç»éªŒå§ã€‚\n");
 
 	if( me->is_busy() )
-		return notify_fail("ÄãÏÖÔÚºÜÃ¦£¬²»ÄÜÁ·Ï°¡£\n");
+		return notify_fail("ä½ ç°åœ¨å¾ˆå¿™ï¼Œä¸èƒ½ç»ƒä¹ ã€‚\n");
 
 	if( !arg ) return (__DIR__"enable")->main(me, arg);
 
 	if( !stringp(skillname = me->query_skill_mapped(arg)) )
-		return notify_fail("ÄãÖ»ÄÜÁ·Ï°ÓÃ enable Ö¸¶¨µÄÌØÊâ¼¼ÄÜ¡£\n");
+		return notify_fail("ä½ åªèƒ½ç»ƒä¹ ç”¨ enable æŒ‡å®šçš„ç‰¹æ®ŠæŠ€èƒ½ã€‚\n");
 
 	skill_basic = me->query_skill(arg, 1);
 	skill = me->query_skill(skillname, 1);
 
 	if( skill < 1 )
-		return notify_fail("ÄãºÃÏñ»¹Ã»¡¸Ñ§»á¡¹ÕâÏî¼¼ÄÜ°É£¿×îºÃÏÈÈ¥Çë½Ì±ğÈË¡£\n");
+		return notify_fail("ä½ å¥½åƒè¿˜æ²¡ã€Œå­¦ä¼šã€è¿™é¡¹æŠ€èƒ½å§ï¼Ÿæœ€å¥½å…ˆå»è¯·æ•™åˆ«äººã€‚\n");
 	if( skill_basic < 1 )
-		return notify_fail("Äã¶ÔÕâ·½ÃæµÄ¼¼ÄÜ»¹ÊÇÒ»ÇÏ²»Í¨£¬×îºÃ´ÓÏÈ´Ó»ù±¾Ñ§Æğ¡£\n");
+		return notify_fail("ä½ å¯¹è¿™æ–¹é¢çš„æŠ€èƒ½è¿˜æ˜¯ä¸€çªä¸é€šï¼Œæœ€å¥½ä»å…ˆä»åŸºæœ¬å­¦èµ·ã€‚\n");
 
 	if( skill*skill*skill/10 > (int)me->query("combat_exp") )
-		return notify_fail("ÄãµÄÎäÑ§ĞŞÎª»¹Ã»µ½Õâ¸ö¾³½ç£¬Á·µÃÔÙ¶àÒ²Ã»ÓÃ¡£\n");
+		return notify_fail("ä½ çš„æ­¦å­¦ä¿®ä¸ºè¿˜æ²¡åˆ°è¿™ä¸ªå¢ƒç•Œï¼Œç»ƒå¾—å†å¤šä¹Ÿæ²¡ç”¨ã€‚\n");
 	//note, if a magic skill can also be practiced...need change this.
 
-	notify_fail("ÄãÏÖÔÚ²»ÄÜÁ·Ï°ÕâÏî¼¼ÄÜ¡£\n");
+	notify_fail("ä½ ç°åœ¨ä¸èƒ½ç»ƒä¹ è¿™é¡¹æŠ€èƒ½ã€‚\n");
 	if( !SKILL_D(skillname)->valid_learn(me) ) return 0;
 
 	// mon 10/19/98
 	if(MISC_D->random_capture(me,20000,0)) return 1;
 
-	notify_fail("ÄãÊÔ×ÅÁ·Ï°" + to_chinese(skillname) + "£¬µ«ÊÇ²¢Ã»ÓĞÈÎºÎ½ø²½¡£\n");
+	notify_fail("ä½ è¯•ç€ç»ƒä¹ " + to_chinese(skillname) + "ï¼Œä½†æ˜¯å¹¶æ²¡æœ‰ä»»ä½•è¿›æ­¥ã€‚\n");
 
         //added by mon. 7/24/97
 	if(skill_basic <= skill && random(100)==0)
-	  write("ÄãµÄ" + to_chinese(skillname)+ 
-            "ºÜÄÑÌá¸ßÁË£¬»¹ÊÇÏòÄãÊ¦¸¸Çë½ÌÇë½Ì°É£¡\n");
+	  write("ä½ çš„" + to_chinese(skillname)+ 
+            "å¾ˆéš¾æé«˜äº†ï¼Œè¿˜æ˜¯å‘ä½ å¸ˆçˆ¶è¯·æ•™è¯·æ•™å§ï¼\n");
 
 	if( SKILL_D(skillname)->practice_skill(me) ) {
 		me->improve_skill(skillname, skill_basic/5 +1, skill_basic > skill? 0: 1);
-		write( HIY "ÄãµÄ" + to_chinese(skillname) + "½ø²½ÁË£¡\n" NOR);
+		write( HIY "ä½ çš„" + to_chinese(skillname) + "è¿›æ­¥äº†ï¼\n" NOR);
 		return 1;
 	}
 	else return 0;
@@ -63,14 +63,14 @@ int main(object me, string arg)
 int help(object me)
 {
 	write(@TEXT
-Ö¸Áî¸ñÊ½£ºpractice <¼¼ÄÜÖÖÀà>
+æŒ‡ä»¤æ ¼å¼ï¼špractice <æŠ€èƒ½ç§ç±»>
 
-Õâ¸öÖ¸ÁîÈÃÄãÁ·Ï°Ä³¸öÖÖÀàµÄ¼¼ÄÜ£¬Õâ¸ö¼¼ÄÜ±ØĞëÊÇ¾­¹ı enable µÄ×¨Òµ¼¼ÄÜ¡£
+è¿™ä¸ªæŒ‡ä»¤è®©ä½ ç»ƒä¹ æŸä¸ªç§ç±»çš„æŠ€èƒ½ï¼Œè¿™ä¸ªæŠ€èƒ½å¿…é¡»æ˜¯ç»è¿‡ enable çš„ä¸“ä¸šæŠ€èƒ½ã€‚
 
-Èç¹ûÄã¸ÃÏîµÄ»ù±¾¼¼ÄÜ×ã¹»¸ß£¬¿ÉÒÔ¾­ÓÉÁ·Ï°Ö±½ÓÉı¼¶£¬¶øÇÒÉı¼¶µÄÉÏÏŞÖ»¸ú
-Äã»ù±¾¼¼ÄÜµÄµÈ¼¶ÓĞ¹Ø£¬»»¾ä»°Ëµ£¬ÇÚ¼ÓÁ·Ï°ÊÇÊ¹ÄãµÄËùÑ§¡¸Çà³öÓÚÀ¶Ê¤ÓÚÀ¶¡¹
-µÄÎ¨Ò»Í¾¾¶£¬µ±È»£¬ÔÚÕâÖ®Ç°Äã±ØĞë´ÓÊµ¼ÊÔËÓÃÖĞ»ñµÃ×ã¹»µÄ¾­ÑéÒÔÌáÉıÄãµÄ»ù
-±¾¼¼ÄÜ¡£
+å¦‚æœä½ è¯¥é¡¹çš„åŸºæœ¬æŠ€èƒ½è¶³å¤Ÿé«˜ï¼Œå¯ä»¥ç»ç”±ç»ƒä¹ ç›´æ¥å‡çº§ï¼Œè€Œä¸”å‡çº§çš„ä¸Šé™åªè·Ÿ
+ä½ åŸºæœ¬æŠ€èƒ½çš„ç­‰çº§æœ‰å…³ï¼Œæ¢å¥è¯è¯´ï¼Œå‹¤åŠ ç»ƒä¹ æ˜¯ä½¿ä½ çš„æ‰€å­¦ã€Œé’å‡ºäºè“èƒœäºè“ã€
+çš„å”¯ä¸€é€”å¾„ï¼Œå½“ç„¶ï¼Œåœ¨è¿™ä¹‹å‰ä½ å¿…é¡»ä»å®é™…è¿ç”¨ä¸­è·å¾—è¶³å¤Ÿçš„ç»éªŒä»¥æå‡ä½ çš„åŸº
+æœ¬æŠ€èƒ½ã€‚
 TEXT
 	);
 	return 1;

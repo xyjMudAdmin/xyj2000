@@ -3,11 +3,11 @@ inherit BULLETIN_BOARD;
 
 void create()
 {
-	set_name("ÉúËÀ²¾", ({"board"}) );
+	set_name("ç”Ÿæ­»ç°¿", ({"board"}) );
 set("location", "/d/death/zhengtang");
 set("board_id", "shengsi_b");
 set("capacity", 100);
-set("long", "ÌìÏÂÜ¿Ü¿ÖÚÉúµÄÉúËÀ¶¼ÔÚÕâÀï¼ÇÂ¼¡£\n");
+set("long", "å¤©ä¸‹èŠ¸èŠ¸ä¼—ç”Ÿçš„ç”Ÿæ­»éƒ½åœ¨è¿™é‡Œè®°å½•ã€‚\n");
         setup();
         replace_program(BULLETIN_BOARD);
 }

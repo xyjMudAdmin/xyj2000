@@ -46,14 +46,14 @@ int update_score(object winner,object loser){
     winner->set("leitai_score/"+loser->query("id")+"/bonus",bonus);
     winner->add("leitai_score/total",bonus-old_bonus);
     winner->set("leitai_score/"+loser->query("id")+"/time",time());
-    message_vision("$NµÄµÈ¼¶·ÖÔö¼ÓÁË"+(bonus-old_bonus)+"µã£¡\n",winner);
+    message_vision("$Nçš„ç­‰çº§åˆ†å¢åŠ äº†"+(bonus-old_bonus)+"ç‚¹ï¼\n",winner);
     update_winner_rank(winner);
     winner->save();
   }
   if (loss=(int)loser->query("leitai_score/"+winner->query("id")+"/bonus")) {
      loser->delete("leitai_score/"+winner->query("id"));
      loser->add("leitai_score/total",-loss);
-     message_vision("$NµÄµÈ¼¶·Ö¼õÉÙÁË"+loss+"µã£¡\n",loser);
+     message_vision("$Nçš„ç­‰çº§åˆ†å‡å°‘äº†"+loss+"ç‚¹ï¼\n",loser);
      update_loser_rank(loser);
      loser->save();
   }
@@ -70,9 +70,9 @@ void report(object who) {
   score=query("scores/"+id);  
   rank=query("ranks/"+id);
 
-  write("ÄãÏÖÓĞµÈ¼¶·Ö"+score+"·Ö£¬");
-  if (rank) write("ÅÅÃûµÚ"+chinese_number(rank)+"¡£\n");
-    else write("ÅÅĞĞ°ñÉÏ»¹Ã»ÓĞÃû´Î¡£\n");
+  write("ä½ ç°æœ‰ç­‰çº§åˆ†"+score+"åˆ†ï¼Œ");
+  if (rank) write("æ’åç¬¬"+chinese_number(rank)+"ã€‚\n");
+    else write("æ’è¡Œæ¦œä¸Šè¿˜æ²¡æœ‰åæ¬¡ã€‚\n");
 }
 
 void update_winner_rank(object who) {

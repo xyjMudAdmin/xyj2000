@@ -4,12 +4,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "��լ");
+  set ("short", "民宅");
   set ("long", @LONG
 
-�⻧�˼��ڳ���Ҳ��Ƚϸ�ԣ���ˡ������˳��꾭�����⣬������
-�����ּ�����ͬ������˼�һ�������﹩���Ϻ������͹���ү��
-����
+这户人家在城里也算比较富裕的了。男主人常年经商在外，妻子在
+家主持家务。如同大多数人家一样，屋里供着南海观音和关王爷的
+神像。
 LONG);
 
   set("exits", ([ /* sizeof() == 1 */

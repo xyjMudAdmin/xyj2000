@@ -5,27 +5,27 @@ inherit ROOM;
 
 void create ()
 {
-        set ("short", "Èý»¨ÌÃÃÜÊÒ");
+        set ("short", "ä¸‰èŠ±å ‚å¯†å®¤");
         set ("long", @LONG
 
-Ò»¼äÒõ°µµÄÃÜÊÒ£¬³äÂúÁËÑªÐÈÆø¡£Èý»¨ÌÃÖØ½ðÕÐÄ¼ÌìÏÂÉ±ÊÖ£¬Ö»
-Òª¿Ï³öÇ®£¬×ÔÓÐÈËÎªÄãÐ§Ãü¡£²»ÖªÓÐ¶àÉÙÃØÃÜ½»Ò×¶¼ÊÇÔÚÕâÀïÍê
-³ÉµÄ¡£Ç½ÉÏÌùÁËÒ»ÕÅÆÆÖ½(paper)£¬¿´µÃ³öÆÄÓÐÐ©Ê±ÈÕÁË¡£
+ä¸€é—´é˜´æš—çš„å¯†å®¤ï¼Œå……æ»¡äº†è¡€è…¥æ°”ã€‚ä¸‰èŠ±å ‚é‡é‡‘æ‹›å‹Ÿå¤©ä¸‹æ€æ‰‹ï¼Œåª
+è¦è‚¯å‡ºé’±ï¼Œè‡ªæœ‰äººä¸ºä½ æ•ˆå‘½ã€‚ä¸çŸ¥æœ‰å¤šå°‘ç§˜å¯†äº¤æ˜“éƒ½æ˜¯åœ¨è¿™é‡Œå®Œ
+æˆçš„ã€‚å¢™ä¸Šè´´äº†ä¸€å¼ ç ´çº¸(paper)ï¼Œçœ‹å¾—å‡ºé¢‡æœ‰äº›æ—¶æ—¥äº†ã€‚
 
 LONG);
 
         set("item_desc", ([
             "paper": @PAPER
             
-ÐüÉÍÉ±ÈË£ºÓÃ pay <amount> gold for <id> À´ÐüÉÍ×·É±ÃûÎª
-¡¡¡¡¡¡¡¡¡¡<id> µÄÍæ¼Ò¡£¿É¶à´Î×·¼ÓÉÍ½ð£¬µ«²»ÄÜÈ¡»Ø¡£
-¡¡¡¡¡¡¡¡¡¡Èç¹ûÒ»ÖÜÄÚÎÞÈË×·¼ÓÉÍ½ð£¬±¾ÌÃ½«ÊÕÈ¡×Ü¶îÈý³ÉµÄ
-¡¡¡¡¡¡¡¡¡¡±£¹Ü·Ñ¡£
-¡¡¡¡¡¡¡¡¡¡µ±Ç°±»ÐüÉÍÃûµ¥¼°½ð¶î¿ÉÓÃ list ºÍ list <id>
-¡¡¡¡¡¡¡¡¡¡²é¿´¡£
+æ‚¬èµæ€äººï¼šç”¨ pay <amount> gold for <id> æ¥æ‚¬èµè¿½æ€åä¸º
+ã€€ã€€ã€€ã€€ã€€<id> çš„çŽ©å®¶ã€‚å¯å¤šæ¬¡è¿½åŠ èµé‡‘ï¼Œä½†ä¸èƒ½å–å›žã€‚
+ã€€ã€€ã€€ã€€ã€€å¦‚æžœä¸€å‘¨å†…æ— äººè¿½åŠ èµé‡‘ï¼Œæœ¬å ‚å°†æ”¶å–æ€»é¢ä¸‰æˆçš„
+ã€€ã€€ã€€ã€€ã€€ä¿ç®¡è´¹ã€‚
+ã€€ã€€ã€€ã€€ã€€å½“å‰è¢«æ‚¬èµåå•åŠé‡‘é¢å¯ç”¨ list å’Œ list <id>
+ã€€ã€€ã€€ã€€ã€€æŸ¥çœ‹ã€‚
 
-ÁìÈ¡ÉÍ½ð£ºÈÎºÎÈË¿ÉÆ¾±»ÐüÉÍÍæ¼ÒµÄÊ¬ÌåÀ´ÁìÈ¡ÉÍ½ð¡£
-¡¡¡¡¡¡¡¡¡¡Ö»Òª drop corpse ¼´¿É¡£
+é¢†å–èµé‡‘ï¼šä»»ä½•äººå¯å‡­è¢«æ‚¬èµçŽ©å®¶çš„å°¸ä½“æ¥é¢†å–èµé‡‘ã€‚
+ã€€ã€€ã€€ã€€ã€€åªè¦ drop corpse å³å¯ã€‚
 
 PAPER
 ]));

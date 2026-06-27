@@ -8,7 +8,7 @@ string report_str();
 // arguments.
 int report()
 {
-    write("Î÷ÓÎ¼ÇÒÑ¾­ÔËĞĞÁË" + report_str()+"¡£\n");
+    write("è¥¿æ¸¸è®°å·²ç»è¿è¡Œäº†" + report_str()+"ã€‚\n");
     return 1;
 }
 string report_str()
@@ -22,12 +22,12 @@ string report_str()
 	h = t % 24;		t /= 24;
 	d = t;
 
-	if(d) time = chinese_number(d) + "Ìì";
+	if(d) time = chinese_number(d) + "å¤©";
 	else time = "";
 
-	if(h) time += chinese_number(h) + "Ğ¡Ê±";
-	if(m) time += chinese_number(m) + "·Ö";
-	time += chinese_number(s) + "Ãë";
+	if(h) time += chinese_number(h) + "å°æ—¶";
+	if(m) time += chinese_number(m) + "åˆ†";
+	time += chinese_number(s) + "ç§’";
 
 	return(time);
 }
@@ -42,9 +42,9 @@ int main()
 int help(object me)
 {
 	write(@HELP
-Ö¸Áî¸ñÊ½ : uptime
+æŒ‡ä»¤æ ¼å¼ : uptime
  
-Õâ¸öÖ¸Áî¸æËßÄãÎ÷ÓÎ¼ÇÒÑ¾­ÔËĞĞÁË¶à¾Ã¡£
+è¿™ä¸ªæŒ‡ä»¤å‘Šè¯‰ä½ è¥¿æ¸¸è®°å·²ç»è¿è¡Œäº†å¤šä¹…ã€‚
  
 HELP
     );

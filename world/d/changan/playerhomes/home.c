@@ -15,10 +15,10 @@ int do_bed();
 
 void create()
 {
-     set("short", "±ê×¼ĞÂ·¿");
+     set("short", "æ ‡å‡†æ–°æˆ¿");
      set("long", @LONG
 
-Ò»ÇĞ¶¼ÉèÖÃºÃÁË£¬Ö»µÈÒ»Ğ©ÊÒÄÚ×°ĞŞ¡£ 
+ä¸€åˆ‡éƒ½è®¾ç½®å¥½äº†ï¼Œåªç­‰ä¸€äº›å®¤å†…è£…ä¿®ã€‚ 
 LONG
      );
      set("valid_startroom",1);
@@ -41,11 +41,11 @@ void init()
 
 	if (member_array(id,home_host)==-1
 	    && member_array(id,home_guest)==-1) {
-		tell_object(me, "°¡¹ş£¡ ´³½øÀ´ÁË£¡\n");
-                tell_object(me, "Ä³Ä³·ÉÆğÒ»½Å£¬ÕıºÃÌßÖĞÄãµÄÆ¨¹É ¡£  \n");
-                tell_object(me, "Ä³Ä³·ÉÆğÒ»½Å£¬ÕıºÃÌßÖĞÄãµÄÆ¨¹É ¡£  \n");
+		tell_object(me, "å•Šå“ˆï¼ é—¯è¿›æ¥äº†ï¼\n");
+                tell_object(me, "æŸæŸé£èµ·ä¸€è„šï¼Œæ­£å¥½è¸¢ä¸­ä½ çš„å±è‚¡ ã€‚  \n");
+                tell_object(me, "æŸæŸé£èµ·ä¸€è„šï¼Œæ­£å¥½è¸¢ä¸­ä½ çš„å±è‚¡ ã€‚  \n");
                 me->move("/d/changan/phomes");
-                message_vision("$NËÆºõ±»ÈËÒ»½ÅÌßÁË³öÀ´£¬ÉñÉ«ÓĞµãÀÇ±·¡£\n", me);
+                message_vision("$Nä¼¼ä¹è¢«äººä¸€è„šè¸¢äº†å‡ºæ¥ï¼Œç¥è‰²æœ‰ç‚¹ç‹¼ç‹ˆã€‚\n", me);
 	}
 	add_action("do_bed", "gosleep");
 	add_action("do_bed", "gobed" );
@@ -61,9 +61,9 @@ int do_bed()
 	home_name=file_name(env);
       	
 	if(home_name) {
-	  message_vision(HIY "$NÏÆ¿ªÉ´ÕÊ£¬×¼±¸ÉÏ´²ÁË¡£\n\n" NOR, me);
+	  message_vision(HIY "$Næ€å¼€çº±å¸ï¼Œå‡†å¤‡ä¸ŠåºŠäº†ã€‚\n\n" NOR, me);
   	  me->move(home_name+"_bed.c");
-          message_vision(HIY "\nÉ³ÕÊÇáÇáÒ»¶¯£¬$N×êÁË½øÀ´¡£\n" NOR, me);
+          message_vision(HIY "\næ²™å¸è½»è½»ä¸€åŠ¨ï¼Œ$Né’»äº†è¿›æ¥ã€‚\n" NOR, me);
 	  } else {
 	  write("Can't find home_name! Tell a wiz please.\n");
 	  }
@@ -114,7 +114,7 @@ ROOM_CODE
 	str += "\n\tsetup();\n";
 
 	if( file_size(file)!=-1 ) {
-		write("µµ°¸ " + file + " ÒÑ´æÔÚ£¬ÒªÉ¾³ı¾ÉµµÂğ£¿[y/n]");
+		write("æ¡£æ¡ˆ " + file + " å·²å­˜åœ¨ï¼Œè¦åˆ é™¤æ—§æ¡£å—ï¼Ÿ[y/n]");
 		input_to("save_room_file", file, str);
 		return 1;
 	}
@@ -128,13 +128,13 @@ int save_room_file(string yn, string file, string str)
 
         file="/data/playerhomes/h_mon.c";
 //	rm(file);
-	write("´æµµ " + file + "£®£®£®£®£®\n");
+	write("å­˜æ¡£ " + file + "ï¼ï¼ï¼ï¼ï¼\n");
 //	if( write_file(file, str) ) {
 	if( save() ) {
 		write("Ok.\n");
 		return 1;
 	} else {
-		write("ÄãÃ»ÓĞĞ´ÈëÕâ¸öµµ°¸(" + file + ")µÄÈ¨Àû¡£\n");
+		write("ä½ æ²¡æœ‰å†™å…¥è¿™ä¸ªæ¡£æ¡ˆ(" + file + ")çš„æƒåˆ©ã€‚\n");
                 return 0;
         }
 }

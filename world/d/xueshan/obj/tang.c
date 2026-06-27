@@ -8,10 +8,10 @@ int do_he(string);
 
 void create() 
   {
-   set_name(YEL "ÎåÏÉÌÀ" NOR,({"tang"}));
-   set("long","Ò»Íë»¨»¨ÂÌÂÌµÄ"+this_object()->query("name")+"£¬³¢³¢(he)Î¶µÀ£¿\n");
+   set_name(YEL "äº”ä»™æ±¤" NOR,({"tang"}));
+   set("long","ä¸€ç¢—èŠ±èŠ±ç»¿ç»¿çš„"+this_object()->query("name")+"ï¼Œå°å°(he)å‘³é“ï¼Ÿ\n");
    set_weight(50);
-   set("unit","Íë");
+   set("unit","ç¢—");
    setup();
   }
 
@@ -24,25 +24,25 @@ int do_he(string arg)
   {
    object me=this_object();
    object who=this_player();
-   if( !this_object()->id(arg) ) return notify_fail("ÄãÏëºÈÉ¶£¿\n");
-   message_vision("$N¶ËÆð"+me->query("name")+"¹¾à½¹¾à½µÄºÈÁËÏÂÈ¥¡£\n", who);
+   if( !this_object()->id(arg) ) return notify_fail("ä½ æƒ³å–å•¥ï¼Ÿ\n");
+   message_vision("$Nç«¯èµ·"+me->query("name")+"å’•å˜Ÿå’•å˜Ÿçš„å–äº†ä¸‹åŽ»ã€‚\n", who);
 
-   if ( me->query("prices")<= 0 )  message_vision("µ«Ê²Ã´×ÌÎ¶Ò²Ã»³¢³öÀ´¡£\n", who);
+   if ( me->query("prices")<= 0 )  message_vision("ä½†ä»€ä¹ˆæ»‹å‘³ä¹Ÿæ²¡å°å‡ºæ¥ã€‚\n", who);
 
    if ( me->query("prices") > 5000 ) me->set("prices", 4000+random(1000));
 
   if ( (int)who->query_skill("ningxie-force", 1) < 10 )  
      {
-      message_vision("$NÖ»¸Ðµ½Ò»Õó¶ñÐÄ£¬ÌìÐüµØ×ª¡£\n", who);
+      message_vision("$Nåªæ„Ÿåˆ°ä¸€é˜µæ¶å¿ƒï¼Œå¤©æ‚¬åœ°è½¬ã€‚\n", who);
       who->unconcious();
      }
    else 
      {
-      message_vision("$N¿àµÃÌéÀáºáÁ÷£¬Ç¿ÈÌ×ÅÃ»ÍÂ³öÀ´¡£\n", who);
-      tell_object(who,"ÄãÖ»¸Ðµ½¸¹ÄÚÈçÓÐÊýÊ®°ÑÐ¡µ¶ÔÚÂÒÔÜÂÒ´Ì£¬ÄãÊ¹¾¡ÁËÁ¦Æø£¬"
-         +"²Å½«¶¾ÌÀµÄÒ©Á¦ÍêÈ«»¯½â¡£\n");
-      tell_object(who, YEL "ÄãµÄ±ù¹ÈÄýÑª¹¦Ôö¼ÓÁË"
-         +chinese_number(me->query("prices"))+"µã£¡\n" NOR);
+      message_vision("$Nè‹¦å¾—æ¶•æ³ªæ¨ªæµï¼Œå¼ºå¿ç€æ²¡åå‡ºæ¥ã€‚\n", who);
+      tell_object(who,"ä½ åªæ„Ÿåˆ°è…¹å†…å¦‚æœ‰æ•°åæŠŠå°åˆ€åœ¨ä¹±æ”’ä¹±åˆºï¼Œä½ ä½¿å°½äº†åŠ›æ°”ï¼Œ"
+         +"æ‰å°†æ¯’æ±¤çš„è¯åŠ›å®Œå…¨åŒ–è§£ã€‚\n");
+      tell_object(who, YEL "ä½ çš„å†°è°·å‡è¡€åŠŸå¢žåŠ äº†"
+         +chinese_number(me->query("prices"))+"ç‚¹ï¼\n" NOR);
 
 	if( (int)who->query_skill("ningxie-force",1) >=200 ) {
 	who->improve_skill("ningxie-force", me->query("prices"),1);

@@ -6,11 +6,11 @@ inherit F_VENDOR_SALE;
 void create()
 {
   reload("firemount_vendor");
-  set_name("Ğ¡··", ({"vendor"}));
+  set_name("å°è´©", ({"vendor"}));
   set("shop_id", ({"xiaofan", "vendor"}));
-  set("gender", "ÄĞĞÔ");
+  set("gender", "ç”·æ€§");
   set("age", 18);
-  set("long","Ò»Î»ÉÙÄêÄĞ×Ó£¬ÕıÍÆ×ÅÒ»Á¾ºì³µ¶ù¡£\n");
+  set("long","ä¸€ä½å°‘å¹´ç”·å­ï¼Œæ­£æ¨ç€ä¸€è¾†çº¢è½¦å„¿ã€‚\n");
   set("attitude", "peaceful");
   set("combat_exp", 15000);
   set_skill("dodge", 30);
@@ -23,11 +23,11 @@ void create()
        ]) );
   set("chat_chance",40);
   set("chat_msg",({ 
-        "ÂôÎ÷¹Ï£¡¡«¡«\n",
-        "Âô¿¾¼¦£¡¡«¡«\n",
-        "ÂôÆÏÌÑ¸É£¡¡«¡«\n",
-        "ÂôºùÂ«£¡¡«¡«\n",
-        "Âô¾Æ´ü£¡¡«¡«\n",
+        "å–è¥¿ç“œï¼ï½ï½\n",
+        "å–çƒ¤é¸¡ï¼ï½ï½\n",
+        "å–è‘¡è„å¹²ï¼ï½ï½\n",
+        "å–è‘«èŠ¦ï¼ï½ï½\n",
+        "å–é…’è¢‹ï¼ï½ï½\n",
         (:random_move:)
       }));
   setup();

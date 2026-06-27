@@ -8,13 +8,13 @@ inherit ITEM;
 
 void create()
 {
-	set_name(HIY "»ÆÍ­Ô¿³×" NOR, ({"huangtong key", "key"}));
+	set_name(HIY "é»„é“œé’¥åŒ™" NOR, ({"huangtong key", "key"}));
 	set_weight(100);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "°Ñ");
-		set("long", "Ò»°Ñ»ÆÍ­Ô¿³×¡£\n");
+		set("unit", "æŠŠ");
+		set("long", "ä¸€æŠŠé»„é“œé’¥åŒ™ã€‚\n");
 	}
   
 	set("is_monitored",1);
@@ -27,7 +27,7 @@ void self_dest(object me)
     if(!me) return;
     if(!environment(me)) return;
     tell_object(environment(me),name()+
-	    "ÂäÔÚµØÉÏ£¬²»¼ûÁË¡£\n");
+	    "è½åœ¨åœ°ä¸Šï¼Œä¸è§äº†ã€‚\n");
     destruct(me);
 }
 void announce(object who)
@@ -35,7 +35,7 @@ void announce(object who)
     if(!this_object()) return;
     if(!who) return;
     CHANNEL_D->do_channel(this_object(), "rumor", 
-	    who->query("name")+"µÃµ½ÁË"+name()+"£¡\n");
+	    who->query("name")+"å¾—åˆ°äº†"+name()+"ï¼\n");
 }
 void init()
 {

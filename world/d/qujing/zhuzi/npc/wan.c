@@ -7,10 +7,10 @@ inherit F_VENDOR_SALE;
 void create()
 {
   reload("zhuzi_wan_koufu");
-  set_name("Íò¿Ú¸£", ({"wan koufu", "wan"}));
+  set_name("ä¸‡å£ç¦", ({"wan koufu", "wan"}));
   set("shop_id", ({"wankoufu", "wan", "koufu"}));
-  set("gender", "ÄĞĞÔ");
-  set("shop_title", "Íò¿Ú¸£");
+  set("gender", "ç”·æ€§");
+  set("shop_title", "ä¸‡å£ç¦");
   set("combat_exp", 10000);
   set("age", 50);
   set("per", 34);

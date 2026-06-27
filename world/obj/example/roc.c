@@ -5,11 +5,11 @@ inherit NPC;
 
 void create()
 {
-	set_name("北冥大鹏", ({ "roc" }) );
+	set_name("鍖楀啣澶ч箯", ({ "roc" }) );
 	set("long",
-		"这是一种来自北冥大泽的大鸟，它挥动翅膀卷起的飓风可以把人吹跑。\n");
+		"杩欐槸涓�绉嶆潵鑷寳鍐ュぇ娉界殑澶ч笩锛屽畠鎸ュ姩缈呰唨鍗疯捣鐨勯椋庡彲浠ユ妸浜哄惞璺戙�俓n");
 
-	set("race", "野兽");
+	set("race", "閲庡吔");
 	set("age", 200);
 
 	set("max_gin", 500);
@@ -21,7 +21,7 @@ void create()
 	set("spi", 40);
 	set("int", 20);
 
-	set("limbs", ({ "头部", "身体", "翅膀", "尾巴" }) );
+	set("limbs", ({ "澶撮儴", "韬綋", "缈呰唨", "灏惧反" }) );
 	set("verbs", ({ "bite", "claw", "poke" }) );
 
 	set_temp("apply/attack", 80);

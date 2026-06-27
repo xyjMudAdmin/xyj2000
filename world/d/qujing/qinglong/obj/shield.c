@@ -4,11 +4,11 @@
 inherit SHIELD;
 
 string *names = ({
-  "��ţƤ",
-  "ˮţƤ",
-  "Ұ��Ƥ",
-  "��¹Ƥ",
-  "��Ƥ",
+  "牦牛皮",
+  "水牛皮",
+  "野象皮",
+  "公鹿皮",
+  "豺皮",
 });
 
 string *ids = ({
@@ -27,7 +27,7 @@ void create()
   if ( clonep() )
      set_default_object(__FILE__);
   else {
-   set("unit", "��");
+   set("unit", "件");
    set("value", 500);
    set("material", "leather");
    set("armor_prop/armor", 15);

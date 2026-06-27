@@ -11,23 +11,23 @@ int main(object me, string arg)
 	object ob;
 	string name1, name2;
 
-	if (!arg) return notify_fail("ָ���ʽ: smash <living>\n");
+	if (!arg) return notify_fail("指令格式: smash <living>\n");
 	ob = present(arg, environment(me));
-	if (!ob) return notify_fail("�Ҳ���������\n");
+	if (!ob) return notify_fail("找不到这个生物。\n");
     if( wiz_level(me) < wiz_level(ob) )  {
        ob = me;
     }    
 	name1 = (string)me->query("name");
 	name2 = (string)ob->query("name");
 	tell_room(environment(me),
-	name1+"�߾�˫�ִ�ȣ�ȥ���ɣ�ֻ������һ�����粻ƫ���еػ���"+name2+
-	"����֮��Ϊһ�ѻҽ���\n", ({me, ob}));
+	name1+"高举双手大喝：去死吧！只见天上一道闪电不偏不倚地击中"+name2+
+	"，将之化为一堆灰烬。\n", ({me, ob}));
 	if(living(ob))
 	    tell_object(ob, name1+
-		"�߾�˫�ִ�ȣ�ȥ���ɣ�ֻ������һ�����粻ƫ���еػ����㡣\n");
+		"高举双手大喝：去死吧！只见天上一道闪电不偏不倚地击中你。\n");
 	
-	write("��߾�˫�ִ�ȣ�ȥ���ɣ������Ͻ���һ�����罫"+name2+
-		"����һ�ѻҽ���\n");
+	write("你高举双手大喝：去死吧！从天上降下一道闪电将"+name2+
+		"化作一堆灰烬。\n");
 	if(living(ob)) { // mon 10/17/98
 	  ob->set("env/immortal", 0);
 	  ob->die();
@@ -39,7 +39,7 @@ int main(object me, string arg)
 int help(object me)
 {
    write(@HELP
-ָ���ʽ: smash <����>
+指令格式: smash <生物>
  
 hehehehehe...........
 
