@@ -8,3 +8,7 @@ world/log/*
 *.bak
 *.static.bak
 *.gbk.bak
+
+*.gbbak
+*.utf8tmp
+xyj2000-pre-*.tar.gz

@@ -4,8 +4,8 @@ inherit F_VENDOR;
 
 void create()
 {
-       set_name("µêĞ¡¶ş", ({"xiao er","xiaoer","xiao","waiter","er"}));
-       set("gender", "ÄĞĞÔ");
+       set_name("åº—å°äºŒ", ({"xiao er","xiaoer","xiao","waiter","er"}));
+       set("gender", "ç”·æ€§");
         set("combat_exp", 1000);
        set("age", 26);
        set("per", 14);
@@ -40,9 +40,9 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         switch( random(1) ) {
                 case 0:
-                        say( "µêĞ¡¶şĞ¦ßäßäµØËµµÀ£ºÕâÎ»" +
+                        say( "åº—å°äºŒç¬‘å’ªå’ªåœ°è¯´é“ï¼šè¿™ä½" +
 RANK_D->query_respect(ob)
-                                + "£¬½øÀ´ĞªĞª½Å£¬ºÈÁ½ÖÑ°É¡£\n");
+                                + "ï¼Œè¿›æ¥æ­‡æ­‡è„šï¼Œå–ä¸¤ç›…å§ã€‚\n");
                         break;
         }
 }
@@ -51,7 +51,7 @@ int accept_object(object who, object ob)
 {
 	if (ob->query("money_id") && ob->value() >= 300) 
 	{
-		tell_object(who, "Ğ¡¶şÒ»¹şÑü£¬ËµµÀ£º¶àĞ»ÄúÀÏ£¬¿Í¹ÙÇëÉÏÂ¥ĞªÏ¢¡£\n");
+		tell_object(who, "å°äºŒä¸€å“ˆè…°ï¼Œè¯´é“ï¼šå¤šè°¢æ‚¨è€ï¼Œå®¢å®˜è¯·ä¸Šæ¥¼æ­‡æ¯ã€‚\n");
 		who->set_temp("rent_paid",1);
 		return 1;
 	}

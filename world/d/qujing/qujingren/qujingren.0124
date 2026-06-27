@@ -1,31 +1,31 @@
-// È¡¾­ÈËÊÔÍæ°æ0.0001
+// å–ç»äººè¯•ç©ç‰ˆ0.0001
 
 #include <ansi.h>
 #include <command.h>
 inherit NPC;
 
 
-int to_sleep();			//Ë¯¾õ
-int to_walk();			//Æğ³Ì,¼´¸úËæÍæ¼Ò
-int to_rest();			//ĞİÏ¢,¼´Í£Ö¹¸úËæÍæ¼Ò
-int to_huayuan();		//»¯Ôµ,°Ñ×Ï½ğ²§¸øÍæ¼Ò,ÈÃÍæ¼Ò»¯Ôµ
-int to_eat();			//³Ô·¹,»Ö¸´foodºÍwater
-				//ĞŞ¸Ä/feature/team,Èç¹ûfood<20²»»áÒÆ¶¯
+int to_sleep();			//ç¡è§‰
+int to_walk();			//èµ·ç¨‹,å³è·Ÿéšç©å®¶
+int to_rest();			//ä¼‘æ¯,å³åœæ­¢è·Ÿéšç©å®¶
+int to_huayuan();		//åŒ–ç¼˜,æŠŠç´«é‡‘é’µç»™ç©å®¶,è®©ç©å®¶åŒ–ç¼˜
+int to_eat();			//åƒé¥­,æ¢å¤foodå’Œwater
+				//ä¿®æ”¹/feature/team,å¦‚æœfood<20ä¸ä¼šç§»åŠ¨
 
    
-void me_init();			//ÓĞ¸÷¸ö²¿·Ö×Ô¼ºµÄ³õÊ¼»¯,ÕâÑùÈç¹û¶ÔÓÚÄ³¹ØÓĞ
-				//ÌØÊâµÄÒªÇó¾Í¿ÉÒÔÔÚme_initÖĞ¶¨Òå
-int accept_object1(object who, object ob);//¿ÉÖØĞÂ¶¨ÒåµÄaccept_obj
+void me_init();			//æœ‰å„ä¸ªéƒ¨åˆ†è‡ªå·±çš„åˆå§‹åŒ–,è¿™æ ·å¦‚æœå¯¹äºæŸå…³æœ‰
+				//ç‰¹æ®Šçš„è¦æ±‚å°±å¯ä»¥åœ¨me_initä¸­å®šä¹‰
+int accept_object1(object who, object ob);//å¯é‡æ–°å®šä¹‰çš„accept_obj
 
 void create()
 {
-  set_name("È¡¾­ÈË",({"qujing ren", "qujingren", "shengseng"}));
+  set_name("å–ç»äºº",({"qujing ren", "qujingren", "shengseng"}));
   
-  set("long", "´óÌÆ¶«ÍÁÇ°ÍùÎ÷ÌìÈ¡¾­µÄÊ¥É®,·¨Ïñ×¯ÑÏ\n");
-  set("title", "ºÍÉĞ");
+  set("long", "å¤§å”ä¸œåœŸå‰å¾€è¥¿å¤©å–ç»çš„åœ£åƒ§,æ³•åƒåº„ä¸¥\n");
+  set("title", "å’Œå°š");
   set("attitude", "friendly");
   set("shen_type", 1);  
-  set("gender", "ÄĞĞÔ");
+  set("gender", "ç”·æ€§");
   set("age", 23);
   set("per", 30);
   set("int", 30);
@@ -37,30 +37,30 @@ void create()
   set("max_gin",800);
   set("max_kee",800);
   set("max_sen",800);
-  set("can_sleep",1);		//Ó¦½ûÖ¹ÓÃî§Ë¯³æÔÚÈ¡¾­ÈËÉíÉÏ
+  set("can_sleep",1);		//åº”ç¦æ­¢ç”¨çŒç¡è™«åœ¨å–ç»äººèº«ä¸Š
  
-  set("obstacle/qujing","ren"); //È¡¾­ÈËµÄÌØÊâ±êÖ¾ 
-  set("no_kill",1);             //²»ÄÜÉ±ĞèÒª¶ÔkillµÈÖ¸Áî½øĞĞ½ûÖ¹
-  set("no_magic",1);		//²»ÄÜÓÃ·¨Êõ,ĞèÒª¶ÔcastµÈÖ¸Áî×öÏŞÖÆ
+  set("obstacle/qujing","ren"); //å–ç»äººçš„ç‰¹æ®Šæ ‡å¿— 
+  set("no_kill",1);             //ä¸èƒ½æ€éœ€è¦å¯¹killç­‰æŒ‡ä»¤è¿›è¡Œç¦æ­¢
+  set("no_magic",1);		//ä¸èƒ½ç”¨æ³•æœ¯,éœ€è¦å¯¹castç­‰æŒ‡ä»¤åšé™åˆ¶
 
-  set("inquiry", ([		//Ò»°ãÍ¨¹ıask qujingren about xxÀ´×öÒªÇó
+  set("inquiry", ([		//ä¸€èˆ¬é€šè¿‡ask qujingren about xxæ¥åšè¦æ±‚
     "sleep" : (: to_sleep :),
     "walk"  : (: to_walk :),
     "rest"  : (: to_rest :),
     "huayuan": (: to_huayuan :),
     "eat"   : (: to_eat   :),
-    "Ë¯¾õ"  : (: to_sleep :),
-    "ÉÏÂ·"  : (: to_walk :),
-    "ĞİÏ¢"  : (: to_rest :),
-    "»¯Ôµ"  : (: to_huayuan :),
-    "³Ô·¹"  : (: to_eat   :),
+    "ç¡è§‰"  : (: to_sleep :),
+    "ä¸Šè·¯"  : (: to_walk :),
+    "ä¼‘æ¯"  : (: to_rest :),
+    "åŒ–ç¼˜"  : (: to_huayuan :),
+    "åƒé¥­"  : (: to_eat   :),
 
   ]));
 
-  this_object()->me_init();     //¸÷¸ö¹Ø¿ÉÒÔ×Ô¼º¶¨ÒåµÄ³õÊ¼²¿·Ö
-				//Èç¹û±¾ÎÄ¼şµ¥¶Àupdate,ÒªÈ¡ÏûÕâ¾ä
-				// 01/18ĞŞ¸ÄÎªthis_object()->·½Ê½
-				//µ¥¶ÀupdateÎŞĞè¸Ä¶¯.
+  this_object()->me_init();     //å„ä¸ªå…³å¯ä»¥è‡ªå·±å®šä¹‰çš„åˆå§‹éƒ¨åˆ†
+				//å¦‚æœæœ¬æ–‡ä»¶å•ç‹¬update,è¦å–æ¶ˆè¿™å¥
+				// 01/18ä¿®æ”¹ä¸ºthis_object()->æ–¹å¼
+				//å•ç‹¬updateæ— éœ€æ”¹åŠ¨.
   setup();
 }
 
@@ -76,28 +76,28 @@ int to_sleep()
 
   if( !where->query("sleep_room"))
     {
-    message_vision("$NËµµÀ:ÕâÀï¿ÖÅÂ²»ÄÜË¯¾õ°É¡£\n",me,who);
+    message_vision("$Nè¯´é“:è¿™é‡Œææ€•ä¸èƒ½ç¡è§‰å§ã€‚\n",me,who);
     return 1;
     }
   if (me->is_busy())
     {
-    message_vision("$NÌ¾µÀ:ÎÒºÜÃ¦Ò®£¡\n",me);
+    message_vision("$Nå¹é“:æˆ‘å¾ˆå¿™è€¶ï¼\n",me);
     return 1;
     }
   if ((time()-me->query("last_sleep"))<90)
     {
-    message_vision("$NÒ¡ÁËÒ¡Í·ËµµÀ:ÎÒÏÖÔÚ»¹²»ÀÛ£¡\n",me);
+    message_vision("$Næ‘‡äº†æ‘‡å¤´è¯´é“:æˆ‘ç°åœ¨è¿˜ä¸ç´¯ï¼\n",me);
     return 1;
     }
 
-  message_vision("$NµãÁËµãÍ·ËµµÀ:ÊÇĞİÏ¢µÄÊ±ºòÁË,ÎÒÇÒĞ¡ĞªÆ¬¿Ì£¡\n",me);
+  message_vision("$Nç‚¹äº†ç‚¹å¤´è¯´é“:æ˜¯ä¼‘æ¯çš„æ—¶å€™äº†,æˆ‘ä¸”å°æ­‡ç‰‡åˆ»ï¼\n",me);
   if (where->query("if_bed"))
     {
-    message_vision(HIY "$NÍù±»ÖĞÒ»×ê£¬²»Ò»»á±ã÷ıÉù´ó×÷£¬½øÈëÁËÃÎÏç¡£\n" NOR,me);
+    message_vision(HIY "$Nå¾€è¢«ä¸­ä¸€é’»ï¼Œä¸ä¸€ä¼šä¾¿é¼¾å£°å¤§ä½œï¼Œè¿›å…¥äº†æ¢¦ä¹¡ã€‚\n" NOR,me);
      }
   else 
     { 
-    message_vision(HIY "$N¾ÍµØÒ»ÌÉ£¬²»Ò»»á±ã÷ıÉù´ó×÷£¬½øÈëÁËÃÎÏç¡£\n" NOR,me);
+    message_vision(HIY "$Nå°±åœ°ä¸€èººï¼Œä¸ä¸€ä¼šä¾¿é¼¾å£°å¤§ä½œï¼Œè¿›å…¥äº†æ¢¦ä¹¡ã€‚\n" NOR,me);
     }
 
     me->set("last_sleep",time());
@@ -107,9 +107,9 @@ int to_sleep()
     me->set_temp("ridee",0);
     me->add_temp("apply/dodge",-me->query_temp("ride/dodge"));
     me->set_temp("ride/dodge",0);
-    me->disable_player("<Ë¯ÃÎÖĞ>");
-    if (me->query("redef_wake"))   //ÔÚÎÚ¼¦¹úÖĞme_init¶¨ÒåÁËredef_wake
-      { 			   //ÕâÑùÔÚÈ¡¾­ÈËË¯¾õºó¾ÍÓĞ±ä»¯.	
+    me->disable_player("<ç¡æ¢¦ä¸­>");
+    if (me->query("redef_wake"))   //åœ¨ä¹Œé¸¡å›½ä¸­me_initå®šä¹‰äº†redef_wake
+      { 			   //è¿™æ ·åœ¨å–ç»äººç¡è§‰åå°±æœ‰å˜åŒ–.	
       call_out("wakeup1",random(2)+10, me, where);
       }
     else
@@ -124,7 +124,7 @@ void wakeup(object me,object where)
   me->enable_player();
   while( environment(me)->is_character() )
 	me->move(environment(environment(me)));
-  message_vision(HIY "$NÒ»¾õĞÑÀ´£¬¾«Á¦³äÅæµØ»î¶¯ÁËÒ»ÏÂ½î¹Ç¡£\n" NOR,me);
+  message_vision(HIY "$Nä¸€è§‰é†’æ¥ï¼Œç²¾åŠ›å……æ²›åœ°æ´»åŠ¨äº†ä¸€ä¸‹ç­‹éª¨ã€‚\n" NOR,me);
   me->set_temp("block_msg/all", 0);
 }
 
@@ -137,7 +137,7 @@ int to_walk()
   if (who->query("obstacle/qujing")!="ren")return 0;
   if (me->query("has_followed"))
     return 1;
-  message_vision("$N¶ÔÈ¡¾­ÈËËµµÀ:Ê¦¸µ¸ÃÆğ³ÌÁË¡£\n",who);
+  message_vision("$Nå¯¹å–ç»äººè¯´é“:å¸ˆå‚…è¯¥èµ·ç¨‹äº†ã€‚\n",who);
   me->set("has_followed",1);
   me->command_function("follow "+who->query("id"));
   me->set_leader(who);
@@ -152,7 +152,7 @@ int to_rest()
   if (who->query("obstacle/qujing")!="ren")return 0;
   if (!(me->query("has_followed")))
     return 1;
-  message_vision("$N¶ÔÈ¡¾­ÈËËµµÀ:Ê¦¸µĞªÏ¢Ò»»á°ÉÁË¡£\n",who);
+  message_vision("$Nå¯¹å–ç»äººè¯´é“:å¸ˆå‚…æ­‡æ¯ä¸€ä¼šå§äº†ã€‚\n",who);
   me->set("has_followed",0);
   me->set_leader(0);
   return 1; 
@@ -169,7 +169,7 @@ int to_huayuan()
 
   if (me->query("food")<=20)
     {
-      me->command_function("say ÎÒÓĞĞ©¶öÁË,ÄãÈ¥»¯Ğ©Õ«·¹°É!");
+      me->command_function("say æˆ‘æœ‰äº›é¥¿äº†,ä½ å»åŒ–äº›æ–‹é¥­å§!");
       if (ob=present("zijin bo",who)) return 1;
       ob=new("/d/qujing/qujingren/changan/obj/zijinbo");
       ob->move(who);
@@ -187,7 +187,7 @@ int to_eat()
 
   if (me->query("food")>20)
     {
-	me->command_function("say ÎÒ»¹²»¶ö");
+	me->command_function("say æˆ‘è¿˜ä¸é¥¿");
 	return 1;
     }
 
@@ -195,10 +195,10 @@ int to_eat()
     {
       if (!(ob->query("have_food")))
         {
-        me->command_function("say ÓĞÊ²Ã´¿ÉÒÔ³ÔÄØ?");
+        me->command_function("say æœ‰ä»€ä¹ˆå¯ä»¥åƒå‘¢?");
         return 1;
         }
-      message_vision("$N½Ó¹ı×Ï½ğ²§,Óä¿ìµÄ³ÔÁËÆğÀ´,²»Ò»»á¾Í³ÔÍêÁË\n",me);
+      message_vision("$Næ¥è¿‡ç´«é‡‘é’µ,æ„‰å¿«çš„åƒäº†èµ·æ¥,ä¸ä¸€ä¼šå°±åƒå®Œäº†\n",me);
       destruct(ob);
       me->set("food",300);
       me->set("water",300);
@@ -206,7 +206,7 @@ int to_eat()
     }
   else
     {
-      me->command_function("say ÓĞÊ²Ã´¿ÉÒÔ³ÔÄØ?");
+      me->command_function("say æœ‰ä»€ä¹ˆå¯ä»¥åƒå‘¢?");
       return 1;
     }
   }
