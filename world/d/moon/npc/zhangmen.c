@@ -38,6 +38,8 @@ void init()
 {
 	object me = this_object();
 	object who = this_player();
+if (me->query_temp("zm_in_init")) return;
+me->set_temp("zm_in_init", 1);
 
 	me->create_identity("/d/moon/npc/change", "/d/moon/wulang");
 	
@@ -61,6 +63,7 @@ void init()
 	]) );
 
 	me->setup();
+me->delete_temp("zm_in_init");
 }
 
 void reset_me (object me)
