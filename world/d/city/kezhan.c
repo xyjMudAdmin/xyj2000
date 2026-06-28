@@ -22,6 +22,7 @@ LONG);
   set("objects", ([ /* sizeof() == 2 */
   __DIR__"npc/xiaoer" : 1,
   "/d/ourhome/npc/bigeye" : 1,
+  __DIR__"npc/daye" : 1,
 ]));
   set("no_fight", 1);
   set("no_magic", 1);
