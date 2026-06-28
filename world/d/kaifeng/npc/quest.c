@@ -49,7 +49,7 @@ void _quest_done (object who);
 void setup()
 {
     string id;
-    setup();
+    ::setup();
 
     id=query("id");
     if(!id) return;
