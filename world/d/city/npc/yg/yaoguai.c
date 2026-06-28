@@ -66,7 +66,7 @@ string invocation(object who, int level)
 	where=me->query("name")+"("+
 	    capitalize(me->query("id"))+")";
 	if(env)
-	  where+="在"+MISC_D->find_place(env);
+	  where+="在"+MISC_D->find_place(env)+"（"+env->query("short")+"一带）";
 
 	if(query("daoxing")>10000 ||
 		query("combat_exp")>10000)
