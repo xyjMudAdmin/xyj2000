@@ -33,7 +33,7 @@ void create()
    for(i=0;i<size;i++) {
      if(sscanf(buf1[i],"%s %s",dir,name)==2) {
        name=replace_string(name," ","");
-       if(strlen(dir)>2 && strlen(name)>2) {
+       if(strlen(dir)>2 && strlen(name)>=2) {
          maps+=([dir:name]);
        }
      }
