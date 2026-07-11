@@ -99,7 +99,7 @@ int enter_home(string arg)
 
       roomid="h_"+query_verb();
       files=get_dir("/data/playerhomes/");
-      if(member_array(roomid+".o",files)==-1) {
+      if(!pointerp(files) || member_array(roomid+".o",files)==-1) {
         return 0;
       }
 
