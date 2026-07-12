@@ -8,6 +8,7 @@ string *list=({"yg-putuo","yg-moon","yg-wzg",
 	});
 
 int work_me();
+int cancel_job();
  
 void create()
 {
@@ -67,6 +68,10 @@ set("inquiry", ([
 "mieyao": (: work_me :),
 "kill": (: work_me :),
 "灭妖": (: work_me :),
+"cancel": (: cancel_job :),
+"fangqi": (: cancel_job :),
+"放弃": (: cancel_job :),
+"取消": (: cancel_job :),
 ]));
 
 	setup();
@@ -105,14 +110,7 @@ int work_me()
 	    }
 	    // allow ask again.
 	} else { // job done
-	    if(t<=time() &&
-		    time()<t+10) {
-		message_vision("$N对手中照妖镜一看，说"+
-			"：这位"+RANK_D->query_respect(me)
-			+",妖魔已除尽,不妨先去歇息。\n",
-			this_object(), me);
-		return 1;
-	    }
+	    // no cooldown after a kill: hand out a new job at once.
 	    // succeed, increase lvl.
 	    if(!me->query_temp("mieyao/level_changed")) {
 		lvl=me->query_temp("mieyao/level");
@@ -143,6 +141,7 @@ int start_job(object me)
 	
         ghost = new(__DIR__+list[random(sizeof(list))]);
         where=ghost->invocation(me, lvl);
+	me->set_temp("mieyao/ob", ghost);
 	
 	message_vision("$N将手中照妖镜朝下界一晃！\n",this_object());
 	message_vision("$N对$n说道：近有"+where+"为非作歹，"
@@ -150,5 +149,41 @@ int start_job(object me)
 		,this_object(),me);
 	me->set("mieyao/time_start", time());
 	me->set("mieyao/name",ghost->query("name"));
+	return 1;
+}
+
+int cancel_job()
+{
+	object me, ghost;
+	int lvl;
+	me=this_player();
+
+	if( !me->query("mieyao/time_start") ||
+		me->query("mieyao/done") ) {
+	    command("say "+RANK_D->query_respect(me)
+		+"眼下并无降妖差事在身。");
+	    return 1;
+	}
+
+	// treat cancel as a failed attempt: decrease lvl.
+	if(!me->query_temp("mieyao/level_changed")) {
+	    lvl=me->query_temp("mieyao/level");
+	    if(lvl>0) lvl--;
+	    me->set_temp("mieyao/level",lvl);
+	    me->set_temp("mieyao/level_changed",1);
+	}
+
+	// remove the outstanding demon, otherwise killing it
+	// later would falsely complete a future job.
+	ghost=me->query_temp("mieyao/ob");
+	if(objectp(ghost)) destruct(ghost);
+	me->delete_temp("mieyao/ob");
+
+	me->delete("mieyao/time_start");
+	me->delete("mieyao/name");
+
+	message_vision("$N捋须道：也罢，此事就此作罢。"
+		+"$n若愿再去降妖，尽可来寻老夫。\n",
+		this_object(),me);
 	return 1;
 }

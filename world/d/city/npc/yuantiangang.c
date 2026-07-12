@@ -8,6 +8,7 @@ string *list=({"yg-putuo","yg-moon","yg-wzg",
 	});
 
 int work_me();
+int cancel_job();
  
 void create()
 {
@@ -64,6 +65,10 @@ void create()
         "kill": (: work_me :),
         "灭妖": (: work_me :),
 	"妖魔": (: work_me :),
+        "cancel": (: cancel_job :),
+        "fangqi": (: cancel_job :),
+        "放弃": (: cancel_job :),
+        "取消": (: cancel_job :),
         ]));
 
         setup();
@@ -149,14 +154,7 @@ int work_me()
 
 	    // allow ask again.
 	} else { // job done
-	    if(t<=time() &&
-		    time()<t+300+(dx>20000?300:0)) {
-		message_vision("$N将手中桃木剑缓缓放下，说"+
-			"：多谢"+RANK_D->query_respect(me)
-			+",妖魔已经除尽了。\n",
-			this_object(), me);
-		return 1;
-	    }
+	    // no cooldown after a kill: hand out a new job at once.
 	    // succeed, increase lvl.
 	    if(!me->query_temp("mieyao/level_changed1")) {
 		lvl=me->query_temp("mieyao/level1");
@@ -188,6 +186,7 @@ int start_job(object me)
 	
         ghost = new(__DIR__+"yg/"+list[random(sizeof(list))]);
         where=ghost->invocation(me, lvl);
+	me->set_temp("mieyao/ob1", ghost);
 	
 	message_vision("$N将手中桃木剑向四方一划，对$n说道：\n",
 	  this_object(),me);
@@ -196,5 +195,41 @@ int start_job(object me)
 		,this_object(),me);
 	me->set("mieyao/time_start1", time());
 	me->set("mieyao/name1",ghost->query("name"));
+	return 1;
+}
+
+int cancel_job()
+{
+	object me, ghost;
+	int lvl;
+	me=this_player();
+
+	if( !me->query("mieyao/time_start1") ||
+		me->query("mieyao/done1") ) {
+	    command("say "+RANK_D->query_respect(me)
+		+"目前并没有降妖的差事在身啊。");
+	    return 1;
+	}
+
+	// treat cancel as a failed attempt: decrease lvl.
+	if(!me->query_temp("mieyao/level_changed1")) {
+	    lvl=me->query_temp("mieyao/level1");
+	    if(lvl>0) lvl--;
+	    me->set_temp("mieyao/level1",lvl);
+	    me->set_temp("mieyao/level_changed1",1);
+	}
+
+	// remove the outstanding demon, otherwise killing it
+	// later would falsely complete a future job.
+	ghost=me->query_temp("mieyao/ob1");
+	if(objectp(ghost)) destruct(ghost);
+	me->delete_temp("mieyao/ob1");
+
+	me->delete("mieyao/time_start1");
+	me->delete("mieyao/name1");
+
+	message_vision("$N点点头道：也罢，此事就此作罢。"
+		+"$n若想再为大唐出力，尽可再来。\n",
+		this_object(),me);
 	return 1;
 }
