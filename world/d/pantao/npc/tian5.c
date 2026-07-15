@@ -25,6 +25,8 @@ void create()
 void init()
 {
   object me = this_object();
+if (me->query_temp("zm_in_init")) return;
+me->set_temp("zm_in_init", 1);
 
   add_action("do_save", "save");
   add_action("do_bandage","bandage");
@@ -43,6 +45,7 @@ void init()
   //  me->reset_me(me);
   me->fully_recover(me);
   me->setup();
+me->delete_temp("zm_in_init");
 
 }
 
