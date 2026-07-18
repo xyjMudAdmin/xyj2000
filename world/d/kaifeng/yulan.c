@@ -20,7 +20,7 @@ LONG);
       ]));
   set("objects", ([
         __DIR__"npc/yahuan" :  1,
-//        __DIR__"npc/yulan" :  1,
+        __DIR__"npc/yulan" :  1,
       ]));
 
   setup();

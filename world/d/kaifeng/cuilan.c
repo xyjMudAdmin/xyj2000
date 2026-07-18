@@ -19,7 +19,7 @@ LONG);
       ]));
   set("objects", ([
         __DIR__"npc/yahuan" :  1,
-//        __DIR__"npc/cuilan" :  1,
+        __DIR__"npc/cuilan" :  1,
       ]));
 
   setup();
