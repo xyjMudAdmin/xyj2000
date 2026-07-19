@@ -84,6 +84,8 @@ void test_player (object who)
       case 5: reward=10;break;
       case 6: reward=15;break;
       case 7: reward=25;break;
+      case 8: reward=30;break;
+      case 9: reward=40;break;
       default: reward=1;
     }
     

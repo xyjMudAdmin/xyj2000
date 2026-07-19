@@ -6,9 +6,7 @@ mapping color_code=([
         "xiang gong": HIB"蓝"NOR,
         "xiang po": HIM"粉"NOR,
         "yin wenjiao": HIC"青"NOR,
-//	"yu lan":HIR"红"NOR,
-//	"cui lan":HIM"粉"NOR,
-//	"xiang lan":HIB"蓝"NOR,
 	"xiang lan":HIW"白"NOR,
+	"yu lan": MAG"紫"NOR,
+	"cui lan": YEL"橙"NOR,
         ]);
-
