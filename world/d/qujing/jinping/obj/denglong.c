@@ -113,3 +113,19 @@ int do_remove (string arg)
   return 0;
 }
 
+
+// deterministic variant selector — wizard/agent use only.
+// usage: call deng long->morph(N)  or  call deng->morph(N)
+// returns 1 ok, -1 not wizard, -2 master object, -3 out of range
+int morph (int i)
+{
+  if (! this_player() || ! wizardp(this_player()))
+    return -1;
+  if (! clonep(this_object()))
+    return -2;
+  if (i < 0 || i >= sizeof(names))
+    return -3;
+  set_name (names[i], ({ "deng long", "deng", "long" }));
+  set ("long", "一杆紫竹把儿的"+query("name")+"。\n");
+  return 1;
+}

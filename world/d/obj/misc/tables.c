@@ -61,3 +61,23 @@ void destruct_me (object me)
 {
   destruct (me);
 }
+
+// deterministic variant selector — wizard/agent use only.
+// usage: call table->morph(N)   (flat integer, quote-free)
+// index: N = prefix*8 + name*2 + suffix
+// returns 1 ok, -1 not wizard, -2 master object, -3 out of range
+int morph (int i)
+{
+  int nn = sizeof(names);
+  int ns = sizeof(suffixs);
+
+  if (! this_player() || ! wizardp(this_player()))
+    return -1;
+  if (! clonep(this_object()))
+    return -2;
+  if (i < 0 || i >= sizeof(prefixs)*nn*ns)
+    return -3;
+  set_name (prefixs[i/(nn*ns)] + names[(i/ns)%nn] + suffixs[i%ns],
+            ({ "table" }));
+  return 1;
+}

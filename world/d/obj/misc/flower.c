@@ -259,3 +259,36 @@ int do_water (string arg)
   flower->set("water",0);
   return 1;
 }
+
+// deterministic variant selector — wizard/agent use only.
+// usage: call flower->morph(N)   (index matches the random(14) switch above)
+// returns 1 ok, -1 not wizard, -2 master object, -3 out of range
+string *morph_names = ({
+  HIB "蓝玫瑰" NOR,
+  HIB "黑郁金香" NOR,
+  HIB "薄雪花" NOR,
+  HIB "野风信子" NOR,
+  HIB "玉白露" NOR,
+  HIB "睡芙蓉" NOR,
+  HIB "紫蔷薇" NOR,
+  HIB "大丽花" NOR,
+  HIB "勿忘我" NOR,
+  HIB "白玫瑰" NOR,
+  HIB "翡翠绿" NOR,
+  HIB "雪腊梅" NOR,
+  HIB "曼陀罗" NOR,
+  HIB "睡莲" NOR,
+});
+
+int morph (int i)
+{
+  if (! this_player() || ! wizardp(this_player()))
+    return -1;
+  if (! clonep(this_object()))
+    return -2;
+  if (i < 0 || i >= sizeof(morph_names))
+    return -3;
+  set_name (morph_names[i], ({ "flower", "dream flower" }));
+  set ("long", "一朵色彩艳丽的"+query("name")+"。\n");
+  return 1;
+}
