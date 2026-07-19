@@ -1,10 +1,10 @@
 // /d/city/npc/daye.c
 // 没钱管你大爷要 —— 南城客栈里赖着不走的散财大爷
 //
-// 玩家指令：  ask Da Ye about money      （每次给 5 金子）
-// 每日限额由 /adm/daemons/daye_d 统一记账：
-//   * 同一角色每天最多 50 金子（战斗经验 > 50000 时降为 5 金子）
-//   * 同一 IP 每天最多 50 金子（防止开小号刷钱）
+// 玩家指令：  ask Da Ye about money
+// 发放规则由 /adm/daemons/daye_d 记账：
+//   * 每个角色一辈子只能领一次，头一回给 3 金子，之后不再给
+//   * 同一 IP 总共最多发 6 金子（防止开小号领钱后倒贴给大号）
 
 inherit NPC;
 
@@ -52,12 +52,12 @@ string ask_money()
         add_money("gold", r);
         command("give " + r + " gold to " + me->query("id"));
         command("tell " + me->query("id") + " 孩子，挣钱不容易, 省着点儿花，奥！");
-        return "拿去，别说大爷小气——花光了再来！\n";
+        return "头一遭见你吧？拿去做盘缠——大爷可只送这一回！\n";
     }
     if( r == -1 )
-        return "去去去，今儿个给你的够多啦，明天请早！\n";
+        return "你不是领过了吗？大爷的钱可不是大风刮来的，没有第二回！\n";
     if( r == -2 )
-        return "你们换张脸就来诓大爷的钱？当我看不出来！今天到此为止。\n";
+        return "你们换张脸就来诓大爷的钱？当我看不出来！这地方没你的份儿了。\n";
 
     return "大爷今儿手头紧，改日再说。\n";
 }

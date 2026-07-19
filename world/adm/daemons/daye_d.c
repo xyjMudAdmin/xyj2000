@@ -1,95 +1,68 @@
 // /adm/daemons/daye_d.c
-// 散财大爷每日发钱记账 daemon ——  for /d/city/npc/daye.c (没钱管你大爷要)
+// 散财大爷发钱记账 daemon —— for /d/city/npc/daye.c (没钱管你大爷要)
 //
-// Enforces, per UTC calendar day:
-//   * per-character cap : 50 gold normally, 5 gold if combat_exp > 50000
-//   * per-IP cap        : 50 gold total across ALL characters on that IP
-//                         (this is the anti-alt-farming guard)
-// Gold is handed out in fixed 5-gold chunks through request_gold().
+// New-player starter gold, handed out once and only once:
+//   * Each character may claim ONCE, ever. The first ask grants 3 gold;
+//     every later ask by that same character gives nothing.
+//   * Per IP address, at most 6 gold is EVER handed out (i.e. at most two
+//     fresh characters per IP). This stops someone spinning up a string of
+//     throwaway IDs to claim the starter gold and funnel it onto one main.
 //
-// Records persist to /data/daye_d.o and reset automatically at the UTC
-// day boundary (compared against a stored day index, so a reboot mid-day
-// keeps the running totals).
+// Records are permanent (no daily reset) and persist to /data/daye_d.o.
 
 inherit F_SAVE;
 
-#define GIVE_EACH    5        // gold granted per successful ask
-#define NORMAL_CAP   50       // per-character daily cap
-#define RICH_CAP     5        // per-character daily cap when combat_exp > RICH_EXP
-#define RICH_EXP     50000    // experience threshold for the reduced cap
-#define IP_CAP       50       // per-IP daily cap (sum over all that IP's characters)
+#define GRANT          3      // gold granted on a character's first (only) ask
+#define IP_TOTAL_CAP   6      // lifetime cap of gold handed out per IP address
 
-mapping name_rec;   // player id  -> gold already given today
-mapping ip_rec;     // ip address -> gold already given today
-int     day_no;     // UTC day index the two mappings belong to
-
-int today() { return time() / 86400; }
-
-void roll_day()
-{
-    if( day_no != today() ) {
-        day_no   = today();
-        name_rec = ([ ]);
-        ip_rec   = ([ ]);
-        save();
-    }
-}
+mapping name_rec;   // player id  -> gold already granted (key present == 已领取)
+mapping ip_rec;     // ip address -> total gold ever granted to that IP
 
 void create()
 {
-    if( !restore() ) day_no = today();
+    if( !restore() ) { name_rec = ([ ]); ip_rec = ([ ]); }
     if( !mapp(name_rec) ) name_rec = ([ ]);
     if( !mapp(ip_rec) )   ip_rec   = ([ ]);
-    roll_day();
 }
 
 string query_save_file() { return DATA_DIR + "daye_d"; }
 
 // Decide how much to grant this asker.
-//   > 0  : amount of gold to give (always GIVE_EACH)
-//   -1   : this character has hit its own daily cap
-//   -2   : this IP has hit the shared daily cap (likely an alt)
+//   > 0  : amount of gold to give (always GRANT)
+//   -1   : this character has already claimed its one-time starter gold
+//   -2   : this IP has reached its lifetime cap (likely alt farming)
 //    0   : error / no usable player
 int request_gold(object who)
 {
     string id, ip;
-    int    cap, gname, gip;
+    int gip;
 
     if( !objectp(who) ) return 0;
-    roll_day();
 
     id = (string)who->query("id");
     if( !stringp(id) ) return 0;
 
     ip = query_ip_number(who);
-    if( !stringp(ip) ) ip = "unknown";   // linkdead / no socket -> own bucket
+    if( !stringp(ip) ) ip = "unknown";
 
-    cap = ( (int)who->query("combat_exp") > RICH_EXP ) ? RICH_CAP : NORMAL_CAP;
+    if( name_rec[id] ) return -1;                 // already claimed (once-ever)
 
-    gname = name_rec[id];   // missing key -> 0
-    gip   = ip_rec[ip];
+    gip = ip_rec[ip];
+    if( gip + GRANT > IP_TOTAL_CAP ) return -2;    // IP lifetime cap reached
 
-    if( gname + GIVE_EACH > cap )    return -1;   // personal cap reached
-    if( gip   + GIVE_EACH > IP_CAP ) return -2;   // IP cap reached
-
-    name_rec[id] = gname + GIVE_EACH;
-    ip_rec[ip]   = gip   + GIVE_EACH;
+    name_rec[id] = GRANT;
+    ip_rec[ip]   = gip + GRANT;
     save();
-    return GIVE_EACH;
+    return GRANT;
 }
 
 // ---- wizard / debugging helpers -----------------------------------------
-mapping query_records()
-{
-    roll_day();
-    return ([ "day" : day_no, "name" : name_rec, "ip" : ip_rec ]);
-}
+mapping query_records() { return ([ "name" : name_rec, "ip" : ip_rec ]); }
 
 int clear_records()
 {
     name_rec = ([ ]);
     ip_rec   = ([ ]);
-    day_no   = today();
     save();
     return 1;
 }
